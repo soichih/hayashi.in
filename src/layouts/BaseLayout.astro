@@ -50,11 +50,18 @@ function hrefFor(slug) {
     <footer class="site-footer">
       <div class="links">
         {
-          site.links.map((l) => (
-            <a href={l.url} rel="me noopener" target="_blank">
-              {l.label}
-            </a>
-          ))
+          site.links.map((l) => {
+            const external = /^https?:/.test(l.url);
+            return (
+              <a
+                href={l.url}
+                rel="me noopener"
+                target={external ? '_blank' : undefined}
+              >
+                {l.label}
+              </a>
+            );
+          })
         }
       </div>
       <p>© {site.author} · {site.location}</p>

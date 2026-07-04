@@ -4,6 +4,7 @@ export default {
   tagline: 'Full Stack Software Engineer',
   author: 'Soichi Hayashi',
   location: 'Bloomington, IN',
+  email: 'soichi@hayashi.in',
 
   // Navigation: slug 'index' -> "/", any other slug -> "/<slug>"
   nav: [
@@ -14,5 +15,6 @@ export default {
   // Public links only.
   links: [
     { label: 'GitHub', url: 'https://github.com/soichih' },
+    { label: 'Email', url: 'mailto:soichi@hayashi.in' },
   ],
 };
