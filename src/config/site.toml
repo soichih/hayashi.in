@@ -106,7 +106,7 @@ comment = true
 name = "Soichi Hayashi"
 handle = "@soichih"
 role = "Full Stack Software Engineer"
-company = ""
+company = "Acadian Asset Management"
 location = "Bloomington, IN"
 email = "soichi@hayashi.in"
 website = "https://hayashi.in"
@@ -190,6 +190,12 @@ href = "/about"
 label = "GitHub"
 icon = "github"
 tooltip = "https://github.com/soichih"
+copy = false
+
+[[config.home.links]]
+label = "LinkedIn"
+icon = "linkedin"
+tooltip = "https://www.linkedin.com/in/soichihayashi"
 copy = false
 
 [[config.home.links]]
