@@ -3,6 +3,8 @@ layout: ../layouts/BaseLayout.astro
 title: Home
 ---
 
+<img class="portrait" src="/soichi.jpg" alt="Soichi Hayashi" width="200" height="300" />
+
 # Soichi Hayashi
 
 **Full Stack Software Engineer**

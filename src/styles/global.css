@@ -47,6 +47,15 @@ main.content {
   margin: 0 auto;
   padding: 3rem 1.25rem;
 }
+.content .portrait {
+  display: block;
+  width: 200px;
+  height: auto;
+  max-width: 60%;
+  margin: 0 auto 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
 .content h1 {
   font-size: 3.25rem;
   line-height: 1.1;
