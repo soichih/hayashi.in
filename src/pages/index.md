@@ -3,7 +3,7 @@ layout: ../layouts/BaseLayout.astro
 title: Home
 ---
 
-<img class="portrait" src="/soichi.jpg" alt="Soichi Hayashi" width="200" height="300" />
+<img class="portrait" src="/soichi.avatar.png" alt="Soichi Hayashi" width="200" height="200" />
 
 # Soichi Hayashi
 
