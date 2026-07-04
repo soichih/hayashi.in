@@ -1,0 +1,101 @@
+---
+title: 'Building a quarter-tone tuner in the browser'
+description: 'Why I skipped the FFT needle and built a pitch tuner around autocorrelation, parabolic interpolation, and a fading quarter-tone visualization — all client-side with the Web Audio API.'
+date: 2025-12-27
+showHeroImage: false
+tags:
+  - Web Audio
+  - DSP
+  - React
+categories:
+  - Engineering
+comments: false
+sidebar:
+  enable: true
+  toc: true
+  relatedPosts: false
+---
+
+I wanted a guitar tuner I actually trusted, that ran in a browser tab, and that showed me
+*more* than a twitchy needle. So I built one. It ended up small enough to be a weekend project
+but opinionated enough to be worth writing down.
+
+You can [try it here](https://soichih.github.io/tuner/) (it needs microphone access), and the
+source is [on GitHub](https://github.com/soichih/tuner).
+
+## Why not just use the FFT?
+
+The obvious approach to "what note is this?" is to run an FFT and pick the loudest bin. It's
+easy, and it's wrong often enough to be annoying. Musical instruments are rich in harmonics,
+and the loudest partial is frequently *not* the fundamental — so an FFT peak-picker happily
+reports the wrong octave, especially on low strings.
+
+So I detect pitch in the **time domain** with autocorrelation instead. The idea: a periodic
+signal looks like itself when you shift it by exactly one period. I use a normalized
+square-difference function:
+
+```
+correlation(offset) = 1 - sqrt( mean( (buffer[i] - buffer[i + offset])² ) )
+```
+
+Slide `offset` across the lag range that corresponds to ~60–1000 Hz, and the offset with the
+highest correlation (above a confidence threshold) is one period. `frequency = sampleRate /
+offset`. This locks onto the fundamental far more reliably than chasing FFT peaks.
+
+## Getting sub-sample accuracy
+
+Autocorrelation has a catch: the lag is an integer number of samples, so the frequency
+resolution is quantized. Near the top of a guitar's range that quantization is coarse enough
+to matter.
+
+The fix is **parabolic interpolation** — fit a parabola through the best correlation point and
+its two neighbors, and solve for the true peak *between* samples:
+
+```
+shift = (y₃ - y₁) / (2·(2·y₂ - y₁ - y₃))
+frequency = sampleRate / (bestOffset + shift)
+```
+
+That one line buys enough precision to resolve quarter-tones, which the visualization leans on.
+
+## The part I actually care about: the display
+
+A needle tells you "you're sharp" for a single instant and then forgets. I wanted to *see* my
+pitch — how steady it is, which way it's drifting, whether that wobble is vibrato or just bad
+technique.
+
+So the main view is a **zoomed window of ±0.4 semitone centered on the detected note**, with
+markers at −1/4, center, and +1/4 tone. Inside it, every detected pitch is drawn as a vertical
+line where:
+
+- **x** = how sharp or flat you are (on the quarter-tone scale),
+- **height** = loudness in dB,
+- **opacity** = recency — samples fade out over two seconds.
+
+The result is a little live cloud of your intonation. A clean note is a tight bright column on
+the center line; drift smears it sideways; vibrato paints a rhythmic sweep. It also happens to
+make microtonal / non-12-TET practice legible, which a needle can't do.
+
+## Keeping the readout steady
+
+Raw frame-by-frame detection flickers between neighboring notes on noisy input. I smooth it
+with a small **consensus + hysteresis** filter: keep the last five detections, only display a
+note with strong agreement (≥3 of 5), and refuse to switch to a new note unless it's *very*
+confident (≥4 of 5) or the current one was never stable. The number on screen stops dancing.
+
+## It's all local
+
+Everything — capture, autocorrelation, rendering — runs in the browser via the Web Audio API.
+No audio is uploaded anywhere; there's no backend at all. The only requirement is a secure
+context, because browsers only grant microphone access over HTTPS (or `localhost`).
+
+## Takeaways
+
+- For musical pitch, **autocorrelation beats FFT peak-picking** — track the fundamental, not
+  the loudest partial.
+- A few lines of **parabolic interpolation** turn "close enough" into "quarter-tone precise."
+- The most useful feature wasn't the detector at all — it was **showing history instead of an
+  instant**, which turns a tuner into a practice tool.
+
+Code and live demo: [github.com/soichih/tuner](https://github.com/soichih/tuner) ·
+[soichih.github.io/tuner](https://soichih.github.io/tuner/)

@@ -1,0 +1,37 @@
+---
+title: 'Tuner'
+description: 'A browser-based precision chromatic tuner with a quarter-tone zoom visualization — autocorrelation pitch detection, entirely client-side.'
+date: 2025-12-27
+showHeroImage: false
+tags:
+  - Web Audio
+  - React
+  - Music
+comments: false
+sidebar:
+  enable: false
+  toc: false
+  relatedPosts: false
+---
+
+A precision chromatic tuner that runs entirely in the browser — no installs, no server, and
+your audio never leaves your device. It started as a module of my personal site and now lives
+as a standalone open-source project.
+
+What sets it apart from a typical needle tuner:
+
+- **Autocorrelation pitch detection** (time-domain) with **parabolic interpolation** for
+  sub-sample accuracy — it tracks the fundamental reliably and avoids the octave errors common
+  in FFT peak-picking.
+- A **quarter-tone "zoom" visualization**: instead of a single needle, it shows a live window
+  of ±0.4 semitone around the note you're playing, with a **fading two-second trail** of your
+  pitch weighted by loudness — so you can see stability, drift, and vibrato, not just one number.
+- **Consensus + hysteresis note-locking** so the readout stays rock-steady instead of
+  flickering between neighboring notes.
+
+Built with React + Vite and the Web Audio API; the pitch detection is hand-rolled, no audio
+libraries.
+
+- **Live app:** [soichih.github.io/tuner](https://soichih.github.io/tuner/)
+- **Source:** [github.com/soichih/tuner](https://github.com/soichih/tuner) (MIT)
+- **Write-up:** [Building a quarter-tone tuner in the browser](/blog/building-a-quarter-tone-tuner/)
