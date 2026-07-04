@@ -1,0 +1,221 @@
+[config.site]
+title = "Soichi Hayashi"
+description = "Personal site of Soichi Hayashi — full stack software engineer."
+pageTitle = "Soichi Hayashi"
+pageDescription = "Full Stack Software Engineer — projects, notes, and writing."
+url = "https://hayashi.in"
+repository = "https://github.com/soichih/hayashi.in"
+footerNote = ""
+
+[config.theme]
+# green-soft, green-vivid, rose-soft, pink-soft, purple-soft, blue-soft, orange-soft, brown-soft
+palette = "blue-soft"
+
+[config.fonts]
+en = "Maple Mono"
+code = "Monaco"
+zh = "ChillRoundM"
+file = "/fonts/ChillRoundM.ttf"
+
+[config.code]
+lightTheme = "catppuccin-latte"
+darkTheme = "catppuccin-macchiato"
+lineNumbers = true
+wrap = true
+preserveIndent = true
+collapseStyle = "collapsible-auto"
+
+[config.math]
+render = "katex"
+
+[config.comments]
+enabled = false
+provider = "none"
+show_on_posts = true
+
+[config.search]
+enabled = true
+shortcut = "mod+k"
+placeholder = "Search notes..."
+maxResults = 6
+
+[config.pages.blog]
+title = "Writing"
+kicker = "Notebook"
+subtitle = "Notes, essays, and field reports."
+note = "Long-form writing, technical notes, and things worth remembering."
+postsPerPage = 6
+dateFormat = "yyyy-MM-dd"
+metadataSeparator = "icon"
+coverImageStyle = "mask"
+
+[config.pages.blog.categories]
+title = "Categories"
+kicker = "Browse notes"
+subtitle = ""
+note = "A quiet index of recurring topics, gathered from article frontmatter."
+
+[config.pages.blog.series]
+title = "Series"
+kicker = "Reading paths"
+subtitle = ""
+note = "Connected notes that can be followed in the order they were written."
+
+[config.pages.projects]
+title = "Projects"
+kicker = "Project shelf"
+subtitle = "Tools and things I've built."
+note = "Full-stack tools, simulators, and utilities aimed at genuinely improving lives."
+
+[config.pages.vibe]
+title = "Vibe"
+kicker = ""
+subtitle = "Life and coding fragments."
+note = "Shorter notes that aren't formal posts, but are still part of the story."
+showTrail = true
+
+[config.comments.giscus]
+repo = ""
+repo_id = ""
+category = ""
+category_id = ""
+mapping = "pathname"
+strict = "0"
+reactions_enabled = "1"
+emit_metadata = "0"
+input_position = "top"
+light_theme = "light"
+dark_theme = "dark"
+lang = "en"
+loading = "lazy"
+
+[config.comments.utterances]
+repo = ""
+issue_term = "pathname"
+label = "comment"
+theme = "github-light"
+
+[config.comments.waline]
+server_url = ""
+lang = "en"
+dark = "html.dark"
+pageview = true
+comment = true
+
+[config.profile]
+name = "Soichi Hayashi"
+handle = "@soichih"
+role = "Full Stack Software Engineer"
+company = ""
+location = "Bloomington, IN"
+email = "soichi@hayashi.in"
+website = "https://hayashi.in"
+github = "https://github.com/soichih"
+meta = ""
+avatar = "/images/soichi.avatar.png"
+
+[[config.topNav.links]]
+label = "Home"
+href = "/"
+
+[[config.topNav.links]]
+label = "Blog"
+href = "/blog"
+
+[[config.topNav.links]]
+label = "Projects"
+href = "/projects"
+
+[[config.topNav.links]]
+label = "Vibe"
+href = "/vibe"
+
+[[config.topNav.links]]
+label = "About"
+href = "/about"
+
+[config.home]
+
+[config.home.quote]
+text = [
+  "Building things",
+  "that genuinely",
+  "improve lives.",
+]
+image = "/images/soichi.avatar.png"
+
+[config.home.intro]
+title = "I'm Soichi Hayashi"
+name = "Soichi Hayashi"
+body = [
+  "I'm a full stack software engineer who believes in building things that genuinely improve lives.",
+  "I build full-stack tools and utilities — from financial planning simulators to everyday productivity helpers.",
+  "Based in Bloomington, IN. When I'm not coding, I'm running, at the piano or guitar, or tinkering with home automation.",
+]
+image = "/images/soichi.avatar.png"
+
+[config.home.latest]
+count = 1
+heatmapWeeks = 24
+showHeatmapLatest = true
+excludeDraft = true
+startDate = ""
+dateArchiveBaseHref = ""
+
+[[config.home.navigation]]
+icon = "pen"
+title = "Blog"
+subtitle = "Essays, notes, and field reports"
+href = "/blog"
+
+[[config.home.navigation]]
+icon = "briefcase"
+title = "Projects"
+subtitle = "Tools and things I've built"
+href = "/projects"
+
+[[config.home.navigation]]
+icon = "github"
+title = "Open Source"
+subtitle = "Code, experiments, and tools"
+href = "https://github.com/soichih"
+
+[[config.home.navigation]]
+icon = "compass"
+title = "About"
+subtitle = "Who I am and what I do"
+href = "/about"
+
+[[config.home.links]]
+label = "GitHub"
+icon = "github"
+tooltip = "https://github.com/soichih"
+copy = false
+
+[[config.home.links]]
+label = "Email"
+icon = "mail"
+tooltip = "soichi@hayashi.in"
+copy = true
+
+[[config.home.links]]
+label = "RSS"
+icon = "rss"
+tooltip = "/rss.xml"
+copy = false
+
+[[config.home.doing]]
+text = "Building full-stack tools and utilities"
+mark = "01"
+
+[[config.home.doing]]
+text = "Training toward a 10k race finish"
+mark = "02"
+
+[[config.home.doing]]
+text = "Writing music — piano, guitar, and songwriting"
+mark = "03"
+
+[[config.home.doing]]
+text = "Tinkering with smart-home automation"
+mark = "04"

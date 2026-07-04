@@ -1,70 +1,28 @@
 ---
-import site from '../data/site.js';
-import '../styles/global.css';
+import BaseHead from '../components/BaseHead.astro';
+import BlogTopNav from '../components/blog/BlogTopNav.astro';
+import FullFontWarmup from '../components/FullFontWarmup.astro';
+import ScrollToTopButton from '../components/ScrollToTopButton.astro';
+import { getThemePalette } from '../data/site';
 
-const { frontmatter } = Astro.props;
-const pageTitle = frontmatter?.title
-  ? `${frontmatter.title} · ${site.title}`
-  : site.title;
-const here = Astro.url.pathname.replace(/\/$/, '') || '/';
-
-function hrefFor(slug) {
-  return slug === 'index' ? '/' : `/${slug}`;
+interface Props {
+  title: string;
+  description: string;
 }
+
+const { title, description } = Astro.props;
+const palette = await getThemePalette();
 ---
+
 <!doctype html>
-<html lang="en">
+<html lang="en" data-palette={palette}>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{pageTitle}</title>
-    <meta name="description" content={site.tagline} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
-      rel="stylesheet"
-    />
+    <BaseHead title={title} description={description} />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="/">{site.title}</a>
-      <nav>
-        {
-          site.nav.map((item) => (
-            <a
-              href={hrefFor(item.slug)}
-              class={here === hrefFor(item.slug) ? 'active' : ''}
-            >
-              {item.label}
-            </a>
-          ))
-        }
-      </nav>
-    </header>
-
-    <main class="content">
-      <slot />
-    </main>
-
-    <footer class="site-footer">
-      <div class="links">
-        {
-          site.links.map((l) => {
-            const external = /^https?:/.test(l.url);
-            return (
-              <a
-                href={l.url}
-                rel="me noopener"
-                target={external ? '_blank' : undefined}
-              >
-                {l.label}
-              </a>
-            );
-          })
-        }
-      </div>
-      <p>© {site.author} · {site.location}</p>
-    </footer>
+    <BlogTopNav />
+    <slot />
+    <ScrollToTopButton />
+    <FullFontWarmup />
   </body>
 </html>
