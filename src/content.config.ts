@@ -441,6 +441,11 @@ const about = defineCollection({
   schema: articleSchema,
 });
 
+const publications = defineCollection({
+  loader: glob({ base: contentBase, pattern: 'publications.{md,mdx}' }),
+  schema: articleSchema,
+});
+
 const projects = defineCollection({
   loader: glob({ base: `${contentBase}/projects`, pattern: '**/*.{md,mdx}' }),
   schema: articleSchema,
@@ -464,4 +469,4 @@ const vibe = defineCollection({
     }),
 });
 
-export const collections = { about, blog, projects, vibe, siteConfig };
+export const collections = { about, publications, blog, projects, vibe, siteConfig };

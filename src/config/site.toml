@@ -127,6 +127,10 @@ label = "Projects"
 href = "/projects"
 
 [[config.topNav.links]]
+label = "Publications"
+href = "/publications"
+
+[[config.topNav.links]]
 label = "Vibe"
 href = "/vibe"
 
@@ -148,9 +152,9 @@ image = "/images/soichi.avatar.png"
 title = "I'm Soichi Hayashi"
 name = "Soichi Hayashi"
 body = [
-  "I'm a full stack software engineer who believes in building things that genuinely improve lives.",
-  "I build full-stack tools and utilities — from financial planning simulators to everyday productivity helpers.",
-  "Based in Bloomington, IN. When I'm not coding, I'm running, at the piano or guitar, or tinkering with home automation.",
+  "I'm a full stack software engineer who makes large-scale computing and data accessible to the people who depend on it.",
+  "Over two decades I've built platforms across astronomy, high-energy physics, neuroscience, and now quantitative finance — including brainlife.io, published in Nature Methods.",
+  "Based in Bloomington, IN. Off the clock: running, piano and guitar, and smart-home tinkering.",
 ]
 image = "/images/soichi.avatar.png"
 
@@ -175,10 +179,10 @@ subtitle = "Tools and things I've built"
 href = "/projects"
 
 [[config.home.navigation]]
-icon = "github"
-title = "Open Source"
-subtitle = "Code, experiments, and tools"
-href = "https://github.com/soichih"
+icon = "book-open"
+title = "Publications"
+subtitle = "Papers across neuroscience, astronomy & computing"
+href = "/publications"
 
 [[config.home.navigation]]
 icon = "compass"
