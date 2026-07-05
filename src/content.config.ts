@@ -352,6 +352,24 @@ const siteConfig = defineCollection({
       })
       .optional()
       .default(defaultCommentsConfig),
+    analytics: z
+      .object({
+        enabled: z.boolean().optional().default(false),
+        provider: z.enum(['plausible', 'none']).optional().default('none'),
+        plausible: z
+          .object({
+            domain: z.string().optional().default(''),
+            scriptUrl: z.string().optional().default('https://plausible.io/js/script.js'),
+          })
+          .optional()
+          .default({ domain: '', scriptUrl: 'https://plausible.io/js/script.js' }),
+      })
+      .optional()
+      .default({
+        enabled: false,
+        provider: 'none',
+        plausible: { domain: '', scriptUrl: 'https://plausible.io/js/script.js' },
+      }),
     profile: z.object({
       name: z.string(),
       handle: z.string(),

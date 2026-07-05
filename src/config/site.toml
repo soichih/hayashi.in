@@ -33,6 +33,14 @@ enabled = true
 provider = "giscus"
 show_on_posts = true
 
+[config.analytics]
+enabled = true
+provider = "plausible"
+
+[config.analytics.plausible]
+domain = "hayashi.in"
+scriptUrl = "https://plausible.io/js/script.js"
+
 [config.search]
 enabled = true
 shortcut = "mod+k"
