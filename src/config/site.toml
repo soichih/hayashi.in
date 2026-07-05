@@ -42,8 +42,8 @@ maxResults = 6
 [config.pages.blog]
 title = "Writing"
 kicker = "Notebook"
-subtitle = "Notes, essays, and field reports."
-note = "Long-form writing, technical notes, and things worth remembering."
+subtitle = "Notes, essays, and fleeting thoughts."
+note = "Personal opinions, not conclusions — half-baked, biased, and often revised the moment I learn something new. Read them lightly; I do too."
 postsPerPage = 6
 dateFormat = "yyyy-MM-dd"
 metadataSeparator = "icon"
