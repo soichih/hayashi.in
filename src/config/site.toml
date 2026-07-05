@@ -9,7 +9,7 @@ footerNote = ""
 
 [config.theme]
 # green-soft, green-vivid, rose-soft, pink-soft, purple-soft, blue-soft, orange-soft, brown-soft
-palette = "blue-soft"
+palette = "green-soft"
 
 [config.fonts]
 en = "Maple Mono"
@@ -39,7 +39,7 @@ provider = "plausible"
 
 [config.analytics.plausible]
 domain = "hayashi.in"
-scriptUrl = "https://plausible.io/js/script.js"
+scriptUrl = "https://plausible.io/js/pa-uNo0JOA_BaNHdB9-6ThFA.js"
 
 [config.search]
 enabled = true

@@ -204,11 +204,18 @@ html:root{--font-config-en:${enFamily};--font-config-code:${codeFamily};--font-c
 <meta property="twitter:image" content={new URL(imageUrl, Astro.url)} />
 
 {
-  analytics.enabled && analytics.provider === 'plausible' && analytics.plausible.domain && (
-    <script
-      defer
-      data-domain={analytics.plausible.domain}
-      src={analytics.plausible.scriptUrl}
-    />
+  analytics.enabled && analytics.provider === 'plausible' && analytics.plausible.scriptUrl && (
+    <>
+      <script async src={analytics.plausible.scriptUrl} />
+      <script is:inline>
+        window.plausible =
+          window.plausible ||
+          function () {
+            (window.plausible.q = window.plausible.q || []).push(arguments);
+          };
+        window.plausible.init = window.plausible.init || function (i) { window.plausible.o = i || {}; };
+        window.plausible.init();
+      </script>
+    </>
   )
 }
