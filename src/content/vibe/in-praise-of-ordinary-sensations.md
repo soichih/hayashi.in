@@ -1,13 +1,10 @@
 ---
 title: 'In praise of ordinary sensations'
-description: 'A short, incomplete list of the small, replicable joys that cost nothing and rarely get their due: weather, food, quiet, and the particular pleasure of fixing something that was broken.'
 date: 2025-09-20
+type: text
+mood: "🍜"
 tags:
   - Reflections
-categories:
-  - Reflections
-showHeroImage: false
-comments: false
 ---
 
 I once tried making a list of the things that reliably bring me joy, and the exercise itself turned out to be one of them. A few, in no particular order:

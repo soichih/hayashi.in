@@ -7,7 +7,7 @@ tags:
 categories:
   - Reflections
 showHeroImage: false
-comments: false
+comments: true
 ---
 
 I used to think of sleep as maintenance — you refuel at night so you can work the next day. Lately I've started to wonder if it's the other way around.

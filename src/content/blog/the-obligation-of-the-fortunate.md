@@ -8,7 +8,7 @@ tags:
 categories:
   - Society
 showHeroImage: false
-comments: false
+comments: true
 ---
 
 We generally accept that the healthy have some obligation to help the sick, and that the wealthy have some obligation to help those who can't afford basic necessities. I think the same logic extends further than we usually let it: people who have accurate information have an obligation to share it with people who don't, and people who are less susceptible to being misled have some responsibility toward those who are more exposed.

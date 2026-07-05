@@ -1,13 +1,10 @@
 ---
 title: 'A life too busy to need a meaning'
-description: "The moments that define a life mostly arrive unannounced. Maybe the goal was never to find life's meaning, but to stay too pleasantly busy to go looking for one."
 date: 2025-09-23
+type: text
+mood: "🌤️"
 tags:
   - Reflections
-categories:
-  - Reflections
-showHeroImage: false
-comments: false
 ---
 
 The moments that end up defining a life mostly aren't the ones you planned for. They arrive sideways, while you're doing something else entirely, and you only recognize them as pivotal much later, in hindsight's flattering light.

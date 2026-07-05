@@ -1,13 +1,10 @@
 ---
 title: "The opposite of love isn't hate"
-description: 'Love and hate might be two points on the same axis — the real opposite of both is indifference.'
 date: 2026-03-12
+type: text
+mood: "💭"
 tags:
   - Reflections
-categories:
-  - Reflections
-showHeroImage: false
-comments: false
 ---
 
 I keep coming back to a small question: what is the actual opposite of love? The reflexive answer is hate, but I don't think that's right.

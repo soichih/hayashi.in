@@ -8,7 +8,7 @@ tags:
 categories:
   - Engineering
 showHeroImage: false
-comments: false
+comments: true
 ---
 
 Most of the AI agents I work with are reactive: a person asks, the agent answers. But every so often I find myself wondering what happens if you flip the loop — if the agent sets its own curriculum.

@@ -7,7 +7,7 @@ tags:
 categories:
   - Reflections
 showHeroImage: false
-comments: false
+comments: true
 ---
 
 Some people fade out of the world almost without residue. Others leave a mark so large that it outlives any memory of who actually made it — like a pyramid nobody built, or a monument that just seems to have always been there. Most of us land somewhere in between, and I don't think it's really up to us which.

@@ -7,7 +7,7 @@ tags:
 categories:
   - Finance
 showHeroImage: false
-comments: false
+comments: true
 ---
 
 Every sharp market move seems to trace back to something nobody saw coming — a sudden war, a policy shock, some discontinuity with no precedent to price against. That's the part of market behavior I keep coming back to: the future isn't unknowable because we're bad at analysis, it's unknowable because the thing that actually moves prices is, by definition, the thing nobody could have modeled in advance.

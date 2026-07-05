@@ -8,7 +8,7 @@ tags:
 categories:
   - Engineering
 showHeroImage: false
-comments: false
+comments: true
 ---
 
 There's something satisfying about running a language model entirely on your own machine — no API key, no rate limit, no data leaving your desk. It's also gotten remarkably easy.

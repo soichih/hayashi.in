@@ -29,8 +29,8 @@ collapseStyle = "collapsible-auto"
 render = "katex"
 
 [config.comments]
-enabled = false
-provider = "none"
+enabled = true
+provider = "giscus"
 show_on_posts = true
 
 [config.search]
@@ -75,10 +75,10 @@ note = "Shorter notes that aren't formal posts, but are still part of the story.
 showTrail = true
 
 [config.comments.giscus]
-repo = ""
-repo_id = ""
-category = ""
-category_id = ""
+repo = "soichih/hayashi.in"
+repo_id = "R_kgDOTNvJyA"
+category = "Announcements"
+category_id = "DIC_kwDOTNvJyM4DAkOs"
 mapping = "pathname"
 strict = "0"
 reactions_enabled = "1"
