@@ -52,13 +52,15 @@ Qwen 3.5 is a "thinking" model — Ollama exposes this as a `think` capability. 
 
 Worse, the tools calling these models often have no way to disable the thinking trace. I was running [LightRAG](https://github.com/HKUDS/LightRAG) for local document indexing, and its Ollama adapter forwards `num_ctx`, `temperature`, and a few other parameters — but has no `think` field. There's no knob to turn it off. A `SYSTEM "/no_think"` Modelfile override exists in Ollama, but it didn't reliably suppress the behavior either.
 
-The lesson: **if you're running local models behind a tool-calling pipeline with fixed timeouts — RAG extraction, structured JSON output, agentic workflows — prefer non-thinking models, or find a tool that lets you explicitly disable reasoning.** For the LightRAG use case, the fix was setting `OLLAMA_LLM_THINK=false` in the environment — once the adapter picked that up, ingestion went from "always times out" to "completes in 21 seconds, clean JSON, no reasoning trace." When that flag isn't available, reach for a model that doesn't think by default.
+This isn't a local-model problem — any reasoning model, cloud or local, generates a thinking trace before its answer. Ollama's API cleanly separates the two: the `thinking` field holds the reasoning trace, `content` holds the answer. Frameworks that support Ollama's `think` parameter can disable the trace entirely. The problem is the tooling layer, not the model. If your framework doesn't expose a way to turn thinking off, you're stuck with the full reasoning trace whether you need it or not.
 
-This doesn't mean thinking models are bad. It means the ecosystem around them hasn't caught up. If your tool exposes a `think: false` parameter, use it. If it doesn't, pick a model that doesn't think by default.
+My assistant ([OpenClaw](https://openclaw.ai)) handles this correctly — it forwards `think: false` to Ollama when thinking is off, and strips historical reasoning traces from session context before replaying the conversation. So thinking tokens inflate the current turn's generation cost but don't compound across turns. LightRAG's Ollama adapter, by contrast, had no `think` parameter — the fix was an environment variable (`OLLAMA_LLM_THINK=false`) that the adapter eventually picked up.
+
+**The lesson: when you're running reasoning models behind a tool-calling pipeline with fixed timeouts — RAG extraction, structured JSON output, agentic workflows — check whether your framework supports disabling thinking.** If it does, turn it off for tasks that don't need it. If it doesn't, either contribute the patch or pick a model that doesn't think by default.
 
 ## What the daily setup looks like
 
-The configuration that finally works, after a year of iteration:
+The configuration that finally works, after a few days of iteration:
 
 - **Two GPUs, two Ollama instances.** The main Ollama service runs on the RTX 2080 Ti (port 11434) handling LLM inference. A second Ollama instance runs on the GTX 1070 (port 11436) dedicated to embedding models for LightRAG. Splitting them across GPUs means the embedding workload doesn't compete with LLM generation for VRAM.
 - **Primary model:** `glm-5.2:cloud` — a large model served through Ollama's cloud API. This is what my assistant uses for primary conversation and synthesis. It's not local inference, but it's significantly cheaper than a per-token API and capable enough for the main session's reasoning needs.
@@ -68,7 +70,7 @@ The configuration that finally works, after a year of iteration:
 
 The architecture is a cascade: cheap local model first, escalate to paid API only on demonstrated need. I wrote about the routing logic and the cost math in a [separate post](/blog/routing-cheap-local-models-to-cut-llm-costs-to-near-zero/) — the short version is that a typical day of heavy assistant usage (dozens of sub-agent spawns, research tasks, code investigations) costs $0 on the local tier and only escalates when the task actually warrants it.
 
-## What changed in a year
+## What changed
 
 The original version of this post was about the novelty of running a model locally. The novelty wore off. What replaced it is something more useful: a local inference layer that's boring, reliable, and cheap enough to leave running indefinitely. The model loads on boot, serves requests on demand, and costs nothing per token. The bottleneck shifted from "can I do this at all?" to "which model fits my VRAM, which one handles structured output without spiraling, and which tasks actually need to escalate to a paid API."
 
