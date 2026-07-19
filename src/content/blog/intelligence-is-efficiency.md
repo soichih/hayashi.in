@@ -13,9 +13,9 @@ showHeroImage: false
 comments: true
 ---
 
-It started with a hunch. I drive a fuel-efficient car. I optimize my workflows. I automate repetitive tasks. I feel a quiet satisfaction when I find a shorter path to the same result. And I started to wonder: *is this what intelligence actually is?* Not the ability to solve hard problems through sheer force of cognition — but the instinct to find the path that wastes the least.
+It started with a question. Why do we find satisfaction in a well-organized toolbench, a clean piece of code, a direct route home? Why does waste — of time, of energy, of effort — bother us at a level that feels deeper than culture or habit? And why does the drive to eliminate waste seem to correlate with what we call intelligence?
 
-The more I looked, the more this hunch held up. Not just in my own life, but across evolutionary biology, neuroscience, psychology, and artificial intelligence. The evidence converges on a conclusion that feels both obvious and unsettling: **intelligence is not a separate faculty that happens to be efficient. Intelligence *is* efficiency — the capacity to correctly identify which efficiencies are worth pursuing.**
+The more I looked across evolutionary biology, neuroscience, psychology, and artificial intelligence, the more the evidence converged on a conclusion that feels both obvious and unsettling: **intelligence is not a separate faculty that happens to be efficient. Intelligence *is* efficiency — the capacity to correctly identify which efficiencies are worth pursuing.**
 
 Let me walk you through what I found.
 
@@ -75,4 +75,41 @@ We should stop conflating busyness with productivity. The person who seems to be
 
 And we should be honest about the risk. The drive to optimize is not always wise. Sometimes the inefficient path — the long conversation, the deliberate pause, the second look — is the intelligent one, because it accounts for things the optimizer would miss. True intelligence is efficiency paired with the wisdom to know its own limits.
 
-My hunch was right, but it was incomplete. Intelligence isn't just the pursuit of efficiency. It's the *discerning* pursuit of efficiency — knowing what to optimize, what to leave alone, and when to stop optimizing and start thinking. The fuel-efficient car is a symptom. The real faculty is the judgment that chose it.
+Intelligence isn't just the pursuit of efficiency. It's the *discerning* pursuit of efficiency — knowing what to optimize, what to leave alone, and when to stop optimizing and start thinking. The efficient car, the clean workflow, the automated task — these are symptoms. The real faculty is the judgment behind them.
+
+---
+
+## Sources & Further Reading
+
+1. **Neuromodulator architectures and brain energy evolution** — *Science Advances* (2024). Research on how neuromodulator systems support energy-efficient cognition across species.
+   https://www.science.org/doi/10.1126/sciadv.adi7632
+
+2. **Neuroenergetics and General Intelligence: A Systems Biology Perspective** — *NCBI PubMed Central* (PMC7555089). Links brain energy metabolism to the g-factor, framing general intelligence as fundamentally rooted in metabolic optimization.
+   https://pmc.ncbi.nlm.nih.gov/articles/PMC7555089/
+
+3. **Brain Life History Evolution** — *PLOS Computational Biology*. Mathematical models showing how energy constraints shaped cognitive architecture across species.
+   https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1005380
+
+4. **The Neural Efficiency Hypothesis** — *Neuroscience & Biobehavioral Reviews* (2009). Seminal review establishing that higher intelligence correlates with reduced brain activation during cognitive tasks.
+   https://www.sciencedirect.com/science/article/abs/pii/S0149763409000591
+
+5. **Higher Intelligence Is Associated with Less Task-Related Brain Network Reconfiguration** — *Journal of Neuroscience* (2016). Brain imaging study showing intelligent individuals reconfigure neural networks more sparsely during problem-solving.
+   https://www.jneurosci.org/content/36/33/8551
+
+6. **"You're Not Being Lazy, You're Being Smart"** — *Psychology Today* (July 2026). Research from the University of Poitiers on the brain's eight-type effort cost-benefit calculator.
+   https://www.psychologytoday.com/us/blog/fulfillment-at-any-age/202607/youre-not-being-lazy-youre-being-smart
+
+7. **"3 Lazy Habits That Are Actually Signs of Intelligence"** — *Psychology Today* (June 2026). Covers strategic laziness, sleep optimization, and emotional disengagement as intelligence correlates, citing a 2015 *Scientific Reports* sleep spindle study and a 2025 *Frontiers in Public Health* study on psychological detachment.
+   https://www.psychologytoday.com/za/blog/social-instincts/202606/3-lazy-habits-that-are-actually-signs-of-intelligence
+
+8. **Bill Gates on lazy people and hard problems** — *TechBullion*. Analysis of Gates' philosophy of "intelligent laziness" as a productivity principle.
+   https://techbullion.com/bill-gates-says-lazy-people-are-often-best-at-solving-hard-problems-fast/
+
+9. **Improving AI Agent Speed and Energy Efficiency (Murakkab)** — *MIT News* (2026). MIT/Microsoft system that autonomously optimizes AI cloud deployments, achieving same outcomes with ~35% of computational resources.
+   https://news.mit.edu/2026/improving-ai-agent-speed-and-energy-efficiency
+
+10. **Thinking, Fast and Slow** — Daniel Kahneman (Nobel Lecture on bounded rationality, 2002). Foundational work on how efficient heuristics produce systematic errors, and the distinction between fast (efficient) and slow (deliberative) thinking.
+   https://www.nobelprize.org/prizes/economic-sciences/2002/kahneman/lecture/
+
+11. **Clean Code Trap: Decompose for Performance Physics** — *Deep Engineering* (Substack). Discussion of how intelligent engineering balances code elegance with computational efficiency rather than optimizing aesthetics alone.
+   https://deepengineering.substack.com/p/clean-code-trap-decompose-for-performance-physics
