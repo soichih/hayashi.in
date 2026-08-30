@@ -23,8 +23,13 @@ It's a fun way to poke around my own anatomy, and a nod to years spent building
 neuroimaging tools at [brainlife.io](/projects/brainlife/) — this time pointed at my own
 head instead of someone else's dataset.
 
+To make it more than gray levels to eyeball, I also ran FreeSurfer's `recon-all` 8.2.0
+on the scan (in Docker, on my home server) and baked the resulting `aparc+aseg`
+parcellation — roughly a hundred labeled cortical and subcortical structures — into an
+RGB overlay you can toggle on top of the raw anatomy.
+
 The scan has been defaced (brain-extracted) before publishing, so no facial features are
 visible in the volume. It's for personal curiosity, not clinical use.
 
 - **Live app:** [soichih.github.io/brain](https://soichih.github.io/brain/)
-- **Source:** [github.com/soichih/brain](https://github.com/soichih/brain) (data + vendored Papaya viewer)
+- **Source:** [github.com/soichih/brain](https://github.com/soichih/brain) (data + FreeSurfer outputs + vendored Papaya viewer)
