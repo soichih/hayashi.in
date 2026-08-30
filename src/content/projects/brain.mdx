@@ -1,0 +1,30 @@
+---
+title: 'Brain MRI Viewer'
+description: 'A live, in-browser viewer for my own T1-weighted anatomical brain MRI, built on the Papaya medical image viewer.'
+date: 2026-08-29
+showHeroImage: false
+tags:
+  - Neuroscience
+  - Visualization
+  - Web App
+comments: false
+sidebar:
+  enable: false
+  toc: false
+  relatedPosts: false
+---
+
+A little side project: my own T1-weighted anatomical brain scan, viewable right in the
+browser using [Papaya](https://github.com/rii-mango/Papaya), a self-contained JavaScript
+medical image viewer. No installs, no server-side processing — the NIfTI volume is fetched
+and rendered entirely client-side, with synchronized axial, sagittal, and coronal views.
+
+It's a fun way to poke around my own anatomy, and a nod to years spent building
+neuroimaging tools at [brainlife.io](/projects/brainlife/) — this time pointed at my own
+head instead of someone else's dataset.
+
+The scan is shared as-is (not defaced/de-identified), so the face is visible in the volume.
+It's for personal curiosity, not clinical use.
+
+- **Live app:** [soichih.github.io/brain](https://soichih.github.io/brain/)
+- **Source:** [github.com/soichih/brain](https://github.com/soichih/brain) (data + vendored Papaya viewer)
