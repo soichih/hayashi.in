@@ -1,6 +1,6 @@
 ---
 title: 'Brain MRI Viewer'
-description: 'A live, in-browser viewer for my own T1-weighted anatomical brain MRI, built on the Papaya medical image viewer.'
+description: 'My own T1-weighted brain MRI as a live in-browser viewer plus a full FreeSurfer report — and an honest accounting of what the measurements can and cannot tell me.'
 date: 2026-08-29
 showHeroImage: false
 tags:
@@ -30,8 +30,84 @@ report page: the `aparc+aseg` parcellation — roughly a hundred labeled cortica
 subcortical structures — as a toggleable overlay in the viewer, plus stat tiles,
 volume/thickness charts, and tables computed from the analysis.
 
-The scan has been defaced (brain-extracted) before publishing, so no facial features are
-visible in the volume. It's for personal curiosity, not clinical use.
+The scan has been defaced (facial features removed) before publishing, so no facial
+features are visible in the volume. It's for personal curiosity, not clinical use.
+
+## What the numbers made me worry about
+
+Attaching percentiles to your own brain turns out to be an effective way to lose an
+evening's sleep. Once the report showed my cortical thickness in the low single-digit
+percentiles, I worked through a chain of worries — and then, since I had the data and
+the tools, tested each one. Here they are, in the order they occurred to me.
+
+**"Thin temporal lobe — does this mean dementia?"**
+My temporal-region thicknesses sit at low percentiles (temporal pole ~2nd, entorhinal
+7–15th centile, at age 41). But zooming out: the thinning is **diffuse, not focal** —
+mean cortical thickness overall is at the 4th centile, and occipital, frontal, and
+parietal regions are all low together. Neurodegenerative thinning (like early
+Alzheimer's) is regionally selective — medial temporal lobe first, sparing the rest —
+and it does not uniformly thin the whole cortex. Meanwhile the structural markers that
+do track neurodegeneration are unremarkable for me: ventricles at the 46th centile,
+hippocampus 14th/58th, amygdala 69th/41st. And diagnosis never rests on one
+cross-sectional number anyway — it's cognitive symptoms plus *change over time*, plus
+biomarkers, read by a clinician.
+
+**"Right frontal pole is at the 0.001st centile — is my executive function impaired?"**
+Looking across the whole cortex table: essentially the *entire* right frontal/temporal
+surface sits at or below the 3rd centile (lateral orbitofrontal 0.002nd, frontal pole
+0.001st, superior frontal 1.5th, ...) while the same regions on the left sit at
+3rd–54th. No disease selectively thins ten contiguous right-hemisphere regions while
+sparing their left twins — a systematic measurement offset does exactly that. On top of
+that, the frontal pole is FreeSurfer's least trustworthy region: tiny, at the edge of
+the volume, right above the sinuses where susceptibility artifacts distort the signal,
+and famously mis-traced. And even a genuine thickness value couldn't tell me this —
+regional cortical thickness explains only a tiny fraction of the variance in cognitive
+performance, and executive function is measurable directly (neuropsych testing), not
+from a segmentation.
+
+**"Did the defacing step corrupt the analysis?"**
+This one I could test directly. I registered the un-defaced original scan (from my
+BIDS export) into the defaced volume's space and compared them inside the brain mask:
+the intensities are identical — a scale factor of 1.0002, and exactly **2 voxels out of
+1.49 million** changed by more than a rounding error. Defacing only removed tissue
+*outside* the brain.
+
+**"Was the brain extraction wrong?"**
+I re-ran FreeSurfer's entire preprocessing stage (`recon-all -autorecon1`, FS 6.0) on
+the un-defaced original and compared the brain masks. They agree at Dice 0.935: the
+defaced-input run cut a uniformly tighter boundary — a 1–2 voxel shell around the whole
+brain — and the total tissue it removed that the original keeps is **0.9 cm³**, with no
+focal deficit anywhere near the regions I was worried about.
+
+## So why *is* my cortical thickness low?
+
+Probably some combination of:
+
+- **Anatomy trade-off.** Cortical thickness trades off against surface area. I'm at the
+  76th centile for total surface area and 70th for intracranial volume — bigger, more
+  folded cortices tend to run thinner. High-surface-area/thin-cortex is a known normal
+  constitutional combination.
+- **Scanner and processing offset.** The reference curves (Bethlehem et al. 2022,
+  ~124k scans) are harmonized to UK Biobank scanners. A single Siemens Prisma scan
+  processed by a different FreeSurfer version carries residual offset that nobody
+  corrects for — and a whole-cortex downward shift is what that looks like.
+- **FreeSurfer's least reliable regions.** Temporal pole, entorhinal, and
+  orbitofrontal measures are commonly discarded in research QA for exactly the
+  artifacts described above.
+- **Wide tails.** At the 1st or 99th centile, the population model's uncertainty is
+  largest; a single noisy estimate lands in the tail more often than intuition suggests.
+
+## Do these numbers mean anything?
+
+Honestly: I don't really know how useful these segmentation results are if we can't
+draw scientific conclusions out of these measures. What I *can* say after all this:
+they're wonderful for looking at my own anatomy, and they'd be genuinely informative as
+a *baseline* — the scientifically meaningful quantity is change over time on the same
+scanner and pipeline, not any single percentile. But as evidence about my present or
+future cognition, one scan's regional percentiles against a harmonized population band
+are close to uninterpretable. The right instrument for "is anything wrong with me" is a
+clinician, not `recon-all`. I've kept the report up anyway — it's an honest record of
+what the pipeline measured, worries included.
 
 - **Live app:** [soichih.github.io/brain](https://soichih.github.io/brain/)
 - **Source:** [github.com/soichih/brain](https://github.com/soichih/brain) (data + FreeSurfer outputs + vendored FreeBrowse viewer)
