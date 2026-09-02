@@ -79,6 +79,31 @@ defaced-input run cut a uniformly tighter boundary — a 1–2 voxel shell aroun
 brain — and the total tissue it removed that the original keeps is **0.9 cm³**, with no
 focal deficit anywhere near the regions I was worried about.
 
+**"My brain looked tilted in the original scan — did the analysis run on a tilted volume?"**
+This was the one worry I could only answer by brute force: re-running the *entire*
+pipeline (FS 6.0, ~8 hours) on a Talairach-upright resample of the same scan. First,
+the reassurance: `recon-all` re-orients and resamples every input into a canonical
+grid before it measures anything, so the tilt in the viewer never reached the
+segmentation — and the two runs I made on the *original* orientation (FS 6.0 and
+FS 8.2) agree with each other on raw volumes to within ~2%. But the experiment also
+showed something I didn't expect: the upright rerun does **not** reproduce the
+original-orientation numbers. Same data, same FreeSurfer version, same 1 mm grids —
+yet surface area came out +10%, volumes +11–20%, thickness +2%, and eTIV +18%
+different. Re-scored against the population model, the rerun's percentiles swing
+wildly — gray matter 17th→60th, white matter 51st→96th, surface area 71st→96th, head
+size 70th→1st — with one exception: thickness. Mean cortical thickness came out 2.49
+vs 2.45 mm, percentile 1.9 → 4.5. The mechanism is mundane: nudging the registration's starting point moves
+the watershed threshold and surface placement by about one voxel over the whole
+cortex, and a one-voxel boundary shift is worth ~15% of brain volume. The same
+instability shows up across versions: eTIV — FreeSurfer's atlas-scaled skull
+estimate — swung from 1.08 L to 1.68 L between FS 6.0 and FS 8.2 on the *identical*
+input, while the segmentation barely moved. So my 70th-percentile head size is a
+property of FS 8.2 on this scan, not of my skull. And thickness — the one measure
+that stays put while everything else swings — is exactly the measure sitting in the
+bottom 5%, which is the strongest evidence yet that the low percentile isn't a
+processing artifact. Which is one more entry in the
+"single-scan numbers are a baseline, not a diagnosis" column.
+
 ## So why *is* my cortical thickness low?
 
 Probably some combination of:
