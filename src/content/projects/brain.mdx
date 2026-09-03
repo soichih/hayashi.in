@@ -127,6 +127,18 @@ mismatch degrades thickness centile accuracy by only a few percent. So this join
 the scanner-offset bucket — a real contributor pointing the same direction, but
 unlikely to be the whole story for a cortex that's thin *everywhere*.
 
+**"Should I have run ACPC alignment before `recon-all`?"**
+I had this thought after noticing the tilt (next entry): real pipelines sometimes
+ACPC-align their scans first, and I hadn't. But for `recon-all` this isn't a missing
+step — the pipeline is designed to take the raw scanner output, however oblique, and
+does its own re-orientation (`--conform`) and atlas alignment internally. ACPC
+pre-alignment matters for pipelines that need a predefined coordinate frame
+(fMRI, tractography), not here. And the tilt experiment doubles as the empirical
+test: the re-oriented rerun *was* fed more than ACPC alignment (full Talairach), and
+it didn't produce better numbers — its atlas calibration came out visibly broken
+(eTIV smaller than the brain it segmented) while the raw-output run's was sensible.
+The published numbers, from the un-aligned input, stand.
+
 ## So why *is* my cortical thickness low?
 
 Probably some combination of:
