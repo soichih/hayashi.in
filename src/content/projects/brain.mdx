@@ -104,6 +104,29 @@ bottom 5%, which is the strongest evidence yet that the low percentile isn't a
 processing artifact. Which is one more entry in the
 "single-scan numbers are a baseline, not a diagnosis" column.
 
+**"I'm Japanese — the reference population is ~95% white British. Is this comparison even valid for me?"**
+Partly a fair worry, and one the reference's own authors raise. Two different things
+carry ancestry here. The atlas FreeSurfer *segments* my scan with is not from UK
+Biobank — it's the standard MGH adult template, and it guides classification, not
+measurement. The bigger issue is the **reference band**: Bethlehem et al.'s chart is
+dominated by UK Biobank (~94–95% white European ancestry), and the authors state
+plainly that the data are "biased towards European and North American populations"
+— an inequity they explicitly call on the field to fix. And East Asian brains do
+measure differently: with the same FreeSurfer pipeline, East Asian cohorts come out
+thicker in frontal/temporal/parietal regions while Caucasian cohorts come out thicker
+in occipital/sensory regions ([Kang et al. 2020](https://www.nature.com/articles/s41598-020-77848-8),
+[Tang et al. 2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC6625506/)). Notably,
+several of my lowest-centile regions — lingual, cuneus, pericalcarine, lateral
+occipital — are exactly where the Caucasian group measured thicker. So some share of
+those particular low numbers could plausibly be reference mismatch rather than
+anatomy. But the caveat cuts both ways: those studies are small (~45–350 per group),
+the differences are *regional* rather than a uniform whole-cortex shift like mine,
+and a large multi-ancestry normative study
+([CentileBrain, PNAS](https://doi.org/10.1073/pnas.2521055123)) finds ancestry
+mismatch degrades thickness centile accuracy by only a few percent. So this joins
+the scanner-offset bucket — a real contributor pointing the same direction, but
+unlikely to be the whole story for a cortex that's thin *everywhere*.
+
 ## So why *is* my cortical thickness low?
 
 Probably some combination of:
@@ -119,6 +142,10 @@ Probably some combination of:
 - **FreeSurfer's least reliable regions.** Temporal pole, entorhinal, and
   orbitofrontal measures are commonly discarded in research QA for exactly the
   artifacts described above.
+- **Reference-population mismatch.** I'm being scored against a band built ~94% from
+  white European-ancestry cohorts. Documented East Asian–Caucasian morphometric
+  differences run in the right direction to deepen my low centiles, especially in
+  occipital/sensory regions where Caucasian cohorts measure thicker.
 - **Wide tails.** At the 1st or 99th centile, the population model's uncertainty is
   largest; a single noisy estimate lands in the tail more often than intuition suggests.
 
