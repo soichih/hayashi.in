@@ -1,0 +1,174 @@
+---
+title: 'Librarian'
+description: 'An MCP "mentor" that tells AI agents where to look and how to search — a self-maintaining meta-index over every information source an org can reach, inside and outside its walls.'
+date: 2026-09-05
+showHeroImage: false
+tags:
+  - AI Agents
+  - MCP
+  - Knowledge Management
+comments: false
+sidebar:
+  enable: true
+  toc: true
+  relatedPosts: false
+---
+
+Every information source in a modern organization is, individually, searchable. Confluence
+has a search API. Wikis, ticket trackers, and code hosts expose MCP servers. Databases are
+reachable with a line of code. Give an LLM access to any one of them and it can find things.
+
+What nothing provides is the layer *above*: something that tells an agent — or a new
+teammate on their first week — which of the twenty searchable places even exist, what each
+one actually contains, which is worth trying first for a given kind of question, and how to
+combine them. That meta-index lives in people's heads. It is the thing you get by asking a
+colleague "where would I even start looking for this?" — and it walks out the door every
+time a colleague does.
+
+**Librarian** (working name) is my attempt to build that layer as something small and
+honest: an MCP server that behaves like the organization's reference librarian. It doesn't
+hold the answers. It knows where things live, teaches you how to look, remembers what
+worked — and heals itself when its knowledge goes stale.
+
+## A reference librarian, not a search engine
+
+The one-sentence version:
+
+> Librarian tells you *where to look* and *how to look*, and remembers what actually
+> worked. It never does the looking itself.
+
+That last clause is the load-bearing design decision. Librarian holds no credentials to
+your data sources, runs no searches, ingests no content. When an agent asks it for guidance,
+it returns:
+
+- **Ranked candidate sources** for the question, with a one-line reason for each.
+- **Per-source search affordances**: REST API vs. semantic search vs. keyword-only vs.
+  "ask Dana, she knows."
+- **Example queries and expected result shapes** — the few-shot that bootstraps a
+  competent first attempt.
+- **Gotchas**: "that space hasn't been touched since 2023," "the ticket tracker needs JQL,
+  not free text," "don't paste customer data into that external search."
+- **Combination playbooks**: "for outage questions, search the runbooks *and* the
+  postmortems, then join on service name."
+
+The agent then does the actual work and reports back: did it find what it needed? Which
+sources paid off? That report is where the interesting part begins.
+
+## The feedback loop
+
+Most retrieval systems learn from clicks or relevance judgments. Librarian records
+something richer: the **task-level outcome**. A session has a lifecycle —
+
+1. `how_to_search(question)` → the mentor gives advice and starts a session.
+2. The agent goes and does the work (searches, queries, reads).
+3. `report_outcome(session, found?, sources_tried, what_worked, what_failed)` → the truth
+   about whether the mentoring helped.
+4. Failed sessions go back to `follow_up` for new ideas: untried sources, reformulated
+   queries, different modalities (text → database → ask a human → read the git history).
+
+Two memories sit underneath. An **episodic log** — append-only, raw, never shown to
+anyone — and the **curated meta-index** of source cards, which is updated *only* by a
+curator step that distills episodes into incremental card edits. This follows the lesson
+from recent self-improving-context research (ACE): never let an LLM monolithically rewrite
+accumulated knowledge; it collapses. Delta edits, with counters and provenance, or nothing.
+
+## What a "source card" knows
+
+One card per searchable place — internal or external. A text space's card describes what
+types of information it holds, its depth and freshness, its search affordances, example
+queries, and which other sources it pairs well with. A database's card is a different animal:
+a **query cookbook** — distilled schema, verified example queries with expected outputs,
+cost and safety notes (analytics replica, not prod; these columns are PII).
+
+The elegant part: the verified example queries in every card **double as canary probes**.
+A scheduled run of each example — against the API, the replica, the search endpoint —
+catches schema drift, permission changes, and sources that died quietly. A card whose
+probes keep failing gets flagged, demoted, or regenerated. Documentation with a CI loop,
+in other words: descriptions are *claims*, and the probes exist to test them.
+
+Cheap watchers keep the index current without ingesting anything: GitHub org events for new
+repos, "recently updated" queries against doc spaces, plus a low-friction human tip line for
+what no watcher can see — because new projects start as conversations, not as API events.
+
+## Inside and outside the building
+
+The catalog is not bounded by the company. For questions about the world — market data,
+regulations, scientific background — Librarian routes outward, and external sources get the
+same cards: a trust tier (primary records like SEC EDGAR and FRED above vendor data above
+general web), plus an egress note ("this is fine to send customer questions to; do not paste
+PII").
+
+Two routing shapes show up constantly:
+
+- **Fact-type**: is this a question about *us* or about *the world*? Company facts route
+  internally-first; world facts route externally-first.
+- **Concept + instantiation**: "how should we recognize revenue on multi-year contracts?"
+  → external source to learn the concept, internal source to find how *we* implemented it.
+  Outside teaches, inside carries the instance. In my experience that hybrid is the most
+  common real query shape in any org.
+
+And because external scope makes the question space unbounded, the index has to be grown by
+**anticipation** rather than inventory. Librarian keeps a coverage matrix — question classes
+vs. best internal source vs. best external source vs. *gap* — seeded from what the
+organization *is* (a fintech will get market-data and regulatory questions; a biotech,
+literature and trials), then refined by the strongest evidence available: the clusters of
+real searches that failed. Internal changes feed it too — the company starts selling in the
+EU, so the watchers anticipate regulatory questions and go card the sources that answer
+them.
+
+Gap detection earns its own mention, because it might be the most valuable behavior: when
+episodes repeatedly end with "nothing I know covers this," Librarian says so out loud —
+*three recent queries failed here; this probably needs a document.* A router that also maps
+the library's missing books is worth more than one that only points.
+
+## Why build this (and why nothing like it exists — as far as I can find)
+
+The problem is measurable. In a 2025–26 benchmark of multi-source information seeking
+([InfoMosaic-Bench](https://arxiv.org/abs/2510.02271)), **22% of frontier-model failures
+came from selecting the wrong source or tool** — not from reasoning, not from retrieval
+quality. Routing is the bottleneck.
+
+The ingredients are all published, separately. Federated-search *resource selection* is
+classic IR (and [ReSLLM](https://dl.acm.org/doi/10.1145/3701716.3715595) showed LLMs route
+well from descriptions alone). Data catalogs like
+[OpenMetadata](https://open-metadata.org/) and [DataHub](https://datahubproject.io/) are
+pivoting into agent-facing "context layers" — but by ingesting and owning the metadata,
+which is exactly the heavy, platform-shaped direction this project deliberately avoids.
+MCP registries route agents to public *tools*. A 2026 wave of "librarian" agents
+([EMBL's](https://arxiv.org/abs/2607.28229), for example) knows where knowledge lives —
+but does the searching for you. Proactive-agent research
+([ProAct](https://arxiv.org/abs/2605.25971), [PASK](https://arxiv.org/abs/2604.08000))
+anticipates user needs — at the level of a single dialogue, not an org's source catalog.
+Experiential learners like [ExpeL](https://arxiv.org/abs/2308.10144) distill what worked
+into reusable insights — inside one agent's memory.
+
+What I can't find — in products or papers — is the specific synthesis: *thin, tool-poor
+routing advice over sources it doesn't control, spanning the company boundary, kept honest
+by probes, taught by task-level outcomes, and grown toward the questions the org will ask
+next.* The pieces are all claimed; the shape isn't. (This is my survey as of September
+2026 — I'd genuinely love to be proven wrong and pointed at prior art.)
+
+## A lesson from a dead product
+
+Microsoft's [Viva Topics](https://learn.microsoft.com/en-us/microsoft-365/topics/topics-changes-faq?view=o365-worldwide)
+— auto-curated topic pages across an org — was retired in 2025, having never escaped its
+"bootstrap conundrum": it needed organizations to define taxonomies up front, and
+organizations wouldn't. Analysts' verdict was blunt: taxonomies are a human problem, not a
+technology problem.
+
+So Librarian refuses to ask anyone for a taxonomy. Question classes come from what the org
+*is*, coverage grows from what people *failed to find*, and cards earn their keep by being
+probed and used — or they get demoted. Nothing up front; everything evidence-driven.
+
+## Status
+
+Design is done; the build is starting. V1 is deliberately small:
+
+- A FastMCP server with the three tools (`how_to_search`, `report_outcome`, `follow_up`).
+- Source cards as markdown files in a git repo — human-readable, diffable, PR-able — plus a
+  SQLite episode log.
+- A handful of seeded cards, one cheap watcher, and the probe loop.
+- No ingestion. No connectors. No credentials to anything but its own notes.
+
+If it works, the payoff isn't a better search engine. It's an org whose knowledge of *its
+own knowledge* stops living in the heads of the people who are about to leave.
