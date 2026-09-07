@@ -424,6 +424,29 @@ const hasSidebar = shouldRenderSidebar && hasToc;
     font-size: 1.08rem;
   }
 
+  .article-content :global(figure) {
+    margin: 30px 0;
+  }
+
+  .article-content :global(figure > img),
+  .article-content :global(figure > picture > img) {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--paper-line);
+  }
+
+  .article-content :global(figcaption) {
+    margin-top: 10px;
+    color: var(--paper-ink-faint);
+    font-family: var(--font-meta);
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.55;
+    text-align: center;
+    text-wrap: balance;
+  }
+
   .article-content :global(pre:not([data-language])),
   .code-block {
     overflow-x: auto;
