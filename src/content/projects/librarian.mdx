@@ -22,8 +22,9 @@ one actually contains, and which to try first. That meta-index lives in people's
 it walks out the door when they do.
 
 **Librarian** (working name) is my attempt to build that layer: an MCP server that behaves
-like the organization's reference librarian. It knows where things live, teaches you how to
-look, remembers what worked — and heals itself when its knowledge goes stale.
+like the organization's reference librarian. It has a day job and a night shift: it looks
+for new datasources, and it updates the description of any existing one when something
+fundamental changes.
 
 ## The role: a librarian at the desk, and a librarian after hours
 
@@ -69,7 +70,10 @@ logs, in a loop:
   source, cross-examine other episodes. Feedback never edits a card directly. That keeps
   mistaken feedback from corrupting the map, dedups three clients hitting the same stale
   promise into one confident fix, and makes the feedback channel impossible to steer the
-  librarian with.
+  librarian with. The payoff for this discipline is proven: synthetic LLM-generated labels
+  recently matched human-supervised routing quality
+  ([SLAT](https://arxiv.org/abs/2401.17645)) — verified task outcomes are better labels
+  still.
 - **Correct & restructure.** Verified corrections become incremental card edits. The
   request corpus is then treated the way a DBA treats a query workload: a card absorbing
   most sessions gets split and deepened, a topic with no card of its own gets one, routing
@@ -97,8 +101,10 @@ whole thing is loaded into the LLM's context *before the client's question arriv
 prompt-cached, so a question always meets a fully-loaded map. That choice is deliberate.
 Routing is a judgment task — matching an intent against messy prose descriptions — which is
 what LLMs are good at and embedding similarity is bad at:
-[ReSLLM](https://dl.acm.org/doi/10.1145/3701716.3715595) routed queries across ~150 search
-engines from descriptions alone. Fidelity is low-risk for the same reason: recommendations
+[ReSLLM](https://arxiv.org/abs/2401.17645) showed an LLM can rank ~150 candidate sources
+from descriptions alone — though it scored each resource in turn; Librarian makes the
+stronger bet that the same judgment works list-wise, with the whole map in view at once.
+Fidelity is low-risk for the same reason: recommendations
 are transcribed from text sitting in context, not recalled from model weights.
 
 The convention — one `##` section per source, fixed fields:
@@ -197,6 +203,11 @@ demoted.
 Design is done; the build is starting. V1 is deliberately small:
 
 - A FastMCP server with the three tools (`how_to_search`, `report_outcome`, `follow_up`).
+- The router runs on [GPT-5.6 Luna](https://developers.openai.com/api/docs/models/gpt-5.6-luna)
+  with reasoning off — routing is a judgment task the index has already done the hard
+  thinking for, so per-query latency is decode-bound (~1–3s at 500 sources) and cost is
+  under a cent. Terra at low effort is the escalation tier when hit-rate sags; the model
+  is a config option, and the eval suite decides when that changes.
 - One markdown index (the format above) loaded wholesale into context, plus a SQLite
   episodic log.
 - A handful of seeded cards, one watcher, the probe loop — and the routing eval suite
