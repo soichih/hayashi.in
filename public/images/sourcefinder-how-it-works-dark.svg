@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" font-family="'Maple Mono', ui-monospace, SFMono-Regular, Menlo, monospace" role="img"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6c7086"/></marker></defs><rect x="0" y="0" width="1000" height="660" rx="10" fill="#1e1e2e"/>
+<text x="40" y="40" font-size="11.5" font-weight="bold" letter-spacing="0.5" fill="#89b4fa">DAY — AT THE DESK (online)</text>
+<rect x="40" y="56" width="250" height="100" rx="8" fill="#313244" stroke="#585b70" stroke-width="1.2"/>
+<text x="52" y="78" font-size="12" font-weight="bold" fill="#89b4fa">CLIENT AGENT</text>
+<text x="52" y="98" font-size="10.5" fill="#9399b2">1 · how_to_search(question)</text>
+<text x="52" y="114" font-size="10.5" fill="#9399b2">2 · the agent does the work</text>
+<text x="52" y="130" font-size="10.5" fill="#9399b2">3 · report_outcome / follow_up</text>
+<rect x="350" y="56" width="390" height="100" rx="8" fill="#313244" stroke="#89b4fa" stroke-width="1.2"/>
+<text x="362" y="78" font-size="12" font-weight="bold" fill="#89b4fa">SOURCEFINDER — MCP SERVER</text>
+<text x="362" y="98" font-size="10.5" fill="#9399b2">whole index in context · prompt-cached</text>
+<text x="362" y="114" font-size="10.5" fill="#9399b2">router: GPT-5.6 Luna · reasoning off</text>
+<text x="362" y="130" font-size="10.5" fill="#9399b2">protocol layer: sessions · ask-back</text>
+<rect x="800" y="56" width="160" height="100" rx="8" fill="#313244" stroke="#585b70" stroke-width="1.2"/>
+<text x="812" y="78" font-size="12" font-weight="bold" fill="#89b4fa">ANSWER</text>
+<text x="812" y="98" font-size="10.5" fill="#9399b2">read if you're new</text>
+<text x="812" y="114" font-size="10.5" fill="#9399b2">ordered source list</text>
+<text x="812" y="130" font-size="10.5" fill="#9399b2">affordances · gotchas</text>
+<path d="M 290 86 L 350 86" fill="none" stroke="#6c7086" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="320" y="78" font-size="10" fill="#9399b2" text-anchor="middle">how_to_search</text>
+<path d="M 350 126 L 290 126" fill="none" stroke="#6c7086" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="320" y="144" font-size="10" fill="#9399b2" text-anchor="middle">report_outcome</text>
+<path d="M 740 86 L 800 86" fill="none" stroke="#6c7086" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="770" y="78" font-size="10" fill="#9399b2" text-anchor="middle">answer</text>
+<text x="40" y="226" font-size="11.5" font-weight="bold" letter-spacing="0.5" fill="#89b4fa">THE TWO MEMORIES + THE GAUGE</text>
+<rect x="40" y="240" width="250" height="100" rx="8" fill="#313244" stroke="#585b70" stroke-width="1.2"/>
+<text x="52" y="262" font-size="12" font-weight="bold" fill="#89b4fa">EPISODIC LOG — SQLite</text>
+<text x="52" y="282" font-size="10.5" fill="#9399b2">append-only · raw</text>
+<text x="52" y="298" font-size="10.5" fill="#9399b2">requests + feedback + events</text>
+<text x="52" y="314" font-size="10.5" fill="#9399b2">never shown to clients</text>
+<rect x="390" y="240" width="300" height="100" rx="8" fill="#26314a" stroke="#89b4fa" stroke-width="1.2"/>
+<text x="402" y="262" font-size="12" font-weight="bold" fill="#89b4fa">THE INDEX — one markdown file</text>
+<text x="402" y="282" font-size="10.5" fill="#9399b2">one ## section per source (stable id)</text>
+<text x="402" y="298" font-size="10.5" fill="#9399b2">supersedes · preferred · not-for</text>
+<text x="402" y="314" font-size="10.5" fill="#9399b2">health: helpful/harmful · verified</text>
+<rect x="750" y="240" width="210" height="100" rx="8" fill="#313244" stroke="#585b70" stroke-width="1.2"/>
+<text x="762" y="262" font-size="12" font-weight="bold" fill="#89b4fa">EVAL SUITE</text>
+<text x="762" y="282" font-size="10.5" fill="#9399b2">50–100 labeled questions</text>
+<text x="762" y="298" font-size="10.5" fill="#9399b2">replayed on every edit</text>
+<text x="762" y="314" font-size="10.5" fill="#9399b2">hit-rate@1 · hit-rate@k</text>
+<path d="M 165 156 L 165 240" fill="none" stroke="#6c7086" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="165" y="205" font-size="10" fill="#9399b2" text-anchor="middle">outcomes land raw</text>
+<path d="M 540 156 L 540 240" fill="none" stroke="#6c7086" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="540" y="205" font-size="10" fill="#9399b2" text-anchor="middle">loads whole · cached</text>
+<path d="M 750 290 L 700 290 L 700 156" fill="none" stroke="#6c7086" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+<text x="726" y="228" font-size="10" fill="#9399b2" text-anchor="middle">gates edits · model choice</text>
+<text x="40" y="396" font-size="11.5" font-weight="bold" letter-spacing="0.5" fill="#89b4fa">NIGHT — THE NIGHT SHIFT (offline loop)</text>
+<rect x="40" y="416" width="200" height="56" rx="8" fill="#263a33" stroke="#4a6154" stroke-width="1.2"/>
+<text x="52" y="438" font-size="12" font-weight="bold" fill="#a6e3a1">WATCHERS</text>
+<text x="52" y="458" font-size="10.5" fill="#9399b2">git events · doc recency</text>
+<rect x="40" y="486" width="200" height="56" rx="8" fill="#263a33" stroke="#4a6154" stroke-width="1.2"/>
+<text x="52" y="508" font-size="12" font-weight="bold" fill="#a6e3a1">PROBES</text>
+<text x="52" y="528" font-size="10.5" fill="#9399b2">card examples re-run</text>
+<rect x="40" y="556" width="200" height="56" rx="8" fill="#263a33" stroke="#4a6154" stroke-width="1.2"/>
+<text x="52" y="578" font-size="12" font-weight="bold" fill="#a6e3a1">TIP LINE</text>
+<text x="52" y="598" font-size="10.5" fill="#9399b2">humans register the rest</text>
+<rect x="300" y="416" width="140" height="72" rx="8" fill="#313244" stroke="#585b70" stroke-width="1.2"/>
+<text x="312" y="438" font-size="12" font-weight="bold" fill="#89b4fa">COLLECT</text>
+<text x="312" y="458" font-size="10.5" fill="#9399b2">episodes in, raw</text>
+<rect x="450" y="416" width="140" height="72" rx="8" fill="#313244" stroke="#585b70" stroke-width="1.2"/>
+<text x="462" y="438" font-size="12" font-weight="bold" fill="#89b4fa">VERIFY</text>
+<text x="462" y="458" font-size="10.5" fill="#9399b2">probes re-run</text>
+<text x="462" y="474" font-size="10.5" fill="#9399b2">claims checked</text>
+<rect x="600" y="416" width="140" height="72" rx="8" fill="#313244" stroke="#585b70" stroke-width="1.2"/>
+<text x="612" y="438" font-size="12" font-weight="bold" fill="#89b4fa">RESTRUCTURE</text>
+<text x="612" y="458" font-size="10.5" fill="#9399b2">delta edits only</text>
+<text x="612" y="474" font-size="10.5" fill="#9399b2">split &amp; merge</text>
+<rect x="750" y="416" width="140" height="72" rx="8" fill="#313244" stroke="#585b70" stroke-width="1.2"/>
+<text x="762" y="438" font-size="12" font-weight="bold" fill="#89b4fa">ANTICIPATE</text>
+<text x="762" y="458" font-size="10.5" fill="#9399b2">coverage diffs</text>
+<text x="762" y="474" font-size="10.5" fill="#9399b2">future questions</text>
+<rect x="750" y="524" width="190" height="72" rx="8" fill="#3d372b" stroke="#6e6248" stroke-width="1.2"/>
+<text x="762" y="546" font-size="12" font-weight="bold" fill="#f9e2af">GAP REPORTS</text>
+<text x="762" y="566" font-size="10.5" fill="#9399b2">ranked · evidenced</text>
+<text x="762" y="582" font-size="10.5" fill="#9399b2">filed for humans</text>
+<path d="M 240 432 L 300 432" fill="none" stroke="#6c7086" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 240 514 L 270 514 L 270 452 L 300 452" fill="none" stroke="#6c7086" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 240 584 L 270 584 L 270 472 L 300 472" fill="none" stroke="#6c7086" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 440 452 L 450 452" fill="none" stroke="#6c7086" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 590 452 L 600 452" fill="none" stroke="#6c7086" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 740 452 L 750 452" fill="none" stroke="#6c7086" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 670 416 L 670 380 L 540 380 L 540 340" fill="none" stroke="#6c7086" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="620" y="374" font-size="10" fill="#9399b2" text-anchor="middle">delta edits only</text>
+<path d="M 845 488 L 845 516" fill="none" stroke="#6c7086" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 750 560 L 270 560 L 270 590 L 240 584" fill="none" stroke="#6c7086" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+<text x="505" y="554" font-size="10" fill="#9399b2" text-anchor="middle">gardener answers gaps · sources get registered</text></svg>

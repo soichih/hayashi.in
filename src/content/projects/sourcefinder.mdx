@@ -2,7 +2,7 @@
 title: 'Sourcefinder'
 description: 'An MCP "mentor" that tells AI agents where to look and how to search — its whole index lives as one markdown file, loaded into the LLM before you ask, and healed continuously by client feedback and its own crawlers.'
 date: 2026-09-05
-showHeroImage: false
+heroImage: './sourcefinder-hero.jpg'
 tags:
   - AI Agents
   - MCP
@@ -25,6 +25,23 @@ it walks out the door when they do.
 like the organization's reference librarian. It has a day job and a night shift: it looks
 for new datasources, and it updates the description of any existing one when something
 fundamental changes.
+
+<figure>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/images/sourcefinder-how-it-works-dark.svg" />
+    <img src="/images/sourcefinder-how-it-works-light.svg"
+         alt="How Sourcefinder works: agents ask it how to search and report back (the day job over the whole prompt-cached index); between sessions, the night shift collects episodes, verifies claims with probes, restructures cards, anticipates future question classes, and files gap reports for humans." />
+  </picture>
+  <figcaption>How Sourcefinder works — the day job answers from the whole loaded index; the night shift keeps it honest.</figcaption>
+</figure>
+
+<figure>
+  <img src="/images/sourcefinder-ai-diagram.jpg"
+       alt="Illustrated diagram of Sourcefinder: robot clients ask questions, a robot librarian points them to sources under a glowing card catalog, and at night sweeps cards, checks them off, and pins an empty frame for missing documents." />
+  <figcaption>The same architecture as gpt-image-2 sees it — clients ask, the librarian
+  points, and the night sweep verifies cards (solid checks) and flags the missing ones
+  (dashed). Decorative, not a functional diagram; the SVG above carries the real labels.</figcaption>
+</figure>
 
 ## The role: a librarian at the desk, and a librarian after hours
 
