@@ -1,5 +1,5 @@
 ---
-title: 'Librarian'
+title: 'Sourcefinder'
 description: 'An MCP "mentor" that tells AI agents where to look and how to search — its whole index lives as one markdown file, loaded into the LLM before you ask, and healed continuously by client feedback and its own crawlers.'
 date: 2026-09-05
 showHeroImage: false
@@ -21,30 +21,30 @@ tells an agent — or a new teammate — which of the twenty searchable places e
 one actually contains, and which to try first. That meta-index lives in people's heads, and
 it walks out the door when they do.
 
-**Librarian** (working name) is my attempt to build that layer: an MCP server that behaves
+**Sourcefinder** is my attempt to build that layer: an MCP server that behaves
 like the organization's reference librarian. It has a day job and a night shift: it looks
 for new datasources, and it updates the description of any existing one when something
 fundamental changes.
 
 ## The role: a librarian at the desk, and a librarian after hours
 
-> Librarian tells you *where to look*, *how to look*, and *when there's nowhere left to
+> Sourcefinder tells you *where to look*, *how to look*, and *when there's nowhere left to
 > look*. It remembers what actually worked, keeps its own map honest — and it never does
 > the looking for you.
 
 That last clause is the load-bearing decision, and the whole job splits cleanly along it
 into a daytime role and a night-time one.
 
-**Online — at the desk.** Librarian holds no credentials, runs no searches, ingests no
+**Online — at the desk.** Sourcefinder holds no credentials, runs no searches, ingests no
 content. A session has a lifecycle:
 
 1. `how_to_search(question)` → a structured answer, not a bare list. It opens with **"read
    if you're new"**: the prerequisite material for the subject — tutorials, READMEs,
    glossaries, the docs without which nothing else will make sense — included *always and
-   first*, because the librarian never knows how much the client already knows and must
+   first*, because Sourcefinder never knows how much the client already knows and must
    assume they are brand new. Then the **candidate list**: as many relevant sources as are
-   plausibly worth trying, ordered by confidence rather than capped — and when the
-   librarian *knows* where the answer lives, that source is pinned at the top and flagged
+   plausibly worth trying, ordered by confidence rather than capped — and when
+   Sourcefinder *knows* where the answer lives, that source is pinned at the top and flagged
    as such. Each entry carries per-source affordances ("semantic search via MCP,"
    "keyword-only JQL," "ask Dana"), example queries with expected result shapes, gotchas,
    and combination playbooks ("for outage questions, search the runbooks *and* the
@@ -56,11 +56,11 @@ content. A session has a lifecycle:
    queries, different modalities (text → database → ask a human → git history).
 
 Every advice payload ends with a targeted ask-back — *"when you're done, one line back
-with session X; even a failure is useful"* — aimed at the specific claim the librarian is
+with session X; even a failure is useful"* — aimed at the specific claim Sourcefinder is
 least sure about. Every client becomes a sensor on the card's weakest assertion, and the
 ask costs the client nothing: free-form text, one call, never required structure.
 
-**Offline — the night shift.** Between sessions, the librarian works only from its own
+**Offline — the night shift.** Between sessions, Sourcefinder works only from its own
 logs, in a loop:
 
 - **Collect.** Every request and every piece of feedback lands, raw and append-only, in an
@@ -69,8 +69,8 @@ logs, in a loop:
   there") — and claims get checked before anything changes: re-run probes, deep-check the
   source, cross-examine other episodes. Feedback never edits a card directly. That keeps
   mistaken feedback from corrupting the map, dedups three clients hitting the same stale
-  promise into one confident fix, and makes the feedback channel impossible to steer the
-  librarian with. The payoff for this discipline is proven: synthetic LLM-generated labels
+  promise into one confident fix, and makes the feedback channel impossible to steer
+  Sourcefinder with. The payoff for this discipline is proven: synthetic LLM-generated labels
   recently matched human-supervised routing quality
   ([SLAT](https://arxiv.org/abs/2401.17645)) — verified task outcomes are better labels
   still.
@@ -82,11 +82,11 @@ logs, in a loop:
 - **Extrapolate & report.** Projected future question classes — from episodes, from
   watcher signals, from the calendar of things the org is starting — are diffed against a
   coverage matrix (question classes × best internal source × best external source × *gap*).
-  Gaps that survive become the librarian's one outbound artifact: a ranked report of unmet
+  Gaps that survive become Sourcefinder's one outbound artifact: a ranked report of unmet
   information needs with evidence attached, filed for humans to handle. Recurring
   questions with no primer are themselves a gap — a domain everyone asks about and no
   document teaches is onboarding debt. The symmetry is
-  the point: clients ask the librarian for help finding things; the librarian asks the org
+  the point: clients ask Sourcefinder for help finding things; Sourcefinder asks the org
   for help creating them.
 
 Two memories sit underneath: the raw episodic log, and the curated index — updated *only*
@@ -96,13 +96,13 @@ collapses accumulated knowledge.
 
 ## The index: one markdown file, in context before you ask
 
-What the librarian knows is a single markdown file with a strict convention — and the
+What Sourcefinder knows is a single markdown file with a strict convention — and the
 whole thing is loaded into the LLM's context *before the client's question arrives*,
 prompt-cached, so a question always meets a fully-loaded map. That choice is deliberate.
 Routing is a judgment task — matching an intent against messy prose descriptions — which is
 what LLMs are good at and embedding similarity is bad at:
 [ReSLLM](https://arxiv.org/abs/2401.17645) showed an LLM can rank ~150 candidate sources
-from descriptions alone — though it scored each resource in turn; Librarian makes the
+from descriptions alone — though it scored each resource in turn; Sourcefinder makes the
 stronger bet that the same judgment works list-wise, with the whole map in view at once.
 Fidelity is low-risk for the same reason: recommendations
 are transcribed from text sitting in context, not recalled from model weights.
@@ -153,7 +153,7 @@ Confluence space for historical performance" is *discovery*: it arrives attached
 demand, becomes a draft card, gets probe-verified before promotion, and may supersede the
 source it beat.
 
-**The librarian itself.** A quiet crawler watches company datasources for *change, not
+**Sourcefinder itself.** A quiet crawler watches company datasources for *change, not
 content*: new repositories in the org's Git host, recently-updated doc spaces, new
 channels, new projects — cheap signals that touch cards (change rate, last verified) and
 trigger verification. It never re-ingests what it watches. A low-friction human tip line
@@ -193,7 +193,7 @@ to be pointed at prior art.)
 Microsoft's [Viva Topics](https://learn.microsoft.com/en-us/microsoft-365/topics/topics-changes-faq?view=o365-worldwide)
 — auto-curated topic pages across an org — retired in 2025, never having escaped its
 "bootstrap conundrum": it needed organizations to define taxonomies up front, and
-organizations wouldn't. Taxonomies are a human problem. So Librarian asks for nothing up
+organizations wouldn't. Taxonomies are a human problem. So Sourcefinder asks for nothing up
 front: question classes come from what the org *is*, coverage grows from what people
 *failed to find*, and cards earn their keep by being probed and used — or they get
 demoted.
