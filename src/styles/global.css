@@ -184,6 +184,22 @@ input {
 
 table {
   width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  margin: 1.5em 0;
+}
+
+table th,
+table td {
+  border: 1px solid rgb(var(--gray-light));
+  padding: 0.5em 0.75em;
+  text-align: left;
+  vertical-align: top;
+}
+
+table th {
+  background: rgb(var(--gray-light) / 0.4);
+  color: rgb(var(--gray-dark));
 }
 
 img {

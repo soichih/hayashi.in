@@ -1,7 +1,7 @@
 ---
 title: 'Sourcefinder'
-description: 'An MCP "mentor" that tells AI agents where to look and how to search — its whole index lives as one markdown file, loaded into the LLM before you ask, and healed continuously by client feedback and its own crawlers.'
-date: 2026-09-05
+description: 'An MCP "mentor" that tells AI agents where to look, how to search, and what to read first — its whole index lives as one markdown file, loaded into the LLM before you ask, and healed continuously by client feedback and its own crawlers.'
+date: 2026-09-08
 heroImage: './sourcefinder-hero.jpg'
 tags:
   - AI Agents
@@ -45,8 +45,8 @@ fundamental changes.
 
 ## The role: a librarian at the desk, and a librarian after hours
 
-> Sourcefinder tells you *where to look*, *how to look*, and *when there's nowhere left to
-> look*. It remembers what actually worked, keeps its own map honest — and it never does
+> Sourcefinder tells you *where to look*, *how to look*, *what to read first*, and *when
+> there's nowhere left to look*. It remembers what actually worked, keeps its own map honest — and it never does
 > the looking for you.
 
 That last clause is the load-bearing decision, and the whole job splits cleanly along it
@@ -57,9 +57,10 @@ content. A session has a lifecycle:
 
 1. `how_to_search(question)` → a structured answer, not a bare list. It opens with **"read
    if you're new"**: the prerequisite material for the subject — tutorials, READMEs,
-   glossaries, the docs without which nothing else will make sense — included *always and
-   first*, because Sourcefinder never knows how much the client already knows and must
-   assume they are brand new. Then the **candidate list**: as many relevant sources as are
+   glossaries, the docs without which nothing else will make sense — emitted as a *resolved
+   reading path* (each pointer expanded root-first through the foundation tree, below),
+   included *always and first*, because Sourcefinder never knows how much the client already
+   knows and must assume they are brand new. Then the **candidate list**: as many relevant sources as are
    plausibly worth trying, ordered by confidence rather than capped — and when
    Sourcefinder *knows* where the answer lives, that source is pinned at the top and flagged
    as such. Each entry carries per-source affordances ("semantic search via MCP,"
@@ -94,8 +95,9 @@ logs, in a loop:
 - **Correct & restructure.** Verified corrections become incremental card edits. The
   request corpus is then treated the way a DBA treats a query workload: a card absorbing
   most sessions gets split and deepened, a topic with no card of its own gets one, routing
-  lines clients keep ignoring get rewritten. "Optimal" isn't a vibe — it's first-suggestion
-  hit rate, computed from the log.
+  lines clients keep ignoring get rewritten. The foundation tree is maintained the same
+  way: proposed prerequisite edges verified before they land, over-prescribed ones pruned
+  (below). "Optimal" isn't a vibe — it's first-suggestion hit rate, computed from the log.
 - **Extrapolate & report.** Projected future question classes — from episodes, from
   watcher signals, from the calendar of things the org is starting — are diffed against a
   coverage matrix (question classes × best internal source × best external source × *gap*).
@@ -131,7 +133,7 @@ The convention — one `##` section per source, fixed fields:
 - what/what-not: metric trends over time — NOT raw query data
 - kind: confluence-space · scope: internal · trust: primary
 - contains: weekly dashboards, trend writeups (~200 docs, active)
-- read-first: metrics-onboarding deck · glossary: "cohort vs. segment"
+- read-first: metrics-glossary
 - how: /search API, semantic works well; browse → space tree for reports
 - example: "Q2 churn by segment" → trend report T-88   [probe ✓ 9/1]
 - combines: analytics-warehouse (raw queries) · supersedes: perf-old
@@ -140,7 +142,10 @@ The convention — one `##` section per source, fixed fields:
 
 The first line is the discriminator — what it's for *and what it's not for* — because at
 hundreds of cards, discrimination beats description. Example queries double as the canary
-probes (below). And overlap between sources is **declared, not guessed**.
+probes (below). And overlap between sources is **declared, not guessed**. The `read-first`
+field doesn't name documents; it points at a node in the file's small foundation block and
+is resolved into a root-first reading path at answer time — the next section is about that
+block.
 
 **On overlap.** Realistically 10–20% of an org's sources cover similar ground — old
 spaces vs. new, wiki vs. dashboard. Undeclared twins force the router to guess freshness
@@ -159,6 +164,76 @@ sources), embed the routing lines, rerank to a top-20, and let the LLM still mak
 call. Same mental model throughout — the file format is chosen so every step of that
 escalation is mechanical.
 
+## Read-first is a tree, not a list
+
+The "read if you're new" section of every answer deserves its own structure, because
+background isn't a list — it's ordered. A glossary is no use before the deck that explains
+why its distinctions matter, and that deck presupposes the org's vocabulary. So Sourcefinder
+models read-first material as a small prerequisite tree — the **foundation** — whose roots
+are the few documents everyone should read and whose leaves sit just above the sources.
+Cards point at foundation *nodes*; the reading order is *resolved* at answer time by walking
+each pointer up to its root and emitting the chain root-first.
+
+Store edges, not chains. Foundation nodes live in their own block in the same file, above
+the `##` source sections:
+
+```markdown
+### metrics-onboarding            ← foundation node (the tree's interior)
+- what: how we define and instrument metrics — prerequisite for analytics sources
+- parent: (root)
+- pointer: Confluence "Metrics Onboarding" deck
+
+### metrics-glossary
+- what: cohort vs. segment, MRR vs. bookings
+- parent: metrics-onboarding
+- pointer: glossary page, same space
+```
+
+…and the card above says just `read-first: metrics-glossary`. Replace the glossary and one
+node is edited; every downstream card inherits the fix — delta edits all the way down. A
+card may carry several pointers with independent roots (a small forest, merged and
+de-duplicated into one ordered reading list). And roles attach to *edges*, not documents:
+the same Confluence space can be a searchable source *and* someone's prerequisite, so a
+source that turns out to be foundational is promoted into the interior without losing its
+card.
+
+**Depth is a metric.** Two to four levels is the healthy range; anything deeper is really a
+missing primer — onboarding debt made visible as a chain-length outlier. The fix for a deep
+chain is not a longer chain; it's a gap report asking for the document that should sit at
+its root.
+
+**Where the edges come from**, in descending order of trust:
+
+- **Harvested structure.** Most real sources publish their own hierarchy — Confluence page
+  trees, doc-site breadcrumbs, "prerequisites" sections, README → `docs/` chains. The
+  watcher already visits these hosts for change signals; the same pass collects candidate
+  parent edges for free.
+- **LLM-proposed edges.** Where structure is implicit, a model reading the source's own
+  pages proposes them. The output shape matters: strata, not a chain — *must-read-first /
+  context / target* — judged pairwise ("would a reader who skipped this be misled, or just
+  fine?") and topologically sorted. Asking for a total order invites over-ordering;
+  relevance graphs are dense, prerequisite graphs are sparse. Two caveats keep this honest.
+  First, the model is not a novice: a frontier LLM reads the dashboard docs fine without the
+  glossary, so its own reading experience systematically under-detects exactly the primers
+  this tree exists to point at. Second, every proposed edge is a *claim*, verified like any
+  other before it touches a card — and one probe is even experimental: a fresh model
+  instance answers a comprehension question about the child with and without the claimed
+  parent in context, and an edge that doesn't move comprehension is decoration. The proxy
+  reader shares the model's surplus knowledge, so that probe is a floor, not ground truth.
+- **The log.** The only signal that knows what a real newcomer needed. Sessions that failed
+  on vocabulary the chain should have covered mark a missing edge; clients who skipped the
+  chain and succeeded anyway mark an over-prescribed one. The eval suite reads it directly:
+  found-rate, conditional on whether the path was actually read.
+
+The roots converge — two hundred sources share a handful of foundations — so the "read if
+you're new" prefix is nearly identical across answers: the most prompt-cache-friendly
+content the server emits, and org-wide onboarding consistency for free.
+
+And before it looks otherwise: this is not the up-front taxonomy that *No taxonomy up
+front*, below, argues against. No foundation node exists up front. Each was promoted on
+demand, because a real datasource admission needed it — the tree grows from use, not from a
+committee.
+
 ## How the index stays current
 
 Two channels feed it, continuously:
@@ -167,8 +242,8 @@ Two channels feed it, continuously:
 suggested and couldn't find what you said was there" is *overpromise detection* — the
 failure mode probes are worst at catching. "I found a better source — there's now a
 Confluence space for historical performance" is *discovery*: it arrives attached to proven
-demand, becomes a draft card, gets probe-verified before promotion, and may supersede the
-source it beat.
+demand, becomes a draft card, gets probe-verified and background-checked before promotion
+(the full admission flow below), and may supersede the source it beat.
 
 **Sourcefinder itself.** A quiet crawler watches company datasources for *change, not
 content*: new repositories in the org's Git host, recently-updated doc spaces, new
@@ -180,6 +255,69 @@ events.
 **Probes.** Underneath both, the verified example queries in every card run on a schedule
 against the real sources — catching schema drift, permission changes, and quietly-dead
 sources. Descriptions are *claims*; the probes exist to test them.
+
+## How a new source gets admitted
+
+A suggested datasource passes two gates before it becomes a card: claim verification (the
+promotion flow above) and a **background coverage check** — can a newcomer, armed with the
+current foundation tree, actually understand what this source holds? The check is grounded,
+not vibes. Sample the candidate's representative pages; extract every *assumed-knowledge
+item* — the jargon, acronyms, service names, "see the T-88 report" — each with the page it
+appears on; then check each item against the foundation tree in one in-context pass. The
+interesting items are org-specific, which is exactly what the LLM *doesn't* already know.
+Three outcomes, three moves:
+
+- **Covered** → the card's `read-first` points at the deepest foundation node it needs.
+  Done.
+- **External gap** ("what is a cohort?") → add a foundation *pointer* to public material —
+  no authoring, no org burden, and link-checkable by probes like any other claim.
+- **Internal gap** → if a document somewhere covers it, promote it to a foundation node;
+  the cheapest discovery channel is asking the suggester *"where did you learn this?"*,
+  which rides the existing feedback loop. If nothing does, that's the strongest gap report
+  Sourcefinder can file — *"unusable by newcomers until someone writes the primer,"*
+  evidence attached — and the source is admitted anyway, flagged **"background: missing —
+  senior-friendly only"**, so routing answers say so honestly. Admission is not binary.
+
+One honest wrinkle: reading sampled content presses on the thin principle. V1 runs on what
+the suggester supplies with their feedback (two or three page titles or excerpts is one more
+ask-back line) plus the structure the watcher can already see — page trees, breadcrumbs, and
+section names are often enough for assumption extraction. A scoped read-only *night-shift
+credential*, used only for admission checks, is the deliberate amendment if that proves too
+thin — and it would be the first credential Sourcefinder holds.
+
+## What "getting smarter" means
+
+In this design the intelligence lives in the index, not the model — the router runs with
+reasoning off because the hard thinking was already done, at night. So getting smarter
+never means a smarter model; it means the map improving along five levers:
+
+1. **Breadth.** More sources only in the sense that matters: question classes with a good
+   answer. The unit of growth is the class, not the card; a source's value is its
+   *exclusive* coverage — the classes only it can answer — and duplicates are negative
+   value, not zero, because they spend attention budget on ambiguity. Sometimes getting
+   smarter means removing: demoting dead sources, merging declared twins.
+2. **Better descriptions** — more discriminating, not more informative. At hundreds of
+   cards, a description's first job is to *exclude*, and honesty beats richness: an
+   overpromising description routes worse than a plain one.
+3. **A truer picture of what's searchable** — kind, scope, trust, size, freshness, and the
+   negative space: what the source doesn't have. Expectations set before the query runs.
+4. **Clearer how-to instructions** — the testable kind of clear, since every example query
+   doubles as a probe and a stale instruction announces itself.
+5. **Better background coverage** — findable isn't understandable; the foundation tree is
+   the fifth lever, and it's why breadth alone was never the goal.
+
+Every failed session decomposes into exactly one of them:
+
+| What the log shows | The lever it indicts |
+| --- | --- |
+| wrong source selected | breadth or description (1–2) |
+| right source, query failed | how-to (4) |
+| found nothing where promised | expectation mismatch, quietly-dead source (3 — probes) |
+| found it, couldn't use it | missing foundation path (5) |
+
+"Optimal isn't a vibe — it's first-suggestion hit rate" now has a steering wheel: rank the
+levers by failure counts in the log, pull the heaviest first. The night shift's work queue
+*is* that ranking.
 
 ## Why build this (and why nothing like it exists — as far as I can find)
 
@@ -225,11 +363,13 @@ Design is done; the build is starting. V1 is deliberately small:
   thinking for, so per-query latency is decode-bound (~1–3s at 500 sources) and cost is
   under a cent. Terra at low effort is the escalation tier when hit-rate sags; the model
   is a config option, and the eval suite decides when that changes.
-- One markdown index (the format above) loaded wholesale into context, plus a SQLite
-  episodic log.
-- A handful of seeded cards, one watcher, the probe loop — and the routing eval suite
-  (labeled questions → hit-rate@1/@k) from day one.
-- No ingestion. No connectors. No credentials to anything but its own notes.
+- One markdown index (the format above — source cards plus the foundation block) loaded
+  wholesale into context, plus a SQLite episodic log.
+- A handful of seeded cards, a hand-bootstrapped foundation tree, one watcher, the probe
+  loop — and the routing eval suite (labeled questions → hit-rate@1/@k, each failure
+  decomposed into the lever it indicts) from day one.
+- No ingestion. No connectors. No credentials to anything but its own notes — admission
+  checks run on what the suggester supplies and the structure the watcher can already see.
 
 If it works, the payoff isn't a better search engine. It's an org whose knowledge of *its
 own knowledge* stops living in the heads of the people who are about to leave.
