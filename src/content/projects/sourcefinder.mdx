@@ -30,7 +30,7 @@ fundamental changes.
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="/images/sourcefinder-how-it-works-dark.svg" />
     <img src="/images/sourcefinder-how-it-works-light.svg"
-         alt="How Sourcefinder works: agents ask it how to search and report back (the day job over the whole prompt-cached index); between sessions, the night shift collects episodes, verifies claims with probes, restructures cards, anticipates future question classes, and files gap reports for humans." />
+         alt="How Sourcefinder works: agents ask it where to find and report back (the day job over the whole prompt-cached index); between sessions, the night shift collects episodes, verifies claims with probes, restructures cards, anticipates future question classes, and files gap reports for humans." />
   </picture>
   <figcaption>How Sourcefinder works — the day job answers from the whole loaded index; the night shift keeps it honest.</figcaption>
 </figure>
@@ -55,7 +55,7 @@ into a daytime role and a night-time one.
 **Online — at the desk.** Sourcefinder holds no credentials, runs no searches, ingests no
 content. A session has a lifecycle:
 
-1. `how_to_search(question)` → a structured answer, not a bare list. It opens with **"read
+1. `where_can_i_find(question)` → a structured answer, not a bare list. It opens with **"read
    if you're new"**: the prerequisite material for the subject — tutorials, READMEs,
    glossaries, the docs without which nothing else will make sense — emitted as a *resolved
    reading path* (each pointer expanded root-first through the foundation tree, below),
@@ -173,6 +173,17 @@ models read-first material as a small prerequisite tree — the **foundation** �
 are the few documents everyone should read and whose leaves sit just above the sources.
 Cards point at foundation *nodes*; the reading order is *resolved* at answer time by walking
 each pointer up to its root and emitting the chain root-first.
+
+<figure>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/images/sourcefinder-info-tree-dark.svg" />
+    <img src="/images/sourcefinder-info-tree-light.svg"
+         alt="The information tree: a company-fundamentals Confluence page at the root, domain and sub-domain foundation pages beneath it (metrics deck, glossary), and a searchable source card at the leaf (the historical-performance space, with how-to-search instructions and an example query). The numbered chain 1–3 is the foundation path read before searching the source at 4." />
+  </picture>
+  <figcaption>The information tree: foundation pages form the interior, searchable sources sit
+  at the leaf. where_can_i_find() emits the resolved chain root-first — read 1–3, then search
+  the card at 4.</figcaption>
+</figure>
 
 Store edges, not chains. Foundation nodes live in their own block in the same file, above
 the `##` source sections:
@@ -357,7 +368,7 @@ demoted.
 
 Design is done; the build is starting. V1 is deliberately small:
 
-- A FastMCP server with the three tools (`how_to_search`, `report_outcome`, `follow_up`).
+- A FastMCP server with the three tools (`where_can_i_find`, `report_outcome`, `follow_up`).
 - The router runs on [GPT-5.6 Luna](https://developers.openai.com/api/docs/models/gpt-5.6-luna)
   with reasoning off — routing is a judgment task the index has already done the hard
   thinking for, so per-query latency is decode-bound (~1–3s at 500 sources) and cost is
