@@ -330,7 +330,7 @@ function createChartBackgroundPlugin(json) {
 
 			// Only draw inside the chart area
 			ctx.beginPath();
-			ctx.fillStyle = "#eef1f6";
+			ctx.fillStyle = "#4b5a70";
 			ctx.rect(left, top, width, height);
 			ctx.fill();
 			ctx.clip();
@@ -372,7 +372,7 @@ function createChartBackgroundPlugin(json) {
 				ctx.beginPath();
 				const noonx = map_number(noon.getTime() / 1000, dtBegin, dtEnd, left, right);
 				ctx.moveTo(noonx, top);
-				ctx.strokeStyle = '#b8c2cf';
+				ctx.strokeStyle = 'rgba(255,255,255,0.7)';
 				ctx.lineWidth = 2;
 				ctx.lineTo(noonx, top + height);
 				ctx.stroke();
@@ -387,12 +387,12 @@ function createChartBackgroundPlugin(json) {
 				date.setHours(0);
 				const x1 = map_number(date.getTime() / 1000, dtBegin, dtEnd, left, right);
 				ctx.font = "18px sans-serif";
-				ctx.fillStyle = "#334155";
+				ctx.fillStyle = "#ffffff";
 				ctx.fillText(" " + date.toLocaleDateString('en-us', { day: "numeric", weekday: "long" }), x1, top + 15);
 
 				ctx.beginPath();
 				ctx.moveTo(x1, top);
-				ctx.strokeStyle = '#cbd5e1';
+				ctx.strokeStyle = 'rgba(255,255,255,0.7)';
 				ctx.lineWidth = 1;
 				ctx.lineTo(x1, top + height);
 				ctx.stroke();
