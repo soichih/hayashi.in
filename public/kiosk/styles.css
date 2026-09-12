@@ -127,6 +127,11 @@ h2 {
 	overflow: hidden;
 	padding: 0 1.2vw;
 	box-sizing: border-box;
+	/* The AI-generated roll-up's own font-sizing (often px/rem, which
+	   ignores this panel's vw-based sizing) tends to read small on a TV
+	   viewed from a few feet away - bump everything up a bit as a blanket
+	   fix regardless of what sizing the model picked. */
+	zoom: 1.25;
 }
 
 marquee {
