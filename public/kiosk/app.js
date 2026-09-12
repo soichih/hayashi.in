@@ -415,13 +415,19 @@ function createChartBackgroundPlugin(json) {
 // ===== MARQUEE/NEWS FUNCTIONS =====
 
 async function loadMarquee() {
-	// Random cat image (no API key needed)
-	let marquee = `<img style="width: 100%" src="https://cataas.com/cat"><hr>`;
+	// Random cat image (no API key needed) - capped height so it doesn't
+	// take forever to scroll past before the real content shows up.
+	let marquee = `<img style="width: 100%; max-height: 220px; object-fit: cover; border-radius: 12px;" src="https://cataas.com/cat"><hr>`;
 
 	// Everything else (weather alerts/events/news/trivia) is gathered hourly
 	// on server1 and turned into a ready-to-show HTML roll-up by a local
 	// Ollama model - this page just displays it as-is.
 	marquee += await fetch("rollup.html").then(res => res.text());
+
+	// A trailing blank spacer the height of the panel itself, so there's a
+	// comfortable pause after the real content scrolls by before the loop
+	// wraps back around to the image/top, instead of resetting abruptly.
+	marquee += `<div style="height: 100%;"></div>`;
 
 	// Display marquee
 	document.getElementById("marquee").innerHTML = `
