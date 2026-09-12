@@ -4,7 +4,7 @@
   "timezone": "America/Indiana/Indianapolis",
   "timezone_offset": -14400,
   "current": {
-    "dt": 1789180330,
+    "dt": 1789180394,
     "sunrise": 1789125841,
     "sunset": 1789171319,
     "temp": 295.79,
@@ -27,10 +27,6 @@
     ]
   },
   "minutely": [
-    {
-      "dt": 1789180380,
-      "precipitation": 0
-    },
     {
       "dt": 1789180440,
       "precipitation": 0
@@ -266,6 +262,10 @@
     {
       "dt": 1789183920,
       "precipitation": 0
+    },
+    {
+      "dt": 1789183980,
+      "precipitation": 0
     }
   ],
   "hourly": [
@@ -363,11 +363,11 @@
     },
     {
       "dt": 1789192800,
-      "temp": 295.92,
-      "feels_like": 296.6,
+      "temp": 295.9,
+      "feels_like": 296.58,
       "pressure": 1012,
       "humidity": 90,
-      "dew_point": 294.19,
+      "dew_point": 294.17,
       "uvi": 0,
       "clouds": 98,
       "visibility": 10000,
@@ -389,11 +389,11 @@
     },
     {
       "dt": 1789196400,
-      "temp": 295.61,
-      "feels_like": 296.44,
+      "temp": 295.6,
+      "feels_like": 296.43,
       "pressure": 1012,
       "humidity": 97,
-      "dew_point": 295.11,
+      "dew_point": 295.1,
       "uvi": 0,
       "clouds": 100,
       "visibility": 10000,
