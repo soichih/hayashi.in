@@ -176,6 +176,18 @@ footer {
 	font-weight: 500;
 }
 
+#sunrise {
+	order: 1;
+}
+
+#noon {
+	order: 2;
+}
+
+#sunset {
+	order: 3;
+}
+
 #sunrise::before {
 	content: "☀️ ";
 }
