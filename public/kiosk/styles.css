@@ -1,0 +1,187 @@
+/* ===== Base Styles ===== */
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	color: black;
+	height: 100%;
+}
+
+h1 {
+	opacity: 0.6;
+}
+
+h2 {
+	opacity: 0.8;
+}
+
+/* ===== Date & Time Display ===== */
+#date {
+	font-size: 4vw;
+	padding: 2vh 0;
+	line-height: 100%;
+	background-color: rgba(30, 166, 125, 0.867);
+	color: white;
+}
+
+#time-now {
+	text-align: center;
+	font-size: 7vw;
+	padding: 1.25vw 0;
+	margin-bottom: 1vw;
+	background-color: #eee;
+	line-height: 100%;
+}
+
+#time-now small {
+	font-size: 4vw;
+	min-width: 7vw;
+	display: inline-block;
+	text-align: left;
+	opacity: 0.7;
+	line-height: 100%;
+}
+
+/* ===== Weather Display ===== */
+#weather {
+	font-size: 6vw;
+	color: rgba(43, 155, 235, 0.867);
+	padding-right: 1vw;
+}
+
+#weather .dew-point,
+#weather .wind-speed {
+	font-size: 2vw;
+	color: black;
+	text-align: right;
+	clear: both;
+}
+
+#temp {
+	float: right;
+}
+
+#weather-note {
+	font-size: 1.5vw;
+}
+
+/* Dew Point Color Classes */
+#weather .dew-fall { color: cyan; }
+#weather .dew-pleasant { color: green; }
+#weather .dew-noticeable { color: darkgreen; }
+#weather .dew-steamy { color: orange; }
+#weather .dew-oppressive { color: red; }
+#weather .dew-unbearable { color: darkmagenta; }
+
+#weather-chart-container {
+	height: 320px;
+	width: calc(100% - 1vw);
+	margin: 1vw;
+}
+
+/* ===== Marquee/News Feed ===== */
+#marquee {
+	font-size: 1.5vw;
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 42%;
+	background-color: rgb(236, 242, 255);
+	font-family: sans-serif;
+	overflow: hidden;
+	padding: 0 1vw;
+}
+
+marquee {
+	height: 100%;
+}
+
+marquee .event {
+	clear: both;
+	margin-bottom: 2vh;
+}
+
+marquee .event img {
+	width: 40%;
+	margin-left: 1vw;
+	float: right;
+}
+
+marquee .event blockquote {
+	border-left: 0.5vw solid #0004;
+	padding-left: 1.5vw;
+	margin-bottom: 1vh;
+	font-size: 1.25vw;
+	clear: both;
+	color: #0004;
+}
+
+marquee .event .description {
+	font-size: 75%;
+}
+
+marquee .event .category {
+	font-weight: bold;
+	list-style: none;
+}
+
+.news-title {
+	font-size: 1.5vw;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0.5vh;
+	color: #0008;
+}
+
+.news-content {
+	opacity: 0.8;
+	font-size: 1.5vw;
+}
+
+/* ===== Footer ===== */
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 2vh;
+	height: 9vh;
+	background-color: #eee;
+}
+
+#sunrise {
+	float: left;
+	font-size: 3vw;
+	opacity: 0.8;
+	line-height: 100%;
+}
+
+#sunrise::before {
+	content: "☀️ ";
+}
+
+#sunset {
+	float: right;
+	font-size: 3vw;
+	opacity: 0.8;
+	line-height: 100%;
+}
+
+#sunset::after {
+	content: " 🌕";
+}
+
+#noon {
+	text-align: center;
+	font-size: 3vw;
+	opacity: 0.8;
+	line-height: 100%;
+}
+
+/* ===== Optional Effects ===== */
+#snowfield {
+	position: fixed;
+	top: 0;
+	z-index: -1;
+}
