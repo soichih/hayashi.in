@@ -74,6 +74,14 @@ public/CNAME           Custom domain — do NOT delete (see Deployment)
 - **Pages/posts**: Markdown/MDX in `src/content/**` with frontmatter (see existing files
   for the shape). Content is English; the page language is `en` (theme default was
   `zh-CN` — do not reintroduce it).
+- **Citations/references in posts**: before a post with sourced claims or a "Sources &
+  Further Reading" list is committed, verify every citation actually used or added/changed
+  in that session — fetch or search for it, confirm the URL resolves and the source
+  actually says what the post claims. Do not carry a citation forward as verified just
+  because it was already in the file; only treat it as checked once you've confirmed it
+  in the current session. Never link to a pirated/unauthorized full copy of a
+  copyrighted work (e.g. a bootlegged book PDF) — link to the publisher, retailer, or
+  official source instead.
 - **Images / static files**: put in `public/` (optimize large images first).
 - You may edit theme components, styles, `astro.config.mjs`, or `site.toml` schema when a
   request needs it. Keep output clean, accessible, responsive; keep builds deterministic.

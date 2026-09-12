@@ -1,5 +1,5 @@
 ---
-title: 'Intelligence Is Just Efficiency in Disguise'
+title: 'What Is Intelligence For? (To Be Efficient?)'
 description: "Nature selects for efficiency in every organism. I think intelligence is our species' particular strategy for it — the ability to judge which efficiencies are actually worth pursuing."
 date: 2026-07-18
 tags:
@@ -29,6 +29,8 @@ Here's the part that keeps this from being a simple "efficient is smart" story. 
 
 That's why I don't think intelligence can just mean "minimize effort." It has to include the judgment to tell those two kinds of shortcut apart — the one that reaches the goal faster, and the one that only feels like it does. An organism, or a person, that optimizes for the wrong thing efficiently isn't intelligent. It's just fast.
 
+As a software engineer, the clearest way I have of thinking about this is the difference between a local minimum and a global minimum. Optimization that only ever moves downhill will happily settle into the first low point it finds and call it done — that's a local minimum, and from inside it, it genuinely looks like the least possible effort, because any small move in any direction looks like more work. Reaching the *global* minimum — the actual least-effort solution — sometimes requires climbing back out of that comfortable low point first, which looks like wasted effort to anyone watching, and even feels that way while you're doing it. I think that's what a lot of "unnecessary-looking" effort actually is: not a failure to optimize, but a more intelligent search that's willing to look less efficient in the short term because it's already seen a lower point further out.
+
 ## So intelligence is efficiency, plus judgment about which efficiency
 
 Put together, that's the actual claim: efficiency-seeking isn't unique to intelligence — it's the pressure every living thing is under. What intelligence adds is the capacity to correctly identify *which* efficiencies are worth pursuing, at the right time scale, instead of just grabbing the nearest shortcut. The neural efficiency research shows the mechanism (less activation, same or better output); Kahneman shows what happens when that mechanism runs without judgment attached.
@@ -48,5 +50,8 @@ The practical takeaway is less about individual habits and more about how to eva
 3. **Neuroenergetics and General Intelligence: A Systems Biology Perspective** — *NCBI PubMed Central* (PMC7555089). Links brain energy metabolism to the g-factor, framing general intelligence as fundamentally rooted in metabolic optimization.
    https://pmc.ncbi.nlm.nih.gov/articles/PMC7555089/
 
-4. **Thinking, Fast and Slow** — Daniel Kahneman (Nobel Lecture on bounded rationality, 2002). Foundational work on how efficient heuristics produce systematic errors, and the distinction between fast (efficient) and slow (deliberative) thinking.
+4. **Thinking, Fast and Slow** — Daniel Kahneman (Farrar, Straus and Giroux, 2011). The book-length treatment of System 1 / System 2 thinking and how efficient heuristics produce systematic errors.
+   https://us.macmillan.com/books/9780374533557/thinkingfastandslow
+
+5. Daniel Kahneman, Nobel Lecture on bounded rationality (2002) — the earlier academic work the book builds on.
    https://www.nobelprize.org/prizes/economic-sciences/2002/kahneman/lecture/
