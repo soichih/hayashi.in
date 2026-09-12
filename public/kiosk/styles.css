@@ -148,6 +148,14 @@ marquee > * {
 	box-sizing: border-box !important;
 }
 
+/* Flat design is requested in the prompt but not always honored - force
+   it at the CSS level so no box/card/divider look can appear regardless
+   of what the model generates. */
+.rollup-content, .rollup-content * {
+	border: none !important;
+	box-shadow: none !important;
+}
+
 /* Event thumbnails from the AI-generated roll-up - forced to a fixed size
    (4x the model's own ~80px default) regardless of what width/height it
    sets inline, so this doesn't depend on the model's whims run to run. */
