@@ -415,25 +415,13 @@ function createChartBackgroundPlugin(json) {
 // ===== MARQUEE/NEWS FUNCTIONS =====
 
 async function loadMarquee() {
-	let marquee = "";
-
-	// Load events
-	marquee += await loadEvents();
-
-	marquee += "<hr>";
-
 	// Random cat image (no API key needed)
-	marquee += `<img style="width: 100%" src="https://cataas.com/cat"><hr>`;
+	let marquee = `<img style="width: 100%" src="https://cataas.com/cat"><hr>`;
 
-	// Load fact/quote/joke (pre-fetched hourly into extras.json)
-	const extras = await loadExtras();
-	marquee += extras.factHtml;
-	marquee += extras.quoteHtml;
-
-	// Load news
-	marquee += await loadNews();
-
-	marquee += extras.jokeHtml;
+	// Everything else (weather alerts/events/news/trivia) is gathered hourly
+	// on server1 and turned into a ready-to-show HTML roll-up by a local
+	// Ollama model - this page just displays it as-is.
+	marquee += await fetch("rollup.html").then(res => res.text());
 
 	// Display marquee
 	document.getElementById("marquee").innerHTML = `
@@ -441,64 +429,6 @@ async function loadMarquee() {
 			${marquee}
 		</marquee>
 	`;
-}
-
-async function loadEvents() {
-	let content = "";
-	await fetch("events.json")
-		.then(res => res.json())
-		.then(items => {
-			items.forEach(item => {
-				content += `
-					<div class="event">
-						<span class="news-title">${item.title}</span>
-						<div class="description">${item.description}</div>
-					</div>
-				`;
-			});
-		});
-	return content;
-}
-
-async function loadExtras() {
-	let factHtml = "";
-	let quoteHtml = "";
-	let jokeHtml = "";
-	await fetch("extras.json")
-		.then(res => res.json())
-		.then(json => {
-			if (json.fact) {
-				factHtml = `<h2>Fact</h2><p id="fact">${json.fact}</p><hr>`;
-			}
-			if (json.quote) {
-				quoteHtml = `<h2>Quote</h2><p>${json.quote}${json.author ? " - " + json.author : ""}</p><hr>`;
-			}
-			if (json.joke) {
-				jokeHtml = `<h2>Jokes</h2><p>${json.joke}</p><hr>`;
-			}
-		});
-	return { factHtml, quoteHtml, jokeHtml };
-}
-
-async function loadNews() {
-	let content = "";
-	await fetch("news.json")
-		.then(res => res.json())
-		.then(json => {
-			let news = "";
-			json.articles.forEach((article, idx) => {
-				news += "<p><span class='news-title'>" + article.title + "</span> ";
-				if (article.description) news += "<span class='news-description'>" + article.description + "</span> ";
-				if (article.content) news += "<br/><blockquote class='news-content'>" + article.content + "</blockquote> ";
-				news += "</p>";
-			});
-			content = `
-				<h2>News</h2>
-				<div>${news}</div>
-				<hr>
-			`;
-		});
-	return content;
 }
 
 // ===== INITIALIZATION =====
