@@ -1,10 +1,23 @@
 /* ===== Base Styles ===== */
+:root {
+	--ink: #1f2933;
+	--muted: #64748b;
+	--accent: #0f9b8e;
+	--accent-2: #2b7de9;
+	--card-bg: #ffffff;
+	--page-bg: #eef2f7;
+	--panel-bg: #f7f9fc;
+	--shadow: 0 2px 14px rgba(15, 23, 42, 0.08);
+	--radius: 18px;
+}
+
 body {
 	padding: 0;
 	margin: 0;
 	font-family: "Roboto", sans-serif;
-	color: black;
+	color: var(--ink);
 	height: 100%;
+	background: var(--page-bg);
 }
 
 h1 {
@@ -18,18 +31,23 @@ h2 {
 /* ===== Date & Time Display ===== */
 #date {
 	font-size: 4vw;
-	padding: 2vh 0;
+	font-weight: 500;
+	padding: 2.2vh 0;
 	line-height: 100%;
-	background-color: rgba(30, 166, 125, 0.867);
+	background: linear-gradient(120deg, var(--accent), var(--accent-2));
 	color: white;
+	letter-spacing: 0.02em;
 }
 
 #time-now {
 	text-align: center;
 	font-size: 7vw;
-	padding: 1.25vw 0;
-	margin-bottom: 1vw;
-	background-color: #eee;
+	font-weight: 500;
+	padding: 1.5vw 0;
+	margin: 1vw 1vw 0 1vw;
+	background: var(--card-bg);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
 	line-height: 100%;
 }
 
@@ -38,23 +56,29 @@ h2 {
 	min-width: 7vw;
 	display: inline-block;
 	text-align: left;
-	opacity: 0.7;
+	color: var(--muted);
 	line-height: 100%;
 }
 
 /* ===== Weather Display ===== */
+.main-content {
+	padding-bottom: 1vw;
+}
+
 #weather {
 	font-size: 6vw;
-	color: rgba(43, 155, 235, 0.867);
-	padding-right: 1vw;
+	font-weight: 500;
+	color: var(--accent-2);
+	padding: 1.5vw 1vw 0 2vw;
 }
 
 #weather .dew-point,
 #weather .wind-speed {
-	font-size: 2vw;
-	color: black;
+	font-size: 1.6vw;
+	color: var(--muted);
 	text-align: right;
 	clear: both;
+	font-weight: 400;
 }
 
 #temp {
@@ -63,20 +87,33 @@ h2 {
 
 #weather-note {
 	font-size: 1.5vw;
+	padding: 1.5vw 2vw 0 0;
+	color: var(--ink);
+}
+
+#weather-note h2 {
+	font-size: 1.1em;
+	opacity: 0.55;
+	margin-bottom: 0.2em;
 }
 
 /* Dew Point Color Classes */
-#weather .dew-fall { color: cyan; }
-#weather .dew-pleasant { color: green; }
-#weather .dew-noticeable { color: darkgreen; }
-#weather .dew-steamy { color: orange; }
-#weather .dew-oppressive { color: red; }
-#weather .dew-unbearable { color: darkmagenta; }
+#weather .dew-fall { color: #06b6d4; }
+#weather .dew-pleasant { color: #16a34a; }
+#weather .dew-noticeable { color: #15803d; }
+#weather .dew-steamy { color: #f59e0b; }
+#weather .dew-oppressive { color: #ef4444; }
+#weather .dew-unbearable { color: #a21caf; }
 
 #weather-chart-container {
 	height: 320px;
-	width: calc(100% - 1vw);
-	margin: 1vw;
+	width: calc(100% - 3vw);
+	margin: 1.5vw;
+	padding: 0.75vw;
+	background: var(--card-bg);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	box-sizing: border-box;
 }
 
 /* ===== Marquee/News Feed ===== */
@@ -87,10 +124,13 @@ h2 {
 	top: 0;
 	bottom: 0;
 	width: 42%;
-	background-color: rgb(236, 242, 255);
-	font-family: sans-serif;
+	background: var(--panel-bg);
+	border-left: 1px solid rgba(15, 23, 42, 0.06);
+	font-family: "Roboto", sans-serif;
+	color: var(--ink);
 	overflow: hidden;
-	padding: 0 1vw;
+	padding: 0 1.2vw;
+	box-sizing: border-box;
 }
 
 marquee {
@@ -107,46 +147,8 @@ marquee > * {
 	box-sizing: border-box !important;
 }
 
-marquee .event {
-	clear: both;
-	margin-bottom: 2vh;
-}
-
-marquee .event img {
-	width: 40%;
-	margin-left: 1vw;
-	float: right;
-}
-
-marquee .event blockquote {
-	border-left: 0.5vw solid #0004;
-	padding-left: 1.5vw;
-	margin-bottom: 1vh;
-	font-size: 1.25vw;
-	clear: both;
-	color: #0004;
-}
-
-marquee .event .description {
-	font-size: 75%;
-}
-
-marquee .event .category {
-	font-weight: bold;
-	list-style: none;
-}
-
-.news-title {
-	font-size: 1.5vw;
-	font-weight: bold;
-	display: block;
-	margin-bottom: 0.5vh;
-	color: #0008;
-}
-
-.news-content {
-	opacity: 0.8;
-	font-size: 1.5vw;
+marquee img {
+	border-radius: 12px;
 }
 
 /* ===== Footer ===== */
@@ -155,38 +157,31 @@ footer {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 2vh;
-	height: 9vh;
-	background-color: #eee;
+	padding: 1.6vh 2vw;
+	height: 8vh;
+	background: var(--card-bg);
+	box-shadow: 0 -2px 14px rgba(15, 23, 42, 0.06);
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-#sunrise {
-	float: left;
-	font-size: 3vw;
-	opacity: 0.8;
+#sunrise,
+#sunset,
+#noon {
+	font-size: 2.6vw;
+	color: var(--muted);
 	line-height: 100%;
+	font-weight: 500;
 }
 
 #sunrise::before {
 	content: "☀️ ";
 }
 
-#sunset {
-	float: right;
-	font-size: 3vw;
-	opacity: 0.8;
-	line-height: 100%;
-}
-
 #sunset::after {
 	content: " 🌕";
-}
-
-#noon {
-	text-align: center;
-	font-size: 3vw;
-	opacity: 0.8;
-	line-height: 100%;
 }
 
 /* ===== Optional Effects ===== */
