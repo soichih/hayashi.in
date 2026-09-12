@@ -1,0 +1,45 @@
+---
+title: 'Kitchen Kiosk'
+description: 'A clock/weather/news dashboard for our kitchen display, with a right-hand panel written by a local LLM every few hours from a half-dozen live sources — no cloud API keys, no manual curation.'
+date: 2026-09-12
+showHeroImage: false
+tags:
+  - Home Automation
+  - Local LLM
+  - Raspberry Pi
+comments: false
+sidebar:
+  enable: false
+  toc: false
+  relatedPosts: false
+---
+
+A Raspberry Pi running Chromium in kiosk mode sits on our kitchen counter, showing a big
+clock, current weather with an hourly forecast chart, and a scrolling panel of local events,
+news, and trivia. The dashboard itself — [/kiosk](/kiosk/) — is a static page living right
+here on this site, deployed like everything else through GitHub Pages.
+
+What makes the right-hand panel interesting: its content is regenerated twice a day by a
+local **qwen3.5** model running on my home server via Ollama, not written by hand or pulled
+from a single feed. A Python job gathers raw data from a half-dozen sources — Visit
+Bloomington's events RSS, several venue calendars (Buskirk-Chumley Theater, IU Auditorium,
+Jacobs School of Music), NWS weather alerts, local news (WFHB, Indiana Daily Student),
+national headlines, AI industry news, and a Wikipedia "on this day" fact — and hands it all
+to the model with one instruction: dedupe it, summarize it, and lay it out as clean HTML
+matching the site's own visual style. No sports, ever.
+
+A few things I had to work around along the way:
+
+- **Small local models can't reproduce long strings reliably.** qwen would "clean up" real
+  image filenames just enough to break them, or invent plausible-looking URLs for sections
+  that never had images. The fix: every `<img src>` the model outputs gets checked against a
+  whitelist of URLs that actually exist in the raw source data before publishing — anything
+  that doesn't match exactly gets stripped.
+- **API keys stay out of the public repo.** The data-gathering script (with its OpenWeatherMap
+  and NewsAPI keys) lives in a private repo and runs on my home server; only the finished
+  static HTML/JSON ever reaches this public site.
+- **Free-tier data ceilings are real.** NewsAPI's free plan truncates article bodies to
+  ~200 characters — no amount of prompting gets more detail out of it than the source
+  actually provides.
+
+- **Live:** [hayashi.in/kiosk](/kiosk/)
