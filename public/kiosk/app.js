@@ -425,7 +425,7 @@ async function loadMarquee() {
 
 	// Display marquee
 	document.getElementById("marquee").innerHTML = `
-		<marquee direction="up" scrollamount="${CONFIG.MARQUEE_SCROLL_SPEED}">
+		<marquee direction="up" scrollamount="${CONFIG.MARQUEE_SCROLL_SPEED}" style="width: 100%;">
 			${marquee}
 		</marquee>
 	`;

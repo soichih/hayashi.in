@@ -95,6 +95,16 @@ h2 {
 
 marquee {
 	height: 100%;
+	width: 100%;
+}
+
+/* The AI-generated roll-up sometimes sets its own inline max-width/width -
+   strip that so it always fills the actual panel width instead of leaving
+   a gap. */
+marquee > * {
+	max-width: none !important;
+	width: 100% !important;
+	box-sizing: border-box !important;
 }
 
 marquee .event {
