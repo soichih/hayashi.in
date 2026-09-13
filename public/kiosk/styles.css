@@ -156,6 +156,15 @@ marquee > * {
 	box-shadow: none !important;
 }
 
+/* Sane inherited base size. #marquee's own 1.5vw (~29px at 1920px, then
+   x1.5 zoom = ~43px) is left over from when app.js generated this content
+   itself - any model-generated element that omits its own font-size would
+   otherwise inherit that and render enormous. Not !important, so the
+   model's own explicit sizes still win where it does set them. */
+.rollup-content {
+	font-size: 16px;
+}
+
 /* The model sometimes leaves heading tags (h1/h2/h3) without an explicit
    font-size - they then fall back to the browser's large default heading
    size, which gets further amplified by this panel's zoom, ballooning
