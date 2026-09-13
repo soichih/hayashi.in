@@ -156,6 +156,20 @@ marquee > * {
 	box-shadow: none !important;
 }
 
+/* The model sometimes leaves heading tags (h1/h2/h3) without an explicit
+   font-size - they then fall back to the browser's large default heading
+   size, which gets further amplified by this panel's zoom, ballooning
+   way past intended. Force a sane, consistent size regardless of what
+   the model does or doesn't set (already !important, since the model's
+   own inline style attribute would otherwise win over this class rule). */
+.rollup-content h1,
+.rollup-content h2,
+.rollup-content h3,
+.rollup-content h4 {
+	font-size: 20px !important;
+	line-height: 1.3 !important;
+}
+
 /* Event thumbnails from the AI-generated roll-up - forced to a fixed size
    (4x the model's own ~80px default) regardless of what width/height it
    sets inline, so this doesn't depend on the model's whims run to run. */
