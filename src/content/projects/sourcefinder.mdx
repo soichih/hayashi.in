@@ -14,6 +14,13 @@ sidebar:
   relatedPosts: false
 ---
 
+> **Status: paused.** Dogfooding this against my own company's actual sources (four of
+> them, two with their own agentic search already) made it clear the design below is a bit
+> over-engineered for that real use case — most of the machinery here (clusters, the
+> foundation tree, night-shift probes) earns its keep at dozens-to-hundreds of sources, not
+> four. Leaving the writeup as-is as a design record; may pick it back up if a use case at
+> the right scale shows up.
+
 Every information source in a modern organization is, individually, searchable. Confluence
 has a search API; wikis, ticket trackers, and code hosts expose MCP servers; databases are
 reachable with a line of code. What nothing provides is the layer *above*: something that
@@ -72,6 +79,32 @@ content. A session has a lifecycle:
    about whether the mentoring helped.
 4. Failed sessions return to `follow_up` for new ideas: untried sources, reformulated
    queries, different modalities (text → database → ask a human → git history).
+
+**Mid-session drift.** The loop above assumes every turn arrives at a natural checkpoint
+to ask "do I need Sourcefinder again?" — but the client only ever sees the reading list
+and candidates it was handed at query time, never the raw index, so it has no way to
+check a newly-surfaced term against anything but memory. And the trigger rarely lands at
+a clean boundary: a debugging agent three tool calls into an unrelated investigation hits
+a service name it's never seen, with no natural moment to stop and ask.
+
+Two obvious fixes don't hold up. Forcing a `follow_up` call every turn buries the
+episodic log in null events exactly where the night shift needs signal, and serializes
+latency across the whole session. Handing the client the raw index so it can self-check
+fails for a different reason: even generous context windows show real "lost in the
+middle" degradation on a list injected once and left to compete with dozens of
+intervening tool results — a model noticing forty turns later that a term is uncovered is
+a bet, not a guarantee.
+
+The fix that holds treats tool schemas differently from transcript content. A tool's
+description is resent on every call and typically prompt-cached, so — unlike a message
+buried in history — it never recedes. Sourcefinder ships a condensed **index of the
+index** as part of its own tool documentation: one line per source, discriminator only,
+no card body — a table of contents the client always has, refreshed for free every turn.
+Noticing still isn't acting, so the second half is structural, not advisory: every
+`follow_up` call carries a required field, `unrecognized_terms`, populated or explicitly
+left empty. That trades "remember to check" — the kind of standing vigilance models
+quietly drop over a long trajectory — for "answer one narrow question," which they do
+reliably.
 
 Every advice payload ends with a targeted ask-back — *"when you're done, one line back
 with session X; even a failure is useful"* — aimed at the specific claim Sourcefinder is
@@ -163,6 +196,56 @@ the routing table becomes a generated index; if the sheet ever outgrows attentio
 sources), embed the routing lines, rerank to a top-20, and let the LLM still make the
 call. Same mental model throughout — the file format is chosen so every step of that
 escalation is mechanical.
+
+**Clusters.** Some sources are really source *groups* — a Confluence instance with fifty
+spaces, a GitHub org with two hundred repos — where the parent's own kind/scope/trust/how
+is real and useful, but a specific child is sometimes what the client actually needs.
+Giving every child a full card defeats the point of a summarized top level; giving none
+means the access details a client needs never surface. So a cluster card carries the edge,
+not the content:
+
+```markdown
+## confluence                     ← cluster card: too many spaces for one card
+- what/what-not: company Confluence instance — general kind/scope/trust only, not a
+  specific space
+- kind: wiki · scope: internal · trust: primary
+- children: 47 spaces · see child-index: confluence-spaces   [derived, not authored]
+- how: browse via space directory; each space gets its own how-to once expanded
+- health: helpful 8 · harmful 0 · last_verified 9/5
+```
+
+The children themselves live in a separate fragment, loaded only when a client actually
+asks for it — the same escalation named above, applied locally: a `##` splitting into its
+own file the moment one cluster, not the whole index, outgrows a single card. Each child
+declares the edge from its own side, `extends: confluence`, and states only what differs:
+
+```markdown
+### historical-performance-space         ← child of confluence, in confluence-spaces
+- extends: confluence
+- what/what-not: metric trends over time — NOT raw query data
+- contains: weekly dashboards, trend writeups (~200 docs, active)
+- example: "Q2 churn by segment" → trend report T-88   [probe ✓ 9/1]
+```
+
+`kind/scope/trust`, `how`, and `read-first` are inherited from `confluence` unless a child
+overrides them; `what/what-not`, `contains`, and `example` are always per-child, because
+those are exactly the fields a routing decision hinges on and the ones no parent summary
+can honestly state on a child's behalf. Resolution is the same walk-to-root logic the
+foundation tree already uses for `parent:` — one primitive, reused, not two. And the
+parent's `children` count is never hand-maintained: it's counted at index-build time from
+however many entries declare `extends: confluence`, so it can't drift the way a manually
+edited number would.
+
+Drilling into a known cluster is a different act from finding one in the first place,
+though, and the difference matters for where each mechanism lives. Drill-down — "this
+candidate is a cluster, expand it" — belongs in the answer for a card the client already
+has in hand; it's local, and the payload says so directly. Finding a cluster the client
+didn't know to ask about is the mid-session-drift problem above, solved the same way as
+any other new topic: the condensed index-of-index has to carry an entry for every
+cluster's *top* card, same as any flat source, so a client noticing something unrelated can
+still detect that a source area exists — via the usual `follow_up` check — before drilling
+into it. Clusters are visible at the routing layer; only their children stay hidden until
+asked for.
 
 ## Read-first is a tree, not a list
 
