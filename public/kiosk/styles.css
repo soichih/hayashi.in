@@ -46,7 +46,7 @@ h2 {
 	padding: 1.5vw 0;
 	margin: 1vw 1vw 0 1vw;
 	background: var(--card-bg);
-	border-radius: var(--radius);
+	border-radius: 0;
 	box-shadow: var(--shadow);
 	line-height: 100%;
 }
@@ -112,82 +112,94 @@ h2 {
 	box-sizing: border-box;
 }
 
-/* ===== Marquee/News Feed ===== */
-#marquee {
-	font-size: 1.5vw;
+/* ===== News Panel (2x2 rotating quadrants) ===== */
+#news-panel {
 	position: fixed;
 	right: 0;
 	top: 0;
-	bottom: 0;
+	bottom: 8vh; /* stop above the fixed footer so the bottom row isn't covered */
 	width: 42%;
 	background: var(--panel-bg);
 	border-left: 1px solid rgba(15, 23, 42, 0.06);
 	font-family: "Roboto", sans-serif;
 	color: var(--ink);
-	overflow: hidden;
-	padding: 0 1.2vw;
 	box-sizing: border-box;
-	/* The AI-generated roll-up's own font-sizing (often px/rem, which
-	   ignores this panel's vw-based sizing) tends to read small on a TV
-	   viewed from a few feet away - bump everything up a bit as a blanket
-	   fix regardless of what sizing the model picked. */
-	zoom: 1.5;
+	padding: 1.2vw;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 1.2vw;
 }
 
-marquee {
-	height: 100%;
+.news-slot {
+	min-width: 0;
+	min-height: 0;
+	overflow: hidden;
+	padding: 1vw;
+	background: var(--card-bg);
+	border-radius: 0;
+	box-shadow: var(--shadow);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+	display: flex;
+	flex-direction: column;
+}
+
+/* The story area under the section label; long stories scroll inside it
+   (see fitScroll in app.js) while the label stays put. */
+.news-viewport {
+	flex: 1;
+	min-height: 0;
+	overflow: hidden;
+}
+
+.news-slot.fading {
+	opacity: 0;
+	transform: translateY(0.6vw);
+}
+
+.news-slot.empty {
+	visibility: hidden;
+}
+
+.news-section {
+	font-size: 0.85vw;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--accent);
+	margin-bottom: 0.5vw;
+}
+
+.news-item {
+	font-size: 1.05vw;
+	line-height: 1.4;
+	color: var(--muted);
+}
+
+.news-item p {
+	margin: 0 0 0.5vw;
+}
+
+.news-item h4 {
+	font-size: 1.45vw;
+	line-height: 1.25;
+	font-weight: 700;
+	color: var(--ink);
+	margin: 0 0 0.5vw;
+}
+
+.news-item small {
+	display: block;
+	font-size: 0.8vw;
+	color: #94a3b8;
+}
+
+.news-item img {
+	display: block;
 	width: 100%;
-}
-
-/* The AI-generated roll-up sometimes sets its own inline max-width/width -
-   strip that so it always fills the actual panel width instead of leaving
-   a gap. */
-marquee > * {
-	max-width: none !important;
-	width: 100% !important;
-	box-sizing: border-box !important;
-}
-
-/* Flat design is requested in the prompt but not always honored - force
-   it at the CSS level so no box/card/divider look can appear regardless
-   of what the model generates. */
-.rollup-content, .rollup-content * {
-	border: none !important;
-	box-shadow: none !important;
-}
-
-/* Sane inherited base size. #marquee's own 1.5vw (~29px at 1920px, then
-   x1.5 zoom = ~43px) is left over from when app.js generated this content
-   itself - any model-generated element that omits its own font-size would
-   otherwise inherit that and render enormous. Not !important, so the
-   model's own explicit sizes still win where it does set them. */
-.rollup-content {
-	font-size: 16px;
-}
-
-/* The model sometimes leaves heading tags (h1/h2/h3) without an explicit
-   font-size - they then fall back to the browser's large default heading
-   size, which gets further amplified by this panel's zoom, ballooning
-   way past intended. Force a sane, consistent size regardless of what
-   the model does or doesn't set (already !important, since the model's
-   own inline style attribute would otherwise win over this class rule). */
-.rollup-content h1,
-.rollup-content h2,
-.rollup-content h3,
-.rollup-content h4 {
-	font-size: 20px !important;
-	line-height: 1.3 !important;
-}
-
-/* Event thumbnails from the AI-generated roll-up - forced to a fixed size
-   (4x the model's own ~80px default) regardless of what width/height it
-   sets inline, so this doesn't depend on the model's whims run to run. */
-.rollup-content img {
-	width: 320px !important;
-	height: auto !important;
-	max-width: 90% !important;
-	border-radius: 12px;
-	margin-bottom: 8px;
+	max-height: 8.5vw;
+	object-fit: cover;
+	margin-bottom: 0.6vw;
 }
 
 /* ===== Footer ===== */

@@ -6,7 +6,10 @@ const CONFIG = {
 	UPDATE_INTERVAL: 3600 * 1000, // 1 hour
 	CLOCK_UPDATE_INTERVAL: 1000,  // 1 second
 	CHART_UPDATE_INTERVAL: 60 * 1000, // 1 minute
-	MARQUEE_SCROLL_SPEED: '1.875'
+	NEWS_ROTATE_INTERVAL: 10 * 1000, // replace one quadrant every 10 seconds
+	NEWS_FADE_MS: 600,
+	NEWS_SCROLL_SPEED: 0.012, // long stories scroll at this fraction of screen width per second
+	NEWS_SCROLL_PAUSE: 3      // seconds to hold at the top and bottom of a long story
 };
 
 // ===== UTILITY FUNCTIONS =====
@@ -412,30 +415,154 @@ function createChartBackgroundPlugin(json) {
 	};
 }
 
-// ===== MARQUEE/NEWS FUNCTIONS =====
+// ===== NEWS PANEL FUNCTIONS =====
 
-async function loadMarquee() {
-	let marquee = "";
+// Stories come from news/news.yml, written twice a day by a Claude agent
+// (scripts/kiosk-news.sh + .claude/skills/kiosk-news). Up to 4 are shown at a
+// time in a 2x2 grid, replacing one quadrant every NEWS_ROTATE_INTERVAL (so
+// all 4 turn over every 4 intervals).
+//
+// The agent writes this file after reading arbitrary web pages, so every
+// field is treated as plain text (textContent, never innerHTML) and images
+// are only loaded from the agent's own img/ folder.
 
-	// Everything else (weather alerts/events/news/trivia) is gathered hourly
-	// on server1 and turned into a ready-to-show HTML roll-up by a local
-	// Ollama model - this page just displays it as-is. Wrapped in its own
-	// class so styles.css can enforce sizing (images, zoom) on just this
-	// AI-generated content without touching the cat image above it.
-	const rollupHtml = await fetch("rollup.html").then(res => res.text());
-	marquee += `<div class="rollup-content">${rollupHtml}</div>`;
+const NEWS_URL = "news/news.yml";
 
-	// A trailing blank spacer the height of the panel itself, so there's a
-	// comfortable pause after the real content scrolls by before the loop
-	// wraps back around to the image/top, instead of resetting abruptly.
-	marquee += `<div style="height: 100%;"></div>`;
+const news = {
+	raw: null,
+	generated: "",
+	items: [],
+	next: 0,  // index of the next item to bring in
+	slot: 0,  // quadrant to replace on the next tick
+	timer: null
+};
 
-	// Display marquee
-	document.getElementById("marquee").innerHTML = `
-		<marquee direction="up" scrollamount="${CONFIG.MARQUEE_SCROLL_SPEED}" style="width: 100%;">
-			${marquee}
-		</marquee>
-	`;
+function el(tag, className, text) {
+	const node = document.createElement(tag);
+	if (className) node.className = className;
+	if (text) node.textContent = text;
+	return node;
+}
+
+function str(value) {
+	return typeof value === "string" ? value.trim() : "";
+}
+
+function buildStory(story) {
+	const item = el("div", "news-item");
+
+	const image = str(story.image);
+	if (/^img\/[a-z0-9-]+\.jpg$/.test(image)) {
+		const img = el("img");
+		// generated time busts the cache when a later run reuses a file name
+		img.src = `news/${image}?v=${encodeURIComponent(news.generated)}`;
+		img.alt = "";
+		img.addEventListener("error", () => img.remove());
+		item.append(img);
+	}
+
+	item.append(el("h4", null, str(story.title)));
+	for (const para of str(story.body).split(/\n\s*\n/)) {
+		if (para.trim()) item.append(el("p", null, para.trim()));
+	}
+
+	const credit = str(story.image_credit);
+	const where = str(story.where);
+	const source = str(story.source) === where ? "" : str(story.source); // venue is often the source too
+	const meta = [str(story.when), where, source];
+	if (image && credit && credit !== str(story.source)) meta.push(`Photo: ${credit}`);
+	const metaText = meta.filter(Boolean).join(" · ");
+	if (metaText) item.append(el("small", null, metaText));
+	return item;
+}
+
+// Stories too tall for their card scroll slowly within it: hold on the
+// headline, scroll to the end, hold, then scroll back up, for as long as the
+// card is on screen. Re-measured when images load, since they change height.
+function fitScroll(slotEl) {
+	const viewport = slotEl.querySelector(".news-viewport");
+	const item = slotEl.querySelector(".news-item");
+	if (!viewport || !item) return;
+	const distance = item.offsetHeight - viewport.clientHeight;
+	item.getAnimations().forEach(a => a.cancel());
+	if (distance <= 2) return;
+
+	const scrollMs = distance / (window.innerWidth * CONFIG.NEWS_SCROLL_SPEED) * 1000;
+	const pauseMs = CONFIG.NEWS_SCROLL_PAUSE * 1000;
+	const total = scrollMs + 2 * pauseMs;
+	const hold = pauseMs / total;
+	const end = `translateY(-${distance}px)`;
+	item.animate([
+		{ transform: "translateY(0)", offset: 0 },
+		{ transform: "translateY(0)", offset: hold, easing: "ease-in-out" },
+		{ transform: end, offset: 1 - hold },
+		{ transform: end, offset: 1 }
+	], { duration: total, iterations: Infinity, direction: "alternate" });
+}
+
+function setSlot(slotEl, story, animate) {
+	const render = () => {
+		slotEl.replaceChildren();
+		if (story) {
+			const section = str(story.section);
+			if (section) slotEl.append(el("div", "news-section", section));
+			const viewport = el("div", "news-viewport");
+			viewport.append(buildStory(story));
+			slotEl.append(viewport);
+		}
+		slotEl.classList.toggle("empty", !story);
+		slotEl.classList.remove("fading");
+		fitScroll(slotEl);
+		slotEl.querySelectorAll("img").forEach(img => img.addEventListener("load", () => fitScroll(slotEl), { once: true }));
+	};
+	if (!animate) return render();
+	slotEl.classList.add("fading");
+	setTimeout(render, CONFIG.NEWS_FADE_MS);
+}
+
+function rotateNews() {
+	const slots = document.querySelectorAll("#news-panel .news-slot");
+	setSlot(slots[news.slot], news.items[news.next % news.items.length], true);
+	news.next = (news.next + 1) % news.items.length;
+	news.slot = (news.slot + 1) % slots.length;
+}
+
+async function loadNews() {
+	let raw;
+	try {
+		const res = await fetch(NEWS_URL, { cache: "no-store" });
+		if (!res.ok) throw new Error(`HTTP ${res.status}`);
+		raw = await res.text();
+	} catch (err) {
+		console.error("news: could not load", NEWS_URL, err);
+		return; // keep showing whatever is on screen
+	}
+	if (raw === news.raw) return; // unchanged since last hourly check
+
+	let data;
+	try {
+		data = jsyaml.load(raw);
+	} catch (err) {
+		console.error("news: invalid YAML", err);
+		return;
+	}
+	news.raw = raw;
+	news.generated = str(data?.generated);
+	news.items = (Array.isArray(data?.stories) ? data.stories : [])
+		.filter(story => story && str(story.title));
+
+	const slots = document.querySelectorAll("#news-panel .news-slot");
+	slots.forEach((slotEl, i) => setSlot(slotEl, news.items[i], false));
+	news.next = slots.length % Math.max(news.items.length, 1);
+	news.slot = 0;
+
+	// Items are always shown in sequence and replaced round-robin, so the 4
+	// on screen are consecutive stories and never duplicates. With 4 or
+	// fewer stories there is nothing to rotate in.
+	clearInterval(news.timer);
+	news.timer = news.items.length > slots.length
+		? setInterval(rotateNews, CONFIG.NEWS_ROTATE_INTERVAL)
+		: null;
 }
 
 // ===== INITIALIZATION =====
@@ -448,12 +575,12 @@ setInterval(() => {
 
 // Initial load
 loadWeather();
-loadMarquee();
+loadNews();
 
-// Reload weather and marquee every hour
+// Reload weather and news every hour
 setInterval(() => {
 	loadWeather();
-	loadMarquee();
+	loadNews();
 }, CONFIG.UPDATE_INTERVAL);
 
 // Fix broken charts every minute
