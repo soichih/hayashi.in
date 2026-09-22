@@ -137,7 +137,7 @@ h2 {
 	overflow: hidden;
 	padding: 1vw;
 	background: var(--card-bg);
-	border-radius: var(--radius);
+	border-radius: 0;
 	box-shadow: var(--shadow);
 	transition: opacity 0.6s ease, transform 0.6s ease;
 	display: flex;
