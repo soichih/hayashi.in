@@ -7,7 +7,9 @@ const CONFIG = {
 	CLOCK_UPDATE_INTERVAL: 1000,  // 1 second
 	CHART_UPDATE_INTERVAL: 60 * 1000, // 1 minute
 	NEWS_ROTATE_INTERVAL: 10 * 1000, // replace one quadrant every 10 seconds
-	NEWS_FADE_MS: 600
+	NEWS_FADE_MS: 600,
+	NEWS_SCROLL_SPEED: 0.012, // long stories scroll at this fraction of screen width per second
+	NEWS_SCROLL_PAUSE: 3      // seconds to hold at the top and bottom of a long story
 };
 
 // ===== UTILITY FUNCTIONS =====
@@ -500,13 +502,39 @@ function escapeHtml(text) {
 	return div.innerHTML;
 }
 
+// Stories too tall for their card scroll slowly within it: hold on the
+// headline, scroll to the end, hold, then scroll back up, for as long as the
+// card is on screen. Re-measured when images load, since they change height.
+function fitScroll(slotEl) {
+	const viewport = slotEl.querySelector(".news-viewport");
+	const item = slotEl.querySelector(".news-item");
+	if (!viewport || !item) return;
+	const distance = item.offsetHeight - viewport.clientHeight;
+	item.getAnimations().forEach(a => a.cancel());
+	if (distance <= 2) return;
+
+	const scrollMs = distance / (window.innerWidth * CONFIG.NEWS_SCROLL_SPEED) * 1000;
+	const pauseMs = CONFIG.NEWS_SCROLL_PAUSE * 1000;
+	const total = scrollMs + 2 * pauseMs;
+	const hold = pauseMs / total;
+	const end = `translateY(-${distance}px)`;
+	item.animate([
+		{ transform: "translateY(0)", offset: 0 },
+		{ transform: "translateY(0)", offset: hold, easing: "ease-in-out" },
+		{ transform: end, offset: 1 - hold },
+		{ transform: end, offset: 1 }
+	], { duration: total, iterations: Infinity, direction: "alternate" });
+}
+
 function setSlot(slotEl, item, animate) {
 	const render = () => {
 		slotEl.innerHTML = item
-			? `${item.section ? `<div class="news-section">${escapeHtml(item.section)}</div>` : ""}<div class="news-item">${item.html}</div>`
+			? `${item.section ? `<div class="news-section">${escapeHtml(item.section)}</div>` : ""}<div class="news-viewport"><div class="news-item">${item.html}</div></div>`
 			: "";
 		slotEl.classList.toggle("empty", !item);
 		slotEl.classList.remove("fading");
+		fitScroll(slotEl);
+		slotEl.querySelectorAll("img").forEach(img => img.addEventListener("load", () => fitScroll(slotEl), { once: true }));
 	};
 	if (!animate) return render();
 	slotEl.classList.add("fading");
