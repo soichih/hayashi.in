@@ -18,13 +18,17 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   Broad city listings with images. Event pages are JS-rendered and WebFetch
   sees only the header/footer, so use the RSS item text and RSS image
   instead of opening the page (2026-09-22). Has had intermittent SSL errors.
+  RSS image URLs are Cloudinary thumbnails (`.../upload/c_fill,h_100,...w_150/v1/...`);
+  drop the `c_fill,...w_150/` transformation segment to get a full-size image
+  before downloading (2026-09-22).
 - IU Auditorium: https://events.iu.edu/live/rss/events/group/IU%20Auditorium/rss.xml
 - Jacobs School of Music: https://events.iu.edu/live/rss/events/group/Jacobs%20School%20of%20Music/rss.xml
   Many student recitals - prefer larger public concerts and operas.
 - Buskirk-Chumley Theater: https://buskirkchumley.org/events/
   Event pages give good detail (doors/show times, ticket codes), but posters
-  are lazy-loaded so WebFetch finds no image - try WebSearch for the event's
-  image, or run the card without one (2026-09-22). The RSS feed returns 403.
+  are lazy-loaded so WebFetch finds no image in the HTML or og:image tag,
+  and WebSearch for the poster doesn't find it either - just run the card
+  without an image (2026-09-22, confirmed again). The RSS feed returns 403.
 - The Bishop Bar: https://thebishopbar.com/events/feed/
   Feed was malformed for the old script; try the events page instead.
 - Bloomington Aikikai: https://www.bloomingtonaikido.com/club-events?format=rss
@@ -35,6 +39,17 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   Returned 403 to WebFetch (2026-09-22); find WFHB stories via WebSearch.
 - Indiana Daily Student: https://www.idsnews.com/
   Heavy IU sports coverage - skip all of it.
+- The Bloomingtonian: https://bloomingtonian.com/
+  WebFetch of the homepage gives a clean recent-headlines list; good for
+  city/county government, police-blotter and utility stories. Individual
+  article WebFetches work too (2026-09-22).
+- City of Bloomington news releases: https://bloomington.in.gov/news -
+  official text, no fluff, but rarely has a usable article image
+  (2026-09-22).
+- For county-government detail (funding, commission votes, meeting outcomes)
+  WebSearch for the specific topic (e.g. "bloomingtonian.com <topic>") finds
+  the right Bloomingtonian article faster than fetching the homepage list
+  (2026-09-22).
 
 ## US and world news
 
@@ -48,6 +63,10 @@ nothing. Keep each note short: what the source is good for, and any quirks.
 ## AI news
 
 - TechCrunch AI: https://techcrunch.com/category/artificial-intelligence/
+  The category listing itself failed to WebFetch, but WebSearch (e.g.
+  "site:techcrunch.com AI <date>") finds individual article URLs, and
+  WebFetching those article pages works well and returns the og:image
+  (2026-09-22).
 - The Verge AI: https://www.theverge.com/ai-artificial-intelligence and
   Ars Technica AI: https://arstechnica.com/ai/ - WebFetch couldn't reach
   either (2026-09-22); use WebSearch for their stories.
