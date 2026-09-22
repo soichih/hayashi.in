@@ -6,7 +6,7 @@ const CONFIG = {
 	UPDATE_INTERVAL: 3600 * 1000, // 1 hour
 	CLOCK_UPDATE_INTERVAL: 1000,  // 1 second
 	CHART_UPDATE_INTERVAL: 60 * 1000, // 1 minute
-	NEWS_ROTATE_INTERVAL: 5 * 1000, // replace one quadrant every 5 seconds
+	NEWS_ROTATE_INTERVAL: 10 * 1000, // replace one quadrant every 10 seconds
 	NEWS_FADE_MS: 600
 };
 
