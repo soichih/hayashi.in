@@ -148,12 +148,19 @@ there:
 EOF
 )
 
+# --restricted: only the tools named below, file writes confined to the two
+#   folders, no user/project settings.
+# --strict-mcp-config: no MCP servers (webcam, TTS, kiosk, Gmail...).
+# --safe-mode: no CLAUDE.md files or auto-memory. The user-level CLAUDE.md and
+#   memory hold private notes; an agent that reads untrusted pages and
+#   publishes to a public site must never have them in context.
 log "=== run start (model=$MODEL, dry_run=$DRY_RUN) ==="
 (
 	cd "$SKILL_DIR" || exit 1
 	KIOSK_NEWS_STAGE="$STAGE" timeout 45m claude -p "$PROMPT" \
 		--model "$MODEL" \
 		--restricted --strict-mcp-config \
+		--safe-mode \
 		--tools "WebSearch,WebFetch,Read,Write,Edit,Glob,Grep,Bash" \
 		--permission-mode dontAsk \
 		--no-session-persistence \
