@@ -16,3 +16,9 @@ One dated line per edit the agent makes to this skill: what changed and why.
   resolution; noted TechCrunch article pages (found via WebSearch) WebFetch
   fine even though the category listing doesn't; reconfirmed Buskirk-Chumley
   event pages never expose a poster image via WebFetch or WebSearch.
+- 2026-09-22 (evening run): sources.md: noted Bishop Bar event pages carry a
+  flyer image as a plain `<img>` (not `og:image`) and that one event page
+  gave a stale date - trust the events listing page instead; noted IU
+  Auditorium event pages have no image but the matching iuauditorium.com
+  page usually does; noted NBC News og:image URLs with `f_avif` fail the
+  image download script and need `f_jpg` substituted in.

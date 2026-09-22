@@ -22,6 +22,8 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   drop the `c_fill,...w_150/` transformation segment to get a full-size image
   before downloading (2026-09-22).
 - IU Auditorium: https://events.iu.edu/live/rss/events/group/IU%20Auditorium/rss.xml
+  events.iu.edu event pages have no og:image; the matching page on
+  iuauditorium.com/events/detail/<slug> usually does (2026-09-22).
 - Jacobs School of Music: https://events.iu.edu/live/rss/events/group/Jacobs%20School%20of%20Music/rss.xml
   Many student recitals - prefer larger public concerts and operas.
 - Buskirk-Chumley Theater: https://buskirkchumley.org/events/
@@ -30,7 +32,12 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   and WebSearch for the poster doesn't find it either - just run the card
   without an image (2026-09-22, confirmed again). The RSS feed returns 403.
 - The Bishop Bar: https://thebishopbar.com/events/feed/
-  Feed was malformed for the old script; try the events page instead.
+  Feed was malformed for the old script; try the events page instead. Event
+  pages do have a flyer image, but it's a plain `<img>`, not `og:image` - ask
+  WebFetch specifically for the flyer's `src`. One individual event page
+  returned a stale/wrong date that didn't match the events listing
+  (2026-09-22) - trust the events-page listing over a single event page for
+  the date.
 - Bloomington Aikikai: https://www.bloomingtonaikido.com/club-events?format=rss
 
 ## Local news
@@ -53,6 +60,9 @@ nothing. Keep each note short: what the source is good for, and any quirks.
 
 ## US and world news
 
+- NBC News (found via WebSearch): og:image URLs from media-cldnry.s-nbcnews.com
+  often have `f_avif` in the Cloudinary path, which the image download script
+  can't read; edit the URL to `f_jpg` before downloading (2026-09-22).
 - NPR text-only site: https://text.npr.org/ - the headline list works well.
   Article pages timed out ("socket hang up") on 2026-09-22, so get details
   and images via WebSearch for the story.
