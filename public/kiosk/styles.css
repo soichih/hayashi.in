@@ -46,7 +46,7 @@ h2 {
 	padding: 1.5vw 0;
 	margin: 1vw 1vw 0 1vw;
 	background: var(--card-bg);
-	border-radius: var(--radius);
+	border-radius: 0;
 	box-shadow: var(--shadow);
 	line-height: 100%;
 }
