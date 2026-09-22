@@ -6,7 +6,8 @@ const CONFIG = {
 	UPDATE_INTERVAL: 3600 * 1000, // 1 hour
 	CLOCK_UPDATE_INTERVAL: 1000,  // 1 second
 	CHART_UPDATE_INTERVAL: 60 * 1000, // 1 minute
-	MARQUEE_SCROLL_SPEED: '1.875'
+	NEWS_ROTATE_INTERVAL: 5 * 1000, // replace one quadrant every 5 seconds
+	NEWS_FADE_MS: 600
 };
 
 // ===== UTILITY FUNCTIONS =====
@@ -412,30 +413,131 @@ function createChartBackgroundPlugin(json) {
 	};
 }
 
-// ===== MARQUEE/NEWS FUNCTIONS =====
+// ===== NEWS PANEL FUNCTIONS =====
 
-async function loadMarquee() {
-	let marquee = "";
+// Weather alerts/events/news/trivia are gathered on server1 and turned into
+// an HTML roll-up by a local Ollama model. The prompt asks for one <article
+// data-section="..."> per story; this page splits the roll-up into those
+// stories and shows up to 4 at a time in a 2x2 grid, replacing one quadrant
+// every NEWS_ROTATE_INTERVAL (so all 4 turn over every 4 intervals).
 
-	// Everything else (weather alerts/events/news/trivia) is gathered hourly
-	// on server1 and turned into a ready-to-show HTML roll-up by a local
-	// Ollama model - this page just displays it as-is. Wrapped in its own
-	// class so styles.css can enforce sizing (images, zoom) on just this
-	// AI-generated content without touching the cat image above it.
-	const rollupHtml = await fetch("rollup.html").then(res => res.text());
-	marquee += `<div class="rollup-content">${rollupHtml}</div>`;
+const news = {
+	rawHtml: null,
+	items: [],
+	next: 0,  // index of the next item to bring in
+	slot: 0,  // quadrant to replace on the next tick
+	timer: null
+};
 
-	// A trailing blank spacer the height of the panel itself, so there's a
-	// comfortable pause after the real content scrolls by before the loop
-	// wraps back around to the image/top, instead of resetting abruptly.
-	marquee += `<div style="height: 100%;"></div>`;
+const HEADING_TAGS = new Set(["H1", "H2", "H3", "H4", "H5", "H6"]);
 
-	// Display marquee
-	document.getElementById("marquee").innerHTML = `
-		<marquee direction="up" scrollamount="${CONFIG.MARQUEE_SCROLL_SPEED}" style="width: 100%;">
-			${marquee}
-		</marquee>
-	`;
+// Fallback for roll-ups generated before the <article> convention (or when
+// the model ignores it): section headings become labels, each other text
+// block becomes a story, and image-only blocks attach to a neighboring story.
+function splitLegacyRollup(root) {
+	const items = [];
+	let section = "";
+	let pendingImg = "";
+
+	const addBlock = (el) => {
+		const hasText = el.textContent.trim().length > 0;
+		if (!hasText) {
+			const img = el.tagName === "IMG" ? el.outerHTML : (el.querySelector("img")?.outerHTML || "");
+			if (!img) return;
+			const prev = items[items.length - 1];
+			if (prev && !prev.hasImg && !pendingImg && prev.section === section) {
+				prev.html = img + prev.html;
+				prev.hasImg = true;
+			} else {
+				pendingImg = img;
+			}
+			return;
+		}
+		items.push({ section, html: pendingImg + el.outerHTML, hasImg: !!pendingImg || !!el.querySelector("img") });
+		pendingImg = "";
+	};
+
+	const walk = (parent) => {
+		for (const el of parent.children) {
+			if (HEADING_TAGS.has(el.tagName)) {
+				section = el.textContent.trim();
+			} else if (el.tagName === "UL" || el.tagName === "OL") {
+				[...el.children].forEach(addBlock);
+			} else if (el.tagName === "DIV" && [...el.children].some(c => HEADING_TAGS.has(c.tagName) || c.tagName === "DIV")) {
+				walk(el); // a section/wrapper div rather than a single story
+			} else {
+				addBlock(el);
+			}
+		}
+	};
+	walk(root);
+	return items;
+}
+
+function splitRollup(html) {
+	const doc = new DOMParser().parseFromString(`<div>${html}</div>`, "text/html");
+	const root = doc.body.firstElementChild;
+	root.querySelectorAll("script, style").forEach(el => el.remove());
+
+	const articles = [...root.querySelectorAll("article")];
+	const items = articles.length
+		? articles.map(a => ({ section: a.dataset.section || "", html: a.innerHTML }))
+		: splitLegacyRollup(root);
+
+	// The model sometimes repeats the same story; show each one once.
+	const seen = new Set();
+	return items.filter(item => {
+		const key = item.html.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+		if (!key || seen.has(key)) return false;
+		seen.add(key);
+		return true;
+	});
+}
+
+function escapeHtml(text) {
+	const div = document.createElement("div");
+	div.textContent = text;
+	return div.innerHTML;
+}
+
+function setSlot(slotEl, item, animate) {
+	const render = () => {
+		slotEl.innerHTML = item
+			? `${item.section ? `<div class="news-section">${escapeHtml(item.section)}</div>` : ""}<div class="news-item">${item.html}</div>`
+			: "";
+		slotEl.classList.toggle("empty", !item);
+		slotEl.classList.remove("fading");
+	};
+	if (!animate) return render();
+	slotEl.classList.add("fading");
+	setTimeout(render, CONFIG.NEWS_FADE_MS);
+}
+
+function rotateNews() {
+	const slots = document.querySelectorAll("#news-panel .news-slot");
+	setSlot(slots[news.slot], news.items[news.next % news.items.length], true);
+	news.next = (news.next + 1) % news.items.length;
+	news.slot = (news.slot + 1) % slots.length;
+}
+
+async function loadNews() {
+	const html = await fetch("rollup.html", { cache: "no-store" }).then(res => res.text());
+	if (html === news.rawHtml) return; // unchanged since last hourly check
+	news.rawHtml = html;
+	news.items = splitRollup(html);
+
+	const slots = document.querySelectorAll("#news-panel .news-slot");
+	slots.forEach((slotEl, i) => setSlot(slotEl, news.items[i], false));
+	news.next = slots.length % Math.max(news.items.length, 1);
+	news.slot = 0;
+
+	// Items are always shown in sequence and replaced round-robin, so the 4
+	// on screen are consecutive stories and never duplicates. With 4 or
+	// fewer stories there is nothing to rotate in.
+	clearInterval(news.timer);
+	news.timer = news.items.length > slots.length
+		? setInterval(rotateNews, CONFIG.NEWS_ROTATE_INTERVAL)
+		: null;
 }
 
 // ===== INITIALIZATION =====
@@ -448,12 +550,12 @@ setInterval(() => {
 
 // Initial load
 loadWeather();
-loadMarquee();
+loadNews();
 
-// Reload weather and marquee every hour
+// Reload weather and news every hour
 setInterval(() => {
 	loadWeather();
-	loadMarquee();
+	loadNews();
 }, CONFIG.UPDATE_INTERVAL);
 
 // Fix broken charts every minute
