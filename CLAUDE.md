@@ -59,7 +59,31 @@ src/styles/            global.css, palettes.css, fonts.css
 public/                Static assets served from site root
 public/images/         Images, incl. soichi.avatar.png (the profile avatar)
 public/CNAME           Custom domain — do NOT delete (see Deployment)
+public/kiosk/          Kitchen kiosk dashboard (plain HTML/JS, not part of the Astro build)
+.claude/skills/kiosk-news/  Agent skill that writes the kiosk news (edits itself)
+scripts/kiosk-news*.sh Cron wrapper + image downloader for that agent
 ```
+
+## Kiosk dashboard (`public/kiosk/`)
+
+Served at https://hayashi.in/kiosk/ and shown on the Raspberry Pi kiosks at home.
+Everything under it is public like the rest of the site.
+
+- `weather.json` — written hourly by `~/git/pi-scripts/update_kiosk_data.py --only weather`
+  (private repo, holds the API keys).
+- `news/news.yml` + `news/img/` — written twice a day by `scripts/kiosk-news.sh`, which
+  runs `claude -p` with the `kiosk-news` skill. The agent researches the sources in
+  `.claude/skills/kiosk-news/sources.md`, writes card-sized stories, downloads images via
+  `scripts/kiosk-news-image.sh`, and may improve its own skill files (logged in the skill's
+  `CHANGELOG.md`). The wrapper validates the YAML, then commits only `public/kiosk/news/`
+  and the skill folder and pushes to `main`. Its fixed guardrails live in the wrapper's
+  prompt, not in the skill, so the agent can't edit them away.
+  - Test without publishing: `scripts/kiosk-news.sh --dry-run` (output stays in
+    `~/.local/state/kiosk-news/stage`). Log: `~/.local/state/kiosk-news/kiosk-news.log`.
+  - Cron: `30 6,18 * * * /home/soichih/git/hayashi.in/scripts/kiosk-news.sh`
+- `app.js` renders `news.yml` as a 2x2 grid of cards, swapping one card every 10 s; long
+  stories scroll inside their card. Story fields are rendered as text only (never HTML),
+  since the agent writes them after reading arbitrary web pages.
 
 ## Editing conventions
 

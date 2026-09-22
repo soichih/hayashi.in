@@ -170,54 +170,33 @@ h2 {
 	margin-bottom: 0.5vw;
 }
 
-/* The story HTML comes from the AI-generated roll-up, whose inline styles
-   vary run to run - override sizing/spacing here so every quadrant looks
-   the same regardless of what the model set. */
-.news-item,
-.news-item * {
-	font-size: 1.05vw !important;
-	line-height: 1.4 !important;
-	border: none !important;
-	box-shadow: none !important;
-	max-width: 100% !important;
-	width: auto !important;
-}
-
 .news-item {
+	font-size: 1.05vw;
+	line-height: 1.4;
 	color: var(--muted);
 }
 
-.news-item p,
-.news-item div {
-	margin: 0 0 0.5vw !important;
+.news-item p {
+	margin: 0 0 0.5vw;
 }
 
-/* Story title: <h4> in the current prompt, a bold <span>/<b> in older roll-ups */
-.news-item h1,
-.news-item h2,
-.news-item h3,
-.news-item h4,
-.news-item b,
-.news-item strong,
-.news-item [style*="bold"] {
-	display: block;
-	font-size: 1.45vw !important;
-	line-height: 1.25 !important;
-	font-weight: 700 !important;
-	color: var(--ink) !important;
-	margin: 0 0 0.5vw !important;
+.news-item h4 {
+	font-size: 1.45vw;
+	line-height: 1.25;
+	font-weight: 700;
+	color: var(--ink);
+	margin: 0 0 0.5vw;
 }
 
 .news-item small {
 	display: block;
-	font-size: 0.8vw !important;
-	color: #94a3b8 !important;
+	font-size: 0.8vw;
+	color: #94a3b8;
 }
 
 .news-item img {
 	display: block;
-	width: 100% !important;
-	height: auto !important;
+	width: 100%;
 	max-height: 8.5vw;
 	object-fit: cover;
 	margin-bottom: 0.6vw;

@@ -417,89 +417,61 @@ function createChartBackgroundPlugin(json) {
 
 // ===== NEWS PANEL FUNCTIONS =====
 
-// Weather alerts/events/news/trivia are gathered on server1 and turned into
-// an HTML roll-up by a local Ollama model. The prompt asks for one <article
-// data-section="..."> per story; this page splits the roll-up into those
-// stories and shows up to 4 at a time in a 2x2 grid, replacing one quadrant
-// every NEWS_ROTATE_INTERVAL (so all 4 turn over every 4 intervals).
+// Stories come from news/news.yml, written twice a day by a Claude agent
+// (scripts/kiosk-news.sh + .claude/skills/kiosk-news). Up to 4 are shown at a
+// time in a 2x2 grid, replacing one quadrant every NEWS_ROTATE_INTERVAL (so
+// all 4 turn over every 4 intervals).
+//
+// The agent writes this file after reading arbitrary web pages, so every
+// field is treated as plain text (textContent, never innerHTML) and images
+// are only loaded from the agent's own img/ folder.
+
+const NEWS_URL = "news/news.yml";
 
 const news = {
-	rawHtml: null,
+	raw: null,
+	generated: "",
 	items: [],
 	next: 0,  // index of the next item to bring in
 	slot: 0,  // quadrant to replace on the next tick
 	timer: null
 };
 
-const HEADING_TAGS = new Set(["H1", "H2", "H3", "H4", "H5", "H6"]);
-
-// Fallback for roll-ups generated before the <article> convention (or when
-// the model ignores it): section headings become labels, each other text
-// block becomes a story, and image-only blocks attach to a neighboring story.
-function splitLegacyRollup(root) {
-	const items = [];
-	let section = "";
-	let pendingImg = "";
-
-	const addBlock = (el) => {
-		const hasText = el.textContent.trim().length > 0;
-		if (!hasText) {
-			const img = el.tagName === "IMG" ? el.outerHTML : (el.querySelector("img")?.outerHTML || "");
-			if (!img) return;
-			const prev = items[items.length - 1];
-			if (prev && !prev.hasImg && !pendingImg && prev.section === section) {
-				prev.html = img + prev.html;
-				prev.hasImg = true;
-			} else {
-				pendingImg = img;
-			}
-			return;
-		}
-		items.push({ section, html: pendingImg + el.outerHTML, hasImg: !!pendingImg || !!el.querySelector("img") });
-		pendingImg = "";
-	};
-
-	const walk = (parent) => {
-		for (const el of parent.children) {
-			if (HEADING_TAGS.has(el.tagName)) {
-				section = el.textContent.trim();
-			} else if (el.tagName === "UL" || el.tagName === "OL") {
-				[...el.children].forEach(addBlock);
-			} else if (el.tagName === "DIV" && [...el.children].some(c => HEADING_TAGS.has(c.tagName) || c.tagName === "DIV")) {
-				walk(el); // a section/wrapper div rather than a single story
-			} else {
-				addBlock(el);
-			}
-		}
-	};
-	walk(root);
-	return items;
+function el(tag, className, text) {
+	const node = document.createElement(tag);
+	if (className) node.className = className;
+	if (text) node.textContent = text;
+	return node;
 }
 
-function splitRollup(html) {
-	const doc = new DOMParser().parseFromString(`<div>${html}</div>`, "text/html");
-	const root = doc.body.firstElementChild;
-	root.querySelectorAll("script, style").forEach(el => el.remove());
-
-	const articles = [...root.querySelectorAll("article")];
-	const items = articles.length
-		? articles.map(a => ({ section: a.dataset.section || "", html: a.innerHTML }))
-		: splitLegacyRollup(root);
-
-	// The model sometimes repeats the same story; show each one once.
-	const seen = new Set();
-	return items.filter(item => {
-		const key = item.html.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
-		if (!key || seen.has(key)) return false;
-		seen.add(key);
-		return true;
-	});
+function str(value) {
+	return typeof value === "string" ? value.trim() : "";
 }
 
-function escapeHtml(text) {
-	const div = document.createElement("div");
-	div.textContent = text;
-	return div.innerHTML;
+function buildStory(story) {
+	const item = el("div", "news-item");
+
+	const image = str(story.image);
+	if (/^img\/[a-z0-9-]+\.jpg$/.test(image)) {
+		const img = el("img");
+		// generated time busts the cache when a later run reuses a file name
+		img.src = `news/${image}?v=${encodeURIComponent(news.generated)}`;
+		img.alt = "";
+		img.addEventListener("error", () => img.remove());
+		item.append(img);
+	}
+
+	item.append(el("h4", null, str(story.title)));
+	for (const para of str(story.body).split(/\n\s*\n/)) {
+		if (para.trim()) item.append(el("p", null, para.trim()));
+	}
+
+	const credit = str(story.image_credit);
+	const meta = [str(story.when), str(story.where), str(story.source)];
+	if (image && credit && credit !== str(story.source)) meta.push(`Photo: ${credit}`);
+	const metaText = meta.filter(Boolean).join(" · ");
+	if (metaText) item.append(el("small", null, metaText));
+	return item;
 }
 
 // Stories too tall for their card scroll slowly within it: hold on the
@@ -526,12 +498,17 @@ function fitScroll(slotEl) {
 	], { duration: total, iterations: Infinity, direction: "alternate" });
 }
 
-function setSlot(slotEl, item, animate) {
+function setSlot(slotEl, story, animate) {
 	const render = () => {
-		slotEl.innerHTML = item
-			? `${item.section ? `<div class="news-section">${escapeHtml(item.section)}</div>` : ""}<div class="news-viewport"><div class="news-item">${item.html}</div></div>`
-			: "";
-		slotEl.classList.toggle("empty", !item);
+		slotEl.replaceChildren();
+		if (story) {
+			const section = str(story.section);
+			if (section) slotEl.append(el("div", "news-section", section));
+			const viewport = el("div", "news-viewport");
+			viewport.append(buildStory(story));
+			slotEl.append(viewport);
+		}
+		slotEl.classList.toggle("empty", !story);
 		slotEl.classList.remove("fading");
 		fitScroll(slotEl);
 		slotEl.querySelectorAll("img").forEach(img => img.addEventListener("load", () => fitScroll(slotEl), { once: true }));
@@ -549,10 +526,28 @@ function rotateNews() {
 }
 
 async function loadNews() {
-	const html = await fetch("rollup.html", { cache: "no-store" }).then(res => res.text());
-	if (html === news.rawHtml) return; // unchanged since last hourly check
-	news.rawHtml = html;
-	news.items = splitRollup(html);
+	let raw;
+	try {
+		const res = await fetch(NEWS_URL, { cache: "no-store" });
+		if (!res.ok) throw new Error(`HTTP ${res.status}`);
+		raw = await res.text();
+	} catch (err) {
+		console.error("news: could not load", NEWS_URL, err);
+		return; // keep showing whatever is on screen
+	}
+	if (raw === news.raw) return; // unchanged since last hourly check
+
+	let data;
+	try {
+		data = jsyaml.load(raw);
+	} catch (err) {
+		console.error("news: invalid YAML", err);
+		return;
+	}
+	news.raw = raw;
+	news.generated = str(data?.generated);
+	news.items = (Array.isArray(data?.stories) ? data.stories : [])
+		.filter(story => story && str(story.title));
 
 	const slots = document.querySelectorAll("#news-panel .news-slot");
 	slots.forEach((slotEl, i) => setSlot(slotEl, news.items[i], false));
