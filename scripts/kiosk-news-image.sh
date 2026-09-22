@@ -1,5 +1,5 @@
 #!/bin/bash
-# Download one image for the kiosk news agent, shrink it to a kiosk-sized
+# Download one image for the kiosk news agent, shrink it to a kiosk-sized (480px wide)
 # JPEG, and print the path to use in news.yml (e.g. img/fall-folk-festival.jpg).
 #
 #   kiosk-news-image.sh <image-url> <short-name>
@@ -37,7 +37,7 @@ curl -fsSL --proto '=http,https' --proto-redir '=http,https' \
 	-o "$tmp" "$url" || die "download failed"
 
 ffmpeg -nostdin -loglevel error -y -f image2pipe -i pipe:0 -frames:v 1 \
-	-vf "scale='min(800,iw)':-2" -q:v 4 "$stage/img/$out" < "$tmp" \
+	-vf "scale='min(480,iw)':-2" -q:v 4 "$stage/img/$out" < "$tmp" \
 	|| { rm -f "$stage/img/$out"; die "not a usable image"; }
 
 [[ -s "$stage/img/$out" ]] || { rm -f "$stage/img/$out"; die "conversion produced no output"; }
