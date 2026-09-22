@@ -467,7 +467,9 @@ function buildStory(story) {
 	}
 
 	const credit = str(story.image_credit);
-	const meta = [str(story.when), str(story.where), str(story.source)];
+	const where = str(story.where);
+	const source = str(story.source) === where ? "" : str(story.source); // venue is often the source too
+	const meta = [str(story.when), where, source];
 	if (image && credit && credit !== str(story.source)) meta.push(`Photo: ${credit}`);
 	const metaText = meta.filter(Boolean).join(" · ");
 	if (metaText) item.append(el("small", null, metaText));

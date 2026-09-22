@@ -6,7 +6,7 @@
 #                                    copied into the site or committed
 #   scripts/kiosk-news.sh --check D  validate D/news.yml (the agent runs this)
 #
-# The agent follows .claude/skills/kiosk-news/SKILL.md, writes news.yml and
+# The agent follows kiosk-news/SKILL.md, writes news.yml and
 # images into a staging folder outside the repo, and may edit its own skill
 # files. This script then validates the output, copies it into
 # public/kiosk/news/, and commits only that folder plus the skill folder.
@@ -20,7 +20,10 @@ export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:/snap/bin:/usr/local/bin:/us
 
 SELF="$(readlink -f "$0")"
 REPO="$(dirname "$(dirname "$SELF")")"
-SKILL_DIR="$REPO/.claude/skills/kiosk-news"
+# Lives outside .claude/ on purpose: restricted mode treats files under .claude/
+# as tool configuration and refuses agent writes there. .claude/skills/kiosk-news
+# is a symlink to it so interactive sessions still find the skill.
+SKILL_DIR="$REPO/kiosk-news"
 IMG_SCRIPT="$REPO/scripts/kiosk-news-image.sh"
 OUT_DIR="$REPO/public/kiosk/news"
 
@@ -156,8 +159,7 @@ log "=== run start (model=$MODEL, dry_run=$DRY_RUN) ==="
 		--no-session-persistence \
 		--add-dir "$STAGE" \
 		--allowedTools WebSearch WebFetch Read Glob Grep \
-			"Write(/$STAGE/**)" "Edit(/$STAGE/**)" \
-			"Write(/$SKILL_DIR/**)" "Edit(/$SKILL_DIR/**)" \
+			"Edit(/$STAGE/**)" "Edit(/$SKILL_DIR/**)" \
 			"Bash($IMG_SCRIPT:*)" "Bash($SELF --check:*)"
 ) 2>&1 | tee -a "$LOG"
 agent_status=${PIPESTATUS[0]}
@@ -174,8 +176,12 @@ fi
 # to almost nothing is a broken edit, not an improvement - restore it.
 if [[ ! -s "$SKILL_DIR/SKILL.md" ]] || (( $(wc -c < "$SKILL_DIR/SKILL.md") < 1500 )); then
 	log "SKILL.md missing or truncated; restoring the committed skill"
-	git -C "$REPO" checkout -- .claude/skills/kiosk-news
+	git -C "$REPO" checkout -- kiosk-news
 fi
+
+# The model doesn't know the exact time; stamp the real one.
+sed -i "s/^generated:.*/generated: \"$(date -Iseconds)\"/" "$STAGE/news.yml"
+grep -q '^generated:' "$STAGE/news.yml" || sed -i "1i generated: \"$(date -Iseconds)\"" "$STAGE/news.yml"
 
 if (( DRY_RUN )); then
 	log "dry run: output left in $STAGE (skill edits, if any, are uncommitted in $SKILL_DIR)"
@@ -202,12 +208,12 @@ grep -oE 'img/[a-z0-9-]+\.jpg' "$STAGE/news.yml" | sort -u | while read -r img; 
 done
 
 cd "$REPO" || exit 1
-git add -A public/kiosk/news .claude/skills/kiosk-news
-if git diff --cached --quiet -- public/kiosk/news .claude/skills/kiosk-news; then
+git add -A public/kiosk/news kiosk-news
+if git diff --cached --quiet -- public/kiosk/news kiosk-news; then
 	log "no changes to publish"
 	exit 0
 fi
-git commit -q -m "Update kiosk news" -- public/kiosk/news .claude/skills/kiosk-news
+git commit -q -m "Update kiosk news" -- public/kiosk/news kiosk-news
 if ! git push -q origin main 2>&1 | tee -a "$LOG"; then
 	git pull -q --rebase origin main && git push -q origin main
 fi

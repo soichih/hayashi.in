@@ -60,7 +60,9 @@ public/                Static assets served from site root
 public/images/         Images, incl. soichi.avatar.png (the profile avatar)
 public/CNAME           Custom domain — do NOT delete (see Deployment)
 public/kiosk/          Kitchen kiosk dashboard (plain HTML/JS, not part of the Astro build)
-.claude/skills/kiosk-news/  Agent skill that writes the kiosk news (edits itself)
+kiosk-news/            Agent skill that writes the kiosk news (edits itself; symlinked
+                       from .claude/skills/kiosk-news - kept outside .claude/ so the
+                       restricted-mode agent is allowed to edit it)
 scripts/kiosk-news*.sh Cron wrapper + image downloader for that agent
 ```
 
@@ -73,7 +75,7 @@ Everything under it is public like the rest of the site.
   (private repo, holds the API keys).
 - `news/news.yml` + `news/img/` — written twice a day by `scripts/kiosk-news.sh`, which
   runs `claude -p` with the `kiosk-news` skill. The agent researches the sources in
-  `.claude/skills/kiosk-news/sources.md`, writes card-sized stories, downloads images via
+  `kiosk-news/sources.md`, writes card-sized stories, downloads images via
   `scripts/kiosk-news-image.sh`, and may improve its own skill files (logged in the skill's
   `CHANGELOG.md`). The wrapper validates the YAML, then commits only `public/kiosk/news/`
   and the skill folder and pushes to `main`. Its fixed guardrails live in the wrapper's

@@ -75,6 +75,10 @@ Write like a sharp local news editor, not a press release.
 - Plain text only - no HTML, no Markdown, no emoji.
 - Events: put the date/time in `when` and the venue in `where`, and keep them
   out of the body unless extra detail is needed (e.g. doors vs show time).
+  If the venue isn't known, leave `where` out - never write a placeholder
+  like "Bloomington" or "see listing".
+- No closing filler: cut sentences that add no fact, such as "One of the
+  city's beloved traditions" or "A great night out for the whole family".
 - Only state what the sources say. Never invent times, prices, quotes or
   numbers. If a detail is unclear, leave it out.
 
