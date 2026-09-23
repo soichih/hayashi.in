@@ -301,10 +301,12 @@ function createWeatherChart(json) {
 						display: true,
 						text: '(rain) mm',
 						color: "gray",
-						font: { size: 16 }
+						font: { size: 12 },
+						padding: 0
 					},
 					ticks: {
-						font: { size: 18 },
+						font: { size: 14 },
+						padding: 2,
 						color: "gray"
 					},
 					min: 0,
@@ -318,10 +320,12 @@ function createWeatherChart(json) {
 						display: true,
 						text: 'mph',
 						color: "orange",
-						font: { size: 16 }
+						font: { size: 12 },
+						padding: 0
 					},
 					ticks: {
-						font: { size: 18 },
+						font: { size: 14 },
+						padding: 2,
 						color: "orange"
 					},
 					grid: {
