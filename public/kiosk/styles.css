@@ -64,10 +64,16 @@ h2 {
 .main-content {
 	flex: 0 0 auto;
 	width: calc(100% - var(--news-width));
-	/* fill the screen above the footer; the chart takes whatever is left */
+	/* fill the screen above the footer; the weather row takes whatever the
+	   fixed-height chart leaves and centers its content in it */
 	height: calc(100vh - var(--footer-height));
 	display: flex;
 	flex-direction: column;
+}
+
+.main-content > .row {
+	flex: 1;
+	align-items: center;
 }
 
 #weather {
@@ -112,10 +118,10 @@ h2 {
 #weather .dew-unbearable { color: #a21caf; }
 
 #weather-chart-container {
-	flex: 1;
-	min-height: 0;
+	height: 340px;
+	flex: none;
 	width: calc(100% - 2vw);
-	margin: 0.5vw 1vw;
+	margin: 0 1vw 1vw;
 	box-sizing: border-box;
 }
 
