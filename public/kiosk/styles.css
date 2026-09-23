@@ -9,6 +9,8 @@
 	--panel-bg: #f7f9fc;
 	--shadow: 0 2px 14px rgba(15, 23, 42, 0.08);
 	--radius: 18px;
+	--news-width: 46.2%; /* right-hand news panel; the left column gets the rest */
+	--footer-height: 6vh;
 }
 
 body {
@@ -61,6 +63,8 @@ h2 {
 /* ===== Weather Display ===== */
 .main-content {
 	padding-bottom: 1vw;
+	flex: 0 0 auto;
+	width: calc(100% - var(--news-width));
 }
 
 #weather {
@@ -115,8 +119,8 @@ h2 {
 	position: fixed;
 	right: 0;
 	top: 0;
-	bottom: 8vh; /* stop above the fixed footer so the bottom row isn't covered */
-	width: 42%;
+	bottom: var(--footer-height); /* stop above the fixed footer so the bottom row isn't covered */
+	width: var(--news-width);
 	background: #d8dfe8; /* shows through the 2px gaps as dividers */
 	font-family: "Roboto", sans-serif;
 	color: var(--ink);
@@ -214,8 +218,8 @@ footer {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 1.6vh 2vw;
-	height: 8vh;
+	padding: 0 2vw;
+	height: var(--footer-height);
 	background: var(--card-bg);
 	box-shadow: 0 -2px 14px rgba(15, 23, 42, 0.06);
 	box-sizing: border-box;
