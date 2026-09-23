@@ -119,26 +119,23 @@ h2 {
 	top: 0;
 	bottom: 8vh; /* stop above the fixed footer so the bottom row isn't covered */
 	width: 42%;
-	background: var(--panel-bg);
-	border-left: 1px solid rgba(15, 23, 42, 0.06);
+	background: #d8dfe8; /* shows through the 2px gaps as dividers */
 	font-family: "Roboto", sans-serif;
 	color: var(--ink);
 	box-sizing: border-box;
-	padding: 1.2vw;
+	padding: 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
-	gap: 1.2vw;
+	gap: 2px;
 }
 
 .news-slot {
 	min-width: 0;
 	min-height: 0;
 	overflow: hidden;
-	padding: 1vw;
+	padding: 0.4vw 0.6vw 0;
 	background: var(--card-bg);
-	border-radius: 0;
-	box-shadow: var(--shadow);
 	display: flex;
 	flex-direction: column;
 }
@@ -161,7 +158,7 @@ h2 {
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
 	color: var(--accent);
-	margin-bottom: 0.5vw;
+	margin-bottom: 0.2vw;
 }
 
 .news-track {
@@ -171,7 +168,7 @@ h2 {
 /* Spacing is padding, not margin, so a list's offsetHeight includes the gap
    after its last story and the looped copy lines up exactly. */
 .news-item {
-	padding: 1vw 0;
+	padding: 0.5vw 0;
 	border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 	font-size: 1.05vw;
 	line-height: 1.4;
@@ -184,11 +181,11 @@ h2 {
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
 	color: var(--accent-2);
-	margin-bottom: 0.3vw;
+	margin-bottom: 0.2vw;
 }
 
 .news-item p {
-	margin: 0 0 0.5vw;
+	margin: 0 0 0.3vw;
 }
 
 .news-item h4 {
@@ -196,7 +193,7 @@ h2 {
 	line-height: 1.25;
 	font-weight: 700;
 	color: var(--ink);
-	margin: 0 0 0.5vw;
+	margin: 0 0 0.3vw;
 }
 
 .news-item small {
@@ -210,7 +207,7 @@ h2 {
 	width: 100%;
 	max-height: 8.5vw;
 	object-fit: cover;
-	margin-bottom: 0.6vw;
+	margin-bottom: 0.4vw;
 }
 
 /* ===== Footer ===== */
