@@ -64,16 +64,15 @@ h2 {
 .main-content {
 	flex: 0 0 auto;
 	width: calc(100% - var(--news-width));
-	/* fill the screen above the footer; the weather row takes whatever the
-	   fixed-height chart leaves and centers its content in it */
+	/* fill the screen above the footer; any height the weather row and the
+	   fixed-height chart don't use is left blank at the bottom */
 	height: calc(100vh - var(--footer-height));
 	display: flex;
 	flex-direction: column;
 }
 
 .main-content > .row {
-	flex: 1;
-	align-items: center;
+	padding: 0.5vw 0;
 }
 
 #weather {
