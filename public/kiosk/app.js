@@ -256,10 +256,10 @@ function createWeatherChart(json) {
 						display: true,
 						text: 'F',
 						color: "gray",
-						font: { size: 15 }
+						font: { size: 16 }
 					},
 					ticks: {
-						font: { size: 15 },
+						font: { size: 18 },
 						color: "gray",
 					},
 					grid: {
@@ -276,7 +276,7 @@ function createWeatherChart(json) {
 						display: true,
 						text: '(rain) mm',
 						color: "gray",
-						font: { size: 15 }
+						font: { size: 16 }
 					},
 					ticks: {
 						font: { size: 18 },
@@ -293,10 +293,10 @@ function createWeatherChart(json) {
 						display: true,
 						text: 'mph',
 						color: "orange",
-						font: { size: 15 }
+						font: { size: 16 }
 					},
 					ticks: {
-						font: { size: 15 },
+						font: { size: 18 },
 						color: "orange"
 					},
 					grid: {
@@ -386,9 +386,9 @@ function createChartBackgroundPlugin(json) {
 				const date = new Date(dt * 1000);
 				date.setHours(0);
 				const x1 = map_number(date.getTime() / 1000, dtBegin, dtEnd, left, right);
-				ctx.font = "18px sans-serif";
+				ctx.font = "20px sans-serif";
 				ctx.fillStyle = "#ffffff";
-				ctx.fillText(" " + date.toLocaleDateString('en-us', { day: "numeric", weekday: "long" }), x1, top + 15);
+				ctx.fillText(" " + date.toLocaleDateString('en-us', { day: "numeric", weekday: "long" }), x1, top + 18);
 
 				ctx.beginPath();
 				ctx.moveTo(x1, top);

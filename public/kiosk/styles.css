@@ -165,7 +165,7 @@ h2 {
 }
 
 .news-section {
-	font-size: 0.85vw;
+	font-size: 0.94vw; /* 18px */
 	font-weight: 700;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
@@ -182,13 +182,13 @@ h2 {
 .news-item {
 	padding: 0.5vw 0;
 	border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-	font-size: 1.05vw;
+	font-size: 1.25vw; /* 24px */
 	line-height: 1.4;
 	color: var(--muted);
 }
 
 .news-kicker {
-	font-size: 0.75vw;
+	font-size: 0.88vw; /* 17px */
 	font-weight: 700;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
@@ -201,7 +201,7 @@ h2 {
 }
 
 .news-item h4 {
-	font-size: 1.45vw;
+	font-size: 1.67vw; /* 32px */
 	line-height: 1.25;
 	font-weight: 700;
 	color: var(--ink);
@@ -210,7 +210,7 @@ h2 {
 
 .news-item small {
 	display: block;
-	font-size: 0.8vw;
+	font-size: 0.94vw; /* 18px */
 	color: #94a3b8;
 }
 
