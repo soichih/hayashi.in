@@ -71,6 +71,14 @@ scripts/kiosk-news*.sh Cron wrapper + image downloader for that agent
 Served at https://hayashi.in/kiosk/ and shown on the Raspberry Pi kiosks at home.
 Everything under it is public like the rest of the site.
 
+- **Target screen: 1920x1080, and the page must be optimized for exactly that.** The
+  kitchen Pi drives a 24" 1080p monitor over HDMI at scale 1.0, and Chromium runs with
+  `--kiosk` (no browser UI), so the page viewport is the full 1920x1080 (checked
+  2026-09-22). The page is a fixed, non-scrolling dashboard, so design and test layout,
+  font sizes and spacing at that size - e.g. Playwright with
+  `viewport: { width: 1920, height: 1080 }` - and read it from across a kitchen, not a
+  desk. The office Pi wasn't reachable to confirm; assume the same until checked.
+
 - `weather.json` — written hourly by `~/git/pi-scripts/update_kiosk_data.py --only weather`
   (private repo, holds the API keys).
 - `news/news.yml` + `news/img/` — written twice a day by `scripts/kiosk-news.sh`, which
