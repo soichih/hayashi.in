@@ -72,7 +72,7 @@ h2 {
 }
 
 .main-content > .row {
-	padding: 0.5vw 0;
+	padding: 1.25vw 0; /* 24px */
 }
 
 #weather {
