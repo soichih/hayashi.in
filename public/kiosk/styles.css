@@ -9,7 +9,7 @@
 	--panel-bg: #f7f9fc;
 	--shadow: 0 2px 14px rgba(15, 23, 42, 0.08);
 	--radius: 18px;
-	--news-width: 46.2%; /* right-hand news panel; the left column gets the rest */
+	--news-width: 50%; /* right-hand news panel; the left column gets the rest */
 	--footer-height: 6vh;
 }
 
