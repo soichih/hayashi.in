@@ -62,16 +62,20 @@ h2 {
 
 /* ===== Weather Display ===== */
 .main-content {
-	padding-bottom: 1vw;
 	flex: 0 0 auto;
 	width: calc(100% - var(--news-width));
+	/* fill the screen above the footer; the chart takes whatever is left */
+	height: calc(100vh - var(--footer-height));
+	display: flex;
+	flex-direction: column;
 }
 
 #weather {
 	font-size: 6vw;
 	font-weight: 500;
 	color: var(--accent-2);
-	padding: 1.5vw 1vw 0 2vw;
+	padding: 0.5vw 1vw 0 2vw;
+	margin: 0;
 }
 
 #weather .dew-point,
@@ -89,7 +93,7 @@ h2 {
 
 #weather-note {
 	font-size: 1.5vw;
-	padding: 1.5vw 2vw 0 0;
+	padding: 0.5vw 2vw 0 0;
 	color: var(--ink);
 }
 
@@ -108,9 +112,10 @@ h2 {
 #weather .dew-unbearable { color: #a21caf; }
 
 #weather-chart-container {
-	height: 340px;
+	flex: 1;
+	min-height: 0;
 	width: calc(100% - 2vw);
-	margin: 1vw;
+	margin: 0.5vw 1vw;
 	box-sizing: border-box;
 }
 
