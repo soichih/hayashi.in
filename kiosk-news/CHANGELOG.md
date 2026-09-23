@@ -22,3 +22,13 @@ One dated line per edit the agent makes to this skill: what changed and why.
   Auditorium event pages have no image but the matching iuauditorium.com
   page usually does; noted NBC News og:image URLs with `f_avif` fail the
   image download script and need `f_jpg` substituted in.
+- 2026-09-23 (morning run): sources.md: noted Bloomington Aikikai RSS only
+  returns one stale 2024 event; added The Bloomingtonian's periodic "arts
+  roundup" posts as a good source for small gallery/talk events missing from
+  Visit Bloomington RSS; noted CNN article WebFetches can 451 even when
+  WebSearch finds the story elsewhere; noted local-affiliate/member-station
+  mirrors of NBC/AP/NPR wire stories are a reliable WebFetch fallback when
+  the flagship site's URL isn't surfaced by WebSearch. TechCrunch og:image
+  URLs are sometimes `.avif` files the image script can't read (no working
+  substitution found yet, unlike NBC's `f_avif` case) - dropped that story's
+  image rather than retry.

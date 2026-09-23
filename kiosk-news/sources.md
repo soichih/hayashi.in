@@ -39,6 +39,11 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   (2026-09-22) - trust the events-page listing over a single event page for
   the date.
 - Bloomington Aikikai: https://www.bloomingtonaikido.com/club-events?format=rss
+  Feed only returns a single stale event from 2024 (2026-09-23) - not useful, consider dropping if still stale next run.
+- The Bloomingtonian arts roundup posts (e.g. "Bloomington arts roundup: ...")
+  are a good single source for several small gallery/talk/festival events at
+  once (Paint Bloomington, artist talks) that don't show up in the Visit
+  Bloomington RSS feed (2026-09-23).
 
 ## Local news
 
@@ -69,6 +74,13 @@ nothing. Keep each note short: what the source is good for, and any quirks.
 - AP News: https://apnews.com/ and BBC News: https://www.bbc.com/news -
   WebFetch couldn't reach either (2026-09-22). Retry occasionally; meanwhile
   use WebSearch to find their coverage of a story.
+- CNN article WebFetches can return HTTP 451 (geo/legal block) even when the
+  story is findable via WebSearch and other outlets cover it fine
+  (2026-09-23).
+- WebSearch results often surface local-affiliate mirrors of NBC/AP wire
+  stories (e.g. an NBC-owned local station or an NPR-member station running
+  the same AP/NPR piece) when the flagship site's article isn't in the
+  results - these WebFetch fine and are a good fallback (2026-09-23).
 
 ## AI news
 
