@@ -239,7 +239,7 @@ footer {
 }
 
 #sunrise,
-#sunset,
+#sunset-moon,
 #noon {
 	font-size: 2.6vw;
 	color: var(--muted);
@@ -255,7 +255,7 @@ footer {
 	order: 2;
 }
 
-#sunset {
+#sunset-moon {
 	order: 3;
 }
 
@@ -263,8 +263,8 @@ footer {
 	content: "☀️ ";
 }
 
-#sunset::after {
-	content: " 🌕";
+#moon {
+	margin-left: 0.4em;
 }
 
 /* ===== Optional Effects ===== */

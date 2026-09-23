@@ -20,6 +20,11 @@ function ktof(k) {
 	return ((k - 273.15) * 1.8 + 32);
 }
 
+// OpenWeather's default ("standard") units give wind in meters per second
+function mpsToMph(mps) {
+	return mps * 2.236936;
+}
+
 function ktocolor(k) {
 	// Temperature to color mapping (270-290K range)
 	return `hsl(${300 - (k - 250) * 5}, 100%, 50%)`;
@@ -106,8 +111,9 @@ function loadWeather() {
 		// Update weather forecast notes
 		updateWeatherNotes(json.daily);
 
-		// Update sunrise/sunset times
+		// Update sunrise/sunset times and tonight's moon
 		updateSunTimes(json.current);
+		updateMoon(json.daily[0]);
 
 		// Create weather chart
 		createWeatherChart(json);
@@ -118,31 +124,50 @@ function updateCurrentWeather(current) {
 	let str = "<span id='temp' style='line-height: 100%;'>" + (ktof(current.feels_like).toFixed(0) | 0) + "F</span>";
 	const dew_point = ktof(current.dew_point).toFixed(0);
 	str += "<div class='dew-point " + dewPointClass(dew_point) + "'>Dew Pt: " + dew_point + "F</div>";
-	str += "<div class='wind-speed'>Wind: " + Math.floor(current.wind_speed / 0.621371192) + " mph</div>";
+	str += "<div class='wind-speed'>Wind: " + Math.round(mpsToMph(current.wind_speed)) + " mph</div>";
 	document.getElementById("weather").innerHTML = str;
 }
 
+// One line per day built from the numbers, e.g. "Light rain · 72° / 55° · 60% rain".
+// OpenWeather's own `summary` text is often ungrammatical ("There will be
+// partly cloudy today"), so it isn't used.
+function dayForecast(day) {
+	const desc = day.weather?.[0]?.description || "";
+	const parts = [desc.charAt(0).toUpperCase() + desc.slice(1)];
+	parts.push(`${Math.round(ktof(day.temp.max))}° / ${Math.round(ktof(day.temp.min))}°`);
+	const pop = Math.round((day.pop || 0) * 100);
+	if (pop >= 10) parts.push(`${pop}% rain`);
+	if (day.uvi >= 6) parts.push(`UV ${Math.round(day.uvi)}`);
+	return parts.filter(Boolean).join(" · ");
+}
+
 function updateWeatherNotes(daily) {
-	const today = daily[0];
-	const tomorrow = daily[1];
-
-	let title = "Today";
-	if (today.summary === tomorrow.summary) {
-		title += " and Tomorrow";
-	}
-	let weatherNote = "<h2>" + title + "</h2><p>" + today.summary + "</p>";
-
-	// Tomorrow's weather (if different)
-	if (today.summary !== tomorrow.summary) {
-		weatherNote += "<h2>Tomorrow</h2><p>" + tomorrow.summary + "</p>";
-	}
-	document.getElementById("weather-note").innerHTML = weatherNote;
+	const note = document.getElementById("weather-note");
+	note.replaceChildren();
+	[["Today", daily[0]], ["Tomorrow", daily[1]]].forEach(([title, day]) => {
+		if (!day) return;
+		note.append(el("h2", null, title), el("p", null, dayForecast(day)));
+	});
 }
 
 function updateSunTimes(current) {
 	setTimeString("sunrise", current.sunrise);
 	setTimeString("sunset", current.sunset);
 	setTimeString("noon", (current.sunrise + current.sunset) / 2);
+}
+
+// moon_phase: 0 and 1 are new moon, 0.25 first quarter, 0.5 full, 0.75 last quarter
+const MOON_PHASES = [
+	["🌑", "New moon"], ["🌒", "Waxing crescent"], ["🌓", "First quarter"], ["🌔", "Waxing gibbous"],
+	["🌕", "Full moon"], ["🌖", "Waning gibbous"], ["🌗", "Last quarter"], ["🌘", "Waning crescent"]
+];
+
+function updateMoon(today) {
+	const moon = document.getElementById("moon");
+	if (typeof today?.moon_phase !== "number") return moon.replaceChildren();
+	const [icon, name] = MOON_PHASES[Math.round(today.moon_phase * 8) % 8];
+	moon.textContent = icon;
+	moon.title = name;
 }
 
 function createWeatherChart(json) {
@@ -220,7 +245,7 @@ function createWeatherChart(json) {
 				{
 					type: 'line',
 					label: 'Wind Gusts',
-					data: json.hourly.map(h => h.wind_gust ? Math.floor(h.wind_gust / 0.621371192) : 0),
+					data: json.hourly.map(h => h.wind_gust ? Math.round(mpsToMph(h.wind_gust)) : 0),
 					backgroundColor: "orange",
 					borderColor: "orange",
 					yAxisID: 'yWind',
@@ -231,7 +256,7 @@ function createWeatherChart(json) {
 				{
 					type: 'line',
 					label: 'Wind Speed',
-					data: json.hourly.map(h => Math.floor(h.wind_speed / 0.621371192)),
+					data: json.hourly.map(h => Math.round(mpsToMph(h.wind_speed))),
 					backgroundColor: "yellow",
 					borderColor: "yellow",
 					yAxisID: 'yWind',
