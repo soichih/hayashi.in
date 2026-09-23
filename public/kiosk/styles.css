@@ -112,7 +112,7 @@ h2 {
 	box-sizing: border-box;
 }
 
-/* ===== News Panel (2x2 rotating quadrants) ===== */
+/* ===== News Panel (2x2 grouped, scrolling panes) ===== */
 #news-panel {
 	position: fixed;
 	right: 0;
@@ -139,22 +139,16 @@ h2 {
 	background: var(--card-bg);
 	border-radius: 0;
 	box-shadow: var(--shadow);
-	transition: opacity 0.6s ease, transform 0.6s ease;
 	display: flex;
 	flex-direction: column;
 }
 
-/* The story area under the section label; long stories scroll inside it
-   (see fitScroll in app.js) while the label stays put. */
+/* The story list under the pane label; it scrolls in a loop when taller
+   than the pane (see startMarquee in app.js) while the label stays put. */
 .news-viewport {
 	flex: 1;
 	min-height: 0;
 	overflow: hidden;
-}
-
-.news-slot.fading {
-	opacity: 0;
-	transform: translateY(0.6vw);
 }
 
 .news-slot.empty {
@@ -170,10 +164,27 @@ h2 {
 	margin-bottom: 0.5vw;
 }
 
+.news-track {
+	will-change: transform;
+}
+
+/* Spacing is padding, not margin, so a list's offsetHeight includes the gap
+   after its last story and the looped copy lines up exactly. */
 .news-item {
+	padding: 1vw 0;
+	border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 	font-size: 1.05vw;
 	line-height: 1.4;
 	color: var(--muted);
+}
+
+.news-kicker {
+	font-size: 0.75vw;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--accent-2);
+	margin-bottom: 0.3vw;
 }
 
 .news-item p {

@@ -6,10 +6,7 @@ const CONFIG = {
 	UPDATE_INTERVAL: 3600 * 1000, // 1 hour
 	CLOCK_UPDATE_INTERVAL: 1000,  // 1 second
 	CHART_UPDATE_INTERVAL: 60 * 1000, // 1 minute
-	NEWS_ROTATE_INTERVAL: 10 * 1000, // replace one quadrant every 10 seconds
-	NEWS_FADE_MS: 600,
-	NEWS_SCROLL_SPEED: 0.012, // long stories scroll at this fraction of screen width per second
-	NEWS_SCROLL_PAUSE: 3      // seconds to hold at the top and bottom of a long story
+	NEWS_SCROLL_SPEED: 0.012 // news panes scroll at this fraction of screen width per second
 };
 
 // ===== UTILITY FUNCTIONS =====
@@ -418,9 +415,9 @@ function createChartBackgroundPlugin(json) {
 // ===== NEWS PANEL FUNCTIONS =====
 
 // Stories come from news/news.yml, written twice a day by a Claude agent
-// (scripts/kiosk-news.sh + .claude/skills/kiosk-news). Up to 4 are shown at a
-// time in a 2x2 grid, replacing one quadrant every NEWS_ROTATE_INTERVAL (so
-// all 4 turn over every 4 intervals).
+// (scripts/kiosk-news.sh + .claude/skills/kiosk-news). They are grouped by
+// section into the 4 panes of a 2x2 grid (NEWS_GROUPS), and each pane shows
+// its whole group as one list that scrolls upward in a continuous loop.
 //
 // The agent writes this file after reading arbitrary web pages, so every
 // field is treated as plain text (textContent, never innerHTML) and images
@@ -428,13 +425,18 @@ function createChartBackgroundPlugin(json) {
 
 const NEWS_URL = "news/news.yml";
 
+// One entry per pane, in grid order. A section not listed here (the agent
+// can invent one) goes to the last pane rather than being dropped.
+const NEWS_GROUPS = [
+	{ label: "Local Events", sections: ["Local Events"] },
+	{ label: "Local News", sections: ["Weather Alert", "Local News"] },
+	{ label: "US & World", sections: ["US News", "World News"] },
+	{ label: "AI & On This Day", sections: ["AI News", "On This Day"] }
+];
+
 const news = {
 	raw: null,
-	generated: "",
-	items: [],
-	next: 0,  // index of the next item to bring in
-	slot: 0,  // quadrant to replace on the next tick
-	timer: null
+	generated: ""
 };
 
 function el(tag, className, text) {
@@ -448,8 +450,11 @@ function str(value) {
 	return typeof value === "string" ? value.trim() : "";
 }
 
-function buildStory(story) {
+function buildStory(story, showSection) {
 	const item = el("div", "news-item");
+
+	// panes holding more than one section label each story with its own
+	if (showSection && str(story.section)) item.append(el("div", "news-kicker", str(story.section)));
 
 	const image = str(story.image);
 	if (/^img\/[a-z0-9-]+\.jpg$/.test(image)) {
@@ -476,55 +481,58 @@ function buildStory(story) {
 	return item;
 }
 
-// Stories too tall for their card scroll slowly within it: hold on the
-// headline, scroll to the end, hold, then scroll back up, for as long as the
-// card is on screen. Re-measured when images load, since they change height.
-function fitScroll(slotEl) {
-	const viewport = slotEl.querySelector(".news-viewport");
-	const item = slotEl.querySelector(".news-item");
-	if (!viewport || !item) return;
-	const distance = item.offsetHeight - viewport.clientHeight;
-	item.getAnimations().forEach(a => a.cancel());
-	if (distance <= 2) return;
-
-	const scrollMs = distance / (window.innerWidth * CONFIG.NEWS_SCROLL_SPEED) * 1000;
-	const pauseMs = CONFIG.NEWS_SCROLL_PAUSE * 1000;
-	const total = scrollMs + 2 * pauseMs;
-	const hold = pauseMs / total;
-	const end = `translateY(-${distance}px)`;
-	item.animate([
-		{ transform: "translateY(0)", offset: 0 },
-		{ transform: "translateY(0)", offset: hold, easing: "ease-in-out" },
-		{ transform: end, offset: 1 - hold },
-		{ transform: end, offset: 1 }
-	], { duration: total, iterations: Infinity, direction: "alternate" });
+// Resolves once every image in `node` has loaded or failed (a failed one
+// removes itself), so heights are final before the marquee is measured.
+function imagesSettled(node) {
+	const pending = [...node.querySelectorAll("img")].filter(img => !img.complete);
+	return Promise.all(pending.map(img => new Promise(resolve => {
+		img.addEventListener("load", resolve, { once: true });
+		img.addEventListener("error", resolve, { once: true });
+	})));
 }
 
-function setSlot(slotEl, story, animate) {
-	const render = () => {
-		slotEl.replaceChildren();
-		if (story) {
-			const section = str(story.section);
-			if (section) slotEl.append(el("div", "news-section", section));
-			const viewport = el("div", "news-viewport");
-			viewport.append(buildStory(story));
-			slotEl.append(viewport);
-		}
-		slotEl.classList.toggle("empty", !story);
-		slotEl.classList.remove("fading");
-		fitScroll(slotEl);
-		slotEl.querySelectorAll("img").forEach(img => img.addEventListener("load", () => fitScroll(slotEl), { once: true }));
-	};
-	if (!animate) return render();
-	slotEl.classList.add("fading");
-	setTimeout(render, CONFIG.NEWS_FADE_MS);
+// If the list is taller than its pane, append an identical copy below it and
+// slide the pair up by exactly one list height, forever: when the animation
+// wraps, the copy sits where the original started, so the loop has no seam.
+async function startMarquee(paneEl, list) {
+	const token = paneEl.dataset.token;
+	await imagesSettled(list);
+	if (paneEl.dataset.token !== token) return; // pane was rebuilt meanwhile
+
+	const viewport = paneEl.querySelector(".news-viewport");
+	const distance = list.offsetHeight;
+	if (distance <= viewport.clientHeight) return; // fits: nothing to scroll
+
+	const track = list.parentElement;
+	track.append(list.cloneNode(true));
+	const duration = distance / (window.innerWidth * CONFIG.NEWS_SCROLL_SPEED) * 1000;
+	track.animate(
+		[{ transform: "translateY(0)" }, { transform: `translateY(-${distance}px)` }],
+		{ duration, iterations: Infinity, easing: "linear" }
+	);
 }
 
-function rotateNews() {
-	const slots = document.querySelectorAll("#news-panel .news-slot");
-	setSlot(slots[news.slot], news.items[news.next % news.items.length], true);
-	news.next = (news.next + 1) % news.items.length;
-	news.slot = (news.slot + 1) % slots.length;
+function setPane(paneEl, group, stories) {
+	paneEl.dataset.token = String(Date.now() + Math.random());
+	paneEl.replaceChildren();
+	paneEl.classList.toggle("empty", stories.length === 0);
+	if (!stories.length) return;
+
+	const mixed = new Set(stories.map(s => str(s.section))).size > 1;
+	const list = el("div", "news-list");
+	stories.forEach(story => list.append(buildStory(story, mixed)));
+
+	const track = el("div", "news-track");
+	track.append(list);
+	const viewport = el("div", "news-viewport");
+	viewport.append(track);
+	paneEl.append(el("div", "news-section", group.label), viewport);
+	startMarquee(paneEl, list);
+}
+
+function groupOf(story) {
+	const i = NEWS_GROUPS.findIndex(g => g.sections.includes(str(story.section)));
+	return i === -1 ? NEWS_GROUPS.length - 1 : i;
 }
 
 async function loadNews() {
@@ -548,21 +556,15 @@ async function loadNews() {
 	}
 	news.raw = raw;
 	news.generated = str(data?.generated);
-	news.items = (Array.isArray(data?.stories) ? data.stories : [])
+	const stories = (Array.isArray(data?.stories) ? data.stories : [])
 		.filter(story => story && str(story.title));
 
-	const slots = document.querySelectorAll("#news-panel .news-slot");
-	slots.forEach((slotEl, i) => setSlot(slotEl, news.items[i], false));
-	news.next = slots.length % Math.max(news.items.length, 1);
-	news.slot = 0;
+	// within a pane, stories keep the order the agent wrote them in
+	const groups = NEWS_GROUPS.map(() => []);
+	stories.forEach(story => groups[groupOf(story)].push(story));
 
-	// Items are always shown in sequence and replaced round-robin, so the 4
-	// on screen are consecutive stories and never duplicates. With 4 or
-	// fewer stories there is nothing to rotate in.
-	clearInterval(news.timer);
-	news.timer = news.items.length > slots.length
-		? setInterval(rotateNews, CONFIG.NEWS_ROTATE_INTERVAL)
-		: null;
+	const panes = document.querySelectorAll("#news-panel .news-slot");
+	panes.forEach((paneEl, i) => setPane(paneEl, NEWS_GROUPS[i], groups[i] || []));
 }
 
 // ===== INITIALIZATION =====

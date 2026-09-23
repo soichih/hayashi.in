@@ -83,8 +83,9 @@ Everything under it is public like the rest of the site.
   - Test without publishing: `scripts/kiosk-news.sh --dry-run` (output stays in
     `~/.local/state/kiosk-news/stage`). Log: `~/.local/state/kiosk-news/kiosk-news.log`.
   - Cron: `30 6,18 * * * /home/soichih/git/hayashi.in/scripts/kiosk-news.sh`
-- `app.js` renders `news.yml` as a 2x2 grid of cards, swapping one card every 10 s; long
-  stories scroll inside their card. Story fields are rendered as text only (never HTML),
+- `app.js` groups `news.yml` stories by `section` into a 2x2 grid (`NEWS_GROUPS`: Local
+  Events | Local News | US & World | AI & On This Day); each pane scrolls its whole group
+  upward in a seamless loop. Story fields are rendered as text only (never HTML),
   since the agent writes them after reading arbitrary web pages.
 
 ## Editing conventions
