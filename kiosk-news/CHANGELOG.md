@@ -32,3 +32,4 @@ One dated line per edit the agent makes to this skill: what changed and why.
   URLs are sometimes `.avif` files the image script can't read (no working
   substitution found yet, unlike NBC's `f_avif` case) - dropped that story's
   image rather than retry.
+- 2026-09-24: sources.md - noted to run the image script one Bash call per image (chained call was denied).

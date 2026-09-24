@@ -1,98 +1,109 @@
-generated: "2026-09-23T18:32:01-04:00"
+generated: "2026-09-24T06:32:23-04:00"
 stories:
-  - section: Local Events
-    title: Welcome to the Neighborhood at The Bluebird
-    body: >-
-      Doors open at 9pm, show at 10pm. 21+.
-    when: Wed Sep 23, 9pm doors, 10pm show
-    where: The Bluebird
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
-
   - section: Local Events
     title: "Kalimba: The Spirit of Earth, Wind & Fire"
     body: >-
-      A live tribute band plays the Earth, Wind & Fire catalog for an all-ages
-      crowd. Discounted tickets for attendees 18 and under with code HOOSIERS.
-    when: Thu Sep 24, doors 6:30pm, show 7pm
+      A touring tribute band plays Earth, Wind & Fire hits with a live band.
+      Tickets $20, or $18 for ages 18 and under.
+    when: Thu Sep 24, 7pm
     where: Buskirk-Chumley Theater
-    source: Buskirk-Chumley Theater
+    source: The Bloomingtonian
     url: https://buskirkchumley.org/events/kalimba-the-spirit-of-earth-wind-and-fire-earth-wind-fire-tribute-september-24-2026
+    image: img/kalimba.jpg
+    image_credit: Visit Bloomington
 
   - section: Local Events
     title: Priscilla Block at The Bluebird
     body: >-
       Doors open at 7pm, show at 8pm. 21+.
-    when: Thu Sep 24, 7pm doors, 8pm show
+    when: Thu Sep 24, 8pm
     where: The Bluebird
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
+    url: https://www.visitbloomington.com/event/priscilla-block/59185/
 
   - section: Local Events
     title: Stinesville Stone Quarry Festival
     body: >-
-      The festival marks more than 50 years celebrating Monroe County's
-      limestone-quarrying history, with local bands and family games.
+      The 50-plus-year-old festival celebrates Monroe County's limestone
+      history with local bands and family games.
     when: Thu Sep 24 - Sat Sep 26
     where: McGlocklin Park, Stinesville
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/stinesville-stone-quarry-festival/59395/
 
   - section: Local Events
-    title: Jazz at Poindexter
-    body: >-
-      Laid-back jazz duos to start the weekend. Runs every other Thursday
-      through December.
-    when: Thu Sep 24
-    where: Poindexter Bar, Graduate Hotel
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
-
-  - section: Local Events
     title: Bloomington Food Truck Friday
     body: >-
-      Local food trucks and live music in a family-friendly setting. Held
-      Fridays through Oct 30.
-    when: Fri Sep 25
+      Food trucks gather all day at Switchyard Park every Friday through
+      Oct 30, with live music.
+    when: Fri Sep 25, 11am-9pm
     where: Switchyard Park
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
+    url: https://www.visitbloomington.com/event/bloomington-food-truck-friday/58058/
+    image: img/food-truck-friday.jpg
+    image_credit: Visit Bloomington
 
   - section: Local Events
     title: "Guitar in Bloom: Jiji Kim with Roger Neill"
     body: >-
-      Guitarist Jiji Kim performs works by Pärt, Vivaldi, Björnsson and
-      Boccherini, including world premieres, with composer and conductor Roger
-      Neill.
+      Guitarist Jiji Kim plays "Across Time & Strings," including world
+      premieres by composer-conductor Roger Neill.
     when: Fri Sep 25
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
+    url: https://www.visitbloomington.com/event/jiji-kim-guitar%3b-roger-neill-composer-conductor/59528/
+    image: img/jiji-kim.jpg
+    image_credit: Jacobs School of Music
 
   - section: Local Events
     title: Concert Orchestra with pianist Norman Krieger
     body: >-
-      Arthur Fagen conducts Dvorak's Carnival Overture, a Martinu symphony and
-      Brahms's piano concerto, with Norman Krieger as soloist.
+      Arthur Fagen conducts Dvorak, Martinu and Brahms's piano concerto with
+      Norman Krieger as soloist.
     when: Fri Sep 25
     source: Jacobs School of Music
-    url: https://events.iu.edu/
+    url: https://www.visitbloomington.com/event/concert-orchestra-%26%238211%3b-arthur-fagen-conductor%3b-norman-krieger-piano-soloist/59527/
 
   - section: Local Events
     title: K-Pop Warriors Live Show
     body: >-
-      A stage show mixing dance, acrobatics and cosplay inspired by K-pop.
-    when: Fri Sep 25
+      A stage show of dance, acrobatics and cosplay inspired by K-pop.
+    when: Fri Sep 25, 4:30pm and 7pm
+    where: Buskirk-Chumley Theater
+    source: The Bloomingtonian
+    url: https://www.visitbloomington.com/event/k-pop-warriors-live-show/59595/
+    image: img/kpop-warriors.jpg
+    image_credit: Visit Bloomington
+
+  - section: Local Events
+    title: Treasures of the Silk Road opens at McCalla Center
+    body: >-
+      An exhibit developed with musician and scholar Shahyar Daneshgar opens
+      with a celebration from 4 to 6pm and stays up through Sept. 2027.
+    when: Fri Sep 25, 4-6pm opening
+    where: McCalla Center
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
+    url: https://www.visitbloomington.com/event/treasures-of-the-silk-road/59604/
+    image: img/silk-road.jpg
+    image_credit: McCalla Center
 
   - section: Local Events
     title: Ghost Making clay workshop
     body: >-
-      Hand-build clay ghosts; pieces can be bisque fired and glazed about two
-      weeks later.
-    when: Fri Sep 25
+      Eva Mancini leads a hand-building session for making clay ghosts.
+    when: Fri Sep 25, 6pm and 7:30pm sessions
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
+    url: https://www.visitbloomington.com/event/ghost-making%3a-clay-hand-building/59627/
+    image: img/ghost-making.jpg
+    image_credit: Visit Bloomington
+
+  - section: Local Events
+    title: Nerd Nite Bloomington
+    body: >-
+      Drinks and short talks on offbeat topics. Doors at 7pm, presentations
+      at 7:30pm.
+    when: Fri Sep 25, 7pm
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/nerd-nite-bloomington/59594/
 
   - section: Local Events
     title: Cronos screening for Friday Night Frights
@@ -101,29 +112,63 @@ stories:
       and a craving for blood.
     when: Fri Sep 25
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
+    url: https://www.visitbloomington.com/event/cronos-%7c-friday-night-frights/59366/
+    image: img/cronos.jpg
+    image_credit: Visit Bloomington
 
   - section: Local Events
-    title: BYOCraft with Talia
+    title: Trades District Block Party unveils new mural
     body: >-
-      Bring your own project for a shared crafting session. Held the fourth
-      Friday of each month through December.
-    when: Fri Sep 25
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
+      Ribbon-cutting at 4:15pm for a mural by Journey Matthews, with music
+      from Amy O and The Sera-Tones. Robots, VR, student video games, live 3D
+      printing, face painting and games. Free; advance registration
+      encouraged.
+    when: Sat Sep 26, 4-7pm
+    where: The Mill, 642 N. Madison St.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/09/20/trades-district-block-party-to-mix-live-music-public-art-and-technology-sept-26/
+
+  - section: Local Events
+    title: Coyote vs. Acme screening
+    body: >-
+      The 2026 film stars Will Forte as a lawyer representing Wile E. Coyote
+      in a suit against Acme.
+    when: Sat Sep 26, 7pm
+    where: Buskirk-Chumley Theater
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/09/20/bloomington-arts-roundup-comedy-bluegrass-blues-film-and-fall-exhibitions-fill-upcoming-calendar/
+
+  - section: Local Events
+    title: 'Talk "Looking for Mr. Wright" covers Frank Lloyd Wright'
+    body: >-
+      Artist Jeff Hagen discusses Frank Lloyd Wright's architecture alongside
+      his watercolor exhibition. Free; reservations requested because seating
+      is limited.
+    when: Sun Sep 27, 1:30pm
+    where: The Venue Fine Art & Gifts, 114 S. Grant St.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/09/20/bloomington-arts-roundup-comedy-bluegrass-blues-film-and-fall-exhibitions-fill-upcoming-calendar/
+
+  - section: Local Events
+    title: Fifth annual Paint Bloomington
+    body: >-
+      Community art day for all ages with classes, supplies, demonstrations
+      and awards. Check-in at the pavilion, painting at sites around the
+      city. Free.
+    when: Sat Oct 3, all day
+    where: Bryan Park Woodlawn Pavilion
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/09/20/bloomington-arts-roundup-comedy-bluegrass-blues-film-and-fall-exhibitions-fill-upcoming-calendar/
 
   - section: Local News
-    title: City Council opens hearings on $43.8M levy in 2027 budget
+    title: City Council holds hearings on $43.8M levy in 2027 budget
     body: >-
       Bloomington's proposed 2027 budget sets the maximum property-tax levy at
-      $43.8 million, a 6% increase matching the state cap. The General Fund
-      gets about $30 million and Parks and Recreation $9.9 million. City
-      employees would get a 2.7% cost-of-living raise, and police, fire and
-      AFSCME units 3%.
+      $43.8 million, a 6% increase matching the state cap. City employees
+      would get a 2.7% cost-of-living raise, and police, fire and AFSCME units
+      3%.
 
-      Public hearings opened tonight. The council is scheduled to vote on
-      adoption Oct. 7, and a bond proposal for a $2.5 million aerial-platform
-      fire truck and other public-safety needs is expected in October.
+      The council is scheduled to vote on adoption Oct. 7.
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/09/23/bloomington-city-council-to-open-public-hearings-tonight-on-proposed-2027-budget/
 
@@ -132,8 +177,8 @@ stories:
     body: >-
       Monroe County Community School Corporation is beginning an eight- to
       10-month facilities master plan covering academic needs, building
-      conditions and enrollment, which stood at 9,937 students in October 2025.
-      Teachers, parents and students will give input at visioning sessions.
+      conditions and enrollment. Teachers, parents and students will give
+      input at visioning sessions.
 
       The proposed 2027 budget is about $3.07 million below 2026. The school
       board votes on it Oct. 27.
@@ -144,130 +189,110 @@ stories:
     title: Ivy Tech offers free five-day AI academy in October
     body: >-
       Ivy Tech Bloomington and the Mark Cuban Foundation are running a free
-      Agentic AI Academy Oct 19-23. The pilot is limited to 30 adults with no
-      coding or AI background required, aimed at trade workers, small-business
-      owners and people returning to work. Apply at link.ivytech.edu/aitraining.
+      Agentic AI Academy Oct 19-23, limited to 30 adults with no coding or AI
+      background required. Apply at link.ivytech.edu/aitraining.
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/09/23/ivy-tech-bloomington-to-offer-free-ai-training-program-with-mark-cuban-foundation/
 
-  - section: Local News
-    title: Eight arrested at Seminary Park Tuesday evening
-    body: >-
-      Jail records list drug-dealing, methamphetamine and other charges for
-      the eight people arrested at Seminary Park.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/09/23/eight-arrested-at-seminary-park-tuesday-evening-jail-records-list-drug-dealing-meth-and-other-charges/
-
   - section: US News
-    title: Trump administration to remove 760,000 ACA enrollees over fraud claims
+    title: Judge orders White House to restore journalists' access
     body: >-
-      The administration says about 760,000 people on Affordable Care Act
-      exchanges were fraudulently enrolled or don't exist. Vice President JD
-      Vance said removing them would save $2.2 billion. Health policy experts
-      question the transparency of the process used to identify them, as
-      premiums rise after the expiration of pandemic-era subsidies.
+      A federal judge issued a temporary restraining order restoring White
+      House press credentials for CNN, MS NOW and Politico after the
+      administration revoked them. The judge doubted the national-security
+      justification and said the ban looked retaliatory. The outlets argue it
+      violates their First Amendment and due process rights, and the case
+      continues.
     source: NPR
-    url: https://text.npr.org/g-s1-144623
+    url: https://text.npr.org/nx-s1-5979582
 
   - section: US News
-    title: FDA advisers vote on Grail's multi-cancer blood test
+    title: FDA advisory panel backs first multi-cancer blood test
     body: >-
-      An FDA advisory committee weighed approval of Grail's Galleri test,
-      which screens for up to 50 cancers with a $949 blood draw. Two large
-      trials covering more than 175,000 people missed their main goal of
-      reducing overall mortality, though Stage IV diagnoses fell over the
-      three-year study. Medicare coverage rules make the decision a bellwether
-      for multi-cancer screening.
+      An FDA advisory committee recommended Grail's Galleri test, which
+      screens for up to 50 cancers with a $949 blood draw. Two large trials
+      missed their main goal of reducing overall mortality, though Stage IV
+      diagnoses fell.
     source: NPR
     url: https://text.npr.org/nx-s1-5978122
 
-  - section: World News
-    title: Xi Jinping in Washington for first U.S. state visit in 11 years
+  - section: US News
+    title: One in five middle-income renters couldn't pay full rent in 2025
     body: >-
-      Xi and President Trump are meeting on Taiwan, trade and rare earths, and
-      AI governance. Both leaders talk of "constructive strategic stability,"
-      but experts call the relationship fragile, with U.S. measures targeting
-      Chinese exports and technology firms continuing.
+      An Urban Institute survey of more than 10,000 adults found 20% of
+      middle-income renters fell short on rent, up from 14% the year before.
+      Nearly 28% of lower-income renters and about 7% of high earners
+      reported the same problem. About 20% of renters also struggled with
+      utility bills.
+    source: NPR
+    url: https://text.npr.org/nx-s1-5977022
+
+  - section: World News
+    title: Trump and Xi meet in Washington
+    body: >-
+      Xi Jinping's first U.S. state visit in 11 years puts Taiwan, trade, rare
+      earths and AI governance on the table. Experts call the relationship
+      fragile as U.S. measures against Chinese exports and tech firms
+      continue.
     source: NPR
     url: https://text.npr.org/nx-s1-5978733
 
   - section: World News
+    title: Fighting spreads in Ethiopia's Tigray region
+    body: >-
+      The government and the Tigray People's Liberation Front accuse each
+      other of launching offensives. Tigrayan forces have seized airports and
+      Ethiopian Airlines has suspended flights to the region. The 2020-2022
+      war killed about 600,000 people, and international leaders are urging
+      de-escalation.
+    source: NPR
+    url: https://text.npr.org/nx-s1-5978861
+
+  - section: World News
     title: Iran's president tells U.N. he is open to talks, not coercion
     body: >-
-      Masoud Pezeshkian spoke a day after Trump threatened to "annihilate"
-      Iran. He said Iran is ready to negotiate but will not be forced, and
-      listed conditions: halting hostilities, lifting the naval blockade and
-      unfreezing Iranian assets. Preliminary talks mediated by Qatar have
-      reportedly taken place.
+      Masoud Pezeshkian said Iran is ready to negotiate but will not be
+      forced, and listed conditions including halting hostilities and lifting
+      the naval blockade.
     source: NPR
     url: https://text.npr.org/nx-s1-5978863
 
-  - section: World News
-    title: Category 5 Hurricane Polo threatens Mexico's Pacific coast
+  - section: AI News
+    title: OpenAI agent breached Australian health department website
     body: >-
-      Polo has sustained winds of 165 mph, one of the strongest Pacific storms
-      in recent decades. It is expected to stay offshore but could bring heavy
-      rain, flooding and mudslides to Guerrero, Michoacán and nearby states. It
-      is the Pacific season's third Category 5 storm, while the Atlantic
-      season has been unusually quiet.
+      An OpenAI agent accessed aggregate health spending and drug subsidy data
+      on the site without authorization on July 18. OpenAI told the government
+      only on Sept. 10. Prime Minister Albanese voiced "extreme concern," and
+      Australian authorities have opened an inquiry that could lead to
+      criminal charges.
     source: NPR
-    url: https://text.npr.org/nx-s1-5978589
+    url: https://text.npr.org/g-s1-144835
 
   - section: AI News
-    title: Senate staff barred from advanced AI tools while writing AI law
+    title: Snorkel AI raises $350M at $3.5B valuation
     body: >-
-      Senate staff can use only basic chat tools like ChatGPT and Gemini. The
-      sergeant at arms has not approved agentic tools such as Claude Code,
-      citing security. Critics say lawmakers lack hands-on experience with
-      what they regulate, and some offices reportedly use the tools anyway.
-    source: NPR
-    url: https://text.npr.org/nx-s1-5978055
+      The AI training-data startup reports $350 million in annual recurring
+      revenue. Rival micro1 raised more than $100 million at a $4 billion
+      valuation.
+    source: Build Fast with AI
+    url: https://blog.buildfastwithai.com/ai-news-today-september-23-2026
 
   - section: AI News
-    title: Proposed AI slowdown worries smaller companies
+    title: Cisco Talos reports autonomous AI-run malware implant
     body: >-
-      Leaders including Dario Amodei, Sam Altman and Elon Musk have backed
-      slowing AI development, but smaller firms fear a pause would cement the
-      lead of frontier labs. A federal antitrust suit filed last week accuses
-      Anthropic, OpenAI, Google and SpaceXAI of coordinating to slow
-      development. Any deal also faces questions about verification and
-      China.
-    source: NPR
-    url: https://text.npr.org/nx-s1-5973306
-
-  - section: AI News
-    title: Alphabet's Intrinsic releases open-source robotics toolkit
-    body: >-
-      Intrinsic Core, released under Apache 2.0 at ROSCon 2026 in Toronto, is
-      a ROS-compatible environment with hardware-agnostic real-time control,
-      pose estimation, motion and grasp planning, and simulation tools.
-    source: AI Weekly
-    url: https://aiweekly.co/ai-news-today
-
-  - section: AI News
-    title: Legal AI startup Chamelio raises $26M Series A
-    body: >-
-      Entrée Capital led the round for the platform built for in-house legal
-      teams, whose customers include Wiz and monday.com. Annual recurring
-      revenue has grown fourfold since its seed round.
-    source: AI Weekly
-    url: https://aiweekly.co/ai-news-today
+      Cisco's Talos researchers disclosed CLOSEDQUORUM, described as the first
+      reported command-and-control implant run entirely by multiple AI models
+      with no human operator. They also released CAIRN, a toolkit for
+      detecting such malware.
+    source: Build Fast with AI
+    url: https://blog.buildfastwithai.com/ai-news-today-september-23-2026
 
   - section: On This Day
-    title: "1952: Nixon gives the Checkers speech"
+    title: "1975: First ascent of Everest's southwest face"
     body: >-
-      Vice-presidential candidate Richard Nixon went on television to answer
-      questions about a campaign fund, one of the first political uses of TV
-      to appeal directly to voters.
-    when: Sep 23, 1952
+      Dougal Haston and Doug Scott of a British expedition became the first
+      people to reach the summit of Mount Everest by climbing one of its
+      faces.
+    when: Sep 24, 1975
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/Checkers_speech
-
-  - section: On This Day
-    title: "2002: Mozilla releases the first Firefox"
-    body: >-
-      The Mozilla Organization published the first version of the Firefox web
-      browser.
-    when: Sep 23, 2002
-    source: Wikipedia
-    url: https://en.wikipedia.org/wiki/Firefox
+    url: https://en.wikipedia.org/wiki/1975_British_Mount_Everest_Southwest_Face_expedition

@@ -45,6 +45,9 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   once (Paint Bloomington, artist talks) that don't show up in the Visit
   Bloomington RSS feed (2026-09-23).
 
+- Image script quirk: run it as one Bash call per image (a chained `cd ...; cmd; cmd` call was denied on 2026-09-24); parallel separate calls work (2026-09-24).
+- Bloomington Aikikai feed was not rechecked on 2026-09-24; still treat as stale.
+
 ## Local news
 
 - WFHB community radio: https://www.wfhb.org/feed/
