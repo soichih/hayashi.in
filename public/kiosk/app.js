@@ -521,8 +521,10 @@ function imagesSettled(node) {
 }
 
 // If the list is taller than its pane, append an identical copy below it and
-// slide the pair up by exactly one list height, forever: when the animation
+// scroll the viewport down by exactly one list height, forever: when it
 // wraps, the copy sits where the original started, so the loop has no seam.
+// It moves scrollTop rather than a transform so the sticky story headings
+// (see .news-item h4 in styles.css) pin to the top as their story passes.
 async function startMarquee(paneEl, list) {
 	const token = paneEl.dataset.token;
 	await imagesSettled(list);
@@ -532,13 +534,15 @@ async function startMarquee(paneEl, list) {
 	const distance = list.offsetHeight;
 	if (distance <= viewport.clientHeight) return; // fits: nothing to scroll
 
-	const track = list.parentElement;
-	track.append(list.cloneNode(true));
-	const duration = distance / (window.innerWidth * CONFIG.NEWS_SCROLL_SPEED) * 1000;
-	track.animate(
-		[{ transform: "translateY(0)" }, { transform: `translateY(-${distance}px)` }],
-		{ duration, iterations: Infinity, easing: "linear" }
-	);
+	list.parentElement.append(list.cloneNode(true));
+	const start = performance.now();
+	const step = now => {
+		if (paneEl.dataset.token !== token) return; // pane rebuilt: stop this loop
+		const pos = (now - start) / 1000 * window.innerWidth * CONFIG.NEWS_SCROLL_SPEED;
+		viewport.scrollTop = pos % distance;
+		requestAnimationFrame(step);
+	};
+	requestAnimationFrame(step);
 }
 
 function setPane(paneEl, group, stories) {

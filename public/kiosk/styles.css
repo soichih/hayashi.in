@@ -173,9 +173,6 @@ h2 {
 	margin-bottom: 0.2vw;
 }
 
-.news-track {
-	will-change: transform;
-}
 
 /* Spacing is padding, not margin, so a list's offsetHeight includes the gap
    after its last story and the looped copy lines up exactly. */
@@ -206,6 +203,11 @@ h2 {
 	font-weight: 700;
 	color: var(--ink);
 	margin: 0 0 0.3vw;
+	/* pins to the pane top while its story scrolls by; the next story's
+	   heading pushes it out, since sticky stays inside its .news-item */
+	position: sticky;
+	top: 0;
+	background: var(--card-bg);
 }
 
 .news-item small {
