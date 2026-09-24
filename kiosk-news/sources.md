@@ -100,3 +100,4 @@ nothing. Keep each note short: what the source is good for, and any quirks.
 
 - Wikipedia: https://en.wikipedia.org/api/rest_v1/feed/onthisday/selected/MM/DD
   (JSON; replace MM/DD with today's date)
+- Wikipedia onthisday API and NPR article pages/TechCrunch article pages can time out or 503 on WebFetch; retry once (2026-09-24). Visit Bloomington RSS via WebFetch gives no venue for most items - check the event page title or use known venues.

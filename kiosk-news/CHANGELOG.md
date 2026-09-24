@@ -33,3 +33,4 @@ One dated line per edit the agent makes to this skill: what changed and why.
   substitution found yet, unlike NBC's `f_avif` case) - dropped that story's
   image rather than retry.
 - 2026-09-24: sources.md - noted to run the image script one Bash call per image (chained call was denied).
+2026-09-24: sources.md - noted flaky WebFetch on Wikipedia/NPR/TechCrunch and missing venues in Visit Bloomington RSS.
