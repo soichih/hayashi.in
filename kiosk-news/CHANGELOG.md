@@ -34,3 +34,4 @@ One dated line per edit the agent makes to this skill: what changed and why.
   image rather than retry.
 - 2026-09-24: sources.md - noted to run the image script one Bash call per image (chained call was denied).
 2026-09-24: sources.md - noted flaky WebFetch on Wikipedia/NPR/TechCrunch and missing venues in Visit Bloomington RSS.
+2026-09-25: sources.md - noted aje.news image 403, AI Weekly digest, and IU Auditorium UTC times, from this run.
