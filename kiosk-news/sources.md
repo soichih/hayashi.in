@@ -102,3 +102,4 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   (JSON; replace MM/DD with today's date)
 - Wikipedia onthisday API and NPR article pages/TechCrunch article pages can time out or 503 on WebFetch; retry once (2026-09-24). Visit Bloomington RSS via WebFetch gives no venue for most items - check the event page title or use known venues.
 - Al Jazeera og:image (aje.news) returns 403 to the image script (2026-09-25); AI Weekly (https://aiweekly.co/ai-news-today) is a handy daily AI digest via WebSearch. IU Auditorium event pages can show stale dates; RSS times are UTC (11:30 PM = 7:30pm EDT).
+- Evening runs (2026-09-25): NPR article pages and the Visit Bloomington weekend page (/events/events-this-weekend/) gave nothing via WebFetch (timeouts / no listings); use the RSS plus WebSearch. The image script needs a direct image URL, not an event page.
