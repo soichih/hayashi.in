@@ -203,6 +203,7 @@ function renderScores() {
 	document.getElementById("mastery").textContent = t.mastery + "%";
 	document.getElementById("coverage").textContent = t.coverage + "%";
 	document.getElementById("streak").textContent = currentStreak();
+	document.getElementById("levels-link").hidden = !state.onboarded;
 }
 
 // ------------------------------------------------------------------ selection
@@ -673,6 +674,13 @@ function placementScreen(first) {
 		...rows,
 		el("div", { class: "actions" },
 			first ? el("button", { class: "ghost", onclick: () => { Object.keys(picks).forEach(d => picks[d] = 1); commit(); } }, "Skip - start at level 1 everywhere") : el("button", { class: "ghost", onclick: homeScreen }, "Cancel"),
+			first ? null : el("button", {
+				class: "ghost", onclick: () => {
+					if (!confirm("Set every area back to level 1? Your answers and progress are kept.")) return;
+					Object.keys(picks).forEach(d => picks[d] = 1);
+					commit();
+				},
+			}, "Reset all to level 1"),
 			el("button", { class: "primary", onclick: commit }, first ? "Start learning" : "Save levels"))));
 }
 
@@ -852,6 +860,12 @@ function summaryScreen() {
 }
 
 // ------------------------------------------------------------------ export / import / reset
+
+document.getElementById("levels-link").addEventListener("click", () => {
+	if (session && !confirm("Leave this session to change your levels? Answers so far are saved.")) return;
+	session = null;
+	placementScreen(false);
+});
 
 document.getElementById("export").addEventListener("click", () => {
 	const blob = new Blob([JSON.stringify(state, null, 1)], { type: "application/json" });
