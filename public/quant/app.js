@@ -180,6 +180,125 @@ function buildSession() {
 	return items.sort(() => Math.random() - 0.5);
 }
 
+// ------------------------------------------------------------------ diagrams (Mermaid)
+//
+// Lessons may carry `figures` and questions a `figure`: {caption, mermaid}.
+// Mermaid is large (5+ MB), so it loads only when a screen has a diagram.
+// Chart colors are the first three slots of the dataviz reference palette,
+// validated against this app's card surfaces in both modes (all pairs pass
+// the colorblind and normal-vision checks). Light-mode aqua is under 3:1
+// contrast, so every figure ships a caption and multi-series charts name their
+// series so Mermaid draws a legend.
+
+const MERMAID_SRC = "https://cdn.jsdelivr.net/npm/mermaid@12.0.0/dist/mermaid.min.js";
+const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+let mermaidLoading = null;
+let diagramSeq = 0;
+
+function loadMermaid() {
+	return mermaidLoading ||= new Promise((resolve, reject) => {
+		const s = document.createElement("script");
+		s.src = MERMAID_SRC;
+		s.onload = () => resolve(window.mermaid);
+		s.onerror = () => { mermaidLoading = null; reject(new Error("couldn't load Mermaid")); };
+		document.head.append(s);
+	});
+}
+
+function seriesColors() {
+	return darkQuery.matches ? ["#3987e5", "#d95926", "#199e70"] : ["#2a78d6", "#eb6834", "#1baf7a"];
+}
+
+// Mermaid only draws an xychart legend when the chart is ~600px or wider, so on
+// phones a two-series chart would lose it. Instead we strip the series names
+// before rendering and draw our own legend under the chart at every width.
+// Plots take palette colors in the order they appear, lines and bars alike.
+function splitSeries(src) {
+	if (!/^\s*xychart/.test(src)) return { src, names: [] };
+	const names = [];
+	const stripped = src.replace(/^(\s*)(line|bar)\s+"([^"]*)"\s*/gm, (m, ws, kind, name) => {
+		names.push(name);
+		return `${ws}${kind} `;
+	});
+	return { src: stripped, names };
+}
+
+function chartLegend(names) {
+	const colors = seriesColors();
+	return el("div", { class: "chart-legend" }, ...names.map((n, i) =>
+		el("span", { class: "key" }, el("i", { style: `background:${colors[i]}` }), n)));
+}
+
+function mermaidConfig(width = 640) {
+	const dark = darkQuery.matches;
+	const surface = dark ? "#1b2029" : "#ffffff";
+	const ink = dark ? "#e8ebf2" : "#1d2433";
+	const muted = dark ? "#98a1b3" : "#667085";
+	return {
+		startOnLoad: false,
+		securityLevel: "strict",
+		suppressErrorRendering: true,
+		theme: "base",
+		fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+		// Draw charts at the width they'll be shown, so phone text isn't shrunk to nothing.
+		xyChart: { width, height: Math.round(Math.max(260, width * 0.6)), titleFontSize: width < 480 ? 16 : 20 },
+		themeVariables: {
+			darkMode: dark,
+			background: surface,
+			primaryColor: dark ? "#184f95" : "#cde2fb",
+			primaryBorderColor: dark ? "#3987e5" : "#2a78d6",
+			primaryTextColor: ink,
+			textColor: ink,
+			lineColor: muted,
+			edgeLabelBackground: surface,
+			xyChart: {
+				backgroundColor: surface,
+				titleColor: ink,
+				legendTextColor: ink,
+				xAxisLabelColor: muted, xAxisTitleColor: muted, xAxisTickColor: muted, xAxisLineColor: muted,
+				yAxisLabelColor: muted, yAxisTitleColor: muted, yAxisTickColor: muted, yAxisLineColor: muted,
+				plotColorPalette: seriesColors().join(", "),
+			},
+		},
+	};
+}
+
+function figure(f) {
+	if (!f?.mermaid) return null;
+	return el("figure", { class: "diagram" },
+		el("div", { class: "mmd", "data-src": f.mermaid }, "Loading diagram..."),
+		f.caption ? el("figcaption", {}, f.caption) : null);
+}
+
+async function renderDiagrams() {
+	const nodes = [...document.querySelectorAll(".mmd")];
+	if (!nodes.length) return;
+	let mermaid;
+	try {
+		mermaid = await loadMermaid();
+	} catch (e) {
+		nodes.forEach(n => n.textContent = "Diagram unavailable.");
+		return;
+	}
+	for (const node of nodes) {
+		if (!node.isConnected) continue;
+		try {
+			const width = Math.min(640, Math.max(280, node.clientWidth - 24));
+			mermaid.initialize(mermaidConfig(width));
+			// Our own authored source, rendered with securityLevel "strict" (sanitized SVG).
+			const { src, names } = splitSeries(node.dataset.src);
+			const { svg } = await mermaid.render(`mmd-${++diagramSeq}`, src);
+			node.innerHTML = svg;
+			// One series needs no legend - the chart title names it.
+			if (names.length >= 2) node.append(chartLegend(names));
+		} catch (e) {
+			node.textContent = "Diagram unavailable.";
+			console.error("mermaid:", e);
+		}
+	}
+}
+darkQuery.addEventListener("change", renderDiagrams);
+
 // ------------------------------------------------------------------ DOM helpers
 
 function el(tag, attrs = {}, ...children) {
@@ -200,6 +319,7 @@ function show(...nodes) {
 	const app = document.getElementById("app");
 	app.replaceChildren(...nodes);
 	renderScores();
+	renderDiagrams();
 	window.scrollTo(0, 0);
 }
 
@@ -290,6 +410,7 @@ function lessonScreen(item) {
 			el("p", { class: "kicker" }, `New concept · ${domains[c.domain] || c.domain}`),
 			el("h2", {}, c.name),
 			el("p", { class: "lesson-text" }, content[c.id].lesson),
+			...(content[c.id].figures || []).map(figure),
 			el("button", { class: "primary", onclick: () => { item.lessonShown = true; questionScreen(item); } }, "Got it - quiz me")));
 }
 
@@ -374,6 +495,7 @@ function feedbackScreen(item, q, answer, result) {
 				el("ul", {}, ...result.missing.map(m => el("li", {}, m)))) : null,
 			answer ? el("details", {}, el("summary", {}, "Your answer"), el("p", { class: "quote" }, answer)) : null,
 			el("div", { class: "model" }, el("h3", {}, "Model answer"), el("p", {}, q.answer)),
+			figure(q.figure),
 			el("p", { class: "muted small" },
 				isMastered(p) ? "Concept mastered." : `Concept strength ${strength(p)}% · review box ${p.box} of ${MASTER_BOX} to master`),
 			el("button", { class: "primary", onclick: () => { session.index++; nextItem(); } },

@@ -175,6 +175,23 @@ details { margin-top: 1rem; color: var(--muted); }
 .quote { white-space: pre-wrap; font-style: italic; }
 .result .primary, .summary .primary, .lesson .primary { display: block; margin: 1.25rem 0 0 auto; }
 
+/* diagrams */
+.diagram { margin: 1.25rem 0 0; }
+.mmd {
+	border: 1px solid var(--line);
+	border-radius: 12px;
+	padding: .75rem;
+	overflow-x: auto;
+	text-align: center;
+	color: var(--muted);
+	font-size: .85rem;
+}
+.mmd svg { max-width: 100%; height: auto; }
+.chart-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem 1.1rem; margin-top: .4rem; color: var(--ink); font-size: .85rem; }
+.chart-legend .key { display: inline-flex; align-items: center; gap: .4rem; }
+.chart-legend i { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+.diagram figcaption { font-size: .88rem; color: var(--muted); margin-top: .4rem; }
+
 /* footer */
 .foot {
 	display: flex;
