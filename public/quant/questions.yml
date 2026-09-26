@@ -1,0 +1,840 @@
+# Lessons and questions, keyed by concept id (see concepts.yml).
+#
+# Each concept has a short lesson shown the first time it comes up, then
+# several questions that approach it from different angles. Players answer
+# in their own words; the scoring API (soichi.us/quant-api/) grades the
+# answer against `answer` and `key_points`, which it looks up by question id
+# from this file - the browser never sends the reference answer.
+#
+# angle: explain | apply | calculate | compare | misconception | example
+# Question ids must stay stable once published (progress is stored by id).
+
+asset_classes:
+  lesson: >-
+    An asset class is a group of investments that behave alike. The big ones are
+    equities (company ownership), fixed income (loans such as bonds), cash, real
+    assets (property, commodities, infrastructure) and alternatives (hedge funds,
+    private equity). Each plays a different role: growth, income, stability or
+    diversification.
+  questions:
+    - id: asset_classes.explain
+      angle: explain
+      prompt: What is an asset class, and why do investors group investments this way?
+      answer: >-
+        An asset class is a group of investments with similar risk, return and
+        behavior, such as equities, bonds, cash or real assets. Grouping them lets
+        investors decide how much to put in each type, since classes respond
+        differently to the economy and don't move perfectly together.
+      key_points:
+        - investments with similar characteristics and behavior
+        - examples such as equities, bonds, cash, real assets
+        - used to decide allocation / diversify because classes behave differently
+    - id: asset_classes.compare
+      angle: compare
+      prompt: Compare the typical role of equities and of government bonds in a portfolio.
+      answer: >-
+        Equities are held for long-term growth and have higher expected return
+        and higher volatility. Government bonds are held for income, stability and
+        protection: lower expected return and lower volatility, and they often
+        rise when stocks fall in a recession.
+      key_points:
+        - equities for growth, higher return and higher risk
+        - government bonds for income and stability, lower risk
+        - bonds often cushion equity losses (diversification)
+    - id: asset_classes.example
+      angle: example
+      prompt: Name one real asset and explain why an investor might hold it.
+      answer: >-
+        Examples: real estate, commodities like gold or oil, farmland,
+        infrastructure. A common reason is protection against inflation, since
+        prices of real things tend to rise with inflation, and diversification
+        because they don't move in step with stocks and bonds.
+      key_points:
+        - a valid real asset (property, commodity, infrastructure, land)
+        - a sensible reason such as inflation protection or diversification
+
+stocks_basics:
+  lesson: >-
+    A share of stock is a piece of ownership in a company. Shareholders own what
+    is left after the company pays everyone else (the residual claim), so they
+    get the upside if the company grows but are paid last if it fails. Common
+    shareholders usually vote on the board. Returns come from price changes and
+    dividends.
+  questions:
+    - id: stocks_basics.explain
+      angle: explain
+      prompt: What does owning a share of stock give you?
+      answer: >-
+        Partial ownership of the company: a claim on its profits and assets after
+        creditors are paid (the residual claim), usually voting rights, and any
+        dividends the company pays. Its value rises or falls with the company's
+        prospects.
+      key_points:
+        - ownership stake in the company
+        - residual claim on earnings/assets after creditors
+        - voting rights and/or dividends
+    - id: stocks_basics.apply
+      angle: apply
+      prompt: A company goes bankrupt. Who gets paid first, bondholders or shareholders, and why?
+      answer: >-
+        Bondholders are paid first. They are lenders with a legal claim to
+        repayment; shareholders are owners with only a residual claim, so they get
+        whatever is left, which is often nothing.
+      key_points:
+        - bondholders (creditors) first
+        - shareholders have the residual claim and are paid last, often nothing
+    - id: stocks_basics.calculate
+      angle: calculate
+      prompt: You buy a stock at $50, receive a $2 dividend, and sell at $54. What was your total return, and how much came from each source?
+      answer: >-
+        Total return is (54 - 50 + 2) / 50 = 12%. Price gain is 4/50 = 8% and
+        dividend yield is 2/50 = 4%.
+      key_points:
+        - total return 12%
+        - 8% from price change
+        - 4% from the dividend
+
+bonds_basics:
+  lesson: >-
+    A bond is a loan. The buyer lends money to a government or company, which
+    pays interest (coupons) and returns the face value at maturity. When
+    interest rates in the market rise, existing bonds with lower coupons become
+    less attractive, so their prices fall. Bond prices and yields move in
+    opposite directions.
+  questions:
+    - id: bonds_basics.explain
+      angle: explain
+      prompt: Explain what a bond is in plain words, including coupon and maturity.
+      answer: >-
+        A bond is a loan from the investor to an issuer. The issuer pays regular
+        interest called coupons and repays the face value (principal) on the
+        maturity date.
+      key_points:
+        - a loan to a government or company
+        - coupon is the periodic interest payment
+        - maturity is when the principal is repaid
+    - id: bonds_basics.apply
+      angle: apply
+      prompt: You own a bond paying a 3% coupon. Market rates for similar bonds jump to 5%. What happens to your bond's price, and why?
+      answer: >-
+        Its price falls. New buyers can get 5% elsewhere, so they will only buy
+        your 3% bond at a discount that raises their effective yield to about 5%.
+      key_points:
+        - price falls
+        - because new bonds pay more / buyers demand the market yield
+        - price and yield move inversely
+    - id: bonds_basics.misconception
+      angle: misconception
+      prompt: A friend says government bonds are risk-free, so they can never lose money. What is wrong with that?
+      answer: >-
+        Default risk may be very low, but the price still changes with interest
+        rates. If rates rise and you sell before maturity, you can lose money.
+        Inflation can also erode the real value of the payments.
+      key_points:
+        - interest rate risk: prices fall when rates rise
+        - loss if sold before maturity
+        - inflation risk reduces real value
+
+funds_etfs:
+  lesson: >-
+    Mutual funds and ETFs pool many investors' money into one portfolio.
+    Mutual funds trade once a day at net asset value (NAV). ETFs trade on an
+    exchange all day like a stock, and authorized participants create or redeem
+    ETF shares in exchange for the underlying securities, which keeps the ETF's
+    price close to NAV and tends to make ETFs tax-efficient.
+  questions:
+    - id: funds_etfs.compare
+      angle: compare
+      prompt: What is the main trading difference between a mutual fund and an ETF?
+      answer: >-
+        A mutual fund is bought or sold once a day at the end-of-day NAV, directly
+        with the fund. An ETF trades on an exchange throughout the day at market
+        prices, like a stock.
+      key_points:
+        - mutual fund priced once daily at NAV
+        - ETF trades intraday on an exchange at market price
+    - id: funds_etfs.explain
+      angle: explain
+      prompt: Why does an ETF's market price usually stay close to the value of the securities it holds?
+      answer: >-
+        Arbitrage through creation and redemption. If the ETF trades above its
+        NAV, authorized participants deliver the underlying securities, receive
+        new ETF shares and sell them; if it trades below, they buy ETF shares and
+        redeem them for the underlying. This pushes the price back to NAV.
+      key_points:
+        - authorized participants / creation and redemption
+        - arbitrage when price differs from NAV
+        - pushes price back toward NAV
+    - id: funds_etfs.apply
+      angle: apply
+      prompt: A beginner wants broad stock market exposure with low cost. Why might an index fund or ETF suit them better than picking 5 stocks?
+      answer: >-
+        One fund gives instant diversification across hundreds of companies, so
+        one company's failure hurts little. Index funds also have low fees and
+        need no stock-picking skill, while 5 stocks carry a lot of company-specific
+        risk.
+      key_points:
+        - diversification across many companies
+        - low cost / low fees
+        - 5 stocks carry concentrated company-specific risk
+
+exchanges_trading:
+  lesson: >-
+    In the primary market, companies and governments sell new securities to
+    raise money (an IPO or a bond issue). In the secondary market, investors
+    trade existing securities with each other on exchanges or through dealers.
+    Brokers act as agents for clients; dealers and market makers trade from
+    their own inventory and quote prices to buy and sell.
+  questions:
+    - id: exchanges_trading.compare
+      angle: compare
+      prompt: What is the difference between the primary and the secondary market?
+      answer: >-
+        The primary market is where new securities are issued and the issuer
+        receives the money (IPO, new bond issue). The secondary market is where
+        investors trade already-issued securities among themselves; the issuer
+        receives nothing from those trades.
+      key_points:
+        - primary = new issuance, issuer raises money
+        - secondary = trading existing securities between investors
+    - id: exchanges_trading.compare_roles
+      angle: compare
+      prompt: How is a broker different from a dealer?
+      answer: >-
+        A broker is an agent: it finds the other side of a trade for a client and
+        earns a commission. A dealer is a principal: it buys and sells from its own
+        inventory and earns the spread, taking price risk.
+      key_points:
+        - broker acts as agent for the client, earns commission
+        - dealer trades for its own account from inventory, earns the spread
+    - id: exchanges_trading.explain
+      angle: explain
+      prompt: Why do secondary markets matter to a company, even though it doesn't get money from those trades?
+      answer: >-
+        Investors pay more for new shares or bonds if they know they can easily
+        sell them later. Liquid secondary markets lower the company's cost of
+        raising capital and give it a market price for its securities.
+      key_points:
+        - liquidity makes investors willing to buy in the primary market
+        - lowers the cost of capital
+        - provides price discovery
+
+order_types:
+  lesson: >-
+    A market order buys or sells immediately at the best available price, so
+    execution is certain but the price isn't. A limit order sets the worst price
+    you'll accept, so the price is certain but it may never fill. A stop order
+    becomes a market order once the price reaches a trigger, and is often used
+    to limit losses.
+  questions:
+    - id: order_types.compare
+      angle: compare
+      prompt: What is the tradeoff between a market order and a limit order?
+      answer: >-
+        A market order guarantees execution but not price. A limit order
+        guarantees the price (or better) but not execution: it may never fill.
+      key_points:
+        - market order: certain execution, uncertain price
+        - limit order: certain price or better, may not fill
+    - id: order_types.apply
+      angle: apply
+      prompt: You own a stock at $100 and want to sell automatically if it drops to $90. Which order do you use, and what can go wrong?
+      answer: >-
+        A stop (stop-loss) sell order at $90. Once the price hits $90 it becomes a
+        market order, so in a fast fall or an overnight gap you may be filled well
+        below $90.
+      key_points:
+        - stop / stop-loss order at $90
+        - becomes a market order when triggered
+        - can fill below $90 in a gap or fast market
+    - id: order_types.apply_thin
+      angle: apply
+      prompt: Why is a market order risky for a thinly traded small stock?
+      answer: >-
+        There are few bids and offers, so a market order can walk through the
+        order book and fill at much worse prices than the last quoted price. A
+        limit order protects against that.
+      key_points:
+        - little liquidity / few orders at each price
+        - fill at a much worse price than expected
+        - use a limit order instead
+
+bid_ask_spread:
+  lesson: >-
+    The bid is the highest price someone will pay; the ask (offer) is the lowest
+    price someone will sell at. The gap between them is the spread, and it's the
+    price of trading immediately. Liquid assets with many traders have tight
+    spreads; illiquid or volatile assets have wide ones.
+  questions:
+    - id: bid_ask_spread.explain
+      angle: explain
+      prompt: What is the bid-ask spread, and who earns it?
+      answer: >-
+        The difference between the highest bid and the lowest ask. Market makers
+        or dealers earn it by buying at the bid and selling at the ask; for the
+        trader who wants to trade right away it is a cost.
+      key_points:
+        - difference between bid and ask
+        - earned by market makers/dealers
+        - a cost of immediate trading
+    - id: bid_ask_spread.calculate
+      angle: calculate
+      prompt: A stock is quoted $20.00 bid, $20.10 ask. If you buy and immediately sell 1,000 shares with market orders, how much do you lose to the spread? What is the spread as a percent of the midpoint?
+      answer: >-
+        You buy at 20.10 and sell at 20.00, losing $0.10 x 1,000 = $100. The
+        midpoint is 20.05, so the spread is 0.10 / 20.05, about 0.5%.
+      key_points:
+        - lose $100
+        - spread about 0.5% of the midpoint
+    - id: bid_ask_spread.compare
+      angle: compare
+      prompt: Why does a large company's stock have a much tighter spread than a small, rarely traded stock?
+      answer: >-
+        Many buyers and sellers compete in the large stock, so market makers face
+        little risk holding it and compete on price. In a rarely traded stock the
+        market maker may hold inventory for a long time and may face better-informed
+        traders, so it charges a wider spread.
+      key_points:
+        - more trading volume and competition in large stocks
+        - inventory risk / information risk is higher for illiquid stocks
+        - wider spread compensates the market maker
+
+short_selling:
+  lesson: >-
+    Short selling means borrowing shares, selling them now, and buying them back
+    later to return to the lender. You profit if the price falls. You pay a fee
+    to borrow and owe any dividends paid meanwhile. Because a price can rise
+    without limit, a short's potential loss is unlimited.
+  questions:
+    - id: short_selling.explain
+      angle: explain
+      prompt: Walk through the steps of a short sale and when it makes money.
+      answer: >-
+        Borrow shares from a lender through your broker, sell them at today's
+        price, later buy them back and return them. You make money if you buy back
+        at a lower price than you sold for, minus borrow fees and any dividends you
+        had to pay.
+      key_points:
+        - borrow then sell
+        - buy back later and return the shares
+        - profit if the price falls, minus costs
+    - id: short_selling.calculate
+      angle: calculate
+      prompt: You short 100 shares at $40. The price rises to $55 and you close the position. What is your profit or loss, ignoring fees?
+      answer: >-
+        Loss of (55 - 40) x 100 = $1,500.
+      key_points:
+        - loss of $1,500
+    - id: short_selling.misconception
+      angle: misconception
+      prompt: Why is the maximum loss on a short sale unlimited, while the maximum loss on buying a stock is limited?
+      answer: >-
+        A stock you buy can at worst go to zero, so you lose at most what you paid.
+        A stock you are short can keep rising with no upper limit, and you must buy
+        it back at whatever the price is.
+      key_points:
+        - long loss capped at the purchase price (price floor at zero)
+        - short loss has no cap because price can rise indefinitely
+
+margin_leverage:
+  lesson: >-
+    Buying on margin means borrowing from your broker to buy more than your own
+    cash allows. Leverage magnifies returns in both directions. If your equity
+    falls below the maintenance margin, you get a margin call and must add cash
+    or be sold out, often at a bad time.
+  questions:
+    - id: margin_leverage.calculate
+      angle: calculate
+      prompt: You buy $10,000 of stock using $5,000 of your own money and $5,000 borrowed. The stock rises 10%. What is the return on your own money? What if it falls 10%? Ignore interest.
+      answer: >-
+        Up 10%: the position gains $1,000, which is +20% on your $5,000. Down 10%:
+        it loses $1,000, which is -20%. Leverage of 2x doubles both.
+      key_points:
+        - +20% on a 10% rise
+        - -20% on a 10% fall
+        - 2x leverage doubles the return in both directions
+    - id: margin_leverage.explain
+      angle: explain
+      prompt: What is a margin call, and why can it force losses to become permanent?
+      answer: >-
+        When the equity in a margin account falls below the maintenance
+        requirement, the broker demands more cash or securities. If you can't
+        pay, the broker sells your positions, locking in the loss at a low price,
+        so you can't wait for a recovery.
+      key_points:
+        - triggered when equity falls below maintenance margin
+        - must add funds or positions are sold
+        - forced selling locks in losses at low prices
+    - id: margin_leverage.misconception
+      angle: misconception
+      prompt: Someone says leverage is fine because it only increases returns. What is missing from that view?
+      answer: >-
+        Leverage magnifies losses as much as gains, adds interest costs, and can
+        cause forced liquidation through margin calls. It raises risk, not just
+        return.
+      key_points:
+        - magnifies losses too
+        - borrowing cost
+        - margin calls / forced selling
+
+market_indexes:
+  lesson: >-
+    An index tracks a basket of securities to represent a market. Price-weighted
+    indexes (the Dow) give more weight to higher-priced stocks. Cap-weighted
+    indexes (the S&P 500) weight by market value, so the biggest companies
+    dominate. Equal-weighted indexes give every stock the same weight.
+  questions:
+    - id: market_indexes.compare
+      angle: compare
+      prompt: Compare price-weighted and market-cap-weighted indexes. Which is more common for index funds, and why?
+      answer: >-
+        Price-weighted indexes weight each stock by its share price, which is
+        arbitrary (a stock split changes its weight). Cap-weighted indexes weight
+        by market value, reflecting the size of each company in the market. Cap
+        weighting is more common because it mirrors the market and needs little
+        rebalancing as prices move.
+      key_points:
+        - price-weighted by share price, which is arbitrary
+        - cap-weighted by market value of the company
+        - cap-weighted is standard, mirrors the market, low turnover
+    - id: market_indexes.apply
+      angle: apply
+      prompt: The S&P 500 rose 10% but the equal-weighted S&P 500 rose only 2%. What does that tell you?
+      answer: >-
+        The largest companies did much better than the typical company. The
+        cap-weighted index is dominated by the biggest stocks, so a few mega-caps
+        drove the gain while the average stock lagged.
+      key_points:
+        - largest companies outperformed
+        - average/typical stock did worse
+        - cap weighting concentrates in the biggest names
+    - id: market_indexes.explain
+      angle: explain
+      prompt: Why is it useful to have a market index at all?
+      answer: >-
+        It summarizes how a market is doing, serves as a benchmark to judge
+        managers against, and can be tracked cheaply by index funds.
+      key_points:
+        - measures overall market performance
+        - benchmark for evaluating managers
+        - basis for passive index funds
+
+time_value_of_money:
+  lesson: >-
+    Money today is worth more than the same amount later, because you can invest
+    it and earn a return (and because of inflation and risk). Present value
+    discounts a future amount back to today: PV = FV / (1 + r)^n. Future value
+    grows today's amount forward: FV = PV x (1 + r)^n.
+  questions:
+    - id: time_value_of_money.explain
+      angle: explain
+      prompt: Why is $100 today worth more than $100 in one year?
+      answer: >-
+        You could invest today's $100 and have more than $100 in a year. Inflation
+        and the risk of not getting paid later also reduce the value of future
+        money.
+      key_points:
+        - opportunity to earn a return / interest
+        - inflation and/or risk
+    - id: time_value_of_money.calculate
+      angle: calculate
+      prompt: What is the present value of $1,000 received in 3 years if the discount rate is 5% per year?
+      answer: >-
+        PV = 1000 / 1.05^3 = 1000 / 1.157625, about $863.84.
+      key_points:
+        - formula PV = FV / (1 + r)^n
+        - about $864
+    - id: time_value_of_money.apply
+      angle: apply
+      prompt: You can have $10,000 now or $10,500 in one year. Interest rates are 7%. Which do you take?
+      answer: >-
+        Take $10,000 now. Invested at 7% it becomes $10,700 in a year, which beats
+        $10,500. Equivalently the PV of $10,500 is about $9,813, less than $10,000.
+      key_points:
+        - take the money now
+        - $10,000 grows to $10,700 > $10,500 (or PV of $10,500 is about $9,813)
+
+compounding:
+  lesson: >-
+    Compounding means earning returns on past returns. $100 at 10% becomes $110
+    after one year and $121 after two, because the second year earns 10% on
+    $110. More frequent compounding adds a little more; continuous compounding
+    gives FV = PV x e^(r t). The rule of 72 estimates doubling time: 72 / rate.
+  questions:
+    - id: compounding.explain
+      angle: explain
+      prompt: Explain compounding and why it matters more over long horizons.
+      answer: >-
+        Compounding is earning returns on previously earned returns, so growth is
+        exponential, not linear. The longer the horizon, the more the earlier
+        gains themselves earn, so the gap between compound and simple growth keeps
+        widening.
+      key_points:
+        - returns earned on prior returns
+        - exponential growth
+        - effect grows with time
+    - id: compounding.calculate
+      angle: calculate
+      prompt: Using the rule of 72, roughly how long does money take to double at 6% per year? Check it exactly.
+      answer: >-
+        72 / 6 = 12 years. Exactly, 1.06^n = 2 gives n = ln 2 / ln 1.06, about 11.9
+        years.
+      key_points:
+        - about 12 years by the rule of 72
+        - exact answer about 11.9 years
+    - id: compounding.compare
+      angle: compare
+      prompt: Which is better, 12% compounded annually or 12% compounded monthly? By how much, roughly?
+      answer: >-
+        Monthly is better. The effective annual rate is 1.01^12 - 1, about 12.68%,
+        versus 12.00% for annual compounding.
+      key_points:
+        - monthly compounding is better
+        - effective rate about 12.68% vs 12%
+
+annuities:
+  lesson: >-
+    An annuity is a series of equal payments at regular intervals, such as a
+    loan payment or pension. Its value is the sum of the present values of each
+    payment. A perpetuity pays forever and has a simple value: PV = payment / r.
+    A growing perpetuity is PV = payment / (r - g).
+  questions:
+    - id: annuities.calculate
+      angle: calculate
+      prompt: What is the present value of a perpetuity that pays $50 a year forever if the discount rate is 4%?
+      answer: >-
+        PV = 50 / 0.04 = $1,250.
+      key_points:
+        - PV = C / r
+        - $1,250
+    - id: annuities.explain
+      angle: explain
+      prompt: How can something that pays forever have a finite value today?
+      answer: >-
+        Payments far in the future are discounted more and more heavily, so their
+        present values shrink toward zero. The sum of that infinite series
+        converges to payment / r.
+      key_points:
+        - distant payments discounted heavily / tiny present value
+        - infinite sum converges to C / r
+    - id: annuities.apply
+      angle: apply
+      prompt: Where do annuity calculations show up in everyday finance? Give two examples.
+      answer: >-
+        Mortgage and car loan payments, retirement income planning, pensions,
+        valuing a bond's coupon stream, lease payments.
+      key_points:
+        - two valid examples such as loan/mortgage payments, pensions, bond coupons, leases
+
+holding_period_return:
+  lesson: >-
+    Holding period return (HPR) is the total return over the time you hold an
+    investment: (ending value - beginning value + income) / beginning value.
+    Income means dividends or coupons. HPR doesn't care how long the period is,
+    so compare HPRs over different lengths only after annualizing.
+  questions:
+    - id: holding_period_return.calculate
+      angle: calculate
+      prompt: You bought a bond fund for $1,000, received $30 in distributions, and it is now worth $980. What is your holding period return?
+      answer: >-
+        (980 - 1000 + 30) / 1000 = 10 / 1000 = 1%.
+      key_points:
+        - includes the $30 income
+        - HPR = 1%
+    - id: holding_period_return.misconception
+      angle: misconception
+      prompt: A fund returned 20% over 3 years and another returned 8% over 1 year. Can you say the first did better? Why or why not?
+      answer: >-
+        Not directly: the periods differ. Annualize first: 1.20^(1/3) - 1 is about
+        6.3% a year, which is lower than 8%.
+      key_points:
+        - different period lengths are not comparable
+        - annualize; 20% over 3 years is about 6.3% per year, below 8%
+    - id: holding_period_return.explain
+      angle: explain
+      prompt: Why must a return calculation include dividends or coupons, not just the price change?
+      answer: >-
+        Income is part of what the investor earns. Leaving it out understates the
+        return, especially for high-dividend stocks and bonds where income is most
+        of the return.
+      key_points:
+        - income is part of total return
+        - price-only return understates performance
+
+arithmetic_vs_geometric:
+  lesson: >-
+    The arithmetic mean is the simple average of period returns. The geometric
+    mean is the constant rate that would give the same ending wealth:
+    ((1+r1)(1+r2)...(1+rn))^(1/n) - 1. When returns vary, the geometric mean is
+    always lower, because losses hurt more than equal gains help. This gap is
+    called volatility drag.
+  questions:
+    - id: arithmetic_vs_geometric.explain
+      angle: explain
+      prompt: Why is the geometric mean return lower than the arithmetic mean when returns vary?
+      answer: >-
+        Because losses hurt more than equal gains help: compounding means
+        volatility drags down the growth rate. The geometric mean is the rate you
+        actually compounded at; the arithmetic mean ignores compounding. They are
+        equal only when returns are constant.
+      key_points:
+        - volatility drag / compounding effect
+        - geometric mean = realized compound growth rate
+        - equal only when returns are constant
+    - id: arithmetic_vs_geometric.calculate
+      angle: calculate
+      prompt: A stock returns +50% one year and -50% the next. What are the arithmetic and geometric mean returns, and what happened to $100?
+      answer: >-
+        Arithmetic mean = 0%. $100 becomes $150 then $75, so the geometric mean is
+        sqrt(1.5 x 0.5) - 1 = sqrt(0.75) - 1, about -13.4% per year.
+      key_points:
+        - arithmetic mean 0%
+        - $100 ends at $75
+        - geometric mean about -13.4%
+    - id: arithmetic_vs_geometric.apply
+      angle: apply
+      prompt: A fund advertises a 10% average annual return. Which average would you want to know, and why?
+      answer: >-
+        The geometric (compound annual) return, because it tells you what an
+        investment actually grew at. An arithmetic average can overstate what
+        investors earned when returns were volatile.
+      key_points:
+        - ask for the geometric / compound annual growth rate
+        - arithmetic average overstates realized growth when volatile
+
+log_returns:
+  lesson: >-
+    The log return is ln(1 + r), or ln(P1 / P0). Log returns add up over time:
+    the log return over a year is the sum of the daily log returns, which makes
+    the math of multi-period returns simple. For small returns they are close to
+    simple returns; for big moves they differ a lot.
+  questions:
+    - id: log_returns.explain
+      angle: explain
+      prompt: Why do quants often prefer log returns to simple returns?
+      answer: >-
+        Log returns are additive over time, so multi-period returns are just sums,
+        which suits statistics and models. They also match models that assume
+        normally distributed log returns (lognormal prices).
+      key_points:
+        - additive across time periods
+        - convenient for statistics / models (e.g. lognormal prices)
+    - id: log_returns.calculate
+      angle: calculate
+      prompt: A price goes from 100 to 110 and then back to 100. What are the simple and log returns for each step, and their sums?
+      answer: >-
+        Simple returns: +10% then -9.09%, which sum to +0.91% even though the price
+        ended where it started. Log returns: ln(1.1) = +9.53% then ln(1/1.1) =
+        -9.53%, which sum to exactly 0.
+      key_points:
+        - simple +10% and about -9.09%, sum not zero
+        - log +9.53% and -9.53%, sum exactly zero
+    - id: log_returns.compare
+      angle: compare
+      prompt: When is the difference between log and simple returns negligible, and when does it matter?
+      answer: >-
+        For small returns such as daily moves of a percent or so they are almost
+        identical. For large moves, like +50% or -50%, they differ a lot (ln 1.5 is
+        40.5%, ln 0.5 is -69.3%), so the choice matters.
+      key_points:
+        - nearly equal for small returns
+        - differ substantially for large returns
+
+real_vs_nominal:
+  lesson: >-
+    Nominal return is the return in dollars. Real return removes inflation and
+    measures the change in purchasing power. Exactly, (1 + real) = (1 + nominal)
+    / (1 + inflation); approximately, real = nominal - inflation.
+  questions:
+    - id: real_vs_nominal.calculate
+      angle: calculate
+      prompt: Your savings earned 5% while inflation was 3%. What was your real return, approximately and exactly?
+      answer: >-
+        Approximately 5% - 3% = 2%. Exactly, 1.05 / 1.03 - 1, about 1.94%.
+      key_points:
+        - about 2%
+        - exact about 1.94%
+    - id: real_vs_nominal.apply
+      angle: apply
+      prompt: A bank account pays 2% while inflation is 4%. Are you getting richer or poorer? Explain.
+      answer: >-
+        Poorer in real terms: the balance grows 2% but prices grow 4%, so you can
+        buy about 2% less each year even though the dollar amount rises.
+      key_points:
+        - poorer / negative real return
+        - purchasing power falls about 2%
+    - id: real_vs_nominal.explain
+      angle: explain
+      prompt: Why do long-term investors care more about real returns than nominal returns?
+      answer: >-
+        Their goal is future spending power, such as retirement income. Over long
+        periods inflation compounds and can eat a large share of nominal gains,
+        so only the real return shows whether wealth actually grew.
+      key_points:
+        - what matters is purchasing power / future spending
+        - inflation compounds over long horizons
+
+risk_return_tradeoff:
+  lesson: >-
+    Investors demand extra expected return to hold riskier assets. That is why
+    stocks have historically returned more than bonds, and bonds more than cash.
+    Higher expected return is not guaranteed return: taking more risk means a
+    wider range of outcomes, including bigger losses.
+  questions:
+    - id: risk_return_tradeoff.explain
+      angle: explain
+      prompt: Why do riskier assets have higher expected returns?
+      answer: >-
+        Investors dislike risk. To persuade them to hold an asset with uncertain
+        outcomes, its price must be low enough that the expected return beats
+        safer alternatives. That extra return is the risk premium.
+      key_points:
+        - investors are risk averse
+        - they require compensation (risk premium)
+        - lower price today gives higher expected return
+    - id: risk_return_tradeoff.misconception
+      angle: misconception
+      prompt: Does taking more risk guarantee higher returns? Explain.
+      answer: >-
+        No. It raises expected (average) return, but actual outcomes spread wider,
+        including larger losses. Over any given period a riskier asset can do
+        worse. Also, not all risk is rewarded: diversifiable risk earns no premium.
+      key_points:
+        - no guarantee; only higher expected return
+        - wider range of outcomes, including bigger losses
+        - bonus: unrewarded diversifiable risk
+    - id: risk_return_tradeoff.apply
+      angle: apply
+      prompt: A 25-year-old saving for retirement and a 70-year-old living off savings both ask how much stock to hold. How does the tradeoff apply differently?
+      answer: >-
+        The 25-year-old has a long horizon and future earnings, so they can ride
+        out drops and usually holds more stocks for higher expected growth. The
+        70-year-old needs to spend soon and can't wait out a crash, so they hold
+        more bonds and cash for stability.
+      key_points:
+        - long horizon can take more risk / more stocks
+        - near-term spending needs lower risk / more bonds and cash
+        - ability to recover from losses differs
+
+fiduciary_duty:
+  lesson: >-
+    A fiduciary manages money on someone else's behalf and must put the client's
+    interests first. The core duties are loyalty (no putting yourself first),
+    prudence (act as a careful expert would) and care (do the work, know the
+    client). Conflicts of interest must be avoided or clearly disclosed.
+  questions:
+    - id: fiduciary_duty.explain
+      angle: explain
+      prompt: What does it mean for an investment adviser to be a fiduciary?
+      answer: >-
+        They must act in the client's best interest, putting the client ahead of
+        themselves, with loyalty, prudence and care, and avoid or disclose
+        conflicts of interest.
+      key_points:
+        - act in the client's best interest ahead of own
+        - loyalty, prudence, care
+        - manage/disclose conflicts of interest
+    - id: fiduciary_duty.apply
+      angle: apply
+      prompt: An adviser can recommend two nearly identical funds. One pays the adviser a bigger commission. What should a fiduciary do?
+      answer: >-
+        Recommend the fund that is best for the client, typically the lower-cost
+        one, and disclose the conflict. The commission should not drive the
+        choice.
+      key_points:
+        - choose what is best for the client (e.g. lower cost)
+        - disclose the conflict
+        - own compensation must not drive the decision
+    - id: fiduciary_duty.example
+      angle: example
+      prompt: Give one example of an action that would breach fiduciary duty.
+      answer: >-
+        Examples: steering clients into high-fee products for personal gain,
+        trading ahead of client orders (front-running), excessive trading to earn
+        commissions (churning), recommending unsuitable risky investments,
+        hiding conflicts.
+      key_points:
+        - a valid breach, such as churning, front-running, hidden conflicts, unsuitable recommendations
+
+code_of_ethics:
+  lesson: >-
+    Professional codes, such as the CFA Institute Code and Standards, set rules
+    for investment professionals: act with integrity, keep independence and
+    objectivity, deal fairly with all clients, recommend only suitable
+    investments, present performance honestly, and disclose conflicts. Clients
+    come first, then the employer, then yourself.
+  questions:
+    - id: code_of_ethics.explain
+      angle: explain
+      prompt: Why does the investment industry need a code of ethics at all, beyond the law?
+      answer: >-
+        Clients rely on professionals who know more than they do and can't easily
+        check their work. Trust in markets depends on honest behavior, and laws
+        don't cover every conflict or gray area, so a code sets a higher standard.
+      key_points:
+        - information gap / clients rely on the professional
+        - trust in markets
+        - law is a minimum and doesn't cover everything
+    - id: code_of_ethics.apply
+      angle: apply
+      prompt: An analyst gets a new stock idea. Some clients are big accounts and some are small. How should the idea be communicated under fair dealing?
+      answer: >-
+        All clients for whom the idea is suitable should get it at about the same
+        time. The analyst can't tip off the big clients first so they can trade
+        ahead of the others.
+      key_points:
+        - disseminate fairly / at the same time
+        - no preferential treatment for large clients
+    - id: code_of_ethics.example
+      angle: example
+      prompt: A company offers an analyst a luxury trip right before the analyst publishes a rating on its stock. What is the ethical problem?
+      answer: >-
+        It threatens independence and objectivity: the gift could bias the rating
+        or look like it does. The analyst should decline or at least disclose it
+        and get employer approval, following the firm's policy.
+      key_points:
+        - independence and objectivity at risk
+        - decline or disclose / get employer approval
+
+insider_trading:
+  lesson: >-
+    Material nonpublic information (MNPI) is information that would likely move
+    a price and that the public doesn't have yet. Trading on it, or tipping
+    others, is illegal and unethical. The mosaic theory allows conclusions built
+    from public information plus nonmaterial nonpublic details.
+  questions:
+    - id: insider_trading.explain
+      angle: explain
+      prompt: What makes information 'material nonpublic', and why can't you trade on it?
+      answer: >-
+        It is material if a reasonable investor would consider it important or it
+        would likely move the price, and nonpublic if it hasn't been released to
+        the market. Trading on it is unfair to other investors and damages trust
+        in markets; it is illegal.
+      key_points:
+        - material = likely to move price / important to investors
+        - nonpublic = not yet disclosed to the market
+        - unfair and illegal; harms market integrity
+    - id: insider_trading.apply
+      angle: apply
+      prompt: At a dinner, a friend who works at a company tells you it will announce a surprise acquisition next week. What should you do?
+      answer: >-
+        Don't trade the stock or tell anyone else. It is material nonpublic
+        information, and trading or tipping on it is insider trading. If you work
+        in finance, tell your compliance department.
+      key_points:
+        - do not trade
+        - do not pass it on
+        - report to compliance if applicable
+    - id: insider_trading.compare
+      angle: compare
+      prompt: How is building a view with the mosaic theory different from insider trading?
+      answer: >-
+        The mosaic theory combines public information with nonmaterial nonpublic
+        details (like store traffic you observed) to reach a conclusion; that is
+        legitimate research. Insider trading uses a single piece of material
+        nonpublic information from inside the company.
+      key_points:
+        - mosaic uses public plus nonmaterial nonpublic information
+        - insider trading relies on material nonpublic information
+        - mosaic analysis is allowed

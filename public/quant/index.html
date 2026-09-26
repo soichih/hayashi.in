@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quant Fluency - learn quant asset management by answering</title>
+	<meta name="description" content="Short daily drills on investment and quantitative portfolio management concepts. Answer in your own words and get graded feedback.">
+	<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<header class="top">
+		<a class="brand" href="./">Quant Fluency</a>
+		<div class="scores" aria-live="polite">
+			<div class="score" title="Of the concepts you've been shown, the share you've mastered">
+				<span class="num" id="mastery">0%</span>
+				<span class="label">mastered</span>
+			</div>
+			<div class="score" title="Of all concepts in the course, the share you've been shown">
+				<span class="num" id="coverage">0%</span>
+				<span class="label">covered</span>
+			</div>
+			<div class="score streak" title="Days in a row with at least one answer">
+				<span class="num" id="streak">0</span>
+				<span class="label">day streak</span>
+			</div>
+		</div>
+	</header>
+
+	<main id="app">
+		<p class="loading">Loading...</p>
+	</main>
+
+	<footer class="foot">
+		<span>Answers are graded by a language model and can be wrong. Progress is saved only in this browser.</span>
+		<span><button class="link" id="export">Export progress</button> · <button class="link" id="import">Import</button> · <button class="link" id="reset">Reset</button></span>
+		<input type="file" id="import-file" accept="application/json" hidden>
+	</footer>
+
+	<script src="app.js"></script>
+</body>
+
+</html>

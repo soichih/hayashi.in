@@ -1,0 +1,299 @@
+# Concept graph for a quant asset management learning site.
+#
+# Each concept is one small, testable idea. The site scores users per concept:
+#   coverage = concepts presented / total concepts
+#   mastery  = concepts passed (spaced-repetition) / concepts presented
+#
+# Fields
+#   id       stable key (never rename once users have progress on it)
+#   name     display name
+#   domain   see `domains` below
+#   tier     0 market basics .. 7 advanced (suggested learning order)
+#   prereqs  ids that should be seen first
+#   certs    which syllabi cover it (see `certs` below) - topic-level mapping,
+#            written from the 2026/2027 published topic outlines, not from
+#            individual learning outcome statements
+#   summary  one-line description (our own wording, not curriculum text)
+
+certs:
+  SIE:   FINRA Securities Industry Essentials (entry-level US)
+  CFA1:  CFA Program Level I
+  CFA2:  CFA Program Level II
+  CFA3:  CFA Program Level III (core + Portfolio Management pathway)
+  FRM1:  GARP FRM Part I
+  FRM2:  GARP FRM Part II
+  CQF:   Certificate in Quantitative Finance
+  CAIA1: CAIA Level I
+  CAIA2: CAIA Level II
+  CIPM:  CFA Institute CIPM (Levels I-II)
+
+domains:
+  markets:      Markets and instruments
+  math:         Math foundations
+  stats:        Probability and statistics
+  econ:         Economics
+  fsa:          Financial statements and corporate finance
+  equity:       Equity
+  fixed_income: Fixed income
+  derivatives:  Derivatives
+  alternatives: Alternative investments
+  portfolio:    Portfolio theory
+  factors:      Factor models and factor investing
+  quant_pm:     Quantitative portfolio management
+  risk:         Risk management
+  performance:  Performance measurement and attribution
+  ml:           Machine learning and data
+  ethics:       Ethics and standards
+
+concepts:
+
+  # ---------------------------------------------------------------- tier 0
+  - {id: asset_classes, name: Asset classes, domain: markets, tier: 0, prereqs: [], certs: [SIE, CFA1], summary: "Equities, bonds, cash, real assets and alternatives, and what each is for."}
+  - {id: stocks_basics, name: What a stock is, domain: markets, tier: 0, prereqs: [asset_classes], certs: [SIE, CFA1], summary: "A share of ownership with a claim on residual earnings and voting rights."}
+  - {id: bonds_basics, name: What a bond is, domain: markets, tier: 0, prereqs: [asset_classes], certs: [SIE, CFA1], summary: "A loan to an issuer that pays coupons and returns principal at maturity."}
+  - {id: funds_etfs, name: Mutual funds and ETFs, domain: markets, tier: 0, prereqs: [stocks_basics, bonds_basics], certs: [SIE, CFA1], summary: "Pooled vehicles; how ETFs trade intraday and use creation/redemption."}
+  - {id: exchanges_trading, name: Exchanges and market structure, domain: markets, tier: 0, prereqs: [stocks_basics], certs: [SIE, CFA1], summary: "Primary vs secondary markets, exchanges, dealers, brokers, market makers."}
+  - {id: order_types, name: Order types, domain: markets, tier: 0, prereqs: [exchanges_trading], certs: [SIE, CFA1], summary: "Market, limit, stop orders and when each fills."}
+  - {id: bid_ask_spread, name: Bid-ask spread, domain: markets, tier: 0, prereqs: [order_types], certs: [SIE, CFA1], summary: "The cost of immediacy; why liquid assets have tight spreads."}
+  - {id: short_selling, name: Short selling, domain: markets, tier: 0, prereqs: [order_types], certs: [SIE, CFA1], summary: "Borrow and sell to profit from a price fall; borrow cost and unlimited loss."}
+  - {id: margin_leverage, name: Margin and leverage, domain: markets, tier: 0, prereqs: [order_types], certs: [SIE, CFA1], summary: "Borrowing to invest magnifies gains and losses; margin calls."}
+  - {id: market_indexes, name: Market indexes, domain: markets, tier: 0, prereqs: [stocks_basics], certs: [SIE, CFA1], summary: "Price-, cap- and equal-weighted indexes and what each measures."}
+  - {id: time_value_of_money, name: Time value of money, domain: math, tier: 0, prereqs: [], certs: [SIE, CFA1, FRM1], summary: "A dollar today is worth more than a dollar later; PV and FV."}
+  - {id: compounding, name: Compounding, domain: math, tier: 0, prereqs: [time_value_of_money], certs: [CFA1, FRM1], summary: "Interest on interest; annual vs continuous compounding."}
+  - {id: annuities, name: Annuities and perpetuities, domain: math, tier: 0, prereqs: [compounding], certs: [CFA1], summary: "Valuing a stream of equal payments, finite or forever."}
+  - {id: holding_period_return, name: Holding period return, domain: math, tier: 0, prereqs: [compounding], certs: [CFA1, CIPM], summary: "(End value - start value + income) / start value."}
+  - {id: arithmetic_vs_geometric, name: Arithmetic vs geometric mean return, domain: math, tier: 0, prereqs: [holding_period_return], certs: [CFA1, CIPM], summary: "Why the geometric mean is lower and is what you actually earn over time."}
+  - {id: log_returns, name: Log returns, domain: math, tier: 0, prereqs: [compounding, holding_period_return], certs: [CFA1, FRM1, CQF], summary: "ln(1+r); adds across time, used in most quant models."}
+  - {id: real_vs_nominal, name: Real vs nominal returns, domain: econ, tier: 0, prereqs: [holding_period_return], certs: [SIE, CFA1], summary: "Adjusting returns for inflation."}
+  - {id: risk_return_tradeoff, name: Risk-return tradeoff, domain: portfolio, tier: 0, prereqs: [asset_classes], certs: [SIE, CFA1], summary: "Higher expected return comes with bearing more risk."}
+  - {id: fiduciary_duty, name: Fiduciary duty, domain: ethics, tier: 0, prereqs: [], certs: [SIE, CFA1, CAIA1, CIPM], summary: "Acting in the client's best interest: loyalty, prudence, care."}
+  - {id: code_of_ethics, name: CFA Code and Standards overview, domain: ethics, tier: 0, prereqs: [fiduciary_duty], certs: [CFA1, CFA2, CFA3, CIPM], summary: "Integrity, independence, fair dealing, suitability, disclosure of conflicts."}
+  - {id: insider_trading, name: Material nonpublic information, domain: ethics, tier: 0, prereqs: [code_of_ethics], certs: [SIE, CFA1], summary: "Why trading on MNPI is prohibited and the mosaic theory exception."}
+
+  # ---------------------------------------------------------------- tier 1
+  - {id: probability_basics, name: Probability rules, domain: stats, tier: 1, prereqs: [], certs: [CFA1, FRM1], summary: "Addition and multiplication rules, conditional probability, independence."}
+  - {id: bayes_theorem, name: Bayes' theorem, domain: stats, tier: 1, prereqs: [probability_basics], certs: [CFA1, FRM1], summary: "Updating a probability after seeing evidence."}
+  - {id: expected_value_variance, name: Expected value and variance, domain: stats, tier: 1, prereqs: [probability_basics], certs: [CFA1, FRM1], summary: "The mean and spread of a random variable."}
+  - {id: standard_deviation, name: Standard deviation (volatility), domain: stats, tier: 1, prereqs: [expected_value_variance], certs: [CFA1, FRM1], summary: "Square root of variance; the usual risk number for returns."}
+  - {id: annualizing_volatility, name: Annualizing volatility, domain: stats, tier: 1, prereqs: [standard_deviation], certs: [CFA1, FRM1, CQF], summary: "Scale by sqrt(time), e.g. daily vol x sqrt(252), assuming iid returns."}
+  - {id: covariance, name: Covariance, domain: stats, tier: 1, prereqs: [expected_value_variance], certs: [CFA1, FRM1], summary: "How two variables move together, in their units."}
+  - {id: correlation, name: Correlation, domain: stats, tier: 1, prereqs: [covariance, standard_deviation], certs: [CFA1, FRM1], summary: "Covariance scaled to -1..1; measures linear co-movement only."}
+  - {id: normal_distribution, name: Normal distribution, domain: stats, tier: 1, prereqs: [standard_deviation], certs: [CFA1, FRM1, CQF], summary: "Bell curve; 68/95/99.7 rule; z-scores."}
+  - {id: lognormal_distribution, name: Lognormal distribution, domain: stats, tier: 1, prereqs: [normal_distribution, log_returns], certs: [CFA1, FRM1, CQF], summary: "If log returns are normal, prices are lognormal and can't go negative."}
+  - {id: skewness_kurtosis, name: Skewness and kurtosis, domain: stats, tier: 1, prereqs: [normal_distribution], certs: [CFA1, FRM1], summary: "Asymmetry and fat tails; why returns aren't normal."}
+  - {id: other_distributions, name: "t, chi-square and binomial distributions", domain: stats, tier: 1, prereqs: [normal_distribution], certs: [CFA1, FRM1], summary: "Distributions used in testing and in discrete models."}
+  - {id: central_limit_theorem, name: Central limit theorem, domain: stats, tier: 1, prereqs: [normal_distribution], certs: [CFA1, FRM1], summary: "Sample means are roughly normal for large samples."}
+  - {id: sampling_standard_error, name: Sampling and standard error, domain: stats, tier: 1, prereqs: [central_limit_theorem], certs: [CFA1, FRM1], summary: "How precise an estimate from a sample is; shrinks with sqrt(n)."}
+  - {id: confidence_intervals, name: Confidence intervals, domain: stats, tier: 1, prereqs: [sampling_standard_error], certs: [CFA1, FRM1], summary: "A range that captures the true value with a stated frequency."}
+  - {id: hypothesis_testing, name: Hypothesis testing, domain: stats, tier: 1, prereqs: [confidence_intervals, other_distributions], certs: [CFA1, FRM1], summary: "Null vs alternative, test statistic, p-value, type I and II errors."}
+  - {id: multiple_testing, name: Multiple testing and data snooping, domain: stats, tier: 1, prereqs: [hypothesis_testing], certs: [CFA2, FRM1, CQF], summary: "Test enough strategies and some look great by luck; adjust thresholds."}
+  - {id: linear_regression, name: Simple linear regression, domain: stats, tier: 1, prereqs: [correlation, hypothesis_testing], certs: [CFA1, FRM1], summary: "Fit y = a + b x by least squares; interpret slope, intercept, R-squared."}
+  - {id: multiple_regression, name: Multiple regression, domain: stats, tier: 1, prereqs: [linear_regression], certs: [CFA2, FRM1], summary: "Several explanatory variables; adjusted R-squared, F-test."}
+  - {id: regression_pitfalls, name: Regression pitfalls, domain: stats, tier: 1, prereqs: [multiple_regression], certs: [CFA2, FRM1], summary: "Heteroskedasticity, serial correlation, multicollinearity, omitted variables."}
+  - {id: time_series_basics, name: Time series basics, domain: stats, tier: 1, prereqs: [linear_regression], certs: [CFA2, FRM1], summary: "Trends, autoregressive models, mean reversion."}
+  - {id: stationarity, name: Stationarity and unit roots, domain: stats, tier: 1, prereqs: [time_series_basics], certs: [CFA2, FRM1, CQF], summary: "Why regressing prices on prices gives spurious results."}
+  - {id: monte_carlo, name: Monte Carlo simulation, domain: stats, tier: 1, prereqs: [normal_distribution], certs: [CFA1, FRM1, CQF], summary: "Estimate outcomes by simulating many random paths."}
+  - {id: bootstrapping_resampling, name: Bootstrap resampling, domain: stats, tier: 1, prereqs: [monte_carlo, sampling_standard_error], certs: [CFA1, FRM1], summary: "Resample observed data to estimate uncertainty without assuming a distribution."}
+  - {id: matrix_algebra, name: Vectors and matrices, domain: math, tier: 1, prereqs: [], certs: [CQF], summary: "Weights as vectors, covariance as a matrix; w' Sigma w is portfolio variance."}
+  - {id: calculus_basics, name: Derivatives and optimization (calculus), domain: math, tier: 1, prereqs: [], certs: [CQF], summary: "Slopes, maxima and minima, Lagrange multipliers for constrained problems."}
+  - {id: eigen_decomposition, name: Eigenvalues and eigenvectors, domain: math, tier: 1, prereqs: [matrix_algebra], certs: [CQF, FRM2], summary: "Directions a matrix only stretches; basis of PCA."}
+  - {id: supply_demand, name: Supply and demand, domain: econ, tier: 1, prereqs: [], certs: [CFA1], summary: "How prices clear markets; elasticity."}
+  - {id: business_cycle, name: Business cycle, domain: econ, tier: 1, prereqs: [supply_demand], certs: [CFA1, CFA3], summary: "Expansion, peak, contraction, trough, and how asset classes behave in each."}
+  - {id: monetary_policy, name: Monetary policy, domain: econ, tier: 1, prereqs: [business_cycle], certs: [CFA1, CFA3], summary: "Central bank tools and their effect on rates, inflation and assets."}
+  - {id: fiscal_policy, name: Fiscal policy, domain: econ, tier: 1, prereqs: [business_cycle], certs: [CFA1], summary: "Government spending and taxes as macro levers."}
+  - {id: inflation, name: Inflation, domain: econ, tier: 1, prereqs: [monetary_policy, real_vs_nominal], certs: [CFA1, CFA3], summary: "Measures, causes, and which assets hedge it."}
+  - {id: exchange_rates, name: Exchange rates, domain: econ, tier: 1, prereqs: [monetary_policy], certs: [CFA1, CFA2], summary: "Quotes, cross rates, forward points, parity conditions."}
+
+  # ---------------------------------------------------------------- tier 2: statements and corporate finance
+  - {id: income_statement, name: Income statement, domain: fsa, tier: 2, prereqs: [stocks_basics], certs: [CFA1], summary: "Revenue, expenses and earnings over a period."}
+  - {id: balance_sheet, name: Balance sheet, domain: fsa, tier: 2, prereqs: [stocks_basics], certs: [CFA1], summary: "Assets = liabilities + equity at a point in time."}
+  - {id: cash_flow_statement, name: Cash flow statement, domain: fsa, tier: 2, prereqs: [income_statement, balance_sheet], certs: [CFA1], summary: "Operating, investing and financing cash flows; why cash differs from earnings."}
+  - {id: financial_ratios, name: Financial ratios, domain: fsa, tier: 2, prereqs: [cash_flow_statement], certs: [CFA1, CFA2], summary: "Profitability, liquidity, leverage and efficiency ratios."}
+  - {id: dupont, name: DuPont analysis, domain: fsa, tier: 2, prereqs: [financial_ratios], certs: [CFA1], summary: "ROE = margin x asset turnover x leverage."}
+  - {id: earnings_quality, name: Earnings quality, domain: fsa, tier: 2, prereqs: [financial_ratios], certs: [CFA1, CFA2], summary: "Accruals, aggressive accounting and red flags."}
+  - {id: cost_of_capital, name: Cost of capital (WACC), domain: fsa, tier: 3, prereqs: [time_value_of_money, capm], certs: [CFA1, CFA2], summary: "Weighted cost of debt and equity; the discount rate for the firm."}
+  - {id: npv_irr, name: NPV and IRR, domain: fsa, tier: 2, prereqs: [annuities], certs: [CFA1], summary: "Capital budgeting rules and where IRR misleads."}
+  - {id: capital_structure, name: Capital structure, domain: fsa, tier: 3, prereqs: [cost_of_capital], certs: [CFA1, CFA2], summary: "Debt vs equity mix; Modigliani-Miller and tax shields."}
+
+  # ---------------------------------------------------------------- tier 2: equity
+  - {id: market_efficiency, name: Efficient market hypothesis, domain: equity, tier: 2, prereqs: [risk_return_tradeoff], certs: [CFA1, CFA3], summary: "Weak, semi-strong and strong forms and what each implies for active management."}
+  - {id: market_anomalies, name: Market anomalies, domain: equity, tier: 2, prereqs: [market_efficiency], certs: [CFA1, CFA3], summary: "Patterns like momentum and value that challenge EMH, and whether they persist."}
+  - {id: ddm, name: Dividend discount model, domain: equity, tier: 2, prereqs: [annuities, stocks_basics], certs: [CFA1, CFA2], summary: "Price = PV of future dividends; Gordon growth model."}
+  - {id: fcf_valuation, name: Free cash flow valuation, domain: equity, tier: 3, prereqs: [ddm, cash_flow_statement, cost_of_capital], certs: [CFA2], summary: "FCFF and FCFE discounted at the right rate."}
+  - {id: multiples, name: Valuation multiples, domain: equity, tier: 2, prereqs: [financial_ratios], certs: [CFA1, CFA2], summary: "P/E, P/B, EV/EBITDA and comparing firms."}
+  - {id: residual_income, name: Residual income model, domain: equity, tier: 2, prereqs: [ddm, dupont], certs: [CFA2], summary: "Value = book value + PV of earnings above the cost of equity."}
+  - {id: industry_analysis, name: Industry and competitive analysis, domain: equity, tier: 2, prereqs: [income_statement], certs: [CFA1], summary: "Five forces, life cycle, pricing power."}
+
+  # ---------------------------------------------------------------- tier 2: fixed income
+  - {id: bond_pricing, name: Bond pricing, domain: fixed_income, tier: 2, prereqs: [bonds_basics, annuities], certs: [CFA1, FRM1], summary: "Price = PV of coupons and principal; price and yield move inversely."}
+  - {id: yield_measures, name: Yield measures, domain: fixed_income, tier: 2, prereqs: [bond_pricing], certs: [CFA1, FRM1], summary: "Current yield, YTM, yield to call, and their assumptions."}
+  - {id: spot_forward_rates, name: Spot and forward rates, domain: fixed_income, tier: 2, prereqs: [yield_measures], certs: [CFA1, FRM1], summary: "Zero-coupon rates, bootstrapping a curve, implied forwards."}
+  - {id: yield_curve, name: Yield curve shape, domain: fixed_income, tier: 2, prereqs: [spot_forward_rates, monetary_policy], certs: [CFA1, CFA2, FRM1], summary: "Normal, flat, inverted; expectations, liquidity preference, segmentation theories."}
+  - {id: duration, name: Duration, domain: fixed_income, tier: 2, prereqs: [bond_pricing, calculus_basics], certs: [CFA1, FRM1], summary: "Macaulay and modified duration; % price change per 1% yield change."}
+  - {id: dv01, name: DV01 (PVBP), domain: fixed_income, tier: 2, prereqs: [duration], certs: [CFA1, FRM1], summary: "Dollar price change for a 1 bp yield move; used for hedging."}
+  - {id: convexity, name: Convexity, domain: fixed_income, tier: 2, prereqs: [duration], certs: [CFA1, FRM1], summary: "Curvature of price vs yield; the second-order correction to duration."}
+  - {id: key_rate_duration, name: Key rate duration, domain: fixed_income, tier: 2, prereqs: [duration, yield_curve], certs: [CFA2, FRM1], summary: "Sensitivity to moves at specific maturities, not just parallel shifts."}
+  - {id: credit_spreads, name: Credit spreads, domain: fixed_income, tier: 2, prereqs: [yield_measures], certs: [CFA1, FRM1], summary: "Extra yield over government bonds for default and liquidity risk."}
+  - {id: credit_ratings, name: Credit ratings, domain: fixed_income, tier: 2, prereqs: [credit_spreads], certs: [CFA1, FRM1], summary: "Investment grade vs high yield and how agencies rate."}
+  - {id: embedded_options, name: Callable and putable bonds, domain: fixed_income, tier: 2, prereqs: [duration], certs: [CFA2, FRM1], summary: "Embedded options change cash flows; effective duration and negative convexity."}
+  - {id: securitization, name: Securitization and MBS, domain: fixed_income, tier: 2, prereqs: [embedded_options], certs: [CFA1, CFA2, FRM1], summary: "Pooling loans into tranches; prepayment risk."}
+
+  # ---------------------------------------------------------------- tier 2: derivatives
+  - {id: forwards_futures, name: Forwards and futures, domain: derivatives, tier: 2, prereqs: [time_value_of_money], certs: [SIE, CFA1, FRM1], summary: "Agreements to trade later at a fixed price; futures are exchange-traded and marked to market."}
+  - {id: cost_of_carry, name: Cost of carry pricing, domain: derivatives, tier: 2, prereqs: [forwards_futures, compounding], certs: [CFA1, FRM1], summary: "F = S e^((r - q) T); no-arbitrage forward price."}
+  - {id: basis_hedging, name: Hedging with futures and basis risk, domain: derivatives, tier: 2, prereqs: [cost_of_carry, correlation], certs: [CFA3, FRM1], summary: "Minimum variance hedge ratio and the risk that the hedge doesn't track."}
+  - {id: swaps, name: Swaps, domain: derivatives, tier: 2, prereqs: [forwards_futures, spot_forward_rates], certs: [CFA1, CFA2, FRM1], summary: "Exchanging cash flow streams; interest rate, currency and total return swaps."}
+  - {id: options_basics, name: Calls and puts, domain: derivatives, tier: 2, prereqs: [stocks_basics], certs: [SIE, CFA1, FRM1], summary: "Right, not obligation; payoff diagrams; moneyness."}
+  - {id: option_strategies, name: Option strategies, domain: derivatives, tier: 2, prereqs: [options_basics], certs: [SIE, CFA1, CFA3], summary: "Covered call, protective put, spreads, straddles, collars."}
+  - {id: put_call_parity, name: Put-call parity, domain: derivatives, tier: 2, prereqs: [options_basics, time_value_of_money], certs: [CFA1, FRM1, CQF], summary: "C - P = S - PV(K); a no-arbitrage link between calls and puts."}
+  - {id: binomial_model, name: Binomial option pricing, domain: derivatives, tier: 2, prereqs: [put_call_parity, other_distributions], certs: [CFA1, CFA2, FRM1, CQF], summary: "Price options by replication on a price tree; risk-neutral probabilities."}
+  - {id: black_scholes, name: Black-Scholes model, domain: derivatives, tier: 2, prereqs: [binomial_model, lognormal_distribution], certs: [CFA2, FRM1, CQF], summary: "Closed-form European option price; its assumptions and where they fail."}
+  - {id: greeks, name: The Greeks, domain: derivatives, tier: 2, prereqs: [black_scholes], certs: [CFA2, FRM1, CQF], summary: "Delta, gamma, vega, theta, rho: option sensitivities."}
+  - {id: implied_volatility, name: Implied volatility and the smile, domain: derivatives, tier: 2, prereqs: [black_scholes], certs: [CFA2, FRM1, CQF], summary: "Vol backed out of prices; skew and smile show Black-Scholes is wrong."}
+  - {id: delta_hedging, name: Delta hedging, domain: derivatives, tier: 2, prereqs: [greeks], certs: [CFA2, FRM1, CQF], summary: "Offsetting option delta with the underlying; gamma makes it dynamic."}
+
+  # ---------------------------------------------------------------- tier 2: alternatives
+  - {id: alt_overview, name: What makes an investment alternative, domain: alternatives, tier: 2, prereqs: [asset_classes], certs: [CFA1, CAIA1], summary: "Illiquidity, leverage, fee structures, limited transparency."}
+  - {id: fee_structures, name: "2-and-20 fees, hurdles and high-water marks", domain: alternatives, tier: 2, prereqs: [alt_overview], certs: [CFA1, CAIA1], summary: "How management and incentive fees are calculated."}
+  - {id: hedge_fund_strategies, name: Hedge fund strategies, domain: alternatives, tier: 2, prereqs: [alt_overview, short_selling], certs: [CFA1, CAIA1], summary: "Equity long/short, event driven, global macro, relative value."}
+  - {id: private_equity, name: Private equity, domain: alternatives, tier: 3, prereqs: [alt_overview, fcf_valuation], certs: [CFA1, CAIA1, CAIA2], summary: "Buyouts and venture capital; J-curve; capital calls."}
+  - {id: private_credit, name: Private credit, domain: alternatives, tier: 2, prereqs: [alt_overview, credit_spreads], certs: [CAIA1, CAIA2], summary: "Direct lending, mezzanine, distressed debt."}
+  - {id: real_estate, name: Real estate investing, domain: alternatives, tier: 2, prereqs: [alt_overview], certs: [CFA1, CAIA1], summary: "Direct property, REITs, cap rates, appraisal smoothing."}
+  - {id: commodities, name: Commodities and roll yield, domain: alternatives, tier: 2, prereqs: [cost_of_carry], certs: [CFA1, CAIA1], summary: "Contango, backwardation, and where commodity futures returns come from."}
+  - {id: digital_assets, name: Digital assets, domain: alternatives, tier: 2, prereqs: [alt_overview], certs: [CAIA1, CAIA2], summary: "Cryptocurrencies, distributed ledgers, and their risk profile."}
+  - {id: stale_pricing, name: Return smoothing and stale pricing, domain: alternatives, tier: 2, prereqs: [real_estate, time_series_basics], certs: [CAIA1, CAIA2], summary: "Appraisal-based returns understate volatility and correlation; unsmoothing."}
+  - {id: funds_of_funds, name: Funds of funds, domain: alternatives, tier: 2, prereqs: [fee_structures], certs: [CAIA1], summary: "Diversification across managers vs a second layer of fees."}
+
+  # ---------------------------------------------------------------- tier 3: portfolio theory
+  - {id: diversification, name: Diversification, domain: portfolio, tier: 3, prereqs: [correlation, risk_return_tradeoff], certs: [SIE, CFA1, FRM1], summary: "Combining imperfectly correlated assets lowers risk without lowering expected return."}
+  - {id: portfolio_variance, name: Portfolio variance, domain: portfolio, tier: 3, prereqs: [diversification, matrix_algebra], certs: [CFA1, FRM1, CQF], summary: "w' Sigma w; the two-asset formula and why covariances dominate as n grows."}
+  - {id: systematic_vs_idiosyncratic, name: Systematic vs idiosyncratic risk, domain: portfolio, tier: 3, prereqs: [diversification], certs: [CFA1, FRM1], summary: "Diversifiable firm-specific risk vs market risk that remains."}
+  - {id: utility_risk_aversion, name: Utility and risk aversion, domain: portfolio, tier: 3, prereqs: [expected_value_variance], certs: [CFA1, CQF], summary: "U = E(r) - 0.5 A sigma^2; indifference curves."}
+  - {id: efficient_frontier, name: Efficient frontier, domain: portfolio, tier: 3, prereqs: [portfolio_variance], certs: [CFA1, FRM1, CQF], summary: "Portfolios with the highest return for each level of risk."}
+  - {id: mean_variance_optimization, name: Mean-variance optimization, domain: portfolio, tier: 3, prereqs: [efficient_frontier, calculus_basics], certs: [CFA3, CQF, CAIA2], summary: "Markowitz: choose weights to maximize return minus a risk penalty."}
+  - {id: capital_allocation_line, name: Capital allocation line, domain: portfolio, tier: 3, prereqs: [efficient_frontier, utility_risk_aversion], certs: [CFA1, FRM1], summary: "Mixing a risky portfolio with the risk-free asset."}
+  - {id: tangency_portfolio, name: Tangency portfolio and two-fund separation, domain: portfolio, tier: 3, prereqs: [capital_allocation_line], certs: [CFA1, CQF], summary: "Everyone holds the same risky portfolio, scaled by risk aversion."}
+  - {id: capital_market_line, name: Capital market line, domain: portfolio, tier: 3, prereqs: [tangency_portfolio], certs: [CFA1, FRM1], summary: "The CAL through the market portfolio."}
+  - {id: beta, name: Beta, domain: portfolio, tier: 3, prereqs: [covariance, linear_regression], certs: [CFA1, FRM1, CAIA1], summary: "Sensitivity to the market: cov(r_i, r_m) / var(r_m)."}
+  - {id: capm, name: CAPM, domain: portfolio, tier: 3, prereqs: [beta, capital_market_line], certs: [CFA1, FRM1, CQF], summary: "E(r) = rf + beta (E(rm) - rf); only systematic risk is priced."}
+  - {id: security_market_line, name: Security market line, domain: portfolio, tier: 3, prereqs: [capm], certs: [CFA1, FRM1], summary: "Plotting expected return against beta; over- and undervalued assets."}
+  - {id: alpha_concept, name: Alpha, domain: portfolio, tier: 3, prereqs: [capm], certs: [CFA1, FRM1, CAIA1, CIPM], summary: "Return beyond what the risk taken would predict."}
+  - {id: apt, name: Arbitrage pricing theory, domain: factors, tier: 3, prereqs: [capm, multiple_regression], certs: [CFA2, FRM1], summary: "Expected return is linear in several factor exposures; no-arbitrage argument."}
+  - {id: factor_models_intro, name: Multifactor models, domain: factors, tier: 3, prereqs: [apt], certs: [CFA2, FRM1, FRM2], summary: "Macro, fundamental and statistical factor models and what each estimates."}
+  - {id: fama_french, name: Fama-French factors, domain: factors, tier: 3, prereqs: [factor_models_intro, market_anomalies], certs: [CFA2, FRM2], summary: "Market, size (SMB), value (HML), and the 5-factor extension."}
+  - {id: carhart_momentum, name: Carhart momentum factor, domain: factors, tier: 3, prereqs: [fama_french], certs: [CFA2, FRM2], summary: "Adding winners-minus-losers to the three-factor model."}
+  - {id: behavioral_finance, name: Behavioral finance, domain: portfolio, tier: 3, prereqs: [market_efficiency], certs: [CFA1, CFA3], summary: "Loss aversion, overconfidence, herding, and how biases create anomalies."}
+  - {id: ips, name: Investment policy statement, domain: portfolio, tier: 3, prereqs: [utility_risk_aversion, fiduciary_duty], certs: [CFA1, CFA3], summary: "Return and risk objectives plus constraints: time horizon, liquidity, taxes, legal, unique."}
+  - {id: strategic_asset_allocation, name: Strategic asset allocation, domain: portfolio, tier: 3, prereqs: [ips, mean_variance_optimization], certs: [CFA3, CAIA2], summary: "Long-term policy weights across asset classes."}
+  - {id: tactical_asset_allocation, name: Tactical asset allocation, domain: portfolio, tier: 3, prereqs: [strategic_asset_allocation, business_cycle], certs: [CFA3, CAIA2], summary: "Short-term tilts away from policy weights."}
+  - {id: liability_driven_investing, name: Liability-driven investing, domain: portfolio, tier: 3, prereqs: [strategic_asset_allocation, duration], certs: [CFA3, CAIA2], summary: "Matching assets to liabilities; surplus risk; immunization."}
+  - {id: institutional_investors, name: Institutional asset owners, domain: portfolio, tier: 3, prereqs: [ips], certs: [CFA3, CAIA2], summary: "Pensions, endowments, sovereign wealth funds, insurers and their different constraints."}
+  - {id: passive_vs_active, name: Passive vs active management, domain: portfolio, tier: 3, prereqs: [market_efficiency, market_indexes], certs: [CFA1, CFA3], summary: "Costs, the arithmetic of active management, and when active can win."}
+
+  # ---------------------------------------------------------------- tier 4: quantitative portfolio management
+  - {id: factor_investing, name: Factor investing, domain: factors, tier: 4, prereqs: [carhart_momentum], certs: [CFA3, CAIA2], summary: "Building portfolios around factor exposures rather than asset classes."}
+  - {id: value_factor, name: Value factor, domain: factors, tier: 4, prereqs: [factor_investing, multiples], certs: [CFA2, CFA3], summary: "Cheap stocks outperform expensive ones on average; risk vs behavioral explanations."}
+  - {id: momentum_factor, name: Momentum factor, domain: factors, tier: 4, prereqs: [factor_investing], certs: [CFA2, CFA3], summary: "Past 12-1 month winners keep winning; momentum crashes."}
+  - {id: quality_factor, name: Quality factor, domain: factors, tier: 4, prereqs: [factor_investing, dupont, earnings_quality], certs: [CFA3], summary: "Profitable, stable, low-leverage firms."}
+  - {id: low_volatility_factor, name: Low-volatility anomaly, domain: factors, tier: 4, prereqs: [factor_investing, security_market_line], certs: [CFA3], summary: "Low-beta stocks earn more than CAPM predicts; leverage constraints story."}
+  - {id: size_factor, name: Size factor, domain: factors, tier: 4, prereqs: [fama_french], certs: [CFA2, CFA3], summary: "Small caps vs large caps and why the premium is debated."}
+  - {id: carry_factor, name: Carry, domain: factors, tier: 4, prereqs: [factor_investing, commodities, exchange_rates], certs: [CAIA2], summary: "Earning the yield differential across currencies, bonds and commodities."}
+  - {id: smart_beta, name: Smart beta indexes, domain: factors, tier: 4, prereqs: [factor_investing, market_indexes], certs: [CFA3, CAIA2], summary: "Rules-based factor portfolios delivered as indexes and ETFs."}
+  - {id: factor_crowding, name: Factor crowding and decay, domain: factors, tier: 4, prereqs: [factor_investing, multiple_testing], certs: [CAIA2], summary: "Premiums shrink after publication and when too much capital chases them."}
+  - {id: signal_construction, name: Alpha signal construction, domain: quant_pm, tier: 4, prereqs: [factor_investing, standard_deviation], certs: [CQF], summary: "Turning raw data into standardized, cross-sectional scores (z-scores, ranks, winsorizing)."}
+  - {id: information_coefficient, name: Information coefficient, domain: quant_pm, tier: 4, prereqs: [signal_construction, correlation], certs: [CFA3], summary: "Correlation between forecasts and realized returns; a skill measure."}
+  - {id: fundamental_law, name: Fundamental law of active management, domain: quant_pm, tier: 4, prereqs: [information_coefficient, information_ratio], certs: [CFA2, CFA3], summary: "IR ~ IC x sqrt(breadth) x transfer coefficient."}
+  - {id: tracking_error, name: Tracking error, domain: quant_pm, tier: 4, prereqs: [standard_deviation, passive_vs_active], certs: [CFA2, CFA3, CIPM], summary: "Standard deviation of return minus benchmark return."}
+  - {id: information_ratio, name: Information ratio, domain: quant_pm, tier: 4, prereqs: [tracking_error, alpha_concept], certs: [CFA2, CFA3, CIPM, FRM2], summary: "Active return per unit of active risk."}
+  - {id: active_share, name: Active share, domain: quant_pm, tier: 4, prereqs: [passive_vs_active], certs: [CFA3], summary: "How different holdings are from the benchmark; vs tracking error."}
+  - {id: covariance_estimation, name: Covariance estimation, domain: quant_pm, tier: 4, prereqs: [portfolio_variance, sampling_standard_error], certs: [CQF, FRM2], summary: "Sample covariance is noisy when assets outnumber observations."}
+  - {id: shrinkage, name: Shrinkage estimators, domain: quant_pm, tier: 4, prereqs: [covariance_estimation], certs: [CQF], summary: "Pull noisy estimates toward a structured target (Ledoit-Wolf)."}
+  - {id: pca, name: Principal component analysis, domain: quant_pm, tier: 4, prereqs: [eigen_decomposition, covariance_estimation], certs: [CQF, FRM2], summary: "Find the few factors explaining most variance; yield curve level/slope/curvature."}
+  - {id: error_maximization, name: MVO as error maximizer, domain: quant_pm, tier: 4, prereqs: [mean_variance_optimization, covariance_estimation], certs: [CFA3, CQF], summary: "Optimizers overweight assets with the biggest estimation errors; unstable weights."}
+  - {id: black_litterman, name: Black-Litterman, domain: quant_pm, tier: 4, prereqs: [error_maximization, capm, bayes_theorem], certs: [CFA3, CQF], summary: "Start from market-implied returns and blend in views by confidence."}
+  - {id: minimum_variance, name: Minimum variance portfolio, domain: quant_pm, tier: 4, prereqs: [efficient_frontier, covariance_estimation], certs: [CFA3, CQF], summary: "Ignore return forecasts and just minimize risk."}
+  - {id: risk_parity, name: Risk parity, domain: quant_pm, tier: 4, prereqs: [risk_contribution], certs: [CFA3, CAIA2], summary: "Weight assets so each contributes equally to risk; usually needs leverage."}
+  - {id: risk_contribution, name: Risk contribution and risk budgeting, domain: quant_pm, tier: 4, prereqs: [portfolio_variance, calculus_basics], certs: [CFA3, FRM2, CAIA2], summary: "Marginal and total contribution to risk; allocating a risk budget."}
+  - {id: hierarchical_risk_parity, name: Hierarchical risk parity, domain: quant_pm, tier: 4, prereqs: [risk_parity, clustering], certs: [CQF], summary: "Cluster assets, then allocate risk down the tree; no matrix inversion."}
+  - {id: kelly_criterion, name: Kelly criterion, domain: quant_pm, tier: 4, prereqs: [log_returns, utility_risk_aversion], certs: [CQF], summary: "Bet size that maximizes long-run log growth; why practitioners use fractional Kelly."}
+  - {id: volatility_targeting, name: Volatility targeting, domain: quant_pm, tier: 5, prereqs: [ewma_volatility], certs: [CAIA2], summary: "Scale exposure inversely to forecast volatility."}
+  - {id: portfolio_constraints, name: Portfolio constraints, domain: quant_pm, tier: 4, prereqs: [mean_variance_optimization], certs: [CFA3, CQF], summary: "Long-only, position limits, sector and factor neutrality, turnover limits."}
+  - {id: transaction_costs, name: Transaction costs, domain: quant_pm, tier: 4, prereqs: [bid_ask_spread], certs: [CFA3], summary: "Commissions, spread, market impact, opportunity cost; implementation shortfall."}
+  - {id: rebalancing, name: Rebalancing, domain: quant_pm, tier: 4, prereqs: [strategic_asset_allocation, transaction_costs], certs: [CFA3, CAIA2], summary: "Calendar vs threshold rebalancing; the cost-vs-drift tradeoff."}
+  - {id: backtesting, name: Backtesting, domain: quant_pm, tier: 4, prereqs: [signal_construction, transaction_costs], certs: [CFA2, CFA3, CQF], summary: "Simulating a strategy on historical data, including costs and realistic timing."}
+  - {id: lookahead_bias, name: Look-ahead bias, domain: quant_pm, tier: 4, prereqs: [backtesting], certs: [CFA2, CQF], summary: "Using information not available at the time of the trade (e.g. restated data)."}
+  - {id: survivorship_bias, name: Survivorship bias, domain: quant_pm, tier: 4, prereqs: [backtesting], certs: [CFA1, CFA2, CAIA1], summary: "Testing only on assets or funds that still exist inflates results."}
+  - {id: backtest_overfitting, name: Backtest overfitting, domain: quant_pm, tier: 4, prereqs: [backtesting, multiple_testing], certs: [CFA2, CQF], summary: "Tuning until the history looks good; deflated Sharpe ratio, out-of-sample tests."}
+  - {id: walk_forward, name: Walk-forward testing, domain: quant_pm, tier: 4, prereqs: [backtest_overfitting], certs: [CFA2, CQF], summary: "Repeatedly fit on the past and test on the next unseen window."}
+  - {id: currency_hedging, name: Currency hedging, domain: quant_pm, tier: 4, prereqs: [exchange_rates, forwards_futures], certs: [CFA3], summary: "Whether and how much to hedge foreign currency exposure."}
+  - {id: overlay_strategies, name: Derivative overlays, domain: quant_pm, tier: 4, prereqs: [basis_hedging, duration], certs: [CFA3], summary: "Changing beta or duration with futures without trading the underlying."}
+  - {id: hedge_fund_replication, name: Hedge fund replication, domain: quant_pm, tier: 4, prereqs: [hedge_fund_strategies, multiple_regression], certs: [CAIA2], summary: "Rebuilding hedge fund returns from liquid factor exposures."}
+
+  # ---------------------------------------------------------------- tier 5: risk management
+  - {id: risk_types, name: Types of financial risk, domain: risk, tier: 5, prereqs: [risk_return_tradeoff], certs: [FRM1], summary: "Market, credit, liquidity, operational, model, and how they interact."}
+  - {id: risk_governance, name: Risk governance, domain: risk, tier: 5, prereqs: [risk_types], certs: [FRM1, CFA3], summary: "Risk appetite, three lines of defense, board oversight."}
+  - {id: historical_volatility, name: Historical volatility, domain: risk, tier: 5, prereqs: [annualizing_volatility], certs: [FRM1], summary: "Equal-weighted sample vol and the choice of window."}
+  - {id: ewma_volatility, name: EWMA volatility, domain: risk, tier: 5, prereqs: [historical_volatility], certs: [FRM1, CQF], summary: "Weight recent returns more; RiskMetrics lambda = 0.94."}
+  - {id: garch, name: GARCH, domain: risk, tier: 5, prereqs: [ewma_volatility, time_series_basics], certs: [FRM1, CQF], summary: "Volatility clusters and mean-reverts to a long-run level."}
+  - {id: var, name: Value at Risk, domain: risk, tier: 5, prereqs: [normal_distribution, portfolio_variance], certs: [FRM1, FRM2, CQF, CFA3], summary: "Loss not exceeded with a given confidence over a given horizon."}
+  - {id: var_methods, name: VaR methods, domain: risk, tier: 5, prereqs: [var, monte_carlo], certs: [FRM1, FRM2], summary: "Parametric, historical simulation and Monte Carlo VaR, pros and cons."}
+  - {id: expected_shortfall, name: Expected shortfall (CVaR), domain: risk, tier: 5, prereqs: [var], certs: [FRM1, FRM2, CQF], summary: "Average loss beyond VaR; coherent, and now the Basel standard."}
+  - {id: var_backtesting, name: Backtesting VaR, domain: risk, tier: 5, prereqs: [var_methods, hypothesis_testing], certs: [FRM2], summary: "Counting exceptions; Kupiec test; Basel traffic light."}
+  - {id: stress_testing, name: Stress testing and scenario analysis, domain: risk, tier: 5, prereqs: [var], certs: [FRM1, FRM2, CFA3], summary: "Losses under historical or hypothetical extreme scenarios."}
+  - {id: drawdown, name: Drawdown, domain: risk, tier: 5, prereqs: [holding_period_return], certs: [CAIA1, CIPM], summary: "Peak-to-trough loss; maximum drawdown and recovery time."}
+  - {id: tail_risk, name: Tail risk and extreme value theory, domain: risk, tier: 5, prereqs: [skewness_kurtosis, expected_shortfall], certs: [FRM2, CQF], summary: "Modeling the extremes directly; generalized Pareto distribution."}
+  - {id: correlation_breakdown, name: Correlation in crises, domain: risk, tier: 5, prereqs: [correlation, stress_testing], certs: [FRM2, CAIA2], summary: "Correlations rise in sell-offs just when diversification is needed."}
+  - {id: copulas, name: Copulas, domain: risk, tier: 5, prereqs: [correlation_breakdown], certs: [FRM2, CQF], summary: "Modeling dependence separately from marginal distributions."}
+  - {id: liquidity_risk, name: Liquidity risk, domain: risk, tier: 5, prereqs: [bid_ask_spread, risk_types], certs: [FRM2, CAIA2], summary: "Market liquidity vs funding liquidity; liquidity-adjusted VaR."}
+  - {id: credit_risk_basics, name: "PD, LGD and EAD", domain: risk, tier: 5, prereqs: [credit_ratings, expected_value_variance], certs: [FRM1, FRM2], summary: "Expected loss = PD x LGD x EAD."}
+  - {id: structural_credit_model, name: Merton structural model, domain: risk, tier: 5, prereqs: [credit_risk_basics, black_scholes], certs: [FRM2, CQF, CFA2], summary: "Equity as a call option on firm assets; default when assets < debt."}
+  - {id: reduced_form_credit, name: Reduced-form credit models, domain: risk, tier: 5, prereqs: [credit_risk_basics], certs: [FRM2, CQF, CFA2], summary: "Default as a random event with a hazard rate; link to spreads."}
+  - {id: credit_default_swaps, name: Credit default swaps, domain: risk, tier: 5, prereqs: [swaps, credit_risk_basics], certs: [CFA2, FRM1, FRM2], summary: "Insurance on default; CDS spread as a credit signal."}
+  - {id: counterparty_risk, name: Counterparty risk, domain: risk, tier: 5, prereqs: [swaps, credit_risk_basics], certs: [FRM2], summary: "Exposure to a derivatives counterparty defaulting; CVA, collateral, clearing."}
+  - {id: operational_risk, name: Operational risk, domain: risk, tier: 5, prereqs: [risk_types], certs: [FRM2], summary: "Losses from failed processes, people, systems and external events; resilience."}
+  - {id: model_risk, name: Model risk, domain: risk, tier: 5, prereqs: [risk_types], certs: [FRM1, FRM2], summary: "Losses from wrong models or misuse; validation."}
+  - {id: leverage_risk, name: Leverage and margin spirals, domain: risk, tier: 5, prereqs: [margin_leverage, liquidity_risk], certs: [FRM2, CAIA2], summary: "Forced deleveraging turns losses into fire sales."}
+  - {id: risk_attribution, name: Factor risk decomposition, domain: risk, tier: 5, prereqs: [risk_contribution, factor_models_intro], certs: [FRM2, CIPM], summary: "Split portfolio risk into factor and specific parts."}
+
+  # ---------------------------------------------------------------- tier 6: performance measurement
+  - {id: twr, name: Time-weighted return, domain: performance, tier: 6, prereqs: [holding_period_return], certs: [CFA1, CIPM], summary: "Chain-link sub-period returns to remove the effect of cash flows; measures the manager."}
+  - {id: mwr, name: Money-weighted return, domain: performance, tier: 6, prereqs: [npv_irr, holding_period_return], certs: [CFA1, CIPM], summary: "IRR of the account; measures the investor's experience."}
+  - {id: benchmarks, name: Benchmark selection, domain: performance, tier: 6, prereqs: [market_indexes], certs: [CFA3, CIPM, CAIA2], summary: "Properties of a valid benchmark: specified in advance, investable, appropriate."}
+  - {id: sharpe_ratio, name: Sharpe ratio, domain: performance, tier: 6, prereqs: [standard_deviation, capital_allocation_line], certs: [CFA1, FRM1, CIPM, CAIA1], summary: "Excess return per unit of total volatility."}
+  - {id: sortino_ratio, name: Sortino ratio, domain: performance, tier: 6, prereqs: [sharpe_ratio], certs: [CIPM, CAIA1], summary: "Excess return per unit of downside deviation."}
+  - {id: treynor_ratio, name: Treynor ratio, domain: performance, tier: 6, prereqs: [sharpe_ratio, beta], certs: [CFA1, FRM1, CIPM], summary: "Excess return per unit of beta."}
+  - {id: jensens_alpha, name: Jensen's alpha, domain: performance, tier: 6, prereqs: [capm, alpha_concept], certs: [CFA1, FRM1, CIPM], summary: "Intercept of the CAPM regression."}
+  - {id: m_squared, name: M-squared, domain: performance, tier: 6, prereqs: [sharpe_ratio], certs: [CFA1, CIPM], summary: "Sharpe ratio restated as a return at the benchmark's volatility."}
+  - {id: calmar_ratio, name: Calmar ratio, domain: performance, tier: 6, prereqs: [drawdown], certs: [CAIA1, CIPM], summary: "Return divided by maximum drawdown."}
+  - {id: sharpe_pitfalls, name: Sharpe ratio pitfalls, domain: performance, tier: 6, prereqs: [sharpe_ratio, stale_pricing, skewness_kurtosis], certs: [CAIA1, CAIA2, CIPM], summary: "Smoothed returns and option-like payoffs inflate Sharpe."}
+  - {id: brinson_attribution, name: Brinson attribution, domain: performance, tier: 6, prereqs: [benchmarks], certs: [CFA3, CIPM], summary: "Split active return into allocation, selection and interaction effects."}
+  - {id: factor_attribution, name: Factor-based attribution, domain: performance, tier: 6, prereqs: [factor_models_intro, benchmarks], certs: [CFA3, CIPM], summary: "Attribute returns to factor exposures and residual stock selection."}
+  - {id: fixed_income_attribution, name: Fixed income attribution, domain: performance, tier: 6, prereqs: [key_rate_duration, credit_spreads, benchmarks], certs: [CFA3, CIPM], summary: "Returns from curve shifts, spread changes, carry and selection."}
+  - {id: skill_vs_luck, name: Skill vs luck, domain: performance, tier: 6, prereqs: [information_ratio, hypothesis_testing], certs: [CIPM, CFA3], summary: "How many years of track record you need to tell them apart."}
+  - {id: manager_selection, name: Manager selection and due diligence, domain: performance, tier: 6, prereqs: [skill_vs_luck, fee_structures], certs: [CIPM, CAIA2, CFA3], summary: "Quantitative screens plus qualitative and operational due diligence."}
+  - {id: gips, name: GIPS standards, domain: performance, tier: 6, prereqs: [twr, code_of_ethics], certs: [CFA3, CIPM], summary: "Fair, comparable performance presentation; composites and required disclosures."}
+
+  # ---------------------------------------------------------------- tier 7: advanced and modern
+  - {id: brownian_motion, name: Brownian motion, domain: math, tier: 7, prereqs: [normal_distribution, calculus_basics], certs: [CQF], summary: "Continuous random walk; independent normal increments."}
+  - {id: gbm, name: Geometric Brownian motion, domain: math, tier: 7, prereqs: [brownian_motion, lognormal_distribution], certs: [CQF, FRM1], summary: "dS = mu S dt + sigma S dW; the standard stock price model."}
+  - {id: ito_lemma, name: Ito's lemma, domain: math, tier: 7, prereqs: [gbm], certs: [CQF], summary: "The chain rule for stochastic processes; where the -sigma^2/2 comes from."}
+  - {id: risk_neutral_pricing, name: Risk-neutral pricing, domain: derivatives, tier: 7, prereqs: [binomial_model, ito_lemma], certs: [CQF, FRM1], summary: "Price = discounted expectation under the risk-neutral measure; martingales."}
+  - {id: black_scholes_pde, name: Black-Scholes PDE derivation, domain: derivatives, tier: 7, prereqs: [ito_lemma, delta_hedging], certs: [CQF], summary: "Derive the PDE from a riskless hedged portfolio."}
+  - {id: numerical_methods, name: Numerical pricing methods, domain: derivatives, tier: 7, prereqs: [black_scholes_pde, monte_carlo], certs: [CQF], summary: "Finite differences and Monte Carlo for options with no closed form."}
+  - {id: short_rate_models, name: Short-rate models, domain: fixed_income, tier: 7, prereqs: [ito_lemma, yield_curve], certs: [CQF, FRM2, CFA2], summary: "Vasicek, CIR, Hull-White: modeling interest rates as a stochastic process."}
+  - {id: hjm_libor, name: HJM and market models, domain: fixed_income, tier: 7, prereqs: [short_rate_models], certs: [CQF], summary: "Modeling the whole forward curve at once."}
+  - {id: ml_overview, name: Machine learning in finance, domain: ml, tier: 7, prereqs: [multiple_regression], certs: [CFA1, CFA2, CQF], summary: "Supervised vs unsupervised learning and where each fits in investing."}
+  - {id: bias_variance, name: Bias-variance tradeoff, domain: ml, tier: 7, prereqs: [ml_overview], certs: [CFA2, CQF], summary: "Simple models underfit, complex ones overfit; the goal is out-of-sample error."}
+  - {id: regularization, name: "Regularization (ridge, lasso)", domain: ml, tier: 7, prereqs: [bias_variance], certs: [CFA2, CQF], summary: "Penalize large coefficients to reduce overfitting; lasso also selects features."}
+  - {id: tree_models, name: Decision trees and ensembles, domain: ml, tier: 7, prereqs: [bias_variance], certs: [CFA2, CQF], summary: "Trees, random forests and gradient boosting for nonlinear signals."}
+  - {id: clustering, name: Clustering, domain: ml, tier: 4, prereqs: [correlation], certs: [CFA2, CQF], summary: "k-means and hierarchical clustering for grouping assets."}
+  - {id: neural_networks, name: Neural networks, domain: ml, tier: 7, prereqs: [bias_variance, calculus_basics], certs: [CFA2, CQF], summary: "Layers, activations, backpropagation; when deep learning helps in finance."}
+  - {id: time_series_cv, name: Cross-validation for time series, domain: ml, tier: 7, prereqs: [bias_variance, walk_forward], certs: [CQF], summary: "Purging and embargo to stop leakage between train and test folds."}
+  - {id: nlp_sentiment, name: NLP and text signals, domain: ml, tier: 7, prereqs: [ml_overview], certs: [CFA2, CQF], summary: "Turning news, filings and transcripts into sentiment signals."}
+  - {id: alternative_data, name: Alternative data, domain: ml, tier: 7, prereqs: [signal_construction], certs: [CFA2, CQF], summary: "Satellite, card spend, web data: signal value, cost, and legal issues."}
+  - {id: reinforcement_learning, name: Reinforcement learning, domain: ml, tier: 7, prereqs: [neural_networks], certs: [CQF], summary: "Learning actions from rewards; use in execution and hedging."}
+  - {id: market_microstructure, name: Market microstructure, domain: quant_pm, tier: 7, prereqs: [transaction_costs], certs: [CFA3, CQF], summary: "Order books, price impact, informed vs uninformed traders."}
+  - {id: execution_algorithms, name: Execution algorithms, domain: quant_pm, tier: 7, prereqs: [market_microstructure], certs: [CFA3], summary: "VWAP, TWAP, implementation shortfall algos and their tradeoffs."}
+  - {id: statistical_arbitrage, name: Statistical arbitrage and pairs trading, domain: quant_pm, tier: 7, prereqs: [cointegration, short_selling], certs: [CQF, CAIA1], summary: "Trading mean reversion between related securities."}
+  - {id: cointegration, name: Cointegration, domain: stats, tier: 7, prereqs: [stationarity], certs: [CQF, CFA2], summary: "Non-stationary series whose combination is stationary."}
+  - {id: esg_integration, name: ESG integration, domain: portfolio, tier: 7, prereqs: [factor_investing, ips], certs: [CFA1, CFA3, CAIA2], summary: "Using environmental, social and governance data in analysis and portfolios."}

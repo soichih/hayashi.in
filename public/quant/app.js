@@ -1,0 +1,449 @@
+// Quant Fluency: language-app-style drills for quant asset management.
+//
+// Content: concepts.yml (the concept map) and questions.yml (lessons and
+// questions). Written answers are graded by the scoring API on server1
+// (soichi.us/quant-api), which looks up the reference answer itself.
+// Progress lives in localStorage only.
+//
+// Scores shown at the top:
+//   mastered = mastered concepts / concepts presented
+//   covered  = concepts presented / all concepts in the map
+//
+// Spaced repetition (Leitner boxes): a pass (score >= PASS) moves a concept up a
+// box and pushes its next review further out; a fail drops it back to box 0.
+// A concept is mastered at box >= MASTER_BOX with passes on at least
+// MASTER_ANGLES different questions.
+
+const API = "https://soichi.us/quant-api";
+const STORE_KEY = "quant-fluency.v1";
+const PASS = 70;
+const SHAKY = 50;
+const MASTER_BOX = 3;
+const MASTER_ANGLES = 2;
+const BOX_DAYS = [0, 1, 3, 7, 21, 60];
+const SESSION_SIZE = 8;
+const NEW_PER_SESSION = 3;
+const DAY = 86_400_000;
+
+let concepts = [];      // from concepts.yml
+let conceptById = {};
+let domains = {};
+let content = {};       // from questions.yml, keyed by concept id
+let state = load();
+
+// ------------------------------------------------------------------ storage
+
+function blankState() {
+	return { concepts: {}, streak: { days: 0, last: null }, answered: 0 };
+}
+
+function load() {
+	try {
+		const s = JSON.parse(localStorage.getItem(STORE_KEY));
+		if (s && s.concepts) return s;
+	} catch (e) { /* fall through */ }
+	return blankState();
+}
+
+function save() {
+	localStorage.setItem(STORE_KEY, JSON.stringify(state));
+}
+
+function progress(id) {
+	return state.concepts[id];
+}
+
+// ------------------------------------------------------------------ scoring model
+
+function isMastered(p) {
+	if (!p) return false;
+	const passedQs = new Set(p.attempts.filter(a => a.score >= PASS).map(a => a.q));
+	return p.box >= MASTER_BOX && passedQs.size >= MASTER_ANGLES;
+}
+
+function strength(p) {
+	// Weighted average of the last 3 scores, newest counts most.
+	if (!p || !p.attempts.length) return 0;
+	const last = p.attempts.slice(-3);
+	const w = [1, 2, 3].slice(-last.length);
+	return Math.round(last.reduce((s, a, i) => s + a.score * w[i], 0) / w.reduce((a, b) => a + b, 0));
+}
+
+function recordAttempt(conceptId, qid, score) {
+	const p = state.concepts[conceptId] ||= { seen: Date.now(), box: 0, due: 0, attempts: [] };
+	const now = Date.now();
+	p.attempts.push({ q: qid, score, t: now });
+	if (p.attempts.length > 30) p.attempts = p.attempts.slice(-30);
+
+	// Only a pass on a due review advances the box, so mastery needs real spacing.
+	const wasDue = p.due <= now;
+	if (score >= PASS && wasDue) p.box = Math.min(p.box + 1, BOX_DAYS.length - 1);
+	else if (score < SHAKY) p.box = 0;
+	p.due = score >= PASS ? now + BOX_DAYS[p.box] * DAY : now;
+
+	const today = new Date().toDateString();
+	if (state.streak.last !== today) {
+		const yesterday = new Date(now - DAY).toDateString();
+		state.streak.days = state.streak.last === yesterday ? state.streak.days + 1 : 1;
+		state.streak.last = today;
+	}
+	state.answered++;
+	save();
+}
+
+function totals() {
+	const presented = concepts.filter(c => progress(c.id));
+	const mastered = presented.filter(c => isMastered(progress(c.id)));
+	return {
+		presented: presented.length,
+		mastered: mastered.length,
+		total: concepts.length,
+		mastery: presented.length ? Math.round(100 * mastered.length / presented.length) : 0,
+		coverage: pct(presented.length, concepts.length),
+	};
+}
+
+// One decimal below 10%, so the first few concepts don't read as 0%.
+function pct(n, total) {
+	const v = 100 * n / total;
+	return v > 0 && v < 10 ? Math.round(v * 10) / 10 : Math.round(v);
+}
+
+function currentStreak() {
+	const { days, last } = state.streak;
+	if (!last) return 0;
+	const today = new Date().toDateString();
+	const yesterday = new Date(Date.now() - DAY).toDateString();
+	return (last === today || last === yesterday) ? days : 0;
+}
+
+function renderScores() {
+	const t = totals();
+	document.getElementById("mastery").textContent = t.mastery + "%";
+	document.getElementById("coverage").textContent = t.coverage + "%";
+	document.getElementById("streak").textContent = currentStreak();
+}
+
+// ------------------------------------------------------------------ selection
+
+function hasContent(id) {
+	return Boolean(content[id]?.questions?.length);
+}
+
+function unlocked(c) {
+	return c.prereqs.every(p => progress(p));
+}
+
+function conceptStatus(c) {
+	const p = progress(c.id);
+	if (!hasContent(c.id)) return "soon";
+	if (isMastered(p)) return "mastered";
+	if (p) return "learning";
+	return unlocked(c) ? "new" : "locked";
+}
+
+function dueConcepts() {
+	const now = Date.now();
+	return concepts
+		.filter(c => hasContent(c.id) && progress(c.id) && progress(c.id).due <= now)
+		.sort((a, b) => progress(a.id).due - progress(b.id).due);
+}
+
+function newConcepts() {
+	return concepts
+		.filter(c => hasContent(c.id) && !progress(c.id) && unlocked(c))
+		.sort((a, b) => a.tier - b.tier);
+}
+
+function pickQuestion(conceptId) {
+	// Least recently asked question, so each review comes from a new angle.
+	const qs = content[conceptId].questions;
+	const p = progress(conceptId);
+	const lastAsked = q => {
+		const a = p?.attempts.filter(x => x.q === q.id).pop();
+		return a ? a.t : 0;
+	};
+	return [...qs].sort((a, b) => lastAsked(a) - lastAsked(b))[0];
+}
+
+function buildSession() {
+	const items = [];
+	for (const c of dueConcepts()) {
+		if (items.length >= SESSION_SIZE) break;
+		items.push({ conceptId: c.id, isNew: false });
+	}
+	for (const c of newConcepts()) {
+		if (items.length >= SESSION_SIZE || items.filter(i => i.isNew).length >= NEW_PER_SESSION) break;
+		items.push({ conceptId: c.id, isNew: true });
+	}
+	// Interleave new concepts among reviews rather than bunching them at the end.
+	return items.sort(() => Math.random() - 0.5);
+}
+
+// ------------------------------------------------------------------ DOM helpers
+
+function el(tag, attrs = {}, ...children) {
+	const node = document.createElement(tag);
+	for (const [k, v] of Object.entries(attrs)) {
+		if (k === "class") node.className = v;
+		else if (k.startsWith("on")) node.addEventListener(k.slice(2), v);
+		else if (v !== undefined && v !== null) node.setAttribute(k, v);
+	}
+	for (const ch of children.flat()) {
+		if (ch === null || ch === undefined || ch === false) continue;
+		node.append(ch instanceof Node ? ch : document.createTextNode(String(ch)));
+	}
+	return node;
+}
+
+function show(...nodes) {
+	const app = document.getElementById("app");
+	app.replaceChildren(...nodes);
+	renderScores();
+	window.scrollTo(0, 0);
+}
+
+// ------------------------------------------------------------------ screens
+
+function homeScreen() {
+	const t = totals();
+	const due = dueConcepts().length;
+	const fresh = newConcepts().length;
+	const canPlay = due + fresh > 0;
+
+	let hint;
+	if (!t.presented) hint = "Each session is about 8 short questions. Answer in your own words; a grader scores how well you understand.";
+	else if (due) hint = `${due} concept${due === 1 ? "" : "s"} due for review.`;
+	else if (fresh) hint = "Nothing due - time to learn something new.";
+	else hint = "All caught up. Come back tomorrow for reviews.";
+
+	show(
+		el("section", { class: "hero" },
+			el("h1", {}, t.presented ? "Welcome back" : "Learn quant investing like a language"),
+			el("p", { class: "muted" }, hint),
+			el("button", { class: "primary big", disabled: canPlay ? undefined : "", onclick: startSession },
+				t.presented ? "Start session" : "Start learning"),
+			el("div", { class: "stats" },
+				stat(`${t.mastered} / ${t.presented}`, "concepts mastered of those seen"),
+				stat(`${t.presented} / ${t.total}`, "concepts seen of the whole course"),
+				stat(state.answered, "answers given")),
+		),
+		conceptMap(),
+	);
+}
+
+function stat(value, label) {
+	return el("div", { class: "stat" }, el("strong", {}, value), el("span", {}, label));
+}
+
+function conceptMap() {
+	const tiers = [...new Set(concepts.map(c => c.tier))].sort((a, b) => a - b);
+	const TIER_NAMES = ["Market basics", "Quant foundations", "Asset classes", "Portfolio theory",
+		"Quant portfolio management", "Risk management", "Performance", "Advanced topics"];
+	const legend = el("p", { class: "legend" },
+		...["mastered", "learning", "new", "locked", "soon"].map(s =>
+			el("span", { class: `chip ${s}` }, { mastered: "mastered", learning: "learning", new: "ready", locked: "locked", soon: "coming soon" }[s])));
+	return el("section", { class: "map" },
+		el("h2", {}, "Course map"),
+		legend,
+		...tiers.map(tier => {
+			const cs = concepts.filter(c => c.tier === tier);
+			return el("div", { class: "tier" },
+				el("h3", {}, `Tier ${tier}: ${TIER_NAMES[tier] || ""}`),
+				el("div", { class: "chips" }, ...cs.map(c => {
+					const s = conceptStatus(c);
+					const p = progress(c.id);
+					const title = `${c.summary}${p ? `\nStrength ${strength(p)}%` : ""}`;
+					return el("span", { class: `chip ${s}`, title }, c.name);
+				})));
+		}));
+}
+
+// ------------------------------------------------------------------ session
+
+let session = null;
+
+function startSession() {
+	const items = buildSession();
+	if (!items.length) return homeScreen();
+	session = { items, index: 0, results: [], retried: new Set() };
+	nextItem();
+}
+
+function nextItem() {
+	if (session.index >= session.items.length) return summaryScreen();
+	const item = session.items[session.index];
+	if (item.isNew && !item.lessonShown) return lessonScreen(item);
+	questionScreen(item);
+}
+
+function progressBar() {
+	const pct = Math.round(100 * session.index / session.items.length);
+	return el("div", { class: "bar" }, el("div", { class: "fill", style: `width:${pct}%` }));
+}
+
+function lessonScreen(item) {
+	const c = conceptById[item.conceptId];
+	show(
+		progressBar(),
+		el("article", { class: "card lesson" },
+			el("p", { class: "kicker" }, `New concept · ${domains[c.domain] || c.domain}`),
+			el("h2", {}, c.name),
+			el("p", { class: "lesson-text" }, content[c.id].lesson),
+			el("button", { class: "primary", onclick: () => { item.lessonShown = true; questionScreen(item); } }, "Got it - quiz me")));
+}
+
+function questionScreen(item) {
+	const c = conceptById[item.conceptId];
+	const q = item.question || (item.question = pickQuestion(c.id));
+	const box = el("textarea", { id: "answer", rows: 5, maxlength: 1500, placeholder: "Answer in your own words. A sentence or two is usually enough." });
+	const submit = el("button", { class: "primary", onclick: () => grade(item, q, box.value) }, "Check answer");
+	box.addEventListener("keydown", e => {
+		if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) submit.click();
+	});
+	show(
+		progressBar(),
+		el("article", { class: "card" },
+			el("p", { class: "kicker" }, `${c.name} · ${q.angle}`),
+			el("h2", { class: "prompt" }, q.prompt),
+			box,
+			el("div", { class: "actions" },
+				el("button", { class: "ghost", onclick: () => revealOnly(item, q) }, "I don't know"),
+				submit),
+			el("p", { class: "muted small" }, "Ctrl+Enter to submit")));
+	box.focus();
+}
+
+async function grade(item, q, answer) {
+	answer = answer.trim();
+	if (!answer) return;
+	const card = document.querySelector(".card");
+	card.querySelectorAll("button, textarea").forEach(n => n.disabled = true);
+	card.append(el("p", { class: "grading" }, "Grading..."));
+
+	let result;
+	try {
+		const res = await fetch(`${API}/score`, {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ question_id: q.id, answer }),
+		});
+		const body = await res.json().catch(() => ({}));
+		if (!res.ok) throw new Error(body.error || `Grader error ${res.status}`);
+		result = body;
+	} catch (e) {
+		card.querySelector(".grading").remove();
+		card.querySelectorAll("button, textarea").forEach(n => n.disabled = false);
+		card.append(el("p", { class: "error" },
+			`${e.message === "Failed to fetch" ? "Couldn't reach the grader." : e.message} Try again, or use "I don't know" to see the answer.`));
+		return;
+	}
+	recordAttempt(item.conceptId, q.id, result.score);
+	session.results.push({ conceptId: item.conceptId, score: result.score });
+	feedbackScreen(item, q, answer, result);
+}
+
+function revealOnly(item, q) {
+	recordAttempt(item.conceptId, q.id, 0);
+	session.results.push({ conceptId: item.conceptId, score: 0 });
+	feedbackScreen(item, q, "", { score: 0, feedback: "No problem - read the model answer, and this one will come back soon.", missing: [] });
+}
+
+function feedbackScreen(item, q, answer, result) {
+	const { score } = result;
+	const tone = score >= PASS ? "pass" : score >= SHAKY ? "shaky" : "fail";
+	const cheer = { pass: ["Nice!", "Solid.", "You've got it.", "Correct!"], shaky: ["Close.", "Partly there."], fail: ["Not yet.", "Keep going."] }[tone];
+
+	// A failed concept comes back once later in the same session, with a different question.
+	if (tone !== "pass" && !session.retried.has(item.conceptId) && content[item.conceptId].questions.length > 1) {
+		session.retried.add(item.conceptId);
+		session.items.push({ conceptId: item.conceptId, isNew: false, lessonShown: true });
+	}
+
+	const p = progress(item.conceptId);
+	show(
+		progressBar(),
+		el("article", { class: `card result ${tone}` },
+			el("div", { class: "score-row" },
+				el("div", { class: "ring", style: `--pct:${score}` }, el("span", {}, score)),
+				el("div", {},
+					el("h2", {}, cheer[Math.floor(Math.random() * cheer.length)]),
+					el("p", {}, result.feedback))),
+			result.missing?.length ? el("div", { class: "missing" },
+				el("h3", {}, "Missing or off"),
+				el("ul", {}, ...result.missing.map(m => el("li", {}, m)))) : null,
+			answer ? el("details", {}, el("summary", {}, "Your answer"), el("p", { class: "quote" }, answer)) : null,
+			el("div", { class: "model" }, el("h3", {}, "Model answer"), el("p", {}, q.answer)),
+			el("p", { class: "muted small" },
+				isMastered(p) ? "Concept mastered." : `Concept strength ${strength(p)}% · review box ${p.box} of ${MASTER_BOX} to master`),
+			el("button", { class: "primary", onclick: () => { session.index++; nextItem(); } },
+				session.index + 1 >= session.items.length ? "Finish" : "Continue")));
+	document.querySelector(".card .primary").focus();
+}
+
+function summaryScreen() {
+	const n = session.results.length;
+	const passed = session.results.filter(r => r.score >= PASS).length;
+	const avg = n ? Math.round(session.results.reduce((s, r) => s + r.score, 0) / n) : 0;
+	session = null;
+	show(
+		el("article", { class: "card summary" },
+			el("h2", {}, "Session complete"),
+			el("div", { class: "stats" },
+				stat(`${passed} / ${n}`, "answers passed"),
+				stat(avg, "average score"),
+				stat(`${currentStreak()}`, "day streak")),
+			el("button", { class: "primary", onclick: homeScreen }, "Back to map")));
+}
+
+// ------------------------------------------------------------------ export / import / reset
+
+document.getElementById("export").addEventListener("click", () => {
+	const blob = new Blob([JSON.stringify(state, null, 1)], { type: "application/json" });
+	const a = el("a", { href: URL.createObjectURL(blob), download: `quant-fluency-progress-${new Date().toISOString().slice(0, 10)}.json` });
+	a.click();
+	URL.revokeObjectURL(a.href);
+});
+
+document.getElementById("import").addEventListener("click", () => document.getElementById("import-file").click());
+document.getElementById("import-file").addEventListener("change", async e => {
+	const file = e.target.files[0];
+	if (!file) return;
+	try {
+		const s = JSON.parse(await file.text());
+		if (!s.concepts || !s.streak) throw new Error("not a progress file");
+		state = s;
+		save();
+		homeScreen();
+	} catch (err) {
+		alert(`Couldn't import: ${err.message}`);
+	}
+	e.target.value = "";
+});
+
+document.getElementById("reset").addEventListener("click", () => {
+	if (!confirm("Erase all progress in this browser?")) return;
+	state = blankState();
+	save();
+	homeScreen();
+});
+
+// ------------------------------------------------------------------ boot
+
+(async function boot() {
+	try {
+		const [cRaw, qRaw] = await Promise.all([
+			fetch("concepts.yml", { cache: "no-cache" }).then(r => r.text()),
+			fetch("questions.yml", { cache: "no-cache" }).then(r => r.text()),
+		]);
+		const cDoc = jsyaml.load(cRaw);
+		concepts = cDoc.concepts;
+		domains = cDoc.domains;
+		conceptById = Object.fromEntries(concepts.map(c => [c.id, c]));
+		content = jsyaml.load(qRaw);
+	} catch (e) {
+		show(el("p", { class: "error" }, `Couldn't load the course: ${e.message}`));
+		return;
+	}
+	homeScreen();
+})();
