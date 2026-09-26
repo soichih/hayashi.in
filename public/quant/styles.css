@@ -175,6 +175,33 @@ details { margin-top: 1rem; color: var(--muted); }
 .quote { white-space: pre-wrap; font-style: italic; }
 .result .primary, .summary .primary, .lesson .primary { display: block; margin: 1.25rem 0 0 auto; }
 
+/* lesson text, more detail, review */
+.lesson-text p, .detail p { margin: 0 0 .8rem; }
+.lesson-text ul, .detail ul, .detail ol, .msg ul, .msg ol { margin: 0 0 .8rem; padding-left: 1.3rem; }
+.lesson-text li, .detail li, .msg li { margin-bottom: .3rem; }
+.more { margin-top: 1rem; padding: .5rem 1rem; }
+.detail { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.sources h3, .tutor h3 { font-size: .9rem; margin: 1.25rem 0 .25rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.sources ul { margin: 0; padding-left: 1.2rem; font-size: .88rem; }
+.sources a { color: var(--accent); }
+details.review { margin-top: 1.25rem; color: var(--ink); border: 1px solid var(--line); border-radius: 12px; padding: .6rem 1rem; }
+details.review > summary { color: var(--accent); font-weight: 600; cursor: pointer; }
+details.review[open] > summary { margin-bottom: .75rem; }
+
+/* tutor */
+.tutor { margin-top: 1.5rem; border-top: 1px solid var(--line); }
+.tutor > .muted { margin: 0 0 .75rem; }
+.chat-log { display: flex; flex-direction: column; gap: .6rem; margin-bottom: .75rem; }
+.msg { padding: .7rem 1rem; border-radius: 14px; max-width: 92%; }
+.msg p { margin: 0 0 .6rem; }
+.msg p:last-child, .msg ul:last-child, .msg ol:last-child { margin-bottom: 0; }
+.msg.user { align-self: flex-end; background: var(--accent); color: var(--accent-ink); white-space: pre-wrap; }
+.msg.tutor { align-self: flex-start; background: var(--bg); border: 1px solid var(--line); }
+.msg .diagram { margin-top: .6rem; }
+.ask-row { display: flex; gap: .6rem; align-items: flex-end; }
+.ask-row textarea { flex: 1; }
+.ask-row .ask { padding: .7rem 1.2rem; }
+
 /* diagrams */
 .diagram { margin: 1.25rem 0 0; }
 .mmd {

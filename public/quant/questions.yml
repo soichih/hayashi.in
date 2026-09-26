@@ -10,12 +10,33 @@
 # Question ids must stay stable once published (progress is stored by id).
 
 asset_classes:
-  lesson: >-
-    An asset class is a group of investments that behave alike. The big ones are
-    equities (company ownership), fixed income (loans such as bonds), cash, real
-    assets (property, commodities, infrastructure) and alternatives (hedge funds,
-    private equity). Each plays a different role: growth, income, stability or
-    diversification.
+  lesson: |-
+    An asset class is a group of investments that behave alike because they give you the same kind of claim. Equities make you a part-owner of a company. Fixed income (bonds) makes you a lender who is paid interest. Cash and cash equivalents (savings, money market funds, Treasury bills) are short, very safe loans. Real assets are physical things such as property, commodities and infrastructure. Alternatives cover the rest: hedge funds, private equity, private credit and more.
+
+    Investors think in asset classes because the classes respond differently to the same news. When the economy grows, company profits rise and stocks tend to do well. In a recession, investors often run to high-quality government bonds. When inflation jumps, real assets can hold their value better than fixed payments. Deciding how much to hold in each class, called asset allocation, is usually the biggest single decision in a portfolio.
+  detail: |-
+    **What each class is for.** A simple way to remember the roles:
+    - **Equities** - long-term growth. Highest expected return of the traditional
+      classes, and the biggest swings.
+
+    - **Bonds** - income and stability. Regular interest, and high-quality bonds
+      often cushion stock losses.
+
+    - **Cash** - safety and liquidity. Almost no price risk, but a return that can
+      trail inflation.
+
+    - **Real assets** - protection against inflation and a different source of
+      return.
+
+    - **Alternatives** - access to strategies and private markets that public
+      stocks and bonds don't offer, usually with higher fees and less liquidity.
+
+
+    **Why the mix matters.** Two assets that don't move in lockstep can be combined into a portfolio that is less volatile than either one alone. That is diversification, and it works because classes react differently to growth, interest rates and inflation.
+
+    **A common mistake** is assuming the relationships are fixed. Bonds usually cushion stock losses when the economy weakens, but when inflation and interest rates rise sharply, stocks and bonds can fall together. Good allocation plans for more than one kind of bad year.
+
+    **Where this leads.** Later concepts make these ideas precise: correlation measures how assets move together, portfolio variance shows how mixing lowers risk, and strategic asset allocation sets the long-term weights.
   questions:
     - id: asset_classes.explain
       angle: explain
@@ -54,12 +75,29 @@ asset_classes:
         - a sensible reason such as inflation protection or diversification
 
 stocks_basics:
-  lesson: >-
-    A share of stock is a piece of ownership in a company. Shareholders own what
-    is left after the company pays everyone else (the residual claim), so they
-    get the upside if the company grows but are paid last if it fails. Common
-    shareholders usually vote on the board. Returns come from price changes and
-    dividends.
+  lesson: |-
+    A share of stock is a small piece of ownership in a company. Owners are paid last: the company first pays suppliers, workers, lenders and taxes, and whatever profit is left belongs to the shareholders. That is called the residual claim. It is why stocks are risky, since in a bad year there may be nothing left, and also why they can grow a lot, since there is no cap on how large the leftover can become.
+
+    Shareholders earn money in two ways: the share price rises, or the company pays dividends, which are cash payments out of profits. Dividends are not promised; the board can cut them at any time. Common shareholders usually get to vote on the board of directors and major decisions. Their liability is limited: if the company fails, they can lose what they paid for the shares, but not more.
+  detail: |-
+    **Common vs preferred stock.** Common stock carries voting rights and the full upside. Preferred stock usually pays a fixed dividend that must be paid before common dividends, and it ranks ahead of common stock in a bankruptcy, but it typically has no vote and limited upside. It behaves partly like a bond.
+
+    **Total return.** Your return from a stock is the price change plus dividends:
+    - Total return = (ending price - starting price + dividends) / starting price
+    - Buy at $50, collect a $2 dividend, sell at $54: (54 - 50 + 2) / 50 = 12%, of
+      which 8% came from price and 4% from the dividend.
+
+
+    **What happens in bankruptcy.** Creditors, including bondholders, suppliers and employees, come before stockholders. Preferred stockholders come next, and common stockholders get whatever is left, which is often nothing. When a bankrupt company reorganizes and issues new shares, those usually go to its creditors, not to the old shareholders.
+
+    **Why ownership earns more on average.** Because shareholders bear the most risk, investors pay a price for stocks that leaves room for a higher expected return than bonds. That gap is the equity risk premium. It is an average over long periods, not a promise for any given year.
+
+    **A common mistake** is treating a high dividend yield as free money. A yield can be high because the price has fallen on bad news, and a company in trouble often cuts its dividend.
+  sources:
+    - title: "Investor.gov - Bankruptcy for a Public Company"
+      url: https://www.investor.gov/introduction-investing/investing-basics/glossary/bankruptcy-public-company
+    - title: "Investor.gov - Stocks FAQs"
+      url: https://www.investor.gov/introduction-investing/investing-basics/investment-products/stocks
   questions:
     - id: stocks_basics.explain
       angle: explain
@@ -83,6 +121,15 @@ stocks_basics:
       key_points:
         - bondholders (creditors) first
         - shareholders have the residual claim and are paid last, often nothing
+      figure:
+        caption: >-
+          Who gets paid when a bankrupt company's assets are sold, simplified (in practice, legal fees, taxes and unpaid wages also come ahead of bondholders). Each group is paid only after the ones above it are paid in full, so common shareholders often get nothing.
+        mermaid: |
+          flowchart TD
+            A["Company's assets are sold"] --> B["Secured creditors (loans backed by collateral)"]
+            B --> C["Unsecured creditors, including most bondholders"]
+            C --> D["Preferred shareholders"]
+            D --> E["Common shareholders: whatever is left, often nothing"]
     - id: stocks_basics.calculate
       angle: calculate
       prompt: You buy a stock at $50, receive a $2 dividend, and sell at $54. What was your total return, and how much came from each source?
@@ -95,12 +142,43 @@ stocks_basics:
         - 4% from the dividend
 
 bonds_basics:
-  lesson: >-
-    A bond is a loan. The buyer lends money to a government or company, which
-    pays interest (coupons) and returns the face value at maturity. When
-    interest rates in the market rise, existing bonds with lower coupons become
-    less attractive, so their prices fall. Bond prices and yields move in
-    opposite directions.
+  lesson: |-
+    A bond is a loan that you can buy and sell. The borrower (the issuer) may be a government, a city or a company. It promises to pay interest, called the coupon, on a schedule, and to repay the face value (usually $1,000) on the maturity date. A 5-year, 3% bond with $1,000 face value pays $30 a year for five years, then returns the $1,000.
+
+    Before maturity, a bond trades at whatever price buyers will pay, and that price moves opposite to interest rates. If new bonds start paying 5%, nobody will pay full price for an old bond paying 3%, so the old bond's price falls until its return to a new buyer matches the market. If rates fall, older bonds with higher coupons become more valuable and their prices rise. Price and yield always move in opposite directions.
+  detail: |-
+    **The main risks of owning a bond:**
+    - **Interest rate risk** - prices fall when market rates rise. Longer bonds
+      are hit harder, because more of their payments are far in the future.
+
+    - **Credit (default) risk** - the issuer may fail to pay. Bondholders rank
+      ahead of stockholders in bankruptcy, but may still get back only a fraction
+      of face value.
+
+    - **Inflation risk** - fixed payments buy less when prices rise.
+    - **Call risk** - some bonds let the issuer repay early, usually when rates
+      have fallen, which is exactly when you'd rather keep the bond.
+
+
+    **Worked example: why the price must fall.** A 10-year bond pays a 3% annual coupon on $100 face value. If the market yield for similar bonds rises to 5%, its price drops to about $84.56. At that price, the $3 coupons plus the $15.44 gain at maturity give a new buyer a 5% return, the same as a new bond. When the market yield equals the coupon, the price is exactly $100 (par).
+
+    **Holding to maturity.** If the issuer doesn't default, you get the full face value back at maturity no matter what happened to the price along the way. You can still lose purchasing power to inflation, and you lose the chance to earn the higher market rate in the meantime.
+
+    **Types of issuers.** US Treasury bonds are backed by the federal government and treated as having very little default risk. Municipal bonds are issued by states and cities. Corporate bonds pay more than Treasuries of the same maturity to compensate for default risk. Later concepts cover yield measures, duration and credit spreads.
+  sources:
+    - title: "Investor.gov - What Are Corporate Bonds?"
+      url: https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/what-are
+    - title: "Investor.gov - Bankruptcy for a Public Company"
+      url: https://www.investor.gov/introduction-investing/investing-basics/glossary/bankruptcy-public-company
+  figures:
+    - caption: >-
+        Cash flows of a 5-year bond with $1,000 face value and a 3% annual coupon: $30 a year, then the $1,000 principal comes back with the last coupon.
+      mermaid: |
+        xychart-beta
+          title "5-year, 3% bond: cash you receive"
+          x-axis "Year" ["1", "2", "3", "4", "5"]
+          y-axis "Cash flow ($)" 0 --> 1100
+          bar [30, 30, 30, 30, 1030]
   questions:
     - id: bonds_basics.explain
       angle: explain
@@ -145,12 +223,41 @@ bonds_basics:
         - inflation risk reduces real value
 
 funds_etfs:
-  lesson: >-
-    Mutual funds and ETFs pool many investors' money into one portfolio.
-    Mutual funds trade once a day at net asset value (NAV). ETFs trade on an
-    exchange all day like a stock, and authorized participants create or redeem
-    ETF shares in exchange for the underlying securities, which keeps the ETF's
-    price close to NAV and tends to make ETFs tax-efficient.
+  lesson: |-
+    A fund pools money from many investors and buys a portfolio with it, so each investor owns a slice of the whole thing. You get diversification, meaning many holdings at once, and professional management for one purchase.
+
+    The two most common kinds trade differently. A **mutual fund** is bought from and sold back to the fund itself, at its net asset value (NAV): the value of everything it owns minus what it owes, divided by the number of shares. NAV is calculated once each business day, usually after the market closes, and every order that day gets that next price. An **exchange-traded fund (ETF)** trades on a stock exchange all day like a stock, at whatever price buyers and sellers agree on. A special arbitrage mechanism, explained below, keeps that market price close to the ETF's own NAV.
+  detail: |-
+    **How ETF prices stay honest: creation and redemption.** Only large broker-dealers called authorized participants (APs) deal directly with the ETF, and only in big blocks called creation units (for example 50,000 shares).
+    - **ETF trades above NAV (a premium):** an AP buys the underlying stocks,
+      delivers them to the fund, and receives new ETF shares, which it sells on the
+      exchange at the higher price. The extra supply pushes the price down.
+
+    - **ETF trades below NAV (a discount):** an AP buys cheap ETF shares on the
+      exchange, hands them to the fund, and receives the underlying stocks, which
+      are worth more. The buying pushes the ETF price up.
+
+    Everyone else, including retail investors, simply buys and sells ETF shares in the market.
+
+    **Costs to compare:**
+    - **Expense ratio** - the annual fee as a percent of assets, taken out of the
+      fund automatically.
+
+    - **Sales loads** - some mutual funds charge a commission when you buy or sell.
+    - **Bid-ask spread** - ETFs trade like stocks, so you pay the spread, which is
+      wider for thinly traded ETFs.
+
+
+    **Index vs active.** An index fund tries to match a benchmark like the S&P 500 at low cost. An active fund tries to beat it, and charges more for trying. Both mutual funds and ETFs can be either.
+
+    **A common mistake** is assuming an ETF always trades at its NAV. In calm markets the gap is tiny for large ETFs, but for thinly traded ETFs or during market stress, premiums and discounts can widen.
+  sources:
+    - title: "Investor.gov - Exchange-Traded Funds (ETFs) investor bulletin"
+      url: https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-24
+    - title: "Investor.gov - Authorized Participants"
+      url: https://www.investor.gov/introduction-investing/investing-basics/glossary/authorized-participants
+    - title: "Investor.gov - Net Asset Value"
+      url: https://www.investor.gov/introduction-investing/investing-basics/glossary/net-asset-value
   questions:
     - id: funds_etfs.compare
       angle: compare
@@ -197,12 +304,37 @@ funds_etfs:
         - 5 stocks carry concentrated company-specific risk
 
 exchanges_trading:
-  lesson: >-
-    In the primary market, companies and governments sell new securities to
-    raise money (an IPO or a bond issue). In the secondary market, investors
-    trade existing securities with each other on exchanges or through dealers.
-    Brokers act as agents for clients; dealers and market makers trade from
-    their own inventory and quote prices to buy and sell.
+  lesson: |-
+    Securities are sold twice over their life. In the **primary market**, a company or government sells newly created securities to investors and receives the money. A company's first sale of shares to the public is its initial public offering (IPO). After that, the securities trade in the **secondary market**, where investors buy and sell among themselves on exchanges such as the NYSE and Nasdaq, or through dealers. The company gets nothing from these later trades.
+
+    Secondary markets still matter to the company. Investors pay more for new shares when they know they can sell them easily later, so a liquid secondary market lowers the cost of raising money. It also produces a public price, which tells the company and everyone else what the market thinks it is worth.
+  detail: |-
+    **Who does what in a trade:**
+    - **Broker** - an agent. Finds the other side of your trade and charges a
+      commission or fee. It doesn't trade its own money on your order.
+
+    - **Dealer** - a principal. Buys from you or sells to you out of its own
+      inventory and earns the difference between its buying and selling prices.
+
+    - **Market maker** - a dealer that continuously quotes prices to buy (the bid)
+      and sell (the ask) a security, so there is almost always someone to trade
+      with.
+
+
+    **Exchanges vs over-the-counter.** Exchanges run central order books where buy and sell orders meet under common rules. Many securities, including most bonds, trade over the counter instead, directly between dealers and customers.
+
+    **Settlement.** A trade is agreed instantly but settles later, when cash and securities actually change hands. In the US, most securities trades have settled one business day after the trade date (T+1) since May 28, 2024; before that it was two days (T+2).
+
+    **Why liquidity has a price.** An asset you can sell quickly without moving the price is liquid. Investors accept a lower return on liquid assets and demand a higher one for illiquid assets like private companies or real estate. You will see this liquidity premium again with alternative investments.
+  sources:
+    - title: "Investor.gov - Primary Market"
+      url: https://www.investor.gov/introduction-investing/investing-basics/glossary/primary-market
+    - title: "Investor.gov - Secondary Market"
+      url: https://www.investor.gov/introduction-investing/investing-basics/glossary/secondary-market
+    - title: "Investor.gov - Initial Public Offering (IPO)"
+      url: https://www.investor.gov/introduction-investing/investing-basics/glossary/initial-public-offering-ipo
+    - title: "SEC - New T+1 Settlement Cycle: What Investors Need To Know"
+      url: https://www.sec.gov/resources-for-investors/investor-alerts-bulletins/new-t1-settlement-cycle-what-investors-need-know-investor-bulletin
   figures:
     - caption: >-
         Primary market: the money goes to the company. Secondary market: shares change hands between investors, and the company gets nothing.
@@ -245,12 +377,44 @@ exchanges_trading:
         - provides price discovery
 
 order_types:
-  lesson: >-
-    A market order buys or sells immediately at the best available price, so
-    execution is certain but the price isn't. A limit order sets the worst price
-    you'll accept, so the price is certain but it may never fill. A stop order
-    becomes a market order once the price reaches a trigger, and is often used
-    to limit losses.
+  lesson: |-
+    When you trade, the order type tells your broker what matters more to you: getting the trade done, or the price.
+
+    A **market order** buys or sells right away at the best price available. It will almost certainly execute, but the price isn't guaranteed, and in a fast-moving or thinly traded stock it can fill well away from the last price you saw. A **limit order** sets the worst price you'll accept: a buy limit fills only at your price or lower, a sell limit only at your price or higher. The price is protected, but the order may never fill. A **stop order** sits inactive until the price reaches a trigger (the stop price), then becomes a market order. It is often used to limit a loss.
+  detail: |-
+    **Stop orders in both directions:**
+    - A **sell stop** sits below the current price. Own a stock at $100 and want out
+      if it drops to $90? A sell stop at $90 becomes a market order when the stock
+      trades at $90.
+
+    - A **buy stop** sits above the current price. Short sellers use it to cap
+      losses if the price rises.
+
+
+    **The gap problem.** Once triggered, a stop becomes a market order, so the fill can be far from the stop price. If bad news comes out overnight and the stock opens at $80, your $90 stop sells at about $80.
+
+    **Stop-limit orders** add a limit price. A sell stop-limit with a stop at $90 and a limit at $89 becomes a limit order at $89 once triggered: it won't sell below $89, but if the price gaps straight to $80, it may not sell at all.
+
+    **How long an order lasts.** Brokers let you choose whether an order expires at the end of the day or stays open until you cancel it. Check what your broker uses by default.
+
+    **Choosing:**
+    - Need to trade now, in a liquid stock? Market order.
+    - Care about price, or trading something thinly traded? Limit order.
+    - Want an automatic exit? Stop or stop-limit, knowing the trade-off between
+      execution and price.
+  sources:
+    - title: "Investor.gov - Types of Orders"
+      url: https://www.investor.gov/introduction-investing/investing-basics/how-stock-markets-work/types-orders
+    - title: "SEC - Stop, Stop-Limit, and Trailing Stop Orders (investor bulletin)"
+      url: https://www.sec.gov/resources-investors/investor-alerts-bulletins/stop-stop-limits-trading-stop-orders
+  figures:
+    - caption: >-
+        Choosing an order type starts with one question: what matters more, getting the trade done or the price you get?
+      mermaid: |
+        flowchart TD
+          Q{"What matters most?"} -- "Trading right now" --> M["Market order: fills now, price not guaranteed"]
+          Q -- "The price" --> L["Limit order: your price or better, may never fill"]
+          Q -- "Limiting a loss" --> S["Stop order: becomes a market order at your trigger price"]
   questions:
     - id: order_types.compare
       angle: compare
@@ -285,11 +449,44 @@ order_types:
         - use a limit order instead
 
 bid_ask_spread:
-  lesson: >-
-    The bid is the highest price someone will pay; the ask (offer) is the lowest
-    price someone will sell at. The gap between them is the spread, and it's the
-    price of trading immediately. Liquid assets with many traders have tight
-    spreads; illiquid or volatile assets have wide ones.
+  lesson: |-
+    At any moment a stock has two prices. The **bid** is the highest price someone is willing to pay; the **ask** (or offer) is the lowest price someone is willing to sell at. The bid is almost always lower than the ask, and the gap is the **spread**.
+
+    If you want to trade right now, you cross the spread: you buy at the ask and sell at the bid. So even if the price never moves, buying and immediately selling loses the spread. That makes the spread a real trading cost, on top of any commission. Market makers earn it by standing ready to buy at the bid and sell at the ask.
+  detail: |-
+    **Worked example.** A stock is quoted $20.00 bid, $20.10 ask.
+    - Buy 1,000 shares at $20.10 = $20,100. Sell them right away at $20.00 =
+      $20,000. You lose $100 without the price moving.
+
+    - The midpoint is $20.05, so the spread is 0.10 / 20.05, about 0.5% of the
+      price, and each one-way trade costs about half that.
+
+
+    **Why spreads differ.** A market maker holding shares risks the price moving against it, and risks trading with someone who knows more. It widens the spread to cover those risks. Spreads are:
+    - **Tight** for large, heavily traded stocks and ETFs - lots of competition
+      and little risk of being stuck with inventory.
+
+    - **Wide** for small, thinly traded or volatile securities, and during market
+      stress or at the open and close.
+
+
+    **Why it matters for strategies.** A strategy that trades often pays the spread every time. A signal that earns 0.2% per trade is worthless in a stock whose spread costs 0.5%. Backtests that ignore spreads look far better than real trading.
+
+    **Limit orders and the spread.** Placing a limit order at the bid (to buy) avoids paying the spread, but only fills if someone sells to you. You trade the cost for the risk of not getting filled.
+  sources:
+    - title: "Investor.gov - Bid-Ask Spread"
+      url: https://www.investor.gov/introduction-investing/investing-basics/glossary/bid-ask-spread
+    - title: "Investor.gov - Bid Price / Ask Price"
+      url: https://www.investor.gov/introduction-investing/investing-basics/glossary/ask-price
+  figures:
+    - caption: >-
+        Buyers wait at the bid and sellers at the ask. Trading immediately means crossing the spread: buy at the ask, sell at the bid.
+      mermaid: |
+        flowchart TD
+          A["Ask $20.10: lowest price a seller accepts"] --- M["Midpoint $20.05"]
+          M --- B["Bid $20.00: highest price a buyer pays"]
+          Buy(["You buy now"]) -- "pay the ask" --> A
+          Sell(["You sell now"]) -- "receive the bid" --> B
   questions:
     - id: bid_ask_spread.explain
       angle: explain
@@ -325,11 +522,48 @@ bid_ask_spread:
         - wider spread compensates the market maker
 
 short_selling:
-  lesson: >-
-    Short selling means borrowing shares, selling them now, and buying them back
-    later to return to the lender. You profit if the price falls. You pay a fee
-    to borrow and owe any dividends paid meanwhile. Because a price can rise
-    without limit, a short's potential loss is unlimited.
+  lesson: |-
+    Short selling lets you profit when a price falls. Your broker lends you shares, which come from its own inventory, from other clients' margin accounts or from another lender. You sell them at today's price. Later you buy the same number of shares back and return them. If the price fell in between, you keep the difference.
+
+    Short and long positions have opposite risks. When you buy (go long), the worst case is that the stock goes to zero and you lose what you paid. When you short, the price can keep rising with no upper limit, and you must buy the shares back at whatever the price is. So a short's potential loss is unlimited. Shorting also has running costs: you pay a fee to borrow, and if the stock pays a dividend, you owe it to the lender.
+  detail: |-
+    **Worked example.** Short 100 shares at $40: you receive $4,000.
+    - Price falls to $30: buy back for $3,000, return the shares, profit $1,000
+      before fees.
+
+    - Price rises to $55: buy back for $5,500, loss $1,500. At $100 the loss would
+      be $6,000, more than the $4,000 you received.
+
+
+    **Rules and costs:**
+    - **Locate** - under the SEC's Regulation SHO, before accepting a short sale a
+      broker must borrow the shares, arrange to borrow them, or have reasonable
+      grounds to believe they can be borrowed in time for settlement.
+
+    - **Margin** - short positions are held in a margin account, with interest
+      charged and margin rules applied.
+
+    - **Borrow fee** - cheap for most large stocks, but can become very expensive
+      for stocks that many people want to short.
+
+    - **Recall** - the lender can ask for the shares back, forcing you to close the
+      position.
+
+
+    **Short squeeze.** If a heavily shorted stock rises, short sellers rush to buy back shares to cap their losses. Their buying pushes the price higher, forcing more short sellers to buy.
+
+    **Why people short:**
+    - To bet that a stock is overvalued.
+    - To hedge: a fund that owns a sector can short a related index to reduce its
+      exposure to the whole market.
+
+    - In long/short strategies, where profits come from the gap between the
+      stocks held long and those held short.
+  sources:
+    - title: "Investor.gov - An Introduction to Short Sales (investor bulletin)"
+      url: https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-51
+    - title: "SEC - Key Points About Regulation SHO"
+      url: https://www.sec.gov/investor/pubs/regsho.htm
   figures:
     - caption: >-
         A short sale step by step: $4,000 in, $3,000 out, a $1,000 profit before borrow fees.
@@ -381,11 +615,39 @@ short_selling:
             line "Short (sold)" [40, 20, 0, -20, -40, -60]
 
 margin_leverage:
-  lesson: >-
-    Buying on margin means borrowing from your broker to buy more than your own
-    cash allows. Leverage magnifies returns in both directions. If your equity
-    falls below the maintenance margin, you get a margin call and must add cash
-    or be sold out, often at a bad time.
+  lesson: |-
+    Buying on margin means borrowing from your broker to buy more securities than your own cash would pay for. The securities serve as collateral for the loan. Borrowing magnifies results in both directions: if you put in $5,000, borrow $5,000 and buy $10,000 of stock, a 10% rise earns you 20% on your own money, and a 10% fall loses you 20%. You also pay interest on the loan whether the trade works or not.
+
+    Your equity is what the securities are worth minus what you owe. If it falls below a required minimum, called the maintenance margin, the broker issues a margin call: add cash or securities, or positions get sold. The broker can sell without waiting for you, and it usually sells after prices have already fallen, turning a temporary drop into a permanent loss.
+  detail: |-
+    **The US rules:**
+    - **Initial margin** - under the Federal Reserve's Regulation T, you can borrow
+      up to 50% of the purchase price of eligible stocks.
+
+    - **Maintenance margin** - FINRA requires equity of at least 25% of the market
+      value of the securities. Brokers often set a stricter "house" requirement.
+
+
+    **Worked example: when does the margin call hit?** Buy 100 shares at $100 ($10,000) with $5,000 of your money and a $5,000 loan, with 25% maintenance.
+    - Your equity is the share value minus the $5,000 loan.
+    - The call comes when equity falls below 25% of the share value, which happens
+      when 75% of the share value equals the loan: 0.75 x 100 x P = 5,000, so
+      P = $66.67.
+
+    - A 33% drop in the stock wipes out about two-thirds of your equity and
+      triggers the call.
+
+
+    **Leverage math.** With leverage L (position divided by your own money), your return is about L times the asset's return, minus borrowing costs. At 3x leverage, a 33.3% drop in the asset wipes out your whole stake (3 x 33.3% = 100%), and a bigger drop leaves you owing money.
+
+    **Why margin calls hurt.** Forced selling happens after prices have fallen, so you can't wait for a recovery. When many leveraged investors are forced to sell at the same time, their selling pushes prices down further, which triggers more margin calls. You'll meet this again as leverage spirals under risk management.
+  sources:
+    - title: "Investor.gov - Understanding Margin Accounts (investor bulletin)"
+      url: https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-29
+    - title: "FINRA - Margin Accounts"
+      url: https://www.finra.org/investors/investing/investment-accounts/brokerage-accounts/margin-accounts
+    - title: "FINRA - Know What Triggers a Margin Call"
+      url: https://www.finra.org/investors/insights/margin-calls
   questions:
     - id: margin_leverage.calculate
       angle: calculate
@@ -409,6 +671,16 @@ margin_leverage:
         - triggered when equity falls below maintenance margin
         - must add funds or positions are sold
         - forced selling locks in losses at low prices
+      figure:
+        caption: >-
+          A margin call gives you two choices, and the second one turns a paper loss into a real one.
+        mermaid: |
+          flowchart TD
+            A["Stock price falls"] --> B["Your equity drops below the maintenance margin"]
+            B --> C{"Margin call"}
+            C -- "You add cash or securities" --> D["Position stays open"]
+            C -- "You can't or don't" --> E["Broker sells your shares, often near the low"]
+            E --> F["Loss is locked in; no chance to recover"]
     - id: margin_leverage.misconception
       angle: misconception
       prompt: Someone says leverage is fine because it only increases returns. What is missing from that view?
@@ -422,11 +694,35 @@ margin_leverage:
         - margin calls / forced selling
 
 market_indexes:
-  lesson: >-
-    An index tracks a basket of securities to represent a market. Price-weighted
-    indexes (the Dow) give more weight to higher-priced stocks. Cap-weighted
-    indexes (the S&P 500) weight by market value, so the biggest companies
-    dominate. Equal-weighted indexes give every stock the same weight.
+  lesson: |-
+    A market index tracks the value of a basket of securities, so one number can summarize how "the market" is doing. Indexes serve as benchmarks to judge fund managers against, and as the basis for index funds.
+
+    How an index weights its members changes what it measures. A **price-weighted** index, like the Dow Jones Industrial Average, adds up share prices, so a $500 stock moves it more than a $50 stock regardless of company size. A **market-cap-weighted** index, like the S&P 500, weights each company by its market value (price times shares), so the largest companies dominate. An **equal-weighted** index gives every member the same weight, so it reflects the typical company rather than the biggest ones.
+  detail: |-
+    **Float adjustment.** The S&P 500 uses float-adjusted market capitalization: it counts only shares available to the public, excluding large blocks held by founders, executives or governments.
+
+    **The divisor.** Both the Dow and the S&P 500 divide a total (sum of prices for the Dow, sum of market values for the S&P 500) by a divisor. The divisor is adjusted for stock splits, special dividends and changes in membership, so those events don't make the index jump by themselves.
+
+    **Why the weighting matters:**
+    - In a price-weighted index, a stock split lowers the company's share price
+      and so its weight, even though nothing about the business changed.
+
+    - In a cap-weighted index, winners grow their own weight automatically, so the
+      index needs little trading to track. The flip side is concentration: a
+      handful of giant companies can drive most of the return.
+
+    - When a cap-weighted index beats its equal-weighted version, the largest
+      companies outperformed the typical one, and vice versa.
+
+
+    **Price vs total return.** Most headline index numbers are price returns and leave out dividends. A total return version assumes dividends are reinvested and is the fair benchmark for a fund that collects dividends.
+
+    **A common mistake** is comparing a fund's total return to an index's price return, which makes the fund look better than it is.
+  sources:
+    - title: "S&P Dow Jones Indices - Icons: The S&P 500 and The Dow"
+      url: https://www.spglobal.com/spdji/en/research-insights/index-literacy/the-sp-500-and-the-dow/
+    - title: "S&P Dow Jones Indices - Index Mathematics Methodology"
+      url: https://www.spglobal.com/spdji/en/documents/methodologies/methodology-index-math.pdf
   questions:
     - id: market_indexes.compare
       angle: compare
@@ -464,11 +760,26 @@ market_indexes:
         - basis for passive index funds
 
 time_value_of_money:
-  lesson: >-
-    Money today is worth more than the same amount later, because you can invest
-    it and earn a return (and because of inflation and risk). Present value
-    discounts a future amount back to today: PV = FV / (1 + r)^n. Future value
-    grows today's amount forward: FV = PV x (1 + r)^n.
+  lesson: |-
+    A dollar today is worth more than a dollar next year. You could invest today's dollar and have more than a dollar next year; prices may rise in the meantime; and a promise of future money might not be kept. So money at different dates can't be compared directly. You first move it to the same date.
+
+    Moving money forward in time is compounding: future value FV = PV x (1 + r)^n, where r is the rate per period and n the number of periods. Moving it back is discounting: present value PV = FV / (1 + r)^n. The rate r is the discount rate, the return you could earn elsewhere on an investment of similar risk. Nearly all of finance - valuing bonds, stocks, projects and loans - is this one idea applied carefully.
+  detail: |-
+    **Worked example.** What is $1,000 in 3 years worth today at 5%?
+    - PV = 1,000 / 1.05^3 = 1,000 / 1.157625 = $863.84.
+    - Check it forward: 863.84 x 1.05^3 = $1,000.
+
+    **What the discount rate represents.** It combines:
+    - the **time value** of money (a safe return you could earn instead),
+    - **expected inflation**, and
+    - a **risk premium** for uncertainty about getting paid.
+    A riskier cash flow is discounted at a higher rate, so it is worth less today.
+
+    **Sensitivity.** Present values fall as the rate rises, and the effect grows with time. At 10% instead of 5%, the same $1,000 in 3 years is worth $751.31. Cash far in the future is especially sensitive, which is why long-dated bonds and fast-growing companies swing the most when interest rates change.
+
+    **Comparing choices.** To choose between $10,000 now and $10,500 in a year when you can earn 7%, compare them at the same date. Now: $10,000 grows to $10,700 by next year, which beats $10,500. Or discount: $10,500 / 1.07 = $9,813 today, which is less than $10,000. Both ways give the same answer.
+
+    **A common mistake** is adding cash flows from different years as if they were the same money. Always discount each one to a common date first.
   questions:
     - id: time_value_of_money.explain
       angle: explain
@@ -506,11 +817,27 @@ time_value_of_money:
         - $10,000 grows to $10,700 > $10,500 (or PV of $10,500 is about $9,813)
 
 compounding:
-  lesson: >-
-    Compounding means earning returns on past returns. $100 at 10% becomes $110
-    after one year and $121 after two, because the second year earns 10% on
-    $110. More frequent compounding adds a little more; continuous compounding
-    gives FV = PV x e^(r t). The rule of 72 estimates doubling time: 72 / rate.
+  lesson: |-
+    Compounding means earning returns on your past returns. $100 at 10% becomes $110 after one year. In year two you earn 10% on $110, not on $100, so you end at $121. Growth builds on itself, and the longer the horizon, the bigger the effect: $100 at 10% for 30 years becomes about $1,745, while simple interest (10% of the original $100 each year) gives only $400.
+
+    How often interest is added also matters. A 12% rate compounded monthly adds 1% each month and ends the year up 12.68%, not 12%. The rule of 72 gives a quick estimate of doubling time: divide 72 by the rate in percent. At 6%, money doubles in about 72 / 6 = 12 years.
+  detail: |-
+    **Formulas.**
+    - Annual compounding: FV = PV x (1 + r)^n
+    - m times a year: FV = PV x (1 + r/m)^(m x n)
+    - Continuous compounding: FV = PV x e^(r x n)
+    - Effective annual rate (EAR): (1 + r/m)^m - 1
+
+    **The same 12% quoted rate, compounded more often:**
+    - Annually: 12.00%
+    - Monthly: 1.01^12 - 1 = 12.68%
+    - Daily: 12.75%
+    - Continuously: e^0.12 - 1 = 12.75%
+    Going from annual to monthly matters; going from daily to continuous barely does. Always compare investments by EAR, not by quoted rate.
+
+    **Why the rule of 72 works.** Doubling needs (1 + r)^n = 2, so n = ln 2 / ln(1 + r). ln 2 is about 0.693, and for small r, ln(1 + r) is a bit less than r. Using 72 instead of 69.3 corrects for that gap at typical rates, and 72 divides evenly by 2, 3, 4, 6, 8, 9 and 12. At 8%: 72 / 8 = 9 years; the exact answer is 9.01.
+
+    **Small differences in rate become large over time.** $10,000 at 6% for 30 years grows to about $57,435; at 7% it grows to about $76,123. One percentage point, over 30 years, is a third more money. This is why fees matter so much: a 1% annual fee comes straight out of the compounding rate.
   figures:
     - caption: >-
         Simple interest adds $10 a year. Compounding earns interest on interest, and after 30 years it has more than 4 times as much: $1,745 vs $400.
@@ -554,11 +881,30 @@ compounding:
         - effective rate about 12.68% vs 12%
 
 annuities:
-  lesson: >-
-    An annuity is a series of equal payments at regular intervals, such as a
-    loan payment or pension. Its value is the sum of the present values of each
-    payment. A perpetuity pays forever and has a simple value: PV = payment / r.
-    A growing perpetuity is PV = payment / (r - g).
+  lesson: |-
+    An annuity is a series of equal payments at regular intervals: loan payments, rent, a pension, a bond's coupons. Its value today is the sum of the present values of every payment. A formula does the adding for you: PV = C x [1 - (1 + r)^-n] / r, where C is the payment, r the rate per period and n the number of payments.
+
+    A perpetuity is an annuity that pays forever. It sounds infinitely valuable, but payments far in the future are worth almost nothing today, so the total stays finite: PV = C / r. A $50 annual payment forever, discounted at 4%, is worth $50 / 0.04 = $1,250 today.
+  detail: |-
+    **Worked example: a mortgage.** Borrow $300,000 for 30 years at 6% a year, paid monthly. Rate per month i = 0.5%, n = 360 payments.
+    - Payment = P x i / [1 - (1 + i)^-n] = $1,798.65 a month.
+    - Total paid over 30 years: about $647,515, so about $347,515 is interest.
+    The bank is valuing your payments as an annuity: their present value at 0.5% a month is exactly the $300,000 loan.
+
+    **Another example.** $1,000 a year for 10 years at 5% is worth 1,000 x [1 - 1.05^-10] / 0.05 = $7,721.73 today, less than the $10,000 total because later payments are discounted more.
+
+    **Variations:**
+    - **Annuity due** - payments at the start of each period (like rent). Each
+      payment arrives one period sooner, so the value is the ordinary annuity
+      value times (1 + r).
+
+    - **Growing perpetuity** - payments start at C and grow at rate g forever:
+      PV = C / (r - g). It only works if r is greater than g. At r = 4% and g = 2%,
+      $50 growing is worth $50 / 0.02 = $2,500. This formula is the heart of the
+      dividend discount model for valuing stocks.
+
+
+    **Why a perpetuity is finite.** At 4%, a $50 payment in year 1 is worth $48.08 today, in year 50 $7.04, and in year 100 $0.99. The present values shrink so fast that their infinite sum converges to $1,250.
   questions:
     - id: annuities.calculate
       angle: calculate
@@ -578,6 +924,15 @@ annuities:
       key_points:
         - distant payments discounted heavily / tiny present value
         - infinite sum converges to C / r
+      figure:
+        caption: >-
+          Present value of each $50 payment in a perpetuity, discounted at 4%. By year 100 a payment is worth under $1 today, so the infinite sum stops growing at $50 / 0.04 = $1,250.
+        mermaid: |
+          xychart-beta
+            title "Today's value of one $50 payment"
+            x-axis "Year paid" ["1", "10", "20", "30", "50", "75", "100"]
+            y-axis "Present value ($)" 0 --> 50
+            bar [48.08, 33.78, 22.82, 15.42, 7.04, 2.64, 0.99]
     - id: annuities.apply
       angle: apply
       prompt: Where do annuity calculations show up in everyday finance? Give two examples.
@@ -588,11 +943,26 @@ annuities:
         - two valid examples such as loan/mortgage payments, pensions, bond coupons, leases
 
 holding_period_return:
-  lesson: >-
-    Holding period return (HPR) is the total return over the time you hold an
-    investment: (ending value - beginning value + income) / beginning value.
-    Income means dividends or coupons. HPR doesn't care how long the period is,
-    so compare HPRs over different lengths only after annualizing.
+  lesson: |-
+    Holding period return (HPR) is your total return over the time you held an investment, from any source: HPR = (ending value - beginning value + income) / beginning value. Income means dividends, coupons or fund distributions. Buy a fund at $1,000, receive $30 in distributions, and it's now worth $980: your HPR is (980 - 1,000 + 30) / 1,000 = 1%, even though the price fell.
+
+    HPR says nothing about how long the holding period was. Earning 20% over three years is very different from earning 20% in one. To compare returns over different lengths, convert each to an annual rate first.
+  detail: |-
+    **Annualizing.** An HPR over t years becomes an annual rate of (1 + HPR)^(1/t) - 1.
+    - 20% over 3 years: 1.20^(1/3) - 1 = 6.3% a year, which is worse than 8% in
+      one year.
+
+    - Going the other way, 2% a month for 12 months compounds to 1.02^12 - 1 =
+      26.8%, not 24%.
+
+
+    **Linking periods.** Returns over consecutive periods combine by multiplying, not adding: (1 + r1) x (1 + r2) x ... - 1. A +10% year followed by a -10% year is 1.10 x 0.90 - 1 = -1%, not 0%.
+
+    **Be careful with short periods.** Annualizing a great month (say +5%) gives about +80% a year, a number that means little. Short-period returns are noisy, and compounding them for a year multiplies the noise.
+
+    **Total return, not price return.** HPR must include income. For high-dividend stocks and bonds, income can be most of the return, and leaving it out makes them look far worse than they were.
+
+    **Where this leads.** When cash flows in or out during the period, a single HPR stops being fair. Later concepts cover time-weighted returns (which judge the manager) and money-weighted returns (which measure the investor's own experience).
   questions:
     - id: holding_period_return.calculate
       angle: calculate
@@ -623,12 +993,31 @@ holding_period_return:
         - price-only return understates performance
 
 arithmetic_vs_geometric:
-  lesson: >-
-    The arithmetic mean is the simple average of period returns. The geometric
-    mean is the constant rate that would give the same ending wealth:
-    ((1+r1)(1+r2)...(1+rn))^(1/n) - 1. When returns vary, the geometric mean is
-    always lower, because losses hurt more than equal gains help. This gap is
-    called volatility drag.
+  lesson: |-
+    There are two ways to average returns, and they answer different questions. The **arithmetic mean** is the plain average of the period returns. The **geometric mean** is the single constant rate that would turn your starting money into your ending money: ((1 + r1) x (1 + r2) x ... x (1 + rn))^(1/n) - 1.
+
+    When returns vary, the geometric mean is always lower. Up 50% then down 50% averages 0% arithmetically, but $100 goes to $150 and then to $75, a compound loss of about 13.4% a year. Losses hurt more than equal gains help: after a 50% loss you need a 100% gain to get back to even. The gap between the two means is called volatility drag, and it grows with volatility.
+  detail: |-
+    **The rule of thumb.** Geometric mean is about the arithmetic mean minus half the variance: G = A - s^2 / 2, where s is the standard deviation of returns. With 20% volatility, s^2 / 2 = 0.04 / 2 = 2%, so a fund averaging 5% a year compounds at roughly 3%.
+
+    **Worked example: same average, different outcome.**
+    - Fund A: +5% and +5%. Average 5%. $100 becomes $110.25. Geometric mean 5%.
+    - Fund B: +25% and -15%. Average also 5%. $100 becomes 100 x 1.25 x 0.85 =
+      $106.25. Geometric mean: sqrt(1.0625) - 1 = 3.08%.
+
+    Same average, but the steadier fund ends ahead.
+
+    **Which one to use:**
+    - **Geometric** to describe what actually happened over several periods, and
+      to compare past performance. It's the compound annual growth rate (CAGR).
+
+    - **Arithmetic** as the best estimate of the return in a single future period.
+      It's the expected return that feeds into portfolio models.
+
+
+    **Why it matters for investing.** Two strategies with the same average return can end with very different wealth; the less volatile one grows more. It is also why leveraged products that reset daily can lose value over time even when the index they track ends flat.
+
+    **A common mistake** is quoting an arithmetic average as if it were what investors earned. Ask for the compound annual return.
   questions:
     - id: arithmetic_vs_geometric.explain
       angle: explain
@@ -673,11 +1062,22 @@ arithmetic_vs_geometric:
         - arithmetic average overstates realized growth when volatile
 
 log_returns:
-  lesson: >-
-    The log return is ln(1 + r), or ln(P1 / P0). Log returns add up over time:
-    the log return over a year is the sum of the daily log returns, which makes
-    the math of multi-period returns simple. For small returns they are close to
-    simple returns; for big moves they differ a lot.
+  lesson: |-
+    The log return is the natural logarithm of the growth factor: ln(1 + r) = ln(P1 / P0). A price going from 100 to 110 has a simple return of 10% and a log return of ln(1.1) = 9.53%.
+
+    Quants like log returns because they add up across time. The log return over a year is exactly the sum of the daily log returns, while simple returns have to be multiplied. Log returns are also symmetric: a round trip from 100 to 110 and back to 100 is +9.53% then -9.53%, summing to exactly zero, while the simple returns (+10% and -9.09%) sum to +0.91% even though you ended where you started.
+  detail: |-
+    **Converting.** Log return l = ln(1 + r); simple return r = e^l - 1.
+
+    **When the difference matters.** For small moves the two are almost equal (l is about r - r^2 / 2). For big moves they split apart:
+    - -50% simple is -69.3% log.
+    - +20% simple is +18.2% log.
+    - +100% simple is +69.3% log.
+    Log returns are never below minus infinity and a price can't go below zero, which fits models where prices are lognormal.
+
+    **The catch: across assets, use simple returns.** A portfolio's simple return is the weighted average of its assets' simple returns. That is not true of log returns. So add log returns across time, and weight simple returns across assets.
+
+    **Where they appear.** Volatility estimates, most time-series models, and option-pricing models (Black-Scholes assumes normally distributed log returns) all work in logs. When reporting results to people, convert back to simple returns, which are easier to read.
   questions:
     - id: log_returns.explain
       angle: explain
@@ -709,12 +1109,45 @@ log_returns:
       key_points:
         - nearly equal for small returns
         - differ substantially for large returns
+      figure:
+        caption: >-
+          Simple return plotted against the matching log return. They are close for small moves near zero and pull far apart for big ones: a -50% move is -69.3% in log terms, and +100% is +69.3%.
+        mermaid: |
+          xychart-beta
+            title "Simple vs log return"
+            x-axis "Price change" ["-50%", "-25%", "0%", "+25%", "+50%", "+100%"]
+            y-axis "Return (%)" -80 --> 110
+            line "Simple return" [-50, -25, 0, 25, 50, 100]
+            line "Log return" [-69.3, -28.8, 0, 22.3, 40.5, 69.3]
 
 real_vs_nominal:
-  lesson: >-
-    Nominal return is the return in dollars. Real return removes inflation and
-    measures the change in purchasing power. Exactly, (1 + real) = (1 + nominal)
-    / (1 + inflation); approximately, real = nominal - inflation.
+  lesson: |-
+    A nominal return counts dollars. A real return counts what those dollars can buy, after inflation. If your savings earn 5% while prices rise 3%, you have 5% more dollars but only about 2% more purchasing power.
+
+    The quick approximation is real = nominal - inflation. The exact version divides: (1 + real) = (1 + nominal) / (1 + inflation), so the example is 1.05 / 1.03 - 1 = 1.94%. The difference is small at low rates and grows when inflation is high. In the US, inflation is usually measured by the Consumer Price Index (CPI), which tracks the average change in prices urban consumers pay for a basket of goods and services.
+  detail: |-
+    **Why the exact formula divides.** After a year, your money has grown by (1 + nominal) and prices by (1 + inflation). What you can buy is money divided by prices: $105 buys what $105 / 1.03 = $101.94 bought a year earlier, a 1.94% real gain.
+
+    **Negative real returns.** A bank account paying 2% while prices rise 4% loses about 2% of purchasing power a year. Over time it compounds: $100 at 2% grows to $148.60 in 20 years, but with 4% inflation it buys only what $67.80 buys today.
+
+    **Why long-term investors focus on real returns.** Goals like retirement are about future spending. Even modest inflation compounds: at 3% a year, $100 earning 2% buys about 18% less after 20 years ($82.30 in today's money).
+
+    **How assets respond to inflation:**
+    - **Cash and short-term bonds** - their rates tend to catch up when inflation
+      rises, but can lag.
+
+    - **Long-term fixed-rate bonds** - hurt most: their payments are fixed in
+      dollars.
+
+    - **Stocks and real assets** - companies can raise prices and physical assets
+      can reprice, which helps over long periods, though not reliably year to
+      year.
+
+
+    **A common mistake** is comparing returns from different eras without adjusting for inflation. A 10% return in a year of 8% inflation is worse than a 4% return in a year of 1% inflation.
+  sources:
+    - title: "US Bureau of Labor Statistics - Consumer Price Index"
+      url: https://www.bls.gov/cpi/
   questions:
     - id: real_vs_nominal.calculate
       angle: calculate
@@ -733,6 +1166,16 @@ real_vs_nominal:
       key_points:
         - poorer / negative real return
         - purchasing power falls about 2%
+      figure:
+        caption: >-
+          $100 in an account paying 2% while prices rise 4% a year. The balance grows, but after 20 years it buys about a third less than it did at the start ($67.80 in today's dollars).
+        mermaid: |
+          xychart-beta
+            title "$100 at 2% with 4% inflation"
+            x-axis "Years" ["0", "5", "10", "15", "20"]
+            y-axis "Dollars" 0 --> 160
+            line "Balance (nominal)" [100.0, 110.4, 121.9, 134.6, 148.6]
+            line "What it buys (real)" [100.0, 90.7, 82.4, 74.7, 67.8]
     - id: real_vs_nominal.explain
       angle: explain
       prompt: Why do long-term investors care more about real returns than nominal returns?
@@ -745,11 +1188,27 @@ real_vs_nominal:
         - inflation compounds over long horizons
 
 risk_return_tradeoff:
-  lesson: >-
-    Investors demand extra expected return to hold riskier assets. That is why
-    stocks have historically returned more than bonds, and bonds more than cash.
-    Higher expected return is not guaranteed return: taking more risk means a
-    wider range of outcomes, including bigger losses.
+  lesson: |-
+    Investors don't like uncertainty, so a risky investment has to offer more expected return than a safe one to attract buyers. That extra is the risk premium. It's why, over long periods, stocks have been expected to earn more than bonds, and bonds more than cash.
+
+    The key word is expected. More risk means a wider range of outcomes: better ones on average, and worse ones too. A risky asset can lose money for years. The premium is the reward for accepting that possibility, not a guarantee that it won't happen.
+  detail: |-
+    **How the premium is created.** A risky asset's price today is set low enough, relative to its expected future payoffs, that its expected return beats safer choices. If everyone suddenly became less willing to bear risk, prices of risky assets would fall, raising their expected returns going forward.
+
+    **Not all risk is rewarded.** Risk that can be removed by diversifying, such as one company's factory burning down, earns no premium, because investors who hold many stocks don't bear it. Only risk that can't be diversified away, such as the whole economy slowing, is priced. This idea leads to beta and the CAPM in the portfolio theory tier.
+
+    **Risk depends on the investor too:**
+    - **Time horizon** - a 25-year-old saving for retirement can wait out a crash;
+      someone who needs the money next year can't.
+
+    - **Ability vs willingness** - you may be able to afford losses (a long horizon,
+      a steady income) but not willing to watch them. Both matter.
+
+    - **Liabilities** - an investor who must pay a fixed amount later, such as a
+      pension fund, measures risk against that obligation.
+
+
+    **A common mistake** is chasing return without asking what risk produced it. A fund that beat the market by taking far more risk hasn't necessarily shown skill. Later concepts measure return per unit of risk (the Sharpe ratio) to compare fairly.
   questions:
     - id: risk_return_tradeoff.explain
       angle: explain
@@ -787,11 +1246,38 @@ risk_return_tradeoff:
         - ability to recover from losses differs
 
 fiduciary_duty:
-  lesson: >-
-    A fiduciary manages money on someone else's behalf and must put the client's
-    interests first. The core duties are loyalty (no putting yourself first),
-    prudence (act as a careful expert would) and care (do the work, know the
-    client). Conflicts of interest must be avoided or clearly disclosed.
+  lesson: |-
+    A fiduciary manages money or gives advice on someone else's behalf and must put that person's interests first. Under US law, a registered investment adviser's fiduciary duty has two parts. The **duty of care** means giving advice in the client's best interest, based on a reasonable understanding of their goals. The **duty of loyalty** means not putting the adviser's interests ahead of the client's: conflicts of interest must be eliminated or fully disclosed so the client can give informed consent.
+
+    Not everyone who gives financial advice is held to the same standard. Titles like "financial adviser" don't tell you which rules apply, so it's worth asking directly whether the person acts as a fiduciary at all times.
+  detail: |-
+    **Advisers vs brokers in the US:**
+    - **Registered investment advisers** have a fiduciary duty under the
+      Investment Advisers Act of 1940 that covers the whole advisory relationship.
+
+    - **Broker-dealers** have had to follow Regulation Best Interest since
+      June 30, 2020. When recommending a security or strategy to a retail
+      customer, they must act in the customer's best interest and not put their
+      own interests ahead, with obligations covering disclosure, care, conflicts of
+      interest and compliance. It applies at the time of each recommendation, not
+      as an ongoing duty over the whole relationship.
+
+
+    **Conflicts to watch for:**
+    - Pay that depends on which product you buy (commissions, revenue sharing).
+    - Pushing in-house funds over cheaper outside ones.
+    - Encouraging frequent trading when the adviser earns per trade (churning).
+
+    **Worked example.** An adviser can recommend two similar index funds, one costing 0.05% a year and one 0.60% that pays the adviser more. A fiduciary recommends the cheaper fund unless there's a real reason the other suits the client better, and discloses the conflict either way.
+
+    **Rules differ by country and change over time.** The standard described here is US law; check what applies where you live.
+  sources:
+    - title: "SEC - Commission Interpretation Regarding Standard of Conduct for Investment Advisers (2019)"
+      url: https://www.sec.gov/files/rules/interp/2019/ia-5248.pdf
+    - title: "SEC - Regulation Best Interest adoption (press release)"
+      url: https://www.sec.gov/newsroom/press-releases/2019-89
+    - title: "SEC - Confirmation of June 30 Compliance Date for Regulation Best Interest"
+      url: https://www.sec.gov/newsroom/speeches-statements/clayton-compliance-date-regulation-best-interest-form-crs
   questions:
     - id: fiduciary_duty.explain
       angle: explain
@@ -827,12 +1313,42 @@ fiduciary_duty:
         - a valid breach, such as churning, front-running, hidden conflicts, unsuitable recommendations
 
 code_of_ethics:
-  lesson: >-
-    Professional codes, such as the CFA Institute Code and Standards, set rules
-    for investment professionals: act with integrity, keep independence and
-    objectivity, deal fairly with all clients, recommend only suitable
-    investments, present performance honestly, and disclose conflicts. Clients
-    come first, then the employer, then yourself.
+  lesson: |-
+    Investment professionals often know much more than their clients, and clients can't easily check their work. Markets only function if people trust that they're being dealt with honestly. Laws set a minimum, but they can't foresee every conflict, so professional bodies add codes of ethics on top.
+
+    The best known is the CFA Institute Code of Ethics and Standards of Professional Conduct. It asks members to act with integrity, keep independence and objectivity, treat all clients fairly, recommend only suitable investments, present performance honestly and disclose conflicts. When interests clash, clients come first, then the employer, then the professional.
+  detail: |-
+    **The seven Standards of Professional Conduct** (CFA Institute):
+    - **I. Professionalism** - knowing the law, independence and objectivity, no
+      misrepresentation, no misconduct.
+
+    - **II. Integrity of Capital Markets** - no trading on material nonpublic
+      information, no market manipulation.
+
+    - **III. Duties to Clients** - loyalty and care, fair dealing, suitability,
+      honest performance presentation, confidentiality.
+
+    - **IV. Duties to Employers** - loyalty, disclosing outside compensation,
+      supervising others properly.
+
+    - **V. Investment Analysis, Recommendations, and Actions** - diligence and a
+      reasonable basis, clear communication, keeping records.
+
+    - **VI. Conflicts of Interest** - disclosure, priority of transactions, referral
+      fees.
+
+    - **VII. Responsibilities as a CFA Institute Member or Candidate** - including
+      honest use of the CFA designation.
+
+
+    **Fair dealing in practice.** A new recommendation should reach all clients it suits at about the same time. Tipping big clients first so they can trade before everyone else violates it.
+
+    **Independence in practice.** Gifts, trips or pressure from companies an analyst covers can bias a rating, or look like they do. Modest gifts may be fine under firm policy; anything that could compromise objectivity should be declined or disclosed and approved by the employer.
+
+    **Priority of transactions.** Clients' trades go before the employer's, and the employer's before the professional's own. Trading your personal account ahead of a client order you know about is front-running.
+  sources:
+    - title: "CFA Institute - Code of Ethics and Standards of Professional Conduct"
+      url: https://www.cfainstitute.org/standards/professionals/code-ethics-standards
   questions:
     - id: code_of_ethics.explain
       angle: explain
@@ -867,11 +1383,50 @@ code_of_ethics:
         - decline or disclose / get employer approval
 
 insider_trading:
-  lesson: >-
-    Material nonpublic information (MNPI) is information that would likely move
-    a price and that the public doesn't have yet. Trading on it, or tipping
-    others, is illegal and unethical. The mosaic theory allows conclusions built
-    from public information plus nonmaterial nonpublic details.
+  lesson: |-
+    Information is **material** if a reasonable investor would consider it important, or if it would likely move the price, and **nonpublic** if it hasn't been released to the market. Examples include an unannounced merger, earnings results before release, or a failed drug trial before the company discloses it.
+
+    Trading on material nonpublic information (MNPI), or passing it to someone who trades, is illegal in the US when it breaches a duty of trust or confidence, and it is banned outright by the CFA Institute Standards for anyone who has the information. It is unfair to the investors on the other side of the trade, and it erodes trust in markets. The legitimate alternative is the mosaic theory: building a conclusion from public information plus details that are nonpublic but not material on their own.
+  detail: |-
+    **Who can be liable under US law:**
+    - **Insiders** - officers, directors and employees of the company, plus
+      temporary insiders like lawyers and bankers working on a deal.
+
+    - **Tippers and tippees** - an insider who passes on a tip, and the person who
+      trades on it, can both be liable.
+
+    - **Misappropriators** - someone who takes confidential information in breach
+      of a duty to its source (an employer, a client, even a family member) and
+      trades on it.
+
+
+    **The CFA standard is broader.** Standard II(A) says anyone who possesses material nonpublic information must not act on it or cause others to act, however they got it. So even information overheard by accident is off-limits for a CFA member or candidate, whether or not trading on it would be illegal.
+
+    **What to do if you receive MNPI:**
+    - Don't trade the security.
+    - Don't pass it on.
+    - If you work in the industry, tell your compliance department. Firms use
+      information barriers and restricted lists to contain it.
+
+
+    **The mosaic theory, done right.** An analyst counts cars in a retailer's parking lots, reads public filings and talks to suppliers, then concludes that sales will disappoint. Each piece is public or immaterial, so the conclusion is legitimate research, even though it's valuable. Using the mosaic theory to disguise a single material tip is not.
+
+    **Rules differ by country.** The legal tests above are US law; many countries ban insider trading more broadly.
+  sources:
+    - title: "CFA Institute - Standard II(A): Material Nonpublic Information"
+      url: https://rpc.cfainstitute.org/research/multimedia/2018/professional-conduct-standard-iia-material-nonpublic-information
+    - title: "SEC - Remarks at the SIFMA Regulatory Symposium on Insider Trading (2008)"
+      url: https://www.sec.gov/newsroom/speeches-statements/spch051908lct-opening-remarks-securities-industry-financial-markets-association-regulatory-symposium-insider
+  figures:
+    - caption: >-
+        Two questions decide it. Information that is both material and nonpublic can't be traded on or passed along.
+      mermaid: |
+        flowchart TD
+          A["You learn something about a company"] --> B{"Would it likely move the price?"}
+          B -- "No" --> OK["Not material: fine to use in your analysis"]
+          B -- "Yes" --> C{"Has it been made public?"}
+          C -- "Yes" --> OK2["Public: fine to trade on"]
+          C -- "No" --> X["Material nonpublic: don't trade, don't tip, tell compliance"]
   questions:
     - id: insider_trading.explain
       angle: explain

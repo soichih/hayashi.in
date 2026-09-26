@@ -281,7 +281,10 @@ async function renderDiagrams() {
 		return;
 	}
 	for (const node of nodes) {
-		if (!node.isConnected) continue;
+		// Skip finished diagrams, and hidden ones (closed "More detail" or review
+		// panels): Mermaid can't measure text there. They render when opened.
+		if (!node.isConnected || node.dataset.done || node.offsetParent === null) continue;
+		node.dataset.done = "1";
 		try {
 			const width = Math.min(640, Math.max(280, node.clientWidth - 24));
 			mermaid.initialize(mermaidConfig(width));
@@ -297,7 +300,10 @@ async function renderDiagrams() {
 		}
 	}
 }
-darkQuery.addEventListener("change", renderDiagrams);
+darkQuery.addEventListener("change", () => {
+	document.querySelectorAll(".mmd").forEach(n => delete n.dataset.done);
+	renderDiagrams();
+});
 
 // ------------------------------------------------------------------ DOM helpers
 
@@ -321,6 +327,171 @@ function show(...nodes) {
 	renderScores();
 	renderDiagrams();
 	window.scrollTo(0, 0);
+}
+
+// ------------------------------------------------------------------ rich text
+//
+// A small, safe formatter for lesson text and tutor replies: paragraphs,
+// "- " and "1. " lists, **bold**, and ```mermaid fences. It builds DOM nodes
+// only (never innerHTML), because tutor replies are model output.
+
+function inline(text) {
+	return text.split(/\*\*(.+?)\*\*/g).map((part, i) => i % 2 ? el("strong", {}, part) : part).filter(Boolean);
+}
+
+function richText(text, { streaming = false } = {}) {
+	const frag = document.createDocumentFragment();
+	const segments = String(text || "").split(/```mermaid[ \t]*\n([\s\S]*?)```/g);
+	let unfinishedDiagram = false;
+	segments.forEach((seg, i) => {
+		if (i % 2) return frag.append(figure({ mermaid: seg }));
+		const fence = seg.indexOf("```");
+		if (fence >= 0) {
+			// While streaming, an unclosed fence is a diagram still being written.
+			if (streaming) unfinishedDiagram = true;
+			seg = streaming ? seg.slice(0, fence) : seg.replace(/```[a-z]*/g, "");
+		}
+		for (const block of seg.split(/\n\s*\n/)) {
+			let list = null;
+			let para = [];
+			const flush = () => { if (para.length) frag.append(el("p", {}, inline(para.join(" ")))); para = []; };
+			for (const line of block.split("\n")) {
+				if (!line.trim()) continue;
+				const bullet = line.match(/^[-*]\s+(.*)$/);
+				const numbered = line.match(/^\d+[.)]\s+(.*)$/);
+				const heading = line.match(/^#{1,6}\s+(.*)$/);
+				if (bullet || numbered) {
+					flush();
+					const tag = bullet ? "ul" : "ol";
+					if (!list || list.tagName !== tag.toUpperCase()) list = frag.appendChild(el(tag));
+					list.append(el("li", {}, inline((bullet || numbered)[1])));
+				} else if (/^\s/.test(line) && list) {
+					list.lastChild.append(" ", ...inline(line.trim())); // wrapped list item
+				} else if (heading) {
+					flush(); list = null;
+					frag.append(el("p", {}, el("strong", {}, heading[1])));
+				} else {
+					list = null;
+					para.push(line.trim());
+				}
+			}
+			flush();
+		}
+	});
+	if (unfinishedDiagram) frag.append(el("p", { class: "muted small" }, "Drawing a diagram..."));
+	return frag;
+}
+
+function sourcesList(sources) {
+	if (!sources?.length) return null;
+	return el("div", { class: "sources" },
+		el("h3", {}, "Sources"),
+		el("ul", {}, ...sources.filter(x => /^https:\/\//.test(x.url)).map(x =>
+			el("li", {}, el("a", { href: x.url, target: "_blank", rel: "noopener" }, x.title)))));
+}
+
+// Lesson text, its figures, and a "More detail" section that opens in place.
+function lessonBody(conceptId) {
+	const c = content[conceptId];
+	const more = c.detail ? el("div", { class: "detail", hidden: "" }, richText(c.detail), sourcesList(c.sources)) : null;
+	const toggle = more ? el("button", {
+		class: "ghost more", "aria-expanded": "false",
+		onclick: () => {
+			more.hidden = !more.hidden;
+			toggle.textContent = more.hidden ? "More detail" : "Less detail";
+			toggle.setAttribute("aria-expanded", String(!more.hidden));
+			renderDiagrams();
+		},
+	}, "More detail") : null;
+	return [el("div", { class: "lesson-text" }, richText(c.lesson)), ...(c.figures || []).map(figure), toggle, more];
+}
+
+// ------------------------------------------------------------------ tutor (follow-up questions)
+//
+// The conversation lives on the session item only; nothing is saved. The API
+// looks up the lesson and reference answer itself and streams the reply.
+
+const MAX_FOLLOWUPS = 5;
+const MAX_FOLLOWUP_CHARS = 500;
+
+function tutorPanel(item, q, answer, result) {
+	const thread = item.thread ||= [];
+	const log = el("div", { class: "chat-log", "aria-live": "polite" });
+	const input = el("textarea", { rows: 2, maxlength: MAX_FOLLOWUP_CHARS, placeholder: 'Ask anything about this concept, e.g. "Why does that happen?"' });
+	const ask = el("button", { class: "primary ask" }, "Ask");
+	const note = el("span", { class: "muted small" });
+	let busy = false;
+
+	const bubble = m => m.role === "user"
+		? el("div", { class: "msg user" }, m.content)
+		: el("div", { class: "msg tutor" }, richText(m.content));
+
+	function update() {
+		const left = MAX_FOLLOWUPS - thread.filter(m => m.role === "user").length;
+		note.textContent = left > 0 ? `${left} question${left === 1 ? "" : "s"} left on this card` : "That's the limit for this card.";
+		input.disabled = ask.disabled = busy || left <= 0;
+	}
+
+	async function send() {
+		const text = input.value.trim();
+		if (!text || busy) return;
+		busy = true;
+		input.value = "";
+		thread.push({ role: "user", content: text });
+		log.append(bubble(thread.at(-1)));
+		const reply = el("div", { class: "msg tutor" }, el("span", { class: "grading" }, "Thinking..."));
+		log.append(reply);
+		update();
+		let full = "";
+		try {
+			const res = await fetch(`${API}/followup`, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({
+					question_id: q.id, answer, score: result.score, feedback: result.feedback,
+					// Older replies are trimmed to keep the request small.
+					messages: thread.map(m => ({ role: m.role, content: m.role === "assistant" ? m.content.slice(0, 1500) : m.content })),
+				}),
+			});
+			if (!res.ok) {
+				const body = await res.json().catch(() => ({}));
+				throw new Error(body.error || `Tutor error ${res.status}`);
+			}
+			const reader = res.body.getReader();
+			const decoder = new TextDecoder();
+			for (;;) {
+				const { done, value } = await reader.read();
+				if (done) break;
+				full += decoder.decode(value, { stream: true });
+				reply.replaceChildren(richText(full, { streaming: true }));
+			}
+			if (!full.trim()) throw new Error("The tutor didn't answer.");
+			thread.push({ role: "assistant", content: full.trim() });
+			reply.replaceChildren(richText(full));
+			renderDiagrams();
+		} catch (e) {
+			thread.pop(); // keep the conversation alternating; let them retry
+			reply.replaceChildren(el("p", { class: "error" },
+				`${e.message === "Failed to fetch" ? "Couldn't reach the tutor." : e.message} Your question is back in the box - try again.`));
+			input.value = text;
+		}
+		busy = false;
+		update();
+		input.focus();
+	}
+
+	ask.addEventListener("click", send);
+	input.addEventListener("keydown", e => {
+		if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); }
+	});
+	log.append(...thread.map(bubble));
+	update();
+	return el("section", { class: "tutor" },
+		el("h3", {}, "Ask the tutor"),
+		el("p", { class: "muted small" }, "Answers come from an AI tutor and can be wrong. It only discusses this course's topics."),
+		log,
+		el("div", { class: "ask-row" }, input, ask),
+		note);
 }
 
 // ------------------------------------------------------------------ screens
@@ -409,9 +580,8 @@ function lessonScreen(item) {
 		el("article", { class: "card lesson" },
 			el("p", { class: "kicker" }, `New concept · ${domains[c.domain] || c.domain}`),
 			el("h2", {}, c.name),
-			el("p", { class: "lesson-text" }, content[c.id].lesson),
-			...(content[c.id].figures || []).map(figure),
-			el("button", { class: "primary", onclick: () => { item.lessonShown = true; questionScreen(item); } }, "Got it - quiz me")));
+			...lessonBody(c.id),
+			el("button", { class: "primary continue", onclick: () => { item.lessonShown = true; questionScreen(item); } }, "Got it - quiz me")));
 }
 
 function questionScreen(item) {
@@ -496,11 +666,15 @@ function feedbackScreen(item, q, answer, result) {
 			answer ? el("details", {}, el("summary", {}, "Your answer"), el("p", { class: "quote" }, answer)) : null,
 			el("div", { class: "model" }, el("h3", {}, "Model answer"), el("p", {}, q.answer)),
 			figure(q.figure),
+			el("details", { class: "review", ontoggle: renderDiagrams },
+				el("summary", {}, "Review the lesson"),
+				...lessonBody(item.conceptId)),
+			tutorPanel(item, q, answer, result),
 			el("p", { class: "muted small" },
 				isMastered(p) ? "Concept mastered." : `Concept strength ${strength(p)}% · review box ${p.box} of ${MASTER_BOX} to master`),
-			el("button", { class: "primary", onclick: () => { session.index++; nextItem(); } },
+			el("button", { class: "primary continue", onclick: () => { session.index++; nextItem(); } },
 				session.index + 1 >= session.items.length ? "Finish" : "Continue")));
-	document.querySelector(".card .primary").focus();
+	document.querySelector(".card .continue").focus();
 }
 
 function summaryScreen() {
