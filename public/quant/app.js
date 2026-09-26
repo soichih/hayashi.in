@@ -820,16 +820,20 @@ function feedbackScreen(item, q, answer, result) {
 			result.levelNote ? el("p", { class: "levelnote" }, result.levelNote) : null,
 			el("div", { class: "model" }, el("h3", {}, "Model answer"), el("p", {}, q.answer)),
 			figure(q.figure),
+			tutorPanel(item, q, answer, result),
 			el("details", { class: "review", ontoggle: renderDiagrams },
 				el("summary", {}, "Review the lesson"),
 				...lessonBody(item.conceptId)),
 			referencesList(q, item.conceptId),
-			tutorPanel(item, q, answer, result),
-			el("p", { class: "muted small" },
-				isMastered(p) ? "Concept mastered." : `Concept strength ${strength(p)}% · review box ${p.box} of ${MASTER_BOX} to master`),
-			el("button", { class: "primary continue", onclick: () => { session.index++; nextItem(); } },
-				session.index + 1 >= session.items.length ? "Finish" : "Continue")));
-	document.querySelector(".card .continue").focus();
+			// Pinned to the bottom of the screen, so the player can move on at any
+			// point while reading or chatting with the tutor.
+			el("div", { class: "next-bar" },
+				el("span", { class: "muted small" },
+					isMastered(p) ? "Concept mastered." : `Concept strength ${strength(p)}% · review box ${p.box} of ${MASTER_BOX} to master`),
+				el("button", { class: "primary continue", onclick: () => { session.index++; nextItem(); } },
+					session.index + 1 >= session.items.length ? "Finish session" : "Next question"))));
+	// Focus without scrolling: the result should open at the top, not jump to the button.
+	document.querySelector(".card .continue").focus({ preventScroll: true });
 }
 
 function summaryScreen() {
