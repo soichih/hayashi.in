@@ -7,6 +7,9 @@
 # from this file - the browser never sends the reference answer.
 #
 # angle: explain | apply | calculate | compare | misconception | example
+# Each concept may list `sources` (shown under More detail and as References after
+# every answer). A question may add its own `references` list (title + url), shown
+# first. Only link to pages that were checked to load and say what we cite.
 # Question ids must stay stable once published (progress is stored by id).
 
 asset_classes:
@@ -37,6 +40,11 @@ asset_classes:
     **A common mistake** is assuming the relationships are fixed. Bonds usually cushion stock losses when the economy weakens, but when inflation and interest rates rise sharply, stocks and bonds can fall together. Good allocation plans for more than one kind of bad year.
 
     **Where this leads.** Later concepts make these ideas precise: correlation measures how assets move together, portfolio variance shows how mixing lowers risk, and strategic asset allocation sets the long-term weights.
+  sources:
+    - title: "Investor.gov - Beginners' Guide to Asset Allocation, Diversification, and Rebalancing"
+      url: https://www.investor.gov/additional-resources/general-resources/publications-research/info-sheets/beginners-guide-asset
+    - title: "Investor.gov - Asset Allocation and Diversification"
+      url: https://www.investor.gov/introduction-investing/getting-started/asset-allocation
   questions:
     - id: asset_classes.explain
       angle: explain
@@ -333,8 +341,8 @@ exchanges_trading:
       url: https://www.investor.gov/introduction-investing/investing-basics/glossary/secondary-market
     - title: "Investor.gov - Initial Public Offering (IPO)"
       url: https://www.investor.gov/introduction-investing/investing-basics/glossary/initial-public-offering-ipo
-    - title: "SEC - New T+1 Settlement Cycle: What Investors Need To Know"
-      url: https://www.sec.gov/resources-for-investors/investor-alerts-bulletins/new-t1-settlement-cycle-what-investors-need-know-investor-bulletin
+    - title: "Investor.gov - New T+1 Settlement Cycle: What Investors Need To Know"
+      url: https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/new-t1-settlement-cycle-what-investors-need-know-investor-bulletin
   figures:
     - caption: >-
         Primary market: the money goes to the company. Secondary market: shares change hands between investors, and the company gets nothing.
@@ -405,8 +413,8 @@ order_types:
   sources:
     - title: "Investor.gov - Types of Orders"
       url: https://www.investor.gov/introduction-investing/investing-basics/how-stock-markets-work/types-orders
-    - title: "SEC - Stop, Stop-Limit, and Trailing Stop Orders (investor bulletin)"
-      url: https://www.sec.gov/resources-investors/investor-alerts-bulletins/stop-stop-limits-trading-stop-orders
+    - title: "Investor.gov - Stop, Stop-Limit, and Trailing Stop Orders (investor bulletin)"
+      url: https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-15
   figures:
     - caption: >-
         Choosing an order type starts with one question: what matters more, getting the trade done or the price you get?
@@ -780,6 +788,11 @@ time_value_of_money:
     **Comparing choices.** To choose between $10,000 now and $10,500 in a year when you can earn 7%, compare them at the same date. Now: $10,000 grows to $10,700 by next year, which beats $10,500. Or discount: $10,500 / 1.07 = $9,813 today, which is less than $10,000. Both ways give the same answer.
 
     **A common mistake** is adding cash flows from different years as if they were the same money. Always discount each one to a common date first.
+  sources:
+    - title: "OpenStax Principles of Finance - 7.1 Now versus Later Concepts"
+      url: https://openstax.org/books/principles-finance/pages/7-1-now-versus-later-concepts
+    - title: "OpenStax Principles of Finance - 7.2 Time Value of Money Basics"
+      url: https://openstax.org/books/principles-finance/pages/7-2-time-value-of-money-tvm-basics
   questions:
     - id: time_value_of_money.explain
       angle: explain
@@ -838,6 +851,11 @@ compounding:
     **Why the rule of 72 works.** Doubling needs (1 + r)^n = 2, so n = ln 2 / ln(1 + r). ln 2 is about 0.693, and for small r, ln(1 + r) is a bit less than r. Using 72 instead of 69.3 corrects for that gap at typical rates, and 72 divides evenly by 2, 3, 4, 6, 8, 9 and 12. At 8%: 72 / 8 = 9 years; the exact answer is 9.01.
 
     **Small differences in rate become large over time.** $10,000 at 6% for 30 years grows to about $57,435; at 7% it grows to about $76,123. One percentage point, over 30 years, is a third more money. This is why fees matter so much: a 1% annual fee comes straight out of the compounding rate.
+  sources:
+    - title: "Investor.gov - Compound Interest"
+      url: https://www.investor.gov/introduction-investing/investing-basics/glossary/compound-interest
+    - title: "Investor.gov - Compound Interest Calculator"
+      url: https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator
   figures:
     - caption: >-
         Simple interest adds $10 a year. Compounding earns interest on interest, and after 30 years it has more than 4 times as much: $1,745 vs $400.
@@ -905,6 +923,11 @@ annuities:
 
 
     **Why a perpetuity is finite.** At 4%, a $50 payment in year 1 is worth $48.08 today, in year 50 $7.04, and in year 100 $0.99. The present values shrink so fast that their infinite sum converges to $1,250.
+  sources:
+    - title: "OpenStax Principles of Finance - 8.1 Perpetuities"
+      url: https://openstax.org/books/principles-finance/pages/8-1-perpetuities
+    - title: "OpenStax Principles of Finance - 8.2 Annuities"
+      url: https://openstax.org/books/principles-finance/pages/8-2-annuities
   questions:
     - id: annuities.calculate
       angle: calculate
@@ -963,6 +986,9 @@ holding_period_return:
     **Total return, not price return.** HPR must include income. For high-dividend stocks and bonds, income can be most of the return, and leaving it out makes them look far worse than they were.
 
     **Where this leads.** When cash flows in or out during the period, a single HPR stops being fair. Later concepts cover time-weighted returns (which judge the manager) and money-weighted returns (which measure the investor's own experience).
+  sources:
+    - title: "CFA Institute - Rates and Returns (refresher reading)"
+      url: https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/rates-and-returns
   questions:
     - id: holding_period_return.calculate
       angle: calculate
@@ -1018,6 +1044,13 @@ arithmetic_vs_geometric:
     **Why it matters for investing.** Two strategies with the same average return can end with very different wealth; the less volatile one grows more. It is also why leveraged products that reset daily can lose value over time even when the index they track ends flat.
 
     **A common mistake** is quoting an arithmetic average as if it were what investors earned. Ask for the compound annual return.
+  sources:
+    - title: "CFA Institute - Rates and Returns (refresher reading)"
+      url: https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/rates-and-returns
+    - title: "OpenStax Principles of Finance - 15.1 Risk and Return to an Individual Asset"
+      url: https://openstax.org/books/principles-finance/pages/15-1-risk-and-return-to-an-individual-asset
+    - title: "OpenStax Principles of Finance - 13.1 Measures of Center"
+      url: https://openstax.org/books/principles-finance/pages/13-1-measures-of-center
   questions:
     - id: arithmetic_vs_geometric.explain
       angle: explain
@@ -1078,6 +1111,9 @@ log_returns:
     **The catch: across assets, use simple returns.** A portfolio's simple return is the weighted average of its assets' simple returns. That is not true of log returns. So add log returns across time, and weight simple returns across assets.
 
     **Where they appear.** Volatility estimates, most time-series models, and option-pricing models (Black-Scholes assumes normally distributed log returns) all work in logs. When reporting results to people, convert back to simple returns, which are easier to read.
+  sources:
+    - title: "CFA Institute - Rates and Returns (refresher reading)"
+      url: https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/rates-and-returns
   questions:
     - id: log_returns.explain
       angle: explain
@@ -1209,6 +1245,11 @@ risk_return_tradeoff:
 
 
     **A common mistake** is chasing return without asking what risk produced it. A fund that beat the market by taking far more risk hasn't necessarily shown skill. Later concepts measure return per unit of risk (the Sharpe ratio) to compare fairly.
+  sources:
+    - title: "OpenStax Principles of Finance - 15.1 Risk and Return to an Individual Asset"
+      url: https://openstax.org/books/principles-finance/pages/15-1-risk-and-return-to-an-individual-asset
+    - title: "Investor.gov - Beginners' Guide to Asset Allocation, Diversification, and Rebalancing"
+      url: https://www.investor.gov/additional-resources/general-resources/publications-research/info-sheets/beginners-guide-asset
   questions:
     - id: risk_return_tradeoff.explain
       angle: explain

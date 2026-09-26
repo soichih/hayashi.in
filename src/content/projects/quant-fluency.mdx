@@ -32,6 +32,10 @@ come at it from different angles: explain it, apply it, calculate it, spot the m
 
 ## How it works
 
+- On your first visit you rate how familiar you are with each of the 16 areas, from 1 (new to
+  it) to 5 (could teach it). Every concept has a level within its area, so the app skips what
+  you say you know and starts at your level. Miss two of your last three questions in an area
+  and it steps down a level. You can also change the levels yourself at any time.
 - You answer in writing. There's no multiple choice. A **qwen3.5 9B** model running on my home
   server through Ollama compares your answer with a reference answer and a list of key points,
   scores it from 0 to 100, and tells you what you left out. It grades meaning, not wording.
@@ -42,8 +46,8 @@ come at it from different angles: explain it, apply it, calculate it, spot the m
 - Passing a concept schedules it to come back after 1, 3, 7, 21 and then 60 days, each time as
   a different question. A concept counts as mastered after three passes spread over at least
   four days, on at least two different questions, so nothing is mastered on the first day.
-- After each answer you can review the lesson or ask a tutor follow-up questions, up to five
-  per card. Diagrams, in the lessons and in the tutor's answers, are drawn with Mermaid.
+- After each answer you can review the lesson, follow the references to check it, or ask a
+  tutor follow-up questions, up to five per card. Diagrams, in the lessons and in the tutor's answers, are drawn with Mermaid.
 - Progress lives in your browser. There are no accounts, and answers aren't stored on the
   server.
 

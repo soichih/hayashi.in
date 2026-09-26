@@ -9,6 +9,14 @@
 //   mastered = mastered concepts / concepts presented
 //   covered  = concepts presented / all concepts in the map
 //
+// Placement: each concept has a level (1-5) within its domain. The player
+// rates their familiarity with each domain once (and can change it any time).
+// Concepts below a domain's level are assumed known: skipped, but they count as
+// met prerequisites and never as mastered or covered. New questions come from
+// the domain's current level. Two answers under 50 out of the last three in a
+// domain drop it a level; seeing everything at a level with average strength
+// >= 60 raises it.
+//
 // Spaced repetition (Leitner boxes): a pass (score >= PASS) moves a concept up a
 // box and pushes its next review further out; a fail drops it back to box 0.
 // A concept is mastered at box >= MASTER_BOX with passes on at least
@@ -34,13 +42,13 @@ let state = load();
 // ------------------------------------------------------------------ storage
 
 function blankState() {
-	return { concepts: {}, streak: { days: 0, last: null }, answered: 0 };
+	return { concepts: {}, streak: { days: 0, last: null }, answered: 0, levels: {}, recent: {}, onboarded: false };
 }
 
 function load() {
 	try {
 		const s = JSON.parse(localStorage.getItem(STORE_KEY));
-		if (s && s.concepts) return s;
+		if (s && s.concepts) return { levels: {}, recent: {}, onboarded: false, ...s };
 	} catch (e) { /* fall through */ }
 	return blankState();
 }
@@ -88,7 +96,80 @@ function recordAttempt(conceptId, qid, score) {
 		state.streak.last = today;
 	}
 	state.answered++;
+	const note = trackStruggle(conceptById[conceptId].domain, score);
 	save();
+	return note;
+}
+
+// ------------------------------------------------------------------ placement
+
+const LEVELS = [
+	[1, "New to this", "never studied it"],
+	[2, "Some basics", "know the main terms"],
+	[3, "Comfortable", "studied it, e.g. a course or CFA Level I"],
+	[4, "Advanced", "use it at work, or CFA Level II-III"],
+	[5, "Expert", "could teach it"],
+];
+const STRUGGLE_SCORE = 50;
+const LEVEL_UP_STRENGTH = 60;
+
+function domainConcepts(domain) {
+	return concepts.filter(c => c.domain === domain);
+}
+
+function maxLevel(domain) {
+	return Math.max(1, ...domainConcepts(domain).map(c => c.level));
+}
+
+// The level the player is working at now in a domain.
+function domainLevel(domain) {
+	return Math.min(state.levels[domain] || 1, maxLevel(domain));
+}
+
+function assumedKnown(c) {
+	return !progress(c.id) && c.level < domainLevel(c.domain);
+}
+
+// Levels that have questions written, for the placement screen.
+function questionLevels(domain) {
+	return [...new Set(domainConcepts(domain).filter(c => hasContent(c.id)).map(c => c.level))].sort();
+}
+
+function trackStruggle(domain, score) {
+	const recent = (state.recent[domain] ||= []);
+	recent.push(score);
+	if (recent.length > 3) recent.shift();
+	const level = domainLevel(domain);
+	if (level > 1 && recent.filter(x => x < STRUGGLE_SCORE).length >= 2) {
+		state.levels[domain] = level - 1;
+		state.recent[domain] = [];
+		return `This one's tough. ${domains[domain]} goes back to level ${level - 1} from your next session, to firm up the groundwork first. You can change this under Your levels.`;
+	}
+	return null;
+}
+
+// Move a domain up once everything available at its level has been seen and is going well.
+function levelUpDomains() {
+	const ups = [];
+	for (const domain of Object.keys(domains)) {
+		for (;;) {
+			const level = domainLevel(domain);
+			if (level >= maxLevel(domain)) break;
+			// Only climb to a level that has questions; otherwise a player would skip
+			// that material once it's written.
+			const next = questionLevels(domain).find(l => l > level);
+			if (!next) break;
+			const atLevel = domainConcepts(domain).filter(c => c.level === level && hasContent(c.id));
+			if (atLevel.some(c => !progress(c.id) && unlocked(c))) break;
+			const seen = atLevel.filter(c => progress(c.id));
+			const avg = seen.length ? seen.reduce((s, c) => s + strength(progress(c.id)), 0) / seen.length : 100;
+			if (avg < LEVEL_UP_STRENGTH) break;
+			state.levels[domain] = next;
+			if (seen.length) ups.push(domain);
+		}
+	}
+	if (ups.length) save();
+	return ups;
 }
 
 function totals() {
@@ -131,7 +212,7 @@ function hasContent(id) {
 }
 
 function unlocked(c) {
-	return c.prereqs.every(p => progress(p));
+	return c.prereqs.every(p => progress(p) || assumedKnown(conceptById[p]));
 }
 
 function conceptStatus(c) {
@@ -139,7 +220,8 @@ function conceptStatus(c) {
 	if (!hasContent(c.id)) return "soon";
 	if (isMastered(p)) return "mastered";
 	if (p) return "learning";
-	return unlocked(c) ? "new" : "locked";
+	if (assumedKnown(c)) return "assumed";
+	return unlocked(c) && c.level === domainLevel(c.domain) ? "new" : "locked";
 }
 
 function dueConcepts() {
@@ -151,8 +233,8 @@ function dueConcepts() {
 
 function newConcepts() {
 	return concepts
-		.filter(c => hasContent(c.id) && !progress(c.id) && unlocked(c))
-		.sort((a, b) => a.tier - b.tier);
+		.filter(c => hasContent(c.id) && !progress(c.id) && unlocked(c) && c.level === domainLevel(c.domain))
+		.sort((a, b) => a.level - b.level || a.tier - b.tier);
 }
 
 function pickQuestion(conceptId) {
@@ -390,6 +472,18 @@ function sourcesList(sources) {
 			el("li", {}, el("a", { href: x.url, target: "_blank", rel: "noopener" }, x.title)))));
 }
 
+// References for a question: its own, then its concept's, without duplicates.
+function referencesList(q, conceptId) {
+	const seen = new Set();
+	const refs = [...(q.references || []), ...(content[conceptId].sources || [])]
+		.filter(x => /^https:\/\//.test(x.url) && !seen.has(x.url) && seen.add(x.url));
+	if (!refs.length) return null;
+	return el("div", { class: "sources references" },
+		el("h3", {}, "References"),
+		el("p", { class: "muted small" }, "To learn more or check the answer:"),
+		el("ul", {}, ...refs.map(x => el("li", {}, el("a", { href: x.url, target: "_blank", rel: "noopener" }, x.title)))));
+}
+
 // Lesson text, its figures, and a "More detail" section that opens in place.
 function lessonBody(conceptId) {
 	const c = content[conceptId];
@@ -497,6 +591,8 @@ function tutorPanel(item, q, answer, result) {
 // ------------------------------------------------------------------ screens
 
 function homeScreen() {
+	if (!state.onboarded) return placementScreen(true);
+	const ups = levelUpDomains();
 	const t = totals();
 	const due = dueConcepts().length;
 	const fresh = newConcepts().length;
@@ -519,8 +615,65 @@ function homeScreen() {
 				stat(`${t.presented} / ${t.total}`, "concepts seen of the whole course"),
 				stat(state.answered, "answers given")),
 		),
+		ups.length ? el("p", { class: "levelup" },
+			`Level up: ${ups.map(d => `${domains[d]} is now level ${domainLevel(d)}`).join(", ")}.`) : null,
+		levelsCard(),
 		conceptMap(),
 	);
+}
+
+function levelsCard() {
+	const active = Object.keys(domains).filter(d => questionLevels(d).length);
+	return el("section", { class: "levels-card" },
+		el("h2", {}, "Your levels"),
+		el("p", { class: "chips" }, ...active.map(d => el("span", { class: "chip" }, `${domains[d]} ${domainLevel(d)}`))),
+		el("button", { class: "ghost", onclick: () => placementScreen(false) }, "Adjust levels"));
+}
+
+function placementScreen(first) {
+	const picks = Object.fromEntries(Object.keys(domains).map(d => [d, domainLevel(d)]));
+	const rows = Object.entries(domains).map(([d, name]) => {
+		const have = questionLevels(d);
+		const buttons = LEVELS.map(([n, label, hint]) => {
+			const b = el("button", {
+				class: `level-pick${picks[d] === n ? " on" : ""}`, title: `${label}: ${hint}`,
+				"aria-pressed": String(picks[d] === n),
+				onclick: () => {
+					picks[d] = n;
+					b.parentNode.querySelectorAll(".level-pick").forEach((x, i) => {
+						x.classList.toggle("on", i + 1 === n);
+						x.setAttribute("aria-pressed", String(i + 1 === n));
+					});
+				},
+			}, String(n));
+			return b;
+		});
+		const avail = have.length
+			? `Questions so far: level${have.length > 1 ? "s" : ""} ${have.join(", ")} (course goes to ${maxLevel(d)})`
+			: "Questions coming soon";
+		return el("div", { class: "level-row" },
+			el("div", {}, el("strong", {}, name), el("span", { class: "muted small avail" }, avail)),
+			el("div", { class: "level-picks", role: "group", "aria-label": name }, ...buttons));
+	});
+	const commit = () => {
+		for (const [d, n] of Object.entries(picks)) {
+			if (n !== domainLevel(d)) state.recent[d] = [];
+			state.levels[d] = n;
+		}
+		state.onboarded = true;
+		save();
+		homeScreen();
+	};
+	show(el("article", { class: "card placement" },
+		el("h2", {}, first ? "How familiar are you with each area?" : "Your levels"),
+		el("p", { class: "muted" }, first
+			? "Pick a level for each area. We'll skip what you already know and start where it gets interesting. If it turns out to be too hard, we'll step down automatically, and you can change these any time."
+			: "Set the level you want to work at in each area. Lowering a level brings back the easier concepts we skipped."),
+		el("ol", { class: "level-key" }, ...LEVELS.map(([n, label, hint]) => el("li", {}, el("strong", {}, label), ` - ${hint}`))),
+		...rows,
+		el("div", { class: "actions" },
+			first ? el("button", { class: "ghost", onclick: () => { Object.keys(picks).forEach(d => picks[d] = 1); commit(); } }, "Skip - start at level 1 everywhere") : el("button", { class: "ghost", onclick: homeScreen }, "Cancel"),
+			el("button", { class: "primary", onclick: commit }, first ? "Start learning" : "Save levels"))));
 }
 
 function stat(value, label) {
@@ -532,8 +685,8 @@ function conceptMap() {
 	const TIER_NAMES = ["Market basics", "Quant foundations", "Asset classes", "Portfolio theory",
 		"Quant portfolio management", "Risk management", "Performance", "Advanced topics"];
 	const legend = el("p", { class: "legend" },
-		...["mastered", "learning", "new", "locked", "soon"].map(s =>
-			el("span", { class: `chip ${s}` }, { mastered: "mastered", learning: "learning", new: "ready", locked: "locked", soon: "coming soon" }[s])));
+		...["mastered", "learning", "new", "assumed", "locked", "soon"].map(s =>
+			el("span", { class: `chip ${s}` }, { mastered: "mastered", learning: "learning", new: "ready", assumed: "assumed known", locked: "later", soon: "coming soon" }[s])));
 	return el("section", { class: "map" },
 		el("h2", {}, "Course map"),
 		legend,
@@ -544,7 +697,7 @@ function conceptMap() {
 				el("div", { class: "chips" }, ...cs.map(c => {
 					const s = conceptStatus(c);
 					const p = progress(c.id);
-					const title = `${c.summary}${p ? `\nStrength ${strength(p)}%` : ""}`;
+					const title = `${c.summary}\n${domains[c.domain]}, level ${c.level}${p ? `\nStrength ${strength(p)}%` : ""}`;
 					return el("span", { class: `chip ${s}`, title }, c.name);
 				})));
 		}));
@@ -595,7 +748,7 @@ function questionScreen(item) {
 	show(
 		progressBar(),
 		el("article", { class: "card" },
-			el("p", { class: "kicker" }, `${c.name} · ${q.angle}`),
+			el("p", { class: "kicker" }, `${c.name} · ${domains[c.domain]} level ${c.level} · ${q.angle}`),
 			el("h2", { class: "prompt" }, q.prompt),
 			box,
 			el("div", { class: "actions" },
@@ -629,15 +782,15 @@ async function grade(item, q, answer) {
 			`${e.message === "Failed to fetch" ? "Couldn't reach the grader." : e.message} Try again, or use "I don't know" to see the answer.`));
 		return;
 	}
-	recordAttempt(item.conceptId, q.id, result.score);
+	result.levelNote = recordAttempt(item.conceptId, q.id, result.score);
 	session.results.push({ conceptId: item.conceptId, score: result.score });
 	feedbackScreen(item, q, answer, result);
 }
 
 function revealOnly(item, q) {
-	recordAttempt(item.conceptId, q.id, 0);
+	const levelNote = recordAttempt(item.conceptId, q.id, 0);
 	session.results.push({ conceptId: item.conceptId, score: 0 });
-	feedbackScreen(item, q, "", { score: 0, feedback: "No problem - read the model answer, and this one will come back soon.", missing: [] });
+	feedbackScreen(item, q, "", { score: 0, feedback: "No problem - read the model answer, and this one will come back soon.", missing: [], levelNote });
 }
 
 function feedbackScreen(item, q, answer, result) {
@@ -664,11 +817,13 @@ function feedbackScreen(item, q, answer, result) {
 				el("h3", {}, "Missing or off"),
 				el("ul", {}, ...result.missing.map(m => el("li", {}, m)))) : null,
 			answer ? el("details", {}, el("summary", {}, "Your answer"), el("p", { class: "quote" }, answer)) : null,
+			result.levelNote ? el("p", { class: "levelnote" }, result.levelNote) : null,
 			el("div", { class: "model" }, el("h3", {}, "Model answer"), el("p", {}, q.answer)),
 			figure(q.figure),
 			el("details", { class: "review", ontoggle: renderDiagrams },
 				el("summary", {}, "Review the lesson"),
 				...lessonBody(item.conceptId)),
+			referencesList(q, item.conceptId),
 			tutorPanel(item, q, answer, result),
 			el("p", { class: "muted small" },
 				isMastered(p) ? "Concept mastered." : `Concept strength ${strength(p)}% · review box ${p.box} of ${MASTER_BOX} to master`),

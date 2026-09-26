@@ -240,3 +240,17 @@ details.review[open] > summary { margin-bottom: .75rem; }
 	.card { padding: 1.1rem; }
 	.score-row { flex-direction: column; text-align: center; }
 }
+
+/* placement */
+.placement .level-key { margin: .5rem 0 1rem; padding-left: 1.3rem; font-size: .9rem; color: var(--muted); }
+.level-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 0; border-top: 1px solid var(--line); flex-wrap: wrap; }
+.level-row .avail { display: block; }
+.level-picks { display: flex; gap: .35rem; }
+.level-pick { width: 2.4rem; height: 2.4rem; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font-weight: 700; }
+.level-pick.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.levels-card { margin: 0 0 1.5rem; }
+.levels-card h2 { margin-bottom: .4rem; }
+.levels-card .chips { margin: 0 0 .6rem; }
+.levelup, .levelnote { background: var(--bg); border-left: 4px solid var(--accent); padding: .6rem .9rem; border-radius: 8px; }
+.levelup { text-align: center; }
+.chip.assumed { border-style: dashed; border-color: var(--pass); color: var(--pass); }
