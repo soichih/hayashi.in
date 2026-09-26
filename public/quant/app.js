@@ -406,7 +406,8 @@ function el(tag, attrs = {}, ...children) {
 
 function show(...nodes) {
 	const app = document.getElementById("app");
-	app.replaceChildren(...nodes);
+	// Skip empty slots (e.g. no level-up note); replaceChildren would print "null".
+	app.replaceChildren(...nodes.filter(n => n !== null && n !== undefined && n !== false));
 	renderScores();
 	renderDiagrams();
 	window.scrollTo(0, 0);
