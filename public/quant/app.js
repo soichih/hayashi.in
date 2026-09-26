@@ -629,7 +629,7 @@ function levelsCard() {
 	return el("section", { class: "levels-card" },
 		el("h2", {}, "Your levels"),
 		el("p", { class: "chips" }, ...active.map(d => el("span", { class: "chip" }, `${domains[d]} ${domainLevel(d)}`))),
-		el("button", { class: "ghost", onclick: () => placementScreen(false) }, "Adjust levels"));
+		el("button", { class: "ghost", onclick: () => placementScreen(false) }, "Adjust Level"));
 }
 
 function placementScreen(first) {
