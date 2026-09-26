@@ -1,0 +1,74 @@
+---
+title: 'Quant Fluency'
+description: 'A language-app-style trainer for quantitative asset management. You answer in your own words, a local LLM grades the answer, and spaced repetition brings each concept back from a new angle.'
+date: 2026-09-26
+showHeroImage: false
+tags:
+  - Education
+  - Local LLM
+  - Finance
+comments: false
+sidebar:
+  enable: false
+  toc: false
+  relatedPosts: false
+---
+
+- **Live:** [hayashi.in/quant](/quant/)
+
+I wanted to learn quantitative asset management the way people learn a language: a few
+minutes a day, lots of repetition, and each idea seen from several sides until it sticks.
+Flashcards didn't fit, because recognizing an answer isn't the same as being able to explain
+it. So in Quant Fluency you write your answer in a sentence or two, and a model grades how well
+you understood the idea.
+
+The course map has 227 concepts, from what a bond is up to Black-Litterman, risk parity and
+backtest overfitting. I built it from the topics covered by the CFA, FRM, CQF, CAIA and CIPM
+programs (the site isn't affiliated with any of them) and arranged it in eight tiers with
+prerequisites, so a concept unlocks once you've seen the ones it builds on. The first tier is
+written: 21 concepts, each with a lesson, a longer "More detail" section with worked examples
+and links to primary sources such as the SEC, FINRA and CFA Institute, and three questions that
+come at it from different angles: explain it, apply it, calculate it, spot the misconception.
+
+## How it works
+
+- You answer in writing. There's no multiple choice. A **qwen3.5 9B** model running on my home
+  server through Ollama compares your answer with a reference answer and a list of key points,
+  scores it from 0 to 100, and tells you what you left out. It grades meaning, not wording.
+- Two numbers sit at the top of the page. **Mastered** is the share of concepts you've been
+  shown that you now know. **Covered** is the share of the whole course you've been shown at
+  all. The first says how well you know what you've seen. The second says how much you
+  haven't seen yet.
+- Passing a concept schedules it to come back after 1, 3, 7, 21 and then 60 days, each time as
+  a different question. A concept counts as mastered after three passes spread over at least
+  four days, on at least two different questions, so nothing is mastered on the first day.
+- After each answer you can review the lesson or ask a tutor follow-up questions, up to five
+  per card. Diagrams, in the lessons and in the tutor's answers, are drawn with Mermaid.
+- Progress lives in your browser. There are no accounts, and answers aren't stored on the
+  server.
+
+## What I ran into
+
+**A small model grades well but explains badly.** Grading against a reference answer is a
+narrow job, and the 9B model does it well in about two seconds: in my tests it gave zero to
+wrong answers and to answers that tried to talk it into a perfect score. Explaining is harder.
+When I ran 27 realistic follow-up questions through the same model, more than a third of its
+explanations had a real error, like a backwards bid and ask or an arithmetic slip, and the
+charts it drew were often wrong. A stricter prompt helped but didn't fix it, and turning on its
+reasoning mode made things worse: it spent its whole budget thinking and returned nothing. So
+grading stays on the home server, and the tutor uses a larger model through Ollama's cloud
+service, which got every number right when I reran the questions the small model missed.
+That means your follow-up questions leave my server, while your graded answers don't.
+
+**The browser never sends the right answer.** It would be simpler for the page to send your
+answer and the reference answer together, but then the endpoint would grade anything anyone
+sent it, which makes it a free chatbot on my GPU. The page sends only a question id and your
+text, and the server looks up the reference itself. The tutor works the same way, with a limit
+on questions per card and an instruction to stay on the course's topics.
+
+**Charts need to survive a phone screen.** Mermaid only draws a chart legend when the chart is
+about 600 pixels wide, so on a phone a two-line chart showed two colors and no labels. The page
+now draws charts at the width they're shown and adds its own legend underneath.
+
+The next tier covers the statistics underneath everything else: variance, correlation,
+regression, and the distributions that show up in risk models.
