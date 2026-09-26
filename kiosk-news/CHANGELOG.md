@@ -37,3 +37,4 @@ One dated line per edit the agent makes to this skill: what changed and why.
 2026-09-25: sources.md - noted aje.news image 403, AI Weekly digest, and IU Auditorium UTC times, from this run.
 2026-09-25 (evening run): sources.md - noted NPR article pages and the Visit Bloomington weekend page fail via WebFetch, and that the image script needs direct image URLs.
 - 2026-09-26: sources.md - noted NPR timeouts, AI daily digest source, RSS quirks.
+2026-09-26 (evening run): sources.md - noted evening runs should drop events already over; aidapted.ro is another daily AI digest.

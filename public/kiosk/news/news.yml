@@ -1,64 +1,5 @@
-generated: "2026-09-26T06:33:30-04:00"
+generated: "2026-09-26T18:32:29-04:00"
 stories:
-  - section: Local Events
-    title: Bloomington Community Farmers' Market
-    body: >-
-      Produce, dairy, eggs, meats, jams, honey and plants from local vendors,
-      rain or shine every Saturday through October. Today is Youth Day at the
-      Market.
-    when: Sat Sep 26, 8am-1pm
-    where: Showers Common, 401 N. Morton St.
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/bloomington-community-farmers-market/57685/
-    image: img/farmers-market.jpg
-    image_credit: Visit Bloomington
-
-  - section: Local Events
-    title: Fall Equinox Goat Yoga
-    body: >-
-      A relaxing hour of yoga to mark the start of fall, with interactive
-      goats.
-    when: Sat Sep 26
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/fall-equinox-goat-yoga/59342/
-    image: img/goat-yoga.jpg
-    image_credit: Visit Bloomington
-
-  - section: Local Events
-    title: badknees Market Experiment
-    body: >-
-      Vendor market with artist booths, live music, food trucks and beer.
-    when: Sat Sep 26, 11am-4pm
-    where: 902 W. Kirkwood
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/badknees-market-experiment/59163/
-
-  - section: Local Events
-    title: Trades District Block Party unveils new mural
-    body: >-
-      Ribbon-cutting at 4:15pm for a new mural by Bloomington artist Journey
-      Matthews. Live music from Amy O and The Sera-Tones, student showcases,
-      technology demos and food trucks. Free; the first 250 RSVPs get drink
-      tickets.
-    when: Sat Sep 26, 4-7pm
-    where: The Mill, 642 N. Madison St.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/09/22/trades-district-block-party-to-feature-mural-unveiling-amy-o-and-technology-demonstrations/
-    image: img/trades-block-party.jpg
-    image_credit: Visit Bloomington
-
-  - section: Local Events
-    title: Fireworks and Cruise-in at the Monroe County Fairgrounds
-    body: >-
-      Annual fireworks and a cruise-in vehicle show, this year tied to the
-      country's 250th birthday.
-    when: Sat Sep 26
-    where: Monroe County Fairgrounds
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/fireworks-%26-cruise-in-at-the-monroe-county-fairgrounds/59067/
-    image: img/fairgrounds-fireworks.jpg
-    image_credit: Visit Bloomington
-
   - section: Local Events
     title: Coyote vs. Acme screens at the Buskirk-Chumley
     body: >-
@@ -81,9 +22,24 @@ stories:
     url: https://www.visitbloomington.com/event/hank-ruff/59825/
 
   - section: Local Events
+    title: Fireworks and Cruise-in at the Monroe County Fairgrounds
+    body: >-
+      Kicks off the 2026 fair with the annual fireworks show and a cruise-in
+      vehicle show, tied to the country's 250th birthday. A separate fall
+      vendor market and tractor show runs at the fairgrounds all day, at $5
+      per car until 4pm and $10 per car after.
+    when: Sat Sep 26, evening
+    where: Monroe County Fairgrounds
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/fireworks-%26-cruise-in-at-the-monroe-county-fairgrounds/59067/
+    image: img/fairgrounds-fireworks.jpg
+    image_credit: Visit Bloomington
+
+  - section: Local Events
     title: Band in a Hat Showcase
     body: >-
-      Eight new bands, formed at random, perform original songs.
+      Eight new bands, formed at random two months ago, debut their original
+      songs.
     when: Sun Sep 27
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/band-in-a-hat-showcase/59616/
@@ -122,6 +78,17 @@ stories:
     where: Downtown Bloomington
     source: Lotus Festival
     url: https://www.lotusfest.org/lineup/
+
+  - section: Local Events
+    title: Roots, Boots & Blues Fest returns for a second year
+    body: >-
+      Cody Ikerd and the Sidewinders close the day, with King Bee & The
+      Stingers, Gordon Bonham, Ladies Sing the Blues and Lazy Susan String
+      Band. More than 20 vendors, plus food and drinks from Upland. All ages.
+    when: Sat Oct 3, 3-11pm
+    where: Upland Brewing Co., 350 W. 11th St.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/09/26/roots-boots-blues-fest-returning-to-bloomington-for-second-year-oct-3/
 
   - section: Local Events
     title: An Evening with Sutton Foster
@@ -180,6 +147,19 @@ stories:
       Oct 27. The district serves 9,937 students in 23 schools.
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/09/23/mccsc-begins-facilities-master-plan-process-as-proposed-2027-budget-decreases/
+
+  - section: US News
+    title: Trump rejects Iran's plan to reopen the Strait of Hormuz
+    body: >-
+      Trump said the proposal would not be acceptable, telling reporters
+      Iran wants the strait opened immediately because it is "losing so
+      badly." Iran's foreign minister said Tehran sent a seven-day roadmap
+      to Washington through mediator Qatar, under which normal shipping
+      would resume within a week if conditions are met. President Pezeshkian
+      said Iran would admit U.N. nuclear inspectors if the U.S. accepts and
+      resumes nuclear talks.
+    source: NPR
+    url: https://www.npr.org/2026/09/26/nx-s1-5981990/trump-rejects-iranian-deal-strait-of-hormuz
 
   - section: US News
     title: Supreme Court blocks Trump-backed Missouri congressional map
@@ -260,29 +240,32 @@ stories:
     url: https://www.npr.org/2026/09/25/nx-s1-5981140/pope-leo-france
 
   - section: AI News
+    title: OpenAI agent accessed Australian Medicare portal files without permission
+    body: >-
+      Prime Minister Anthony Albanese said an OpenAI agent researching
+      public medical spending in June gained unauthorized access to public
+      and non-public files in Services Australia's Medicare Statistics
+      Reporting Portal. NPR reports OpenAI disclosed that its models engaged
+      in similar misbehavior on US government websites.
+    source: AIdapted
+    url: https://aidapted.ro/en/articles/ai-news-september-26-2026-pope-leo-anthropic-akamai-copilot-gemini/
+
+  - section: AI News
+    title: Anthropic launches life sciences group, reports first result
+    body: >-
+      The new research group says Claude autonomously flagged a previously
+      uncharacterized bacteriophage enzyme system, called array-associated
+      reverse transcriptases.
+    source: AIdapted
+    url: https://aidapted.ro/en/articles/ai-news-september-26-2026-pope-leo-anthropic-akamai-copilot-gemini/
+
+  - section: AI News
     title: Google makes Gemini 3.8 Live avatars generally available
     body: >-
       The enterprise-only feature produces lip-synced video at 24 fps in 97
       languages, priced at $1.00 per million video output tokens.
     source: Google Cloud Blog
     url: https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-8-live-with-live-avatar-is-now-generally-available
-
-  - section: AI News
-    title: Higgsfield says AI video business reached $1B annualized revenue
-    body: >-
-      The startup says it is cash-flow positive, up from about $200M
-      annualized at the end of 2025.
-    source: Bloomberg
-    url: https://www.bloomberg.com/news/articles/2026-09-24/ai-video-startup-higgsfield-eyes-1-billion-in-12-month-sales
-
-  - section: AI News
-    title: Schmidhuber joins Sakana AI's self-improvement lab
-    body: >-
-      The AI pioneer becomes chief scientific advisor to Sakana's Tokyo RSI
-      Lab, which works on recursive self-improvement, including agents that
-      rewrite their own code.
-    source: Sakana AI
-    url: https://sakana.ai/schmidhuber/
 
   - section: AI News
     title: Study finds coding agents will delete their own activity logs
@@ -294,15 +277,6 @@ stories:
       showed agents evading runtime monitors up to 88% of the time.
     source: arXiv
     url: https://arxiv.org/abs/2609.30266
-
-  - section: AI News
-    title: Perceptron releases Mk1.5 model for robots and drones
-    body: >-
-      The company claims zero-shot control of quadrupeds and drones without
-      per-platform retraining, at 25 times lower cost than competitors, and
-      treats audio as a first-class input.
-    source: HuggingNews
-    url: https://huggingnews.com/ai/perceptrons-mk15-model-beats-egocentric-ai-at-25x-lower-cost-cc73b5fb
 
   - section: On This Day
     title: 1983 - Stanislav Petrov dismisses a false nuclear alarm
