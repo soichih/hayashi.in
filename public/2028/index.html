@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2028: Where the possible candidates stand</title>
+<meta name="description" content="Side-by-side look at potential 2028 U.S. presidential candidates: odds, likelihood of running, and positions on the issues.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0F3; --sheet:#FFFFFF; --ink:#172033; --muted:#566074; --rule:#CBD2DC;
+  --dem:#2F5DA8; --rep:#B23A2E; --mark:#1F2A44; --soft:#E3E8EE; --warn:#8A5A00;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#141A24; --sheet:#1C2431; --ink:#E6EAF0; --muted:#A3ADBD; --rule:#344052;
+    --dem:#7FA3E6; --rep:#E58677; --mark:#E6EAF0; --soft:#263041; --warn:#E0B35A;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141A24; --sheet:#1C2431; --ink:#E6EAF0; --muted:#A3ADBD; --rule:#344052;
+  --dem:#7FA3E6; --rep:#E58677; --mark:#E6EAF0; --soft:#263041; --warn:#E0B35A;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16px;line-height:1.55}
+a{color:inherit;text-underline-offset:2px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--dem);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+header{padding:48px 0 28px}
+h1{font-size:clamp(2.1rem,6vw,3.6rem);line-height:1.02;font-weight:800;letter-spacing:-.025em;margin:0 0 16px;max-width:15ch}
+.lede{max-width:62ch;color:var(--muted);margin:0 0 20px}
+.stamp{display:inline-flex;gap:10px;align-items:center;border:1.5px solid var(--ink);border-radius:999px;padding:6px 14px;font-weight:600;font-size:.9rem}
+.stamp i{width:10px;height:10px;border-radius:50%;background:var(--ink);display:inline-block}
+
+section{margin:28px 0 48px}
+h2{font-size:1.6rem;font-weight:800;letter-spacing:-.015em;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 18px;max-width:66ch}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.pill{font:inherit;font-size:.92rem;font-weight:600;cursor:pointer;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);
+  border-radius:999px;padding:7px 14px}
+.pill[aria-pressed="true"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+/* The field */
+.sheet{background:var(--sheet);border:1px solid var(--rule);border-radius:14px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:760px}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--rule);vertical-align:middle}
+th{font-size:.84rem;font-weight:600;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.who{display:flex;gap:12px;align-items:center}
+.party{width:6px;align-self:stretch;border-radius:3px;min-height:38px}
+.D{background:var(--dem)} .R{background:var(--rep)}
+.name{font-weight:700}
+.role{font-size:.86rem;color:var(--muted)}
+.bar{position:relative;height:10px;background:var(--soft);border-radius:5px;width:140px;margin-top:6px}
+.bar span{position:absolute;inset:0 auto 0 0;border-radius:5px;background:var(--ink)}
+.num{font-weight:700;font-variant-numeric:tabular-nums}
+.small{font-size:.82rem;color:var(--muted)}
+.na{color:var(--muted)}
+
+/* Ballot ovals: the signature */
+.ovals{display:flex;gap:5px}
+.oval{width:22px;height:13px;border:1.6px solid var(--mark);border-radius:50%}
+.oval.f{background:var(--mark)}
+.runlabel{font-size:.82rem;color:var(--muted);margin-top:4px;max-width:24ch}
+
+/* Issues */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.issue-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;margin-bottom:10px}
+.issue-head h3{margin:0;font-size:1.25rem;font-weight:800}
+.stances{display:grid;gap:12px}
+.stance{display:grid;grid-template-columns:210px 1fr;gap:18px;padding:16px 18px;background:var(--sheet);border:1px solid var(--rule);border-radius:12px;border-left-width:6px}
+.stance.D{border-left-color:var(--dem);background:var(--sheet)} .stance.R{border-left-color:var(--rep);background:var(--sheet)}
+.stance p{margin:0 0 8px;max-width:70ch}
+.tag{display:inline-block;font-size:.76rem;font-weight:600;border:1px solid var(--rule);border-radius:6px;padding:2px 8px;margin:0 6px 6px 0;color:var(--muted)}
+.tag.gap{color:var(--warn);border-color:var(--warn)}
+.srcs{font-size:.82rem;color:var(--muted)}
+.srcs a{margin-right:10px}
+@media (max-width:640px){
+  .stance{grid-template-columns:1fr;gap:6px}
+  header{padding-top:32px}
+}
+
+details{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+summary{font-weight:700;cursor:pointer}
+details p,details li{max-width:70ch;color:var(--muted)}
+footer{padding:24px 0 48px;color:var(--muted);font-size:.86rem;border-top:1px solid var(--rule)}
+@media (prefers-reduced-motion:no-preference){ .bar span{transition:width .5s ease} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Who might run in 2028, and where they stand</h1>
+  <p class="lede">No one has formally entered the race yet, so this compares the people most often named as contenders: their odds, how likely they are to actually run, and what their record and recent statements say on the issues below.</p>
+  <span class="stamp"><i></i>Data as of September 27, 2026</span>
+</header>
+
+<section id="field">
+  <h2>The field</h2>
+  <p class="sub">Market odds average Polymarket and Kalshi (mid-September 2026). Markets don't price the popular vote per candidate, so "Win presidency" is the closest measure. The ovals are an editorial read of public signals, not a market price.</p>
+  <div class="filters" role="group" aria-label="Filter by party">
+    <button class="pill" data-party="all" aria-pressed="true">Everyone</button>
+    <button class="pill" data-party="D" aria-pressed="false">Democrats</button>
+    <button class="pill" data-party="R" aria-pressed="false">Republicans</button>
+  </div>
+  <div class="sheet scroll">
+    <table>
+      <thead><tr>
+        <th scope="col">Candidate</th>
+        <th scope="col">Win party nomination</th>
+        <th scope="col">Win presidency</th>
+        <th scope="col">Latest primary poll</th>
+        <th scope="col">Likelihood of running</th>
+      </tr></thead>
+      <tbody id="fieldRows"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="issues">
+  <h2>On the issues</h2>
+  <p class="sub">Pick an issue to see every candidate side by side. Each entry is tagged by what it rests on, since most of these people haven't published a 2028 platform.</p>
+  <div class="chips" id="chips" role="group" aria-label="Choose an issue"></div>
+  <div class="issue-head"><h3 id="issueTitle"></h3><span class="small" id="issueNote"></span></div>
+  <div class="stances" id="stances"></div>
+</section>
+
+<section id="method">
+  <h2>How to read this</h2>
+  <details open><summary>What the evidence tags mean</summary>
+    <ul>
+      <li><b>2026 proposal</b>: something the candidate has proposed or said this year, the closest thing to a 2028 platform.</li>
+      <li><b>Record</b>: votes, laws signed, or actions taken in office.</li>
+      <li><b>Past campaign</b>: positions from a 2020 or 2024 run, which may have shifted since.</li>
+      <li><b>No clear position</b>: nothing specific found in public statements. Treat it as unknown, not as opposition.</li>
+    </ul>
+  </details>
+  <details><summary>Where the numbers come from</summary>
+    <p>Nomination and presidency odds: <a href="https://predictmarketcap.com/elections/2028">PredictMarketCap's Polymarket/Kalshi comparison</a>, averaged across both venues. Polls: Morning Consult, Aug 28–30, 2026 (via <a href="https://www.newsweek.com/jon-ossoffs-2028-chances-get-boost-as-harris-and-newsom-dip-new-poll-12389066">Newsweek</a>), and Emerson College, July 2026, where a candidate wasn't listed by Morning Consult. Polls this early swing widely and mostly measure name recognition.</p>
+  </details>
+  <details><summary>Likelihood of running</summary>
+    <p>This is a judgment call from public statements (for example, Vance saying he'll decide after the midterms, Harris saying she's "thinking" about it, Ossoff saying he has no interest, Rubio saying he'd back Vance). It will move after the November 2026 midterms, when announcements typically start.</p>
+  </details>
+  <details><summary>Adding an issue</summary>
+    <p>Open this file and add an entry to <code>CRITERIA</code>, then add a matching key to each candidate's <code>stances</code>. Candidates without an entry show as "No clear position."</p>
+  </details>
+</section>
+
+<footer>Compiled September 27, 2026 for hayashi.in. Not affiliated with any campaign or party. Positions summarized from public reporting; follow the links to verify before relying on any single line.</footer>
+</div>
+
+<script>
+/* ============ ISSUES (add new criteria here) ============ */
+const CRITERIA = [
+  {id:"wealth",  label:"Wealth inequality"},
+  {id:"campaign",label:"Campaign finance"},
+  {id:"ai",      label:"AI"},
+  {id:"climate", label:"Climate & environment"},
+  {id:"finreg",  label:"Financial regulation"},
+  {id:"corptax", label:"Corporate tax"},
+  {id:"edusci",  label:"Education & science"}
+];
+
+/* Evidence types: "2026" = 2026 proposal, "record" = in office, "past" = past campaign, "none" = no clear position */
+const EVID = {"2026":"2026 proposal", record:"Record", past:"Past campaign", none:"No clear position"};
+
+const S = { // shared source links
+  pmc:"https://predictmarketcap.com/elections/2028",
+  nw:"https://www.newsweek.com/jon-ossoffs-2028-chances-get-boost-as-harris-and-newsom-dip-new-poll-12389066",
+  wsun:"https://www.washingtonsun.com/2028-election/ai-democrats-presidential-campaign-scramble"
+};
+
+const CANDIDATES = [
+{
+  id:"vance", name:"JD Vance", party:"R", role:"Vice President",
+  nom:48, win:21, poll:{v:36, src:"Morning Consult, Aug"},
+  run:5, runNote:"Plans to decide with Trump after the midterms; has a political team in place",
+  stances:{
+    wealth:[{e:"record",t:"Cast the Senate tie-breaking vote on the 2025 tax law that extended the 2017 cuts. Has argued for pro-family measures such as a larger child tax credit, framing his economics around manufacturing workers rather than redistribution."}],
+    campaign:[{e:"none",t:"No reform agenda. Serves as the Republican National Committee's finance chair, raising money for the 2026 midterms.",s:["https://www.nbcnews.com/politics/2028-election/vance-2028-support-gop-rivals-rcna253621"]}],
+    ai:[{e:"record",t:"The administration's leading voice for light-touch AI rules: argued in Paris that over-regulation would kill a transformative industry. The White House is pushing Congress to preempt state AI laws. In Sept 2026 said AI companies should send power back to the grid to ease electric-bill worries.",s:["https://techcrunch.com/2025/02/11/in-paris-jd-vance-skewers-eu-ai-rules-lauds-us-tech-supremacy","https://www.ropesgray.com/en/insights/alerts/2026/03/the-white-house-legislative-recommendations-national-policy-framework-for-artificial-intelligence-an","https://www.washingtontimes.com/news/2026/sep/3/jd-vance-says-ai-companies-must-send-power-back-grid-address/"]}],
+    climate:[{e:"record",t:"Part of an administration that has rolled back Biden-era climate rules, including vehicle fuel-efficiency standards, and favors expanding fossil-fuel production. Has questioned the cost of emissions policies rather than proposing alternatives."}],
+    finreg:[{e:"record",t:"Has praised aggressive antitrust enforcement against Big Tech. The administration has favored lighter bank oversight and a crypto-friendly approach."}],
+    corptax:[{e:"record",t:"Supports keeping the 21% corporate rate; the 2025 law made several business tax breaks permanent. Favors tariffs as a tool to reshore manufacturing."}],
+    edusci:[{e:"record",t:"As a senator, proposed sharply raising the tax on large university endowments and has been a prominent critic of elite universities. The administration has cut or frozen many federal research grants."}]
+  }
+},
+{
+  id:"rubio", name:"Marco Rubio", party:"R", role:"Secretary of State",
+  nom:18, win:9.5, poll:{v:22, src:"Morning Consult, Aug"},
+  run:2, runNote:"Has said he'd back Vance if Vance runs; donors are quietly promoting him",
+  stances:{
+    wealth:[{e:"record",t:"Led the fight in 2017 to expand the child tax credit, paying for it partly by trimming the corporate rate cut. Has promoted \"common-good capitalism\" focused on workers and families."}],
+    campaign:[{e:"none",t:"No reform proposals found."}],
+    ai:[{e:"none",t:"No distinct AI regulatory platform; his role has been AI in diplomacy and security at the State Department."}],
+    climate:[{e:"record",t:"Has acknowledged sea-level rise threats to Florida but opposed carbon pricing and emissions mandates. Now part of the administration's energy-production agenda."}],
+    finreg:[{e:"record",t:"In 2019 proposed taxing stock buybacks like dividends to discourage short-term corporate behavior."}],
+    corptax:[{e:"record",t:"Voted for the 2017 cut to 21% but later argued much of the savings went to buybacks rather than wages."}],
+    edusci:[{e:"record",t:"Has backed vocational and apprenticeship pathways and more transparency on college outcomes; authored reports urging U.S. industrial and tech investment to compete with China."}]
+  }
+},
+{
+  id:"desantis", name:"Ron DeSantis", party:"R", role:"Governor of Florida (term ends Jan 2027)",
+  nom:3.5, win:null, poll:{v:8, src:"Morning Consult, Aug"},
+  run:3, runNote:"Term-limited; ran in 2024 and is widely seen as eyeing another try",
+  stances:{
+    wealth:[{e:"record",t:"Governs a state with no income tax and has pushed to cut or eliminate homestead property taxes. No federal inequality agenda."}],
+    campaign:[{e:"record",t:"His 2024 campaign leaned heavily on an allied super PAC. No reform proposals."}],
+    ai:[{e:"2026",t:"The leading Republican AI skeptic. Opposes the White House's push to preempt state AI laws, proposed a Florida \"AI Bill of Rights\" (blocked by the state House), and signed a 2026 law so utility customers don't pay for new hyperscale data centers.",s:["https://www.wusf.org/politics-issues/2026-05-07/desantis-signs-bill-adding-regulations-for-hyper-scale-ai-data-centers","https://www.mintz.com/insights-center/viewpoints/54731/2026-01-13-nist-expands-federal-ai-capacity-florida-proposes-ai"]}],
+    climate:[{e:"record",t:"Signed a 2024 law removing most references to climate change from state law and banning offshore wind; has funded flood and sea-level resilience projects."}],
+    finreg:[{e:"record",t:"Signed laws barring ESG criteria in state investments and banning a central bank digital currency in Florida."}],
+    corptax:[{e:"none",t:"No federal corporate tax proposal found."}],
+    edusci:[{e:"record",t:"Signed universal school-choice vouchers, overhauled New College of Florida, and restricted DEI programs at public universities."}]
+  }
+},
+{
+  id:"aoc", name:"Alexandria Ocasio-Cortez", party:"D", role:"U.S. Representative, New York",
+  nom:17.5, win:11, poll:{v:13, src:"Emerson, July"},
+  run:3, runNote:"Undeclared; also mentioned for a 2028 Senate run",
+  stances:{
+    wealth:[{e:"record",t:"Backs taxing billionaires and once floated a 70% top rate on income above $10 million. Toured with Bernie Sanders in 2025 on an anti-oligarchy message.",s:["https://www.washingtontimes.com/news/2026/jun/26/left-pressured-california-gov-gavin-newsom-calls-national/"]}],
+    campaign:[{e:"record",t:"Refuses corporate PAC money; supports overturning Citizens United and banning stock trading by members of Congress."}],
+    ai:[{e:"2026",t:"Co-authored the AI Data Center Moratorium Act with Sanders (March 2026), pausing new AI data centers until federal law protects workers, consumers, civil rights and the environment. Most Democrats have not endorsed a moratorium.",s:["https://www.sanders.senate.gov/press-releases/news-sanders-ocasio-cortez-announce-ai-data-center-moratorium-act/","https://www.pbs.org/newshour/politics/ocasio-cortez-and-sanders-push-bill-to-impose-ai-data-center-moratorium"]}],
+    climate:[{e:"record",t:"Lead author of the 2019 Green New Deal resolution calling for a rapid shift to clean energy paired with job guarantees."}],
+    finreg:[{e:"record",t:"Supports a strong Consumer Financial Protection Bureau and tighter oversight of large banks."}],
+    corptax:[{e:"record",t:"Supports raising corporate rates; voted for the 2022 15% corporate minimum tax."}],
+    edusci:[{e:"record",t:"Supports tuition-free public college and broad student-debt cancellation."}]
+  }
+},
+{
+  id:"ossoff", name:"Jon Ossoff", party:"D", role:"U.S. Senator, Georgia (on the Nov 2026 ballot)",
+  nom:15.5, win:11.5, poll:{v:7, src:"Morning Consult, Aug"},
+  run:2, runNote:"Says he has \"zero interest\" in 2028, but is the fastest riser in polls and markets",
+  stances:{
+    wealth:[{e:"record",t:"Supports raising revenue from the wealthiest Americans and large corporations to fund infrastructure and clean energy, while opposing tax increases on working- and middle-class families.",s:["https://www.cityandstatepa.com/prediction-markets/candidates/jon-ossoff"]}],
+    campaign:[{e:"record",t:"His signature issue. Introduced a bill to ban corporate PACs, refuses their money, and leads the push to ban stock trading by members of Congress (he put his own portfolio in a blind trust).",s:["https://www.ossoff.senate.gov/press-releases/sen-ossoff-introduces-major-legislation-to-get-corporate-money-out-of-politics/","https://electjon.com/bio/"]}],
+    ai:[{e:"none",t:"No detailed AI platform found."}],
+    climate:[{e:"record",t:"Voted for the 2022 Inflation Reduction Act's clean-energy incentives, which drew major solar and battery manufacturing to Georgia."}],
+    finreg:[{e:"record",t:"Beyond the congressional stock-trading ban, no broad financial-regulation agenda found.",s:["https://www.ajc.com/politics/ossoff-bill-seeks-to-ban-stock-trading-for-members-of-congress/VWZEMYZRMBDF3G4CWPB54JY3GA/"]}],
+    corptax:[{e:"record",t:"Favors higher taxes on large corporations as part of the revenue mix; no specific rate proposal found.",s:["https://www.cityandstatepa.com/prediction-markets/candidates/jon-ossoff"]}],
+    edusci:[{e:"none",t:"No distinctive national proposal found."}]
+  }
+},
+{
+  id:"newsom", name:"Gavin Newsom", party:"D", role:"Governor of California (term ends Jan 2027)",
+  nom:14.5, win:8, poll:{v:12, src:"Morning Consult, Aug"},
+  run:5, runNote:"Widely expected to run after leaving office; says he'll leave it to \"fate\"",
+  stances:{
+    wealth:[{e:"2026",t:"Proposed a national minimum tax on people worth $100M+, higher estate taxes, and a national public equity fund giving Americans a stake in AI. Opposes California's one-time 5% billionaire tax on the November ballot, arguing it would drive wealth out of the state.",s:["https://www.nbcnews.com/politics/2026-election/losing-one-billionaire-tax-battle-gavin-newsom-prepares-wage-another-rcna351867","https://calmatters.org/politics/2026/07/newsom-balancing-act-wealth-tax-billionaires/"]}],
+    campaign:[{e:"none",t:"No signature campaign-finance plan found."}],
+    ai:[{e:"record",t:"Middle path: vetoed the strict SB 1047 in 2024, then signed SB 53 (2025) requiring frontier labs to disclose safety practices, and signed AI child-safety bills in Sept 2026.",s:[S.wsun]}],
+    climate:[{e:"record",t:"Set a 2035 phase-out of new gas-only car sales and extended California's cap-and-trade (now cap-and-invest) program through 2045."}],
+    finreg:[{e:"record",t:"Created a state-level consumer financial watchdog and signed California's crypto licensing law."}],
+    corptax:[{e:"2026",t:"Calls for higher corporate taxes as part of a \"new social contract\"; no specific rate yet.",s:["https://www.washingtontimes.com/news/2026/jun/26/left-pressured-california-gov-gavin-newsom-calls-national/"]}],
+    edusci:[{e:"record",t:"Signed universal transitional kindergarten for all 4-year-olds."}]
+  }
+},
+{
+  id:"harris", name:"Kamala Harris", party:"D", role:"Former Vice President; 2024 nominee",
+  nom:6.5, win:4, poll:{v:24, src:"Morning Consult, Aug"},
+  run:3, runNote:"Says she is \"thinking\" about it; leads several primary polls on name recognition",
+  stances:{
+    wealth:[{e:"past",t:"In 2024 proposed a $6,000 newborn tax credit and a 28% capital-gains rate for those earning $1M+. Earlier endorsed a 25% minimum tax on households worth over $100M, but said little about it during the campaign.",s:["https://www.washingtontimes.com/news/2026/jun/26/left-pressured-california-gov-gavin-newsom-calls-national/"]}],
+    campaign:[{e:"past",t:"Supported overturning Citizens United in her 2020 campaign."}],
+    ai:[{e:"2026",t:"In Sept 2026 called for government action on AI safety and jobs, and praised an industry-Democrat outreach effort to regulate AI \"without sacrificing the technology's benefits\", drawing criticism from the party's left.",s:["https://www.cnn.com/2026/09/14/politics/kamala-harris-artificial-intelligence-slowdown",S.wsun]}],
+    climate:[{e:"record",t:"Cast the tie-breaking Senate vote for the 2022 Inflation Reduction Act, the largest U.S. climate investment to date."}],
+    finreg:[{e:"past",t:"As California attorney general won a major mortgage settlement from big banks; 2024 platform targeted price gouging and junk fees."}],
+    corptax:[{e:"past",t:"2024 platform: raise the corporate rate from 21% to 28%."}],
+    edusci:[{e:"past",t:"Supported student-debt relief and dropping degree requirements for many federal jobs."}]
+  }
+},
+{
+  id:"shapiro", name:"Josh Shapiro", party:"D", role:"Governor of Pennsylvania (on the Nov 2026 ballot)",
+  nom:5.5, win:null, poll:{v:5, src:"Emerson, July"},
+  run:4, runNote:"Running for re-election first; ambitions widely reported",
+  stances:{
+    wealth:[{e:"record",t:"Created a state earned-income credit for working families in 2025. No national wealth-tax proposal found."}],
+    campaign:[{e:"none",t:"No reform proposals found."}],
+    ai:[{e:"2026",t:"Shifted from courting data centers to regulating them: an Aug 2026 executive order imposes what he calls the nation's strictest data-center rules (pay own energy costs, local hiring, water limits). Also proposed age verification and limits on AI chatbots for kids.",s:["https://www.nbcphiladelphia.com/news/local/pennsylvania-governor-josh-shapiro-data-centers-executive-order/4449803/","https://axios.com/local/philadelphia/2026/02/03/josh-shapiro-budget-election-pennsylvania"]}],
+    climate:[{e:"record",t:"Agreed to exit the Regional Greenhouse Gas Initiative to end a 2025 budget standoff; now pushing his \"Lightning Plan\" with a state cap-and-invest program and clean-energy standard.",s:["https://theenergy.coop/blog/pa-lightning-plan/","https://www.eenews.net/articles/ai-champion-josh-shapiro-leans-on-tech-industry-to-bear-energy-costs/"]}],
+    finreg:[{e:"none",t:"No federal financial-regulation agenda found."}],
+    corptax:[{e:"record",t:"Pushed to speed up Pennsylvania's scheduled corporate tax rate cuts to attract business."}],
+    edusci:[{e:"record",t:"Signed large increases in public school funding and removed degree requirements for most state jobs."}]
+  }
+},
+{
+  id:"buttigieg", name:"Pete Buttigieg", party:"D", role:"Former Transportation Secretary",
+  nom:null, win:null, poll:{v:9, src:"Morning Consult, Aug"},
+  run:4, runNote:"Actively building a national profile; led one July poll",
+  stances:{
+    wealth:[{e:"past",t:"In 2020 favored higher taxes on top earners and capital gains, but was more cautious than rivals on a wealth tax."}],
+    campaign:[{e:"past",t:"In 2020 backed overturning Citizens United and expanding public campaign financing."}],
+    ai:[{e:"2026",t:"Has warned since 2025 that the country is \"underreacting\" to AI; in Sept 2026 called it deeply dangerous for Congress to do nothing. No detailed plan yet.",s:[S.wsun]}],
+    climate:[{e:"past",t:"2020 plan included a carbon tax with rebates to households; as Transportation Secretary administered EV-charging and infrastructure funds."}],
+    finreg:[{e:"none",t:"No distinctive proposals found."}],
+    corptax:[{e:"past",t:"In 2020 favored partially reversing the 2017 corporate tax cut."}],
+    edusci:[{e:"past",t:"In 2020 proposed free public college for families earning under $100,000."}]
+  }
+}
+];
+
+/* ============ RENDER ============ */
+let party = "all";
+let issue = CRITERIA[0].id;
+const byNom = [...CANDIDATES].sort((a,b)=>(b.nom??0)-(a.nom??0));
+
+function ovals(n){return `<div class="ovals" role="img" aria-label="${n} of 5">`+[1,2,3,4,5].map(i=>`<span class="oval${i<=n?' f':''}"></span>`).join("")+`</div>`;}
+function pct(v){return v==null?`<span class="na">Under 5%</span>`:`<span class="num">${v}%</span>`;}
+function visible(c){return party==="all"||c.party===party;}
+
+function renderField(){
+  document.getElementById("fieldRows").innerHTML = byNom.filter(visible).map(c=>`
+  <tr>
+    <td><div class="who"><span class="party ${c.party}" aria-hidden="true"></span><div><div class="name">${c.name}</div><div class="role">${c.party==="D"?"Democrat":"Republican"}, ${c.role}</div></div></div></td>
+    <td>${pct(c.nom)}${c.nom!=null?`<div class="bar"><span style="width:${Math.min(100,c.nom*2)}%"></span></div>`:""}</td>
+    <td>${pct(c.win)}</td>
+    <td><span class="num">${c.poll.v}%</span><div class="small">${c.poll.src}</div></td>
+    <td>${ovals(c.run)}<div class="runlabel">${c.runNote}</div></td>
+  </tr>`).join("");
+}
+
+function renderChips(){
+  document.getElementById("chips").innerHTML = CRITERIA.map(k=>`<button class="pill" data-issue="${k.id}" aria-pressed="${k.id===issue}">${k.label}</button>`).join("");
+}
+
+function host(u){try{return new URL(u).hostname.replace(/^www\./,"")}catch(e){return "source"}}
+
+function renderStances(){
+  const crit = CRITERIA.find(k=>k.id===issue);
+  document.getElementById("issueTitle").textContent = crit.label;
+  const list = byNom.filter(visible);
+  const gaps = list.filter(c=>!(c.stances[issue]||[]).length || c.stances[issue][0].e==="none").length;
+  document.getElementById("issueNote").textContent = gaps ? `${gaps} of ${list.length} have no clear position` : "";
+  document.getElementById("stances").innerHTML = list.map(c=>{
+    const items = c.stances[issue] && c.stances[issue].length ? c.stances[issue] : [{e:"none",t:"No clear position found yet."}];
+    return `<article class="stance ${c.party}">
+      <div><div class="name">${c.name}</div><div class="role">${c.party==="D"?"Democrat":"Republican"}</div></div>
+      <div>${items.map(it=>`
+        <span class="tag${it.e==="none"?" gap":""}">${EVID[it.e]}</span>
+        <p>${it.t}</p>
+        ${it.s?`<div class="srcs">${it.s.map(u=>`<a href="${u}" target="_blank" rel="noopener">${host(u)}</a>`).join("")}</div>`:""}
+      `).join("")}</div>
+    </article>`;
+  }).join("");
+}
+
+document.querySelector(".filters").addEventListener("click",e=>{
+  const b=e.target.closest("[data-party]"); if(!b) return;
+  party=b.dataset.party;
+  document.querySelectorAll("[data-party]").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  renderField(); renderStances();
+});
+document.getElementById("chips").addEventListener("click",e=>{
+  const b=e.target.closest("[data-issue]"); if(!b) return;
+  issue=b.dataset.issue; renderChips(); renderStances();
+});
+
+renderField(); renderChips(); renderStances();
+</script>
+</body>
+</html>
