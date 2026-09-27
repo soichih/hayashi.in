@@ -1,7 +1,7 @@
 // Quant Fluency: language-app-style drills for quant asset management.
 //
 // Content: concepts.yml (the concept map) and questions.yml (lessons and
-// questions). Written answers are graded by the scoring API on server1
+// questions). Written answers are graded by the scoring API
 // (soichi.us/quant-api), which looks up the reference answer itself.
 // Progress lives in localStorage only.
 //
