@@ -2,6 +2,7 @@
 
 One dated line per edit the agent makes to this skill: what changed and why.
 
+- 2026-09-27: Added "Using recent history" (by the site owner's session, not the agent): runs now get recent.yml with the last 7 days of published stories.
 - 2026-09-22: Initial version, seeded from the old Ollama roll-up sources.
 - 2026-09-22: Recorded first-run source results in sources.md (AP, BBC, The
   Verge, Ars unreachable via WebFetch; WFHB 403; NPR article pages time out;
