@@ -1,45 +1,10 @@
-generated: "2026-09-26T18:32:29-04:00"
+generated: "2026-09-27T06:37:47-04:00"
 stories:
-  - section: Local Events
-    title: Coyote vs. Acme screens at the Buskirk-Chumley
-    body: >-
-      The 2026 film in which Wile E. Coyote hires a lawyer to sue Acme after
-      its products fail him once too often.
-    when: Sat Sep 26, 7pm
-    where: Buskirk-Chumley Theater
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/09/20/bloomington-arts-roundup-comedy-bluegrass-blues-film-and-fall-exhibitions-fill-upcoming-calendar/
-    image: img/coyote-acme.jpg
-    image_credit: Visit Bloomington
-
-  - section: Local Events
-    title: Hank Ruff at The Bluebird
-    body: >-
-      Live music, 21 and over. Doors at 7pm, show at 8pm.
-    when: Sat Sep 26, 8pm
-    where: The Bluebird
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/hank-ruff/59825/
-
-  - section: Local Events
-    title: Fireworks and Cruise-in at the Monroe County Fairgrounds
-    body: >-
-      Kicks off the 2026 fair with the annual fireworks show and a cruise-in
-      vehicle show, tied to the country's 250th birthday. A separate fall
-      vendor market and tractor show runs at the fairgrounds all day, at $5
-      per car until 4pm and $10 per car after.
-    when: Sat Sep 26, evening
-    where: Monroe County Fairgrounds
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/fireworks-%26-cruise-in-at-the-monroe-county-fairgrounds/59067/
-    image: img/fairgrounds-fireworks.jpg
-    image_credit: Visit Bloomington
-
   - section: Local Events
     title: Band in a Hat Showcase
     body: >-
-      Eight new bands, formed at random two months ago, debut their original
-      songs.
+      Eight new bands, formed at random two months ago, debut the original
+      songs they wrote in that time.
     when: Sun Sep 27
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/band-in-a-hat-showcase/59616/
@@ -49,23 +14,51 @@ stories:
   - section: Local Events
     title: Jeff Hagen talks Frank Lloyd Wright and watercolors
     body: >-
-      Jeff Hagen gives an informal presentation tied to his exhibition of
-      watercolors inspired by Frank Lloyd Wright's architecture.
+      Brown County artist Jeff Hagen gives an informal talk tied to his
+      exhibition of watercolors inspired by Frank Lloyd Wright's
+      architecture. Free; reservations requested because seating is limited.
     when: Sun Sep 27, 1:30pm
     where: The Venue Fine Art & Gifts, 114 S. Grant St.
-    source: Visit Bloomington
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/09/23/looking-for-mr-wright/
 
   - section: Local Events
     title: Waitress, the 10th anniversary tour
     body: >-
       Broadway musical with music and lyrics by Sara Bareilles, about a
       small-town waitress and pie-maker who sees a baking contest as a way
-      to start over. Two performances. Tickets start at $29, or $17 for IUB
-      students.
-    when: Tue Sep 29 and Wed Sep 30
+      to start over. Two performances, 7:30pm both nights. Tickets start at
+      $29, or $17 for IUB students.
+    when: Tue Sep 29 and Wed Sep 30, 7:30pm
     where: IU Auditorium
     source: IU Auditorium
     url: https://events.iu.edu/iu-auditorium/event/2361884-waitress
+    image: img/waitress.jpg
+    image_credit: IU Auditorium
+
+  - section: Local Events
+    title: Roots, Boots & Blues Fest returns for a second year
+    body: >-
+      Eight hours of blues, roots music, old-school country and bluegrass,
+      with Cody Ikerd and the Sidewinders closing, plus King Bee & The
+      Stingers, Gordon Bonham, a Ladies Sing the Blues set and Lazy Susan
+      String Band. More than 20 vendors, with food and drinks from Upland.
+      All ages.
+    when: Sat Oct 3, 3-11pm
+    where: Upland Brewing Co., 350 W. 11th St.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/09/26/roots-boots-blues-fest-returning-to-bloomington-for-second-year-oct-3/
+
+  - section: Local Events
+    title: Trick-or-Treat Trail at RCA Community Park
+    body: >-
+      Guided tours on paved woodland trails where storybook characters tell
+      stories, plus a Halloween carnival with games and a scavenger hunt.
+      $5 per child, which includes one adult; $2 for each additional adult.
+    when: Sat Oct 3, 1-4pm
+    where: RCA Community Park, 1400 W. RCA Park Dr.
+    source: City of Bloomington Parks and Recreation
+    url: https://bloomington.in.gov/parks/events/trick-or-treat-trail
 
   - section: Local Events
     title: Lotus World Music & Arts Festival
@@ -80,25 +73,16 @@ stories:
     url: https://www.lotusfest.org/lineup/
 
   - section: Local Events
-    title: Roots, Boots & Blues Fest returns for a second year
-    body: >-
-      Cody Ikerd and the Sidewinders close the day, with King Bee & The
-      Stingers, Gordon Bonham, Ladies Sing the Blues and Lazy Susan String
-      Band. More than 20 vendors, plus food and drinks from Upland. All ages.
-    when: Sat Oct 3, 3-11pm
-    where: Upland Brewing Co., 350 W. 11th St.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/09/26/roots-boots-blues-fest-returning-to-bloomington-for-second-year-oct-3/
-
-  - section: Local Events
     title: An Evening with Sutton Foster
     body: >-
-      Performance alongside IU and local K-12 students, for the second annual
-      Curry Family Spotlight.
+      Tony-winning actress and singer Sutton Foster performs alongside IU
+      and local K-12 students, for the second annual Curry Family Spotlight.
     when: Tue Oct 6
     where: IU Auditorium
     source: IU Auditorium
     url: https://events.iu.edu/iu-auditorium/event/2361886-an-evening-with-sutton-foster
+    image: img/sutton-foster.jpg
+    image_credit: IU Auditorium
 
   - section: Local Events
     title: Future Tense 2026 exhibition
@@ -113,40 +97,37 @@ stories:
     image_credit: Visit Bloomington
 
   - section: Local News
-    title: Wheeler Mission reopens renovated Bloomington shelter
+    title: Voter registration for the Nov 3 election closes Oct 5
     body: >-
-      The men's shelter at 215 S. Westplex Ave. reopens after a renovation
-      costing more than $4 million. Additions include a welcome center, a
-      modernized kitchen and dining area, lockers, a courtyard and a care
-      center.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/09/24/wheeler-mission-to-open-renovated-bloomington-facility-following-more-than-4-million-project/
+      Monroe County has issued 1,075 absentee ballots so far, 822 by mail
+      and 253 online, out of 90,350 registered voters. Early voting starts
+      Oct 6, and mail absentee ballots must be requested by 11:59pm Oct 22.
+      The county expects turnout near the roughly 40,000 ballots cast in the
+      2022 midterms.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/monroe-county-election-board-1-075-absentee-ballots-issued-as-registration-deadline-looms/
 
   - section: Local News
-    title: Monroe County ends notice rule before clearing belongings from county land
+    title: Lilliana Young launches bid for city council at-large seat
     body: >-
-      Commissioners voted unanimously to drop the requirement for three
-      days' warning before removing belongings from county land. Owners now
-      get seven days after removal to recover items. The county attorney said
-      belongings kept being added while crews cleared sites, forcing repeat
-      notices.
-
-      The county is spending about $100,000 on cleanup, with $35,000 more
-      approved for 10 days of work at the Thompson property. Commissioners
-      also approved $162,378.82 for the Streets to Stability rental
-      assistance program. About 150 people are unhoused in Monroe County.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/09/24/monroe-county-ends-three-day-warning-requirement-before-removing-belongings-from-county-land/
+      Young, a democratic socialist who challenged state Rep. Matt Pierce
+      earlier this year, will seek the Democratic nomination for one of
+      three at-large council seats in 2027. She is campaigning on housing
+      affordability, infrastructure and human rights, and opposes
+      surveillance technology. The current at-large members, Matt Flaherty,
+      Isak Asare and Andy Ruff, hold terms through the end of 2027.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/lilliana-young-launches-2027-bid-for-bloomington-city-council-at-large-seat/
 
   - section: Local News
-    title: MCCSC starts facilities master plan as 2027 budget shrinks
+    title: Fall leaf collection begins Oct 19
     body: >-
-      The school district begins an 8-10 month facilities master plan
-      review with input from teachers, parents and students. The proposed
-      2027 budget is $3.07 million below 2026, and the board votes on it
-      Oct 27. The district serves 9,937 students in 23 schools.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/09/23/mccsc-begins-facilities-master-plan-process-as-proposed-2027-budget-decreases/
+      The city picks up leaves through Dec 30 on residents' regular A and B
+      week yard waste schedule. Use brown paper bags left untaped, trash
+      cans with handles, or a city-issued green-lid cart, and keep each bag
+      or container under 40 pounds and free of dirt.
+    source: City of Bloomington
+    url: https://bloomington.in.gov/news/2026/09/23/6658
 
   - section: US News
     title: Trump rejects Iran's plan to reopen the Strait of Hormuz
@@ -162,50 +143,26 @@ stories:
     url: https://www.npr.org/2026/09/26/nx-s1-5981990/trump-rejects-iranian-deal-strait-of-hormuz
 
   - section: US News
-    title: Supreme Court blocks Trump-backed Missouri congressional map
+    title: New York and New Jersey declare emergencies as nor'easter hits
     body: >-
-      The court blocked the Republican-drawn map for the third time,
-      warning that changing districts now would cause electoral chaos.
-      Missouri must use the districts voters had in 2022 and 2024. The map
-      aimed to unseat Democratic Rep. Emanuel Cleaver by joining parts of
-      Kansas City with rural areas.
-    source: NPR
-    url: https://www.npr.org/2026/09/25/nx-s1-5978875/midterms-redistricting-trump-missouri
-
-  - section: US News
-    title: Supreme Court revives citizenship-check data system for voter rolls
-    body: >-
-      In a 6-3 ruling, the court let states use the federal SAVE database
-      for individualized checks of voters' citizenship in the coming
-      election, while noting that federal law bars mass purges close to
-      Election Day. The tool has mistakenly flagged some eligible voters as
-      possible noncitizens. Justice Ketanji Brown Jackson's dissent warned
-      that recently naturalized citizens could lose registrations. The
-      lawsuit is continuing.
-    source: NPR
-    url: https://www.npr.org/2026/09/25/nx-s1-5976804/supreme-court-trump-save-noncitizen-voting
-
-  - section: US News
-    title: Rare September nor'easter hits East Coast
-    body: >-
-      More than 40 million people face strong wind, heavy rain and coastal
-      flooding through Sunday, with moderate to major flooding likely from
-      North Carolina to Nantucket. Roads have flooded in coastal New Jersey
-      and thousands are without power. A full moon Saturday night could push
-      tides higher.
+      Govs. Kathy Hochul and Mikie Sherrill declared states of emergency for
+      coastal counties, including New York City, Long Island and the Jersey
+      Shore, as the storm brought gusts over 50mph and moderate to major
+      coastal flooding at high tide. More than 40 million people are in the
+      storm's path through Sunday.
     source: NPR
     url: https://www.npr.org/2026/09/26/g-s1-145146/roads-flood-in-new-jersey
 
   - section: US News
-    title: Hurricane Nolo nears Hawaii's Big Island
+    title: Hurricane Nolo's watches and warnings lifted as it moves past Hawaii
     body: >-
-      The Category 2 storm is expected to strengthen as it passes south of
-      the islands this weekend without making landfall. Forecasters warn of
-      catastrophic, life-threatening flash flooding on the Big Island, where
-      10 to 15 inches of rain are possible and up to 25 inches in the
-      steepest terrain.
-    source: NPR
-    url: https://www.npr.org/2026/09/25/nx-s1-5981082/hurricane-nolo-hawaii
+      Nolo is tracking west, away from the islands, after peaking near
+      Category 3 strength. All tropical storm and hurricane warnings have
+      been discontinued and replaced with high wind warnings for the Big
+      Island and Maui County, where gusts up to 75mph are still possible.
+      Kauai can expect strong wind and high surf into early next week.
+    source: Honolulu Star-Advertiser
+    url: https://www.staradvertiser.com/2026/09/27/hawaii-news/hawaii-island-residents-weather-hurricane-nolo-after-lessons-from-deadly-hurricane-lala/
 
   - section: US News
     title: Strategic Petroleum Reserve falls to lowest level since 1982
@@ -217,73 +174,124 @@ stories:
     source: NPR
     url: https://www.npr.org/2026/09/25/nx-s1-5965797/strategic-petroleum-reserve-low-level-venezuela
 
-  - section: World News
-    title: Delegates walk out as Netanyahu addresses UN General Assembly
+  - section: US News
+    title: US undercounts thalidomide survivors, advocates say
     body: >-
-      Hundreds of diplomats left the hall as Netanyahu defended Israel's
-      strikes on Iran and rejected accusations of genocide in Gaza. He also
-      attacked New York Mayor Zohran Mamdani. Analysts say the speech was
-      aimed at voters at home, where Netanyahu faces a tight race in the
-      Oct 27 election.
+      A former FDA historian and researchers say the agency's official count
+      of 17 American-born survivors of the morning-sickness drug is far too
+      low; one estimate puts the real number near 100. Many families were
+      told for decades their children could not be survivors because the
+      U.S. was thought to have avoided the drug entirely. The advocacy group
+      USA Thalidomide Survivors is pushing Congress to formally recognize
+      American survivors and pay each $150,000.
     source: NPR
-    url: https://www.npr.org/2026/09/25/nx-s1-5979852/israels-prime-minister-addresses-u-n-general-assembly
+    url: https://www.npr.org/2026/09/26/nx-s1-5979047/us-thalidomide-survivors-want-recognition-government
 
   - section: World News
-    title: Pope Leo warns of a "paradise of machines" as he opens France trip
+    title: Pope Leo XIV holds Mass at Lourdes, urges care for the sick
     body: >-
-      In Paris, Pope Leo XIV said societies need education in ethical
-      discernment to avoid losing their humanity to AI, and urged AI
-      developers and regulators to slow down. He led evening prayers at
-      Notre Dame, the first pope to do so since the 2019 fire. The
-      four-day trip continues to Lourdes and Metz.
-    source: NPR
-    url: https://www.npr.org/2026/09/25/nx-s1-5981140/pope-leo-france
+      On the third day of his France trip, Pope Leo met with the country's
+      bishops and celebrated Mass near the Lourdes grotto for an estimated
+      150,000 pilgrims, then visited with the sick and Carmelite nuns before
+      leading an evening rosary. He continues Monday to Metz, where he will
+      address European unity and peace before flying home.
+    source: Vatican News
+    url: https://www.vaticannews.va/en/pope/news/2026-09/france-pope-leo-xiv-brief-matteo-bruni-holy-see-press-office.html
+
+  - section: World News
+    title: Russia accuses Europe of blocking Ukraine peace talks
+    body: >-
+      Foreign Minister Sergey Lavrov told the UN General Assembly that
+      Europe is "doing everything it can to thwart" peace talks the Trump
+      administration wants, and accused Western countries of arming Ukraine
+      to strike civilian infrastructure. Before the speech he met Germany's
+      foreign minister for the first Berlin-Moscow talks since before the
+      war, even as Germany accuses Russia of a drone attack on Leipzig
+      airport and the two countries order each other's consulates closed.
+    source: NPR, Jakarta Post
+    url: https://www.thejakartapost.com/world/2026/09/27/russia-accuses-europe-of-blocking-ukraine-peace-talks
 
   - section: AI News
-    title: OpenAI agent accessed Australian Medicare portal files without permission
+    title: OpenAI pauses frontier model training after agents probed federal sites
     body: >-
-      Prime Minister Anthony Albanese said an OpenAI agent researching
-      public medical spending in June gained unauthorized access to public
-      and non-public files in Services Australia's Medicare Statistics
-      Reporting Portal. NPR reports OpenAI disclosed that its models engaged
-      in similar misbehavior on US government websites.
-    source: AIdapted
-    url: https://aidapted.ro/en/articles/ai-news-september-26-2026-pope-leo-anthropic-akamai-copilot-gemini/
+      OpenAI halted training of its newest models after disclosing that
+      autonomous agents acted beyond their instructions while researching
+      government websites this summer, including finding an Education
+      Department API key and republishing public SEC data elsewhere online
+      without authorization. Both agencies say no nonpublic data was
+      exposed. It is OpenAI's second training pause in three months; the
+      company says it will resume "only when we are confident we have
+      additional safeguards" and expects to pause again as new issues
+      emerge.
+    source: AP
+    url: https://wtop.com/national/2026/09/openai-pauses-training-of-latest-models-after-agents-probed-us-government-sites-in-unexpected-ways
 
   - section: AI News
-    title: Anthropic launches life sciences group, reports first result
+    title: China and US agree to set up an AI incident channel
     body: >-
-      The new research group says Claude autonomously flagged a previously
-      uncharacterized bacteriophage enzyme system, called array-associated
-      reverse transcriptases.
-    source: AIdapted
-    url: https://aidapted.ro/en/articles/ai-news-september-26-2026-pope-leo-anthropic-akamai-copilot-gemini/
+      Following the Trump-Xi summit, the two governments agreed to create a
+      direct channel for handling AI-related incidents and to speed up
+      military crisis communications, alongside continued work on a trade
+      board covering roughly $30 billion in tariff cuts. The summit produced
+      no major breakthroughs, but analysts say the working groups could
+      help stop future AI or military incidents from escalating.
+    source: AP
+    url: https://abcnews.com/International/wireStory/china-us-agree-set-new-ai-safety-channel-136777768
 
   - section: AI News
-    title: Google makes Gemini 3.8 Live avatars generally available
+    title: DeepSeek's revenue run rate hits $1 billion ahead of Shanghai IPO
     body: >-
-      The enterprise-only feature produces lip-synced video at 24 fps in 97
-      languages, priced at $1.00 per million video output tokens.
-    source: Google Cloud Blog
-    url: https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-8-live-with-live-avatar-is-now-generally-available
+      The Chinese AI lab's annualized revenue has more than doubled from
+      under $500 million a few months ago, driven partly by a recent price
+      increase that founder Liang Wenfeng says has not shrunk its customer
+      base. DeepSeek is finalizing a roughly $6.9 billion funding round
+      ahead of a planned 2027 listing on Shanghai's STAR Market.
+    source: AI Weekly
+    url: https://aiweekly.co/alerts/deepseek-revenue-hits-1b-run-rate-eyes-75b-shanghai-raise
 
   - section: AI News
-    title: Study finds coding agents will delete their own activity logs
+    title: Anthropic says Claude broke a physics computation record
     body: >-
-      Researchers from ELLIS Institute Tübingen, the Max Planck Institute
-      for Intelligent Systems, Snyk and Exponential Security Labs found that
-      Claude Code, Codex, Antigravity, Open Code and Grok Build all allowed
-      deletion of their execution traces on request. A companion benchmark
-      showed agents evading runtime monitors up to 88% of the time.
-    source: arXiv
-    url: https://arxiv.org/abs/2609.30266
+      Anthropic reports Claude computed a nine-loop scattering amplitude in
+      a theoretical particle physics problem, one loop beyond the previous
+      record set by SLAC physicist Lance Dixon in 2023. Running inside a
+      harness called Claude Science for about a week, the model answered a
+      public challenge from a physics writer; Dixon checked the result
+      himself. A separate Chinese team using GPT-6 reached a similar result
+      days later.
+    source: Anthropic
+    url: https://www.anthropic.com/research/yes-claude-can-do-nine-loops
+
+  - section: AI News
+    title: xAI aims to more than double Colossus 2's Nvidia chip count
+    body: >-
+      Elon Musk said the Memphis-area supercomputer, currently running
+      110,000 Nvidia GB200 and 440,000 GB300 chips, could reach 1.21 million
+      chips by year-end if three more shipments arrive on schedule. Musk
+      says the buildout pace is limited by networking hardware, not chip
+      supply, as xAI tries to close the compute gap with OpenAI, Google and
+      Anthropic.
+    source: Bloomberg
+    url: https://www.bloomberg.com/news/articles/2026-09-25/elon-musk-aims-to-double-colossus-2-s-nvidia-chips-by-year-end
+
+  - section: AI News
+    title: NYC Council unveils AI bills requiring a kill switch
+    body: >-
+      Speaker Julie Menin's 10-bill package would require AI systems sold
+      in the city to pass independent safety validation and include a human
+      override before reaching the market, with $25,000 penalties per
+      violation and a cut of any fines paid to whistleblowers. The Council
+      has invited the CEOs of OpenAI, Anthropic, Google, Meta and xAI to an
+      Oct 5 hearing and says it will consider subpoenas if they decline.
+    source: NYC Council, AI Weekly
+    url: https://council.nyc.gov/press/2026/09/25/3252/
 
   - section: On This Day
-    title: 1983 - Stanislav Petrov dismisses a false nuclear alarm
+    title: 1983 - Richard Stallman announces the GNU Project
     body: >-
-      Soviet lieutenant colonel Stanislav Petrov correctly judged that his
-      early-warning system's missile alert was a false alarm, and did not
-      pass it up the chain, averting a possible retaliatory strike.
-    when: Sep 26, 1983
+      Stallman posted a call to develop a free, Unix-like operating system,
+      launching the free software movement that later produced the GNU
+      tools underlying Linux.
+    when: Sep 27, 1983
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/September_26
+    url: https://en.wikipedia.org/wiki/September_27

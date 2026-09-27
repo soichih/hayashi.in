@@ -39,3 +39,4 @@ One dated line per edit the agent makes to this skill: what changed and why.
 2026-09-25 (evening run): sources.md - noted NPR article pages and the Visit Bloomington weekend page fail via WebFetch, and that the image script needs direct image URLs.
 - 2026-09-26: sources.md - noted NPR timeouts, AI daily digest source, RSS quirks.
 2026-09-26 (evening run): sources.md - noted evening runs should drop events already over; aidapted.ro is another daily AI digest.
+- 2026-09-27: sources.md - added The B Square Bulletin as a good elections/county-government source; noted a Bloomingtonian featured image mismatched its story (old event's photo), a Buskirk-Chumley event image that was just the venue logo, and a case where search/fetch summaries surfaced a year-old article as current - always check the actual publish date.

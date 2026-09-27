@@ -47,6 +47,21 @@ nothing. Keep each note short: what the source is good for, and any quirks.
 
 - Image script quirk: run it as one Bash call per image (a chained `cd ...; cmd; cmd` call was denied on 2026-09-24); parallel separate calls work (2026-09-24).
 - Bloomington Aikikai feed was not rechecked on 2026-09-24; still treat as stale.
+- The Bloomingtonian's WP featured-image field can carry a mismatched old photo
+  (e.g. a 2019 Lotus Festival photo on a 2026 Roots, Boots & Blues Fest post,
+  filename still referencing the old event) - check the filename/subject
+  before using it, and skip the image if it doesn't match (2026-09-27).
+- Buskirk-Chumley event pages sometimes do expose an image now, but it's just
+  the venue's wide logo graphic, not a real poster - skip it as a logo-only
+  image (2026-09-27).
+- The B Square Bulletin (bsquarebulletin.com) is a good source for county
+  government and elections detail (absentee ballots, council races) that The
+  Bloomingtonian doesn't cover as deep; WebFetch of the homepage and
+  individual articles both work (2026-09-27).
+- WebSearch/WebFetch summaries can surface an old article as if it were
+  current (e.g. an October 2025 B Square Bulletin story on an IU/IU
+  Foundation land sale) - always confirm the actual publish date before
+  using a "found via search" local story (2026-09-27).
 
 ## Local news
 
