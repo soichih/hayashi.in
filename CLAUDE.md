@@ -65,6 +65,20 @@ kiosk-news/            Agent skill that writes the dashboard's news stories
 scripts/               Content scaffolding and dashboard news helpers
 ```
 
+## Sign-in (`public/auth/`, `public/login/`)
+
+Optional accounts shared by every app on the site (Supabase Auth). `auth.js` exposes
+`window.hayashiAuth` (session, token, sign in/out); `/login/` is the shared sign-in page and
+only returns to same-site paths. Load the Supabase library pinned with its integrity hash, as
+the existing pages do.
+
+- Only the project URL and the **publishable** key belong in this repo. Never commit a secret
+  key; APIs verify user tokens against the project's public keys instead.
+- Anything private is fetched at run time from an API that checks the token, never stored in
+  the repo or baked into a page.
+- Whatever an app keeps about signed-in users must be described on `/login/`, in the app, and
+  in its project writeup, and users must be able to download and delete it.
+
 ## Kiosk dashboard (`public/kiosk/`)
 
 Served at https://hayashi.in/kiosk/. It is a fixed, non-scrolling dashboard for a 1080p
@@ -93,6 +107,8 @@ A language-app-style trainer served at https://hayashi.in/quant/ (writeup:
   confirmed to say it; every number in worked examples and charts is computed, not typed.
 - Grading and the tutor are served by an API outside this repo. The page sends only a question
   id and the player's text; reference answers are looked up server-side.
+- Signed-in players sync progress through the same API (`/me/...`, token in
+  `Authorization: Bearer`); the merge in `mergeStates` keeps attempts from both sides.
 - Tutor replies and lesson text are rendered with the app's own safe formatter (DOM nodes
   only, never innerHTML); Mermaid runs with `securityLevel: "strict"`.
 

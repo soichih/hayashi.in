@@ -3,7 +3,9 @@
 // Content: concepts.yml (the concept map) and questions.yml (lessons and
 // questions). Written answers are graded by the scoring API
 // (soichi.us/quant-api), which looks up the reference answer itself.
-// Progress lives in localStorage only.
+// Progress lives in localStorage; players who sign in (shared hayashi.in
+// login) also sync it to the API, which logs their tutor conversations and
+// an access log. Signed-out players are never recorded.
 //
 // Scores shown at the top:
 //   mastered = mastered concepts / concepts presented
@@ -54,7 +56,201 @@ function load() {
 }
 
 function save() {
+	state.updatedAt = Date.now();
 	localStorage.setItem(STORE_KEY, JSON.stringify(state));
+	if (account) scheduleSync();
+}
+
+// ------------------------------------------------------------------ account (optional sign-in)
+
+const auth = window.hayashiAuth || null;
+const SIGNIN_SEEN_KEY = "quant-fluency.last-sign-in";
+let account = null; // Supabase user while signed in
+let syncTimer = null;
+let syncStatus = "";
+
+async function authHeaders() {
+	const token = auth && account ? await auth.token() : null;
+	return token ? { Authorization: `Bearer ${token}` } : {};
+}
+
+// API call that sends the sign-in token when there is one. If the server
+// rejects the token, retry once without it so grading still works.
+async function apiFetch(path, init = {}) {
+	const headers = { "Content-Type": "application/json", ...(init.headers || {}) };
+	const auth1 = await authHeaders();
+	let res = await fetch(`${API}${path}`, { ...init, headers: { ...headers, ...auth1 } });
+	if (res.status === 401 && auth1.Authorization && !path.startsWith("/me")) {
+		res = await fetch(`${API}${path}`, { ...init, headers });
+	}
+	return res;
+}
+
+function lastAttemptTime(p) {
+	return p?.attempts?.length ? p.attempts[p.attempts.length - 1].t : 0;
+}
+
+// Combine this browser's progress with the account's, losing neither.
+function mergeStates(local, remote) {
+	if (!remote || !remote.concepts) return local;
+	const newer = (remote.updatedAt || 0) > (local.updatedAt || 0) ? remote : local;
+	const out = { ...blankState(), ...newer, concepts: {} };
+	const ids = new Set([...Object.keys(local.concepts || {}), ...Object.keys(remote.concepts || {})]);
+	for (const id of ids) {
+		const a = local.concepts?.[id];
+		const b = remote.concepts?.[id];
+		if (!a || !b) { out.concepts[id] = a || b; continue; }
+		const seen = new Set();
+		const attempts = [...a.attempts, ...b.attempts]
+			.filter(x => { const k = `${x.q}|${x.t}`; return !seen.has(k) && seen.add(k); })
+			.sort((x, y) => x.t - y.t)
+			.slice(-30);
+		const base = lastAttemptTime(a) >= lastAttemptTime(b) ? a : b;
+		out.concepts[id] = { ...base, seen: Math.min(a.seen || Infinity, b.seen || Infinity), attempts };
+	}
+	out.answered = Math.max(local.answered || 0, remote.answered || 0);
+	const sa = local.streak || {}, sb = remote.streak || {};
+	const ta = Date.parse(sa.last || 0) || 0, tb = Date.parse(sb.last || 0) || 0;
+	out.streak = ta === tb ? { last: sa.last || sb.last || null, days: Math.max(sa.days || 0, sb.days || 0) } : (ta > tb ? sa : sb);
+	out.onboarded = Boolean(local.onboarded || remote.onboarded);
+	return out;
+}
+
+function scheduleSync() {
+	clearTimeout(syncTimer);
+	syncTimer = setTimeout(pushProgress, 1500);
+}
+
+async function pushProgress() {
+	if (!account) return;
+	try {
+		const res = await apiFetch("/me/progress", { method: "PUT", body: JSON.stringify({ progress: state }) });
+		syncStatus = res.ok ? "Progress saved to your account." : res.status === 401 ? "Sign in again to keep syncing." : "Couldn't save to your account - it's still saved in this browser.";
+	} catch {
+		syncStatus = "Offline - progress is saved in this browser and will sync later.";
+		syncTimer = setTimeout(pushProgress, 60_000);
+	}
+	renderAccount();
+}
+
+function logEvent(event) {
+	apiFetch("/me/event", { method: "POST", body: JSON.stringify({ event, app: "quant" }) }).catch(() => {});
+}
+
+// Load the account's progress, merge it in, and push the result back.
+async function syncDown() {
+	try {
+		const res = await apiFetch("/me/progress");
+		if (res.status === 401) { syncStatus = "Sign in again to sync."; return renderAccount(); }
+		const { progress } = await res.json();
+		state = mergeStates(state, progress);
+		save();
+		const signedInAt = account.last_sign_in_at || "";
+		if (localStorage.getItem(SIGNIN_SEEN_KEY) !== signedInAt) {
+			localStorage.setItem(SIGNIN_SEEN_KEY, signedInAt);
+			logEvent("sign_in");
+		} else {
+			logEvent("open");
+		}
+		syncStatus = "Progress synced with your account.";
+	} catch {
+		syncStatus = "Couldn't reach the server - progress is saved in this browser.";
+	}
+	renderAccount();
+}
+
+async function startAccount() {
+	if (!auth) return renderAccount();
+	account = await auth.user();
+	renderAccount();
+	auth.onChange(user => {
+		const changed = (user?.id || null) !== (account?.id || null);
+		account = user;
+		renderAccount();
+		if (changed && user) syncDown().then(() => { if (!session) homeScreen(); });
+	});
+	if (account) {
+		await syncDown();
+		if (!session) homeScreen(); // show merged progress
+	}
+}
+
+function renderAccount() {
+	const link = document.getElementById("account-link");
+	const note = document.getElementById("storage-note");
+	if (!link || !note) return;
+	link.hidden = !auth;
+	if (account) {
+		link.textContent = auth.label(account);
+		link.title = "Your account";
+		link.onclick = e => { e.preventDefault(); accountScreen(); };
+		note.textContent = `Answers are graded by a language model and can be wrong. Signed in: ${syncStatus || "syncing progress..."}`;
+	} else if (auth) {
+		link.textContent = "Sign in";
+		link.title = "Sign in to keep your progress across devices";
+		link.onclick = null;
+		link.href = auth.loginUrl("/quant/");
+		note.textContent = "Answers are graded by a language model and can be wrong. Progress is saved only in this browser unless you sign in.";
+	}
+}
+
+function accountScreen() {
+	if (session && !confirm("Leave this session to see your account? Answers so far are saved.")) return;
+	session = null;
+	const status = el("p", { class: "muted small", "aria-live": "polite" }, syncStatus);
+	show(el("article", { class: "card account" },
+		el("h2", {}, "Your account"),
+		el("p", {}, `Signed in as ${auth.label(account)}${account.email && auth.label(account) !== account.email ? ` (${account.email})` : ""}.`),
+		status,
+		el("h3", {}, "What's saved"),
+		el("ul", {},
+			el("li", {}, "Your progress and levels, so they follow you to other devices."),
+			el("li", {}, "Your conversations with the tutor."),
+			el("li", {}, "An access log - time, what you did, IP address and browser - kept for 180 days."),
+			el("li", {}, "Not saved: the text of your graded answers.")),
+		el("div", { class: "actions account-actions" },
+			el("button", {
+				class: "ghost", onclick: async () => {
+					status.textContent = "Preparing your download...";
+					try {
+						const res = await apiFetch("/me/export");
+						if (!res.ok) throw new Error();
+						const blob = new Blob([JSON.stringify(await res.json(), null, 1)], { type: "application/json" });
+						const a = el("a", { href: URL.createObjectURL(blob), download: `quant-fluency-my-data-${new Date().toISOString().slice(0, 10)}.json` });
+						a.click();
+						URL.revokeObjectURL(a.href);
+						status.textContent = "Downloaded.";
+					} catch { status.textContent = "Couldn't download your data right now."; }
+				},
+			}, "Download my data"),
+			el("button", {
+				class: "ghost danger", onclick: async () => {
+					if (!confirm("Delete everything saved for your account on the server - progress, tutor conversations and access log? Progress in this browser stays unless you also use Reset.")) return;
+					try {
+						const res = await apiFetch("/me", { method: "DELETE" });
+						if (!res.ok) throw new Error();
+						await auth.signOut();
+						account = null;
+						syncStatus = "";
+						localStorage.removeItem(SIGNIN_SEEN_KEY);
+						renderAccount();
+						show(el("article", { class: "card" }, el("h2", {}, "Your account data is deleted"),
+							el("p", {}, "Everything saved for your account on the server is gone, and you're signed out. Progress in this browser is still here."),
+							el("button", { class: "primary", onclick: homeScreen }, "Back to map")));
+					} catch { status.textContent = "Couldn't delete your data right now - try again later."; }
+				},
+			}, "Delete my data"),
+			el("button", {
+				class: "primary", onclick: async () => {
+					logEvent("sign_out");
+					await auth.signOut();
+					account = null;
+					syncStatus = "";
+					renderAccount();
+					homeScreen();
+				},
+			}, "Sign out")),
+		el("p", {}, el("button", { class: "link", onclick: homeScreen }, "Back to map"))));
 }
 
 function progress(id) {
@@ -540,9 +736,8 @@ function tutorPanel(item, q, answer, result) {
 		update();
 		let full = "";
 		try {
-			const res = await fetch(`${API}/followup`, {
+			const res = await apiFetch("/followup", {
 				method: "POST",
-				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
 					question_id: q.id, answer, score: result.score, feedback: result.feedback,
 					// Older replies are trimmed to keep the request small.
@@ -582,8 +777,27 @@ function tutorPanel(item, q, answer, result) {
 	});
 	log.append(...thread.map(bubble));
 	update();
+	const earlier = el("div", { class: "earlier" });
+	if (account) {
+		apiFetch(`/me/conversations?question_id=${encodeURIComponent(q.id)}`)
+			.then(r => r.ok ? r.json() : { conversations: [] })
+			.then(({ conversations }) => {
+				// Skip what's already on screen from this visit.
+				const shown = new Set(thread.filter(m => m.role === "user").map(m => m.content));
+				const past = conversations.filter(c => !shown.has(c.question));
+				if (!past.length) return;
+				earlier.append(el("details", { class: "review", ontoggle: renderDiagrams },
+					el("summary", {}, `Earlier conversations about this question (${past.length})`),
+					...past.map(c => el("div", { class: "chat-log" },
+						el("p", { class: "muted small" }, new Date(c.t).toLocaleDateString()),
+						el("div", { class: "msg user" }, c.question),
+						el("div", { class: "msg tutor" }, richText(c.reply))))));
+			})
+			.catch(() => {});
+	}
 	return el("section", { class: "tutor" },
 		el("h3", {}, "Ask the tutor"),
+		earlier,
 		el("p", { class: "muted small" }, "Answers come from an AI tutor and can be wrong. It only discusses this course's topics."),
 		log,
 		el("div", { class: "ask-row" }, input, ask),
@@ -776,9 +990,8 @@ async function grade(item, q, answer) {
 
 	let result;
 	try {
-		const res = await fetch(`${API}/score`, {
+		const res = await apiFetch("/score", {
 			method: "POST",
-			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ question_id: q.id, answer }),
 		});
 		const body = await res.json().catch(() => ({}));
@@ -916,4 +1129,5 @@ document.getElementById("reset").addEventListener("click", () => {
 		return;
 	}
 	homeScreen();
+	startAccount();
 })();

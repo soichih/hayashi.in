@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sign in - hayashi.in</title>
+	<meta name="robots" content="noindex">
+	<script>
+		// Note whether we just came back from a sign-in provider, before the
+		// Supabase library consumes and clears the URL.
+		window.__authReturn = /access_token|error_description/.test(location.hash) || /[?&](code|error)=/.test(location.search);
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"
+		integrity="sha384-Rj26LVGvoeRVR6+mwQmFfcR3QOBEwT+ZmuCWpuiqeTzJpCs0ER4ITAWGb4Hiy3Ok"
+		crossorigin="anonymous"></script>
+	<script src="/auth/auth.js"></script>
+	<style>
+		:root { --bg: #f6f7fb; --card: #fff; --ink: #1d2433; --muted: #667085; --line: #e4e7ef; --accent: #3b5bdb; --accent-ink: #fff; --fail: #e03131; }
+		@media (prefers-color-scheme: dark) {
+			:root { --bg: #12151c; --card: #1b2029; --ink: #e8ebf2; --muted: #98a1b3; --line: #2b3240; --accent: #748ffc; --accent-ink: #0b0e14; }
+		}
+		* { box-sizing: border-box; }
+		body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 1.5rem; font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--ink); }
+		main { width: 100%; max-width: 440px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1.75rem; box-shadow: 0 6px 24px rgba(20, 30, 60, .06); }
+		h1 { font-size: 1.4rem; margin: 0 0 .25rem; }
+		p { margin: .5rem 0; }
+		.muted { color: var(--muted); }
+		.small { font-size: .85rem; }
+		button, input { font: inherit; }
+		.btn { display: flex; align-items: center; justify-content: center; gap: .6rem; width: 100%; padding: .75rem 1rem; margin-top: .6rem; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font-weight: 600; cursor: pointer; }
+		.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+		.btn:disabled { opacity: .5; cursor: default; }
+		.or { display: flex; align-items: center; gap: .75rem; margin: 1.25rem 0 .25rem; color: var(--muted); font-size: .85rem; }
+		.or::before, .or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+		input[type=email] { width: 100%; padding: .75rem; margin-top: .6rem; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+		.error { color: var(--fail); }
+		.ok { color: var(--accent); }
+		details { margin-top: 1.25rem; font-size: .88rem; color: var(--muted); }
+		summary { cursor: pointer; color: var(--accent); }
+		a { color: var(--accent); }
+	</style>
+</head>
+
+<body>
+	<main id="box">
+		<p class="muted">Loading...</p>
+	</main>
+
+	<script>
+		const auth = window.hayashiAuth;
+		const box = document.getElementById("box");
+		const params = new URLSearchParams(location.search);
+		const next = auth.safeNext(params.get("next") || "/");
+
+		function el(tag, attrs = {}, ...kids) {
+			const n = document.createElement(tag);
+			for (const [k, v] of Object.entries(attrs)) {
+				if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+				else if (v != null) n.setAttribute(k, v);
+			}
+			for (const k of kids.flat()) if (k != null && k !== false) n.append(k instanceof Node ? k : document.createTextNode(String(k)));
+			return n;
+		}
+
+		const privacy = () => el("details", {},
+			el("summary", {}, "What is saved when you sign in"),
+			el("p", {}, "Signing in is optional. It lets apps on this site keep your data on the server so it follows you between devices."),
+			el("p", {}, "Quant Fluency keeps your progress and levels, your conversations with the tutor, and an access log (time, what you did, IP address and browser) for 180 days. The text of your graded answers isn't kept."),
+			el("p", {}, "Your sign-in is handled by Supabase. The data itself stays on this site's own server. You can download or delete it from inside the app at any time."));
+
+		function showSignedIn(user) {
+			box.replaceChildren(
+				el("h1", {}, "You're signed in"),
+				el("p", { class: "muted" }, `as ${auth.label(user)}${user.email && auth.label(user) !== user.email ? ` (${user.email})` : ""}`),
+				el("button", { class: "btn primary", onclick: () => location.assign(next) }, next === "/" ? "Go to hayashi.in" : "Continue"),
+				el("button", { class: "btn", onclick: async () => { await auth.signOut(); showSignIn(); } }, "Sign out"),
+				privacy());
+		}
+
+		async function showSignIn(message) {
+			const { oauth, email } = await auth.providers();
+			const status = el("p", { class: "small", "aria-live": "polite" }, message || "");
+			if (message) status.className = "small error";
+			const buttons = oauth.map(([id, name]) => el("button", {
+				class: "btn", onclick: async () => {
+					status.textContent = `Opening ${name}...`; status.className = "small muted";
+					const { error } = await auth.signInWith(id, next);
+					if (error) { status.textContent = error.message; status.className = "small error"; }
+				},
+			}, `Continue with ${name}`));
+			const input = el("input", { type: "email", placeholder: "you@example.com", autocomplete: "email", "aria-label": "Email address" });
+			const send = el("button", { class: "btn primary", type: "submit" }, "Email me a sign-in link");
+			const form = el("form", {
+				onsubmit: async e => {
+					e.preventDefault();
+					if (!input.value.trim()) return;
+					send.disabled = true; status.textContent = "Sending..."; status.className = "small muted";
+					const { error } = await auth.emailLink(input.value.trim(), next);
+					send.disabled = false;
+					if (error) { status.textContent = error.message; status.className = "small error"; }
+					else { status.textContent = "Check your email for a sign-in link. You can close this tab."; status.className = "small ok"; }
+				},
+			}, input, send);
+			box.replaceChildren(...[
+				el("h1", {}, "Sign in"),
+				el("p", { class: "muted" }, "One account for the apps on hayashi.in."),
+				...buttons,
+				email ? (buttons.length ? el("div", { class: "or" }, "or") : null) : null,
+				email ? form : null,
+				status,
+				privacy(),
+				el("p", { class: "small muted" }, el("a", { href: next }, "Back without signing in")),
+			].filter(Boolean)); // skip empty slots, or they render as "null"
+		}
+
+		(async function start() {
+			const hashError = new URLSearchParams(location.hash.slice(1)).get("error_description") || params.get("error_description");
+			const user = await auth.user();
+			if (user && window.__authReturn) return location.replace(next); // just signed in: go straight back
+			if (user) return showSignedIn(user);
+			showSignIn(hashError ? `Sign-in didn't complete: ${hashError}` : "");
+		})();
+	</script>
+</body>
+
+</html>

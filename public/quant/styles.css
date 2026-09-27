@@ -56,6 +56,7 @@ button:disabled { cursor: default; opacity: .5; }
 .brand { font-weight: 800; font-size: 1.15rem; color: var(--accent); text-decoration: none; }
 .brand-row { display: flex; align-items: baseline; gap: .9rem; }
 .top .levels-link { font-size: .9rem; color: var(--accent); }
+.top .account-link { font-size: .9rem; color: var(--accent); max-width: 14rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .scores { display: flex; gap: 1.25rem; }
 .score { display: flex; flex-direction: column; align-items: center; line-height: 1.1; }
 .score .num { font-size: 1.35rem; font-weight: 800; }
@@ -274,3 +275,11 @@ details.review[open] > summary { margin-bottom: .75rem; }
 .levelup, .levelnote { background: var(--bg); border-left: 4px solid var(--accent); padding: .6rem .9rem; border-radius: 8px; }
 .levelup { text-align: center; }
 .chip.assumed { border-style: dashed; border-color: var(--pass); color: var(--pass); }
+
+/* account */
+.account h3 { font-size: .9rem; margin: 1.25rem 0 .25rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.account ul { margin: 0; padding-left: 1.2rem; }
+.account-actions { flex-wrap: wrap; justify-content: flex-start; }
+.ghost.danger { color: var(--fail); border-color: var(--fail); }
+.earlier { margin-bottom: .5rem; }
+.earlier .chat-log { margin-top: .75rem; }

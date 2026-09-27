@@ -7,6 +7,11 @@
 	<title>Quant Fluency - learn quant asset management by answering</title>
 	<meta name="description" content="Short daily drills on investment and quantitative portfolio management concepts. Answer in your own words and get graded feedback.">
 	<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+	<!-- Shared hayashi.in sign-in (optional). Pinned with an integrity hash. -->
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"
+		integrity="sha384-Rj26LVGvoeRVR6+mwQmFfcR3QOBEwT+ZmuCWpuiqeTzJpCs0ER4ITAWGb4Hiy3Ok"
+		crossorigin="anonymous"></script>
+	<script src="/auth/auth.js"></script>
 	<link rel="stylesheet" href="styles.css">
 </head>
 
@@ -15,6 +20,7 @@
 		<div class="brand-row">
 			<a class="brand" href="./">Quant Fluency</a>
 			<button class="link levels-link" id="levels-link" hidden title="See or reset your level in each area">Adjust Level</button>
+			<a class="link account-link" id="account-link" href="/login/?next=%2Fquant%2F" hidden>Sign in</a>
 		</div>
 		<div class="scores" aria-live="polite">
 			<div class="score" title="Of the concepts you've been shown, the share you've mastered">
@@ -37,7 +43,7 @@
 	</main>
 
 	<footer class="foot">
-		<span>Answers are graded by a language model and can be wrong. Progress is saved only in this browser.</span>
+		<span id="storage-note">Answers are graded by a language model and can be wrong. Progress is saved only in this browser unless you sign in.</span>
 		<span><button class="link" id="export">Export progress</button> · <button class="link" id="import">Import</button> · <button class="link" id="reset">Reset</button></span>
 		<input type="file" id="import-file" accept="application/json" hidden>
 	</footer>
