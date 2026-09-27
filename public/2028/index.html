@@ -166,7 +166,12 @@ footer{padding:24px 0 48px;color:var(--muted);font-size:.86rem;border-top:1px so
 const CRITERIA = [
   {id:"wealth",  label:"Wealth inequality"},
   {id:"campaign",label:"Campaign finance"},
+  {id:"oligarchy",label:"Big Tech & oligarchy"},
+  {id:"democracy",label:"Democracy & executive power"},
   {id:"ai",      label:"AI"},
+  {id:"health",  label:"Health care"},
+  {id:"housing", label:"Housing & cost of living"},
+  {id:"immigration",label:"Immigration"},
   {id:"climate", label:"Climate & environment"},
   {id:"finreg",  label:"Financial regulation"},
   {id:"corptax", label:"Corporate tax"},
@@ -194,7 +199,12 @@ const CANDIDATES = [
     climate:[{e:"record",t:"Part of an administration that has rolled back Biden-era climate rules, including vehicle fuel-efficiency standards, and favors expanding fossil-fuel production. Has questioned the cost of emissions policies rather than proposing alternatives."}],
     finreg:[{e:"record",t:"Has praised aggressive antitrust enforcement against Big Tech. The administration has favored lighter bank oversight and a crypto-friendly approach."}],
     corptax:[{e:"record",t:"Supports keeping the 21% corporate rate; the 2025 law made several business tax breaks permanent. Favors tariffs as a tool to reshore manufacturing."}],
-    edusci:[{e:"record",t:"As a senator, proposed sharply raising the tax on large university endowments and has been a prominent critic of elite universities. The administration has cut or frozen many federal research grants."}]
+    edusci:[{e:"record",t:"As a senator, proposed sharply raising the tax on large university endowments and has been a prominent critic of elite universities. The administration has cut or frozen many federal research grants."}],
+    oligarchy:[{e:"record",t:"Called for breaking up Google and praised Lina Khan's antitrust work at the FTC; said in 2025 that \"Big Tech does have too much power.\" His own political rise was bankrolled by tech investor Peter Thiel, his former employer.",s:["https://www.axios.com/2025/04/15/vance-antitrust-big-tech-corporations"]}],
+    democracy:[{e:"record",t:"Wrote in Feb 2025 that \"judges aren't allowed to control the executive's legitimate power,\" and said in 2021 that a president should defy \"illegitimate\" court rulings, even from the Supreme Court.",s:["https://www.nbcnews.com/politics/white-house/legal-experts-constitutional-crisis-vance-musk-judicial-rulings-trump-rcna191387","https://www.newsweek.com/jd-vance-comment-questioning-court-authority-sparks-backlash-2028651"]}],
+    health:[{e:"record",t:"Cast the tie-breaking vote on the 2025 law that cut Medicaid by roughly $1 trillion over ten years. The night before, he wrote that \"the minutiae of the Medicaid policy\" was \"immaterial compared to the ICE money.\"",s:["https://thehill.com/homenews/senate/5379224-senate-passes-trump-gop-megabill/","https://www.msnbc.com/rachel-maddow-show/maddowblog/jd-vance-republican-megabill-ice-funding-matters-everything-else-immat-rcna216181"]}],
+    housing:[{e:"2026",t:"Blames local zoning for high housing costs and has praised Austin for allowing smaller lots and more apartments. In 2026 he pitches lower energy prices and interest rates, plus reshored jobs, as the answer to affordability.",s:["https://www.multifamilydive.com/news/jd-vance-housing-zoning-regulation-reform-affordability/742498/","https://spectrumnews1.com/wi/milwaukee/news/2026/02/26/jd-vance-vice-president-affordability"]}],
+    immigration:[{e:"record",t:"A leading voice for mass deportation. Called the ICE and enforcement money the part of the 2025 tax-and-spending law that mattered most.",s:["https://www.msnbc.com/rachel-maddow-show/maddowblog/jd-vance-republican-megabill-ice-funding-matters-everything-else-immat-rcna216181"]}]
   }
 },
 {
@@ -208,7 +218,12 @@ const CANDIDATES = [
     climate:[{e:"record",t:"Has acknowledged sea-level rise threats to Florida but opposed carbon pricing and emissions mandates. Now part of the administration's energy-production agenda."}],
     finreg:[{e:"record",t:"In 2019 proposed taxing stock buybacks like dividends to discourage short-term corporate behavior."}],
     corptax:[{e:"record",t:"Voted for the 2017 cut to 21% but later argued much of the savings went to buybacks rather than wages."}],
-    edusci:[{e:"record",t:"Has backed vocational and apprenticeship pathways and more transparency on college outcomes; authored reports urging U.S. industrial and tech investment to compete with China."}]
+    edusci:[{e:"record",t:"Has backed vocational and apprenticeship pathways and more transparency on college outcomes; authored reports urging U.S. industrial and tech investment to compete with China."}],
+    oligarchy:[{e:"record",t:"As a senator, sponsored bills to strip Section 230 legal protection from dominant platforms that suppress viewpoints. His Big Tech critique is about political speech rather than market power or wealth.",s:["https://web.archive.org/web/20230606210139/https://www.rubio.senate.gov/public/index.cfm/2021/6/rubio-introduces-sec-230-legislation-to-crack-down-on-big-tech-algorithms-and-protect-free-speech"]}],
+    democracy:[{e:"record",t:"As Secretary of State, used immigration law to deport noncitizen students over political speech. A federal judge ruled in Aug 2026 that the policy violated the First and Fifth Amendments.",s:["https://www.ms.now/rachel-maddow-show/maddowblog/rubio-free-speech-first-amendment-deportation-policy-federal-court-ruling"]}],
+    health:[{e:"record",t:"Voted repeatedly as a senator to repeal the Affordable Care Act, calling it a \"disastrous law.\"",s:["https://web.archive.org/web/20241122194547/https://www.rubio.senate.gov/rubio-votes-to-repeal-obamacare/"]}],
+    housing:[{e:"record",t:"With Ossoff, sponsored the HELPER Act: a no-down-payment federal home loan for teachers, police, firefighters and medics buying their first home.",s:["https://www.ossoff.senate.gov/press-releases/sens-ossoff-rubio-brown-introduce-bipartisan-bill-to-help-first-responders-teachers-buy-their-first-home/"]}],
+    immigration:[{e:"record",t:"Co-wrote the 2013 \"Gang of Eight\" bill that included a path to citizenship, then backed away from it. As Secretary of State has revoked thousands of visas, including student visas.",s:["https://gulfnews.com/world/americas/us-has-revoked-6000-student-visas-under-rubio-state-department-1.500238214"]}]
   }
 },
 {
@@ -222,7 +237,12 @@ const CANDIDATES = [
     climate:[{e:"record",t:"Signed a 2024 law removing most references to climate change from state law and banning offshore wind; has funded flood and sea-level resilience projects."}],
     finreg:[{e:"record",t:"Signed laws barring ESG criteria in state investments and banning a central bank digital currency in Florida."}],
     corptax:[{e:"none",t:"No federal corporate tax proposal found."}],
-    edusci:[{e:"record",t:"Signed universal school-choice vouchers, overhauled New College of Florida, and restricted DEI programs at public universities."}]
+    edusci:[{e:"record",t:"Signed universal school-choice vouchers, overhauled New College of Florida, and restricted DEI programs at public universities."}],
+    oligarchy:[{e:"record",t:"Signed a 2021 law penalizing platforms that deplatform political candidates (it reached the Supreme Court in Moody v. NetChoice) and a 2024 law barring children under 14 from social media accounts.",s:["https://news.wgcu.org/government-politics/2024-03-25/desantis-signs-social-media-bill-as-legal-challenge-to-law-looms"]}],
+    democracy:[{e:"record",t:"Removed two elected Democratic prosecutors from office in 2022 and 2023; one won her seat back in 2024. Signed a 2025 law adding new limits on citizen ballot initiatives.",s:["https://www.cnn.com/2023/08/09/politics/ron-desantis-monique-worrell-orlando-attorney/index.html","https://boltsmag.org/tampa-orlando-proscutor-elections-2024/"]}],
+    health:[{e:"record",t:"Florida has not expanded Medicaid. The 2025 ballot-initiative law he signed pushed a citizen-led Medicaid expansion measure from the 2026 ballot to 2028.",s:["https://www.wusf.org/politics-issues/2025-09-25/push-for-medicaid-expansion-in-florida-delayed-until-2028-due-to-new-state-law"]}],
+    housing:[{e:"record",t:"Signed the 2023 Live Local Act: $711 million for housing programs and a rule that cities must allow apartments on commercial land if 40% of units are affordable. The same law bans local rent control.",s:["https://www.flgov.com/eog/news/press/2023/governor-ron-desantis-signs-legislation-support-economic-development-through-record","https://www.wtsp.com/article/news/regional/florida/desantis-signs-affordable-housing-bill-ban-rent-control/67-f4d0b424-fde9-46c3-9403-2f59ec99580a"]}],
+    immigration:[{e:"record",t:"Signed a 2023 law requiring E-Verify at businesses with 25+ employees and making it a felony to transport undocumented people into Florida. Built the \"Alligator Alcatraz\" detention center in the Everglades in 2025, since closed.",s:["https://www.pbs.org/newshour/nation/floridas-alligator-alcatraz-immigration-detention-center-has-closed-governor-says"]}]
   }
 },
 {
@@ -236,7 +256,12 @@ const CANDIDATES = [
     climate:[{e:"record",t:"Lead author of the 2019 Green New Deal resolution calling for a rapid shift to clean energy paired with job guarantees."}],
     finreg:[{e:"record",t:"Supports a strong Consumer Financial Protection Bureau and tighter oversight of large banks."}],
     corptax:[{e:"record",t:"Supports raising corporate rates; voted for the 2022 15% corporate minimum tax."}],
-    edusci:[{e:"record",t:"Supports tuition-free public college and broad student-debt cancellation."}]
+    edusci:[{e:"record",t:"Supports tuition-free public college and broad student-debt cancellation."}],
+    oligarchy:[{e:"record",t:"Co-headlined Bernie Sanders' 2025 \"Fighting Oligarchy\" tour, which drew some of the largest rallies of the year with a message aimed at billionaires' influence over government. See also her AI data-center moratorium under AI.",s:["https://www.npr.org/2025/03/22/nx-s1-5334488/bernie-sanders-fight-oligarchy-tour-trump-musk-doge-democrats"]}],
+    democracy:[{e:"record",t:"Filed articles of impeachment against Justices Thomas and Alito in 2024 over undisclosed gifts and refusals to recuse.",s:["https://www.cnn.com/2024/07/10/politics/alexandria-ocasio-cortez-impeachment-supreme-court/index.html"]}],
+    health:[{e:"record",t:"Cosponsors the Medicare for All Act, a single public plan replacing private insurance.",s:["https://www.congress.gov/bill/119th-congress/house-bill/3069/cosponsors"]}],
+    housing:[{e:"record",t:"Lead House sponsor, with Sanders, of the Green New Deal for Public Housing Act: up to $234 billion over ten years to retrofit and expand public housing, and repeal of the cap on building new units.",s:["https://www.sanders.senate.gov/press-releases/news-sanders-and-ocasio-cortez-reintroduce-green-new-deal-for-public-housing-act/"]}],
+    immigration:[{e:"2026",t:"Has called for abolishing ICE since her 2018 primary and reaffirmed it in 2026.",s:["https://www.wbhm.org/2026-02-04/will-calls-to-abolish-ice-sway-voters-in-2026-the-strategy-has-democrats-split"]}]
   }
 },
 {
@@ -250,7 +275,12 @@ const CANDIDATES = [
     climate:[{e:"record",t:"Voted for the 2022 Inflation Reduction Act's clean-energy incentives, which drew major solar and battery manufacturing to Georgia."}],
     finreg:[{e:"record",t:"Beyond the congressional stock-trading ban, no broad financial-regulation agenda found.",s:["https://www.ajc.com/politics/ossoff-bill-seeks-to-ban-stock-trading-for-members-of-congress/VWZEMYZRMBDF3G4CWPB54JY3GA/"]}],
     corptax:[{e:"record",t:"Favors higher taxes on large corporations as part of the revenue mix; no specific rate proposal found.",s:["https://www.cityandstatepa.com/prediction-markets/candidates/jon-ossoff"]}],
-    edusci:[{e:"none",t:"No distinctive national proposal found."}]
+    edusci:[{e:"none",t:"No distinctive national proposal found."}],
+    oligarchy:[{e:"2026",t:"Campaigns against rule by and for the ultra-rich and has said Facebook holds too much power as a gatekeeper of speech. Critics point out his campaigns take money from billionaires and tech executives.",s:["https://www.focaldata.com/blog/ossoffism-and-the-gops-elite-problem","https://www.thefp.com/p/the-democrats-who-attack-billionaires-but-take-their-money"]}],
+    democracy:[{e:"2026",t:"Runs on anti-corruption and voting rights. Warns that Trump wants to take over elections, and says \"what ails America is deeper than Donald Trump and his corruption.\"",s:["https://electjon.com/on-offense-ossoff-calls-out-chaos-and-corruption-of-trump-administration/","https://www.c-span.org/clip/campaign-2026/sen-jon-ossoff-says-what-ails-america-is-deeper-than-donald-trump-and-his-corruption/5205829"]}],
+    health:[{e:"2026",t:"Pushing to restore the enhanced ACA tax credits that expired at the end of 2025. His office's investigation reports Georgians losing coverage and delaying care.",s:["https://www.ossoff.senate.gov/press-releases/new-report-after-expiration-of-aca-tax-credits-georgians-are-delaying-necessary-care-paying-thousands-more-for-insuranceclick-here-to-read-sen-ossoffs-new-report-on-loss-of-aca-tax/"]}],
+    housing:[{e:"record",t:"With Rubio, sponsored the HELPER Act: a no-down-payment federal home loan for teachers and first responders.",s:["https://www.ossoff.senate.gov/press-releases/sens-ossoff-rubio-brown-introduce-bipartisan-bill-to-help-first-responders-teachers-buy-their-first-home/"]}],
+    immigration:[{e:"record",t:"One of 12 Senate Democrats who voted for the Laken Riley Act in Jan 2025, which requires detaining undocumented immigrants charged with theft and certain other crimes.",s:["https://rollcall.com/2025/01/20/democrats-senate-laken-riley-act/"]}]
   }
 },
 {
@@ -264,7 +294,12 @@ const CANDIDATES = [
     climate:[{e:"record",t:"Set a 2035 phase-out of new gas-only car sales and extended California's cap-and-trade (now cap-and-invest) program through 2045."}],
     finreg:[{e:"record",t:"Created a state-level consumer financial watchdog and signed California's crypto licensing law."}],
     corptax:[{e:"2026",t:"Calls for higher corporate taxes as part of a \"new social contract\"; no specific rate yet.",s:["https://www.washingtontimes.com/news/2026/jun/26/left-pressured-california-gov-gavin-newsom-calls-national/"]}],
-    edusci:[{e:"record",t:"Signed universal transitional kindergarten for all 4-year-olds."}]
+    edusci:[{e:"record",t:"Signed universal transitional kindergarten for all 4-year-olds."}],
+    oligarchy:[{e:"2026",t:"Calls the Trump administration an oligarchy of billionaires, but is leading the fight against California's billionaire tax, which puts him alongside tech executives and against the unions backing it. See Wealth inequality for his national alternative.",s:["https://fortune.com/2026/01/14/california-billionaires-tax-explained-wealthy-tech-executives-gavin-newsom/"]}],
+    democracy:[{e:"record",t:"Led Prop 50 (Nov 2025), which let California redraw its congressional map to offset Texas' mid-decade Republican redistricting. Sued the administration in 2025 over its federal takeover of California's National Guard.",s:["https://www.texastribune.org/2025/11/08/texas-california-gavin-newsom-congress-redistricting-map/"]}],
+    health:[{e:"record",t:"Expanded Medi-Cal to all low-income adults regardless of immigration status, then, facing a deficit, froze new enrollment for undocumented adults from 2026.",s:["https://calmatters.org/health/2025/05/newsom-freeze-medi-cal-undocumented-immigrants/"]}],
+    housing:[{e:"record",t:"In 2025 signed broad exemptions from environmental review for urban housing and SB 79, which allows midrise apartments near major transit stops over local objections.",s:["https://www.gov.ca.gov/2025/10/10/governor-newsom-builds-on-this-years-historic-housing-reforms-signs-legislation-to-accelerate-housing-and-affordability/","https://www.hklaw.com/en/insights/publications/2025/10/california-gov-gavin-newsom-signs-sb-79"]}],
+    immigration:[{e:"record",t:"Signed the first state law banning masked law enforcement, including ICE agents (2025); the Justice Department sued to block it.",s:["https://time.com/7319259/california-ice-immigration-agents-mask-ban-secret-police-newsom-law-challenge/"]}]
   }
 },
 {
@@ -278,7 +313,12 @@ const CANDIDATES = [
     climate:[{e:"record",t:"Cast the tie-breaking Senate vote for the 2022 Inflation Reduction Act, the largest U.S. climate investment to date."}],
     finreg:[{e:"past",t:"As California attorney general won a major mortgage settlement from big banks; 2024 platform targeted price gouging and junk fees."}],
     corptax:[{e:"past",t:"2024 platform: raise the corporate rate from 21% to 28%."}],
-    edusci:[{e:"past",t:"Supported student-debt relief and dropping degree requirements for many federal jobs."}]
+    edusci:[{e:"past",t:"Supported student-debt relief and dropping degree requirements for many federal jobs."}],
+    oligarchy:[{e:"none",t:"No distinct Big Tech or antitrust agenda found."}],
+    democracy:[{e:"past",t:"Framed her 2024 campaign around defending democracy. On her 2025 book tour called the National Guard deployment to Portland an \"abhorrent assault on constitutional values and principles.\"",s:["https://www.opb.org/article/2025/11/05/former-vice-president-kamala-harris-portland-book-talk-trump-national-guard-deployment/"]}],
+    health:[{e:"past",t:"2024 platform: make the enhanced ACA tax credits permanent, cap insulin at $35 and drug costs at $2,000 a year for everyone, and cancel medical debt. Dropped her 2019 support for Medicare for All.",s:["https://www.fiercehealthcare.com/payers/its-election-day-2024-where-do-harris-and-trump-stand-health-policy"]}],
+    housing:[{e:"past",t:"2024 platform: build 3 million homes in four years and give first-time buyers up to $25,000 in down-payment help.",s:["https://thehill.com/homenews/campaign/4830475-kamala-harris-housing-plan-construction-of-3m-units-25k-down-payment-support/"]}],
+    immigration:[{e:"past",t:"2024 platform: revive the bipartisan border bill Republicans blocked, and tighten asylum rules further than Biden had.",s:["https://www.npr.org/2024/09/27/nx-s1-5127374/harris-arizona-border-migration-asylum"]}]
   }
 },
 {
@@ -292,7 +332,12 @@ const CANDIDATES = [
     climate:[{e:"record",t:"Agreed to exit the Regional Greenhouse Gas Initiative to end a 2025 budget standoff; now pushing his \"Lightning Plan\" with a state cap-and-invest program and clean-energy standard.",s:["https://theenergy.coop/blog/pa-lightning-plan/","https://www.eenews.net/articles/ai-champion-josh-shapiro-leans-on-tech-industry-to-bear-energy-costs/"]}],
     finreg:[{e:"none",t:"No federal financial-regulation agenda found."}],
     corptax:[{e:"record",t:"Pushed to speed up Pennsylvania's scheduled corporate tax rate cuts to attract business."}],
-    edusci:[{e:"record",t:"Signed large increases in public school funding and removed degree requirements for most state jobs."}]
+    edusci:[{e:"record",t:"Signed large increases in public school funding and removed degree requirements for most state jobs."}],
+    oligarchy:[{e:"none",t:"No broad Big Tech agenda found beyond his data-center rules (see AI)."}],
+    democracy:[{e:"record",t:"As attorney general, won every lawsuit brought to overturn Pennsylvania's 2020 election results. As governor has refused to hand state voter data to the federal government.",s:["https://www.nbcnews.com/politics/2024-election/democratic-vp-contender-josh-shapiro-made-name-battling-trump-court-pe-rcna163080","https://www.spotlightpa.org/news/2026/02/immigration-pennsylvania-shapiro-ice-trump-detention-josh-shapiro/"]}],
+    health:[{e:"record",t:"Proposed state money to buy and erase up to $400 million in medical debt for low- and middle-income residents.",s:["https://www.spotlightpa.org/news/2024/02/pennsylvania-medical-debt-governor-josh-shapiro-budget/"]}],
+    housing:[{e:"2026",t:"Released Pennsylvania's first Housing Action Plan (Feb 2026): about 30 steps, led by zoning and permitting reform to speed up building.",s:["https://www.pa.gov/governor/newsroom/2026-press-releases/governor-shapiro-unveils-pennsylvania-s-first-ever-housing-actio"]}],
+    immigration:[{e:"2026",t:"Vowed to block two proposed ICE detention centers in Pennsylvania, but has not limited state agencies' existing cooperation with ICE.",s:["https://www.spotlightpa.org/berks/2026/02/pennsylvania-ice-detention-centers-permits-shapiro-federal-government/","https://www.spotlightpa.org/news/2026/02/immigration-pennsylvania-shapiro-ice-trump-detention-josh-shapiro/"]}]
   }
 },
 {
@@ -306,7 +351,12 @@ const CANDIDATES = [
     climate:[{e:"past",t:"2020 plan included a carbon tax with rebates to households; as Transportation Secretary administered EV-charging and infrastructure funds."}],
     finreg:[{e:"none",t:"No distinctive proposals found."}],
     corptax:[{e:"past",t:"In 2020 favored partially reversing the 2017 corporate tax cut."}],
-    edusci:[{e:"past",t:"In 2020 proposed free public college for families earning under $100,000."}]
+    edusci:[{e:"past",t:"In 2020 proposed free public college for families earning under $100,000."}],
+    oligarchy:[{e:"none",t:"No distinct Big Tech or oligarchy agenda found."}],
+    democracy:[{e:"2026",t:"Revived his Supreme Court overhaul in July 2026: expand to 13 justices, add term limits, and balance appointees between the parties.",s:["https://www.newsweek.com/major-supreme-court-changes-proposed-by-pete-buttigieg-3-reform-ideas-12242328"]}],
+    health:[{e:"past",t:"2020 plan, \"Medicare for All Who Want It\": a public option alongside private insurance, rather than single payer.",s:["https://www.npr.org/2019/11/08/774716877/just-the-right-policy-pete-buttigieg-on-his-medicare-for-all-who-want-it-plan"]}],
+    housing:[{e:"none",t:"No distinctive national housing proposal found."}],
+    immigration:[{e:"past",t:"Backed a path to citizenship and opposed a border wall in 2020. Has since said people who commit crimes \"have to be deported\" and that he disagrees with letting \"everybody in.\"",s:["https://www.mediaite.com/politics/pete-buttigieg-isnt-down-with-democratic-socialists-immigration-policy-criminals-have-to-be-deported/"]}]
   }
 }
 ];
