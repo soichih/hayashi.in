@@ -1,4 +1,9 @@
 /* ===== Base Styles ===== */
+/* Sizes are in two units set per screen shape (see Layouts below):
+   --u for the dashboard (date, clock, weather, chart, sun times) and
+   --n for news text. On the 1920x1080 kiosk both equal 1vw (19.2px), so a
+   size written as calc(var(--u) * 7) is the old 7vw. Text people read up
+   close has a px floor so it stays legible on phones. */
 :root {
 	--ink: #1f2933;
 	--muted: #64748b;
@@ -9,8 +14,6 @@
 	--panel-bg: #f7f9fc;
 	--shadow: 0 2px 14px rgba(15, 23, 42, 0.08);
 	--radius: 18px;
-	--news-width: 50%; /* right-hand news panel; the left column gets the rest */
-	--footer-height: 6vh;
 }
 
 body {
@@ -18,7 +21,6 @@ body {
 	margin: 0;
 	font-family: "Roboto", sans-serif;
 	color: var(--ink);
-	height: 100%;
 	background: var(--page-bg);
 }
 
@@ -30,11 +32,108 @@ h2 {
 	opacity: 0.8;
 }
 
+/* ===== Layouts ===== */
+/* --news-mode tells app.js how to build the news area:
+   grid = 2x2 panes, one scrolling group each
+   feed = one scrolling pane with every story
+   page = one plain list; the whole page scrolls (phones held upright) */
+
+/* Landscape, the kiosk's shape: dashboard left, news right, sun times
+   along the bottom. The chart keeps a fixed height (340px on the kiosk)
+   and any spare height is left blank under it. */
+#dash {
+	/* declared here, not on :root, so --n picks up each layout's --u */
+	--u: min(1vw, 1.778vh);
+	--n: var(--u);
+	--news-mode: grid;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto auto calc(var(--u) * 18.7) 1fr calc(var(--u) * 3.375);
+	grid-template-areas:
+		"date  news"
+		"time  news"
+		"now   news"
+		"chart news"
+		".     news"
+		"sun   sun";
+	height: 100vh;
+	height: 100dvh;
+	overflow: hidden;
+}
+
+/* Landscape too narrow for four news columns (tablets, small laptops) */
+@media (orientation: landscape) and (max-width: 1199px) {
+	#dash {
+		--news-mode: feed;
+	}
+}
+
+/* Landscape screens squarer than the kiosk (4:3, 3:2 tablets and laptops)
+   have more height than the kiosk layout uses, so the chart takes it. */
+@media (orientation: landscape) and (max-aspect-ratio: 16/10.5) {
+	#dash {
+		grid-template-rows: auto auto auto 1fr 0 calc(var(--u) * 3.375);
+	}
+}
+
+/* Short landscape (phones on their side): no room for a separate sun bar,
+   so it joins the dashboard column and the chart takes what is left. */
+@media (orientation: landscape) and (max-height: 539px) {
+	#dash {
+		--news-mode: feed;
+		grid-template-columns: 45fr 55fr;
+		grid-template-rows: auto auto auto 1fr auto;
+		grid-template-areas:
+			"date  news"
+			"time  news"
+			"now   news"
+			"chart news"
+			"sun   news";
+	}
+}
+
+/* Portrait: dashboard on top, news fills the rest. */
+@media (orientation: portrait) {
+	#dash {
+		--u: min(2vw, 1.125vh);
+		--n: var(--u);
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto auto auto max(180px, calc(var(--u) * 18.7)) 1fr;
+		grid-template-areas:
+			"date"
+			"time"
+			"now"
+			"sun"
+			"chart"
+			"news";
+	}
+}
+
+@media (orientation: portrait) and (max-width: 999px) {
+	#dash {
+		--news-mode: feed;
+		--n: calc(var(--u) * 1.4);
+	}
+}
+
+/* Phones held upright: the page scrolls like a normal web page and the
+   news is a plain list under the weather. */
+@media (orientation: portrait) and (max-width: 599px) {
+	#dash {
+		--news-mode: page;
+		grid-template-rows: auto auto auto auto max(200px, calc(var(--u) * 26)) auto;
+		height: auto;
+		overflow: visible;
+	}
+}
+
 /* ===== Date & Time Display ===== */
 #date {
-	font-size: 4vw;
+	grid-area: date;
+	text-align: center;
+	font-size: calc(var(--u) * 4);
 	font-weight: 500;
-	padding: 2.2vh 0;
+	padding: calc(var(--u) * 1.2375) 0;
 	line-height: 100%;
 	background: linear-gradient(120deg, var(--accent), var(--accent-2));
 	color: white;
@@ -42,70 +141,89 @@ h2 {
 }
 
 #time-now {
+	grid-area: time;
 	text-align: center;
-	font-size: 7vw;
+	font-size: calc(var(--u) * 7);
 	font-weight: 500;
-	padding: 1.5vw 0;
+	padding: calc(var(--u) * 1.5) 0;
 	margin: 0;
 	background: var(--card-bg);
 	line-height: 100%;
+	white-space: nowrap;
 }
 
 #time-now small {
-	font-size: 4vw;
-	min-width: 7vw;
+	font-size: calc(var(--u) * 4);
+	min-width: calc(var(--u) * 7);
 	display: inline-block;
 	text-align: left;
 	color: var(--muted);
 	line-height: 100%;
 }
 
-/* ===== Weather Display ===== */
-.main-content {
-	flex: 0 0 auto;
-	width: calc(100% - var(--news-width));
-	/* fill the screen above the footer; any height the weather row and the
-	   fixed-height chart don't use is left blank at the bottom */
-	height: calc(100vh - var(--footer-height));
-	display: flex;
-	flex-direction: column;
+@media (orientation: portrait) {
+	#time-now {
+		font-size: calc(var(--u) * 9);
+	}
+
+	#time-now small {
+		font-size: calc(var(--u) * 5);
+		min-width: calc(var(--u) * 9);
+	}
 }
 
-.main-content > .row {
-	padding: 1.25vw 0; /* 24px */
+/* ===== Weather Display ===== */
+#now {
+	grid-area: now;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	padding: calc(var(--u) * 1.25) 0;
+	min-width: 0;
 }
 
 #weather {
-	font-size: 6vw;
+	font-size: calc(var(--u) * 6);
 	font-weight: 500;
 	color: var(--accent-2);
-	padding: 0.5vw 1vw 0 2vw;
+	padding: calc(var(--u) * 0.5) calc(var(--u) * 1) 0 calc(var(--u) * 2);
 	margin: 0;
+	text-align: right;
 }
 
 #weather .dew-point,
 #weather .wind-speed {
-	font-size: 1.6vw;
+	font-size: max(12px, calc(var(--u) * 1.6));
 	color: var(--muted);
-	text-align: right;
-	clear: both;
 	font-weight: 400;
+	white-space: nowrap;
 }
 
 #temp {
-	float: right;
+	display: block;
+	line-height: 100%;
 }
 
 #weather-note {
-	font-size: 1.5vw;
-	padding: 0.5vw 2vw 0 0;
+	font-size: max(13px, calc(var(--u) * 1.5));
+	padding: calc(var(--u) * 0.5) calc(var(--u) * 2) 0 calc(var(--u) * 1);
 	color: var(--ink);
+	min-width: 0;
 }
 
 #weather-note h2 {
 	font-size: 1.1em;
 	opacity: 0.55;
 	margin-bottom: 0.2em;
+}
+
+#weather-note p {
+	margin-bottom: 0.6em;
+}
+
+@media (orientation: portrait) {
+	#weather-note {
+		font-size: max(14px, calc(var(--u) * 1.8));
+	}
 }
 
 /* Dew Point Color Classes */
@@ -116,149 +234,48 @@ h2 {
 #weather .dew-oppressive { color: #ef4444; }
 #weather .dew-unbearable { color: #a21caf; }
 
+/* The canvas follows this box; app.js scales the chart's text to its width. */
 #weather-chart-container {
-	height: 340px;
-	flex: none;
-	width: calc(100% - 2vw);
-	margin: 0 1vw 1vw;
-	box-sizing: border-box;
-}
-
-/* ===== News Panel (2x2 grouped, scrolling panes) ===== */
-#news-panel {
-	position: fixed;
-	right: 0;
-	top: 0;
-	bottom: var(--footer-height); /* stop above the fixed footer so the bottom row isn't covered */
-	width: var(--news-width);
-	background: #d8dfe8; /* shows through the 2px gaps as dividers */
-	font-family: "Roboto", sans-serif;
-	color: var(--ink);
-	box-sizing: border-box;
-	padding: 0;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	gap: 2px;
-}
-
-.news-slot {
+	grid-area: chart;
+	position: relative;
 	min-width: 0;
 	min-height: 0;
-	overflow: hidden;
-	padding: 0.4vw 0.6vw 0;
-	background: var(--card-bg);
-	display: flex;
-	flex-direction: column;
+	margin: 0 calc(var(--u) * 1) calc(var(--u) * 1);
 }
 
-/* The story list under the pane label; it scrolls in a loop when taller
-   than the pane (see startMarquee in app.js) while the label stays put. */
-.news-viewport {
-	flex: 1;
-	min-height: 0;
-	overflow: hidden;
-}
-
-.news-slot.empty {
-	visibility: hidden;
-}
-
-.news-section {
-	font-size: 0.94vw; /* 18px */
-	font-weight: 700;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-	color: var(--accent);
-	margin-bottom: 0.2vw;
-}
-
-
-/* Spacing is padding, not margin, so a list's offsetHeight includes the gap
-   after its last story and the looped copy lines up exactly. */
-.news-item {
-	padding: 0.5vw 0;
-	border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-	font-size: 1.25vw; /* 24px */
-	line-height: 1.4;
-	color: var(--muted);
-}
-
-.news-kicker {
-	font-size: 0.88vw; /* 17px */
-	font-weight: 700;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-	color: var(--accent-2);
-	margin-bottom: 0.2vw;
-}
-
-.news-item p {
-	margin: 0 0 0.3vw;
-}
-
-.news-item h4 {
-	font-size: 1.67vw; /* 32px */
-	line-height: 1.25;
-	font-weight: 700;
-	color: var(--ink);
-	margin: 0 0 0.3vw;
-	/* pins to the pane top while its story scrolls by; the next story's
-	   heading pushes it out, since sticky stays inside its .news-item */
-	position: sticky;
-	top: 0;
-	background: var(--card-bg);
-}
-
-.news-item small {
-	display: block;
-	font-size: 0.94vw; /* 18px */
-	color: #94a3b8;
-}
-
-.news-item img {
-	display: block;
-	width: 100%;
-	max-height: 8.5vw;
-	object-fit: cover;
-	margin-bottom: 0.4vw;
-}
-
-/* ===== Footer ===== */
-footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	padding: 0 2vw;
-	height: var(--footer-height);
+/* ===== Sun Times ===== */
+#sun {
+	grid-area: sun;
+	padding: 0 calc(var(--u) * 2);
 	background: var(--card-bg);
 	box-shadow: 0 -2px 14px rgba(15, 23, 42, 0.06);
-	box-sizing: border-box;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	white-space: nowrap;
 }
 
 #sunrise,
 #sunset-moon,
 #noon {
-	font-size: 2.6vw;
+	font-size: calc(var(--u) * 2.6);
 	color: var(--muted);
 	line-height: 100%;
 	font-weight: 500;
 }
 
-#sunrise {
-	order: 1;
-}
+@media (orientation: portrait), (orientation: landscape) and (max-height: 539px) {
+	#sun {
+		box-shadow: none;
+		padding: calc(var(--u) * 1) calc(var(--u) * 2);
+		margin-bottom: calc(var(--u) * 1);
+	}
 
-#noon {
-	order: 2;
-}
-
-#sunset-moon {
-	order: 3;
+	#sunrise,
+	#sunset-moon,
+	#noon {
+		font-size: max(14px, calc(var(--u) * 2.4));
+	}
 }
 
 #sunrise::before {
@@ -267,6 +284,127 @@ footer {
 
 #moon {
 	margin-left: 0.4em;
+}
+
+/* ===== News Panel ===== */
+#news-panel {
+	grid-area: news;
+	min-width: 0;
+	min-height: 0;
+	background: #d8dfe8; /* shows through the 2px gaps as dividers */
+	font-family: "Roboto", sans-serif;
+	color: var(--ink);
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	gap: 2px;
+}
+
+#news-panel.grid {
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+}
+
+.news-slot {
+	min-width: 0;
+	min-height: 0;
+	overflow: hidden;
+	padding: max(6px, calc(var(--n) * 0.4)) max(10px, calc(var(--n) * 0.6)) 0;
+	background: var(--card-bg);
+	display: flex;
+	flex-direction: column;
+}
+
+/* The story list under the pane label; it scrolls in a loop when taller
+   than the pane (see startMarquee in app.js) while the label stays put.
+   It is a real scroll box so a finger or mouse wheel can move it too. */
+.news-viewport {
+	flex: 1;
+	min-height: 0;
+	overflow-y: auto;
+	scrollbar-width: none;
+	overscroll-behavior: contain;
+}
+
+.news-viewport::-webkit-scrollbar {
+	display: none;
+}
+
+.news-slot.empty {
+	visibility: hidden;
+}
+
+/* Page mode: nothing scrolls inside the pane; the page does. */
+#news-panel.page .news-slot {
+	overflow: visible;
+	padding-bottom: 12px;
+}
+
+#news-panel.page .news-viewport {
+	overflow: visible;
+}
+
+.news-section {
+	font-size: max(12px, calc(var(--n) * 0.94));
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--accent);
+	margin-bottom: calc(var(--n) * 0.2);
+}
+
+/* Spacing is padding, not margin, so a list's offsetHeight includes the gap
+   after its last story and the looped copy lines up exactly. */
+.news-item {
+	padding: max(8px, calc(var(--n) * 0.5)) 0;
+	border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+	font-size: max(15px, calc(var(--n) * 1.25));
+	line-height: 1.4;
+	color: var(--muted);
+}
+
+.news-kicker {
+	font-size: max(11px, calc(var(--n) * 0.88));
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--accent-2);
+	margin-bottom: calc(var(--n) * 0.2);
+}
+
+.news-item p {
+	margin: 0 0 max(4px, calc(var(--n) * 0.3));
+}
+
+.news-item h4 {
+	font-size: max(19px, calc(var(--n) * 1.67));
+	line-height: 1.25;
+	font-weight: 700;
+	color: var(--ink);
+	margin: 0 0 max(4px, calc(var(--n) * 0.3));
+	/* pins to the pane top while its story scrolls by; the next story's
+	   heading pushes it out, since sticky stays inside its .news-item */
+	position: sticky;
+	top: 0;
+	background: var(--card-bg);
+}
+
+#news-panel.page .news-item h4 {
+	position: static;
+}
+
+.news-item small {
+	display: block;
+	font-size: max(12px, calc(var(--n) * 0.94));
+	color: #94a3b8;
+}
+
+.news-item img {
+	display: block;
+	width: 100%;
+	max-height: max(140px, calc(var(--n) * 8.5));
+	object-fit: cover;
+	margin-bottom: max(6px, calc(var(--n) * 0.4));
 }
 
 /* ===== Optional Effects ===== */

@@ -6,7 +6,8 @@ const CONFIG = {
 	UPDATE_INTERVAL: 3600 * 1000, // 1 hour
 	CLOCK_UPDATE_INTERVAL: 1000,  // 1 second
 	CHART_UPDATE_INTERVAL: 60 * 1000, // 1 minute
-	NEWS_SCROLL_SPEED: 0.012 // news panes scroll at this fraction of screen width per second
+	NEWS_SCROLL_SPEED: 0.96, // news panes scroll this many story-text heights (font-size) per second
+	NEWS_RESUME_AFTER: 20 * 1000 // a pane someone scrolled by hand resumes auto-scrolling after this long
 };
 
 // ===== UTILITY FUNCTIONS =====
@@ -267,6 +268,7 @@ function createWeatherChart(json) {
 		options: {
 			responsive: true,
 			maintainAspectRatio: false,
+			onResize: (chart, size) => scaleChart(chart, size.width),
 			plugins: {
 				legend: {
 					display: false,
@@ -346,6 +348,34 @@ function createWeatherChart(json) {
 		},
 		plugins: [canvasBackgroundColor],
 	});
+	scaleChart(previousChart, previousChart.width);
+	previousChart.update('none');
+}
+
+// The chart's sizes below were picked for the kiosk, where the chart is
+// about 920px wide. Other screens scale them with the chart's width, never
+// below a legible floor, and a narrow chart drops the two right-hand axes
+// (rain, wind) so the temperature curve keeps the room.
+const CHART_KIOSK_WIDTH = 920;
+
+function scaleChart(chart, width) {
+	const k = Math.min(1.25, Math.max(0.5, width / CHART_KIOSK_WIDTH));
+	const px = (size, floor) => Math.max(floor, Math.round(size * k));
+	const narrow = width < 560;
+	const { scales } = chart.options;
+	const [feelsLike] = chart.data.datasets;
+
+	scales.yF.title.display = !narrow;
+	scales.yF.title.font.size = px(16, 11);
+	scales.yF.ticks.font.size = px(18, 11);
+	scales.x.ticks.font.size = px(20, 11);
+	for (const axis of [scales.yRain, scales.yWind]) {
+		axis.display = !narrow;
+		axis.title.font.size = px(12, 10);
+		axis.ticks.font.size = px(14, 10);
+	}
+	feelsLike.pointRadius = px(5, 2);
+	chart.$dayLabel = { size: px(20, 11), long: width >= 480 };
 }
 
 function createChartBackgroundPlugin(json) {
@@ -415,9 +445,10 @@ function createChartBackgroundPlugin(json) {
 				const date = new Date(dt * 1000);
 				date.setHours(0);
 				const x1 = map_number(date.getTime() / 1000, dtBegin, dtEnd, left, right);
-				ctx.font = "20px sans-serif";
+				const label = chart.$dayLabel || { size: 20, long: true };
+				ctx.font = `${label.size}px sans-serif`;
 				ctx.fillStyle = "#ffffff";
-				ctx.fillText(" " + date.toLocaleDateString('en-us', { day: "numeric", weekday: "long" }), x1, top + 18);
+				ctx.fillText(" " + date.toLocaleDateString('en-us', { day: "numeric", weekday: label.long ? "long" : "short" }), x1, top + label.size * 0.9);
 
 				ctx.beginPath();
 				ctx.moveTo(x1, top);
@@ -444,9 +475,12 @@ function createChartBackgroundPlugin(json) {
 // ===== NEWS PANEL FUNCTIONS =====
 
 // Stories come from news/news.yml, written twice a day by a Claude agent
-// (scripts/kiosk-news.sh + .claude/skills/kiosk-news). They are grouped by
-// section into the 4 panes of a 2x2 grid (NEWS_GROUPS), and each pane shows
-// its whole group as one list that scrolls upward in a continuous loop.
+// (scripts/kiosk-news.sh + .claude/skills/kiosk-news). How they are laid out
+// depends on the screen; styles.css picks it and reports it as --news-mode:
+//   grid - grouped by section into the 4 panes of a 2x2 grid (NEWS_GROUPS),
+//          each pane's group one list that scrolls upward in a continuous loop
+//   feed - every story, in group order, in one pane that scrolls the same way
+//   page - every story in one plain list; the page itself scrolls (phones)
 //
 // The agent writes this file after reading arbitrary web pages, so every
 // field is treated as plain text (textContent, never innerHTML) and images
@@ -465,7 +499,9 @@ const NEWS_GROUPS = [
 
 const news = {
 	raw: null,
-	generated: ""
+	generated: "",
+	stories: [],
+	layout: "" // mode and panel size the panes were last built for
 };
 
 function el(tag, className, text) {
@@ -525,27 +561,47 @@ function imagesSettled(node) {
 // wraps, the copy sits where the original started, so the loop has no seam.
 // It moves scrollTop rather than a transform so the sticky story headings
 // (see .news-item h4 in styles.css) pin to the top as their story passes.
+// Speed follows the story text size, so reading pace is the same on every
+// screen. Scrolling the pane by hand (wheel, touch, click) holds it where the
+// reader left it for NEWS_RESUME_AFTER, then it carries on from there.
 async function startMarquee(paneEl, list) {
 	const token = paneEl.dataset.token;
+	const live = () => paneEl.isConnected && paneEl.dataset.token === token;
 	await imagesSettled(list);
-	if (paneEl.dataset.token !== token) return; // pane was rebuilt meanwhile
+	if (!live()) return; // pane was rebuilt meanwhile
 
 	const viewport = paneEl.querySelector(".news-viewport");
 	const distance = list.offsetHeight;
 	if (distance <= viewport.clientHeight) return; // fits: nothing to scroll
 
-	list.parentElement.append(list.cloneNode(true));
-	const start = performance.now();
+	const copy = list.cloneNode(true);
+	copy.setAttribute("aria-hidden", "true");
+	list.parentElement.append(copy);
+
+	const fontSize = parseFloat(getComputedStyle(list.querySelector(".news-item")).fontSize);
+	const speed = fontSize * CONFIG.NEWS_SCROLL_SPEED; // px per second
+	let origin = 0; // scroll position at time `start`
+	let start = performance.now();
+	let heldUntil = 0;
+	const hold = () => { heldUntil = performance.now() + CONFIG.NEWS_RESUME_AFTER; };
+	for (const type of ["wheel", "touchstart", "pointerdown", "keydown"]) {
+		viewport.addEventListener(type, hold, { passive: true });
+	}
+
 	const step = now => {
-		if (paneEl.dataset.token !== token) return; // pane rebuilt: stop this loop
-		const pos = (now - start) / 1000 * window.innerWidth * CONFIG.NEWS_SCROLL_SPEED;
-		viewport.scrollTop = pos % distance;
+		if (!live()) return; // pane rebuilt: stop this loop
+		if (now < heldUntil) {
+			origin = viewport.scrollTop;
+			start = now;
+		} else {
+			viewport.scrollTop = (origin + (now - start) / 1000 * speed) % distance;
+		}
 		requestAnimationFrame(step);
 	};
 	requestAnimationFrame(step);
 }
 
-function setPane(paneEl, group, stories) {
+function setPane(paneEl, label, stories, scroll) {
 	paneEl.dataset.token = String(Date.now() + Math.random());
 	paneEl.replaceChildren();
 	paneEl.classList.toggle("empty", stories.length === 0);
@@ -559,13 +615,41 @@ function setPane(paneEl, group, stories) {
 	track.append(list);
 	const viewport = el("div", "news-viewport");
 	viewport.append(track);
-	paneEl.append(el("div", "news-section", group.label), viewport);
-	startMarquee(paneEl, list);
+	paneEl.append(el("div", "news-section", label), viewport);
+	if (scroll) startMarquee(paneEl, list);
 }
 
 function groupOf(story) {
 	const i = NEWS_GROUPS.findIndex(g => g.sections.includes(str(story.section)));
 	return i === -1 ? NEWS_GROUPS.length - 1 : i;
+}
+
+function newsMode() {
+	const mode = getComputedStyle(document.getElementById("dash")).getPropertyValue("--news-mode").trim();
+	return ["grid", "feed", "page"].includes(mode) ? mode : "grid";
+}
+
+// Builds the panes for the current screen. Also called on resize, where it
+// only rebuilds if the mode or the panel's size changed (in page mode the
+// height follows the content, so only width counts - phones change height
+// whenever the address bar slides in or out).
+function renderNews(force) {
+	const panel = document.getElementById("news-panel");
+	const mode = newsMode();
+	const layout = `${mode} ${panel.clientWidth}` + (mode === "page" ? "" : ` ${panel.clientHeight}`);
+	if (!force && layout === news.layout) return;
+	news.layout = layout;
+
+	// within a group, stories keep the order the agent wrote them in
+	const groups = NEWS_GROUPS.map(() => []);
+	news.stories.forEach(story => groups[groupOf(story)].push(story));
+	const panes = mode === "grid"
+		? NEWS_GROUPS.map((group, i) => ({ label: group.label, stories: groups[i] }))
+		: [{ label: "News", stories: groups.flat() }];
+
+	panel.className = mode;
+	panel.replaceChildren(...panes.map(() => el("div", "news-slot")));
+	panes.forEach((pane, i) => setPane(panel.children[i], pane.label, pane.stories, mode !== "page"));
 }
 
 async function loadNews() {
@@ -589,15 +673,9 @@ async function loadNews() {
 	}
 	news.raw = raw;
 	news.generated = str(data?.generated);
-	const stories = (Array.isArray(data?.stories) ? data.stories : [])
+	news.stories = (Array.isArray(data?.stories) ? data.stories : [])
 		.filter(story => story && str(story.title));
-
-	// within a pane, stories keep the order the agent wrote them in
-	const groups = NEWS_GROUPS.map(() => []);
-	stories.forEach(story => groups[groupOf(story)].push(story));
-
-	const panes = document.querySelectorAll("#news-panel .news-slot");
-	panes.forEach((paneEl, i) => setPane(paneEl, NEWS_GROUPS[i], groups[i] || []));
+	renderNews(true);
 }
 
 // ===== INITIALIZATION =====
@@ -611,6 +689,13 @@ setInterval(() => {
 // Initial load
 loadWeather();
 loadNews();
+
+// Rotating a phone or resizing a window can change the news layout
+let resizeTimer = null;
+window.addEventListener("resize", () => {
+	clearTimeout(resizeTimer);
+	resizeTimer = setTimeout(() => renderNews(false), 250);
+});
 
 // Reload weather and news every hour
 setInterval(() => {

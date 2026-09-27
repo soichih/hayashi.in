@@ -21,48 +21,33 @@
 </head>
 
 <body>
-	<div>
-		<div class="row g-0">
-			<!-- Main Content Column -->
-			<div class="col-md-7 main-content">
-				<!-- Date Display -->
-				<div id="date" class="text-center"></div>
+	<!-- One grid; styles.css places the areas for the screen shape:
+	     landscape = dashboard left, news right, sun times along the bottom;
+	     portrait = dashboard on top, news below. -->
+	<main id="dash">
+		<div id="date"></div>
+		<div id="time-now"></div>
 
-				<!-- Time Display -->
-				<div id="time-now"></div>
+		<!-- Current conditions and the two-day forecast -->
+		<section id="now">
+			<div id="weather"></div>
+			<div id="weather-note"></div>
+		</section>
 
-				<!-- Weather Section -->
-				<div class="row">
-					<div class="col-md-4">
-						<p id="weather"></p>
-					</div>
-					<div class="col-md-8" id="weather-note"></div>
-				</div>
-
-				<!-- Weather Chart -->
-				<div id="weather-chart-container">
-					<canvas id="weather-chart"></canvas>
-				</div>
-			</div>
-
-			<!-- News Column: 4 panes, one scrolling group of stories each -->
-			<div class="col-md-5">
-				<div id="news-panel">
-					<div class="news-slot"></div>
-					<div class="news-slot"></div>
-					<div class="news-slot"></div>
-					<div class="news-slot"></div>
-				</div>
-			</div>
+		<div id="weather-chart-container">
+			<canvas id="weather-chart"></canvas>
 		</div>
-	</div>
 
-	<!-- Footer with Sun Times -->
-	<footer>
-		<div id="sunrise" class="text-center"></div>
-		<div id="sunset-moon" class="text-center"><span id="sunset"></span><span id="moon"></span></div>
-		<div id="noon" class="text-center">Noon</div>
-	</footer>
+		<!-- Sun times -->
+		<footer id="sun">
+			<div id="sunrise"></div>
+			<div id="noon">Noon</div>
+			<div id="sunset-moon"><span id="sunset"></span><span id="moon"></span></div>
+		</footer>
+
+		<!-- News: app.js builds the panes (2x2 grid of groups, or one feed) -->
+		<section id="news-panel"></section>
+	</main>
 
 	<!-- Custom Scripts -->
 	<script src="app.js"></script>
