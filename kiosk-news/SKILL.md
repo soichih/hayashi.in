@@ -59,6 +59,18 @@ quantity: 20 excellent cards beat 40 filler ones.
    run). Don't simply repeat it - keep a story from it only if it's still
    current and important, and prefer new stories.
 
+## Using recent history
+
+`recent.yml` in the output folder (when present) lists every story shown in
+the last 7 days, with when it first and last ran and how many runs included
+it. Read it before researching. A story that has run many times with nothing
+new should usually drop off. A story with a real update comes back with the
+update in the title and the first sentence, like "Council approves the Kirkwood
+plan it debated Tuesday". A pattern across several days, such as three
+restaurant closings in a week, can be its own card. If a section comes up
+empty, a still-relevant recent story is better than a thin pane, but an event
+whose date has passed never comes back.
+
 ## How to write a card
 
 Write like a sharp local news editor, not a press release.
