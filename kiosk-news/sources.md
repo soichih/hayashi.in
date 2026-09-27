@@ -62,6 +62,11 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   current (e.g. an October 2025 B Square Bulletin story on an IU/IU
   Foundation land sale) - always confirm the actual publish date before
   using a "found via search" local story (2026-09-27).
+- Visit Bloomington RSS via WebFetch only returns events within the range it
+  infers from the request; a long-running exhibit (e.g. Future Tense 2026,
+  through Oct 31) drops out of a "next 10 days" fetch but is found by asking
+  WebFetch for that event by name directly - same feed, more specific ask
+  (2026-09-27 evening).
 
 ## Local news
 
@@ -99,6 +104,18 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   stories (e.g. an NBC-owned local station or an NPR-member station running
   the same AP/NPR piece) when the flagship site's article isn't in the
   results - these WebFetch fine and are a good fallback (2026-09-23).
+- npr.org article pages gave "socket hang up" again on a Sunday evening run;
+  member-station mirrors (opb.org, gpb.org, wsiu.org, etc., all findable by
+  WebSearch for the NPR story slug) fetched fine and also exposed a usable
+  og:image where the flagship npr.org page might not (2026-09-27 evening).
+- watchers.news storm articles are a good source for hurricane/nor'easter
+  detail and updates, but their images are lazy-loaded (data URI placeholder
+  in the HTML, like Buskirk-Chumley posters) - no image, just use the story
+  (2026-09-27 evening).
+- IU Auditorium event pages (events.iu.edu) still have no image, but
+  iuauditorium.com/events/detail/<slug> reliably has a real og:image plus
+  price and pre-show-talk detail the RSS lacks - fetch that page for every
+  IU Auditorium story (2026-09-27 evening, reconfirmed).
 
 ## AI news
 

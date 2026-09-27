@@ -40,3 +40,10 @@ One dated line per edit the agent makes to this skill: what changed and why.
 - 2026-09-26: sources.md - noted NPR timeouts, AI daily digest source, RSS quirks.
 2026-09-26 (evening run): sources.md - noted evening runs should drop events already over; aidapted.ro is another daily AI digest.
 - 2026-09-27: sources.md - added The B Square Bulletin as a good elections/county-government source; noted a Bloomingtonian featured image mismatched its story (old event's photo), a Buskirk-Chumley event image that was just the venue logo, and a case where search/fetch summaries surfaced a year-old article as current - always check the actual publish date.
+- 2026-09-27 (evening run): sources.md - noted npr.org article pages timing
+  out again but member-station mirrors (opb.org, gpb.org, etc.) working and
+  exposing og:image; watchers.news storm images are lazy-loaded and
+  unusable; iuauditorium.com/events/detail/<slug> reconfirmed as the
+  reliable image/price source for IU Auditorium events; Visit Bloomington
+  RSS needs a by-name ask to surface long-running exhibits outside a "next
+  10 days" date range.
