@@ -1,7 +1,7 @@
 # Sources
 
-Starting list, carried over from the old roll-up script
-(`pi-scripts/update_kiosk_data.py`) plus a few obvious additions. Update it
+Starting list, carried over from the old roll-up script plus a few obvious
+additions. Update it
 as you learn: add better sources, and note or remove ones that fail or add
 nothing. Keep each note short: what the source is good for, and any quirks.
 

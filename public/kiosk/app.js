@@ -1,6 +1,6 @@
 // ===== CONFIGURATION =====
-// All data (weather/news/events/facts/quotes/jokes) is fetched hourly by
-// server1 and published here as static JSON - this page has no API keys
+// All data (weather/news/events/facts/quotes/jokes) is fetched by a separate
+// job and published here as static JSON - this page has no API keys
 // and makes no third-party calls except the cat image.
 const CONFIG = {
 	UPDATE_INTERVAL: 3600 * 1000, // 1 hour
