@@ -1,6 +1,6 @@
 ---
 title: 'Watching a home network by diffing it against itself'
-description: 'A small autonomous monitor for my home network: snapshot the state that should not drift, diff it against an accepted baseline, and let a language model decide whether the changes are explainable.'
+description: 'A small autonomous monitor for a home network: snapshot the state that should not drift, diff it against an accepted baseline, and let a language model decide whether the changes are explainable.'
 date: 2026-09-14
 tags:
   - Security
@@ -13,7 +13,7 @@ showHeroImage: false
 comments: true
 ---
 
-There are more computers in my house than people. A server, a couple of Raspberry Pis driving displays, TVs, a thermostat, a printer, a fridge that talks to the network for reasons I have never fully examined. If one of them started behaving differently tomorrow, would I notice?
+There are more computers in my house than people. If one of them started behaving differently tomorrow, would I notice?
 
 The honest answer was no. So I built a watchdog.
 
@@ -21,7 +21,7 @@ Not an intrusion detection system. I do not have the traffic visibility for that
 
 ## Snapshot, diff, judge
 
-Once an hour it takes a snapshot of the state that should not drift on its own. Listening sockets. User accounts and group membership. The SSH keys authorized to log in. Scheduled jobs and enabled services. Installed packages across every package manager on the box. Kernel modules. The set of devices the router can see. The same inventory pulled over SSH from the other machines in the house.
+On a schedule, it takes a snapshot of the state that should not drift on its own: what is listening on the network, who is allowed to log in, what is set to run, what software is installed, and which devices are on the network.
 
 Then it diffs that against a baseline I have explicitly accepted, and hands the diff to a language model with one question: is any of this explainable?
 
@@ -29,32 +29,30 @@ That split is the whole design. Detection is deterministic. A diff is a diff, an
 
 ## The known-normal list is the actual product
 
-The collector is a few hundred lines of shell. It was the easy part. The file that matters is the prompt, which describes what normal looks like here: which services are supposed to be listening, which devices belong to the household, what counts as routine, and what should raise an alarm no matter how ordinary it looks in context.
+The collector is a few hundred lines of shell. It was the easy part. The file that matters is the prompt, which describes what normal looks like: what is supposed to be running, which devices belong to the household, what counts as routine, and what should raise an alarm no matter how ordinary it looks in context.
 
-A new authorized SSH key is high severity, always. Routine package upgrades collapse to a single line. A new port forward appearing on the router by itself is serious, because UPnP means that can happen without anyone opening the admin page.
+Some changes are serious in any context. A new way to log in is one. A new path in from the internet that nobody opened on purpose is another, and home routers can open those by themselves through UPnP. Routine software updates, on the other hand, collapse to a single line.
 
 Tuning that file is the ongoing work. Every false positive is a missing sentence in it.
 
 ## It found its own bugs before it found anything else
 
-The first real run came back clean and then told me two sections of its own collector were broken.
+The first real run came back clean and then told me two parts of its own collector were broken.
 
-On Ubuntu, sudo and SSH authentication events go to `/var/log/auth.log`, not the systemd journal. My collector was reading the journal and finding nothing, which looks identical to "no suspicious logins" while actually meaning "not looking". The same assumption would have left the default fail2ban backend watching an empty stream.
+The first was reading login events from the wrong place. On some Linux systems, authentication events are written to a log file, not the system journal. My collector was reading the journal and finding nothing, which looks identical to "no suspicious logins" while actually meaning "not looking". Any other tool that reads the same empty stream makes the same mistake.
 
-The second: `systemctl --user` returns nothing when it runs from cron, because there is no session bus to connect to. An empty list, fed into a diff, reads as every user service having been deleted at once.
+The second was a query for per-user services that returns nothing when it runs as a scheduled job, because there is no user session to ask. An empty list, fed into a diff, reads as every one of those services having been deleted at once.
 
 Both failures are silent, and both look like good news. That is the thing worth designing against. A monitor that cannot tell you it has stopped monitoring is worse than no monitor, because you have stopped looking yourself.
 
-## What it does not do
+## Protect the baseline
 
-It detects change against a baseline, so it cannot see anything that was already wrong when the baseline was taken. Re-baseline only from a state you believe is clean. It polls, so anything that opens a socket and closes it between runs is invisible to it. Anything with root on the machine can quietly edit the baseline it is being measured against.
-
-It is also read-only by design. It never blocks, kills, or uninstalls. On a home network, a false positive that cuts my own remote access at the wrong moment is worse than an alert that arrives an hour late.
+A monitor like this only knows what changed since the baseline, so the baseline is the thing to protect. Take it from a state you trust, and treat any change to it as a change worth a look.
 
 ## Build yours, do not publish it
 
 The mechanism is worth sharing, which is why this post exists. The configuration is not, which is why there is no repository linked at the bottom of it.
 
-My prompt names devices, describes my topology, and lists exactly which ports are supposed to be open and why. It is a readable map of my attack surface, written specifically to be easy to read. The snapshots are worse: key fingerprints, full software inventory, every source address that has successfully logged in.
+A prompt that describes what normal looks like on a network is, by design, a readable map of that network's attack surface. The snapshots are worse: key fingerprints, a full software inventory, a record of who has logged in from where.
 
 None of that gets safer by being on GitHub. The idea does not get any weaker by being described in plain language, and the two bugs above will cost someone else an afternoon if nobody writes them down.

@@ -33,3 +33,6 @@ public/fonts/*-subset.woff2
 
 # Claude Code worktrees
 .claude/worktrees/
+
+# private operating notes for Claude Code (never commit)
+CLAUDE.local.md

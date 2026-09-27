@@ -1,24 +1,26 @@
-# hayashi.in — personal website
+# hayashi.in - personal website
 
 Source for **https://hayashi.in**, the personal website of Soichi Hayashi.
 
-Built with the **Navfolio** Astro theme (https://github.com/dodolalorc/astro-navfolio,
-MIT © dodolalorc), deployed to **GitHub Pages** via GitHub Actions. Navfolio is a
-portfolio-first publishing platform: a home dashboard, blog, projects, "vibe" short notes,
-full-text search (Pagefind), RSS, and light/dark theming.
+## This repository is public
 
-## Golden rule: everything here is PUBLIC
+Everything here, including this file and the full git history, is readable by anyone. Only
+add what the owner is happy for the whole world to see.
 
-The repository is **public** and everything the site serves is world-readable.
-- Only put information here meant to be seen by the entire world.
-- Never add secrets, API keys, tokens, private addresses, unpublished work, or anything the
-  owner would not post publicly — not in source, output, or git history.
+- Never add secrets, API keys, tokens, passwords, private or home network addresses, exact
+  locations, unpublished work, or personal information about anyone.
+- Keep operational details out of tracked files: which machines run what, local file paths,
+  schedules, private repositories, network layout, and security tooling. Those belong in
+  `CLAUDE.local.md`, which is git-ignored.
+- Data files the site publishes are public too. Strip anything a generator adds that the page
+  doesn't need (for example, coordinates echoed back by a weather API).
 - If a request would put non-public information into the repo, stop and flag it.
 
 ## Toolchain
 
-Requires **Bun** (https://bun.sh) and **Node ≥ 22.12**. Bun is the package manager and
-runs the build.
+Built with the **Navfolio** Astro theme (https://github.com/dodolalorc/astro-navfolio, MIT (c)
+dodolalorc) and deployed to **GitHub Pages** via GitHub Actions. Requires **Bun** and
+**Node >= 22.12**.
 
 ```sh
 bun install                 # install deps (uses bun.lock)
@@ -27,21 +29,20 @@ bun run build               # static build -> dist/  (astro build + Pagefind ind
 bun run preview             # preview the production build
 ```
 
-Local build gotchas (already handled, keep in mind):
-- The upstream theme is bilingual EN/CN and its `build` script ran a Chinese-font
-  subsetting step (`fonts:ui`) that **errors when there is no CJK text**. This site is
-  English-only, so that step was **removed** from the `build` script in `package.json`.
-  Keep content English; don't re-add `fonts:ui` to the build.
-- For a production-parity local build, pass the same env the CI uses:
-  `SITE_URL=https://hayashi.in SITE_BASE=/ bun run build`.
+Build notes:
+- The upstream theme's `build` script ran a Chinese-font subsetting step (`fonts:ui`) that
+  errors when there is no CJK text. This site is English-only, so that step was removed from
+  `build` in `package.json`. Keep content English and don't re-add it.
+- For a production-parity build: `SITE_URL=https://hayashi.in SITE_BASE=/ bun run build`.
 
 ## Workflow
 
-1. Edit **config** (`src/config/site.toml`) and/or **content** (`src/content/**`).
+1. Edit config (`src/config/site.toml`) and/or content (`src/content/**`).
 2. Preview with `bun run dev` (or build + `bun run preview`).
-3. Commit source. **Ask before pushing to `main`.**
-4. Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds with Bun and
-   deploys `dist/` to GitHub Pages. Do **not** commit `dist/` (git-ignored).
+3. Commit source. **Ask before pushing to `main`**; pushing deploys the site. Keep work that
+   isn't approved yet on a branch.
+4. `.github/workflows/deploy.yml` builds with Bun and deploys `dist/` to GitHub Pages. Don't
+   commit `dist/` (git-ignored).
 
 ## Where things live
 
@@ -49,52 +50,51 @@ Local build gotchas (already handled, keep in mind):
 src/config/site.toml   Profile, top nav, homepage modules, palette, links, search, comments
 src/content/about.mdx  About page
 src/content/blog/      Blog posts        (scaffold a post: `bun run post:new`)
-src/content/projects/  Project writeups
+src/content/projects/  Project writeups  (listed on /projects automatically)
 src/content/vibe/      Short notes       (scaffold: `bun run vibe:new`)
 src/content.config.ts  Content collection schemas + config schema/validation
 src/layouts/           Page shells (BaseLayout, BlogPost, BlogArticle)
-src/components/         Theme components (cards, widgets, header/footer, mdx helpers)
+src/components/        Theme components (cards, widgets, header/footer, mdx helpers)
 src/pages/             Routes (index, about, blog/*, projects, vibe, tags, rss, 404)
 src/styles/            global.css, palettes.css, fonts.css
-public/                Static assets served from site root
-public/images/         Images, incl. soichi.avatar.png (the profile avatar)
-public/CNAME           Custom domain — do NOT delete (see Deployment)
-public/kiosk/          Kitchen kiosk dashboard (plain HTML/JS, not part of the Astro build)
-kiosk-news/            Agent skill that writes the kiosk news (edits itself; symlinked
-                       from .claude/skills/kiosk-news - kept outside .claude/ so the
-                       restricted-mode agent is allowed to edit it)
-scripts/kiosk-news*.sh Cron wrapper + image downloader for that agent
+public/                Static assets served from the site root
+public/CNAME           Custom domain - do NOT delete
+public/kiosk/          Household dashboard page (plain HTML/JS, not part of the Astro build)
+public/quant/          Quant Fluency learning app (plain HTML/JS, not part of the Astro build)
+kiosk-news/            Agent skill that writes the dashboard's news stories
+scripts/               Content scaffolding and dashboard news helpers
 ```
 
 ## Kiosk dashboard (`public/kiosk/`)
 
-Served at https://hayashi.in/kiosk/ and shown on the Raspberry Pi kiosks at home.
-Everything under it is public like the rest of the site.
+Served at https://hayashi.in/kiosk/. It is a fixed, non-scrolling dashboard for a 1080p
+kiosk screen with no browser chrome, so design and test layout, font sizes and spacing at
+exactly **1920x1080** (e.g. Playwright with `viewport: { width: 1920, height: 1080 }`), to be
+read from across a room.
 
-- **Target screen: 1920x1080, and the page must be optimized for exactly that.** The
-  kitchen Pi drives a 24" 1080p monitor over HDMI at scale 1.0, and Chromium runs with
-  `--kiosk` (no browser UI), so the page viewport is the full 1920x1080 (checked
-  2026-09-22). The page is a fixed, non-scrolling dashboard, so design and test layout,
-  font sizes and spacing at that size - e.g. Playwright with
-  `viewport: { width: 1920, height: 1080 }` - and read it from across a kitchen, not a
-  desk. The office Pi wasn't reachable to confirm; assume the same until checked.
+- `weather.json` and `news/news.yml` (+ `news/img/`) are generated by automation outside this
+  repo; don't edit them by hand.
+- `app.js` groups `news.yml` stories by `section` into a 2x2 grid (`NEWS_GROUPS`); each pane
+  scrolls its group upward in a seamless loop. Story fields are rendered as text only (never
+  HTML), because they are written after reading arbitrary web pages.
 
-- `weather.json` — written hourly by `~/git/pi-scripts/update_kiosk_data.py --only weather`
-  (private repo, holds the API keys).
-- `news/news.yml` + `news/img/` — written twice a day by `scripts/kiosk-news.sh`, which
-  runs `claude -p` with the `kiosk-news` skill. The agent researches the sources in
-  `kiosk-news/sources.md`, writes card-sized stories, downloads images via
-  `scripts/kiosk-news-image.sh`, and may improve its own skill files (logged in the skill's
-  `CHANGELOG.md`). The wrapper validates the YAML, then commits only `public/kiosk/news/`
-  and the skill folder and pushes to `main`. Its fixed guardrails live in the wrapper's
-  prompt, not in the skill, so the agent can't edit them away.
-  - Test without publishing: `scripts/kiosk-news.sh --dry-run` (output stays in
-    `~/.local/state/kiosk-news/stage`). Log: `~/.local/state/kiosk-news/kiosk-news.log`.
-  - Cron: `30 6,18 * * * /home/soichih/git/hayashi.in/scripts/kiosk-news.sh`
-- `app.js` groups `news.yml` stories by `section` into a 2x2 grid (`NEWS_GROUPS`: Local
-  Events | Local News | US & World | AI & On This Day); each pane scrolls its whole group
-  upward in a seamless loop. Story fields are rendered as text only (never HTML),
-  since the agent writes them after reading arbitrary web pages.
+## Quant Fluency (`public/quant/`)
+
+A language-app-style trainer served at https://hayashi.in/quant/ (writeup:
+`src/content/projects/quant-fluency.mdx`).
+
+- `concepts.yml` - the concept map: domain, tier, level (1-5 within a domain), prerequisites
+  and certification tags. A same-domain prerequisite never has a higher level.
+- `questions.yml` - per concept: `lesson`, `detail` (More detail), `sources`, `figures`
+  (Mermaid), and `questions` with reference answers and key points. Question ids must stay
+  stable once published; player progress is stored by id.
+- Lessons and questions are written from scratch; never copy curriculum text or official
+  practice questions. Every factual or regulatory claim needs a source that was fetched and
+  confirmed to say it; every number in worked examples and charts is computed, not typed.
+- Grading and the tutor are served by an API outside this repo. The page sends only a question
+  id and the player's text; reference answers are looked up server-side.
+- Tutor replies and lesson text are rendered with the app's own safe formatter (DOM nodes
+  only, never innerHTML); Mermaid runs with `securityLevel: "strict"`.
 
 ## Editing conventions
 
@@ -104,34 +104,32 @@ Everything under it is public like the rest of the site.
   - **IntroCard quirk**: the home hero hardcodes a leading accent "Hi," and renders
     `intro.title` with `intro.name` stripped out, then re-adds `intro.name` as an italic
     accent. So `intro.title` **must contain the full `intro.name`** or the name doubles up.
-    Current: `title = "I'm Soichi Hayashi"`, `name = "Soichi Hayashi"` → "Hi, I'm *Soichi
+    Current: `title = "I'm Soichi Hayashi"`, `name = "Soichi Hayashi"` -> "Hi, I'm *Soichi
     Hayashi*".
-- **Pages/posts**: Markdown/MDX in `src/content/**` with frontmatter (see existing files
-  for the shape). Content is English; the page language is `en` (theme default was
-  `zh-CN` — do not reintroduce it).
-- **Citations/references in posts**: before a post with sourced claims or a "Sources &
-  Further Reading" list is committed, verify every citation actually used or added/changed
-  in that session — fetch or search for it, confirm the URL resolves and the source
-  actually says what the post claims. Do not carry a citation forward as verified just
-  because it was already in the file; only treat it as checked once you've confirmed it
-  in the current session. Never link to a pirated/unauthorized full copy of a
-  copyrighted work (e.g. a bootlegged book PDF) — link to the publisher, retailer, or
-  official source instead.
+- **Pages/posts**: Markdown/MDX in `src/content/**` with frontmatter (see existing files for
+  the shape). Content is English; the page language is `en` (theme default was `zh-CN` - do
+  not reintroduce it).
+- **Posts about the owner's own systems** (home network, servers, automation): describe the
+  idea and the lessons, not the inventory. No device lists, schedules, open ports, software
+  versions, or notes on what a monitor can't see.
+- **Citations/references in posts**: before a post with sourced claims or a "Sources & Further
+  Reading" list is committed, verify every citation actually used or added/changed in that
+  session - fetch or search for it, confirm the URL resolves and the source actually says what
+  the post claims. Don't carry a citation forward as verified just because it was already in
+  the file. Never link to a pirated/unauthorized copy of a copyrighted work; link to the
+  publisher, retailer, or official source instead.
 - **Images / static files**: put in `public/` (optimize large images first).
-- You may edit theme components, styles, `astro.config.mjs`, or `site.toml` schema when a
+- You may edit theme components, styles, `astro.config.mjs`, or the `site.toml` schema when a
   request needs it. Keep output clean, accessible, responsive; keep builds deterministic.
   After changes, run `bun run build` and confirm it succeeds.
 
-## Deployment (facts — keep these true)
+## Deployment (facts - keep these true)
 
-- Host: **GitHub Pages**, repo `soichih/hayashi.in`. Pages source = **GitHub Actions**
-  (build type: workflow), via `.github/workflows/deploy.yml` (Bun install →
-  `bun run build` with `SITE_URL=https://hayashi.in`, `SITE_BASE=/` →
-  `upload-pages-artifact` → `deploy-pages`).
-- Custom domain: **hayashi.in** (apex). Set via `public/CNAME` (copied into `dist/`) and the
-  Pages custom-domain setting. GoDaddy DNS: `A` → 185.199.108–111.153,
-  `AAAA` → 2606:50c0:8000–8003::153, `www` CNAME → `soichih.github.io`. HTTPS enforced once
-  GitHub issues the cert.
-- Deploying = pushing to `main`. **Ask before pushing.** Pushing directly to the default
-  branch is also gated by the harness.
-- `LICENSE` is the theme's MIT license — keep it for attribution.
+- Host: **GitHub Pages**, repo `soichih/hayashi.in`. Pages source = **GitHub Actions**, via
+  `.github/workflows/deploy.yml` (Bun install -> `bun run build` with
+  `SITE_URL=https://hayashi.in`, `SITE_BASE=/` -> `upload-pages-artifact` -> `deploy-pages`).
+- Custom domain: **hayashi.in** (apex), set via `public/CNAME` (copied into `dist/`) and the
+  Pages custom-domain setting. DNS: `A` -> 185.199.108-111.153, `AAAA` ->
+  2606:50c0:8000-8003::153, `www` CNAME -> `soichih.github.io`. HTTPS enforced.
+- Deploying = pushing to `main`. **Ask before pushing.**
+- `LICENSE` is the theme's MIT license - keep it for attribution.
