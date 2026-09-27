@@ -1,0 +1,78 @@
+---
+title: '2028 Candidate Tracker'
+description: 'A one-page comparison of the people most often named as 2028 presidential contenders: market odds, early polls, how likely each is to run, and where they stand on seven issues.'
+date: 2026-09-27
+showHeroImage: false
+tags:
+  - Politics
+  - Data
+  - Web App
+comments: false
+sidebar:
+  enable: false
+  toc: false
+  relatedPosts: false
+---
+
+- **Live:** [hayashi.in/2028](/2028/)
+
+Nobody has formally entered the 2028 race yet, but the same names come up again and again. I
+wanted one page that puts them side by side: what the betting markets think, what the early
+polls say, how likely each person is to actually run, and what they have done or said on the
+issues I care about.
+
+## What's on the page
+
+The top table lists nine possible candidates, Republicans and Democrats, sorted by their odds of
+winning their party's nomination. The odds are an average of Polymarket and Kalshi, taken from
+[PredictMarketCap's comparison](https://predictmarketcap.com/elections/2028). Markets don't
+price the popular vote per candidate, so "win presidency" is the closest measure. Next to that
+is the latest primary poll I could find for each person.
+
+The last column is a row of ballot ovals, one to five filled, for how likely the person is to
+run. This one is my own read of public statements, not a market price, and the page says so.
+Someone who says they'll decide after the midterms and already has a political team gets five.
+Someone who says they have no interest gets two, even if the markets like them.
+
+Below the table you pick an issue and see every candidate's position on it:
+
+- Wealth inequality
+- Campaign finance
+- AI
+- Climate and environment
+- Financial regulation
+- Corporate tax
+- Education and science
+
+## Tagging the evidence
+
+Most of these people have no 2028 platform, so a flat list of positions would mix a bill
+someone signed last year with a line from a campaign six years ago. Each entry carries a tag
+for what it rests on:
+
+- **2026 proposal:** something proposed or said this year, the closest thing to a platform.
+- **Record:** votes, laws signed, or actions in office.
+- **Past campaign:** a position from a 2020 or 2024 run, which may have moved since.
+- **No clear position:** nothing specific found. That means unknown, not opposed.
+
+The gaps turned out to be informative. On campaign finance, several candidates have nothing on
+record at all, while for one of them it's the signature issue. On AI, the candidates split
+along lines that don't follow party.
+
+## Who's not on it
+
+I only list people with real signals: market odds, poll numbers, or public talk about running. I
+looked into adding Jack Smith, the former special counsel. He isn't in any 2028 market or poll I
+could find, he's registered as an independent, and he has no public positions on these issues.
+Adding him would have made the page imply a candidacy that doesn't exist, so he's out for now.
+
+## How it's built
+
+It's a single static HTML file with no build step and no framework. The candidates and issues
+are two JavaScript arrays at the bottom of the file, and the page renders the table and the
+issue view from them. Adding an issue means adding one entry to the list of issues and a
+matching key to each candidate. Anyone missing that key shows as "No clear position"
+automatically.
+
+Every figure on the page is a snapshot dated September 27, 2026. The numbers will move a lot
+after the November 2026 midterms, when announcements usually start.
