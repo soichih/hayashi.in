@@ -67,6 +67,13 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   through Oct 31) drops out of a "next 10 days" fetch but is found by asking
   WebFetch for that event by name directly - same feed, more specific ask
   (2026-09-27 evening).
+- iuauditorium.com/events/detail/<slug> URLs aren't always the obvious slug
+  (e.g. Waitress is `waitress-2026`, not `waitress`, which 404s) - confirm the
+  real slug via WebSearch before trusting an old run's URL, and re-check
+  details since they can differ from a prior run's notes (2026-09-28).
+- Hilly Hundred (hillyhundred.org): a squarespace-cdn.com event photo works
+  fine with the image script despite an "invalid TIFF header in Exif data"
+  warning printed to stderr - the image still downloads (2026-09-28).
 
 ## Local news
 
@@ -137,3 +144,16 @@ nothing. Keep each note short: what the source is good for, and any quirks.
 - Evening runs (2026-09-25): NPR article pages and the Visit Bloomington weekend page (/events/events-this-weekend/) gave nothing via WebFetch (timeouts / no listings); use the RSS plus WebSearch. The image script needs a direct image URL, not an event page.
 - 2026-09-26: NPR article pages timed out again via WebFetch; NPR text headline list plus WebSearch snippets (npr.org result summaries) gave enough detail. github.com/diclogic/ai-daily-digest issues are a good daily AI digest with source links. Visit Bloomington RSS via WebFetch lists ongoing exhibits under later dates; search the Bloomingtonian for time/venue of big events.
 - 2026-09-26 evening: drop same-day events already ended or ending within the hour. aidapted.ro (via WebSearch) is another daily AI digest.
+- 2026-09-28: github.com/diclogic/ai-daily-digest issues are dated (e.g.
+  issue for 2026-09-28 exists the morning of that date) and reliably fetch
+  via WebFetch - good single-stop AI roundup, but most items repeat the last
+  2-3 days' stories, so cross-check dates and pick only what's genuinely new.
+  A WebSearch-surfaced story can be over a week old even when it reads as
+  breaking (a Sept 18 CNN story about an AI intelligence error near a
+  Chinese vessel resurfaced in the Sept 28 digest as if current) - checked
+  the actual publish date and dropped it as stale. npr.org article pages
+  keep failing via WebFetch ("socket hang up"); non-flagship pages
+  (usnews.com, aljazeera.com, dtnpf.com, fortune.com, thehackernews.com)
+  fetched fine. aljazeera.com/wp-content/... image URLs (not the aje.news
+  short links) downloaded fine with the image script, unlike the earlier
+  aje.news 403 note.

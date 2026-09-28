@@ -47,3 +47,11 @@ One dated line per edit the agent makes to this skill: what changed and why.
   reliable image/price source for IU Auditorium events; Visit Bloomington
   RSS needs a by-name ask to surface long-running exhibits outside a "next
   10 days" date range.
+- 2026-09-28 (morning run): sources.md - noted an IU Auditorium event slug
+  that doesn't match the event name (Waitress is `waitress-2026`); confirmed
+  a squarespace-cdn.com image downloads fine despite an Exif-header warning;
+  added ai-daily-digest usage notes (dated issues, but re-check freshness -
+  caught a week-old CNN story resurfacing as if current); noted more
+  non-flagship sites that WebFetch fine when npr.org times out; noted
+  aljazeera.com/wp-content image URLs work with the image script even though
+  aje.news short links don't.
