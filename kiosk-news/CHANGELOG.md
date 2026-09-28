@@ -2,6 +2,11 @@
 
 One dated line per edit the agent makes to this skill: what changed and why.
 
+- 2026-09-28 evening: sources.md: noted github.com/diclogic/ai-daily-digest's
+  issues index doesn't expose issue bodies to WebFetch (fetch the specific
+  issue or use WebSearch instead), cnbc.com article pages still 403, and NPR
+  member-station mirrors (kpbs.org, turnto10.com) reliably carry a usable
+  og:image.
 - 2026-09-27: Added "Using recent history" (by the site owner's session, not the agent): runs now get recent.yml with the last 7 days of published stories.
 - 2026-09-22: Initial version, seeded from the old Ollama roll-up sources.
 - 2026-09-22: Recorded first-run source results in sources.md (AP, BBC, The

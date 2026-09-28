@@ -157,3 +157,9 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   fetched fine. aljazeera.com/wp-content/... image URLs (not the aje.news
   short links) downloaded fine with the image script, unlike the earlier
   aje.news 403 note.
+- 2026-09-28 evening: github.com/diclogic/ai-daily-digest/issues listing page
+  doesn't expose an issue's body text to WebFetch (only titles) - fetch the
+  specific issue URL, or just use WebSearch for "AI news today <date>"
+  instead. cnbc.com article pages still 403 WebFetch. NPR member-station
+  mirrors (kpbs.org, turnto10.com) keep working well and often carry a
+  usable AP/NPR og:image the flagship npr.org page might not.
