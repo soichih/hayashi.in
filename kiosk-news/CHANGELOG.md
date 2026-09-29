@@ -60,3 +60,8 @@ One dated line per edit the agent makes to this skill: what changed and why.
   non-flagship sites that WebFetch fine when npr.org times out; noted
   aljazeera.com/wp-content image URLs work with the image script even though
   aje.news short links don't.
+- 2026-09-29: sources.md - noted plain WebSearch for "AI news today <date>"
+  and "site:techcrunch.com AI <date>" found same-day AI exclusives faster
+  than the digest sites; noted fortune.com WebFetch doesn't expose an
+  og:image tag but its inline image URL still downloads fine; reconfirmed
+  cnn.com article WebFetch still 451s.

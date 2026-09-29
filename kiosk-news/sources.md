@@ -163,3 +163,11 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   instead. cnbc.com article pages still 403 WebFetch. NPR member-station
   mirrors (kpbs.org, turnto10.com) keep working well and often carry a
   usable AP/NPR og:image the flagship npr.org page might not.
+- 2026-09-29: plain WebSearch for "AI news today <date>" and "site:techcrunch.com
+  AI <date>" surfaced several same-day exclusives (Anthropic's leaked IPO
+  prospectus, AMD's World Labs acquisition, a UK AISI safety report, an
+  OpenAI model cancellation, an Nvidia agent-safety product) faster than any
+  single digest site - worth trying before the AI Weekly/ai-daily-digest
+  roundups. fortune.com WebFetch worked but didn't expose an og:image tag;
+  the article's inline image URL (in `/img-assets/...`) worked fine with the
+  download script anyway. cnn.com article WebFetch still returns HTTP 451.
