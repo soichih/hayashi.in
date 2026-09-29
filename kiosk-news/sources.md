@@ -51,6 +51,14 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   (e.g. a 2019 Lotus Festival photo on a 2026 Roots, Boots & Blues Fest post,
   filename still referencing the old event) - check the filename/subject
   before using it, and skip the image if it doesn't match (2026-09-27).
+  Reconfirmed 2026-09-29 evening: this same 2019 Lotus masthead photo
+  (`cropped-092719_JRH_Lotus_Friday...`) turned up as the "og:image" for
+  three unrelated same-day articles (Music Expo, Roots Boots & Blues, and
+  Boogies festival posts) - it's the site's header logo, not a real featured
+  image, so treat any Bloomingtonian og:image with that filename as no image
+  at all rather than checking it story by story.
+- hillyhundred.org homepage has a usable squarespace-cdn.com event photo
+  (2026-09-29 evening, same one noted 2026-09-28).
 - Buskirk-Chumley event pages sometimes do expose an image now, but it's just
   the venue's wide logo graphic, not a real poster - skip it as a logo-only
   image (2026-09-27).
@@ -171,3 +179,15 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   roundups. fortune.com WebFetch worked but didn't expose an og:image tag;
   the article's inline image URL (in `/img-assets/...`) worked fine with the
   download script anyway. cnn.com article WebFetch still returns HTTP 451.
+- 2026-09-29 evening: techcrunch.com article WebFetches sometimes return only
+  the body text with no head/meta tags, so no og:image is found even though
+  one exists - a WebSearch for the same story on engadget.com or another
+  outlet often surfaces a usable og:image instead. usn news search for
+  "<topic> photo AP" or "<topic> photo Reuters" is a reliable way to find a
+  wire-service image URL (then fetch that specific article for the og:image)
+  when the first article tried doesn't expose one. abcnews.com article pages
+  reliably expose an og:image via WebFetch. Watch for stories that read as
+  breaking but are actually a few days old (e.g. an Ain al-Asad, Iraq
+  withdrawal story from January resurfacing) - a same-day source confirming
+  the publish date (like newscord.org's multi-outlet roundup) is worth the
+  extra check before running it as today's news.

@@ -65,3 +65,14 @@ One dated line per edit the agent makes to this skill: what changed and why.
   than the digest sites; noted fortune.com WebFetch doesn't expose an
   og:image tag but its inline image URL still downloads fine; reconfirmed
   cnn.com article WebFetch still 451s.
+- 2026-09-29 (evening run): sources.md - noted techcrunch.com article
+  WebFetches sometimes omit meta tags entirely (no og:image found even when
+  one exists) and a same-story search on another outlet (engadget.com,
+  abcnews.com) often finds one instead; noted searching "<topic> photo AP/
+  photo Reuters" is a reliable way to locate a wire-image URL; noted to
+  double-check the publish date on stories that read as breaking but may be
+  old (caught a January Iraq-withdrawal story almost getting reused as
+  today's news); confirmed the Bloomingtonian's mismatched 2019 Lotus
+  masthead photo shows up as "og:image" on multiple unrelated posts, so
+  treat that specific filename as no-image rather than re-checking each
+  time; hillyhundred.org homepage image reconfirmed usable.
