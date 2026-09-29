@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Monroe County ballot, November 3, 2026</title>
+<meta name="description" content="Everything on the November 2026 general election ballot in Monroe County, Indiana: every race, every candidate, the yes/no questions, and where the candidates in contested races stand. Pick a precinct to see one ballot.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0F3; --sheet:#FFFFFF; --ink:#172033; --muted:#566074; --rule:#CBD2DC;
+  --dem:#2F5DA8; --rep:#B23A2E; --lib:#B07A00; --lin:#6B4FA0; --ind:#5E6B7D;
+  --mark:#1F2A44; --soft:#E3E8EE; --warn:#8A5A00;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#141A24; --sheet:#1C2431; --ink:#E6EAF0; --muted:#A3ADBD; --rule:#344052;
+    --dem:#7FA3E6; --rep:#E58677; --lib:#E0B35A; --lin:#B39DE0; --ind:#A3ADBD;
+    --mark:#E6EAF0; --soft:#263041; --warn:#E0B35A;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141A24; --sheet:#1C2431; --ink:#E6EAF0; --muted:#A3ADBD; --rule:#344052;
+  --dem:#7FA3E6; --rep:#E58677; --lib:#E0B35A; --lin:#B39DE0; --ind:#A3ADBD;
+  --mark:#E6EAF0; --soft:#263041; --warn:#E0B35A;
+}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16px;line-height:1.55}
+a{color:inherit;text-underline-offset:2px}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(--dem);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+header{padding:48px 0 20px}
+h1{font-size:clamp(2.1rem,6vw,3.6rem);line-height:1.02;font-weight:800;letter-spacing:-.025em;margin:0 0 16px;max-width:16ch}
+.lede{max-width:64ch;color:var(--muted);margin:0 0 20px}
+.stamp{display:inline-flex;gap:10px;align-items:center;border:1.5px solid var(--ink);border-radius:999px;padding:6px 14px;font-weight:600;font-size:.9rem}
+.stamp i{width:10px;height:10px;border-radius:50%;background:var(--ink);display:inline-block}
+
+.dates{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:22px 0 0}
+.date{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:12px 16px}
+.date b{display:block;font-size:1.05rem}
+.date span{color:var(--muted);font-size:.88rem}
+
+section{margin:28px 0 48px}
+h2{font-size:1.6rem;font-weight:800;letter-spacing:-.015em;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 18px;max-width:68ch}
+
+.picker{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:14px;padding:16px 18px;margin-bottom:18px}
+.picker label{font-weight:700}
+.picker select{font:inherit;font-size:1rem;padding:8px 12px;border:1.5px solid var(--rule);border-radius:10px;background:var(--paper);color:var(--ink);min-width:240px}
+.picker .small{flex-basis:100%}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.pill{font:inherit;font-size:.92rem;font-weight:600;cursor:pointer;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);
+  border-radius:999px;padding:7px 14px}
+.pill[aria-pressed="true"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+
+.summary{font-weight:600;margin:0 0 14px}
+.group{margin:0 0 26px}
+.group h3{font-size:.84rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 10px}
+.races{display:grid;gap:10px}
+.race{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:14px 18px}
+.race-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.race-title{font-weight:800;font-size:1.08rem}
+.vf{font-size:.82rem;color:var(--muted)}
+.badge{display:inline-block;font-size:.74rem;font-weight:700;border-radius:6px;padding:2px 8px;margin-left:6px;vertical-align:2px}
+.badge.c{background:var(--ink);color:var(--sheet)}
+.badge.u{border:1px solid var(--rule);color:var(--muted)}
+.badge.q{border:1.5px solid var(--ink)}
+.where{font-size:.82rem;color:var(--muted);margin-top:2px}
+.cands{display:flex;flex-wrap:wrap;gap:8px 18px;margin:10px 0 0;padding:0;list-style:none}
+.cand{display:flex;gap:8px;align-items:center}
+.box{width:16px;height:16px;border:1.6px solid var(--mark);border-radius:3px;flex:none}
+.cand .pl{font-size:.8rem;color:var(--muted)}
+.dot{width:6px;align-self:stretch;border-radius:3px;min-height:30px;flex:none}
+.D{background:var(--dem)} .R{background:var(--rep)} .L{background:var(--lib)} .Ln{background:var(--lin)} .I,.N,.W{background:var(--ind)}
+.qtext{margin:8px 0 0;max-width:74ch}
+.qtext.fine{font-size:.9rem;color:var(--muted)}
+.more{margin-top:10px}
+.race details{border:0;padding:0;margin:0;background:none}
+.race summary{font-weight:700;cursor:pointer;font-size:.92rem}
+
+.stances{display:grid;gap:10px;margin-top:12px}
+.stance{display:grid;grid-template-columns:200px 1fr;gap:18px;padding:14px 16px;background:var(--paper);border:1px solid var(--rule);border-radius:10px;border-left-width:6px}
+.stance.D{border-left-color:var(--dem)} .stance.R{border-left-color:var(--rep)} .stance.L{border-left-color:var(--lib)}
+.stance.Ln{border-left-color:var(--lin)} .stance.I,.stance.N,.stance.W{border-left-color:var(--ind)}
+.stance.D,.stance.R,.stance.L,.stance.Ln,.stance.I,.stance.N,.stance.W{background:var(--paper)}
+.stance p{margin:0 0 8px;max-width:70ch}
+.name{font-weight:700}
+.role{font-size:.86rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.76rem;font-weight:600;border:1px solid var(--rule);border-radius:6px;padding:2px 8px;margin:0 6px 6px 0;color:var(--muted)}
+.srcs{font-size:.82rem;color:var(--muted)}
+.srcs a{margin-right:10px}
+.yn{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.yn div{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:10px 14px}
+.yn b{display:block}
+.small{font-size:.82rem;color:var(--muted)}
+@media (max-width:640px){
+  .stance{grid-template-columns:1fr;gap:6px}
+  .yn{grid-template-columns:1fr}
+  header{padding-top:32px}
+  .picker select{min-width:0;width:100%}
+}
+
+#method details{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+#method summary{font-weight:700;cursor:pointer}
+#method details p,#method details li{max-width:70ch;color:var(--muted)}
+footer{padding:24px 0 48px;color:var(--muted);font-size:.86rem;border-top:1px solid var(--rule)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>What's on the Monroe County ballot</h1>
+  <p class="lede">The November 3, 2026 general election in Monroe County, Indiana: every race, every candidate, and every yes/no question, taken from the county's official sample ballots. For races with a real choice, you'll find what each candidate has said and done, with links to the sources.</p>
+  <span class="stamp"><i></i>Sample ballots dated September 18, 2026</span>
+  <div class="dates">
+    <div class="date"><b>Oct 5</b><span>Last day to register</span></div>
+    <div class="date"><b>Oct 6 to Nov 2</b><span>Early voting at Election Central, 501 N. Morton St. (ends noon Nov 2)</span></div>
+    <div class="date"><b>Nov 3</b><span>Election Day, polls open 6 a.m. to 6 p.m.</span></div>
+  </div>
+</header>
+
+<section id="ballot">
+  <h2>Your ballot</h2>
+  <p class="sub">Every voter in the county gets the statewide offices, Congress, the county offices and the yes/no questions. Your State House district, county council district, township, school board and a few other items depend on your precinct.</p>
+  <div class="picker">
+    <label for="precinct">Precinct</label>
+    <select id="precinct"><option value="">Everything in the county</option></select>
+    <span class="small">Don't know your precinct? Look it up at <a href="https://indianavoters.in.gov/" target="_blank" rel="noopener">indianavoters.in.gov</a>. It shows on your voter registration. This page doesn't store what you pick.</span>
+  </div>
+  <div class="filters" role="group" aria-label="Filter races">
+    <button class="pill" data-show="all" aria-pressed="true">Everything</button>
+    <button class="pill" data-show="choice" aria-pressed="false">Only real choices</button>
+  </div>
+  <p class="summary" id="summary"></p>
+  <div id="groups"></div>
+</section>
+
+<section id="method">
+  <h2>How to read this</h2>
+  <details open><summary>What the evidence tags mean</summary>
+    <ul>
+      <li><b>In their words</b>: the candidate's own answer to a voter survey, debate or interview this year.</li>
+      <li><b>Record</b>: votes cast or actions taken in office.</li>
+      <li><b>Campaign site</b>: what the candidate's campaign says they will do.</li>
+      <li><b>Reporting</b>: facts from news coverage, such as background, fundraising and endorsements.</li>
+    </ul>
+  </details>
+  <details><summary>Things the ballot doesn't tell you</summary>
+    <ul>
+      <li>A straight-party vote doesn't count for township board seats, school board seats, the judge retention questions or the public questions. Mark those separately.</li>
+      <li>Declared write-in candidates are not printed on the ballot. To vote for one, write the name on the write-in line and mark the box next to it. In Monroe County the declared write-ins are Floyd Michael Taylor (Independent) for Congress, Joe Davis (Independent) for Circuit Court Clerk, and Andrew Delano (filed as "National Socialist American Workers'") for Secretary of State. A write-in for anyone who didn't file is not counted.</li>
+      <li>There is no U.S. Senate, governor or state senate race on any Monroe County ballot this year.</li>
+      <li>"Uncontested" means one name for one seat, or exactly as many names as seats. Those candidates win with a single vote, but you can still vote for them or leave the race blank.</li>
+    </ul>
+  </details>
+  <details><summary>Where this comes from</summary>
+    <p>The list of races, candidates and questions per precinct comes from the county election board's official sample ballots (the "2026 General Election Sample Ballots" folder linked from the <a href="https://mcpl.info/geninfo/voting-information" target="_blank" rel="noopener">Monroe County Public Library's voting page</a>), dated September 18, 2026, cross-checked with the Secretary of State's candidate list as republished by <a href="https://indianacitizen.org/2026-indiana-general-election-candidate-list/" target="_blank" rel="noopener">The Indiana Citizen</a>. Early voting dates are from the county's <a href="https://mcpl.info/files/inline-files/2026_general_early_voting_hours.pdf" target="_blank" rel="noopener">early voting schedule</a>. Candidate positions come from the WFYI and Louisville Public Media 2026 voter guides, local reporting and the candidates' own sites. Follow the links under each entry.</p>
+  </details>
+</section>
+
+<footer>Compiled September 28, 2026 for hayashi.in. Not affiliated with any campaign or party. Your official ballot is the one you get at the polls: check <a href="https://indianavoters.in.gov/" target="_blank" rel="noopener">indianavoters.in.gov</a> for yours.</footer>
+</div>
+
+<script>
+/* ============ SOURCES ============ */
+const S = {
+  in9:"https://www.wfyi.org/statewide/2026-09-23/2026-voter-guide-indianas-9th-congressional-district",
+  obbba:"https://clerk.house.gov/Votes/2025190",
+  sos:"https://www.wfyi.org/statewide/2026-09-23/2026-voter-guide-indiana-secretary-of-state",
+  sosdebate:"https://www.wfyi.org/statewide/2026-08-27/indiana-secretary-of-state-hopefuls-clash-over-voting-rules-office-audit",
+  statewide:"https://indianacitizen.org/democrat-hopefuls-county-clerk-and-business-executive-seek-to-end-gop-control-of-2-statewide-office/",
+  hd46:"https://www.wfyi.org/statewide/2026-09-22/2026-voter-guide-indiana-house-district-46",
+  hd60:"https://www.wfyi.org/statewide/2026-09-22/2026-voter-guide-indiana-house-district-60",
+  maps:"https://www.idsnews.com/article/2025/12/indiana-house-redistricting-bill-senate-general-assembly",
+  hd62:"https://bcdemocrat.com/2026/06/07/district-62-race-draws-national-attention-ahead-of-november/",
+  oliver:"https://www.voteamyoliver.com/",
+  hall:"https://tribtown.com/2026/03/25/dave-hall-working-for-you-accomplishments-from-2026-session/",
+  clerk:"https://www.ipm.org/news/2026-04-24/democratic-candidates-face-off-for-monroe-county-clerk-in-primary",
+  clerk2:"https://www.idsnews.com/article/2026/04/monroe-county-primary-election-county-clerk-bloomington-democratic-candidates",
+  assessor:"https://bsquarebulletin.com/monroe-county-election-board-dismisses-complaint-against-assessor-candidate-trimble/",
+  local:"https://bsquarebulletin.com/election-2026-contested-local-primaries-some-november-matchups-take-shape-across-monroe-county/",
+  pq1:"https://ballotpedia.org/Indiana_Public_Question_1,_Bailable_Offenses_and_Substantial_Risk_Standard_Amendment_(2026)",
+  pq2:"https://ballotpedia.org/Indiana_Residency_Requirements_for_City_and_Town_Court_Judges_Amendment_(2026)",
+  ret:"https://www.in.gov/courts/retention/",
+  reorg:"https://bsquarebulletin.com/ellettsville-richland-reorganization-headed-to-november-ballot/",
+  reorg2:"https://www.ipm.org/news/2026-05-29/ellettsville-and-richland-township-approve-fiscal-analysis-closer-to-merger",
+  reorgChamber:"https://ellettsvillechamber.org/reorg/",
+  rbb:"https://ballotpedia.org/Monroe_County,_Indiana,_elections,_2026"
+};
+
+const PARTY = {D:"Democrat", R:"Republican", L:"Libertarian", Ln:"Lincoln Party", I:"Independent", N:"Nonpartisan"};
+const EVID = {say:"In their words", record:"Record", site:"Campaign site", report:"Reporting"};
+
+/* Precinct -> precinct-specific contests, parsed from the county's sample ballots */
+const PRECINCTS = {"Bean Blossom 1-Co":"cc3 hd46 rbb twp_bean_blossom","Bean Blossom 1-TS":"cc3 hd46 rbb twp_bean_blossom","Bean Blossom 1-Town":"cc3 ell hd46 rbb reorg twp_bean_blossom","Bean Blossom 2":"cc3 hd46 rbb twp_bean_blossom","Bean Blossom 3":"cc3 ell hd46 rbb reorg twp_bean_blossom","Benton 1":"cc1 hd60 mccsc twp_benton","Benton 2":"cc1 hd62 mccsc twp_benton","Bloomington 1":"cc4 hd61 mccsc twp_bloomington","Bloomington 10":"cc1 hd61 mccsc twp_bloomington","Bloomington 11":"cc1 hd62 mccsc twp_bloomington","Bloomington 12":"cc1 hd62 mccsc twp_bloomington","Bloomington 13":"cc4 hd61 mccsc twp_bloomington","Bloomington 14":"cc4 hd61 mccsc twp_bloomington","Bloomington 15":"cc4 hd62 mccsc twp_bloomington","Bloomington 16":"cc1 hd61 mccsc twp_bloomington","Bloomington 17":"cc4 hd61 mccsc twp_bloomington","Bloomington 18":"cc1 hd61 mccsc twp_bloomington","Bloomington 19":"cc4 hd61 mccsc twp_bloomington","Bloomington 2":"cc4 hd61 mccsc twp_bloomington","Bloomington 20":"cc4 hd61 mccsc twp_bloomington","Bloomington 21":"cc1 hd61 mccsc twp_bloomington","Bloomington 22":"cc1 hd61 mccsc twp_bloomington","Bloomington 23":"cc4 hd61 mccsc twp_bloomington","Bloomington 24":"cc4 hd61 mccsc twp_bloomington","Bloomington 3":"cc1 hd61 mccsc twp_bloomington","Bloomington 4":"cc1 hd61 mccsc twp_bloomington","Bloomington 5":"cc1 hd61 mccsc twp_bloomington","Bloomington 6":"cc4 hd61 mccsc twp_bloomington","Bloomington 7":"cc1 hd61 mccsc twp_bloomington","Bloomington 8":"cc1 hd61 mccsc twp_bloomington","Bloomington 9":"cc1 hd61 mccsc twp_bloomington","Clear Creek 1":"cc1 hd62 mccsc twp_clear_creek","Clear Creek 2":"cc1 hd62 mccsc twp_clear_creek","Clear Creek 3":"cc1 hd62 mccsc twp_clear_creek","Indian Creek":"cc3 hd62 mccsc twp_indian_creek","Perry 1":"cc4 hd61 mccsc twp_perry","Perry 10":"cc4 hd62 mccsc twp_perry","Perry 11":"cc2 hd62 mccsc twp_perry","Perry 12":"cc2 hd62 mccsc twp_perry","Perry 13":"cc2 hd61 mccsc twp_perry","Perry 14":"cc2 hd61 mccsc twp_perry","Perry 15":"cc2 hd61 mccsc twp_perry","Perry 16":"cc2 hd61 mccsc twp_perry","Perry 17":"cc2 hd61 mccsc twp_perry","Perry 18":"cc2 hd62 mccsc twp_perry","Perry 19":"cc2 hd62 mccsc twp_perry","Perry 2":"cc4 hd61 mccsc twp_perry","Perry 20":"cc2 hd61 mccsc twp_perry","Perry 21":"cc2 hd61 mccsc twp_perry","Perry 22":"cc2 hd62 mccsc twp_perry","Perry 23":"cc2 hd62 mccsc twp_perry","Perry 24":"cc2 hd62 mccsc twp_perry","Perry 25":"cc2 hd62 mccsc twp_perry","Perry 26":"cc2 hd61 mccsc twp_perry","Perry 27":"cc4 hd62 mccsc twp_perry","Perry 28":"cc2 hd62 mccsc twp_perry","Perry 29":"cc4 hd61 mccsc twp_perry","Perry 3":"cc4 hd61 mccsc twp_perry","Perry 30":"cc2 hd61 mccsc twp_perry","Perry 31":"cc2 hd61 mccsc twp_perry","Perry 32":"cc2 hd61 mccsc twp_perry","Perry 4":"cc4 hd62 mccsc twp_perry","Perry 5":"cc4 hd62 mccsc twp_perry","Perry 6":"cc4 hd61 mccsc twp_perry","Perry 7":"cc2 hd61 mccsc twp_perry","Perry 8":"cc2 hd61 mccsc twp_perry","Perry 9":"cc2 hd61 mccsc twp_perry","Polk":"cc1 hd62 mccsc twp_polk","Richland 1-Co":"cc3 hd46 rbb reorg twp_richland","Richland 1-T2":"cc3 ell hd46 rbb reorg twp_richland","Richland 1-T3":"cc3 ell hd46 rbb reorg twp_richland","Richland 1-T4":"cc3 ell hd46 rbb reorg twp_richland","Richland 1-T5":"cc3 ell hd46 rbb reorg twp_richland","Richland 2-T1":"cc3 ell hd46 rbb reorg twp_richland","Richland 2-T2":"cc3 ell hd46 rbb reorg twp_richland","Richland 2-T4":"cc3 ell hd46 rbb reorg twp_richland","Richland 2-T5":"cc3 ell hd46 rbb reorg twp_richland","Richland 3":"cc3 hd46 rbb reorg twp_richland","Richland 4-Co":"cc3 hd46 rbb reorg twp_richland","Richland 4-T4":"cc3 ell hd46 rbb reorg twp_richland","Richland 4-T5":"cc3 ell hd46 rbb reorg twp_richland","Richland 5-Co":"cc3 hd46 rbb reorg twp_richland","Richland 5-T1":"cc3 ell hd46 rbb reorg twp_richland","Richland 5-T3":"cc3 ell hd46 rbb reorg twp_richland","Richland 5-T4":"cc3 ell hd46 rbb reorg twp_richland","Richland 5-T5":"cc3 ell hd46 rbb reorg twp_richland","Richland 6-Co":"cc3 hd46 rbb reorg twp_richland","Richland 6-T1":"cc3 ell hd46 rbb reorg twp_richland","Richland 6-T2":"cc3 ell hd46 rbb reorg twp_richland","Richland 6-T4":"cc3 ell hd46 rbb reorg twp_richland","Richland 6-T5":"cc3 ell hd46 rbb reorg twp_richland","Richland 7-Co":"cc3 hd46 rbb reorg twp_richland","Richland 7-T4":"cc3 ell hd46 rbb reorg twp_richland","Richland 7-T5":"cc3 ell hd46 rbb reorg twp_richland","Richland 8-T1":"cc3 ell hd46 rbb reorg twp_richland","Richland 8-T2":"cc3 ell hd46 rbb reorg twp_richland","Richland 8-T3":"cc3 ell hd46 rbb reorg twp_richland","Richland 8-T4":"cc3 ell hd46 rbb reorg twp_richland","Richland 8-T5":"cc3 ell hd46 rbb reorg twp_richland","Richland 9":"cc3 hd46 rbb reorg twp_richland","Salt Creek":"cc1 hd62 mccsc twp_salt_creek","Van Buren 1":"cc3 hd62 mccsc twp_van_buren","Van Buren 2":"cc3 hd62 mccsc twp_van_buren","Van Buren 3":"cc3 hd62 mccsc twp_van_buren","Van Buren 4":"cc3 hd62 mccsc twp_van_buren","Van Buren 5":"cc3 hd62 mccsc twp_van_buren","Van Buren 6":"cc3 hd62 mccsc twp_van_buren","Washington":"cc3 hd60 mccsc twp_washington"};
+
+/* ============ CONTESTS (ballot order) ============
+   where: null = every precinct, otherwise a key from PRECINCTS.
+   c: candidates {n, p, role?, s?: [{e, t, s:[urls]}]} ; q: yes/no question */
+const GROUPS = [
+ {id:"q", label:"Public questions (yes/no)"},
+ {id:"fed", label:"Federal and statewide"},
+ {id:"leg", label:"Indiana House"},
+ {id:"county", label:"County"},
+ {id:"judge", label:"Judges"},
+ {id:"local", label:"Township and town"},
+ {id:"school", label:"School board"}
+];
+
+const CONTESTS = [
+ {id:"pq1", g:"q", title:"Public Question 1: Denying bail for public safety", where:null,
+  q:{text:"Amends Article 1, Section 17 of the Indiana Constitution. Today only people charged with murder or treason can be held without bail (when the proof is evident or the presumption strong). This would let a judge deny bail for any other charge too, if the proof is evident or the presumption strong and the state proves by clear and convincing evidence that no release conditions would reasonably protect anyone's safety.",
+     yes:"Judges get the power to hold people charged with any crime without bail if the state proves they are a danger no conditions can manage.",
+     no:"Bail stays guaranteed for every charge except murder and treason.",
+     notes:[
+      {e:"record", t:"Passed the Senate 43-2 and the House 75-11. Every Republican voted yes. Democrats split.", s:[S.pq1]},
+      {e:"say", t:"For: Sen. Eric Koch (R) called it \"a great step toward ensuring our communities are protected from those who pose a threat.\" Rep. Chris Jeter (R) called it \"a public safety amendment.\"", s:[S.pq1]},
+      {e:"say", t:"Against: the ACLU of Indiana says the \"vague and expansive language could keep more people who have not been convicted of a crime locked in Indiana's already overcrowded jails.\" Sen. Greg Taylor (D) warned that judges' bias could decide who is held.", s:[S.pq1]}
+     ]}},
+ {id:"pq2", g:"q", title:"Public Question 2: Where city and town court judges may live", where:null,
+  q:{text:"Amends Article 6, Section 6. City and town court judges would be allowed to live anywhere in the county where the court sits, or in the bordering county closest to that city or town.",
+     yes:"City and town court judges may live in their county or the nearest bordering county.",
+     no:"The current residency rule stays.",
+     notes:[
+      {e:"report", t:"Pitched as a fix for rural areas that can't find a lawyer living in town to serve as judge. Ballotpedia found no organized opposition.", s:[S.pq2]}
+     ]}},
+ {id:"ret_deboer", g:"q", title:"Retain Judge Mary A. DeBoer? (Court of Appeals, 4th District)", where:null,
+  q:{text:"Appellate judges in Indiana are appointed, then face a yes/no retention vote. A judge who gets a majority of \"no\" votes leaves the bench.",
+     notes:[{e:"report", t:"Former deputy prosecutor and Porter Circuit Court judge (appointed 2019). Governor Holcomb appointed her to the Court of Appeals. The Indiana courts' retention page links to her opinions and oral argument videos.", s:[S.ret]}]}},
+ {id:"ret_felix", g:"q", title:"Retain Judge Paul A. Felix? (Court of Appeals, 5th District)", where:null,
+  q:{text:"Same yes/no retention vote.",
+     notes:[{e:"report", t:"On the Court of Appeals since July 2023 (Holcomb appointee). Before that, Johnson County deputy prosecutor, Carmel City Court judge and 14 years as Hamilton Circuit Court judge. IU Bloomington undergraduate and law degrees.", s:[S.ret]}]}},
+ {id:"ret_mcadam", g:"q", title:"Retain Judge Justin L. McAdam? (Indiana Tax Court)", where:null,
+  q:{text:"Same yes/no retention vote.",
+     notes:[{e:"report", t:"Third judge in the Tax Court's history, appointed by Holcomb, on the bench since September 2023. The Indiana State Bar Association surveys lawyers on each judge and posts the results on the courts' retention page.", s:[S.ret]}]}},
+ {id:"reorg", g:"q", title:"Ellettsville and Richland Township reorganization", where:"reorg",
+  q:{text:"Richland Township would dissolve and merge into the Town of Ellettsville, governed as one town with a seven-member town council (five district seats, two at-large). It must win a majority both inside the current town and in the township, or it fails. If it passes, the new town starts January 1, 2027.",
+     yes:"One government for the town and township. Township services move to the town, which also takes over road plowing and police response in the rural part.",
+     no:"Ellettsville and Richland Township stay separate.",
+     notes:[
+      {e:"report", t:"Taxes: Baker Tilly's analysis projects total tax bills rising about 6.9% in rural Richland Township, 4.1% in the part of Ellettsville in Richland Township and 3.5% in the part in Bean Blossom Township. For a typical $150,000 to $300,000 township home, about $5 to $12 a month. Properties already at the state's tax caps may see less or no increase.", s:[S.reorg,S.reorg2]},
+      {e:"say", t:"For: backers say it protects services and local identity as state property tax cuts (SEA 1) squeeze budgets, and hedges against the legislature eliminating townships.", s:[S.reorg]},
+      {e:"say", t:"Against: township board member David Willibey cast the one vote against putting it on the ballot: \"The majority of the people I've talked to are against it.\"", s:[S.reorg]}
+     ]}},
+
+ {id:"sos", g:"fed", title:"Secretary of State", where:null, vote:1, note:"Runs state elections and business filings. Open seat: the incumbent, Diego Morales, lost his party's nomination.",
+  c:[
+   {n:"Beau Bayh", p:"D", role:"Attorney, 30, first run for office", s:[
+     {e:"say", t:"First act would be an independent audit of the office, citing the incumbent's spending, travel, hiring of relatives and no-bid contracts to donors. Pledges that no donor gets a state contract.", s:[S.sos]},
+     {e:"say", t:"Says Indiana elections are secure and supports the voter ID law. Wants to raise turnout, which ranks near the bottom nationally. Would have counted the Senate District 23 absentee ballots that were thrown out over a missing clerk's stamp.", s:[S.sos,S.sosdebate]},
+     {e:"report", t:"Son of former Gov. Evan Bayh. Raised $1.18 million by June 30. Top donors include the Teamsters PAC, philanthropist Cindy Simon-Skjodt and billionaire Robert Johnson.", s:[S.sos]}]},
+   {n:"Max Engling", p:"R", role:"Former aide to U.S. Sen. Jim Banks", s:[
+     {e:"say", t:"Only candidate to back the full federal SAVE America Act (proof of citizenship to vote). Wants state IDs for legal non-citizens to be a different color so poll workers can spot them. Supports closing party primaries.", s:[S.sos,S.sosdebate]},
+     {e:"say", t:"The only candidate who did not pledge an audit of the office. Sided with the recount commission on the Senate District 23 ballots: \"They followed the law.\"", s:[S.sosdebate]},
+     {e:"report", t:"Won the Republican convention after party leaders dropped Morales. Raised $202,745 by June 30. Donors include House Speaker Todd Huston and the Republican State Leadership Committee.", s:[S.sos]}]},
+   {n:"Lauri A. Shillings", p:"L", role:"Creative director, University of Indianapolis", s:[
+     {e:"say", t:"Calls Indiana's elections \"incredibly secure.\" Opposes the SAVE Act as a burden on people who changed their names. Supports an audit. Wants to fix the office's business filing website.", s:[S.sos,S.sosdebate]}]},
+   {n:"Greg Ballard", p:"Ln", role:"Two-term Republican mayor of Indianapolis, now independent", s:[
+     {e:"say", t:"Won't endorse, campaign or raise money for other candidates while in office, and won't take donations from candidates. Wants to mail a precinct-level voter guide to every voter (about $2.5 million a cycle).", s:[S.sos,S.sosdebate]},
+     {e:"say", t:"Calls the SAVE Act a federal intrusion. Says ballot-access rules for independents are deliberately punitive. If he gets 2% of the vote, the new Lincoln Party gets automatic ballot access for four years.", s:[S.sosdebate]},
+     {e:"report", t:"Raised $876,267 by June 30. Top donors include Hoosiers for Competitive Elections and former Eli Lilly chairman John Lechleiter.", s:[S.sos]}]}
+  ]},
+ {id:"comp", g:"fed", title:"State Comptroller", where:null, vote:1, note:"Keeps the state's books, pays state employees and vendors, sends revenue to local governments.",
+  c:[
+   {n:"Jessica Bailey", p:"D", role:"Porter County Circuit Court Clerk", s:[
+     {e:"report", t:"Clerk since 2018, moved Porter County from precincts to vote centers. Promises \"transparent, accountable\" government.", s:[S.statewide]}]},
+   {n:"Elise Nieshalla", p:"R", role:"Incumbent, appointed December 2023", s:[
+     {e:"report", t:"Appointed by Gov. Holcomb when the previous comptroller resigned. First time on a general election ballot.", s:[S.statewide]}]},
+   {n:"John Schick", p:"L", role:"", s:[]}
+  ]},
+ {id:"treas", g:"fed", title:"Treasurer of State", where:null, vote:1, note:"The state's chief investment officer.",
+  c:[
+   {n:"Coumba Kebe", p:"D", role:"Health care executive", s:[
+     {e:"report", t:"Public health background. Ran in the 2026 Democratic primary for House District 29 and lost. Wants to make state finances easier to follow.", s:[S.statewide]}]},
+   {n:"Daniel Elliott", p:"R", role:"Incumbent, elected 2022", s:[
+     {e:"report", t:"Seeking a second term. Won in 2022 with 60.9%.", s:[S.statewide]}]}
+  ]},
+ {id:"us9", g:"fed", title:"U.S. Representative, District 9", where:null, vote:1, note:"All of Monroe County is in the 9th District, rated R+15.",
+  c:[
+   {n:"Brad A. Meyer", p:"D", role:"Former Crane mechanical engineer, Bloomington", s:[
+     {e:"say", t:"Medicare for All, a $20 federal minimum wage, no income tax on the first $20,000, protecting Social Security. Would roll back tariffs and build more homes.", s:[S.in9]},
+     {e:"say", t:"On data centers: return decisions to local governments, require public hearings and independent studies, and make large users pay the full cost of the grid they need.", s:[S.in9]},
+     {e:"report", t:"Raised $105,510 by June 30, all from individuals, no PAC money.", s:[S.in9]}]},
+   {n:"Erin Houchin", p:"R", role:"Incumbent, first elected 2022, Salem", s:[
+     {e:"record", t:"Voted yes on final passage of the One Big Beautiful Bill Act (tax cuts plus Medicaid and SNAP changes) on July 3, 2025. It passed 218-214.", s:[S.obbba]},
+     {e:"report", t:"Supported President Trump's push to redraw Indiana's congressional map mid-decade, which the state Senate voted down in December 2025.", s:[S.in9]},
+     {e:"say", t:"Data centers \"should be responsible for their own electric and utilities costs.\" Wants more coal, gas and nuclear power. Points to her bill on prescription drug middlemen and her vote for a congressional stock-trading ban.", s:[S.in9]},
+     {e:"report", t:"Raised $1.86 million by June 30, $864,000 of it from PACs. Largest special-interest donors: NextEra Energy and Pivotal Ventures.", s:[S.in9]}]},
+   {n:"Tonya L. Hudson", p:"L", role:"Real estate broker, Mitchell", s:[
+     {e:"say", t:"Abolish the IRS, cut regulation on small businesses and farms, vote against unconstitutional wars. Says data centers are a state issue and regulators shouldn't allow rate increases.", s:[S.in9]}]}
+  ]},
+
+ {id:"hd46", g:"leg", title:"State Representative, District 46", where:"hd46", vote:1,
+  c:[
+   {n:"James H. Pittsford (Jimmy), III", p:"D", role:"Retired union steamfitter, Ellettsville", s:[
+     {e:"say", t:"Priorities: rural roads and public school funding. Wants data center construction jobs but opposes tax abatements for them. On affordability: \"This is an area where I could use some guidance.\"", s:[S.hd46]}]},
+   {n:"Bob Heaton", p:"R", role:"Incumbent, first elected 2010, House Majority Whip", s:[
+     {e:"record", t:"Voted for the mid-decade congressional map in December 2025. It passed the House 57-41 and died in the Senate.", s:[S.maps]},
+     {e:"site", t:"Tax cuts, property tax relief, school funding, anti-abortion, rural infrastructure. Did not answer WFYI's survey.", s:[S.hd46]},
+     {e:"report", t:"Top donors: insurance, construction, bank and multi-family housing PACs, plus the Iron Workers.", s:[S.hd46]}]}
+  ]},
+ {id:"hd60", g:"leg", title:"State Representative, District 60", where:"hd60", vote:1,
+  c:[
+   {n:"Carrie L. Syczylo", p:"D", role:"Coffee shop owner, Monrovia", s:[
+     {e:"say", t:"\"Strongly against\" data center development, which she says is being forced on rural communities. Top priority: ending \"corporate overreach.\"", s:[S.hd60]}]},
+   {n:"Peggy Mayfield", p:"R", role:"Incumbent, first elected 2012", s:[
+     {e:"record", t:"One of 12 House Republicans who voted against the mid-decade congressional map in December 2025.", s:[S.maps]},
+     {e:"site", t:"Education, economic development, law enforcement, anti-abortion, gun rights. Did not answer WFYI's survey.", s:[S.hd60]}]}
+  ]},
+ {id:"hd61", g:"leg", title:"State Representative, District 61", where:"hd61", vote:1,
+  c:[{n:"Matt Pierce", p:"D", role:"Incumbent, first elected 2002", s:[
+     {e:"record", t:"Voted against the mid-decade congressional map, calling it the \"saddest day\" he had seen in the House.", s:[S.maps]}]}]},
+ {id:"hd62", g:"leg", title:"State Representative, District 62", where:"hd62", vote:1, note:"One of the closest House seats in Indiana. A national Democratic group has made it a target.",
+  c:[
+   {n:"Amy Huffman Oliver", p:"D", role:"Attorney, Brown County school board member", s:[
+     {e:"site", t:"Cut the state sales tax on home utility bills. Make data centers \"pay their own way and get community support.\" Reverse school funding cuts. Lower health care costs.", s:[S.oliver]},
+     {e:"report", t:"Former felony domestic violence prosecutor and 7th-grade teacher. Backed by the Democratic Legislative Campaign Committee.", s:[S.hd62]}]},
+   {n:"Dave Hall", p:"R", role:"Incumbent, first elected 2022, Norman", s:[
+     {e:"record", t:"Broke with his party and voted against the mid-decade congressional map in December 2025.", s:[S.maps]},
+     {e:"say", t:"Points to 2026 laws on housing supply (HEA 1001), utility performance standards (HEA 1002) and parental consent for minors on social media (HEA 1408).", s:[S.hall]},
+     {e:"report", t:"Won in 2022 by fewer than 100 votes after a recount, and in 2024 with about 51%.", s:[S.hd62]}]}
+  ]},
+
+ {id:"judge5", g:"judge", title:"Judge, Monroe Circuit Court No. 5", where:null, vote:1, c:[{n:"Kara Elaine Krothe", p:"D"}]},
+ {id:"judge9", g:"judge", title:"Judge, Monroe Circuit Court No. 9", where:null, vote:1, c:[{n:"Geoff Bradley", p:"D"}]},
+
+ {id:"pros", g:"county", title:"Prosecuting Attorney", where:null, vote:1, c:[{n:"Erika Oliphant", p:"D", role:"Incumbent"}]},
+ {id:"clerk", g:"county", title:"Circuit Court Clerk", where:null, vote:1, note:"Open seat. The clerk runs county elections and court records.",
+  c:[
+   {n:"Tree Martin Lucas", p:"D", role:"Former chief deputy clerk", s:[
+     {e:"report", t:"Six years as chief deputy clerk and two as election supervisor. Wants cross-trained staff and a smooth move to the state's updated court filing system.", s:[S.clerk]}]},
+   {n:"Julie M. Hays", p:"R", role:"Lifelong Monroe County resident", s:[
+     {e:"report", t:"Goals include better customer service, transparency and organized, accessible public records.", s:[S.clerk2]}]}
+  ]},
+ {id:"rec", g:"county", title:"County Recorder", where:null, vote:1, c:[{n:"Amy Swain", p:"D"}]},
+ {id:"sheriff", g:"county", title:"County Sheriff", where:null, vote:1, c:[{n:"Ruben Marte'", p:"D", role:"Incumbent"}]},
+ {id:"assessor", g:"county", title:"County Assessor", where:null, vote:1,
+  c:[
+   {n:"Judith A. Sharp", p:"D", role:"Assessor since 1991", s:[
+     {e:"report", t:"Filed an election complaint saying Trimble offered property-tax help in exchange for petition signatures. The election board dismissed it 2-1 in September.", s:[S.assessor]}]},
+   {n:"Jenee' Trimble", p:"I", role:"Former employee of the assessor's office", s:[
+     {e:"report", t:"Running on claims about how the office assesses property. Her own complaint against Sharp was dismissed unanimously. She is also suing the county auditor over her firing from that office.", s:[S.assessor]}]}
+  ]},
+ {id:"comm1", g:"county", title:"County Commissioner, District 1", where:null, vote:1, note:"Elected countywide.", c:[{n:"Trent Deckard", p:"D"}]},
+ {id:"cc1", g:"county", title:"County Council, District 1", where:"cc1", vote:1, c:[{n:"Peter James Iversen", p:"D"}]},
+ {id:"cc2", g:"county", title:"County Council, District 2", where:"cc2", vote:1, c:[{n:"Kate Wiltz", p:"D", role:"Incumbent"}]},
+ {id:"cc3", g:"county", title:"County Council, District 3", where:"cc3", vote:1, c:[{n:"Martha (Marty) Hawk", p:"R"}]},
+ {id:"cc4", g:"county", title:"County Council, District 4", where:"cc4", vote:1, c:[{n:"Jennifer Crossley", p:"D"}]},
+
+ {id:"ell4", g:"local", title:"Ellettsville Town Council, Ward 4", where:"ell", vote:1, c:[{n:"Andrew Henry", p:"R"}]},
+ {id:"ell5", g:"local", title:"Ellettsville Town Council, Ward 5", where:"ell", vote:1, c:[{n:"Marv Ulmet", p:"R"}]},
+ {id:"t_bean_blossom", g:"local", title:"Bean Blossom Township Trustee", where:"twp_bean_blossom", vote:1, c:[{n:"Ronald H. Hutson", p:"R"}]},
+ {id:"t_benton", g:"local", title:"Benton Township Trustee", where:"twp_benton", vote:1, c:[{n:"Michelle Bright", p:"D"}]},
+ {id:"t_bentonb", g:"local", title:"Benton Township Board", where:"twp_benton", vote:3, c:[{n:"Joe Husk", p:"D"},{n:"Sean McInerney", p:"D"}]},
+ {id:"t_bloomington", g:"local", title:"Bloomington Township Trustee", where:"twp_bloomington", vote:1, c:[{n:"Efrat Rosser", p:"D"}]},
+ {id:"t_bloomingtonb", g:"local", title:"Bloomington Township Board", where:"twp_bloomington", vote:3, c:[{n:"Dorothy Granger", p:"D"},{n:"Barbara E. McKinney", p:"D"},{n:"Elizabeth Sensenstein", p:"D"}]},
+ {id:"t_clear_creek", g:"local", title:"Clear Creek Township Trustee", where:"twp_clear_creek", vote:1,
+  c:[{n:"Susan Luther", p:"D", s:[{e:"report", t:"The only Democrat who filed.", s:[S.local]}]},
+     {n:"Steven A. Hinds", p:"R", s:[{e:"report", t:"Won a three-way Republican primary that included the incumbent trustee, Thelma Kelley Jeffries.", s:[S.local,S.rbb]}]}]},
+ {id:"t_clear_creekb", g:"local", title:"Clear Creek Township Board", where:"twp_clear_creek", vote:3,
+  c:[{n:"Joann R. Calabrese", p:"D", role:"Incumbent"},{n:"Rachael Himsel", p:"D"},{n:"Kat Reynolds", p:"D"},{n:"Dustin Cole Dillard", p:"R", role:"Incumbent"},{n:"R. Shannon Reed", p:"R"},{n:"Steven E. Webb", p:"R"}]},
+ {id:"t_ic", g:"local", title:"Indian Creek Township Trustee", where:"twp_indian_creek", vote:1,
+  c:[{n:"Susan (Gus) Hingle", p:"D", role:"Challenger"},{n:"Christopher Reynolds", p:"R", role:"Incumbent"}]},
+ {id:"t_icb", g:"local", title:"Indian Creek Township Board", where:"twp_indian_creek", vote:3, c:[{n:"Katrina W. Ladwig", p:"R"},{n:"Wendi Reynolds", p:"R"},{n:"Roger L. Taylor", p:"R"}]},
+ {id:"t_perry", g:"local", title:"Perry Township Trustee", where:"twp_perry", vote:1, c:[{n:"Leon Gordon", p:"D"}]},
+ {id:"t_perryb", g:"local", title:"Perry Township Board", where:"twp_perry", vote:3, c:[{n:"Susie Hamilton", p:"D"},{n:"Jenny Olmes-Stevens", p:"D"},{n:"Barbara Sturbaum", p:"D"}]},
+ {id:"t_polk", g:"local", title:"Polk Township Trustee", where:"twp_polk", vote:1, c:[{n:"Scott Smith", p:"R"}]},
+ {id:"t_polkb", g:"local", title:"Polk Township Board", where:"twp_polk", vote:3, c:[{n:"Vic Streiff", p:"D"}]},
+ {id:"t_richland", g:"local", title:"Richland Township Trustee", where:"twp_richland", vote:1, note:"If the reorganization passes, the township government dissolves on January 1, 2027.", c:[{n:"Dawn M. Durnil", p:"R"}]},
+ {id:"t_richlandb", g:"local", title:"Richland Township Board", where:"twp_richland", vote:3, c:[{n:"Elaine Thomsen", p:"R"},{n:"Jay M. Thrasher", p:"R"},{n:"David Willibey", p:"R"}]},
+ {id:"t_salt_creek", g:"local", title:"Salt Creek Township Trustee", where:"twp_salt_creek", vote:1, c:[{n:"Joan C. Hall", p:"D"}]},
+ {id:"t_salt_creekb", g:"local", title:"Salt Creek Township Board", where:"twp_salt_creek", vote:3, c:[{n:"Sharon A. Green", p:"D"},{n:"Sean P. Hall", p:"D"},{n:"Joseph Hickman", p:"D"}]},
+ {id:"t_van_buren", g:"local", title:"Van Buren Township Trustee", where:"twp_van_buren", vote:1, c:[{n:"Rita Barrow", p:"R"}]},
+ {id:"t_van_burenb", g:"local", title:"Van Buren Township Board", where:"twp_van_buren", vote:3, c:[{n:"William E. Smith III", p:"D"},{n:"Theresa Oatman", p:"R"},{n:"John Wilson", p:"R"}]},
+ {id:"t_wash", g:"local", title:"Washington Township Trustee", where:"twp_washington", vote:1, c:[{n:"Mary VanDeventer", p:"R"}]},
+ {id:"t_washb", g:"local", title:"Washington Township Board", where:"twp_washington", vote:3,
+  c:[{n:"Ashlie Kehrberg", p:"D"},{n:"Jerry Ayers", p:"R"},{n:"Kenny L. Bryant", p:"R"},{n:"Andy Spriggs", p:"R"}]},
+
+
+ {id:"mccsc1", g:"school", title:"MCCSC School Board, District 1", where:"mccsc", vote:1, note:"Nonpartisan. Every MCCSC voter votes on all three MCCSC seats.", c:[{n:"Erin Wyatt", p:"N"}]},
+ {id:"mccsc3", g:"school", title:"MCCSC School Board, District 3", where:"mccsc", vote:1, c:[{n:"Ashley Pirani", p:"N"}]},
+ {id:"mccsc7", g:"school", title:"MCCSC School Board, District 7", where:"mccsc", vote:1, c:[{n:"Aja Jester", p:"N"}]},
+ {id:"rbb_bb", g:"school", title:"Richland-Bean Blossom School Board, Bean Blossom seat", where:"rbb", vote:1, note:"Nonpartisan. All RBB voters vote on both seats.", c:[{n:"Christa Curtis", p:"N"}]},
+ {id:"rbb_r", g:"school", title:"Richland-Bean Blossom School Board, Richland seat", where:"rbb", vote:1, note:"No incumbent is running for either RBB seat.",
+  c:[{n:"Dennis R. Adams", p:"I"},{n:"Kelly D. Scholl", p:"I"}]}
+];
+
+/* Contested = more names than seats, and every yes/no question */
+function contested(k){ return !!k.q || (k.c && k.c.length > seats(k)); }
+function seats(k){ return k.vote||1; }
+
+/* ============ RENDER ============ */
+let precinct = "";
+let show = "all";
+const WHERE_LABEL = {reorg:"Only in Richland Township and the parts of Ellettsville in Bean Blossom Township", mccsc:"Only in the MCCSC school district", rbb:"Only in the Richland-Bean Blossom school district", ell:"Only in the Town of Ellettsville"};
+
+function host(u){try{return new URL(u).hostname.replace(/^www\./,"")}catch(e){return "source"}}
+function srcs(list){return list&&list.length?`<div class="srcs">${list.map(u=>`<a href="${u}" target="_blank" rel="noopener">${host(u)}</a>`).join("")}</div>`:"";}
+function note(it){return `<span class="tag">${EVID[it.e]}</span><p>${it.t}</p>${srcs(it.s)}`;}
+
+function onBallot(k){
+  if (!precinct) return true;
+  if (!k.where) return true;
+  return PRECINCTS[precinct].split(" ").includes(k.where);
+}
+function whereText(k){
+  if (!k.where || precinct) return "";
+  if (WHERE_LABEL[k.where]) return WHERE_LABEL[k.where];
+  if (k.where.startsWith("hd")) return "Only in House District "+k.where.slice(2)+" precincts";
+  if (k.where.startsWith("cc")) return "Only in County Council District "+k.where.slice(2)+" precincts";
+  if (k.where.startsWith("twp_")) return "Only in "+k.where.slice(4).replace(/_/g," ").replace(/\b\w/g,c=>c.toUpperCase())+" Township";
+  return "";
+}
+
+function renderRace(k){
+  const isC = contested(k);
+  const badge = k.q ? `<span class="badge q">Yes / No</span>` : isC ? `<span class="badge c">Contested</span>` : `<span class="badge u">Uncontested</span>`;
+  const vf = k.q ? "" : `<span class="vf">${k.vote>1?`Vote for up to ${k.vote}`:"Vote for one"}</span>`;
+  const w = whereText(k);
+  let body = "";
+  if (k.q){
+    body += `<p class="qtext">${k.q.text}</p>`;
+    if (k.q.yes) body += `<div class="yn"><div><b>Yes</b>${k.q.yes}</div><div><b>No</b>${k.q.no}</div></div>`;
+    if (k.q.notes && k.q.notes.length) body += `<div class="stances">${k.q.notes.map(n=>`<div class="stance N" style="grid-template-columns:1fr"><div>${note(n)}</div></div>`).join("")}</div>`;
+  } else {
+    body += `<ul class="cands">${k.c.map(c=>`<li class="cand"><span class="box" aria-hidden="true"></span><span class="dot ${c.p}" aria-hidden="true"></span><span><span class="name">${c.n}</span> <span class="pl">${PARTY[c.p]}</span></span></li>`).join("")}</ul>`;
+    if (k.note) body += `<p class="qtext fine">${k.note}</p>`;
+    const withInfo = k.c.filter(c=>c.s && c.s.length);
+    if (withInfo.length || (isC && k.c.some(c=>c.s))){
+      body += `<details class="more"${isC?" open":""}><summary>Where they stand</summary><div class="stances">${k.c.map(c=>`
+        <article class="stance ${c.p}">
+          <div><div class="name">${c.n}</div><div class="role">${PARTY[c.p]}${c.role?", "+c.role:""}</div></div>
+          <div>${c.s&&c.s.length?c.s.map(note).join(""):`<p class="small">Nothing substantive found in public reporting or on a campaign site.</p>`}</div>
+        </article>`).join("")}</div></details>`;
+    }
+  }
+  return `<article class="race" id="${k.id}"><div class="race-head"><div><span class="race-title">${k.title}</span>${badge}${w?`<div class="where">${w}</div>`:""}</div>${vf}</div>${body}</article>`;
+}
+
+function render(){
+  const list = CONTESTS.filter(onBallot).filter(k=>show==="all"||contested(k));
+  const all = CONTESTS.filter(onBallot);
+  const nC = all.filter(k=>contested(k)&&!k.q).length, nQ = all.filter(k=>k.q).length;
+  document.getElementById("summary").textContent = precinct
+    ? `Precinct ${precinct}: ${all.length} items, of which ${nQ} are yes/no questions and ${nC} are races with a real choice.`
+    : `Across the county: ${all.length} items. Pick a precinct to see one ballot.`;
+  document.getElementById("groups").innerHTML = GROUPS.map(g=>{
+    const rs = list.filter(k=>k.g===g.id);
+    return rs.length ? `<div class="group"><h3>${g.label}</h3><div class="races">${rs.map(renderRace).join("")}</div></div>` : "";
+  }).join("");
+}
+
+(function initPicker(){
+  const sel = document.getElementById("precinct");
+  const byTwp = {};
+  Object.keys(PRECINCTS).forEach(p=>{ const t = p.replace(/\s+\d.*$|\s*$/,"").replace(/ \d+-.*$/,""); (byTwp[t]=byTwp[t]||[]).push(p); });
+  const num = s=>{const m=s.match(/(\d+)/);return m?+m[1]:0;};
+  Object.keys(byTwp).sort().forEach(t=>{
+    const og = document.createElement("optgroup"); og.label = t + " Township";
+    byTwp[t].sort((a,b)=>num(a)-num(b)||a.localeCompare(b)).forEach(p=>{const o=document.createElement("option"); o.value=p; o.textContent=p; og.appendChild(o);});
+    sel.appendChild(og);
+  });
+  sel.addEventListener("change",()=>{precinct=sel.value; render();});
+})();
+document.querySelector(".filters").addEventListener("click",e=>{
+  const b=e.target.closest("[data-show]"); if(!b) return;
+  show=b.dataset.show;
+  document.querySelectorAll("[data-show]").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  render();
+});
+render();
+</script>
+</body>
+</html>
