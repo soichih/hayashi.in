@@ -2,373 +2,349 @@
   "timezone": "America/Indiana/Indianapolis",
   "timezone_offset": -14400,
   "current": {
-    "dt": 1790655304,
+    "dt": 1790658901,
     "sunrise": 1790682013,
     "sunset": 1790724761,
-    "temp": 286.45,
-    "feels_like": 286.34,
-    "pressure": 1017,
-    "humidity": 96,
-    "dew_point": 285.83,
+    "temp": 285.97,
+    "feels_like": 285.84,
+    "pressure": 1018,
+    "humidity": 97,
+    "dew_point": 285.51,
     "uvi": 0,
-    "clouds": 43,
+    "clouds": 0,
     "visibility": 10000,
-    "wind_speed": 0.45,
-    "wind_deg": 32,
-    "wind_gust": 0.89,
+    "wind_speed": 0,
+    "wind_deg": 0,
     "weather": [
       {
-        "id": 802,
-        "main": "Clouds",
-        "description": "scattered clouds",
-        "icon": "03n"
+        "id": 800,
+        "main": "Clear",
+        "description": "clear sky",
+        "icon": "01n"
       }
     ]
   },
   "minutely": [
     {
-      "dt": 1790655360,
+      "dt": 1790658960,
       "precipitation": 0
     },
     {
-      "dt": 1790655420,
+      "dt": 1790659020,
       "precipitation": 0
     },
     {
-      "dt": 1790655480,
+      "dt": 1790659080,
       "precipitation": 0
     },
     {
-      "dt": 1790655540,
+      "dt": 1790659140,
       "precipitation": 0
     },
     {
-      "dt": 1790655600,
+      "dt": 1790659200,
       "precipitation": 0
     },
     {
-      "dt": 1790655660,
+      "dt": 1790659260,
       "precipitation": 0
     },
     {
-      "dt": 1790655720,
+      "dt": 1790659320,
       "precipitation": 0
     },
     {
-      "dt": 1790655780,
+      "dt": 1790659380,
       "precipitation": 0
     },
     {
-      "dt": 1790655840,
+      "dt": 1790659440,
       "precipitation": 0
     },
     {
-      "dt": 1790655900,
+      "dt": 1790659500,
       "precipitation": 0
     },
     {
-      "dt": 1790655960,
+      "dt": 1790659560,
       "precipitation": 0
     },
     {
-      "dt": 1790656020,
+      "dt": 1790659620,
       "precipitation": 0
     },
     {
-      "dt": 1790656080,
+      "dt": 1790659680,
       "precipitation": 0
     },
     {
-      "dt": 1790656140,
+      "dt": 1790659740,
       "precipitation": 0
     },
     {
-      "dt": 1790656200,
+      "dt": 1790659800,
       "precipitation": 0
     },
     {
-      "dt": 1790656260,
+      "dt": 1790659860,
       "precipitation": 0
     },
     {
-      "dt": 1790656320,
+      "dt": 1790659920,
       "precipitation": 0
     },
     {
-      "dt": 1790656380,
+      "dt": 1790659980,
       "precipitation": 0
     },
     {
-      "dt": 1790656440,
+      "dt": 1790660040,
       "precipitation": 0
     },
     {
-      "dt": 1790656500,
+      "dt": 1790660100,
       "precipitation": 0
     },
     {
-      "dt": 1790656560,
+      "dt": 1790660160,
       "precipitation": 0
     },
     {
-      "dt": 1790656620,
+      "dt": 1790660220,
       "precipitation": 0
     },
     {
-      "dt": 1790656680,
+      "dt": 1790660280,
       "precipitation": 0
     },
     {
-      "dt": 1790656740,
+      "dt": 1790660340,
       "precipitation": 0
     },
     {
-      "dt": 1790656800,
+      "dt": 1790660400,
       "precipitation": 0
     },
     {
-      "dt": 1790656860,
+      "dt": 1790660460,
       "precipitation": 0
     },
     {
-      "dt": 1790656920,
+      "dt": 1790660520,
       "precipitation": 0
     },
     {
-      "dt": 1790656980,
+      "dt": 1790660580,
       "precipitation": 0
     },
     {
-      "dt": 1790657040,
+      "dt": 1790660640,
       "precipitation": 0
     },
     {
-      "dt": 1790657100,
+      "dt": 1790660700,
       "precipitation": 0
     },
     {
-      "dt": 1790657160,
+      "dt": 1790660760,
       "precipitation": 0
     },
     {
-      "dt": 1790657220,
+      "dt": 1790660820,
       "precipitation": 0
     },
     {
-      "dt": 1790657280,
+      "dt": 1790660880,
       "precipitation": 0
     },
     {
-      "dt": 1790657340,
+      "dt": 1790660940,
       "precipitation": 0
     },
     {
-      "dt": 1790657400,
+      "dt": 1790661000,
       "precipitation": 0
     },
     {
-      "dt": 1790657460,
+      "dt": 1790661060,
       "precipitation": 0
     },
     {
-      "dt": 1790657520,
+      "dt": 1790661120,
       "precipitation": 0
     },
     {
-      "dt": 1790657580,
+      "dt": 1790661180,
       "precipitation": 0
     },
     {
-      "dt": 1790657640,
+      "dt": 1790661240,
       "precipitation": 0
     },
     {
-      "dt": 1790657700,
+      "dt": 1790661300,
       "precipitation": 0
     },
     {
-      "dt": 1790657760,
+      "dt": 1790661360,
       "precipitation": 0
     },
     {
-      "dt": 1790657820,
+      "dt": 1790661420,
       "precipitation": 0
     },
     {
-      "dt": 1790657880,
+      "dt": 1790661480,
       "precipitation": 0
     },
     {
-      "dt": 1790657940,
+      "dt": 1790661540,
       "precipitation": 0
     },
     {
-      "dt": 1790658000,
+      "dt": 1790661600,
       "precipitation": 0
     },
     {
-      "dt": 1790658060,
+      "dt": 1790661660,
       "precipitation": 0
     },
     {
-      "dt": 1790658120,
+      "dt": 1790661720,
       "precipitation": 0
     },
     {
-      "dt": 1790658180,
+      "dt": 1790661780,
       "precipitation": 0
     },
     {
-      "dt": 1790658240,
+      "dt": 1790661840,
       "precipitation": 0
     },
     {
-      "dt": 1790658300,
+      "dt": 1790661900,
       "precipitation": 0
     },
     {
-      "dt": 1790658360,
+      "dt": 1790661960,
       "precipitation": 0
     },
     {
-      "dt": 1790658420,
+      "dt": 1790662020,
       "precipitation": 0
     },
     {
-      "dt": 1790658480,
+      "dt": 1790662080,
       "precipitation": 0
     },
     {
-      "dt": 1790658540,
+      "dt": 1790662140,
       "precipitation": 0
     },
     {
-      "dt": 1790658600,
+      "dt": 1790662200,
       "precipitation": 0
     },
     {
-      "dt": 1790658660,
+      "dt": 1790662260,
       "precipitation": 0
     },
     {
-      "dt": 1790658720,
+      "dt": 1790662320,
       "precipitation": 0
     },
     {
-      "dt": 1790658780,
+      "dt": 1790662380,
       "precipitation": 0
     },
     {
-      "dt": 1790658840,
+      "dt": 1790662440,
       "precipitation": 0
     },
     {
-      "dt": 1790658900,
+      "dt": 1790662500,
       "precipitation": 0
     }
   ],
   "hourly": [
     {
-      "dt": 1790654400,
-      "temp": 286.45,
-      "feels_like": 286.34,
-      "pressure": 1017,
-      "humidity": 96,
-      "dew_point": 285.83,
-      "uvi": 0,
-      "clouds": 43,
-      "visibility": 10000,
-      "wind_speed": 1.83,
-      "wind_deg": 71,
-      "wind_gust": 2.99,
-      "weather": [
-        {
-          "id": 802,
-          "main": "Clouds",
-          "description": "scattered clouds",
-          "icon": "03n"
-        }
-      ],
-      "pop": 0
-    },
-    {
       "dt": 1790658000,
-      "temp": 286.4,
-      "feels_like": 286.24,
-      "pressure": 1017,
-      "humidity": 94,
-      "dew_point": 285.46,
+      "temp": 285.97,
+      "feels_like": 285.84,
+      "pressure": 1018,
+      "humidity": 97,
+      "dew_point": 285.51,
       "uvi": 0,
-      "clouds": 34,
+      "clouds": 0,
       "visibility": 10000,
       "wind_speed": 1.89,
       "wind_deg": 84,
       "wind_gust": 2.97,
       "weather": [
         {
-          "id": 802,
-          "main": "Clouds",
-          "description": "scattered clouds",
-          "icon": "03n"
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01n"
         }
       ],
       "pop": 0
     },
     {
       "dt": 1790661600,
-      "temp": 286.15,
-      "feels_like": 285.88,
-      "pressure": 1017,
-      "humidity": 91,
-      "dew_point": 284.72,
+      "temp": 285.89,
+      "feels_like": 285.7,
+      "pressure": 1018,
+      "humidity": 95,
+      "dew_point": 285.11,
       "uvi": 0,
-      "clouds": 26,
+      "clouds": 0,
       "visibility": 10000,
       "wind_speed": 2.19,
       "wind_deg": 109,
       "wind_gust": 3.67,
       "weather": [
         {
-          "id": 802,
-          "main": "Clouds",
-          "description": "scattered clouds",
-          "icon": "03n"
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01n"
         }
       ],
       "pop": 0
     },
     {
       "dt": 1790665200,
-      "temp": 286.42,
-      "feels_like": 286.13,
-      "pressure": 1017,
-      "humidity": 89,
-      "dew_point": 284.65,
+      "temp": 286.03,
+      "feels_like": 285.8,
+      "pressure": 1018,
+      "humidity": 93,
+      "dew_point": 284.93,
       "uvi": 0,
-      "clouds": 17,
+      "clouds": 0,
       "visibility": 10000,
       "wind_speed": 2.32,
       "wind_deg": 125,
       "wind_gust": 3.92,
       "weather": [
         {
-          "id": 801,
-          "main": "Clouds",
-          "description": "few clouds",
-          "icon": "02n"
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01n"
         }
       ],
       "pop": 0
     },
     {
       "dt": 1790668800,
-      "temp": 286.22,
-      "feels_like": 285.88,
+      "temp": 285.99,
+      "feels_like": 285.71,
       "pressure": 1017,
-      "humidity": 88,
-      "dew_point": 284.28,
+      "humidity": 91,
+      "dew_point": 284.56,
       "uvi": 0,
-      "clouds": 9,
+      "clouds": 0,
       "visibility": 10000,
       "wind_speed": 2.89,
       "wind_deg": 136,
@@ -385,11 +361,11 @@
     },
     {
       "dt": 1790672400,
-      "temp": 285.88,
-      "feels_like": 285.51,
+      "temp": 285.82,
+      "feels_like": 285.47,
       "pressure": 1017,
-      "humidity": 88,
-      "dew_point": 285.54,
+      "humidity": 89,
+      "dew_point": 284.06,
       "uvi": 0,
       "clouds": 0,
       "visibility": 10000,
@@ -408,10 +384,10 @@
     },
     {
       "dt": 1790676000,
-      "temp": 285.27,
-      "feels_like": 284.84,
+      "temp": 285.36,
+      "feels_like": 284.96,
       "pressure": 1017,
-      "humidity": 88,
+      "humidity": 89,
       "dew_point": 285.15,
       "uvi": 0,
       "clouds": 0,
@@ -1362,6 +1338,29 @@
       "wind_speed": 3.56,
       "wind_deg": 186,
       "wind_gust": 6.22,
+      "weather": [
+        {
+          "id": 802,
+          "main": "Clouds",
+          "description": "scattered clouds",
+          "icon": "03n"
+        }
+      ],
+      "pop": 0
+    },
+    {
+      "dt": 1790827200,
+      "temp": 296.39,
+      "feels_like": 295.84,
+      "pressure": 1014,
+      "humidity": 41,
+      "dew_point": 282.59,
+      "uvi": 0,
+      "clouds": 34,
+      "visibility": 10000,
+      "wind_speed": 3.42,
+      "wind_deg": 194,
+      "wind_gust": 5.97,
       "weather": [
         {
           "id": 802,
