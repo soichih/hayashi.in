@@ -76,3 +76,13 @@ One dated line per edit the agent makes to this skill: what changed and why.
   masthead photo shows up as "og:image" on multiple unrelated posts, so
   treat that specific filename as no-image rather than re-checking each
   time; hillyhundred.org homepage image reconfirmed usable.
+- 2026-09-30: sources.md - noted euronews.com article pages are a reliable
+  fallback for a usable og:image on wire (AP) stories when the original
+  AP-member site 403s or has no exposed og:image; noted stripes.com direct
+  image URLs and iuauditorium.com/assets/img/... URLs both download fine;
+  noted today.iu.edu event image paths are relative and need the domain
+  prepended; reconfirmed npr.org article WebFetch still fails even same-day
+  and abcnews.com wireStory pages rarely expose a fetchable og:image despite
+  citing a photo credit in text. Also confirmed the lotusfest.org lineup
+  page's lead image is a stale 2019 festival photo, not a current one -
+  skip it like the Bloomingtonian masthead case.

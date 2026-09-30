@@ -191,3 +191,16 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   withdrawal story from January resurfacing) - a same-day source confirming
   the publish date (like newscord.org's multi-outlet roundup) is worth the
   extra check before running it as today's news.
+- 2026-09-30: euronews.com article pages reliably expose an og:image (full
+  Euronews CDN URL) via WebFetch even for wire (AP) photos when the original
+  AP-member site (e.g. malaymail.com, ksat.com) doesn't expose one or 403s -
+  a good fallback for breaking wire stories. Direct www.stripes.com image
+  URLs (military-focused wire photos) download fine with the image script.
+  npr.org article pages ("g-s1-..." URLs) still socket-hang-up on WebFetch
+  even on same-day stories. abcnews.com wireStory pages frequently cite a
+  photo credit in the text but don't expose it as a fetchable og:image or
+  usable URL - still worth fetching for the facts, just don't expect an
+  image. iuauditorium.com/assets/img/... URLs (not just the detail page)
+  work directly with the image script. today.iu.edu event pages give a
+  relative image path under /live/image/gid/... - prepend the domain and it
+  downloads fine.
