@@ -1,30 +1,11 @@
-generated: "2026-09-30T06:37:58-04:00"
+generated: "2026-09-30T18:32:16-04:00"
 stories:
   - section: Local Events
-    title: Waitress wraps its Bloomington run tonight
+    title: Lotus Symposium continues through Thursday
     body: >-
-      Broadway musical with music and lyrics by Sara Bareilles, about a
-      small-town waitress and pie-maker who sees a baking contest as a way
-      to start over. Final performance of the 10th-anniversary tour, running
-      about 2 hours 35 minutes with intermission; recommended for ages 13+.
-      A pre-show talk by theatre professor Rich Roland runs 6:30-7:15pm.
-    when: Wed Sep 30, 7:30pm
-    where: IU Auditorium
-    source: IU Auditorium
-    url: https://www.iuauditorium.com/events/detail/waitress-2026
-    image: img/waitress.jpg
-    image_credit: IU Auditorium
-
-  - section: Local Events
-    title: Lotus Symposium continues its second and final day
-    body: >-
-      "Conversations in Bloom: A Symposium on Arts, Community and Memory"
-      gathers artists and organizers for talks on collaboration across
-      generations, preserving community history and traditional-arts
-      revitalization, including a session with Myaamia artisan Dani
-      Tippmann. Held at the I Fell Building, Lotus Firebay and FAR Center
-      for Contemporary Arts. Two-day pass $37 including fees, $11 for
-      students.
+      "Conversations in Bloom" features talks on collaboration across
+      generations, preserving community history and revitalizing traditional
+      arts. Two-day pass $37 including fees, $11 for students.
     when: Wed Sep 30 - Thu Oct 1
     where: I Fell Building, Lotus Firebay, FAR Center for Contemporary Arts
     source: The Bloomingtonian
@@ -41,6 +22,8 @@ stories:
     where: Downtown Bloomington
     source: Lotus Festival
     url: https://www.lotusfest.org/lineup/
+    image: img/lotus-fest.jpg
+    image_credit: Visit Bloomington
 
   - section: Local Events
     title: October First Thursdays festival at IU's Fine Arts Plaza
@@ -54,22 +37,33 @@ stories:
     where: Fine Arts Plaza, IU Bloomington
     source: IU Today
     url: https://today.iu.edu/iub/live/news/52865-october-first-thursdays-fall-festival-for-all
-    image: img/first-thursdays.jpg
-    image_credit: Indiana University
 
   - section: Local Events
-    title: Hilly Hundred bicycle tour registration closes today
+    title: Gallery Walk and Food Truck Friday fill downtown and Switchyard Park
     body: >-
-      More than 5,500 riders from over 40 states are expected for the
-      weekend tour, with 30- or 50-mile routes each day through Monroe
-      County and neighboring counties, rest stops, and a lunch stop with
-      live music. Helmets required; registration closes tonight.
+      The first-Friday Gallery Walk opens galleries along the downtown Arts
+      Mile with exhibits and live demonstrations; Bound by Nature, with
+      Art Nouveau-inspired illustrations, has live music by Elias Fisher
+      from 6 to 7:30pm. Food trucks gather at Switchyard Park from 11am to
+      9pm.
+    when: Fri Oct 2
+    where: Downtown Arts Mile; Switchyard Park
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/events/
+    image: img/food-truck-friday.jpg
+    image_credit: Visit Bloomington
+
+  - section: Local Events
+    title: Hilly Hundred bicycle tour rides this weekend
+    body: >-
+      More than 5,500 riders from over 40 states are expected, with 30- or
+      50-mile routes each day through Monroe County and neighboring
+      counties, rest stops, and a lunch stop with live music. Helmets
+      required.
     when: Fri Oct 2 - Sun Oct 4
     where: Ellettsville
     source: Hilly Hundred
     url: https://hillyhundred.org/
-    image: img/hilly-hundred.jpg
-    image_credit: Jamie Thomason / Hilly Hundred
 
   - section: Local Events
     title: Fifth annual Paint Bloomington
@@ -166,23 +160,21 @@ stories:
     url: https://bloomingtonian.com/2026/09/20/bloomington-boogies-festival-returns-with-blues-jazz-zydeco-and-free-workshops/
 
   - section: Local News
-    title: Council's proposed budget cuts save $452,000, far less than headline millions
+    title: Five of seven council members oppose the 2027 budget as written
     body: >-
-      The city council's work session tonight reviews a 2027 budget package
-      that nominally reduces appropriations by millions but delivers only
-      about $452,000 in actual policy-driven savings, according to the B
-      Square Bulletin's analysis. Real cuts include eliminating a vacant
-      transportation demand manager position ($104,683), trimming the
-      nonunion pay raise from 2.7% to 2% ($280,000), and a 25% cut to
-      non-police/fire travel. Several larger figures, including a $2.5
-      million parking meter fund and a $2 million housing development fund,
-      are placeholder reductions that could be requested again later.
-      Councilmember Asare has previewed additional cuts of roughly $7
-      million that were not in the official work session packet. Final
-      budget votes are set for Oct 7.
-    when: Wed Sep 30, 6:30pm work session
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/councils-proposed-bloomington-budget-cuts-add-to-millions-but-savings-are-much-smaller/
+      Five council members voted against recommending the $171 million
+      civil city budget ordinance, which raises the property tax levy from
+      $46.1 million to $49.5 million and includes a 2.7% raise for civil
+      employees and 3% for police, fire and union workers. Isak Nti Asare
+      is preparing amendments to cut about $7 million, including a 25% cut
+      to non-required travel. The B Square Bulletin found that the cuts in
+      the current package save only about $452,000 in actual policy
+      changes. The transit corporation's capital budget, nearly doubling to
+      $37.6 million, won unanimous support. The council meets tonight for a
+      work session and votes on final adoption Oct 7.
+    when: Work session Wed Sep 30; final vote Wed Oct 7
+    source: Indiana Daily Student, The B Square Bulletin
+    url: https://www.idsnews.com/article/2026/09/bloomington-city-council-proposed-2027-budget-employee-salary
 
   - section: Local News
     title: Bloomington parks eyes $10 million Lilly-backed grant
@@ -190,11 +182,10 @@ stories:
       A new Lilly Endowment-backed state initiative could make the city
       eligible for up to $10 million toward parks projects, on top of about
       $7 million already planned in bonds. Priorities include a Bryan Park
-      Pool renovation, turf fields with lighting at Winslow Sports Park, ice
-      arena repairs, pickleball courts at RCA Community Park, an inclusive
-      playground at Olcott Park, and trail repairs. The city must apply for
-      a $200,000 planning grant by the end of October to compete for the
-      larger implementation grant.
+      Pool renovation, an inclusive playground at Olcott Park, pickleball
+      courts at RCA Community Park and trail repairs. The city must apply
+      for a $200,000 planning grant by the end of October to compete for
+      the larger implementation grant.
     source: The B Square Bulletin, The Bloomingtonian
     url: https://bsquarebulletin.com/new-grant-opportunity-with-10m-in-play-could-reshape-bloomington-parks-capital-plan/
 
@@ -205,18 +196,17 @@ stories:
       hospital campus, and Seminary Park - the area linking downtown,
       Switchyard Park and the B-Line Trail - for nomination as federal
       Opportunity Zones. The designation uses tax incentives to draw private
-      investment through Qualified Opportunity Funds. If approved, the
-      zones would open to investment starting Jan 1, 2027.
+      investment. If approved, the zones would open to investment starting
+      Jan 1, 2027.
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/09/28/6661
 
   - section: Local News
-    title: One week left to register for the Nov 3 election
+    title: Voter registration closes Oct 5 for the Nov 3 election
     body: >-
       Monroe County has issued 1,075 absentee ballots so far, 822 by mail
-      and 253 online, out of 90,350 registered voters. Registration closes
-      Oct 5. Early voting starts Oct 6, and mail absentee ballots must be
-      requested by 11:59pm Oct 22.
+      and 253 online, out of 90,350 registered voters. Early voting starts
+      Oct 6, and mail absentee ballots must be requested by 11:59pm Oct 22.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/monroe-county-election-board-1-075-absentee-ballots-issued-as-registration-deadline-looms/
 
@@ -233,17 +223,33 @@ stories:
     url: https://bloomingtonian.com/2026/09/28/three-congressional-candidates-confirmed-for-oct-3-forum-houchin-has-not-responded-organizers-say/
 
   - section: US News
-    title: Tennessee set to execute Christa Pike today, its first woman in 200 years
+    title: Appeals court halts Christa Pike's execution an hour before it was due
     body: >-
-      Pike, now 50, was 18 when she and her boyfriend killed classmate
-      Colleen Slemmer, 19, at Knoxville Job Corps in 1995. Gov. Bill Lee
-      denied a last clemency plea Monday, and the execution is scheduled
-      for 10am today by lethal injection at Riverbend Maximum Security
-      Institution in Nashville. It would be Tennessee's first execution of
-      a woman in more than two centuries. Pike has refused to select a last
-      meal and wrote that she is "at peace" regardless of the outcome.
-    source: AP, NPR
-    url: https://abcnews.com/US/wireStory/tennessee-set-execute-woman-time-200-years-136830258
+      The 6th Circuit voted 2-1 to stay Tennessee's first execution of a
+      woman in about 200 years, saying it wants to review whether Pike's
+      allegations of childhood sexual abuse were fully considered at her
+      sentencing. Pike, 50, was 18 when she and her boyfriend killed
+      19-year-old classmate Colleen Slemmer in Knoxville in 1995. The state
+      attorney general immediately appealed to the US Supreme Court. The
+      execution order expires at midnight; if the stay holds, the
+      Tennessee Supreme Court would have to set a new date.
+    source: AP, ABC News
+    url: https://abc7ny.com/post/court-halts-execution-christa-gail-pike-tennessee-murder-she-committed-age-18/19891990/
+    image: img/pike-stay.jpg
+    image_credit: AP
+
+  - section: US News
+    title: Iran says it has received a US reply to its offer to end the war
+    body: >-
+      Foreign Minister Abbas Araghchi presented the US response to President
+      Pezeshkian at a Cabinet meeting, Iranian officials said, without
+      saying what it contains. President Trump had publicly rejected the
+      proposal days earlier, but mediators kept working. An official
+      briefed on the talks said the sides largely agree on the steps needed
+      but disagree on their order, while the administration presses on with
+      economic pressure on Tehran.
+    source: AP
+    url: https://www.post-gazette.com/news/world/2026/09/30/iran-update-today-latest-september-30-2026/stories/202609300045
 
   - section: US News
     title: Hurricane Polo's remnants force dam evacuations in New Mexico
@@ -258,6 +264,14 @@ stories:
     source: AP, NPR
     url: https://www.npr.org/2026/09/30/g-s1-145590/hurricane-polo-us-southwest
 
+  - section: US News
+    title: US goes ahead with ban on nearly $1 billion in Canadian imports
+    body: >-
+      The ban covers alcoholic beverages, dairy products and motorcycles,
+      among other goods.
+    source: Democracy Now
+    url: https://www.democracynow.org/2026/9/30/headlines
+
   - section: World News
     title: North Korean landmine found on South's side of the DMZ
     body: >-
@@ -265,27 +279,21 @@ stories:
       after investigators found an active North Korean anti-personnel mine
       on the southern side of the Demilitarized Zone, days after a similar
       mine badly wounded two South Korean soldiers on patrol Sept 21.
-      Forensic analysis of the soldiers' equipment matched materials used
-      in North Korean mines. South Korea's defense ministry called it "a
-      clear violation of the armistice agreement" and is demanding an
-      apology; North Korea's Kim Yo Jong dismissed the claims as a
-      "conspiratorial farce."
+      South Korea's defense ministry called it "a clear violation of the
+      armistice agreement" and is demanding an apology; North Korea's Kim
+      Yo Jong dismissed the claims as a "conspiratorial farce."
     source: UN Command, Stars and Stripes
     url: https://www.stripes.com/theaters/asia_pacific/2026-09-30/north-korea-mines-dmz-armistice-23012081.html
-    image: img/dmz-mine.jpg
-    image_credit: South Korea Ministry of National Defense
 
   - section: World News
     title: Russia hits Kyiv's power grid overnight, killing 4
     body: >-
       Ballistic and cruise missiles backed by drones struck Kyiv's energy
-      infrastructure overnight, killing at least four people, including a
-      child in Vyshhorod, and causing widespread power outages. Grid
-      operator Ukrenergo asked residents to postpone using high-power
-      appliances. Prime Minister Serhii Koretskyi called it the first
-      attack of this scale since the heating season ended, and President
-      Zelensky renewed his appeal for more air-defense interceptors ahead
-      of winter.
+      infrastructure, killing at least four people, including a child in
+      Vyshhorod, and causing widespread power outages. Grid operator
+      Ukrenergo asked residents to postpone using high-power appliances.
+      President Zelensky renewed his appeal for more air-defense
+      interceptors ahead of winter.
     source: AP, Kyiv Independent
     url: https://kyivindependent.com/russian-ballistic-missiles-rock-kyiv-disrupt-electricity-as-multi-day-russian-attacks-on-capital-continue/
 
@@ -295,93 +303,56 @@ stories:
       More than 400 people, mostly minors, were taken into custody Tuesday
       as protests over overcrowded classes and teacher shortages spread to
       more than 400 schools nationwide. At least 10 teachers and several
-      students were hurt, along with 48 law enforcement officers; images
-      showed burning bins and damaged bus stops. The unrest comes two days
-      before Prime Minister Sebastien Lecornu's government presents a 2027
-      budget with 54 billion euros in planned savings.
+      students were hurt, along with 48 law enforcement officers. The
+      unrest comes two days before Prime Minister Sebastien Lecornu's
+      government presents a 2027 budget with 54 billion euros in planned
+      savings.
     source: AP
     url: https://abcnews.com/International/wireStory/french-presidential-campaign-heats-student-protests-fuel-political-136827389
 
   - section: World News
-    title: Spain moves to ban evictions through 2030 after pensioner's case
+    title: Israel says it killed senior Hamas commander Izz al-Din al-Beik in Gaza
     body: >-
-      Spain's governing coalition approved a package including a
-      moratorium on residential evictions until 2030 and automatic renewal
-      of tenant leases, responding to nationwide housing protests. The
-      push followed the eviction of 87-year-old Madrid pensioner Maricarmen
-      Abascal after her rent nearly tripled to 2,650 euros a month; she
-      later got her apartment back under a new lease. The measures, which
-      also target speculative investment funds and short-term rentals,
-      still need approval from a fragmented parliament that the coalition
-      does not control.
-    source: France 24, AFP
-    url: https://www.france24.com/en/live-news/20260929-spain-aims-to-ban-evictions-until-2030-amid-housing-protests-1
-
-  - section: World News
-    title: Rubio ties suspected RAF Fairford plot to a "foreign actor"
-    body: >-
-      Secretary of State Marco Rubio said the incident near the UK air base
-      used by US forces to strike Iran "clearly involves the hands of a
-      foreign actor," pointing to Iran without offering evidence. Five
-      British men in their 20s remain under investigation with strict
-      movement conditions after suspicious vehicles were spotted near RAF
-      Fairford, prompting evacuations of dozens of homes. Iran has denied
-      any involvement.
-    source: Fox News, Al Jazeera
-    url: https://www.aljazeera.com/news/2026/9/29/uss-marco-rubio-says-uk-airbase-incident-involved-foreign-actor
+      An Israeli airstrike in Gaza killed al-Beik, described as a senior
+      Hamas commander, according to news reports on Wednesday.
+    source: FDD, Democracy Now
+    url: https://www.democracynow.org/2026/9/30/headlines
 
   - section: AI News
-    title: Trump orders federal government to call AI "Super Intelligence"
+    title: Tech CEOs sign voluntary White House accord on "Super Intelligence"
     body: >-
-      An executive order directs executive-branch agencies to use "Super
-      Intelligence" and "SI" instead of "artificial intelligence" in
-      correspondence, public communications, websites and policy documents.
-      Trump said the term "more appropriately captures the promise,
-      potential, and rapidly advancing capabilities" of the technology. The
-      State Department's international organizations bureau told diplomats
-      to adopt the new terminology, and US representatives used "SI" at a
-      UN Security Council meeting the next day. The order also directs
-      officials to propose legislation within 60 days defining "super
-      intelligence" in federal law.
-    source: AP, ABC News
-    url: https://abcnews.com/US/wireStory/us-diplomats-told-term-super-intelligence-artificial-intelligence-136698441
+      Jensen Huang, Sundar Pichai, Mark Zuckerberg, Elon Musk, Dario Amodei
+      and Greg Brockman signed a roughly 300-word commitment at the White
+      House on Tuesday. Frontier AI developers pledge internal controls that
+      track risks such as cyber, bio and chemical capabilities, a dedicated
+      safety team, an independent outside auditor and a board-level
+      committee that reviews audit reports. The accord is voluntary, and
+      says it may make sense to write the steps into law later. It follows
+      the executive order directing agencies to say "Super Intelligence"
+      instead of "AI."
+    source: SiliconANGLE, Washington Examiner
+    url: https://siliconangle.com/2026/09/30/prominent-tech-ceos-sign-voluntary-white-house-ai-safety-accord/
+    image: img/ai-accord.jpg
+    image_credit: SiliconANGLE
 
   - section: AI News
-    title: OpenAI's revenue run rate nears $70 billion, up 70% this quarter
+    title: OpenAI launches Dots, always-on agents with their own cloud computers
     body: >-
-      OpenAI's annualized revenue has climbed to nearly $70 billion, up
-      more than 70% since the start of the third quarter, Axios reports.
-      Business-to-business revenue has more than doubled since July, and
-      consumer revenue added in Q3 alone already exceeds all of 2025's
-      consumer haul, driven by ChatGPT subscriptions, Codex and a growing
-      advertising business. The jump follows a $40 billion run-rate figure
-      reported just last month; OpenAI's actual profitability remains
-      unclear since the report has little visibility into its expenses.
-    source: Axios
-    url: https://finance.yahoo.com/technology/ai/articles/openai-annualized-revenue-nears-70-144152179.html
-
-  - section: AI News
-    title: AI agent deleted 100+ Azure accounts in a 7-minute ransomware attack
-    body: >-
-      Microsoft says a threat actor it tracks as Storm-3168, publicly known
-      as JadePuffer, used an AI agent to autonomously map, steal credentials
-      from and destroy Azure cloud resources after compromising two service
-      principals whose credentials had leaked in a public GitHub issue. The
-      destructive phase took about seven minutes and attempted to delete
-      more than 100 storage accounts, most of which succeeded; some were
-      saved by Azure resource locks. The attacker also removed backup
-      protections first, making recovery harder.
-    source: Microsoft, BleepingComputer
-    url: https://www.bleepingcomputer.com/news/security/jadepuffer-agentic-ai-attacks-target-azure-destroy-cloud-resources/
+      Announced at Developer Day on Sept 29, each Dot runs on GPT-6 Astra
+      with a dedicated cloud computer and browser, connects to more than
+      4,000 apps, and can be reached through ChatGPT, Slack and Microsoft
+      Teams. It is rolling out now to Pro, Business Premium and Enterprise
+      plans in eligible markets. The launch came a day after OpenAI
+      shelved GPT-6.1 Astra over safety and alignment problems found in
+      testing.
+    source: MarkTechPost
+    url: https://www.marktechpost.com/2026/09/29/openai-launches-dots-always-on-gpt-6-astra-agents-that-work-from-their-own-cloud-computers/
 
   - section: On This Day
-    title: 1955 - James Dean dies in a car crash at 24
+    title: 1982 - Cheers premieres on NBC
     body: >-
-      The actor, who had starred in "East of Eden" and completed filming
-      "Giant," died when his Porsche collided with another car near
-      Cholame, California, while he was driving to a race. "Rebel Without
-      a Cause" was released weeks later, cementing his status as a symbol
-      of restless youth.
-    when: Sep 30, 1955
+      The sitcom set in a Boston bar debuted with the pilot episode "Give
+      Me a Ring Sometime."
+    when: Sep 30, 1982
     source: Wikipedia
     url: https://en.wikipedia.org/wiki/September_30
