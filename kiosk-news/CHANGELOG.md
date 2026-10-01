@@ -86,3 +86,7 @@ One dated line per edit the agent makes to this skill: what changed and why.
   citing a photo credit in text. Also confirmed the lotusfest.org lineup
   page's lead image is a stale 2019 festival photo, not a current one -
   skip it like the Bloomingtonian masthead case.
+- 2026-10-01 (evening run): sources.md - added Just Security "Early Edition"
+  as a one-page daily US/world digest; reconfirmed the Bloomingtonian
+  masthead og:image issue; noted evening runs should drop events starting
+  before ~7pm and skip sports items in the Visit Bloomington RSS.

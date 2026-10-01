@@ -204,3 +204,9 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   work directly with the image script. today.iu.edu event pages give a
   relative image path under /live/image/gid/... - prepend the domain and it
   downloads fine.
+- 2026-10-01 evening: the Bloomingtonian og:image was again the 2019 Lotus
+  masthead on every article - never use it. Just Security "Early Edition"
+  (justsecurity.org) is a good one-page daily US/world digest via WebFetch.
+  Visit Bloomington RSS images work with the image script once the
+  `c_fill,...w_150/` segment is dropped. On evening runs drop events starting
+  before ~7pm, and skip sports items in the RSS (e.g. a basketball scrimmage).
