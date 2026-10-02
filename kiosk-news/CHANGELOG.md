@@ -90,3 +90,4 @@ One dated line per edit the agent makes to this skill: what changed and why.
   as a one-page daily US/world digest; reconfirmed the Bloomingtonian
   masthead og:image issue; noted evening runs should drop events starting
   before ~7pm and skip sports items in the Visit Bloomington RSS.
+2026-10-02: sources.md - noted RSS range limit and working ipm.org/kpbs.org image sources.
