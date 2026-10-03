@@ -1,64 +1,21 @@
-generated: "2026-10-03T06:32:45-04:00"
+generated: "2026-10-03T18:31:01-04:00"
 stories:
   - section: Local Events
-    title: Peace Choir sings at the Farmers Market
+    title: "IU Cinema screens Grass: A Nation's Battle for Life"
     body: >-
-      The Bloomington Peace Choir performs songs about community, peace and compassion.
-    when: Sat Oct 3, 10:30am
-    where: Bloomington Community Farmers' Market, Morton Street
+      Documentary on filmmakers Merian C. Cooper and Ernest B. Schoedsack's 1924 expedition, followed by a Q&A.
+    when: Sat Oct 3, evening
+    where: IU Cinema
     source: Visit Bloomington
-
-  - section: Local Events
-    title: Grape Stomp Championship
-    body: >-
-      Teams of four roll up their pant legs and stomp for the title.
-    when: Sat Oct 3
-    source: Visit Bloomington
-    image: img/grape-stomp.jpg
+    image: img/grass-film.jpg
     image_credit: Visit Bloomington
 
   - section: Local Events
-    title: Bloomington Music Expo record show
+    title: Welcome to the Neighborhood at The Bluebird
     body: >-
-      Record vendors fill the pavilion for one of Indiana's larger record shows.
-    when: Sat Oct 3
-    where: Switchyard Park Pavilion, 1601 S. Rogers St.
-    source: Visit Bloomington
-    image: img/music-expo.jpg
-    image_credit: Visit Bloomington
-
-  - section: Local Events
-    title: Fifth annual Paint Bloomington
-    body: >-
-      The outdoor painting event includes art classes.
-    when: Sat Oct 3
-    where: Woodlawn Pavilion, Bryan Park
-    source: Visit Bloomington
-    image: img/paint-bloomington.jpg
-    image_credit: Visit Bloomington
-
-  - section: Local Events
-    title: PALS Homecoming open house
-    body: >-
-      Tour the newly renovated center, meet the horses and eat from partner vendors.
-    when: Sat Oct 3, noon-3pm
-    source: Visit Bloomington
-
-  - section: Local Events
-    title: Trick-or-Treat Trail at RCA Community Park
-    body: >-
-      Halloween trail for kids. Admission is $5 per child, with one adult included.
-    when: Sat Oct 3, 1-4pm
-    where: RCA Community Park
-    source: Visit Bloomington
-    image: img/trick-or-treat-trail.jpg
-    image_credit: Visit Bloomington
-
-  - section: Local Events
-    title: "Free movie in the park: Scooby-Doo on Zombie Island"
-    body: >-
-      Bring a blanket and a picnic for the PG-rated 1998 animated film.
-    when: Sat Oct 3
+      Live music. Doors at 8pm, show at 9pm. 21 and over.
+    when: Sat Oct 3, 9pm
+    where: The Bluebird
     source: Visit Bloomington
 
   - section: Local Events
@@ -131,27 +88,32 @@ stories:
     url: https://www.in.gov/counties/monroe/infrastructure/highway-department/road-closings-and-construction/
 
   - section: Local News
+    title: Two juveniles admit threatening Highland Park Elementary students
+    body: >-
+      The Monroe County Sheriff's Office began investigating after a Sept 28 report of threatening social media messages aimed at three students. Both juveniles admitted sending them in interviews and were referred to Juvenile Probation and the Department of Child Services.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/01/two-juveniles-admitted-sending-threats-involving-highland-park-students-sheriffs-office-says/
+
+  - section: Local News
+    title: Duke Energy picks 87-acre Fullerton Pike site for industrial marketing
+    body: >-
+      The 3100 W. Fullerton Pike property has I-69 access and available utilities. Selection for the company's Site Readiness Program does not mean a tenant or construction is planned.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/01/duke-energy-selects-87-acre-fullerton-pike-site-for-industrial-development-marketing/
+
+  - section: Local News
     title: Immigration judge sets $10,000 bond for Bloomington man held by ICE
     body: >-
       The bond follows a federal habeas win for one of two Bloomington men detained by ICE in September.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/immigration-judge-sets-10k-bond-for-bloomington-man-after-federal-habeas-win/
 
-  - section: Local News
-    title: Braun names new leader of Indiana's public access counselor office
-    body: >-
-      Brittney Long, previously deputy general counsel, takes over the troubled office that handles open-records and open-meetings disputes.
-    source: Indiana Public Media
-    url: https://www.ipm.org/news/2026-10-02/braun-appoints-new-leader-for-troubled-public-access-counselors-office
-
   - section: US News
     title: Trump says Iran war will end "right after the election" as 9,000 more troops head east
     body: >-
-      The USS Theodore Roosevelt carrier strike group and the USS Makin Island amphibious group are heading to the Middle East, bringing US forces in the region to roughly 20,000. Trump said the US "could leave tomorrow" and Iran would need years to rebuild. At least four ships have been hit near the Strait of Hormuz this week, and Iran's parliament is advancing a bill that could charge fees for passage. Europe agreed to release 100 million barrels of diesel over four months to ease fuel prices.
+      The USS Theodore Roosevelt carrier strike group and the USS Makin Island amphibious group are heading to the Middle East, bringing US forces in the region to roughly 20,000. Trump said the US "could leave tomorrow" and Iran would need years to rebuild. At least four ships have been hit near the Strait of Hormuz this week, and Iran's parliament is advancing a bill that could charge fees for passage.
     source: CBS News
     url: https://www.cbsnews.com/live-updates/trump-iran-war-us-midterm-elections-troops-deployment/
-    image: img/iran-troops.jpg
-    image_credit: Getty Images via CBS News
 
   - section: US News
     title: Top national security officials meet at Camp David on Iran
@@ -161,30 +123,37 @@ stories:
     url: https://timesofisrael.com/liveblog-october-03-2026
 
   - section: World News
-    title: UAE calls flydubai cockpit attack a "terrorist act"
+    title: flydubai captain describes how he got back into the cockpit
     body: >-
-      The UAE attorney general says the copilot attacked the captain with a cockpit emergency axe on the Sept 30 Dubai-Tel Aviv flight. The injured captain still opened the cockpit door, and passengers subdued the attacker. The plane landed safely in Saudi Arabia with more than 180 people aboard. Social media accounts linked to the copilot posted videos featuring al-Qaeda figures after the attack, and Trump warned Iran would be hit hard if it is found to be behind it.
+      With the copilot blocking the external code entry, Capt. Smit Machchhar says he twisted the interior knob to open the door. Israel's Transportation Ministry acknowledged it does no background checks on foreign pilots and relies on airlines for vetting. The UAE has called the Sept 30 attack a terrorist act.
     source: Times of Israel
     url: https://timesofisrael.com/liveblog-october-03-2026
 
   - section: World News
     title: Israeli strike in Gaza City targets senior Hamas official
     body: >-
-      The strike aimed at Ali al-Amoudi, described as the de facto political leader in Gaza. Palestinian reports say five people died, including a doctor and family members. Whether al-Amoudi survived is unclear.
+      The IDF confirmed it targeted Ali al-Amoudi. Palestinian reports say five people died, and whether he survived is unclear.
     source: Times of Israel
     url: https://timesofisrael.com/liveblog-october-03-2026
 
   - section: World News
-    title: Settlers attack Palestinian olive pickers as West Bank harvest begins
+    title: Houthis claim missile and drone attack on Aramco facility in Riyadh
     body: >-
-      Reported incidents near Nablus, in villages including Osarin and Beita, involved beatings, stone-throwing at homes and stolen equipment. Police opened investigations.
+      The claim adds to regional tension. It had not been independently confirmed in the source reporting.
     source: Times of Israel
     url: https://timesofisrael.com/liveblog-october-03-2026
 
   - section: AI News
+    title: Trump expected to name Jay Clayton AI czar
+    body: >-
+      Director of National Intelligence Jay Clayton would keep his current job. Trump says he is very close to deciding on a superintelligence czar.
+    source: Crypto Integrated
+    url: https://www.cryptointegrat.com/p/ai-news-october-3-2026
+
+  - section: AI News
     title: OpenAI fires three safety researchers over alleged leak of confidential files
     body: >-
-      Jasmine Wang, Tomek Korbak and Mikita Balesni were dismissed after an internal review found they shared sensitive information, reportedly technical architecture details, with an outside safety group. Korbak had been OpenAI's contact for Redwood Research and METR during the Hugging Face incident inquiry. OpenAI has also told more than 100 organizations about unauthorized activity tied to its AI agents.
+      Jasmine Wang, Tomek Korbak and Mikita Balesni were dismissed after an internal review found they shared sensitive information with an outside safety group. OpenAI has also told more than 100 organizations about unauthorized activity tied to its AI agents.
     source: TechCrunch
     url: https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports/
 
