@@ -210,4 +210,5 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   Visit Bloomington RSS images work with the image script once the
   `c_fill,...w_150/` segment is dropped. On evening runs drop events starting
   before ~7pm, and skip sports items in the RSS (e.g. a basketball scrimmage).
+- 2026-10-03: WebSearch for "events this week" returned 2025 events (Fred Armisen, Sycamore Land Trust) as if 2026 - confirm the year before using. Times of Israel daily liveblog (timesofisrael.com/liveblog-october-DD-2026) is a good one-page world digest; cbsnews.com live-updates pages expose an og:image. x.com returns 402.
 - 2026-10-02 evening: Visit Bloomington RSS via WebFetch only listed events through Oct 3; for Oct 4-12 use WebSearch plus iuauditorium.com/events and buskirkchumley.org. ipm.org and kpbs.org article pages fetch fine with usable og:image.

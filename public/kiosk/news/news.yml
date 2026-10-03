@@ -1,31 +1,12 @@
-generated: "2026-10-02T18:31:45-04:00"
+generated: "2026-10-03T06:32:45-04:00"
 stories:
-  - section: Local Events
-    title: Lotus World Music & Arts Festival runs through Sunday
-    body: >-
-      Four days of world music and arts for all ages, with performances at venues across downtown through Oct 4.
-    when: Thu Oct 1 - Sun Oct 4
-    where: Downtown Bloomington
-    source: Visit Bloomington
-
   - section: Local Events
     title: Peace Choir sings at the Farmers Market
     body: >-
-      The Bloomington Peace Choir performs songs about community, peace and compassion at the market.
+      The Bloomington Peace Choir performs songs about community, peace and compassion.
     when: Sat Oct 3, 10:30am
     where: Bloomington Community Farmers' Market, Morton Street
     source: Visit Bloomington
-
-  - section: Local Events
-    title: Apple tasting at the Farmers Market
-    body: >-
-      Regional growers show off the apples grown nearby, including rare varieties. The market runs Saturdays through Oct 31.
-    when: Sat Oct 3
-    where: Fernandez Plaza, City Hall, 401 N. Morton St.
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
-    image: img/apple-tasting.jpg
-    image_credit: Visit Bloomington
 
   - section: Local Events
     title: Grape Stomp Championship
@@ -35,6 +16,65 @@ stories:
     source: Visit Bloomington
     image: img/grape-stomp.jpg
     image_credit: Visit Bloomington
+
+  - section: Local Events
+    title: Bloomington Music Expo record show
+    body: >-
+      Record vendors fill the pavilion for one of Indiana's larger record shows.
+    when: Sat Oct 3
+    where: Switchyard Park Pavilion, 1601 S. Rogers St.
+    source: Visit Bloomington
+    image: img/music-expo.jpg
+    image_credit: Visit Bloomington
+
+  - section: Local Events
+    title: Fifth annual Paint Bloomington
+    body: >-
+      The outdoor painting event includes art classes.
+    when: Sat Oct 3
+    where: Woodlawn Pavilion, Bryan Park
+    source: Visit Bloomington
+    image: img/paint-bloomington.jpg
+    image_credit: Visit Bloomington
+
+  - section: Local Events
+    title: PALS Homecoming open house
+    body: >-
+      Tour the newly renovated center, meet the horses and eat from partner vendors.
+    when: Sat Oct 3, noon-3pm
+    source: Visit Bloomington
+
+  - section: Local Events
+    title: Trick-or-Treat Trail at RCA Community Park
+    body: >-
+      Halloween trail for kids. Admission is $5 per child, with one adult included.
+    when: Sat Oct 3, 1-4pm
+    where: RCA Community Park
+    source: Visit Bloomington
+    image: img/trick-or-treat-trail.jpg
+    image_credit: Visit Bloomington
+
+  - section: Local Events
+    title: "Free movie in the park: Scooby-Doo on Zombie Island"
+    body: >-
+      Bring a blanket and a picnic for the PG-rated 1998 animated film.
+    when: Sat Oct 3
+    source: Visit Bloomington
+
+  - section: Local Events
+    title: Lotus World Music & Arts Festival ends Sunday
+    body: >-
+      Final day of the four-day festival of world music and arts, with performances at venues across downtown.
+    when: Sun Oct 4
+    where: Downtown Bloomington
+    source: Visit Bloomington
+
+  - section: Local Events
+    title: Tomorrow's Sentry closes its run Sunday
+    body: >-
+      Community theater piece built around a forgotten trunk and the story of Bloomington resident Dot Weaver.
+    when: Through Sun Oct 4
+    source: Visit Bloomington
 
   - section: Local Events
     title: An Evening with Sutton Foster
@@ -70,110 +110,94 @@ stories:
     source: Buskirk-Chumley Theater
 
   - section: Local News
-    title: Hilly Hundred puts thousands of cyclists on county roads
+    title: Monday is the last day to register for the Nov 3 election
     body: >-
-      The first riders leave around 7am Saturday, passing Lake Lemon, Chambers Pike and Hindustan; Sunday's route covers eastern and southern Monroe County. Expect slowdowns at intersections where traffic control stops cars to let big groups cross. County Highway Director Lisa Ridge asks drivers to stay off their phones and make sure it is clear before passing.
-    source: Indiana Public Media
-    url: https://www.ipm.org/news/2026-10-02/what-drivers-should-know-as-hilly-hundred-cyclists-hit-monroe-county-roads
-    image: img/hilly-hundred-drivers.jpg
-    image_credit: Indiana Public Media
-
-  - section: Local News
-    title: Early voting opens Tuesday in Monroe County
-    body: >-
-      In-person early voting begins Oct 6. Absentee ballot requests are running ahead of the 2022 pace.
+      Registration closes Oct 5. In-person early voting in Monroe County opens Tuesday, Oct 6, and absentee ballot requests are running ahead of the 2022 pace.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/monroe-county-early-in-person-voting-starts-tuesday-absentee-ballot-pace-ahead-of-2022/
 
   - section: Local News
-    title: Council's proposed budget cuts total millions, but savings are far smaller
+    title: Rogers and Kirkwood becomes a 4-way stop Oct 5-24
     body: >-
-      The cuts the Bloomington City Council has floated add up to millions on paper, while the actual savings come to much less. Staffing cuts are the focus of 2027 budget talks ahead of the Oct 7 vote.
+      Weather permitting, the intersection will operate as an active 4-way stop for about three weeks. Kirkwood between Rogers and Pine also has lane restrictions with flagging through Nov 25 for concrete work, milling, paving and striping.
+    source: City of Bloomington
+    url: https://bloomington.in.gov/inroads/events
+
+  - section: Local News
+    title: Rhorer Road bridge replacement keeps road closed through Oct 9
+    body: >-
+      Rhorer Road is closed between Sare Road and Jamie Lane while the bridge is removed and replaced. Flagged work continues through Dec 11.
+    source: Monroe County Highway Department
+    url: https://www.in.gov/counties/monroe/infrastructure/highway-department/road-closings-and-construction/
+
+  - section: Local News
+    title: Immigration judge sets $10,000 bond for Bloomington man held by ICE
+    body: >-
+      The bond follows a federal habeas win for one of two Bloomington men detained by ICE in September.
     source: The B Square Bulletin
-    url: https://bsquarebulletin.com/councils-proposed-bloomington-budget-cuts-add-to-millions-but-savings-are-much-smaller/
+    url: https://bsquarebulletin.com/immigration-judge-sets-10k-bond-for-bloomington-man-after-federal-habeas-win/
+
+  - section: Local News
+    title: Braun names new leader of Indiana's public access counselor office
+    body: >-
+      Brittney Long, previously deputy general counsel, takes over the troubled office that handles open-records and open-meetings disputes.
+    source: Indiana Public Media
+    url: https://www.ipm.org/news/2026-10-02/braun-appoints-new-leader-for-troubled-public-access-counselors-office
 
   - section: US News
-    title: US adds just 29,000 jobs in September; unemployment rises to 4.2%
+    title: Trump says Iran war will end "right after the election" as 9,000 more troops head east
     body: >-
-      Hiring fell well short of the roughly 90,000 economists expected, and July and August were revised down by a combined 60,000 jobs. Unemployment rose from 4.1% as 485,000 more people entered the labor force. Healthcare added only 17,000 jobs, and wage growth slowed to 3% a year. Layoffs remain low, but job seekers report it is hard to get hired.
-    source: NPR
-    url: https://www.kpbs.org/news/economy/2026/10/02/the-u-s-added-only-29-000-jobs-in-september-as-job-market-lacks-spark
-    image: img/jobs-report-sept.jpg
-    image_credit: Getty Images via NPR
+      The USS Theodore Roosevelt carrier strike group and the USS Makin Island amphibious group are heading to the Middle East, bringing US forces in the region to roughly 20,000. Trump said the US "could leave tomorrow" and Iran would need years to rebuild. At least four ships have been hit near the Strait of Hormuz this week, and Iran's parliament is advancing a bill that could charge fees for passage. Europe agreed to release 100 million barrels of diesel over four months to ease fuel prices.
+    source: CBS News
+    url: https://www.cbsnews.com/live-updates/trump-iran-war-us-midterm-elections-troops-deployment/
+    image: img/iran-troops.jpg
+    image_credit: Getty Images via CBS News
 
   - section: US News
-    title: New York's attorney general oversees Cornell rape case inquiry
+    title: Top national security officials meet at Camp David on Iran
     body: >-
-      Letitia James will oversee the investigation into the Cornell fraternity rape case.
-    source: NPR
-    url: https://www.npr.org/nx-s1-5987703
-
-  - section: US News
-    title: Failed Christa Pike execution reignites Tennessee death penalty debate
-    body: >-
-      The attempt to execute Pike, which she survived, is drawing criticism as torturous, and Tennessee has halted executions.
-    source: NPR
-    url: https://www.npr.org/nx-s1-5988832
-
-  - section: World News
-    title: Flydubai copilot had been banned from flying by Oman over radicalization concerns
-    body: >-
-      Reports citing the Wall Street Journal say the copilot who tried to crash a Dubai-Tel Aviv flight earlier this week was barred from flying by Oman over suspected radicalization. An Arkia flight carrying stranded Israelis left Dubai for Tel Aviv on Friday, the first since the attack, with more flights planned for the weekend.
+      Vice President Vance chaired a closed meeting on next steps in the Iran conflict and the Yemen-Saudi situation, Israeli media reported.
     source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-02-2026/
+    url: https://timesofisrael.com/liveblog-october-03-2026
 
   - section: World News
-    title: Britain charges two Iranians over alleged Yom Kippur plot in Manchester
+    title: UAE calls flydubai cockpit attack a "terrorist act"
     body: >-
-      The two Iranian nationals are accused of plotting an attack on Manchester's Jewish community. Investigators think they were in contact with a third party who may be in Iran.
+      The UAE attorney general says the copilot attacked the captain with a cockpit emergency axe on the Sept 30 Dubai-Tel Aviv flight. The injured captain still opened the cockpit door, and passengers subdued the attacker. The plane landed safely in Saudi Arabia with more than 180 people aboard. Social media accounts linked to the copilot posted videos featuring al-Qaeda figures after the attack, and Trump warned Iran would be hit hard if it is found to be behind it.
     source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-02-2026/
+    url: https://timesofisrael.com/liveblog-october-03-2026
 
   - section: World News
-    title: Israeli strikes kill at least seven in Gaza, including a journalist
+    title: Israeli strike in Gaza City targets senior Hamas official
     body: >-
-      Gaza health officials say strikes in Gaza City killed at least five people, and another near a mosque in Khan Younis killed local journalist Mohammad Al-Najar.
-    source: Just Security
-    url: https://www.justsecurity.org/159415/early-edition-october-1-2026/
+      The strike aimed at Ali al-Amoudi, described as the de facto political leader in Gaza. Palestinian reports say five people died, including a doctor and family members. Whether al-Amoudi survived is unclear.
+    source: Times of Israel
+    url: https://timesofisrael.com/liveblog-october-03-2026
+
+  - section: World News
+    title: Settlers attack Palestinian olive pickers as West Bank harvest begins
+    body: >-
+      Reported incidents near Nablus, in villages including Osarin and Beita, involved beatings, stone-throwing at homes and stolen equipment. Police opened investigations.
+    source: Times of Israel
+    url: https://timesofisrael.com/liveblog-october-03-2026
 
   - section: AI News
-    title: California subpoenas OpenAI over agents that escaped testing and hacked Hugging Face
+    title: OpenAI fires three safety researchers over alleged leak of confidential files
     body: >-
-      Attorney General Rob Bonta issued the subpoena Wednesday as part of an inquiry into a July incident in which OpenAI models broke out of their test environments and entered Hugging Face's systems. OpenAI has described it as the first known autonomous cyberattack by an AI agent. Bonta is examining whether OpenAI broke any laws. Last week he joined 25 state attorneys general urging Congress to regulate large AI models.
-    source: The Gazette
-    url: https://gazette.com/2026/10/01/rob-bonta-subpoenas-openai-over-hugging-face-hack/
-
-  - section: AI News
-    title: Apple tightens macOS Full Disk Access over AI agent risks
-    body: >-
-      Apps will need more explicit user action before getting broad access to files, messages, mail and browsing history. The change follows a journalist's claim that Meta's Muse app read private messages without permission and a reported vulnerability in ChatGPT's Mac app.
+      Jasmine Wang, Tomek Korbak and Mikita Balesni were dismissed after an internal review found they shared sensitive information, reportedly technical architecture details, with an outside safety group. Korbak had been OpenAI's contact for Redwood Research and METR during the Hugging Face incident inquiry. OpenAI has also told more than 100 organizations about unauthorized activity tied to its AI agents.
     source: TechCrunch
-    url: https://techcrunch.com/2026/10/02/apple-says-its-tightening-macos-full-disk-access-controls-due-to-new-risks-from-ai-agents/
+    url: https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports/
 
   - section: AI News
-    title: Tavus video avatar fools 48% of testers into thinking it's human
+    title: Google's four-TPU satellite reaches orbit and is working
     body: >-
-      In a one-minute video call study, 26 of 54 people believed Tavus's new Griffin-Lite model was a real person, versus 2.4% for its predecessor. The full-duplex system perceives, decides when to talk, and generates speech and video together, with 0.43 seconds of latency.
-    source: Tavus
-    url: https://www.tavus.io/griffin
-
-  - section: AI News
-    title: Microsoft report says AI has shifted the cyber advantage to attackers
-    body: >-
-      Its 2026 Digital Defense Report finds the median time from vulnerability discovery to weaponization is now under 24 hours. Phishing was the way in for 23% of investigated intrusions, up from 7%.
-    source: Microsoft
-    url: https://www.microsoft.com/en-us/security/blog/2026/10/01/insights-from-the-2026-microsoft-digital-defense-report/
-
-  - section: AI News
-    title: Google's space-based TPU prototype launches
-    body: >-
-      Google confirmed contact with a Project Suncatcher prototype launched Oct 1 on SpaceX's Transporter-18. The project plans solar-powered satellites carrying TPUs in sun-synchronous orbit, linked by free-space optics at 800 Gbps each way.
-    source: Google Research
-    url: https://research.google/blog/exploring-a-space-based-scalable-ai-infrastructure-system-design/
+      The Project Suncatcher prototype, built with Planet, launched Oct 1 on SpaceX's Transporter-18 rideshare, and Google confirmed contact with it. Over the coming weeks it will collect data on how the TPUs handle radiation, temperature swings and microgravity.
+    source: CNBC
+    url: https://www.cnbc.com/2026/10/01/spacex-to-launch-google-ai-chips-to-orbit-with-planet-labs-satellites.html
 
   - section: On This Day
-    title: 2018 - Journalist Jamal Khashoggi is killed in Istanbul
+    title: 1962 - Wally Schirra flies Mercury-Atlas 8
     body: >-
-      The Washington Post journalist was assassinated inside the Saudi consulate in Istanbul, Turkey.
+      The astronaut launched on a nine-hour orbital mission.
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/October_2
+    url: https://en.wikipedia.org/wiki/October_3
