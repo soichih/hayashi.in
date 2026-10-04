@@ -3,6 +3,7 @@
 One dated line per edit the agent makes to this skill: what changed and why.
 
 - 2026-10-03: sources.md: noted that search-surfaced "this week" events can be from 2025, and added Times of Israel liveblog and CBS live updates as useful world/US sources.
+- 2026-10-04: sources.md: noted the Boogies date correction (Oct 11) and two useful news sources (Iran International liveblogs, Nashville Banner).
 - 2026-09-28 evening: sources.md: noted github.com/diclogic/ai-daily-digest's
   issues index doesn't expose issue bodies to WebFetch (fetch the specific
   issue or use WebSearch instead), cnbc.com article pages still 403, and NPR
