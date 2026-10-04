@@ -41,3 +41,9 @@ If a post cites anything, fetch each source and confirm it says what the post cl
 - Work on a branch in a separate worktree (`git worktree add ../hayashi.in-<topic> -b <topic> origin/main`). Automation pushes `main` from the main checkout, so anything unapproved must not sit there.
 - Run `SITE_URL=https://hayashi.in SITE_BASE=/ bun run build` and confirm the post's page is generated.
 - Merge to `main` and push only when the owner says to publish. Pushing deploys.
+
+## Keep this skill current
+
+This skill should track how the owner actually writes. After finishing a post, or after the owner corrects a draft, check whether the correction is a pattern and not a one-off. If it is (a phrase they always cut, a length they prefer, an opening or ending they like), add it here in one line under the matching section, in the same plain style. Replace guesses with what the owner's edits show, and delete a rule the owner contradicts.
+
+Tell the owner what you changed in this file. Commit it with the post, so the rule and the evidence for it stay together. Never add private details, since this file is public.
