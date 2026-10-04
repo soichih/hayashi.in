@@ -13,10 +13,10 @@ comments: true
 
 The world has evil people and predators, and they do try to hurt us. The tempting response is to become the strongest and meanest person around, so we can beat the people we fear.
 
-That is not what made us who we are. We are physically weak animals, and we ended up at the top anyway. What got us there is our ability to see each other's weaknesses and help where we can, to serve others, to forgive flaws, and to find ways around our shortcomings. That includes standing up to bullies and enemies. We don't do it alone. We take on the risk together and work on common tasks together, and nobody is expected to carry any of it by themselves. We can picture a better tomorrow for all of us and build it together.
-
-Sometimes we fail. We let a bully go after one person, or we let misfortune hit someone and we look away. Sometimes we can't forgive a shortcoming and we withhold grace. That is part of how we got here too. Failing lets us see what the failure costs, and that is what lets us picture something better and work toward it. But only if we learn from our mistakes and don't forget them.
-
-We never stop. We make progress over time, and we must not give up on each other.
+That is not what made us who we are. We are not the strongest animal, and we ended up at the top anyway. What got us there is our ability to see each other's weaknesses and help where we can, to forgive flaws, and to find ways around our shortcomings. That includes standing up to bullies and enemies. We don't do it alone. We take on the risk together, and nobody is expected to carry it by themselves. We can picture a better tomorrow for all of us and build it together.
 
 I wrote about the other half of this in [The obligation of the fortunate](/blog/the-obligation-of-the-fortunate/).
+
+Sometimes we fail. We let a bully go after one person, or we let misfortune hit someone and we look away. Sometimes we can't forgive a shortcoming and we withhold grace. That is part of how we got here too, because a failure we remember teaches us something. A failure we forget teaches nothing.
+
+We never stop. We make progress over time, and we must not give up on each other.
