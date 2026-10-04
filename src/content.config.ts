@@ -286,7 +286,8 @@ const siteConfig = defineCollection({
         en: nonEmptyStringSchema(defaultFontConfig.en),
         code: nonEmptyStringSchema(defaultFontConfig.code),
         zh: nonEmptyStringSchema(defaultFontConfig.zh),
-        file: nonEmptyStringSchema(defaultFontConfig.file),
+        // An empty file means no CJK font is loaded.
+        file: z.string().trim().optional().default(defaultFontConfig.file),
       })
       .optional()
       .default(defaultFontConfig),

@@ -15,7 +15,8 @@ palette = "green-soft"
 en = "Maple Mono"
 code = "Monaco"
 zh = "ChillRoundM"
-file = "/fonts/ChillRoundM.ttf"
+# The site is English-only, so no CJK font file is loaded.
+file = ""
 
 [config.code]
 lightTheme = "catppuccin-latte"

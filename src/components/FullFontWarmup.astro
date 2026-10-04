@@ -3,7 +3,7 @@ import { getSiteConfig } from '../data/site';
 
 const { fonts } = await getSiteConfig();
 const fullFontType = getFontMimeType(fonts.file);
-const resolvedFullFontUrl = resolveAssetUrl(fonts.file);
+const resolvedFullFontUrl = fonts.file ? resolveAssetUrl(fonts.file) : '';
 
 function resolveAssetUrl(url: string) {
   if (/^(?:https?:)?\/\//i.test(url) || url.startsWith('data:')) return url;
@@ -111,6 +111,8 @@ function getFontMimeType(url: string) {
   }
 
   function runAfterPageLoad() {
+    if (!FULL_FONT_URL) return;
+
     if (document.readyState === 'complete') {
       scheduleWarmupAfterFirstScreen();
       return;
