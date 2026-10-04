@@ -2,6 +2,8 @@
 
 One dated line per edit the agent makes to this skill: what changed and why.
 
+- 2026-10-04: Added "The owner's interests" (by the site owner's session, not the agent): AI research and local models, markets and quant finance, science and scientific computing, US politics toward 2028, consumer security, sleep and health research. New sections "Markets" (US & World pane) and "Science & Tech" (last pane), with untested starting sources.
+
 - 2026-10-03: sources.md: noted that search-surfaced "this week" events can be from 2025, and added Times of Israel liveblog and CBS live updates as useful world/US sources.
 - 2026-10-04: sources.md: noted the Boogies date correction (Oct 11) and two useful news sources (Iran International liveblogs, Nashville Banner).
 - 2026-09-28 evening: sources.md: noted github.com/diclogic/ai-daily-digest's

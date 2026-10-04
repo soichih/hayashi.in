@@ -493,8 +493,8 @@ const NEWS_URL = "news/news.yml";
 const NEWS_GROUPS = [
 	{ label: "Local Events", sections: ["Local Events"] },
 	{ label: "Local News", sections: ["Weather Alert", "Local News"] },
-	{ label: "US & World", sections: ["US News", "World News"] },
-	{ label: "AI & On This Day", sections: ["AI News", "On This Day"] }
+	{ label: "US & World", sections: ["US News", "World News", "Markets"] },
+	{ label: "AI, Science & Tech", sections: ["AI News", "Science & Tech", "On This Day"] }
 ];
 
 const news = {

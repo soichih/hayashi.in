@@ -262,10 +262,10 @@ EOF
 
 # --restricted: only the tools named below, file writes confined to the two
 #   folders, no user/project settings.
-# --strict-mcp-config: no MCP servers (webcam, TTS, kiosk, Gmail...).
-# --safe-mode: no CLAUDE.md files or auto-memory. The user-level CLAUDE.md and
-#   memory hold private notes; an agent that reads untrusted pages and
-#   publishes to a public site must never have them in context.
+# --strict-mcp-config: no MCP servers.
+# --safe-mode: no CLAUDE.md files or auto-memory. Those can hold private
+#   notes, and an agent that reads untrusted pages and publishes to a public
+#   site must never have them in context.
 log "=== run start (model=$MODEL, dry_run=$DRY_RUN) ==="
 (
 	cd "$SKILL_DIR" || exit 1

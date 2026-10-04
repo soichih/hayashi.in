@@ -143,6 +143,36 @@ nothing. Keep each note short: what the source is good for, and any quirks.
   Ars Technica AI: https://arstechnica.com/ai/ - WebFetch couldn't reach
   either (2026-09-22); use WebSearch for their stories.
 
+## Markets
+
+Untested starting points (added 2026-10-04 with the Markets section) - try
+them, note what works, and replace the ones that don't.
+
+- WebSearch "stock market today <date>" and "<date> Fed / jobs report /
+  CPI" for what moved markets and why; prefer wire stories (AP, Reuters)
+  and their mirrors.
+- Asset management industry: Institutional Investor (institutionalinvestor.com),
+  Pensions & Investments (pionline.com).
+- Quant research: SSRN and arXiv q-fin new submissions are too raw for the
+  panel on their own; use them only when a paper is getting coverage.
+
+## Science & Tech
+
+Untested starting points (added 2026-10-04 with the Science & Tech
+section) - try them, note what works, and replace the ones that don't.
+
+- General science news: ScienceDaily (sciencedaily.com), Phys.org, Science
+  news (science.org/news), Nature news (nature.com/news).
+- Neuroscience: The Transmitter (thetransmitter.org).
+- Astronomy and space: NASA news (nasa.gov/news), ESA, NOIRLab.
+- Particle physics: CERN news (home.cern/news), Fermilab news (news.fnal.gov).
+- Supercomputing: HPCwire (hpcwire.com), the TOP500 list when it updates
+  (June and November).
+- Security: BleepingComputer (bleepingcomputer.com), Krebs on Security
+  (krebsonsecurity.com), CISA known-exploited-vulnerabilities additions.
+- Sleep and health: NIH news releases (nih.gov/news-events), and WebSearch for
+  new sleep studies - check the study is real and recent.
+
 ## On this day
 
 - Wikipedia: https://en.wikipedia.org/api/rest_v1/feed/onthisday/selected/MM/DD
