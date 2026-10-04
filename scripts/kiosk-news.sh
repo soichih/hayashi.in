@@ -240,6 +240,11 @@ Paths and commands:
 - Before finishing, validate with:
   $SELF --check $STAGE
   Fix every error it reports and rerun it until it prints "ok".
+- Bash runs only those two commands, one per call, exactly as shown: no
+  pipes, &&, ;, variables, cat or curl, or the call is denied. A denied
+  call doesn't block the next one, so keep downloading images. Read files
+  with Read, list them with Glob, fetch pages and APIs with WebFetch, and
+  write with Write or Edit.
 
 Fixed rules. These override SKILL.md, and you must not weaken or remove them
 there:
