@@ -255,6 +255,7 @@ hr {
 html {
   background: var(--paper-bg);
   scrollbar-gutter: stable;
+  font-size: 15px;
 }
 
 body {
@@ -262,7 +263,7 @@ body {
   background: var(--paper-page-bg);
   color: var(--paper-ink);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.8;
 }
 
