@@ -27,6 +27,26 @@ Posts are short personal essays in the owner's voice. Keep their ideas and wordi
 
 Follow "Public-facing writing" in the user's `CLAUDE.md`: direct, concrete, plain verbs, ASCII hyphen only, straight quotes, no emoji, avoid semicolons in prose, no throat-clearing or inflated words. Cut hedges like "I think" when the sentence is a claim.
 
+## The owner's style
+
+Direct and honest, a little funny, a little melancholy, and hopeful in the end. The examples below are quoted from the owner's published posts.
+
+- **Starts from a flaw in the author, not in other people.** "I've noticed something in myself that I'm not proud of." and "I've done this more than once." Blame lands on the writer first.
+- **One small concrete image carries the idea.** A three-legged table for human weakness. Air molecules that "define the temperature of a room" for how people shape each other. An "ugly button" dropped on a landing page for shipping your own excitement at someone else. Use the image once, then move on.
+- **Dry humor, never a punchline.** "Nobody is the deer. We just take turns noticing which leg is missing." The joke is a plain sentence that happens to be funny.
+- **Sad without despair.** "To be missed, quietly and specifically, by the people who actually knew you." The loss is stated, then the post turns to what we can do.
+- **Short last lines.** "Someone built that. I just forgot to ask who." End on the plain fact, not a moral.
+- **Opinions are marked as opinions.** "I think" is fine where the topic is contested. Cut it where it only softens a plain claim.
+
+Writers with the same register, to calibrate against (not to imitate):
+
+- **Kurt Vonnegut.** Humane, funny and sad in one sentence, and willing to state the one rule he believes. In *God Bless You, Mr. Rosewater*, a speech to newborns ends: "There's only one rule that I know of, babies - God damn it, you've got to be kind." Plain words, a joke up front, and a claim that holds. That is the target for posts like "We don't fight alone".
+- **John Prine.** Plain, kind, funny and sad, and notices people others overlook. "Hello in There" is a song about old people nobody greets, and it never raises its voice. Take the restraint: say what you saw and let it be sad on its own.
+- **Billy Collins.** Wry and quietly sad, and easy to read. Take the ease: no strained words for a deep feeling.
+- **Philip Larkin.** Honest and dry, but bleaker than the owner. Useful as the foil: Larkin tends to end on people failing each other, the owner goes on to keep trying.
+
+Quote these writers only in short pieces and only after confirming the exact wording from a source. Don't quote song lyrics at length.
+
 ## Posts about the owner's own systems
 
 Describe the idea and the lessons, not the inventory. No device lists, schedules, ports, versions, or what a monitor can't see. The repo is public.
