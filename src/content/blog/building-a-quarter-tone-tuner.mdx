@@ -40,7 +40,7 @@ correlation(offset) = 1 - sqrt( mean( (buffer[i] - buffer[i + offset])² ) )
 
 Slide `offset` across the lag range that corresponds to ~60–1000 Hz, and the offset with the
 highest correlation (above a confidence threshold) is one period. `frequency = sampleRate /
-offset`. This locks onto the fundamental far more reliably than chasing FFT peaks.
+offset`. This locks onto the fundamental far more reliably than chasing FFT peaks [1](https://www.cs.otago.ac.nz/graphics/Geoff/tartini/papers/A_Smarter_Way_to_Find_Pitch.pdf "McLeod and Wyvill, ICMC 2005. A fast, accurate and robust method for continuous pitch in monophonic musical sounds, using a normalised version of the squared difference function with peak picking.") [2](http://audition.ens.fr/adc/pdf/2002_JASA_YIN.pdf "de Cheveigne and Kawahara, JASA 2002. YIN starts from the autocorrelation method and adds modifications to prevent its errors, such as octave errors. Plain autocorrelation has failure modes of its own.").
 
 ## Getting sub-sample accuracy
 
@@ -49,7 +49,7 @@ resolution is quantized. Near the top of a guitar's range that quantization is c
 to matter.
 
 The fix is **parabolic interpolation** — fit a parabola through the best correlation point and
-its two neighbors, and solve for the true peak *between* samples:
+its two neighbors, and solve for the true peak *between* samples [3](https://ccrma.stanford.edu/~jos/sasp/Quadratic_Interpolation_Spectral_Peaks.html "Julius O. Smith, CCRMA. Quadratic interpolation fits a parabola through the samples near a peak to estimate its true location between samples. Described there for spectral peaks."):
 
 ```
 shift = (y₃ - y₁) / (2·(2·y₂ - y₁ - y₃))
@@ -87,7 +87,7 @@ confident (≥4 of 5) or the current one was never stable. The number on screen 
 
 Everything — capture, autocorrelation, rendering — runs in the browser via the Web Audio API.
 No audio is uploaded anywhere; there's no backend at all. The only requirement is a secure
-context, because browsers only grant microphone access over HTTPS (or `localhost`).
+context, because browsers only grant microphone access over HTTPS (or `localhost`) [4](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia "MDN, getUserMedia(). The browser API that requests microphone access. It is only available in secure contexts (HTTPS or localhost).").
 
 ## Takeaways
 
@@ -96,6 +96,13 @@ context, because browsers only grant microphone access over HTTPS (or `localhost
 - A few lines of **parabolic interpolation** turn "close enough" into "quarter-tone precise."
 - The most useful feature wasn't the detector at all — it was **showing history instead of an
   instant**, which turns a tuner into a practice tool.
+
+## References
+
+1. Philip McLeod & Geoff Wyvill, [A Smarter Way to Find Pitch](https://www.cs.otago.ac.nz/graphics/Geoff/tartini/papers/A_Smarter_Way_to_Find_Pitch.pdf) (ICMC, 2005).
+2. Alain de Cheveigné & Hideki Kawahara, [YIN, a fundamental frequency estimator for speech and music](http://audition.ens.fr/adc/pdf/2002_JASA_YIN.pdf) (*Journal of the Acoustical Society of America* 111(4), 2002).
+3. Julius O. Smith, [Quadratic Interpolation of Spectral Peaks](https://ccrma.stanford.edu/~jos/sasp/Quadratic_Interpolation_Spectral_Peaks.html) (*Spectral Audio Signal Processing*, CCRMA).
+4. MDN, [MediaDevices: getUserMedia()](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia).
 
 Code and live demo: [github.com/soichih/tuner](https://github.com/soichih/tuner) ·
 [soichih.github.io/tuner](https://soichih.github.io/tuner/)
