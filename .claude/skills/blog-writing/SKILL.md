@@ -63,6 +63,11 @@ The owner wants most posts to carry a reference on nearly every factual sentence
 - Verify every source before it goes in. Fetch it and confirm it exists and says what the sentence claims. Read the abstract at minimum. If a site blocks the fetch, use the `web` MCP `web_read`. Never solve a bot check. Don't carry a citation forward as verified just because it was already in a file.
 - If a source can't be opened, either leave it out or cite it by title, journal and year with no link, and tell the owner exactly which ones were not verified. Never invent a DOI or URL from memory.
 - Never link to a pirated copy. Link to the publisher, a DOI, or the author's own page.
+- Check the claim against the source, not just that the source exists. Read the abstract (or the passage) and compare numbers, direction and strength. Retrofit passes on the older posts found these kinds of errors: a review that "established" an effect when it reported exceptions, two different percentages merged into one, a "classic finding" that a later meta-analysis did not replicate, an absolute claim ("all", "most", "the whole") where the source says "some" or "tends to", and a theorem about optimal policies presented as how real systems behave.
+- Check the source's status. Preprints get revised or withdrawn, so open the latest version and the first version and compare. If a claim only survives in a superseded version, drop it. Mark preprints as preprints in the tooltip. Prefer peer-reviewed or primary sources, and note when a result is contested or a position paper.
+- When a source and the post disagree, change the post to match the source and say so in the reply. Do not bend the source to fit the post.
+- Never solve a bot check to read a source. If a page is blocked, find the abstract through another route (publisher page, PubMed, Crossref, arXiv, Mendeley, the Wayback Machine via `web_read`) or leave the claim uncited.
+- Numeric ranges and product facts (model sizes, context windows, prices) change. Look them up on the official page instead of trusting the existing text.
 - Aim high on coverage, but stop at what you can verify. State in the reply how many sentences are cited and which claims are still unsupported.
 
 ## Files and workflow
