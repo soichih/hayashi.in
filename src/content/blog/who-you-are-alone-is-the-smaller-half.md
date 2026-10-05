@@ -14,9 +14,9 @@ comments: true
 
 Graphene is a single sheet of carbon atoms. It is a good conductor. It is not a superconductor.
 
-Stack two sheets of it with one rotated about 1.1 degrees from the other, and it becomes one. Electrical resistance drops to zero.
+Stack two sheets of it with one rotated about 1.1 degrees from the other, and it becomes one. Electrical resistance drops to zero [1](https://arxiv.org/abs/1803.02342 "Cao et al., Nature 2018. Two graphene sheets stacked with a twist near 1.1 degrees, the first magic angle, show zero-resistance states with a critical temperature up to 1.7 K. The carrier density is tuned with an electric field.").
 
-Nothing was added. No new element, no dopant. Both sheets are the same ordinary material they were before, and neither does this alone. The only thing that changed is the angle between them. Rotate a little further and the effect is gone.
+No new element was added. Both sheets are the same ordinary material they were before, and neither does this alone. What matters is the angle between them. Rotate a little further and the effect is gone [1](https://arxiv.org/abs/1803.02342 "Cao et al., Nature 2018. The superconductivity appears for twist angles near the first magic angle of 1.1 degrees.").
 
 I am not a physicist and I am not going to pretend the physics says anything about people. But I read about it, and it handed me language for something I have believed for a while without being able to say cleanly.
 
@@ -28,7 +28,7 @@ The framing keeps producing results I cannot explain with it.
 
 I have been on teams where I was clearly the same person I am everywhere else and the work was two or three times better than what I do alone. Not because anyone learned anything new that quarter. And I have been in rooms where I got quieter, slower, and more defensive than I am with my family, doing work I am not proud of, with people who were individually excellent.
 
-The honest reading is that a lot of what I call my ability is not sitting in me. It shows up in a particular pairing and not in others.
+The honest reading is that a lot of what I call my ability is not sitting in me. It shows up in a particular pairing and not in others [2](https://ofew.berkeley.edu/sites/default/files/evidence_for_a_collective_intelligence_factor_in_the_performance_of_human_groups_woolley_et_al.pdf "Woolley et al., Science 2010. In 699 people working in groups, a group's collective intelligence was not strongly tied to the average or maximum intelligence of its members. It tracked social sensitivity and equal turn-taking. Later work disputes this.").
 
 We half know this already. When someone says a coworker is difficult, they almost always mean difficult with them. When a friend tells me their partner brings out the worst in them, nobody hears that as a claim about a fixed personal trait. We just do not extend the same reading to ourselves, or to the parts of our lives we are proud of. Those we file as personal properties.
 
@@ -50,10 +50,12 @@ The arrangements where something real emerges between people are the ones where 
 
 I do not think it was. I think I was protecting the smaller half.
 
-None of this means capability is irrelevant. What you can do sets the ceiling. But how you are aligned with the people around you decides how much of the space under that ceiling you will ever actually reach, and I now think it is the more sensitive of the two by a wide margin, and by far the more neglected.
+None of this means capability is irrelevant. What you can do sets the ceiling [3](https://doi.org/10.1016/j.intell.2016.11.004 "Bates and Gupta, Intelligence 2017. Individual IQ accounted for around 80% of group differences in their studies, and the turn-taking and gender hypotheses were not supported."). But how you are aligned with the people around you decides how much of the space under that ceiling you will ever actually reach, and I now think it is the more sensitive of the two by a wide margin, and by far the more neglected.
 
 One degree, in the right direction, changed what carbon is capable of. I keep coming back to how small that is.
 
-## Reference
+## References
 
-- Cao, Fatemi, Fang, Watanabe, Taniguchi, Kaxiras & Jarillo-Herrero, [Unconventional superconductivity in magic-angle graphene superlattices](https://arxiv.org/abs/1803.02342) (*Nature*, 2018). The general field is called twistronics, and the patterns that form when two lattices overlap at a slight angle are called moiré superlattices.
+1. Cao, Fatemi, Fang, Watanabe, Taniguchi, Kaxiras & Jarillo-Herrero, [Unconventional superconductivity in magic-angle graphene superlattices](https://arxiv.org/abs/1803.02342) (*Nature* 556, 2018). The general field is called twistronics, and the patterns that form when two lattices overlap at a slight angle are called moiré superlattices. The zero-resistance state appears at about 1.7 kelvin and is tuned with an electric field.
+2. Woolley, Chabris, Pentland, Hashmi & Malone, [Evidence for a Collective Intelligence Factor in the Performance of Human Groups](https://ofew.berkeley.edu/sites/default/files/evidence_for_a_collective_intelligence_factor_in_the_performance_of_human_groups_woolley_et_al.pdf) (*Science*, 2010).
+3. Bates & Gupta, [Smart groups of smart people: Evidence for IQ as the origin of collective intelligence in the performance of human groups](https://doi.org/10.1016/j.intell.2016.11.004) (*Intelligence* 60, 2017). A direct challenge to Woolley et al.
