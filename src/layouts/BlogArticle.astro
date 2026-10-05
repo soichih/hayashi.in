@@ -623,4 +623,101 @@ const hasSidebar = shouldRenderSidebar && hasToc;
       border-radius: 8px;
     }
   }
+
+  /* Citations: [1](url "what it shows") renders as a superscript with a tooltip. */
+  .article-content :global(sup.cite) {
+    position: relative;
+    margin: 0 0.05em;
+    font-size: 0.7em;
+    line-height: 0;
+  }
+
+  .article-content :global(a.cite-link) {
+    color: var(--paper-ink-soft);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 0 0.15em;
+  }
+
+  .article-content :global(a.cite-link:hover),
+  .article-content :global(a.cite-link:focus-visible) {
+    color: var(--paper-ink);
+    background: var(--paper-bg-deep);
+  }
+
+  .article-content :global(a.cite-link::after) {
+    content: attr(data-tip);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 0.9em);
+    z-index: 20;
+    width: max-content;
+    max-width: min(19rem, 80vw);
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--paper-line-strong);
+    border-radius: 8px;
+    background: var(--paper-bg);
+    box-shadow: 0 6px 22px rgba(31, 35, 40, 0.14);
+    color: var(--paper-ink);
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    white-space: normal;
+    transform: translateX(calc(-50% + var(--tip-shift, 0px)));
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.12s ease;
+  }
+
+  .article-content :global(a.cite-link:hover::after),
+  .article-content :global(a.cite-link:focus-visible::after),
+  .article-content :global(a.cite-link.cite-open::after) {
+    opacity: 1;
+    visibility: visible;
+  }
 </style>
+
+<script>
+  // Keep citation tooltips inside the viewport, and on touch screens show the
+  // tooltip on the first tap and open the source on the second.
+  const links = document.querySelectorAll<HTMLAnchorElement>('a.cite-link');
+  const touch = window.matchMedia('(hover: none)');
+
+  const place = (link: HTMLAnchorElement) => {
+    link.style.setProperty('--tip-shift', '0px');
+    const viewport = document.documentElement.clientWidth;
+    const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const tipWidth = Math.min(19 * rem, viewport * 0.8);
+    const center = link.getBoundingClientRect().left + link.offsetWidth / 2;
+    const margin = 12;
+    const left = center - tipWidth / 2;
+    const right = center + tipWidth / 2;
+    let shift = 0;
+    if (left < margin) shift = margin - left;
+    else if (right > viewport - margin) shift = viewport - margin - right;
+    link.style.setProperty('--tip-shift', `${shift}px`);
+  };
+
+  const closeAll = () => links.forEach((l) => l.classList.remove('cite-open'));
+
+  links.forEach((link) => {
+    link.addEventListener('mouseenter', () => place(link));
+    link.addEventListener('focus', () => place(link));
+    link.addEventListener('click', (event) => {
+      if (!touch.matches) return;
+      if (!link.classList.contains('cite-open')) {
+        event.preventDefault();
+        closeAll();
+        place(link);
+        link.classList.add('cite-open');
+      }
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!(event.target as Element).closest('a.cite-link')) closeAll();
+  });
+</script>

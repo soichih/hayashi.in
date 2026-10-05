@@ -8,6 +8,7 @@ import rehypeKatex from 'rehype-katex';
 import rehypeMathjax from 'rehype-mathjax';
 import remarkMath from 'remark-math';
 import { parse } from 'smol-toml';
+import rehypeCitations from './src/plugins/rehype-citations.mjs';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -56,7 +57,7 @@ export default defineConfig({
   base: resolvedBase,
   markdown: {
     remarkPlugins: [remarkMath],
-    rehypePlugins: [mathRenderer === 'mathjax' ? rehypeMathjax : rehypeKatex],
+    rehypePlugins: [mathRenderer === 'mathjax' ? rehypeMathjax : rehypeKatex, rehypeCitations],
   },
   integrations: [expressiveCode(), mdx(), sitemap()],
 
