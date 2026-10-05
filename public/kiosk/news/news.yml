@@ -1,4 +1,4 @@
-generated: "2026-10-05T06:35:58-04:00"
+generated: "2026-10-05T18:31:47-04:00"
 stories:
   - section: Local Events
     title: An Evening with Sutton Foster
@@ -13,6 +13,17 @@ stories:
     image_credit: Visit Bloomington
 
   - section: Local Events
+    title: Carol Anderson on voter suppression, with Q&A
+    body: >-
+      The Emory University professor presents "One Person, No Vote" on the
+      history and present of voter suppression, followed by questions.
+    when: Tue Oct 6
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/rss/
+    image: img/carol-anderson.jpg
+    image_credit: Visit Bloomington
+
+  - section: Local Events
     title: Author Liza Black discusses How Settlers Get Away with Murder
     body: >-
       An evening with the author on her book about settler violence and the
@@ -22,21 +33,23 @@ stories:
     url: https://www.visitbloomington.com/event/rss/
 
   - section: Local Events
-    title: Polish Music Through Time marks 50 years of Polish Studies at IU
+    title: Talking Conservation on Indiana's Lake Michigan shoreline
     body: >-
-      University Singers perform with baroque musicians and the Pacifica
-      Quartet.
-    when: Tue Oct 6
+      Public lecture on the shoreline and the public trust doctrine.
+    when: Wed Oct 7
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/rss/
 
   - section: Local Events
-    title: Talking Conservation on Indiana's Lake Michigan shoreline
+    title: Food Truck Friday at Switchyard Park
     body: >-
-      Lecture on the shoreline and the public trust doctrine.
-    when: Wed Oct 7
+      Food trucks gather at the park all day.
+    when: Fri Oct 9, 11am-9pm
+    where: Switchyard Park
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/rss/
+    image: img/food-truck-friday.jpg
+    image_credit: Visit Bloomington
 
   - section: Local Events
     title: Paula Poundstone brings observational comedy to Bloomington
@@ -71,6 +84,20 @@ stories:
     source: IU Auditorium
 
   - section: Local News
+    title: Three 9th District candidates debate; Houchin skips the forum
+    body: >-
+      At a League of Women Voters forum on Saturday, Democrat Brad Meyer,
+      Libertarian Tanya Hudson and write-in independent Floyd Taylor spoke on
+      cost of living, health care, corporate influence, immigration and war
+      powers. Republican incumbent Erin Houchin declined to attend.
+
+      All three candidates called the Iran war unauthorized. Meyer backed
+      universal coverage, Hudson focused on drug costs, and Taylor proposed
+      repealing the Affordable Care Act while keeping private insurers.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/05/cost-of-living-corporate-influence-and-war-powers-dominate-9th-district-forum/
+
+  - section: Local News
     title: Two juveniles admit sending threats involving Highland Park students
     body: >-
       The Monroe County Sheriff's Office says two juveniles admitted to
@@ -91,22 +118,55 @@ stories:
 
       Justice Alito stepped aside because of fossil fuel investments. A 4-4
       tie would leave the Colorado Supreme Court ruling in place and let the
-      suit proceed. The outcome could affect more than two dozen similar
-      cases.
+      suit proceed.
     source: NPR
     url: https://www.kpbs.org/news/politics/2026/10/05/supreme-courts-new-term-kicks-off-with-blockbuster-climate-change-case
-    image: img/scotus-climate.jpg
-    image_credit: NPR / KPBS
+
+  - section: US News
+    title: Nobel medicine prize goes to optogenetics pioneers
+    body: >-
+      Karl Deisseroth of the US and Germans Peter Hegemann and Georg Nagel
+      won for discoveries on light-gated ion channels and optogenetics, which
+      lets researchers switch individual nerve cells in a living brain on and
+      off with light. The work began with algae that swim toward light. The
+      prize is 12 million Swedish crowns.
+    source: NBC News
+    url: https://www.nbcnews.com/world/europe/nobel-prize-medicine-2026-karl-deisseroth-peter-hegemann-georg-nagel-rcna601564
+    image: img/nobel-medicine.jpg
+    image_credit: NBC News
+
+  - section: World News
+    title: Spain's Sánchez calls snap election for November 29
+    body: >-
+      Parliament voted down two government housing decrees on Friday, and
+      Sánchez announced the early election Monday. Public anger over housing
+      costs has driven protests across Spain. His Socialist Party trails in
+      the polls and faces corruption cases involving party figures.
+    source: Euronews
+    url: https://www.euronews.com/2026/10/05/pedro-sanchez-calls-early-elections-in-spain-after-defeat-of-housing-decrees
+    image: img/spain-election.jpg
+    image_credit: Euronews
+
+  - section: World News
+    title: FlyDubai co-pilot meant to crash plane into Tel Aviv airport
+    body: >-
+      An investigation source says the co-pilot, an Omani national, attacked
+      the captain with a crash axe and tried to take control of the Dubai to
+      Tel Aviv flight. The plane dropped more than 14,000 feet in under 30
+      seconds before passengers subdued him and the plane landed safely in
+      Saudi Arabia. All 172 people aboard survived. Authorities are treating
+      it as attempted terrorism.
+    source: NPR
+    url: https://www.gpb.org/news/2026/10/05/flydubai-attacker-intended-crash-plane-tel-aviv-airport-investigation-finds
+    image: img/flydubai.jpg
+    image_credit: Getty Images / NPR
 
   - section: World News
     title: Brazil's presidential race heads to Lula-Bolsonaro runoff
     body: >-
       Right-wing Senator Flavio Bolsonaro finished first on Sunday with about
       47 percent to President Lula's 45 percent, short of the majority needed
-      to win outright. The two meet in a runoff on October 25. Bolsonaro is a
-      Trump ally and the son of former president Jair Bolsonaro, who is
-      serving a 27-year sentence under house arrest for plotting to overturn
-      the 2022 election.
+      to win outright. The two meet in a runoff on October 25.
     source: NPR
     url: https://www.npr.org/2026/10/04/nx-s1-5981181/brazil-presidential-lula-bolsonaro
 
@@ -117,11 +177,32 @@ stories:
       force with FTC Chair Andrew Ferguson, Pentagon research chief Emil
       Michael and OPM Director Scott Kupor. It has 120 days to report on AI
       risks and opportunities and recommend the federal government's role.
-
-      Clayton rejected pausing development of advanced models, calling
-      superintelligence a national security issue.
     source: NPR
     url: https://www.npr.org/2026/10/04/nx-s1-5990781/jay-clayton-ai-czar-trump
+
+  - section: AI News
+    title: Former DeepMind researcher warns NYC Council of misaligned AI
+    body: >-
+      At a New York City Council hearing Monday, Alex Turner said misaligned
+      AI could prove more dangerous than China's push to build it. Executives
+      from AI companies were also called to testify.
+    source: CNBC
+    url: https://cnbc.com/2026/10/05/anthropic-openai-google-meta-execs-testify-nyc-council-ai-hearing.html
+
+  - section: AI News
+    title: OpenAI to test visual ads in ChatGPT image generation
+    body: >-
+      The company says it will begin testing clearly labeled visual ads in the
+      US later this month, shown while ChatGPT generates images.
+    source: AI news roundup
+
+  - section: AI News
+    title: Voters turn to ChatGPT for help deciding midterm ballots
+    body: >-
+      With early voting under way, some voters are asking AI chatbots to
+      research candidates and even recommend how to vote.
+    source: NPR
+    url: https://www.npr.org/nx-s1-5977852
 
   - section: On This Day
     title: 2000 - The Bulldozer Revolution in Serbia
