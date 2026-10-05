@@ -53,14 +53,23 @@ Describe the idea and the lessons, not the inventory. No device lists, schedules
 
 ## Sources
 
-If a post cites anything, fetch each source and confirm it says what the post claims before committing. Never link to a pirated copy.
+The owner wants most posts to carry a reference on nearly every factual sentence. Research widely before and while drafting.
+
+- Search for primary sources first (papers, datasets, standards, official docs), then reviews, then books. Look for counter-evidence too and cite it. A post that shows the contested side is more honest and more trusted.
+- Cite every factual, historical, scientific or numeric claim. Opinions, values and the author's own experience need no citation, so don't pad them. Never attach a source to a sentence it doesn't support just to hit a count.
+- Number the references in the text like (1) or (2, 3), and end the post with "## Sources & Further Reading" in the format the other posts use: bold title, journal and year, one line on what it shows, then the link.
+- Verify every source before it goes in. Fetch it and confirm it exists and says what the sentence claims. Read the abstract at minimum. If a site blocks the fetch, use the `web` MCP `web_read`. Never solve a bot check. Don't carry a citation forward as verified just because it was already in a file.
+- If a source can't be opened, either leave it out or cite it by title, journal and year with no link, and tell the owner exactly which ones were not verified. Never invent a DOI or URL from memory.
+- Never link to a pirated copy. Link to the publisher, a DOI, or the author's own page.
+- Aim high on coverage, but stop at what you can verify. State in the reply how many sentences are cited and which claims are still unsupported.
 
 ## Files and workflow
 
 - Scaffold with `bun run post:new`, or copy the frontmatter of an existing post: `title`, `description` (one sentence), `date`, `tags`, `categories`, `showHeroImage: false`, `comments: true`.
-- Work on a branch in a separate worktree (`git worktree add ../hayashi.in-<topic> -b <topic> origin/main`). Automation pushes `main` from the main checkout, so anything unapproved must not sit there.
+- Draft on a branch in a separate worktree (`git worktree add ../hayashi.in-<topic> -b <topic> origin/main`). Automation pushes `main` from the main checkout, so never leave half-finished work there.
 - Run `SITE_URL=https://hayashi.in SITE_BASE=/ bun run build` and confirm the post's page is generated.
-- Merge to `main` and push only when the owner says to publish. Pushing deploys.
+- Publish by default: when the build passes, merge the branch to `main` and push, without asking. The owner has said to always push blog posts. Under the lock the automation uses (`flock ~/.local/state/kiosk-git.lock`), fetch, fast-forward `main`, merge, push, then confirm the deploy run succeeded and the live URL returns 200. Remove the worktree and branch afterwards.
+- This covers blog posts and this skill only. Anything else in the repo still needs the owner's approval before pushing.
 
 ## Keep this skill current
 
