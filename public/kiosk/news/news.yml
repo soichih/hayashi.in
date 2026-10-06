@@ -1,54 +1,64 @@
-generated: "2026-10-05T18:31:47-04:00"
+generated: "2026-10-06T06:32:23-04:00"
 stories:
   - section: Local Events
     title: An Evening with Sutton Foster
     body: >-
-      The two-time Tony Award winner performs with IU dance and choral
-      students and local K-12 performers.
+      The two-time Tony Award winner performs on stage with IU musicians, dancers and
+      choral students and local K-12 performers.
     when: Tue Oct 6, 7:30pm
     where: IU Auditorium
-    source: IU Auditorium
-    url: https://www.iuauditorium.com/events/detail/suttonfoster-2026
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/an-evening-with-sutton-foster/58916/
     image: img/sutton-foster.jpg
     image_credit: Visit Bloomington
 
   - section: Local Events
     title: Carol Anderson on voter suppression, with Q&A
     body: >-
-      The Emory University professor presents "One Person, No Vote" on the
-      history and present of voter suppression, followed by questions.
+      The Emory University professor delivers the lecture "One Person, No Vote"
+      on voter suppression and democracy, followed by questions.
     when: Tue Oct 6
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
+    url: https://www.visitbloomington.com/event/one-person-no-vote%3a-a-lecture-and-q%26a-with-carol-anderson/59443/
     image: img/carol-anderson.jpg
     image_credit: Visit Bloomington
 
   - section: Local Events
-    title: Author Liza Black discusses How Settlers Get Away with Murder
+    title: Polish Music Through Time marks 50 years of Polish Studies at IU
     body: >-
-      An evening with the author on her book about settler violence and the
-      law.
+      University Singers perform with baroque musicians and the Pacifica Quartet.
     when: Tue Oct 6
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
+    url: https://www.visitbloomington.com/event/polish-music-through-time%3a-celebrating-50-years-of-polish-studies-at-iu/59550/
+
+  - section: Local Events
+    title: Film on Guinea-Bissau's free schools, with Q&A
+    body: >-
+      A screening of Mangrove School and Makongo/Caterpillars, about free
+      schools in Guinea-Bissau during the anticolonial struggle.
+    when: Tue Oct 6
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/mangrove-school-%2b-makongo-caterpillars-w-q%26a-%7c-for-all-the-children/59841/
 
   - section: Local Events
     title: Talking Conservation on Indiana's Lake Michigan shoreline
     body: >-
-      Public lecture on the shoreline and the public trust doctrine.
+      Public lecture on the shoreline and the public trust doctrine in action.
     when: Wed Oct 7
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
+    url: https://www.visitbloomington.com/event/talking-conservation%3a-indiana%e2%80%99s-lake-michigan-shoreline-and-the-public-trust-doctrine-in-action/59609/
+    image: img/talking-conservation.jpg
+    image_credit: Visit Bloomington
 
   - section: Local Events
-    title: Food Truck Friday at Switchyard Park
+    title: The Flying Ace, a race film, with Q&A
     body: >-
-      Food trucks gather at the park all day.
-    when: Fri Oct 9, 11am-9pm
-    where: Switchyard Park
+      Screening of the silent-era film about a Black World War I fighter pilot
+      who works as a railroad detective, followed by a Q&A.
+    when: Wed Oct 7
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
-    image: img/food-truck-friday.jpg
+    url: https://www.visitbloomington.com/event/the-flying-ace-w-q%26a-%7c-additional-films-and-guests/59842/
+    image: img/flying-ace.jpg
     image_credit: Visit Bloomington
 
   - section: Local Events
@@ -58,9 +68,26 @@ stories:
     when: Fri Oct 9, 7pm
     where: Buskirk-Chumley Theater
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
+    url: https://www.visitbloomington.com/event/paula-poundstone/58775/
     image: img/paula-poundstone.jpg
     image_credit: Visit Bloomington
+
+  - section: Local Events
+    title: Food Truck Friday at Switchyard Park
+    body: >-
+      Food trucks gather at the park all day.
+    when: Fri Oct 9, 11am-9pm
+    where: Switchyard Park
+    source: Visit Bloomington
+
+  - section: Local Events
+    title: Emo Nite
+    body: >-
+      Live music night for ages 21 and up. Doors at 8pm, show at 9pm.
+    when: Fri Oct 9, 8pm
+    where: The Bluebird
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/emo-nite/59404/
 
   - section: Local Events
     title: 17th Annual Great Glass Pumpkin Patch
@@ -70,9 +97,18 @@ stories:
     when: Sat Oct 10
     where: Bloomington Courthouse Lawn
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
+    url: https://www.visitbloomington.com/event/17th-annual-great-glass-pumpkin-patch/59194/
     image: img/glass-pumpkin-patch.jpg
     image_credit: Visit Bloomington
+
+  - section: Local Events
+    title: 90's Country Night with Jake Dodds
+    body: >-
+      Live music night for ages 21 and up. Doors at 8pm, show at 9pm.
+    when: Sat Oct 10, 8pm
+    where: The Bluebird
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/90s-country-night-w-jake-dodds/59826/
 
   - section: Local Events
     title: Ballet Hispanico performs CARMEN.maquia
@@ -84,131 +120,146 @@ stories:
     source: IU Auditorium
 
   - section: Local News
+    title: City council votes Wednesday on 2027 budget after 15 proposed cuts
+    body: >-
+      The Common Council holds a special session at 6:30pm Wednesday in Room 115
+      at City Hall for final votes on the 2027 civil city and transit budgets,
+      plus first readings of the water and wastewater utility budgets and
+      police and fire salary ordinances.
+
+      The civil city levy is capped at $43.76 million, a 6 percent increase over
+      2026, with a $63.75 million general fund. Council members filed 15
+      amendments to cut spending, including a $2.5 million parking meter
+      appropriation and $3 million in housing grant funding. The meeting is
+      streamed on CATS and the city's YouTube channel and open on Zoom.
+    source: WBIW
+    url: https://www.wbiw.com/2026/10/05/bloomington-common-council-to-vote-on-2027-city-budgets-and-tax-levies-at-october-7-special-session/
+
+  - section: Local News
     title: Three 9th District candidates debate; Houchin skips the forum
     body: >-
       At a League of Women Voters forum on Saturday, Democrat Brad Meyer,
       Libertarian Tanya Hudson and write-in independent Floyd Taylor spoke on
       cost of living, health care, corporate influence, immigration and war
       powers. Republican incumbent Erin Houchin declined to attend.
-
-      All three candidates called the Iran war unauthorized. Meyer backed
-      universal coverage, Hudson focused on drug costs, and Taylor proposed
-      repealing the Affordable Care Act while keeping private insurers.
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/10/05/cost-of-living-corporate-influence-and-war-powers-dominate-9th-district-forum/
 
   - section: Local News
-    title: Two juveniles admit sending threats involving Highland Park students
+    title: Firefighters put out South Grant Street house fire
     body: >-
-      The Monroe County Sheriff's Office says two juveniles admitted to
-      sending threats involving Highland Park students.
+      A neighbor reported flames around 6:06am Monday, and firefighters
+      extinguished the fire at the house.
     source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/01/two-juveniles-admitted-sending-threats-involving-highland-park-students-sheriffs-office-says/
+    url: https://bloomingtonian.com/2026/10/05/firefighters-extinguish-house-fire-on-south-grant-street/
 
   - section: US News
-    title: Supreme Court opens new term with climate liability case
+    title: Six presumed dead after medical jet crashes off Nantucket
     body: >-
-      With eight justices hearing arguments Monday, the court takes up
-      whether Boulder, Colorado, and Boulder County can sue Exxon Mobil and
-      Suncor Energy over climate damages. The county says the companies
-      deceived the public about fossil fuel harms and wants to recover costs
-      from disasters, including the 2021 Marshall Fire that destroyed more
-      than 1,100 homes. The companies argue only the federal government can
-      address climate change, and the Trump administration backs them.
-
-      Justice Alito stepped aside because of fossil fuel investments. A 4-4
-      tie would leave the Colorado Supreme Court ruling in place and let the
-      suit proceed.
-    source: NPR
-    url: https://www.kpbs.org/news/politics/2026/10/05/supreme-courts-new-term-kicks-off-with-blockbuster-climate-change-case
+      The Coast Guard suspended its search for the Boston-bound air ambulance,
+      which left Bermuda late Friday with four Canadian crew members, a patient
+      and the patient's family escort. The pilot reported electrical problems
+      and declared an emergency after the plane fell about 13,000 feet in two
+      minutes. Debris was found off Nantucket, and the operator says no one is
+      likely to have survived.
+    source: Boston Globe
+    url: https://www.bostonglobe.com/2026/10/03/metro/debris-found-medical-plane-boston/
 
   - section: US News
-    title: Nobel medicine prize goes to optogenetics pioneers
+    title: Nobel physics prize goes to IceCube neutrino pioneer Francis Halzen
     body: >-
-      Karl Deisseroth of the US and Germans Peter Hegemann and Georg Nagel
-      won for discoveries on light-gated ion channels and optogenetics, which
-      lets researchers switch individual nerve cells in a living brain on and
-      off with light. The work began with algae that swim toward light. The
-      prize is 12 million Swedish crowns.
-    source: NBC News
-    url: https://www.nbcnews.com/world/europe/nobel-prize-medicine-2026-karl-deisseroth-peter-hegemann-georg-nagel-rcna601564
-    image: img/nobel-medicine.jpg
-    image_credit: NBC News
+      The Belgian-American physicist was honored for his decisive contributions
+      to the IceCube Neutrino Observatory and the discovery of high-energy
+      neutrinos of astrophysical origin. IceCube turned a cubic kilometer of
+      South Pole ice into a neutrino telescope and made the first detection in
+      2013. The prize is worth 12 million Swedish crowns and will be presented
+      in Stockholm on December 10.
+    source: Physics World
+    url: https://physicsworld.com/a/francis-halzen-wins-nobel-prize-in-physics/
+
+  - section: US News
+    title: Disney and ABC fight Trump's FCC in court over free speech
+    body: >-
+      The companies are challenging the Federal Communications Commission over
+      free speech protections.
+    source: NPR
+    url: https://www.npr.org/nx-s1-5991831
 
   - section: World News
-    title: Spain's Sánchez calls snap election for November 29
+    title: Israel was ready to shoot down flydubai flight, report says
     body: >-
-      Parliament voted down two government housing decrees on Friday, and
-      Sánchez announced the early election Monday. Public anger over housing
-      costs has driven protests across Spain. His Socialist Party trails in
-      the polls and faces corruption cases involving party figures.
-    source: Euronews
-    url: https://www.euronews.com/2026/10/05/pedro-sanchez-calls-early-elections-in-spain-after-defeat-of-housing-decrees
-    image: img/spain-election.jpg
-    image_credit: Euronews
+      Israel scrambled jets and prepared to shoot down the flydubai plane
+      before calling it off, according to a report. Investigators say the
+      co-pilot attacked the captain and meant to crash the plane into Tel
+      Aviv's airport; all 172 aboard survived the landing in Saudi Arabia.
+    source: The Times of Israel
+    url: https://www.timesofisrael.com/liveblog-october-06-2026/
 
   - section: World News
-    title: FlyDubai co-pilot meant to crash plane into Tel Aviv airport
+    title: Third US carrier heads to Middle East as Trump weighs new Iran strikes
     body: >-
-      An investigation source says the co-pilot, an Omani national, attacked
-      the captain with a crash axe and tried to take control of the Dubai to
-      Tel Aviv flight. The plane dropped more than 14,000 feet in under 30
-      seconds before passengers subdued him and the plane landed safely in
-      Saudi Arabia. All 172 people aboard survived. Authorities are treating
-      it as attempted terrorism.
-    source: NPR
-    url: https://www.gpb.org/news/2026/10/05/flydubai-attacker-intended-crash-plane-tel-aviv-airport-investigation-finds
-    image: img/flydubai.jpg
-    image_credit: Getty Images / NPR
+      A third American aircraft carrier is on its way to the region while
+      President Trump considers new strikes in the war with Iran.
+    source: Times of Israel
+    url: https://www.timesofisrael.com/liveblog-october-06-2026/
 
   - section: World News
-    title: Brazil's presidential race heads to Lula-Bolsonaro runoff
+    title: Ultra-Orthodox rioters block military arrest of draft evader
     body: >-
-      Right-wing Senator Flavio Bolsonaro finished first on Sunday with about
-      47 percent to President Lula's 45 percent, short of the majority needed
-      to win outright. The two meet in a runoff on October 25.
-    source: NPR
-    url: https://www.npr.org/2026/10/04/nx-s1-5981181/brazil-presidential-lula-bolsonaro
+      Hundreds of protesters clashed with Military Police in Modiin and
+      prevented soldiers from arresting a conscription evader. Police
+      evacuated the soldiers without the suspect.
+    source: The Times of Israel
+    url: https://www.timesofisrael.com/liveblog-october-06-2026/
+
+  - section: World News
+    title: Israel on alert ahead of October 7 anniversary
+    body: >-
+      Defense Minister Katz announced military readiness amid concern over
+      possible Hamas attacks on the third anniversary of the 2023 assault.
+    source: The Times of Israel
+    url: https://www.timesofisrael.com/liveblog-october-06-2026/
 
   - section: AI News
-    title: Trump names Jay Clayton AI czar, creates Super Intelligence Force
+    title: Anthropic commits $100 million to train 10,000 deployment engineers
     body: >-
-      The director of national intelligence will chair a new White House task
-      force with FTC Chair Andrew Ferguson, Pentagon research chief Emil
-      Michael and OPM Director Scott Kupor. It has 120 days to report on AI
-      risks and opportunities and recommend the federal government's role.
-    source: NPR
-    url: https://www.npr.org/2026/10/04/nx-s1-5990781/jay-clayton-ai-czar-trump
-
-  - section: AI News
-    title: Former DeepMind researcher warns NYC Council of misaligned AI
-    body: >-
-      At a New York City Council hearing Monday, Alex Turner said misaligned
-      AI could prove more dangerous than China's push to build it. Executives
-      from AI companies were also called to testify.
-    source: CNBC
-    url: https://cnbc.com/2026/10/05/anthropic-openai-google-meta-execs-testify-nyc-council-ai-hearing.html
-
-  - section: AI News
-    title: OpenAI to test visual ads in ChatGPT image generation
-    body: >-
-      The company says it will begin testing clearly labeled visual ads in the
-      US later this month, shown while ChatGPT generates images.
+      The new Claude Frontier Academy aims to close the enterprise AI skills
+      gap by training 10,000 "Frontier Deployed Engineers" by the end of 2027.
     source: AI news roundup
 
   - section: AI News
-    title: Voters turn to ChatGPT for help deciding midterm ballots
+    title: NYC Council hears AI whistleblower warn of lost control
     body: >-
-      With early voting under way, some voters are asking AI chatbots to
-      research candidates and even recommend how to vote.
-    source: NPR
-    url: https://www.npr.org/nx-s1-5977852
+      Executives from Anthropic, OpenAI, Google and Meta testified at a New
+      York City Council hearing on AI risks. Anthropic whistleblower Jacob
+      Coxon said he thinks it is more likely than not that humanity loses
+      control to AI on the current path.
+    source: CNBC
+    url: https://www.cnbc.com/2026/10/05/anthropic-openai-google-meta-execs-testify-nyc-council-ai-hearing.html
+
+  - section: AI News
+    title: OpenAI says ChatGPT has 1.2 billion weekly users as ad tests near
+    body: >-
+      OpenAI will begin testing labeled visual ads during ChatGPT image
+      generation later this month in the US with an initial group of
+      advertisers. The ads will be kept separate from the generated image.
+    source: AI Weekly
+    url: https://aiweekly.co/ai-news-today/edition/2026-10-05
+
+  - section: AI News
+    title: Chinese resellers sell Claude access at 70-90 percent discounts
+    body: >-
+      Six of about 30 tenants in one Beijing office building resell Anthropic
+      Claude access at 70-90 percent below list price, routing Chinese
+      developers' prompts through overseas accounts and sometimes passing off
+      Qwen output as Claude.
+    source: AI Weekly
+    url: https://aiweekly.co/ai-news-today/edition/2026-10-05
 
   - section: On This Day
-    title: 2000 - The Bulldozer Revolution in Serbia
+    title: 1995 - First planet found orbiting a Sun-like star
     body: >-
-      During protests over disputed election results, a heavy-equipment
-      operator drove a loader into the Radio Television of Serbia building in
-      Belgrade, giving the uprising its name.
+      Astronomers Michel Mayor and Didier Queloz reported a planet circling
+      51 Pegasi, the first known exoplanet around a main-sequence star.
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/October_5
+    url: https://en.wikipedia.org/wiki/October_6

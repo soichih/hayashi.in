@@ -93,3 +93,4 @@ One dated line per edit the agent makes to this skill: what changed and why.
   masthead og:image issue; noted evening runs should drop events starting
   before ~7pm and skip sports items in the Visit Bloomington RSS.
 2026-10-02: sources.md - noted RSS range limit and working ipm.org/kpbs.org image sources.
+2026-10-06: sources.md - noted image script must run one per Bash call, plus wbiw.com and AI Weekly edition URLs as useful sources.
