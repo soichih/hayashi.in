@@ -32,7 +32,8 @@ bun run preview             # preview the production build
 Build notes:
 - The upstream theme's `build` script ran a Chinese-font subsetting step (`fonts:ui`) that
   errors when there is no CJK text. This site is English-only, so that step was removed from
-  `build` in `package.json`. Keep content English and don't re-add it.
+  `build` in `package.json`. Keep content English and don't re-add it. For the same reason
+  `[config.fonts] file` in `site.toml` is empty, so pages don't request a CJK font.
 - For a production-parity build: `SITE_URL=https://hayashi.in SITE_BASE=/ bun run build`.
 
 ## Workflow
@@ -61,6 +62,8 @@ public/                Static assets served from the site root
 public/CNAME           Custom domain - do NOT delete
 public/kiosk/          Household dashboard page (plain HTML/JS, not part of the Astro build)
 public/quant/          Quant Fluency learning app (plain HTML/JS, not part of the Astro build)
+public/2026/           Monroe County ballot page (plain HTML)
+public/2028/           2028 candidate comparison page (plain HTML)
 kiosk-news/            Agent skill that writes the dashboard's news stories
 scripts/               Content scaffolding and dashboard news helpers
 ```
@@ -132,8 +135,9 @@ A language-app-style trainer served at https://hayashi.in/quant/ (writeup:
 ## Editing conventions
 
 - **Profile / homepage / palette**: edit `src/config/site.toml`.
-  - `palette` is `blue-soft` (options in the comment there / `src/content.config.ts`).
-  - Keep `[[config.home.links]]` to public links only (currently GitHub, Email, RSS).
+  - `palette` is `green-soft` (options in the comment there / `src/content.config.ts`).
+  - Keep `[[config.home.links]]` to public links only (currently GitHub, LinkedIn, Email,
+    RSS).
   - **IntroCard quirk**: the home hero hardcodes a leading accent "Hi," and renders
     `intro.title` with `intro.name` stripped out, then re-adds `intro.name` as an italic
     accent. So `intro.title` **must contain the full `intro.name`** or the name doubles up.
