@@ -1,39 +1,21 @@
-generated: "2026-10-11T06:32:11-04:00"
+generated: "2026-10-11T18:31:43-04:00"
 stories:
-  - section: Local Events
-    title: Bloomington Boogies closing concert
-    body: >-
-      Afternoon concert closing the Blues and Boogie Woogie Piano Festival weekend. Doors at 2pm. A free after-hours session with festival artists follows from 8 to 10pm at Lennie's, 514 E. Kirkwood Ave.
-    when: Sun Oct 11, 3pm
-    where: Buskirk-Chumley Theater
-    source: Buskirk-Chumley Theater
-  - section: Local Events
-    title: An Afternoon in the Park
-    body: >-
-      Free community afternoon with live music, sponsored by St. Vincent de Paul.
-    when: Sun Oct 11
-    where: Switchyard Park Pavilion
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/an-afternoon-in-the-park/59881/
-    image: img/afternoon-park.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Energy Education Day at WonderLab
-    body: >-
-      Free afternoon of play with energy education, giveaways, community resources and free ice cream from the Chocolate Moose.
-    when: Sun Oct 11, 1-5pm
-    where: WonderLab
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/energy-education-day/59320/
-    image: img/energy-education-day.jpg
-    image_credit: Visit Bloomington
   - section: Local Events
     title: Bingo Brunch and Sunday live music
     body: >-
-      Free bingo with prizes each round and a rotating community celebrity caller at Cardinal Spirits, 12-2pm. Butler Winery has free live music from local artists 2-5pm, rain or shine.
-    when: Sun Oct 11
+      Both recur each Sunday. Free bingo with prizes each round runs 12-2pm at Cardinal Spirits, and Butler Winery has free live music from local artists 2-5pm, rain or shine, through Oct. 25.
+    when: Sundays
     where: Cardinal Spirits; Butler Winery
     source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/bingo-brunch/57836/
+  - section: Local Events
+    title: Bloomington Boogies workshops in local schools
+    body: >-
+      Festival artists including Jason Marsalis lead free workshops Monday, including one at Fairview Elementary School.
+    when: Mon Oct 12
+    where: Fairview Elementary School
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/bloomington-boogies-workshop-by-jason-marsalis/59417/
   - section: Local Events
     title: Family Night Out block party on Kirkwood
     body: >-
@@ -42,6 +24,8 @@ stories:
     where: Kirkwood Avenue, downtown
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/family-night-out-second-wednesdays/59611/
+    image: img/family-night-out.jpg
+    image_credit: Visit Bloomington
   - section: Local Events
     title: Ballet Hispanico performs CARMEN.maquia
     body: >-
@@ -50,8 +34,6 @@ stories:
     where: IU Auditorium
     source: IU Auditorium
     url: https://www.iuauditorium.com/events/detail/ballethispanico-2026
-    image: img/ballet-hispanico.jpg
-    image_credit: IU Auditorium
   - section: Local Events
     title: A Conversation with Bill Nye
     body: >-
@@ -60,8 +42,6 @@ stories:
     where: IU Auditorium
     source: IU Auditorium
     url: https://www.iuauditorium.com/events/detail/bill-nye-2026
-    image: img/bill-nye.jpg
-    image_credit: IU Auditorium
   - section: Local Events
     title: "Partita: An Evening with Barbara Kingsolver"
     body: >-
@@ -70,8 +50,6 @@ stories:
     where: IU Auditorium
     source: IU Auditorium
     url: https://www.iuauditorium.com/events/detail/barbarakingsolver-2026
-    image: img/barbara-kingsolver.jpg
-    image_credit: IU Auditorium
   - section: Local Events
     title: Dennis James hosts Halloween
     body: >-
@@ -80,15 +58,16 @@ stories:
     where: IU Auditorium
     source: IU Auditorium
     url: https://www.iuauditorium.com/events/detail/dennisjames-2026
-    image: img/dennis-james.jpg
-    image_credit: IU Auditorium
   - section: Local News
-    title: Stinesville ICE decision pushed to November after Rokita letter
+    title: Council to hear proposed ban on superintelligent AI in Bloomington
     body: >-
-      The town board delayed its vote on the 287(g) agreement with ICE after Attorney General Todd Rokita's Oct. 6 letter said the police chief could sign it without board approval. Rokita wrote that the Interlocal Cooperation Act does not apply and warned that interfering could bring civil penalties of up to $10,000 per violation. An immigration attorney disputes his reading, noting the signer was deputy chief, not chief. The board will take it up at its November meeting.
+      Councilmember Dave Rollo's ordinance would bar deploying superintelligent AI systems within city limits, including access through a local browser or API, with fines up to $2,500 and possible daily penalties. It is introduced Wednesday, Oct. 14, with no vote; final action could come Nov. 4.
+
+
+      The ordinance sets no test for what counts as superintelligence. Analysis raises questions about whether a city can regulate technology hosted elsewhere, and notes that lifting the ban would require approval from over 95% of registered voters, which Indiana law may not allow.
     source: The B Square Bulletin
-    url: https://bsquarebulletin.com/rokita-backs-stinesville-ice-agreement-but-town-board-puts-off-up-or-down-decision/
-    image: img/stinesville-ice.jpg
+    url: https://bsquarebulletin.com/analysis-bloomingtons-proposed-superintelligence-ban-raises-questions-about-authority-enforcement/
+    image: img/rollo-superintelligence.jpg
     image_credit: The B Square Bulletin
   - section: Local News
     title: Council trims 2027 budget; final vote Wednesday
@@ -97,11 +76,11 @@ stories:
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/2027-budget-bloomington-council-rejects-2-5m-general-fund-cut-still-withholds-millions-for-housing-parking-projects/
   - section: Local News
-    title: Suspect charged with murder in North Illinois Street shooting
+    title: Stinesville ICE decision pushed to November after Rokita letter
     body: >-
-      A 24-year-old man shot on a porch Thursday evening died at a hospital. A 23-year-old Bloomington man is charged with murder.
+      The town board delayed its vote on the 287(g) agreement with ICE after Attorney General Todd Rokita's Oct. 6 letter said the police chief could sign it without board approval. An immigration attorney disputes his reading. The board will take it up at its November meeting.
     source: The B Square Bulletin
-    url: https://bsquarebulletin.com/bloomington-man-23-charged-with-murder-in-fatal-shooting-on-northwest-side/
+    url: https://bsquarebulletin.com/rokita-backs-stinesville-ice-agreement-but-town-board-puts-off-up-or-down-decision/
   - section: Local News
     title: Hopewell update meeting set for Oct. 27
     body: >-
@@ -115,47 +94,59 @@ stories:
     body: >-
       Monroe County's only early voting site is the North Showers Building, 501 N. Morton St., open 8am-6pm weekdays through Oct. 30 for the Nov. 3 election.
     source: The B Square Bulletin
-  - section: Local News
-    title: City awards $54,859 to 31 local artists
-    body: >-
-      The grants support creative career development. Separately, applications are open for $150,000 in violence reduction grants, and parks plan comments are accepted through Oct. 18.
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/10/09/6670
   - section: US News
     title: Pentagon to livestream Fort Hood shooter's firing squad execution
     body: >-
-      The Pentagon says Nidal Hasan's execution, set for Dec. 3 at Fort Hood, will be livestreamed after Defense Secretary Hegseth called it public. It would be the military's first execution since 1961. Experts say a habeas petition in civilian court could delay it, and the Army has not detailed its firing squad protocol.
+      The Pentagon says Nidal Hasan's execution, set for Dec. 3 at Fort Hood, will be livestreamed after Defense Secretary Hegseth called it public. It would be the military's first execution since 1961. Experts say a habeas petition in civilian court could delay it.
     source: NPR
     url: https://www.kunc.org/npr-news/2026-10-09/the-u-s-last-held-a-public-execution-in-the-1930s-the-pentagon-wants-to-change-that
   - section: US News
-    title: Trump urges Fetterman to switch parties
+    title: Hurricane Isaias death toll rises to at least 4
     body: >-
-      Trump said Fetterman "does better as a Republican than he does as a Democrat." The Pennsylvania senator has repeatedly rejected the idea.
-    source: Times of Israel
-  - section: US News
-    title: Kennedy Center names new artistic director amid concerns
-    body: >-
-      NPR reports the appointment has drawn concern. Details of the criticism are in NPR's full report.
+      NPR reports at least four deaths are now attributed to the storm after it struck Florida and Alabama, up from two reported Saturday.
     source: NPR
-    url: https://www.npr.org/nx-s1-5996934
-  - section: World News
-    title: Riyadh airport attack toll rises to 12 dead, over 300 hurt
+  - section: US News
+    title: Justice Department investigates TV networks over possible antitrust violations
     body: >-
-      Airport operations remain suspended, with the closure extended another 24 hours. The Houthis warned travelers away from Saudi airports. The EU's von der Leyen called it a dangerous escalation and Kallas an act of terror. Trump said he would consider joining Saudi strikes on the Houthis.
+      NPR reports the department has opened an investigation of TV networks, citing possible antitrust violations.
+    source: NPR
+    url: https://www.npr.org/nx-s1-5997574
+  - section: US News
+    title: Pope Leo XIV to undergo lung surgery this week
+    body: >-
+      NPR reports the pope is scheduled for lung surgery in the coming days.
+    source: NPR
+    url: https://www.npr.org/nx-s1-5998027
+  - section: World News
+    title: Riyadh airport terminal struck again a day after 12 killed
+    body: >-
+      The passenger terminal was hit a second time after Saturday's Houthi attack that killed at least 12 and wounded more than 300. The FAA warned US airlines to use caution around Saudi Arabia until Dec. 10. The Houthis have threatened Saudi airspace, and Trump said he would consider joining Saudi strikes on the group.
+    source: NPR; Times of Israel
+    url: https://www.timesofisrael.com/liveblog-october-11-2026/
+  - section: World News
+    title: Polish police arrest man suspected of plotting to attack Tusk
+    body: >-
+      Police detained a man in his 60s suspected of planning an attack on Prime Minister Donald Tusk and Defense Minister Wladyslaw Kosiniak-Kamysz. Searches of his home are continuing.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-october-11-2026/
-    image: img/riyadh-airport.jpg
-    image_credit: Reuters via Times of Israel
   - section: World News
-    title: US weighs three days of intense strikes to resume Iran war
+    title: Trump claims Russia-Ukraine energy ceasefire; Zelensky says it's news to him
     body: >-
-      Reports say planning includes a three-day strike campaign. Iran says it can still make missiles and drones, and Bloomberg, citing officials, says Tehran remains well stocked.
+      Trump said Russia and Ukraine had agreed to an energy ceasefire. Zelensky replied, "News to me." Trump also criticized Zelensky over US diesel prices.
     source: Times of Israel
+    url: https://www.timesofisrael.com/liveblog-october-11-2026/
   - section: World News
-    title: Poland warns of possible plot against Tusk and defense minister
+    title: Iran calls US reply on reopening Hormuz insufficient; tanker hit off Oman
     body: >-
-      Police received information about a possible attack on Prime Minister Donald Tusk and Defense Minister Kosiniak-Kamysz, and an emergency security meeting was called. Authorities are on high alert after three school attacks in four days in Mazovia province.
+      Iran said Washington's response to its proposal to reopen the Strait of Hormuz was not enough. Separately, UKMTO says a tanker at Sohar anchorage near Oman was hit by a drone and the crew is being evacuated. Reports say the US is weighing three days of strikes to resume the war.
     source: Times of Israel
+    url: https://www.timesofisrael.com/liveblog-october-11-2026/
+  - section: World News
+    title: Hurricane Simon nears Mexico with 155 mph winds
+    body: >-
+      NPR reports the Pacific storm is approaching Mexico with flooding fears.
+    source: NPR
+    url: https://www.npr.org/nx-s1-5998022
   - section: AI News
     title: Gary Marcus calls for a recall of open-ended AI agents
     body: >-
@@ -168,18 +159,13 @@ stories:
     source: Fortune
     url: https://fortune.com/2026/10/11/energy-permitting-ai-fossil-fuels-clean-power-environmentalists
   - section: AI News
-    title: Salesforce renames AIForce to SIForce after Trump order
-    body: >-
-      CEO Marc Benioff announced the rebrand of the agent platform, following Trump's Sept. 29 executive order on "super intelligence" terminology.
-    source: The Next Web
-  - section: AI News
     title: Petra Power pitches fuel cells for AI data centers
     body: >-
       The startup has nearly $9 million in Defense Department contracts for solid oxide fuel cells. It targets first infrastructure deployments in 2028 and full production in 2029.
     source: TechCrunch
     url: https://techcrunch.com/2026/10/10/petra-power-looks-to-modernize-energy-for-data-centers-and-defense-vehicles/
   - section: On This Day
-    title: 1968 - Apollo 7 launches the first crewed Apollo mission
+    title: 1984 - Kathryn Sullivan becomes first American woman to walk in space
     body: >-
-      Apollo 7 lifted off from Cape Kennedy, carrying the first three-person American crew.
+      Sullivan performed the spacewalk while aboard Space Shuttle Challenger.
     source: Wikipedia
