@@ -1,171 +1,284 @@
-generated: "2026-10-11T18:31:43-04:00"
+generated: "2026-10-12T06:32:14-04:00"
 stories:
-  - section: Local Events
-    title: Bingo Brunch and Sunday live music
+  - section: Weather Alert
+    title: Dense Fog Advisory for Monroe County until 9am
     body: >-
-      Both recur each Sunday. Free bingo with prizes each round runs 12-2pm at Cardinal Spirits, and Butler Winery has free live music from local artists 2-5pm, rain or shine, through Oct. 25.
-    when: Sundays
-    where: Cardinal Spirits; Butler Winery
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/bingo-brunch/57836/
+      The National Weather Service says fog can suddenly cut visibility to a quarter mile or less across central and southern Indiana this morning. If driving, slow down, use headlights and leave plenty of distance ahead of you.
+    when: Until 9am today
+    where: Monroe County and 15 other Indiana counties
+    source: National Weather Service
+
   - section: Local Events
-    title: Bloomington Boogies workshops in local schools
+    title: Bloomington Boogies workshops with Jason Marsalis and Zoe Imani Shepard
     body: >-
-      Festival artists including Jason Marsalis lead free workshops Monday, including one at Fairview Elementary School.
+      Vibraphonist and drummer Jason Marsalis leads a workshop on bridging 20th- and 21st-century music. Zoe Imani Shepard leads a free jazz improvisation workshop for string players at Fairview Elementary School.
     when: Mon Oct 12
     where: Fairview Elementary School
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/bloomington-boogies-workshop-by-jason-marsalis/59417/
+    image: img/jason-marsalis.jpg
+    image_credit: Visit Bloomington
+
+  - section: Local Events
+    title: Natalie Boeyink Jazz Ensemble
+    body: >-
+      Big band jazz evening. Doors at 7pm.
+    when: Mon Oct 12, 7:30pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/natalie-boeyink-jazz-ensemble-october-12-2026
+
   - section: Local Events
     title: Family Night Out block party on Kirkwood
     body: >-
-      Monthly second-Wednesday downtown block party for low-pressure community connection.
+      Last of this season's second-Wednesday downtown block parties, hosted by Downtown Bloomington Inc.
     when: Wed Oct 14, 5:30-8pm
     where: Kirkwood Avenue, downtown
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/family-night-out-second-wednesdays/59611/
     image: img/family-night-out.jpg
-    image_credit: Visit Bloomington
+    image_credit: Downtown Bloomington Inc.
+
   - section: Local Events
     title: Ballet Hispanico performs CARMEN.maquia
     body: >-
-      The New York company presents an evening-length version of CARMEN.maquia.
+      The New York company, a leading American Latino dance troupe, brings its evening-length CARMEN.maquia to Bloomington.
     when: Wed Oct 14, 7:30pm
     where: IU Auditorium
     source: IU Auditorium
     url: https://www.iuauditorium.com/events/detail/ballethispanico-2026
+    image: img/ballet-hispanico.jpg
+    image_credit: Ballet Hispanico
+
   - section: Local Events
     title: A Conversation with Bill Nye
     body: >-
-      Presented by Union Board.
+      Moderated Q&A with the science communicator, presented by Union Board with IU's College of Arts and Sciences.
     when: Thu Oct 15, 7pm
     where: IU Auditorium
     source: IU Auditorium
     url: https://www.iuauditorium.com/events/detail/bill-nye-2026
+    image: img/bill-nye.jpg
+    image_credit: IU Auditorium
+
   - section: Local Events
-    title: "Partita: An Evening with Barbara Kingsolver"
+    title: Ratboys at The Bluebird
+    body: >-
+      Live indie rock for ages 21 and up. Doors at 7pm.
+    when: Thu Oct 15, 8pm
+    where: The Bluebird
+    source: Visit Bloomington
+
+  - section: Local Events
+    title: 'Partita: An Evening with Barbara Kingsolver'
     body: >-
       The author appears in a program presented by the Bloomington Roots Foundation.
     when: Fri Oct 16, 7pm
     where: IU Auditorium
     source: IU Auditorium
     url: https://www.iuauditorium.com/events/detail/barbarakingsolver-2026
+
   - section: Local Events
     title: Dennis James hosts Halloween
     body: >-
-      Bloomington organist Dennis James returns with his annual spooky show.
+      Organist Dennis James returns with his annual Halloween show.
     when: Wed Oct 21, 7:30pm
     where: IU Auditorium
     source: IU Auditorium
     url: https://www.iuauditorium.com/events/detail/dennisjames-2026
-  - section: Local News
-    title: Council to hear proposed ban on superintelligent AI in Bloomington
+
+  - section: Local Events
+    title: Yonder Mountain String Band
     body: >-
-      Councilmember Dave Rollo's ordinance would bar deploying superintelligent AI systems within city limits, including access through a local browser or API, with fines up to $2,500 and possible daily penalties. It is introduced Wednesday, Oct. 14, with no vote; final action could come Nov. 4.
+      Bluegrass jam band on tour. Doors at 6:30pm.
+    when: Wed Oct 21, 7pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/yonder-mountain-string-band-october-21-2026
 
+  - section: Local News
+    title: Rollo's superintelligence ban gets its first council hearing Wednesday
+    body: >-
+      Councilmember Dave Rollo's ordinance would bar deploying superintelligent AI systems in city limits, including systems hosted elsewhere but reached through a browser or API. It is on the Oct. 14 agenda for introduction only, with no vote; final action could come Nov. 4.
 
-      The ordinance sets no test for what counts as superintelligence. Analysis raises questions about whether a city can regulate technology hosted elsewhere, and notes that lifting the ban would require approval from over 95% of registered voters, which Indiana law may not allow.
+      Violations carry fines up to $2,500, with daily penalties for continuing violations. Lifting it would require a 99.9999 percent safety assessment and approval from more than 95 percent of registered voters, though a simple council repeal may also be possible. Open questions include whether the city can regulate out-of-town technology and who decides what counts as superintelligent.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/analysis-bloomingtons-proposed-superintelligence-ban-raises-questions-about-authority-enforcement/
-    image: img/rollo-superintelligence.jpg
+    image: img/rollo.jpg
     image_credit: The B Square Bulletin
-  - section: Local News
-    title: Council trims 2027 budget; final vote Wednesday
-    body: >-
-      Bloomington's council rejected a proposed $2.5 million general fund cut 2-5, but amendments removed more than $6 million in appropriations. They include $3 million withheld from the housing development fund and $2.5 million in parking improvements; both can be restored later with a new appropriation. The sanitation transfer drops $600,000, which assumes higher trash cart fees not yet approved. The final budget vote is Oct. 14.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/2027-budget-bloomington-council-rejects-2-5m-general-fund-cut-still-withholds-millions-for-housing-parking-projects/
+
   - section: Local News
     title: Stinesville ICE decision pushed to November after Rokita letter
     body: >-
-      The town board delayed its vote on the 287(g) agreement with ICE after Attorney General Todd Rokita's Oct. 6 letter said the police chief could sign it without board approval. An immigration attorney disputes his reading. The board will take it up at its November meeting.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/rokita-backs-stinesville-ice-agreement-but-town-board-puts-off-up-or-down-decision/
+      The town board delayed its vote on a 287(g) agreement with ICE after Attorney General Todd Rokita's Oct. 6 letter said the police chief could sign it without board approval. The letter also rejects the Monroe County commissioners' request for a public vote and a suspension of the agreement.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/10/rokita-says-stinesville-police-chief-had-authority-to-sign-ice-agreement-without-town-board-approval/
+
   - section: Local News
-    title: Hopewell update meeting set for Oct. 27
+    title: Murder charge filed in North Illinois Street shooting
     body: >-
-      The city will cover the 98-home Hopewell South phase, Hopewell Commons park work, reuse of 714 S. Rogers St. as a public safety facility, and Second Street upgrades. Questions follow the presentation; it will also air on CATS.
-    when: Tue Oct 27, 5:30-6:30pm
-    where: Bloomington First Church of the Nazarene, 700 W. Howe St.
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/10/09/6671
+      A 24-year-old man shot on a porch Thursday evening died at a hospital. A 23-year-old Bloomington man is charged with murder.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/bloomington-man-23-charged-with-murder-in-fatal-shooting-on-northwest-side/
+
+  - section: Local News
+    title: Redevelopment board questions keeping Showers West as city offices move in
+    body: >-
+      Redevelopment Commission members asked last week whether the commission should continue to own the Showers West property as city offices relocate there.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/showers-west-notebook-rdc-members-question-continued-ownership-as-city-offices-move-in/
+
   - section: Local News
     title: Early voting continues at North Showers through Oct. 30
     body: >-
       Monroe County's only early voting site is the North Showers Building, 501 N. Morton St., open 8am-6pm weekdays through Oct. 30 for the Nov. 3 election.
     source: The B Square Bulletin
-  - section: US News
-    title: Pentagon to livestream Fort Hood shooter's firing squad execution
+
+  - section: Local News
+    title: Hopewell update meeting set for Oct. 27
     body: >-
-      The Pentagon says Nidal Hasan's execution, set for Dec. 3 at Fort Hood, will be livestreamed after Defense Secretary Hegseth called it public. It would be the military's first execution since 1961. Experts say a habeas petition in civilian court could delay it.
-    source: NPR
-    url: https://www.kunc.org/npr-news/2026-10-09/the-u-s-last-held-a-public-execution-in-the-1930s-the-pentagon-wants-to-change-that
-  - section: US News
-    title: Hurricane Isaias death toll rises to at least 4
+      The city will cover the 98-home Hopewell South phase, Hopewell Commons park work, reuse of 714 S. Rogers St. as a public safety facility, and Second Street upgrades.
+    when: Tue Oct 27, 5:30-6:30pm
+    where: Bloomington First Church of the Nazarene, 700 W. Howe St.
+    source: City of Bloomington
+
+  - section: Local News
+    title: Plan Commission hearing Oct. 28 on housing and zoning rules
     body: >-
-      NPR reports at least four deaths are now attributed to the storm after it struck Florida and Alabama, up from two reported Saturday.
-    source: NPR
-  - section: US News
-    title: Justice Department investigates TV networks over possible antitrust violations
+      The special hearing collects public input on the Unified Development Ordinance and related land policies.
+    when: Wed Oct 28, 5:30pm
+    where: City Council Chambers
+    source: City of Bloomington
+
+  - section: Local News
+    title: Four-way stop at Kirkwood and Rogers through Oct. 24
     body: >-
-      NPR reports the department has opened an investigation of TV networks, citing possible antitrust violations.
+      Crews are replacing an aging traffic signal and upgrading curb ramps. Expect delays; the new signal is due to be working by Oct. 24.
+    source: City of Bloomington
+
+  - section: Local News
+    title: City opens $150,000 in violence reduction grants; parks plan comments due Oct. 18
+    body: >-
+      Applications are open for the grants. Separately, residents can comment on the Parks and Recreation Investment Priorities Plan through Oct. 18.
+    source: City of Bloomington
+
+  - section: US News
+    title: Trump says Russia and Ukraine agreed to an energy ceasefire
+    body: >-
+      Zelensky said he had heard nothing about it, and French President Macron said he saw no truce on the Russian side. Zelensky also said Russia struck several Ukrainian power plants on Sunday, including one in Kyiv and one in Kharkiv, causing outages.
+    source: NPR; Times of Israel
+    url: https://www.npr.org/nx-s1-5998614
+
+  - section: US News
+    title: Justice Department opens antitrust investigation of TV networks
+    body: >-
+      NPR reports the department is investigating TV networks over possible antitrust violations.
     source: NPR
     url: https://www.npr.org/nx-s1-5997574
+
   - section: US News
     title: Pope Leo XIV to undergo lung surgery this week
     body: >-
       NPR reports the pope is scheduled for lung surgery in the coming days.
     source: NPR
     url: https://www.npr.org/nx-s1-5998027
-  - section: World News
-    title: Riyadh airport terminal struck again a day after 12 killed
+
+  - section: US News
+    title: Isaias death toll reaches at least 4 after Florida and Alabama landfall
     body: >-
-      The passenger terminal was hit a second time after Saturday's Houthi attack that killed at least 12 and wounded more than 300. The FAA warned US airlines to use caution around Saudi Arabia until Dec. 10. The Houthis have threatened Saudi airspace, and Trump said he would consider joining Saudi strikes on the group.
+      NPR reports at least four deaths are now attributed to the hurricane.
+    source: NPR
+    url: https://www.npr.org/g-s1-147632
+
+  - section: US News
+    title: Pentagon plans public execution of Fort Hood shooter Dec. 3
+    body: >-
+      The Pentagon says Nidal Hasan's firing squad execution will be livestreamed. NPR notes the US last held a public execution in the 1930s.
+    source: NPR
+    url: https://www.npr.org/nx-s1-5996529
+
+  - section: US News
+    title: Chinese drone restrictions leave police departments in the lurch
+    body: >-
+      NPR reports that US restrictions on Chinese-made drones are forcing police departments to scramble for replacements.
+    source: NPR
+    url: https://www.npr.org/nx-s1-5888604
+
+  - section: World News
+    title: Houthi attack on Riyadh airport killed 12; terminal struck again
+    body: >-
+      The Saudi airport's passenger terminal was hit a second time a day after the attack that killed at least 12 and wounded more than 300. King Khalid International Airport operations are suspended. A Saudi minister said a serious response is needed, and Saudi Arabia is reportedly low on air-defense interceptors.
     source: NPR; Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-11-2026/
+    url: https://www.npr.org/g-s1-147682
+
+  - section: World News
+    title: Hurricane Simon pounds Mexico's Pacific coast
+    body: >-
+      NPR reports the storm is hitting resorts and vulnerable towns along the coast. Simon had 155 mph winds as it approached.
+    source: NPR
+    url: https://www.npr.org/nx-s1-5998022
+
   - section: World News
     title: Polish police arrest man suspected of plotting to attack Tusk
     body: >-
-      Police detained a man in his 60s suspected of planning an attack on Prime Minister Donald Tusk and Defense Minister Wladyslaw Kosiniak-Kamysz. Searches of his home are continuing.
+      A man in his 60s was detained on suspicion of planning an attack on Prime Minister Donald Tusk and Defense Minister Wladyslaw Kosiniak-Kamysz.
     source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-11-2026/
+
   - section: World News
-    title: Trump claims Russia-Ukraine energy ceasefire; Zelensky says it's news to him
+    title: Yemeni forces reported advancing near Bab el-Mandeb as Houthi fighting continues
     body: >-
-      Trump said Russia and Ukraine had agreed to an energy ceasefire. Zelensky replied, "News to me." Trump also criticized Zelensky over US diesel prices.
+      Reports say 63 people were killed in clashes with the Houthis.
     source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-11-2026/
-  - section: World News
-    title: Iran calls US reply on reopening Hormuz insufficient; tanker hit off Oman
-    body: >-
-      Iran said Washington's response to its proposal to reopen the Strait of Hormuz was not enough. Separately, UKMTO says a tanker at Sohar anchorage near Oman was hit by a drone and the crew is being evacuated. Reports say the US is weighing three days of strikes to resume the war.
-    source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-11-2026/
-  - section: World News
-    title: Hurricane Simon nears Mexico with 155 mph winds
-    body: >-
-      NPR reports the Pacific storm is approaching Mexico with flooding fears.
-    source: NPR
-    url: https://www.npr.org/nx-s1-5998022
+
   - section: AI News
-    title: Gary Marcus calls for a recall of open-ended AI agents
+    title: White House ends 17-day freeze on UK access to pre-release AI models
     body: >-
-      In an essay, Marcus demands a temporary recall of AI agents with internet access, citing recent incidents and arguing current agents cannot be trusted.
+      The US restored the UK AI Security Institute's access to pre-release models from OpenAI, Anthropic and Google DeepMind on Oct. 11, the Telegraph reports.
     source: AI Weekly
+    url: https://www.telegraph.co.uk/news/2026/10/11/britain-get-first-look-ai-systems-after-white-house-u-turn/
+
   - section: AI News
-    title: Energy bill would fast-track permits for AI data center power
+    title: Amazon in talks to buy Decart for about $7 billion
     body: >-
-      The Bipartisan American Affordability and Jobs Act would speed permits for solar farms, power lines and pipelines serving AI data centers. Green groups say it guts protections for water and endangered species.
-    source: Fortune
-    url: https://fortune.com/2026/10/11/energy-permitting-ai-fossil-fuels-clean-power-environmentalists
+      The Wall Street Journal reports Amazon is in advanced talks for the startup, which builds software for moving AI workloads between chips. Anthropic had reportedly walked away from a deal at about $6 billion.
+    source: AI Weekly
+    url: https://www.wsj.com/business/deals/amazon-in-talks-to-buy-ai-startup-decart-for-around-7-billion-9433abad
+
   - section: AI News
-    title: Petra Power pitches fuel cells for AI data centers
+    title: Palantir CTO disputes report that AI contributed to Iran school strike
     body: >-
-      The startup has nearly $9 million in Defense Department contracts for solid oxide fuel cells. It targets first infrastructure deployments in 2028 and full production in 2029.
-    source: TechCrunch
-    url: https://techcrunch.com/2026/10/10/petra-power-looks-to-modernize-energy-for-data-centers-and-defense-vehicles/
+      On Face the Nation, Shyam Sankar blamed human error and outdated intelligence rather than over-reliance on AI, responding to a Bloomberg report.
+    source: CBS News
+    url: https://www.cbsnews.com/news/shyam-sankar-chief-technology-officer-palantir-face-the-nation-transcript-10-11-2026/
+
+  - section: AI News
+    title: Ukrainian drones destroy a third Yandex data center in four days
+    body: >-
+      The Vladimir facility was destroyed Oct. 11 after strikes on Kaluga and Sasovo. Operations there are fully halted, affecting more than 80 Yandex Cloud services.
+    source: Al Jazeera
+    url: https://www.aljazeera.com/news/2026/10/11/russias-yandex-says-data-centre-in-vladimir-shut-down-after-drone-attack
+
+  - section: AI News
+    title: Gannett sues OpenAI for more than $250 million
+    body: >-
+      The USA Today parent's suit in federal court in New York covers 19 titles and seeks damages and destruction of models trained on its content.
+    source: Unite.ai
+    url: https://www.unite.ai/usa-today-sues-openai-over-copyrighted-news-content-in-ai-training/
+
+  - section: AI News
+    title: New Mexico lawyer fined over ChatGPT-invented witnesses
+    body: >-
+      The state Supreme Court held attorney Stephen Aarons in direct contempt, fined him $5,000 and barred him from court pending disciplinary review after a brief cited fabricated witnesses.
+    source: 404 Media
+    url: https://404media.co/chatgpt-fake-witnesses-testimony-stephen-aarons-new-mexico
+
+  - section: AI News
+    title: AI writes 61% of enterprise code, but review is the bottleneck
+    body: >-
+      A September CloudBees survey of 213 engineering leaders found 57% now name review, testing and deployment as the constraint rather than writing code.
+    source: LeadDev
+    url: https://leaddev.com/leadership/your-engineering-strategy-has-a-new-failure-mode
+
   - section: On This Day
-    title: 1984 - Kathryn Sullivan becomes first American woman to walk in space
+    title: 1984 - IRA bomb hits the hotel hosting Thatcher's cabinet
     body: >-
-      Sullivan performed the spacewalk while aboard Space Shuttle Challenger.
+      The IRA bombed the Grand Hotel in Brighton, England, in a failed attempt to kill Prime Minister Margaret Thatcher and her cabinet.
     source: Wikipedia
