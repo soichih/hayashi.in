@@ -1,23 +1,5 @@
-generated: "2026-10-12T06:32:14-04:00"
+generated: "2026-10-12T18:32:34-04:00"
 stories:
-  - section: Weather Alert
-    title: Dense Fog Advisory for Monroe County until 9am
-    body: >-
-      The National Weather Service says fog can suddenly cut visibility to a quarter mile or less across central and southern Indiana this morning. If driving, slow down, use headlights and leave plenty of distance ahead of you.
-    when: Until 9am today
-    where: Monroe County and 15 other Indiana counties
-    source: National Weather Service
-
-  - section: Local Events
-    title: Bloomington Boogies workshops with Jason Marsalis and Zoe Imani Shepard
-    body: >-
-      Vibraphonist and drummer Jason Marsalis leads a workshop on bridging 20th- and 21st-century music. Zoe Imani Shepard leads a free jazz improvisation workshop for string players at Fairview Elementary School.
-    when: Mon Oct 12
-    where: Fairview Elementary School
-    source: Visit Bloomington
-    image: img/jason-marsalis.jpg
-    image_credit: Visit Bloomington
-
   - section: Local Events
     title: Natalie Boeyink Jazz Ensemble
     body: >-
@@ -25,18 +7,23 @@ stories:
     when: Mon Oct 12, 7:30pm
     where: Buskirk-Chumley Theater
     source: Buskirk-Chumley Theater
-    url: https://buskirkchumley.org/events/natalie-boeyink-jazz-ensemble-october-12-2026
-
   - section: Local Events
-    title: Family Night Out block party on Kirkwood
+    title: Don Turnley at The Bluebird
     body: >-
-      Last of this season's second-Wednesday downtown block parties, hosted by Downtown Bloomington Inc.
-    when: Wed Oct 14, 5:30-8pm
-    where: Kirkwood Avenue, downtown
+      Live music for ages 21 and up. Doors at 8pm, show at 9pm.
+    when: Tue Oct 13, 9pm
+    where: The Bluebird
     source: Visit Bloomington
-    image: img/family-night-out.jpg
-    image_credit: Downtown Bloomington Inc.
-
+    url: https://www.visitbloomington.com/event/don-turnley/60039/
+  - section: Local Events
+    title: Murnau's silent Faust with live music
+    body: >-
+      The 1920 silent German fantasy, starring Emil Jannings, follows Mephisto's wager with God over a mortal man's soul. Live music accompanies the Friday Night Frights screening.
+    when: Tue Oct 13
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/faust-faust%3a-eine-deutsche-volkssage-w-live-music-%7c-friday-night-frights/59844/
+    image: img/faust.jpg
+    image_credit: Visit Bloomington
   - section: Local Events
     title: Ballet Hispanico performs CARMEN.maquia
     body: >-
@@ -46,8 +33,14 @@ stories:
     source: IU Auditorium
     url: https://www.iuauditorium.com/events/detail/ballethispanico-2026
     image: img/ballet-hispanico.jpg
-    image_credit: Ballet Hispanico
-
+    image_credit: Visit Bloomington
+  - section: Local Events
+    title: Family Night Out block party on Kirkwood
+    body: >-
+      Last of this season's second-Wednesday downtown block parties, hosted by Downtown Bloomington Inc.
+    when: Wed Oct 14, 5:30-8pm
+    where: Kirkwood Avenue, downtown
+    source: Visit Bloomington
   - section: Local Events
     title: A Conversation with Bill Nye
     body: >-
@@ -57,8 +50,7 @@ stories:
     source: IU Auditorium
     url: https://www.iuauditorium.com/events/detail/bill-nye-2026
     image: img/bill-nye.jpg
-    image_credit: IU Auditorium
-
+    image_credit: Visit Bloomington
   - section: Local Events
     title: Ratboys at The Bluebird
     body: >-
@@ -66,16 +58,24 @@ stories:
     when: Thu Oct 15, 8pm
     where: The Bluebird
     source: Visit Bloomington
-
+    url: https://www.visitbloomington.com/event/ratboys/59159/
   - section: Local Events
-    title: 'Partita: An Evening with Barbara Kingsolver'
+    title: CardBoard Build Days for ages 8 and up
+    body: >-
+      A hands-on building program that combines creativity and engineering.
+    when: Thu Oct 15 - Fri Oct 16
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/cardboard-build-days/59232/
+    image: img/cardboard-days.jpg
+    image_credit: Visit Bloomington
+  - section: Local Events
+    title: "Partita: An Evening with Barbara Kingsolver"
     body: >-
       The author appears in a program presented by the Bloomington Roots Foundation.
     when: Fri Oct 16, 7pm
     where: IU Auditorium
     source: IU Auditorium
     url: https://www.iuauditorium.com/events/detail/barbarakingsolver-2026
-
   - section: Local Events
     title: Dennis James hosts Halloween
     body: >-
@@ -84,7 +84,6 @@ stories:
     where: IU Auditorium
     source: IU Auditorium
     url: https://www.iuauditorium.com/events/detail/dennisjames-2026
-
   - section: Local Events
     title: Yonder Mountain String Band
     body: >-
@@ -92,46 +91,36 @@ stories:
     when: Wed Oct 21, 7pm
     where: Buskirk-Chumley Theater
     source: Buskirk-Chumley Theater
-    url: https://buskirkchumley.org/events/yonder-mountain-string-band-october-21-2026
-
   - section: Local News
     title: Rollo's superintelligence ban gets its first council hearing Wednesday
     body: >-
-      Councilmember Dave Rollo's ordinance would bar deploying superintelligent AI systems in city limits, including systems hosted elsewhere but reached through a browser or API. It is on the Oct. 14 agenda for introduction only, with no vote; final action could come Nov. 4.
-
-      Violations carry fines up to $2,500, with daily penalties for continuing violations. Lifting it would require a 99.9999 percent safety assessment and approval from more than 95 percent of registered voters, though a simple council repeal may also be possible. Open questions include whether the city can regulate out-of-town technology and who decides what counts as superintelligent.
+      Councilmember Dave Rollo's ordinance would bar deploying superintelligent AI systems in city limits, including systems hosted elsewhere but reached through a browser or API. It is on the Oct. 14 agenda. Because it is an ordinance rather than a resolution, it would carry penalties, which raises questions about the city's authority, enforcement and repeal.
     source: The B Square Bulletin
-    url: https://bsquarebulletin.com/analysis-bloomingtons-proposed-superintelligence-ban-raises-questions-about-authority-enforcement/
-    image: img/rollo.jpg
-    image_credit: The B Square Bulletin
-
   - section: Local News
     title: Stinesville ICE decision pushed to November after Rokita letter
     body: >-
-      The town board delayed its vote on a 287(g) agreement with ICE after Attorney General Todd Rokita's Oct. 6 letter said the police chief could sign it without board approval. The letter also rejects the Monroe County commissioners' request for a public vote and a suspension of the agreement.
+      The town board delayed its vote on a 287(g) agreement with ICE after Attorney General Todd Rokita's Oct. 6 letter said the police chief could sign it without board approval. Monroe County commissioners had asked the town to publish the agreement, take public comment and suspend work until a vote.
     source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/10/rokita-says-stinesville-police-chief-had-authority-to-sign-ice-agreement-without-town-board-approval/
-
   - section: Local News
     title: Murder charge filed in North Illinois Street shooting
     body: >-
-      A 24-year-old man shot on a porch Thursday evening died at a hospital. A 23-year-old Bloomington man is charged with murder.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/bloomington-man-23-charged-with-murder-in-fatal-shooting-on-northwest-side/
-
+      A 24-year-old man shot on a porch Thursday evening died at a hospital. A 23-year-old Bloomington man is charged with murder, according to court records.
+    source: The Bloomingtonian
   - section: Local News
     title: Redevelopment board questions keeping Showers West as city offices move in
     body: >-
       Redevelopment Commission members asked last week whether the commission should continue to own the Showers West property as city offices relocate there.
     source: The B Square Bulletin
-    url: https://bsquarebulletin.com/showers-west-notebook-rdc-members-question-continued-ownership-as-city-offices-move-in/
-
   - section: Local News
     title: Early voting continues at North Showers through Oct. 30
     body: >-
       Monroe County's only early voting site is the North Showers Building, 501 N. Morton St., open 8am-6pm weekdays through Oct. 30 for the Nov. 3 election.
     source: The B Square Bulletin
-
+  - section: Local News
+    title: Four-way stop at Kirkwood and Rogers through Oct. 24
+    body: >-
+      Crews are replacing an aging traffic signal and upgrading curb ramps. Expect delays; the new signal is due to be working by Oct. 24.
+    source: City of Bloomington
   - section: Local News
     title: Hopewell update meeting set for Oct. 27
     body: >-
@@ -139,146 +128,93 @@ stories:
     when: Tue Oct 27, 5:30-6:30pm
     where: Bloomington First Church of the Nazarene, 700 W. Howe St.
     source: City of Bloomington
-
   - section: Local News
-    title: Plan Commission hearing Oct. 28 on housing and zoning rules
+    title: Parks plan comments due Oct. 18; $150,000 in violence reduction grants open
     body: >-
-      The special hearing collects public input on the Unified Development Ordinance and related land policies.
-    when: Wed Oct 28, 5:30pm
-    where: City Council Chambers
+      Residents can comment on the Parks and Recreation Investment Priorities Plan through Oct. 18. Separately, the city is accepting applications for $150,000 in violence reduction grants.
     source: City of Bloomington
-
-  - section: Local News
-    title: Four-way stop at Kirkwood and Rogers through Oct. 24
-    body: >-
-      Crews are replacing an aging traffic signal and upgrading curb ramps. Expect delays; the new signal is due to be working by Oct. 24.
-    source: City of Bloomington
-
-  - section: Local News
-    title: City opens $150,000 in violence reduction grants; parks plan comments due Oct. 18
-    body: >-
-      Applications are open for the grants. Separately, residents can comment on the Parks and Recreation Investment Priorities Plan through Oct. 18.
-    source: City of Bloomington
-
   - section: US News
-    title: Trump says Russia and Ukraine agreed to an energy ceasefire
+    title: Federal agents search Rep. Ilhan Omar's DC home
     body: >-
-      Zelensky said he had heard nothing about it, and French President Macron said he saw no truce on the Russian side. Zelensky also said Russia struck several Ukrainian power plants on Sunday, including one in Kyiv and one in Kharkiv, causing outages.
-    source: NPR; Times of Israel
-    url: https://www.npr.org/nx-s1-5998614
-
+      NPR reports the Justice Department says it approved the warrant for the search of the Minnesota congresswoman's Washington home. Omar is a frequent critic of President Trump.
+    source: NPR
   - section: US News
     title: Justice Department opens antitrust investigation of TV networks
     body: >-
       NPR reports the department is investigating TV networks over possible antitrust violations.
     source: NPR
-    url: https://www.npr.org/nx-s1-5997574
-
   - section: US News
-    title: Pope Leo XIV to undergo lung surgery this week
+    title: Two Americans win Nobel Prize in economics
     body: >-
-      NPR reports the pope is scheduled for lung surgery in the coming days.
+      The prize recognizes work on boom-bust cycles and managing economic shocks, NPR reports.
     source: NPR
-    url: https://www.npr.org/nx-s1-5998027
-
   - section: US News
     title: Isaias death toll reaches at least 4 after Florida and Alabama landfall
     body: >-
       NPR reports at least four deaths are now attributed to the hurricane.
     source: NPR
-    url: https://www.npr.org/g-s1-147632
-
   - section: US News
-    title: Pentagon plans public execution of Fort Hood shooter Dec. 3
+    title: Pope Leo XIV to undergo lung surgery this week
     body: >-
-      The Pentagon says Nidal Hasan's firing squad execution will be livestreamed. NPR notes the US last held a public execution in the 1930s.
+      NPR reports the pope is scheduled for lung surgery in the coming days.
     source: NPR
-    url: https://www.npr.org/nx-s1-5996529
-
   - section: US News
-    title: Chinese drone restrictions leave police departments in the lurch
+    title: Russia hits Ukraine gas facilities after Trump's claimed energy ceasefire
     body: >-
-      NPR reports that US restrictions on Chinese-made drones are forcing police departments to scramble for replacements.
+      Trump said Russia and Ukraine had agreed to an energy ceasefire, but Zelensky said he had heard nothing about it. NPR reports Russian strikes then hit Ukrainian gas facilities.
     source: NPR
-    url: https://www.npr.org/nx-s1-5888604
-
   - section: World News
-    title: Houthi attack on Riyadh airport killed 12; terminal struck again
+    title: Houthis claim new missile strike on Riyadh airport after attack that killed 12
     body: >-
-      The Saudi airport's passenger terminal was hit a second time a day after the attack that killed at least 12 and wounded more than 300. King Khalid International Airport operations are suspended. A Saudi minister said a serious response is needed, and Saudi Arabia is reportedly low on air-defense interceptors.
+      The Houthis say a ballistic missile hit King Khalid International Airport, while the Saudi-led coalition says it intercepted a missile aimed at Riyadh. An earlier attack killed at least 12 and wounded more than 300. Reports say Saudi Arabia is running low on interceptors, and the US embassy says Americans were detained for filming the aftermath.
     source: NPR; Times of Israel
-    url: https://www.npr.org/g-s1-147682
-
+  - section: World News
+    title: US, UK and 27 countries warn Iran against further attacks on the West
+    body: >-
+      The joint statement follows an incident at the RAF Fairford airbase. UK Prime Minister Burnham said Iran's Revolutionary Guard was likely behind it.
+    source: Times of Israel
   - section: World News
     title: Hurricane Simon pounds Mexico's Pacific coast
     body: >-
       NPR reports the storm is hitting resorts and vulnerable towns along the coast. Simon had 155 mph winds as it approached.
     source: NPR
-    url: https://www.npr.org/nx-s1-5998022
-
   - section: World News
-    title: Polish police arrest man suspected of plotting to attack Tusk
+    title: India's opposition marches to top court over voter lists
     body: >-
-      A man in his 60s was detained on suspicion of planning an attack on Prime Minister Donald Tusk and Defense Minister Wladyslaw Kosiniak-Kamysz.
-    source: Times of Israel
-
-  - section: World News
-    title: Yemeni forces reported advancing near Bab el-Mandeb as Houthi fighting continues
-    body: >-
-      Reports say 63 people were killed in clashes with the Houthis.
-    source: Times of Israel
-
+      NPR reports protests over voter rolls are escalating, with opposition parties marching to the Supreme Court.
+    source: NPR
   - section: AI News
-    title: White House ends 17-day freeze on UK access to pre-release AI models
+    title: Yandex shuts third data center in four days after Ukrainian drone strikes
     body: >-
-      The US restored the UK AI Security Institute's access to pre-release models from OpenAI, Anthropic and Google DeepMind on Oct. 11, the Telegraph reports.
-    source: AI Weekly
-    url: https://www.telegraph.co.uk/news/2026/10/11/britain-get-first-look-ai-systems-after-white-house-u-turn/
-
+      The Vladimir facility was destroyed Oct. 11 after strikes on Kaluga and Sasovo. Operations there are fully suspended, affecting more than 80 Yandex Cloud services.
+    source: Al Jazeera
   - section: AI News
-    title: Amazon in talks to buy Decart for about $7 billion
+    title: Nadella says to treat AI models as potentially compromised
     body: >-
-      The Wall Street Journal reports Amazon is in advanced talks for the startup, which builds software for moving AI workloads between chips. Anthropic had reportedly walked away from a deal at about $6 billion.
-    source: AI Weekly
-    url: https://www.wsj.com/business/deals/amazon-in-talks-to-buy-ai-startup-decart-for-around-7-billion-9433abad
-
+      Microsoft's CEO argues "nested black boxes" are no longer workable and proposes a mandatory emergency brake, tamper-proof audit logs and the ability to pause any model mid-task.
+    source: The Verge
   - section: AI News
     title: Palantir CTO disputes report that AI contributed to Iran school strike
     body: >-
       On Face the Nation, Shyam Sankar blamed human error and outdated intelligence rather than over-reliance on AI, responding to a Bloomberg report.
     source: CBS News
-    url: https://www.cbsnews.com/news/shyam-sankar-chief-technology-officer-palantir-face-the-nation-transcript-10-11-2026/
-
   - section: AI News
-    title: Ukrainian drones destroy a third Yandex data center in four days
+    title: Sakana AI method has one 27B model act as solver, optimizer and judge
     body: >-
-      The Vladimir facility was destroyed Oct. 11 after strikes on Kaluga and Sasovo. Operations there are fully halted, affecting more than 80 Yandex Cloud services.
-    source: Al Jazeera
-    url: https://www.aljazeera.com/news/2026/10/11/russias-yandex-says-data-centre-in-vladimir-shut-down-after-drone-attack
-
+      The MASS method uses a single open-weights model, Qwen3.6-27B, in all three roles with no external supervisor. It scored 1.60x per output token on MLR-Bench and 1.35x on DSBench versus the base model.
+    source: AI Weekly
   - section: AI News
-    title: Gannett sues OpenAI for more than $250 million
+    title: AMD unveils Helion open rack for AI agents
     body: >-
-      The USA Today parent's suit in federal court in New York covers 19 titles and seeks damages and destruction of models trained on its content.
-    source: Unite.ai
-    url: https://www.unite.ai/usa-today-sues-openai-over-copyrighted-news-content-in-ai-training/
-
+      The reference design holds up to 32,768 Zen 6 EPYC cores and 16 Instinct MI350P GPUs. Cisco, Dell, HPE, Lenovo, Supermicro, Foxconn and Wiwynn plan configurations in November.
+    source: AI Weekly
   - section: AI News
-    title: New Mexico lawyer fined over ChatGPT-invented witnesses
+    title: Survey finds 81% of engineering leaders saw an AI-code production incident
     body: >-
-      The state Supreme Court held attorney Stephen Aarons in direct contempt, fined him $5,000 and barred him from court pending disciplinary review after a brief cited fabricated witnesses.
-    source: 404 Media
-    url: https://404media.co/chatgpt-fake-witnesses-testimony-stephen-aarons-new-mexico
-
-  - section: AI News
-    title: AI writes 61% of enterprise code, but review is the bottleneck
-    body: >-
-      A September CloudBees survey of 213 engineering leaders found 57% now name review, testing and deployment as the constraint rather than writing code.
+      Debugging vendor Undo surveyed 300 senior engineering leaders in the US and UK. Four in five reported an incident linked to an AI coding tool in the past six months.
     source: LeadDev
-    url: https://leaddev.com/leadership/your-engineering-strategy-has-a-new-failure-mode
-
   - section: On This Day
-    title: 1984 - IRA bomb hits the hotel hosting Thatcher's cabinet
+    title: 1933 - Alcatraz becomes a federal prison
     body: >-
-      The IRA bombed the Grand Hotel in Brighton, England, in a failed attempt to kill Prime Minister Margaret Thatcher and her cabinet.
+      The US Department of Justice took over a military prison on Alcatraz Island and converted it into a federal penitentiary.
     source: Wikipedia
