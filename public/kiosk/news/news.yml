@@ -1,54 +1,13 @@
-generated: "2026-10-12T18:32:34-04:00"
+generated: "2026-10-15T06:32:35-04:00"
 stories:
-  - section: Local Events
-    title: Natalie Boeyink Jazz Ensemble
-    body: >-
-      Big band jazz evening. Doors at 7pm.
-    when: Mon Oct 12, 7:30pm
-    where: Buskirk-Chumley Theater
-    source: Buskirk-Chumley Theater
-  - section: Local Events
-    title: Don Turnley at The Bluebird
-    body: >-
-      Live music for ages 21 and up. Doors at 8pm, show at 9pm.
-    when: Tue Oct 13, 9pm
-    where: The Bluebird
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/don-turnley/60039/
-  - section: Local Events
-    title: Murnau's silent Faust with live music
-    body: >-
-      The 1920 silent German fantasy, starring Emil Jannings, follows Mephisto's wager with God over a mortal man's soul. Live music accompanies the Friday Night Frights screening.
-    when: Tue Oct 13
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/faust-faust%3a-eine-deutsche-volkssage-w-live-music-%7c-friday-night-frights/59844/
-    image: img/faust.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Ballet Hispanico performs CARMEN.maquia
-    body: >-
-      The New York company, a leading American Latino dance troupe, brings its evening-length CARMEN.maquia to Bloomington.
-    when: Wed Oct 14, 7:30pm
-    where: IU Auditorium
-    source: IU Auditorium
-    url: https://www.iuauditorium.com/events/detail/ballethispanico-2026
-    image: img/ballet-hispanico.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Family Night Out block party on Kirkwood
-    body: >-
-      Last of this season's second-Wednesday downtown block parties, hosted by Downtown Bloomington Inc.
-    when: Wed Oct 14, 5:30-8pm
-    where: Kirkwood Avenue, downtown
-    source: Visit Bloomington
   - section: Local Events
     title: A Conversation with Bill Nye
     body: >-
       Moderated Q&A with the science communicator, presented by Union Board with IU's College of Arts and Sciences.
     when: Thu Oct 15, 7pm
     where: IU Auditorium
-    source: IU Auditorium
-    url: https://www.iuauditorium.com/events/detail/bill-nye-2026
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/a-conversation-with-bill-nye/59894/
     image: img/bill-nye.jpg
     image_credit: Visit Bloomington
   - section: Local Events
@@ -60,22 +19,64 @@ stories:
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/ratboys/59159/
   - section: Local Events
-    title: CardBoard Build Days for ages 8 and up
+    title: Hoosier Hills Food Bank Book Fair, with 100,000-plus items
     body: >-
-      A hands-on building program that combines creativity and engineering.
-    when: Thu Oct 15 - Fri Oct 16
+      A book fair benefiting the food bank, running through Oct. 20.
+    when: Fri Oct 16 - Tue Oct 20
+    where: Monroe County Fair Grounds
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/cardboard-build-days/59232/
-    image: img/cardboard-days.jpg
+    url: https://www.visitbloomington.com/event/hoosier-hills-food-bank-book-fair/59239/
+    image: img/book-fair.jpg
     image_credit: Visit Bloomington
   - section: Local Events
-    title: "Partita: An Evening with Barbara Kingsolver"
+    title: 'Partita: An Evening with Barbara Kingsolver'
     body: >-
-      The author appears in a program presented by the Bloomington Roots Foundation.
+      The Pulitzer Prize-winning author reads and takes questions, with piano performances by Susan Tsai, to celebrate her new release.
     when: Fri Oct 16, 7pm
     where: IU Auditorium
-    source: IU Auditorium
-    url: https://www.iuauditorium.com/events/detail/barbarakingsolver-2026
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/partita%3a-an-evening-with-barbara-kingsolver/59496/
+    image: img/kingsolver.jpg
+    image_credit: Visit Bloomington
+  - section: Local Events
+    title: Friday Nights at Morgenstern with the Post Modern Jazz Quartet
+    body: >-
+      Free monthly third-Friday jazz salon in the cafe area.
+    when: Fri Oct 16, 6:30-8:30pm
+    where: Morgenstern
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/friday-nights-at-morgenstern-post-modern-jazz-quartet/59945/
+  - section: Local Events
+    title: Food Truck Friday at Switchyard Park
+    body: >-
+      Local food trucks gather every Friday through Oct. 30. Family friendly.
+    when: Fri Oct 16, 11am-9pm
+    where: Switchyard Park
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/bloomington-food-truck-friday/58058/
+  - section: Local Events
+    title: Moving On, a new play by Konnor Graber
+    body: >-
+      A couples' therapist dealing with grief of her own tries to help a struggling pair. Runs through Oct. 25.
+    when: Oct 16-25
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/moving-on-by-konnor-graber/59242/
+  - section: Local Events
+    title: Bloomington Community Farmers' Market
+    body: >-
+      Weekly Saturday market next to City Hall, rain or shine, through Oct. 31.
+    when: Sat Oct 17
+    where: Showers Common, 401 N. Morton St.
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/bloomington-community-farmers-market/57685/
+  - section: Local Events
+    title: Vaccine science and policy forum
+    body: >-
+      Concerned Scientists at IU and Advocates for Science at IU host a public forum with Katharine Head of IU Indianapolis, Lisa Robertson of the Indiana Immunization Coalition and retired pediatrician James Laughlin. It will also be livestreamed on the Advocates for Science at IU YouTube channel.
+    when: Tue Oct 20, 5-6:30pm
+    where: Monroe County Public Library auditorium
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/13/iu-scientists-group-schedules-public-forum-on-vaccine-policy/
   - section: Local Events
     title: Dennis James hosts Halloween
     body: >-
@@ -83,7 +84,6 @@ stories:
     when: Wed Oct 21, 7:30pm
     where: IU Auditorium
     source: IU Auditorium
-    url: https://www.iuauditorium.com/events/detail/dennisjames-2026
   - section: Local Events
     title: Yonder Mountain String Band
     body: >-
@@ -91,26 +91,46 @@ stories:
     when: Wed Oct 21, 7pm
     where: Buskirk-Chumley Theater
     source: Buskirk-Chumley Theater
-  - section: Local News
-    title: Rollo's superintelligence ban gets its first council hearing Wednesday
+  - section: Local Events
+    title: Harmony School fall festival and haunted attraction
     body: >-
-      Councilmember Dave Rollo's ordinance would bar deploying superintelligent AI systems in city limits, including systems hosted elsewhere but reached through a browser or API. It is on the Oct. 14 agenda. Because it is an ordinance rather than a resolution, it would carry penalties, which raises questions about the city's authority, enforcement and repeal.
-    source: The B Square Bulletin
-  - section: Local News
-    title: Stinesville ICE decision pushed to November after Rokita letter
-    body: >-
-      The town board delayed its vote on a 287(g) agreement with ICE after Attorney General Todd Rokita's Oct. 6 letter said the police chief could sign it without board approval. Monroe County commissioners had asked the town to publish the agreement, take public comment and suspend work until a vote.
+      Hallowganza runs 3-7pm with carnival games, pumpkin painting and treats; $5 includes six activity tickets, extra tickets $1. Dr. Diablo's Carnival of Terrors haunted attraction runs 7-11pm Oct. 24 and 25 for a separate $5. Festival proceeds support the school's scholarship fund.
+    when: Sat Oct 24, 3-11pm
+    where: Harmony School, 909 E. Second St.
     source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/13/harmony-school-announces-oct-24-fall-festival-and-evening-haunted-attraction/
   - section: Local News
-    title: Murder charge filed in North Illinois Street shooting
+    title: Council bans license plate readers and data-sharing cameras 7-0
     body: >-
-      A 24-year-old man shot on a porch Thursday evening died at a hospital. A 23-year-old Bloomington man is charged with murder, according to court records.
+      Ordinance 2026-22 bars the city from using automated license plate readers and from using surveillance camera systems whose data is shared, or could be shared, with outside parties such as vendors and other agencies. City-held closed-circuit systems, such as those in parks, are not covered. The city let its Flock Safety plate-reader contract expire March 5, but Flock contracts remain for four downtown cameras and four mobile security systems.
+
+
+      The clerk will send the ordinance to Mayor Kerry Thomson. According to sponsor Isabel Piedmont-Smith's release, the 7-0 vote is enough to override a veto.
     source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/15/bloomington-council-votes-to-ban-alprs-and-some-surveillance-cameras/
   - section: Local News
-    title: Redevelopment board questions keeping Showers West as city offices move in
+    title: Planners favor two-way College and Walnut, a $109 million idea
     body: >-
-      Redevelopment Commission members asked last week whether the commission should continue to own the Showers West property as city offices relocate there.
-    source: The B Square Bulletin
+      Planning staff recommend adding a two-way restoration of College Avenue and Walnut Street to the city's Transportation Plan. It covers about 4.2 miles from the State Road 45/46 Bypass to Allen Street and would cost about $109.4 million; a reconfigured one-way option is about $103.1 million. Neither is funded, and the recommendation is not approval to build.
+
+
+      The Transportation Commission takes it up Nov. 16 at 5:30pm, with public comment, followed by later hearings before the Plan Commission and City Council.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/13/bloomington-planners-recommend-two-way-restoration-of-college-walnut/
+  - section: Local News
+    title: School-board candidate forum set for Oct. 26 in Ellettsville
+    body: >-
+      The League of Women Voters hosts four Richland-Bean Blossom board candidates: Christa Curtis, Jeremiah O'Neal, Dennis Adams and Kelly D. Scholl. Questions can be emailed in advance.
+    when: Mon Oct 26, 6-7:30pm
+    where: Edgewood High School library, 601 S. Edgewood Dr.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/13/bloomington-and-monroe-county-candidates-set-school-board-forum-in-ellettsville/
+  - section: Local News
+    title: Ryan Pedigo named Bloomington police deputy chief
+    body: >-
+      The Bloomingtonian reports Pedigo has been named a deputy chief of the Bloomington Police Department.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/13/ryan-pedigo-name-bloomington-police-department-deputy-chief/
   - section: Local News
     title: Early voting continues at North Showers through Oct. 30
     body: >-
@@ -122,99 +142,79 @@ stories:
       Crews are replacing an aging traffic signal and upgrading curb ramps. Expect delays; the new signal is due to be working by Oct. 24.
     source: City of Bloomington
   - section: Local News
-    title: Hopewell update meeting set for Oct. 27
-    body: >-
-      The city will cover the 98-home Hopewell South phase, Hopewell Commons park work, reuse of 714 S. Rogers St. as a public safety facility, and Second Street upgrades.
-    when: Tue Oct 27, 5:30-6:30pm
-    where: Bloomington First Church of the Nazarene, 700 W. Howe St.
-    source: City of Bloomington
-  - section: Local News
     title: Parks plan comments due Oct. 18; $150,000 in violence reduction grants open
     body: >-
       Residents can comment on the Parks and Recreation Investment Priorities Plan through Oct. 18. Separately, the city is accepting applications for $150,000 in violence reduction grants.
     source: City of Bloomington
   - section: US News
-    title: Federal agents search Rep. Ilhan Omar's DC home
+    title: September inflation jumps, lifting Social Security benefits
     body: >-
-      NPR reports the Justice Department says it approved the warrant for the search of the Minnesota congresswoman's Washington home. Omar is a frequent critic of President Trump.
+      NPR reports inflation "sizzled" in September, which sets a bigger cost-of-living boost for Social Security recipients. Projections before the release had put the 2027 increase between about 3.2% and 3.6%, against 2.8% this year.
     source: NPR
   - section: US News
-    title: Justice Department opens antitrust investigation of TV networks
+    title: Ukraine warns of US intel cutoff as it resumes refinery strikes
     body: >-
-      NPR reports the department is investigating TV networks over possible antitrust violations.
+      Zelenskyy told NPR the Trump administration has warned Ukraine it could cut off intelligence sharing. NPR also reports Ukraine has resumed attacks on Russian oil refineries after a brief truce.
     source: NPR
   - section: US News
-    title: Two Americans win Nobel Prize in economics
+    title: Pope Leo's cancer prognosis is "very good," outside experts say
     body: >-
-      The prize recognizes work on boom-bust cycles and managing economic shocks, NPR reports.
+      NPR reports independent medical experts rate the pope's outlook as very good, days after word that he would undergo lung surgery.
     source: NPR
   - section: US News
-    title: Isaias death toll reaches at least 4 after Florida and Alabama landfall
+    title: Court rules for CNN, MS NOW and Politico against White House, for now
     body: >-
-      NPR reports at least four deaths are now attributed to the hurricane.
+      NPR reports the three outlets prevailed in their dispute with the White House, though the ruling may not be final.
     source: NPR
   - section: US News
-    title: Pope Leo XIV to undergo lung surgery this week
+    title: Civil rights groups plan thousands of midterm poll observers
     body: >-
-      NPR reports the pope is scheduled for lung surgery in the coming days.
-    source: NPR
-  - section: US News
-    title: Russia hits Ukraine gas facilities after Trump's claimed energy ceasefire
-    body: >-
-      Trump said Russia and Ukraine had agreed to an energy ceasefire, but Zelensky said he had heard nothing about it. NPR reports Russian strikes then hit Ukrainian gas facilities.
+      Advocates plan to send thousands of observers to polling places for the Nov. 3 election, NPR reports.
     source: NPR
   - section: World News
-    title: Houthis claim new missile strike on Riyadh airport after attack that killed 12
+    title: Pakistan school roof collapse kills at least 29
     body: >-
-      The Houthis say a ballistic missile hit King Khalid International Airport, while the Saudi-led coalition says it intercepted a missile aimed at Riyadh. An earlier attack killed at least 12 and wounded more than 300. Reports say Saudi Arabia is running low on interceptors, and the US embassy says Americans were detained for filming the aftermath.
-    source: NPR; Times of Israel
+      NPR reports the collapse also injured more than three dozen people.
+    source: NPR
   - section: World News
-    title: US, UK and 27 countries warn Iran against further attacks on the West
+    title: Intel plant blast in Israel kills a second worker
     body: >-
-      The joint statement follows an incident at the RAF Fairford airbase. UK Prime Minister Burnham said Iran's Revolutionary Guard was likely behind it.
+      A 49-year-old died of burns from a gas cylinder explosion at Intel's Kiryat Gat plant. A third worker remains in serious condition.
     source: Times of Israel
   - section: World News
-    title: Hurricane Simon pounds Mexico's Pacific coast
+    title: Saudi Arabia intercepts missile near Medina
     body: >-
-      NPR reports the storm is hitting resorts and vulnerable towns along the coast. Simon had 155 mph winds as it approached.
-    source: NPR
+      The Saudi-led coalition said it shot down a cruise missile in the Medina region, despite Houthi pledges not to target the city.
+    source: Times of Israel
   - section: World News
-    title: India's opposition marches to top court over voter lists
+    title: IMF sees Saudi economy shrinking 3.3% this year
     body: >-
-      NPR reports protests over voter rolls are escalating, with opposition parties marching to the Supreme Court.
-    source: NPR
+      The fund says Gulf economies will not return to pre-war growth in the medium term, and projects a rare recession for Saudi Arabia in 2026.
+    source: Times of Israel
+  - section: World News
+    title: Iran, Turkey and others walk out on Herzog speech in Azerbaijan
+    body: >-
+      Representatives from Iran, Turkey, Pakistan, the Palestinian Authority and Kuwait left the hall as Israel's president spoke at the CICA summit. Qatar's emir stayed.
+    source: Times of Israel
   - section: AI News
-    title: Yandex shuts third data center in four days after Ukrainian drone strikes
+    title: Colossal unveils GenoMorph AI to speed dodo revival work
     body: >-
-      The Vladimir facility was destroyed Oct. 11 after strikes on Kaluga and Sasovo. Operations there are fully suspended, affecting more than 80 Yandex Cloud services.
-    source: Al Jazeera
+      The platform combines 3D skull morphology, comparative genomics and developmental biology to find editable genes in species with little genetic data. The dodo has one known genome, versus about 100 for the woolly mammoth. GenoMorph has flagged about 2,300 candidate DNA edits tied to dodo skull and face structure, which Colossal plans to test in the lab.
+
+
+      CEO Ben Lamm says the tool does not edit genes itself. Colossal also reports its Nicobar pigeon colony, the dodo's closest living relative, now has 36 birds.
+    source: TechCrunch
+    url: https://techcrunch.com/2026/10/14/colossal-biosciences-announces-new-ai-platform-to-help-accelerate-de-extinction-efforts/
+    image: img/colossal-genomorph.jpg
+    image_credit: TechCrunch
   - section: AI News
-    title: Nadella says to treat AI models as potentially compromised
+    title: SpaceXSI bundles X Premium, Grok and Cursor in one subscription
     body: >-
-      Microsoft's CEO argues "nested black boxes" are no longer workable and proposes a mandatory emergency brake, tamper-proof audit logs and the ability to pause any model mid-task.
-    source: The Verge
-  - section: AI News
-    title: Palantir CTO disputes report that AI contributed to Iran school strike
-    body: >-
-      On Face the Nation, Shyam Sankar blamed human error and outdated intelligence rather than over-reliance on AI, responding to a Bloomberg report.
-    source: CBS News
-  - section: AI News
-    title: Sakana AI method has one 27B model act as solver, optimizer and judge
-    body: >-
-      The MASS method uses a single open-weights model, Qwen3.6-27B, in all three roles with no external supervisor. It scored 1.60x per output token on MLR-Bench and 1.35x on DSBench versus the base model.
-    source: AI Weekly
-  - section: AI News
-    title: AMD unveils Helion open rack for AI agents
-    body: >-
-      The reference design holds up to 32,768 Zen 6 EPYC cores and 16 Instinct MI350P GPUs. Cisco, Dell, HPE, Lenovo, Supermicro, Foxconn and Wiwynn plan configurations in November.
-    source: AI Weekly
-  - section: AI News
-    title: Survey finds 81% of engineering leaders saw an AI-code production incident
-    body: >-
-      Debugging vendor Undo surveyed 300 senior engineering leaders in the US and UK. Four in five reported an incident linked to an AI coding tool in the past six months.
-    source: LeadDev
+      "The X Subscription" has five tiers: free, Plus at $8 a month, Premium at $30, Super at $100 and Ultra at $200. Premium or higher is needed for the latest Grok models. Existing X Premium+ subscribers get a comparable plan for the same price or less, with upgrades rolling out gradually.
+    source: TechCrunch
+    url: https://techcrunch.com/2026/10/13/spacexsi-bundles-x-premium-grok-and-cursor-into-one-subscription/
   - section: On This Day
-    title: 1933 - Alcatraz becomes a federal prison
+    title: 1954 - Hurricane Hazel hits the Carolinas, then Toronto
     body: >-
-      The US Department of Justice took over a military prison on Alcatraz Island and converted it into a federal penitentiary.
+      The storm came ashore in the Carolinas and moved north to Toronto, killing 176 people across both countries.
     source: Wikipedia
