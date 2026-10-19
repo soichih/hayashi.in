@@ -1,220 +1,227 @@
-generated: "2026-10-15T06:32:35-04:00"
+generated: "2026-10-19T06:33:46-04:00"
 stories:
-  - section: Local Events
-    title: A Conversation with Bill Nye
+  - section: Weather Alert
+    title: Frost Advisory for Monroe County until 9am
     body: >-
-      Moderated Q&A with the science communicator, presented by Union Board with IU's College of Arts and Sciences.
-    when: Thu Oct 15, 7pm
-    where: IU Auditorium
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/a-conversation-with-bill-nye/59894/
-    image: img/bill-nye.jpg
-    image_credit: Visit Bloomington
+      The National Weather Service in Indianapolis has a Frost Advisory in effect across 39 central and southern Indiana counties, including Monroe, until 9am today. Take steps now to protect tender plants from the cold.
+    source: National Weather Service
+    url: https://api.weather.gov/alerts/active?point=39.1653,-86.5264
   - section: Local Events
-    title: Ratboys at The Bluebird
+    title: Hoosier Hills Food Bank Book Fair ends tomorrow
     body: >-
-      Live indie rock for ages 21 and up. Doors at 7pm.
-    when: Thu Oct 15, 8pm
-    where: The Bluebird
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/ratboys/59159/
-  - section: Local Events
-    title: Hoosier Hills Food Bank Book Fair, with 100,000-plus items
-    body: >-
-      A book fair benefiting the food bank, running through Oct. 20.
-    when: Fri Oct 16 - Tue Oct 20
+      More than 100,000 books and other items, benefiting the food bank. Last day is Tuesday.
+    when: Through Tue Oct 20
     where: Monroe County Fair Grounds
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/hoosier-hills-food-bank-book-fair/59239/
-    image: img/book-fair.jpg
-    image_credit: Visit Bloomington
   - section: Local Events
-    title: 'Partita: An Evening with Barbara Kingsolver'
+    title: Julian Fijma live
     body: >-
-      The Pulitzer Prize-winning author reads and takes questions, with piano performances by Susan Tsai, to celebrate her new release.
-    when: Fri Oct 16, 7pm
-    where: IU Auditorium
+      Live music for ages 21 and up. Doors at 8pm.
+    when: Tue Oct 20, 9pm
+    where: The Bluebird
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/partita%3a-an-evening-with-barbara-kingsolver/59496/
-    image: img/kingsolver.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Friday Nights at Morgenstern with the Post Modern Jazz Quartet
-    body: >-
-      Free monthly third-Friday jazz salon in the cafe area.
-    when: Fri Oct 16, 6:30-8:30pm
-    where: Morgenstern
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/friday-nights-at-morgenstern-post-modern-jazz-quartet/59945/
-  - section: Local Events
-    title: Food Truck Friday at Switchyard Park
-    body: >-
-      Local food trucks gather every Friday through Oct. 30. Family friendly.
-    when: Fri Oct 16, 11am-9pm
-    where: Switchyard Park
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/bloomington-food-truck-friday/58058/
-  - section: Local Events
-    title: Moving On, a new play by Konnor Graber
-    body: >-
-      A couples' therapist dealing with grief of her own tries to help a struggling pair. Runs through Oct. 25.
-    when: Oct 16-25
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/moving-on-by-konnor-graber/59242/
-  - section: Local Events
-    title: Bloomington Community Farmers' Market
-    body: >-
-      Weekly Saturday market next to City Hall, rain or shine, through Oct. 31.
-    when: Sat Oct 17
-    where: Showers Common, 401 N. Morton St.
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/bloomington-community-farmers-market/57685/
-  - section: Local Events
-    title: Vaccine science and policy forum
-    body: >-
-      Concerned Scientists at IU and Advocates for Science at IU host a public forum with Katharine Head of IU Indianapolis, Lisa Robertson of the Indiana Immunization Coalition and retired pediatrician James Laughlin. It will also be livestreamed on the Advocates for Science at IU YouTube channel.
-    when: Tue Oct 20, 5-6:30pm
-    where: Monroe County Public Library auditorium
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/13/iu-scientists-group-schedules-public-forum-on-vaccine-policy/
   - section: Local Events
     title: Dennis James hosts Halloween
     body: >-
-      Organist Dennis James returns with his annual Halloween show.
+      Organist Dennis James returns with his annual Halloween show, pairing vintage film with the Auditorium's pipe organ.
     when: Wed Oct 21, 7:30pm
     where: IU Auditorium
     source: IU Auditorium
+    url: https://www.iuauditorium.com/events/detail/dennisjames-2026
+    image: img/dennis-james.jpg
+    image_credit: Visit Bloomington
   - section: Local Events
     title: Yonder Mountain String Band
     body: >-
-      Bluegrass jam band on tour. Doors at 6:30pm.
+      Grammy-nominated bluegrass band. Doors at 6:30pm.
     when: Wed Oct 21, 7pm
     where: Buskirk-Chumley Theater
     source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/yonder-mountain-string-band-october-21-2026
+    image: img/yonder-mountain.jpg
+    image_credit: Visit Bloomington
+  - section: Local Events
+    title: Oktoberfest at the brewery
+    body: >-
+      German-themed games and a special Oktoberfest menu from the Pappy Shack food truck.
+    when: Thu Oct 22
+    where: BBC Brewery
+    source: Visit Bloomington
+    image: img/oktoberfest-bbc.jpg
+    image_credit: Visit Bloomington
+  - section: Local Events
+    title: Safiya Noble gives the David Kaser lecture on AI and search bias
+    body: >-
+      Dr. Noble speaks on how AI and search algorithms can reinforce oppression, as part of the David Kaser Endowed Lecture Series.
+    when: Fri Oct 23
+    source: Visit Bloomington
+    image: img/safiya-noble.jpg
+    image_credit: Visit Bloomington
+  - section: Local Events
+    title: The Robert Cray Band
+    body: >-
+      Blues guitarist Robert Cray and his band. Doors at 6:30pm.
+    when: Fri Oct 23, 7:30pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/the-robert-cray-band-october-23-2026
+  - section: Local Events
+    title: Zach Williams' Revival Nights Tour
+    body: >-
+      Presented by Awakening Events.
+    when: Fri Oct 23, 7pm
+    where: IU Auditorium
+    source: IU Auditorium
+    url: https://www.iuauditorium.com/events/detail/zachwilliams-2026
+  - section: Local Events
+    title: Rocky Horror Picture Show, two shows
+    body: >-
+      Early show doors at 6pm, late show doors at 9:30pm with the show at 10:30pm.
+    when: Sat Oct 24, 7pm and 10:30pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/rocky-horror-picture-show-2026-october-24-2026
   - section: Local Events
     title: Harmony School fall festival and haunted attraction
     body: >-
-      Hallowganza runs 3-7pm with carnival games, pumpkin painting and treats; $5 includes six activity tickets, extra tickets $1. Dr. Diablo's Carnival of Terrors haunted attraction runs 7-11pm Oct. 24 and 25 for a separate $5. Festival proceeds support the school's scholarship fund.
+      Hallowganza runs 3-7pm with carnival games, pumpkin painting and treats; $5 includes six activity tickets. Dr. Diablo's Carnival of Terrors haunted attraction runs 7-11pm Oct. 24 and 25 for a separate $5. Proceeds support the school's scholarship fund.
     when: Sat Oct 24, 3-11pm
     where: Harmony School, 909 E. Second St.
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/10/13/harmony-school-announces-oct-24-fall-festival-and-evening-haunted-attraction/
-  - section: Local News
-    title: Council bans license plate readers and data-sharing cameras 7-0
+  - section: Local Events
+    title: Hopewell update meeting set for Oct. 27
     body: >-
-      Ordinance 2026-22 bars the city from using automated license plate readers and from using surveillance camera systems whose data is shared, or could be shared, with outside parties such as vendors and other agencies. City-held closed-circuit systems, such as those in parks, are not covered. The city let its Flock Safety plate-reader contract expire March 5, but Flock contracts remain for four downtown cameras and four mobile security systems.
+      The city hosts a public update on the Hopewell development.
+    when: Tue Oct 27
+    source: City of Bloomington
+    url: https://bloomington.in.gov/news/2026/10/09/6671
+  - section: Local News
+    title: Northbound I-69 in Greene County closed again for hole repair
+    body: >-
+      Northbound I-69 is closed near mile marker 94.5 while crews make permanent repairs to a hole in a single-lane construction zone. Traffic is detoured from the Bloomfield exit to U.S. 231, State Road 58 and State Road 45, then back to I-69.
 
 
-      The clerk will send the ordinance to Mayor Kerry Thomson. According to sponsor Isabel Piedmont-Smith's release, the 7-0 vote is enough to override a veto.
+      State police said the road reopened Sunday after a temporary patch, but scanner traffic suggested the patch was failing. The closure has changed several times, so check current traffic information before leaving.
     source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/15/bloomington-council-votes-to-ban-alprs-and-some-surveillance-cameras/
+    url: https://bloomingtonian.com/2026/10/18/temporary-patch-on-hole-in-northbound-i-69-in-greene-county-may-be-failing-scanner-dispatches-indicate/
   - section: Local News
-    title: Planners favor two-way College and Walnut, a $109 million idea
+    title: Second Street goes one-way westbound Wednesday
     body: >-
-      Planning staff recommend adding a two-way restoration of College Avenue and Walnut Street to the city's Transportation Plan. It covers about 4.2 miles from the State Road 45/46 Bypass to Allen Street and would cost about $109.4 million; a reconfigured one-way option is about $103.1 million. Neither is funded, and the recommendation is not approval to build.
+      Starting Oct. 21, eastbound Second Street is closed and the street is open to westbound traffic only, with eastbound drivers detoured to First Street. Crews are replacing asphalt, adding stormwater infrastructure and paving the south side. Two-way traffic is scheduled to return before Thanksgiving, weather permitting.
+    source: City of Bloomington
+    url: https://bloomington.in.gov/news/2026/10/14/6677
+  - section: Local News
+    title: City proposes $6.87 million bond for aerial fire truck and street safety
+    body: >-
+      The package includes $2.5 million to replace the city's only aerial platform truck, which has been out of service for more than four months, and $4.23 million for transportation: $1.7 million for 10th Street between College and Park, $1.5 million for 3rd Street safety, and smaller amounts for sidewalks, crosswalks and lighting.
 
 
-      The Transportation Commission takes it up Nov. 16 at 5:30pm, with public comment, followed by later hearings before the Plan Commission and City Council.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/13/bloomington-planners-recommend-two-way-restoration-of-college-walnut/
-  - section: Local News
-    title: School-board candidate forum set for Oct. 26 in Ellettsville
-    body: >-
-      The League of Women Voters hosts four Richland-Bean Blossom board candidates: Christa Curtis, Jeremiah O'Neal, Dennis Adams and Kelly D. Scholl. Questions can be emailed in advance.
-    when: Mon Oct 26, 6-7:30pm
-    where: Edgewood High School library, 601 S. Edgewood Dr.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/13/bloomington-and-monroe-county-candidates-set-school-board-forum-in-ellettsville/
-  - section: Local News
-    title: Ryan Pedigo named Bloomington police deputy chief
-    body: >-
-      The Bloomingtonian reports Pedigo has been named a deputy chief of the Bloomington Police Department.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/13/ryan-pedigo-name-bloomington-police-department-deputy-chief/
-  - section: Local News
-    title: Early voting continues at North Showers through Oct. 30
-    body: >-
-      Monroe County's only early voting site is the North Showers Building, 501 N. Morton St., open 8am-6pm weekdays through Oct. 30 for the Nov. 3 election.
+      Repayment would take a little over six years and cost about $33.70 a year per $100,000 of taxable assessed value, before credits. The council introduced it Oct. 14 and holds a public hearing and possible final vote Nov. 4.
     source: The B Square Bulletin
+    url: https://bsquarebulletin.com/bloomington-proposes-6-87m-bond-issue-for-fire-truck-street-safety-plans-for-regular-borrowing/
   - section: Local News
-    title: Four-way stop at Kirkwood and Rogers through Oct. 24
+    title: Council approves 2027 city budget 6-1
     body: >-
-      Crews are replacing an aging traffic signal and upgrading curb ramps. Expect delays; the new signal is due to be working by Oct. 24.
-    source: City of Bloomington
+      The Bloomington City Council passed the 2027 budget Thursday, with the council president casting the lone no vote.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/bloomington-council-approves-2027-budget-6-1-with-president-as-lone-dissenter/
   - section: Local News
-    title: Parks plan comments due Oct. 18; $150,000 in violence reduction grants open
+    title: Downtown rally backs early voting; county site reopens today
     body: >-
-      Residents can comment on the Parks and Recreation Investment Priorities Plan through Oct. 18. Separately, the city is accepting applications for $150,000 in violence reduction grants.
+      Demonstrators gathered on the courthouse lawn Saturday for the nationwide "No Kings: Vote Early" rally, with speakers urging turnout for the Nov. 3 election. The county's downtown voting location at the Government Center reopens today, with extra Saturday hours Oct. 24 and Oct. 31.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/demonstrators-gather-in-downtown-bloomington-for-no-kings-vote-early-rally/
+    image: img/no-kings-rally.jpg
+    image_credit: The B Square Bulletin
+  - section: Local News
+    title: Plan Commission hearing on housing rules Oct. 28
+    body: >-
+      The city is seeking public input on housing and development rules at a special Plan Commission hearing. Fall leaf collection also begins today.
+    when: Wed Oct 28
     source: City of Bloomington
+    url: https://bloomington.in.gov/news/2026/10/06/6667
   - section: US News
-    title: September inflation jumps, lifting Social Security benefits
+    title: Why some midterm races will take a while to call
     body: >-
-      NPR reports inflation "sizzled" in September, which sets a bigger cost-of-living boost for Social Security recipients. Projections before the release had put the 2027 increase between about 3.2% and 3.6%, against 2.8% this year.
+      NPR explains why results in some Nov. 3 races may not be known for days, as early voting and mail ballots shape the count.
     source: NPR
   - section: US News
-    title: Ukraine warns of US intel cutoff as it resumes refinery strikes
+    title: No Kings protests focus on early voting
     body: >-
-      Zelenskyy told NPR the Trump administration has warned Ukraine it could cut off intelligence sharing. NPR also reports Ukraine has resumed attacks on Russian oil refineries after a brief truce.
+      Crowds turned out Saturday at No Kings events across the country, with organizers steering the message toward early voting ahead of the midterms.
     source: NPR
   - section: US News
-    title: Pope Leo's cancer prognosis is "very good," outside experts say
+    title: Democrats turn to influencers after losing ground with Latino voters
     body: >-
-      NPR reports independent medical experts rate the pope's outlook as very good, days after word that he would undergo lung surgery.
+      NPR reports on the party's push to reach Latino voters through online creators, and on a Republican ad that exposed GOP worry about the same group.
     source: NPR
   - section: US News
-    title: Court rules for CNN, MS NOW and Politico against White House, for now
+    title: Noah Adams, longtime All Things Considered host, dies
     body: >-
-      NPR reports the three outlets prevailed in their dispute with the White House, though the ruling may not be final.
-    source: NPR
-  - section: US News
-    title: Civil rights groups plan thousands of midterm poll observers
-    body: >-
-      Advocates plan to send thousands of observers to polling places for the Nov. 3 election, NPR reports.
+      NPR reports the veteran broadcaster has died.
     source: NPR
   - section: World News
-    title: Pakistan school roof collapse kills at least 29
+    title: Cost-of-living protests turn violent across France
     body: >-
-      NPR reports the collapse also injured more than three dozen people.
-    source: NPR
-  - section: World News
-    title: Intel plant blast in Israel kills a second worker
-    body: >-
-      A 49-year-old died of burns from a gas cylinder explosion at Intel's Kiryat Gat plant. A third worker remains in serious condition.
+      Police reported nearly 2,400 arrests after nationwide demonstrations saw looting and damage. Marseille banned gatherings from noon to 8pm today after weekend unrest, and President Macron called the riots unbridled.
     source: Times of Israel
   - section: World News
-    title: Saudi Arabia intercepts missile near Medina
+    title: Four service members killed in fire at Alberta military base
     body: >-
-      The Saudi-led coalition said it shot down a cruise missile in the Medina region, despite Houthi pledges not to target the city.
+      Prime Minister Mark Carney said dozens more were injured.
     source: Times of Israel
   - section: World News
-    title: IMF sees Saudi economy shrinking 3.3% this year
+    title: Pope Leo resumes work after lung cancer surgery
     body: >-
-      The fund says Gulf economies will not return to pre-war growth in the medium term, and projects a rare recession for Saudi Arabia in 2026.
+      Doctors removed the lower lobe of the pope's right lung on Oct. 13. The Vatican says his recovery is on track and he has started light work, but the pathology report is pending and will determine whether more treatment is needed.
+    source: Reuters
+  - section: World News
+    title: Saudi strike kills nine as Houthi fighting continues
+    body: >-
+      US embassies in the region told citizens to stay alert amid the risk of escalation.
     source: Times of Israel
   - section: World News
-    title: Iran, Turkey and others walk out on Herzog speech in Azerbaijan
+    title: Israel raises military alert a week before Oct. 27 election
     body: >-
-      Representatives from Iran, Turkey, Pakistan, the Palestinian Authority and Kuwait left the hall as Israel's president spoke at the CICA summit. Qatar's emir stayed.
+      The IDF chief of staff ordered a higher alert level and froze soldiers' leave starting Thursday.
+    source: Times of Israel
+  - section: World News
+    title: UN food agency to end monthly aid for 500,000 Gazans
+    body: >-
+      The World Food Programme cites a funding shortfall.
     source: Times of Israel
   - section: AI News
-    title: Colossal unveils GenoMorph AI to speed dodo revival work
+    title: Anthropic commits 5% of its shares to a public-benefit fund
     body: >-
-      The platform combines 3D skull morphology, comparative genomics and developmental biology to find editable genes in species with little genetic data. The dodo has one known genome, versus about 100 for the woolly mammoth. GenoMorph has flagged about 2,300 candidate DNA edits tied to dodo skull and face structure, which Colossal plans to test in the lab.
-
-
-      CEO Ben Lamm says the tool does not edit genes itself. Colossal also reports its Nicobar pigeon colony, the dodo's closest living relative, now has 36 birds.
-    source: TechCrunch
-    url: https://techcrunch.com/2026/10/14/colossal-biosciences-announces-new-ai-platform-to-help-accelerate-de-extinction-efforts/
-    image: img/colossal-genomorph.jpg
-    image_credit: TechCrunch
+      The stake, subject to stockholder approval, goes to a new wholly owned entity, the Anthropic Public Benefit Fund. The board can add 2% more for every 50% rise in company value above a set baseline. The money cannot be used for lobbying or political giving.
+    source: Anthropic
+    url: https://www.anthropic.com/news/public-benefit-fund
   - section: AI News
-    title: SpaceXSI bundles X Premium, Grok and Cursor in one subscription
+    title: OpenAI confirms it is building a humanoid robot
     body: >-
-      "The X Subscription" has five tiers: free, Plus at $8 a month, Premium at $30, Super at $100 and Ultra at $200. Premium or higher is needed for the latest Grok models. Existing X Premium+ subscribers get a comparable plan for the same price or less, with upgrades rolling out gradually.
-    source: TechCrunch
-    url: https://techcrunch.com/2026/10/13/spacexsi-bundles-x-premium-grok-and-cursor-into-one-subscription/
+      Sam Altman told Fortune "we will definitely do a humanoid," with a demo expected in 2027. OpenAI lists 27 robotics roles. Street-ready robots are still a few years further out.
+    source: Engadget
+    url: https://www.engadget.com/2285040/openai-humanoid-robot-sam-altman-statement-real-challenge/
+  - section: AI News
+    title: Meta blames a Claude-linked tool for Instagram suspension
+    body: >-
+      Meta's Andy Stone said a tool linked to Claude accessed No Kings Coalition profiles at about four times human speed, tripping bot detection. The account was suspended for about 90 minutes. He did not say which tool or who operated it.
+    source: The Next Web
+    url: https://thenextweb.com/news/meta-claude-no-kings-instagram-suspension
+  - section: AI News
+    title: DeepSeek posts V4.1 Flash with 1M-token context
+    body: >-
+      The open model, released Oct. 17 on Hugging Face under an MIT license, is a sparse mixture-of-experts agent model with 552 billion total parameters.
+    source: AI Agents Directory
+  - section: AI News
+    title: US cybersecurity job postings hit four-year low as AI security roles surge
+    body: >-
+      CyberSN counts 235,786 postings in the first nine months of 2026, down 26.4%. Demand for AI Security Engineers rose 268.3% year over year, and nearly 15% of postings now cite AI skills.
+    source: SecurityWeek
+    url: https://www.securityweek.com/us-cybersecurity-job-postings-fall-26-as-ai-security-engineer-demand-soars/
   - section: On This Day
-    title: 1954 - Hurricane Hazel hits the Carolinas, then Toronto
+    title: "1987 - Black Monday: Dow falls 22.6% in one day"
     body: >-
-      The storm came ashore in the Carolinas and moved north to Toronto, killing 176 people across both countries.
+      The Dow Jones Industrial Average suffered its largest one-day percentage drop on record.
     source: Wikipedia
