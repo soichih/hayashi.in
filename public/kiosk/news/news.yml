@@ -1,11 +1,5 @@
-generated: "2026-10-19T06:33:46-04:00"
+generated: "2026-10-19T18:31:37-04:00"
 stories:
-  - section: Weather Alert
-    title: Frost Advisory for Monroe County until 9am
-    body: >-
-      The National Weather Service in Indianapolis has a Frost Advisory in effect across 39 central and southern Indiana counties, including Monroe, until 9am today. Take steps now to protect tender plants from the cold.
-    source: National Weather Service
-    url: https://api.weather.gov/alerts/active?point=39.1653,-86.5264
   - section: Local Events
     title: Hoosier Hills Food Bank Book Fair ends tomorrow
     body: >-
@@ -20,6 +14,8 @@ stories:
     when: Tue Oct 20, 9pm
     where: The Bluebird
     source: Visit Bloomington
+    image: img/bluebird.jpg
+    image_credit: Visit Bloomington
   - section: Local Events
     title: Dennis James hosts Halloween
     body: >-
@@ -41,13 +37,12 @@ stories:
     image: img/yonder-mountain.jpg
     image_credit: Visit Bloomington
   - section: Local Events
-    title: Oktoberfest at the brewery
+    title: Abelardo Morell artist talk and gallery viewing
     body: >-
-      German-themed games and a special Oktoberfest menu from the Pappy Shack food truck.
-    when: Thu Oct 22
-    where: BBC Brewery
+      Photographer Abelardo Morell gives a talk and Q&A in Martin Commons, second floor, from 5:30 to 6:30pm, followed by a gallery viewing until 7pm.
+    when: Thu Oct 22, 5:30pm
     source: Visit Bloomington
-    image: img/oktoberfest-bbc.jpg
+    image: img/abelardo-morell.jpg
     image_credit: Visit Bloomington
   - section: Local Events
     title: Safiya Noble gives the David Kaser lecture on AI and search bias
@@ -55,8 +50,6 @@ stories:
       Dr. Noble speaks on how AI and search algorithms can reinforce oppression, as part of the David Kaser Endowed Lecture Series.
     when: Fri Oct 23
     source: Visit Bloomington
-    image: img/safiya-noble.jpg
-    image_credit: Visit Bloomington
   - section: Local Events
     title: The Robert Cray Band
     body: >-
@@ -65,14 +58,6 @@ stories:
     where: Buskirk-Chumley Theater
     source: Buskirk-Chumley Theater
     url: https://buskirkchumley.org/events/the-robert-cray-band-october-23-2026
-  - section: Local Events
-    title: Zach Williams' Revival Nights Tour
-    body: >-
-      Presented by Awakening Events.
-    when: Fri Oct 23, 7pm
-    where: IU Auditorium
-    source: IU Auditorium
-    url: https://www.iuauditorium.com/events/detail/zachwilliams-2026
   - section: Local Events
     title: Rocky Horror Picture Show, two shows
     body: >-
@@ -96,6 +81,12 @@ stories:
     when: Tue Oct 27
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/09/6671
+  - section: Local News
+    title: County inspector to examine North Bryan Street deck collapse Wednesday
+    body: >-
+      Firefighters were called to 135 N. Bryan St. at 10:29pm Friday after a deck collapsed. Crews helped with patient care, but the department did not say how many people were hurt. The cause is not yet known, and the county has not said whether its inspection will determine it. A Monroe County building inspector is scheduled to visit the site Wednesday.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/19/county-inspector-to-examine-site-of-bloomington-deck-collapse/
   - section: Local News
     title: Northbound I-69 in Greene County closed again for hole repair
     body: >-
@@ -121,23 +112,15 @@ stories:
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/bloomington-proposes-6-87m-bond-issue-for-fire-truck-street-safety-plans-for-regular-borrowing/
   - section: Local News
-    title: Council approves 2027 city budget 6-1
+    title: County early-voting site open downtown; extra Saturday hours Oct. 24 and 31
     body: >-
-      The Bloomington City Council passed the 2027 budget Thursday, with the council president casting the lone no vote.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/bloomington-council-approves-2027-budget-6-1-with-president-as-lone-dissenter/
-  - section: Local News
-    title: Downtown rally backs early voting; county site reopens today
-    body: >-
-      Demonstrators gathered on the courthouse lawn Saturday for the nationwide "No Kings: Vote Early" rally, with speakers urging turnout for the Nov. 3 election. The county's downtown voting location at the Government Center reopens today, with extra Saturday hours Oct. 24 and Oct. 31.
+      The county's downtown voting location at the Government Center is open ahead of the Nov. 3 election, with extra Saturday hours Oct. 24 and Oct. 31.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/demonstrators-gather-in-downtown-bloomington-for-no-kings-vote-early-rally/
-    image: img/no-kings-rally.jpg
-    image_credit: The B Square Bulletin
   - section: Local News
     title: Plan Commission hearing on housing rules Oct. 28
     body: >-
-      The city is seeking public input on housing and development rules at a special Plan Commission hearing. Fall leaf collection also begins today.
+      The city is seeking public input on housing and development rules at a special Plan Commission hearing. Fall leaf collection also began today.
     when: Wed Oct 28
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/06/6667
@@ -147,49 +130,44 @@ stories:
       NPR explains why results in some Nov. 3 races may not be known for days, as early voting and mail ballots shape the count.
     source: NPR
   - section: US News
-    title: No Kings protests focus on early voting
+    title: Kelvin wave has raised West Coast sea levels, with more coming
     body: >-
-      Crowds turned out Saturday at No Kings events across the country, with organizers steering the message toward early voting ahead of the midterms.
+      NPR reports that a Kelvin wave, an ocean wave that travels along the coast, has lifted sea levels on the West Coast, and more are expected.
     source: NPR
   - section: US News
-    title: Democrats turn to influencers after losing ground with Latino voters
+    title: White House says press secretary Katie Zacharia is transitioning out
     body: >-
-      NPR reports on the party's push to reach Latino voters through online creators, and on a Republican ad that exposed GOP worry about the same group.
+      The White House announced that Zacharia is leaving the role.
     source: NPR
   - section: US News
-    title: Noah Adams, longtime All Things Considered host, dies
+    title: Trump to close and renovate D.C. golf course despite legal battle
     body: >-
-      NPR reports the veteran broadcaster has died.
+      NPR reports the administration plans to close the course for renovation while litigation continues.
     source: NPR
   - section: World News
-    title: Cost-of-living protests turn violent across France
+    title: France imposes local curfews after price protests turn violent
     body: >-
-      Police reported nearly 2,400 arrests after nationwide demonstrations saw looting and damage. Marseille banned gatherings from noon to 8pm today after weekend unrest, and President Macron called the riots unbridled.
+      Authorities set curfews in parts of Paris, Lille and Nice after weekend cost-of-living protests brought some of the worst street violence in recent years. Prime Minister Sebastien Lecornu ruled out a blanket Paris curfew. Unions have called new strikes and rallies for Nov. 5.
     source: Times of Israel
   - section: World News
-    title: Four service members killed in fire at Alberta military base
+    title: Pope Leo leaves hospital days after lung cancer surgery
     body: >-
-      Prime Minister Mark Carney said dozens more were injured.
+      Doctors removed the lower lobe of the pope's right lung on Oct. 13. The Vatican says recovery is on track, but the pathology report is pending and will determine whether more treatment is needed.
+    source: NPR
+  - section: World News
+    title: Saudi investment conference postponed to 2027 amid Houthi attacks
+    body: >-
+      The Future Investment Initiative, set for Oct. 26-29, will not be held this year. CEO Maha Al Saud said the organizers want a full-scale edition as the kingdom faces repeated attacks from Yemen's Houthis. Existing registrations remain valid.
     source: Times of Israel
   - section: World News
-    title: Pope Leo resumes work after lung cancer surgery
+    title: Germany summons Iran's envoy after court finds Iranian plot
     body: >-
-      Doctors removed the lower lobe of the pope's right lung on Oct. 13. The Vatican says his recovery is on track and he has started light work, but the pathology report is pending and will determine whether more treatment is needed.
-    source: Reuters
-  - section: World News
-    title: Saudi strike kills nine as Houthi fighting continues
-    body: >-
-      US embassies in the region told citizens to stay alert amid the risk of escalation.
+      A German court sentenced two men for plotting to kill the leader of a Jewish organization and said one was directed by Iranian intelligence. Iran summoned Germany's ambassador in return, calling the accusations baseless.
     source: Times of Israel
   - section: World News
     title: Israel raises military alert a week before Oct. 27 election
     body: >-
       The IDF chief of staff ordered a higher alert level and froze soldiers' leave starting Thursday.
-    source: Times of Israel
-  - section: World News
-    title: UN food agency to end monthly aid for 500,000 Gazans
-    body: >-
-      The World Food Programme cites a funding shortfall.
     source: Times of Israel
   - section: AI News
     title: Anthropic commits 5% of its shares to a public-benefit fund
@@ -204,12 +182,6 @@ stories:
     source: Engadget
     url: https://www.engadget.com/2285040/openai-humanoid-robot-sam-altman-statement-real-challenge/
   - section: AI News
-    title: Meta blames a Claude-linked tool for Instagram suspension
-    body: >-
-      Meta's Andy Stone said a tool linked to Claude accessed No Kings Coalition profiles at about four times human speed, tripping bot detection. The account was suspended for about 90 minutes. He did not say which tool or who operated it.
-    source: The Next Web
-    url: https://thenextweb.com/news/meta-claude-no-kings-instagram-suspension
-  - section: AI News
     title: DeepSeek posts V4.1 Flash with 1M-token context
     body: >-
       The open model, released Oct. 17 on Hugging Face under an MIT license, is a sparse mixture-of-experts agent model with 552 billion total parameters.
@@ -221,7 +193,7 @@ stories:
     source: SecurityWeek
     url: https://www.securityweek.com/us-cybersecurity-job-postings-fall-26-as-ai-security-engineer-demand-soars/
   - section: On This Day
-    title: "1987 - Black Monday: Dow falls 22.6% in one day"
+    title: "2005 - Hurricane Wilma becomes the most intense Atlantic hurricane on record"
     body: >-
-      The Dow Jones Industrial Average suffered its largest one-day percentage drop on record.
+      Wilma reached the lowest minimum pressure ever measured in an Atlantic hurricane.
     source: Wikipedia
