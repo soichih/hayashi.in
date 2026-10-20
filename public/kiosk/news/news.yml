@@ -1,15 +1,7 @@
-generated: "2026-10-20T06:33:04-04:00"
+generated: "2026-10-20T18:33:59-04:00"
 stories:
   - section: Local Events
-    title: Hoosier Hills Food Bank Book Fair ends today
-    body: >-
-      More than 100,000 books and other items, benefiting the food bank. Last day is Tuesday.
-    when: Through Tue Oct 20
-    where: Monroe County Fair Grounds
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/hoosier-hills-food-bank-book-fair/59239/
-  - section: Local Events
-    title: Julian Fijma live
+    title: Julian Fijma live at The Bluebird
     body: >-
       Live music for ages 21 and up. Doors at 8pm.
     when: Tue Oct 20, 9pm
@@ -18,18 +10,9 @@ stories:
     image: img/bluebird.jpg
     image_credit: Visit Bloomington
   - section: Local Events
-    title: Lean on Pete screening with Q&A on horses and healing
-    body: >-
-      The film about a teenager who cares for an aging racehorse is followed by a Q&A on horses, healing and community.
-    when: Tue Oct 20
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/lean-on-pete-w-q%26a-%7c-making-strides%3a-horses-healing-and-community/59857/
-    image: img/lean-on-pete.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
     title: Dennis James hosts Halloween
     body: >-
-      Organist Dennis James returns with his annual Halloween show, pairing vintage film with the Auditorium's pipe organ.
+      Organist Dennis James returns with his annual Halloween show on the Auditorium's pipe organ.
     when: Wed Oct 21, 7:30pm
     where: IU Auditorium
     source: IU Auditorium
@@ -126,36 +109,41 @@ stories:
     where: Switchyard Park Pavilion, 1601 S. Rogers St.
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/19/6679
-  - section: Local News
-    title: County inspector to examine North Bryan Street deck collapse Wednesday
+  - section: Local Events
+    title: Samuel Levi Jones exhibit opened this week
     body: >-
-      Firefighters were called to 135 N. Bryan St. at 10:29pm Friday after a deck collapsed. Crews helped with patient care, but the department did not say how many people were hurt. The cause is not yet known, and the county has not said whether its inspection will determine it. A Monroe County building inspector is scheduled to visit the site Wednesday.
+      Abstract assemblages made from found printed matter such as encyclopedias and law books. On view through Feb. 14.
+    when: Through Sun Feb 14
+    source: Visit Bloomington
+    image: img/samuel-levi-jones.jpg
+    image_credit: Visit Bloomington
+  - section: Local News
+    title: "Bryan Street deck collapse: at least five hospitalized, city wants a railing"
+    body: >-
+      A deck pulled away from a rental home on North Bryan Street at about 10:29pm Friday, and at least five people were taken to IU Health Bloomington. The fire department has not released their conditions. A city housing compliance officer ordered a porch railing where the deck separated; property management said it was being installed Monday, and the officer planned to return Tuesday to check.
+
+
+      The city does not investigate the cause and has no deck-specific code enforcement, but says the collapse may prompt a review of added safety standards. A county building inspector is scheduled to visit Wednesday.
     source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/19/county-inspector-to-examine-site-of-bloomington-deck-collapse/
+    url: https://bloomingtonian.com/2026/10/20/city-calls-for-porch-railing-after-bryan-street-deck-collapse-at-least-five-transported-to-hospital/
+  - section: Local News
+    title: Monroe County cited over chemical safety at Justice Building
+    body: >-
+      Indiana's workplace safety agency issued a serious citation Oct. 15 because the county had no written hazard-communication program for employees handling hazardous chemicals, including a corrosive drain cleaner. The proposed $3,000 penalty is deferred for public entities while the agency awaits proof of correction. The county has until Nov. 12 to fix the problem and document it. The county's response was not included in the records obtained.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/20/monroe-county-cited-for-serious-chemical-safety-violation-at-justice-building/
+  - section: Local News
+    title: Bird flu found in wild ducks in Greene County
+    body: >-
+      Indiana DNR says highly pathogenic avian influenza was confirmed in wild blue-winged teal in Greene County, and has killed geese in Hamilton County. The CDC rates the public risk as low. Report sick or dead waterfowl at on.IN.gov/sickwildlife, avoid touching them, and use gloves and a mask if you must. Hunters should cook waterfowl to 165 degrees and process birds away from pets and poultry.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/20/bird-flu-detected-in-wild-ducks-in-greene-county-geese-in-hamilton-county/
   - section: Local News
     title: Second Street goes one-way westbound Wednesday
     body: >-
       Starting Oct. 21, eastbound Second Street is closed and the street is open to westbound traffic only, with eastbound drivers detoured to First Street. Crews are replacing asphalt, adding stormwater infrastructure and paving the south side. Two-way traffic is scheduled to return before Thanksgiving, weather permitting.
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/14/6677
-  - section: Local News
-    title: Northbound I-69 in Greene County closed for hole repair
-    body: >-
-      Northbound I-69 was closed near mile marker 94.5 for permanent repairs to a hole in a single-lane construction zone, with a detour from the Bloomfield exit via U.S. 231, State Road 58 and State Road 45. The closure has changed several times, so check current traffic information before leaving.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/18/temporary-patch-on-hole-in-northbound-i-69-in-greene-county-may-be-failing-scanner-dispatches-indicate/
-  - section: Local News
-    title: DoorDash driver carjacked at south Bloomington Taco Bell
-    body: >-
-      A delivery driver was carjacked at the restaurant Sunday, according to The Bloomingtonian.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/19/doordash-driver-carjacked-at-south-bloomington-taco-bell-sunday/
-  - section: Local News
-    title: Police name new deputy chief; city seeks artist for gateway artwork
-    body: >-
-      Ryan Pedigo has been named Bloomington Police Department Deputy Chief. Separately, the city is seeking artists for a signature public artwork at a gateway location.
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/10/13/6672
   - section: Local News
     title: City proposes $6.87 million bond for aerial fire truck and street safety
     body: >-
@@ -166,7 +154,7 @@ stories:
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/bloomington-proposes-6-87m-bond-issue-for-fire-truck-street-safety-plans-for-regular-borrowing/
   - section: Local News
-    title: County early-voting site open downtown; extra Saturday hours Oct. 24 and 31
+    title: Early voting open downtown; extra Saturday hours Oct. 24 and 31
     body: >-
       The county's downtown voting location at the Government Center is open ahead of the Nov. 3 election, with extra Saturday hours Oct. 24 and Oct. 31.
     source: The B Square Bulletin
@@ -179,84 +167,98 @@ stories:
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/06/6667
   - section: US News
-    title: Judge chastises administration plan to push ahead on D.C. golf course overhaul
-    body: >-
-      NPR reports a judge criticized the administration's plan to move forward with renovating the course while the legal fight continues.
-    source: NPR
-  - section: US News
     title: DOJ charges 28 people in California with voting crimes
     body: >-
-      NPR reports the charges come as tensions over the Nov. 3 election escalate.
+      The charges come as tensions over the Nov. 3 election escalate.
     source: NPR
+    url: https://www.npr.org/nx-s1-6007908
   - section: US News
     title: Democrats and Elon Musk lead midterm campaign fundraising
     body: >-
-      NPR reports Democrats, along with Musk, continue to dominate fundraising in the midterm campaigns.
+      Democrats, along with Musk, continue to dominate fundraising in the midterm campaigns.
     source: NPR
-  - section: US News
-    title: Why some midterm races will take a while to call
-    body: >-
-      NPR explains why results in some Nov. 3 races may not be known for days, as early voting and mail ballots shape the count.
-    source: NPR
+    url: https://www.npr.org/nx-s1-6004922
   - section: US News
     title: TikTok staff raised child safety alarms, court records show
     body: >-
-      NPR reports court records show executives failed to act on warnings from employees about child safety.
+      Court records show executives failed to act on warnings from employees about child safety.
     source: NPR
+    url: https://www.npr.org/nx-s1-6005809
+  - section: US News
+    title: Judge chastises plan to push ahead on D.C. golf course overhaul
+    body: >-
+      A judge criticized the administration's plan to move forward with renovating the course while the legal fight continues.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6007746
   - section: US News
     title: Kelvin wave has raised West Coast sea levels, with more coming
     body: >-
-      NPR reports that a Kelvin wave, an ocean wave that travels along the coast, has lifted sea levels on the West Coast, and more are expected.
+      The ocean wave, which travels along the coast, has lifted sea levels on the West Coast, and more are expected.
     source: NPR
+    url: https://www.npr.org/nx-s1-6001744
   - section: World News
-    title: Alberta voters reject move toward independence
+    title: About 76% of Alberta voters back staying in Canada
     body: >-
-      NPR reports voters in the referendum backed Canadian unity.
-    source: NPR
-  - section: World News
-    title: Trump endorses Netanyahu for reelection ahead of Oct. 27 vote
-    body: >-
-      NPR reports the endorsement of the embattled Israeli prime minister. Israel's military raised its alert level a week before the election.
-    source: NPR
-  - section: World News
-    title: Australian prime minister says lawmaker hit by car was no accident
-    body: >-
-      The lawmaker was critically injured by a car, and the prime minister said the incident was not an accident.
-    source: NPR
-  - section: World News
-    title: France imposes local curfews after price protests turn violent
-    body: >-
-      Authorities set curfews in parts of Paris, Lille and Nice after weekend cost-of-living protests brought some of the worst street violence in recent years. Unions have called new strikes and rallies for Nov. 5.
+      With more than 1.4 million votes counted, roughly three in four voters in the referendum backed remaining in Canada. The vote was not a direct independence question.
     source: Times of Israel
   - section: World News
-    title: Pope Leo leaves hospital days after lung cancer surgery
+    title: France sets local curfews after price protests turn violent
     body: >-
-      Doctors removed the lower lobe of the pope's right lung on Oct. 13. The Vatican says recovery is on track, but the pathology report is pending and will determine whether more treatment is needed.
+      Weekend protests over soaring prices brought some of the worst street violence in France in recent years, including in Paris. Prime Minister Sebastien Lecornu said targeted overnight curfews helped calm the situation and more will be set locally where needed.
+    source: Times of Israel
+  - section: World News
+    title: Israel votes Oct. 27 as Trump endorses Netanyahu
+    body: >-
+      It is Israel's first national election in four years. Trump endorsed Netanyahu; Vice President JD Vance said he would not.
+    source: Times of Israel
+  - section: World News
+    title: Saudi Arabia postpones investment conference to 2027 after Houthi attacks
+    body: >-
+      The Future Investment Initiative, scheduled for Oct. 26-29, was postponed amid repeated Houthi attacks on the kingdom.
+    source: Times of Israel
+  - section: World News
+    title: Australian MP Helen Haines struck by car outside her office
+    body: >-
+      The independent lawmaker was reportedly seriously injured and lost a leg. Police have arrested a suspect but have not established a motive.
+    source: Times of Israel
+  - section: World News
+    title: Nigeria confirms Ebola case in Abuja
+    body: >-
+      A woman arriving from Uganda tested positive, according to NPR.
     source: NPR
+    url: https://www.npr.org/g-s1-148975
+  - section: AI News
+    title: DeepSeek open-sources the inference stack behind its services
+    body: >-
+      DeepInfer, released Oct. 20 under Apache 2.0, targets DeepSeek-V4.1-Flash and runs on Nvidia SM100 GPUs and Huawei Ascend 950 chips.
+    source: AI Weekly
+    url: https://aiweekly.co/alerts/deepseek-open-sources-deepinfer-its-v41-flash-serving-stack
+  - section: AI News
+    title: Otter.ai raises $320 million in non-dilutive capital
+    body: >-
+      The money comes from General Catalyst's Customer Value Fund, a structure tied to marketing performance. Otter says it passed $100 million in annual recurring revenue last year and has 40 million users.
+    source: TechCrunch
+    url: https://aiweekly.co/alerts/otterai-raises-320m-in-non-dilutive-capital-from-general-catalysts-customer
+  - section: AI News
+    title: Stanford's Halcyon image models match rivals with far less compute
+    body: >-
+      The early-fusion models are trained from scratch with no language pretraining. The 0.52B version beats LlamaGen-XL/8 with 18.2 times less pretraining compute, and the 1.6B version beats JiT-T2I-XXL/8++ with 275 times less.
+    source: AI Weekly
+    url: https://aiweekly.co/alerts/stanfords-halcyon-t2i-family-beats-internet-pretrained-peers-at-275x-less
+  - section: AI News
+    title: Developers use Claude Code and DeepSeek to strip ads from smart TVs
+    body: >-
+      Two GitHub projects, cleanyourtv and dumbtv, remove ads, trackers and bloatware from smart TVs. dumbtv has been tested on several TV brands.
+    source: TechCrunch
+    url: https://aiweekly.co/alerts/devs-use-claude-code-deepseek-to-strip-ads-from-smart-tvs
   - section: AI News
     title: Anthropic commits 5% of its shares to a public-benefit fund
     body: >-
       The stake, subject to stockholder approval, goes to a new wholly owned entity, the Anthropic Public Benefit Fund. The money cannot be used for lobbying or political giving.
     source: Anthropic
     url: https://www.anthropic.com/news/public-benefit-fund
-  - section: AI News
-    title: Meta, xAI and Nvidia ship new models in mid-October
-    body: >-
-      xAI released Grok Voice 3.0 on Oct. 14, and Meta released Muse Spark on Oct. 15. Nvidia launched Nemotron 3.5 Super VL the same day. BenchLM counts 20 model releases from 16 providers so far in October.
-    source: BenchLM
-  - section: AI News
-    title: DeepSeek posts V4.1 Flash with 1M-token context
-    body: >-
-      The open model, released Oct. 17 on Hugging Face under an MIT license, is a sparse mixture-of-experts agent model with 552 billion total parameters.
-    source: AI Agents Directory
-  - section: AI News
-    title: OpenAI confirms it is building a humanoid robot
-    body: >-
-      Sam Altman told Fortune "we will definitely do a humanoid," with a demo expected in 2027.
-    source: Engadget
-    url: https://www.engadget.com/2285040/openai-humanoid-robot-sam-altman-statement-real-challenge/
   - section: On This Day
-    title: "1973 - Saturday Night Massacre: Richardson resigns rather than fire Watergate prosecutor"
+    title: "1977 - Lynyrd Skynyrd's chartered plane crashes in Mississippi"
     body: >-
-      Attorney General Elliot Richardson and his deputy resigned rather than fire special prosecutor Archibald Cox during the Watergate scandal.
+      The crash killed three band members, including singer Ronnie Van Zant.
     source: Wikipedia
