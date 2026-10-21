@@ -1,33 +1,5 @@
-generated: "2026-10-21T06:33:50-04:00"
+generated: "2026-10-21T18:32:41-04:00"
 stories:
-  - section: Local Events
-    title: Dennis James hosts Halloween
-    body: >-
-      Organist Dennis James returns with his annual Halloween show on the Auditorium's pipe organ.
-    when: Wed Oct 21, 7:30pm
-    where: IU Auditorium
-    source: IU Auditorium
-    url: https://www.iuauditorium.com/events/detail/dennisjames-2026
-    image: img/dennis-james.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Yonder Mountain String Band
-    body: >-
-      Grammy-nominated bluegrass band. Doors at 6:30pm.
-    when: Wed Oct 21, 7pm
-    where: Buskirk-Chumley Theater
-    source: Buskirk-Chumley Theater
-    url: https://buskirkchumley.org/events/yonder-mountain-string-band-october-21-2026
-    image: img/yonder-mountain.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Last Downtown Shop Night of the season
-    body: >-
-      Downtown shops stay open later with special offerings. The event runs the third Wednesday of the month, and tonight is the final night this year.
-    when: Wed Oct 21
-    where: Downtown Bloomington
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/downtown-shop-night/58704/
   - section: Local Events
     title: Abelardo Morell artist talk and gallery viewing
     body: >-
@@ -44,6 +16,8 @@ stories:
       Blend your own organic tea and make an extra blend to give a friend. $25.
     when: Thu Oct 22, 5:30-6:30pm
     source: Visit Bloomington
+    image: img/tea-blending.jpg
+    image_credit: Visit Bloomington
   - section: Local Events
     title: Oktoberfest at BBC Brewery
     body: >-
@@ -60,8 +34,6 @@ stories:
       Dr. Noble's lecture, "AI and Our Future," covers how AI and search algorithms can reinforce oppression, as part of the David Kaser Endowed Lecture Series.
     when: Fri Oct 23
     source: Visit Bloomington
-    image: img/safiya-noble.jpg
-    image_credit: Visit Bloomington
   - section: Local Events
     title: Downtown Trick or Treat marks its 12th year
     body: >-
@@ -69,8 +41,6 @@ stories:
     when: Fri Oct 23, 5-8pm
     where: Downtown Bloomington
     source: Visit Bloomington
-    image: img/trick-or-treat.jpg
-    image_credit: Visit Bloomington
   - section: Local Events
     title: Festival of Ghost Stories in Bryan Park
     body: >-
@@ -78,8 +48,6 @@ stories:
     when: Fri Oct 23
     where: Bryan Park
     source: Visit Bloomington
-    image: img/ghost-stories.jpg
-    image_credit: Visit Bloomington
   - section: Local Events
     title: The Robert Cray Band
     body: >-
@@ -142,6 +110,14 @@ stories:
     image: img/samuel-levi-jones.jpg
     image_credit: Visit Bloomington
   - section: Local News
+    title: Father of 14-year-old who died in 2025 jailed in Monroe County
+    body: >-
+      Jerry Mayfield Jr., 34, was booked into the Monroe County Jail late Tuesday after his arrest in Osceola, Arkansas, on a warrant tied to his daughter's death on July 2, 2025. The booking lists neglect of a dependent, a Level 3 felony, with a $250,000 bond.
+
+      Police allege the girl was confined, denied food and deprived of medical care. The final autopsy changed the cause of death to complications of malnutrition and dehydration. The allegations have not been proven in court, and Mayfield is presumed innocent.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/21/jerry-mayfield-booked-into-monroe-county-jail-after-arkansas-arrest-in-daughters-death-investigation/
+  - section: Local News
     title: County inspector visits Bryan Street deck collapse site Wednesday
     body: >-
       A deck pulled away from a rental home on North Bryan Street at about 10:29pm Friday, and at least five people were taken to IU Health Bloomington. A city housing compliance officer ordered a porch railing where the deck separated; property management said it was being installed Monday.
@@ -150,9 +126,9 @@ stories:
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/10/20/city-calls-for-porch-railing-after-bryan-street-deck-collapse-at-least-five-transported-to-hospital/
   - section: Local News
-    title: Second Street goes one-way westbound today
+    title: Second Street is one-way westbound starting today
     body: >-
-      Starting Oct. 21, eastbound Second Street is closed and the street is open to westbound traffic only, with eastbound drivers detoured to First Street. Crews are replacing asphalt, adding stormwater infrastructure and paving the south side. Two-way traffic is scheduled to return before Thanksgiving, weather permitting.
+      Eastbound Second Street is closed and the street is open to westbound traffic only, with eastbound drivers detoured to First Street. Crews are replacing asphalt, adding stormwater infrastructure and paving the south side. Two-way traffic is scheduled to return before Thanksgiving, weather permitting.
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/14/6677
   - section: Local News
@@ -163,12 +139,6 @@ stories:
       Inspections have found some private ponds silted or deteriorated so they no longer work as designed. Maintenance falls on owners such as apartment complexes, businesses and homeowners associations. The city is considering requiring cost sharing for future grants.
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/10/20/bloomington-shifts-stormwater-grants-as-inspections-expose-neglected-private-ponds/
-  - section: Local News
-    title: Monroe County cited over chemical safety at Justice Building
-    body: >-
-      Indiana's workplace safety agency issued a serious citation Oct. 15 because the county had no written hazard-communication program for employees handling hazardous chemicals, including a corrosive drain cleaner. The proposed $3,000 penalty is deferred for public entities while the agency awaits proof of correction. The county has until Nov. 12 to fix the problem and document it.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/20/monroe-county-cited-for-serious-chemical-safety-violation-at-justice-building/
   - section: Local News
     title: Bird flu found in wild ducks in Greene County
     body: >-
@@ -197,51 +167,57 @@ stories:
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/06/6667
   - section: US News
+    title: Supreme Court keeps pause on Trump's anti-trans prison policy
+    body: >-
+      The Supreme Court left in place a lower-court pause on the administration's policy on transgender inmates, NPR reports.
+    source: NPR
+    url: https://www.npr.org/nx-s1-5993878
+  - section: US News
     title: Some on DOJ's California noncitizen list appear to be U.S.-born
     body: >-
       NPR reports that some of the roughly 20,000 people the Justice Department called "likely" noncitizens in California appear to be U.S.-born. Separately, the DOJ has charged 28 people in the state with voting crimes as tensions rise ahead of the Nov. 3 election.
     source: NPR
     url: https://www.npr.org/nx-s1-6009873
   - section: US News
-    title: UN report finds sharp rise in U.S. climate pollution
+    title: Arizona says 24 citizens were wrongly marked ineligible to vote
     body: >-
-      A United Nations report highlights a significant increase in U.S. climate pollution.
+      Arizona's attorney general says 24 U.S. citizens in the state were erroneously marked "not eligible" to vote.
     source: NPR
-    url: https://www.npr.org/nx-s1-6003553
   - section: US News
-    title: "Policing in 2025: fewer serious crimes, more minor arrests"
+    title: Poll finds voters want Congress to check Trump
     body: >-
-      NPR reports that 2025 saw a drop in serious crimes alongside a rise in arrests for minor offenses.
+      A new poll finds voters want Congress to act as a check on the president and trust Democrats more on the issues. Democrats, along with Elon Musk, also continue to dominate midterm fundraising.
     source: NPR
-    url: https://www.npr.org/nx-s1-6003663
-  - section: US News
-    title: Democrats and Elon Musk lead midterm campaign fundraising
-    body: >-
-      Democrats, along with Musk, continue to dominate fundraising in the midterm campaigns.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6004922
+    url: https://www.npr.org/nx-s1-6011179
   - section: World News
-    title: Russia frees American Stephen Hubbard after Trump request
+    title: U.S. orders non-essential staff out of Saudi Arabia
     body: >-
-      Putin announced the release during a meeting with U.S. envoy Steve Witkoff. Hubbard was the only American the State Department classified as wrongfully detained in Russia.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6009380
+      The State Department ordered non-emergency government employees and their families to leave Saudi Arabia amid sustained Houthi attacks, including on airports. Reuters reported the departures could extend to all personnel.
+
+      Separately, Saudi Arabia's energy ministry says debris from an intercepted drone aimed at the Shaybah oil field killed two foreign workers, a Filipino and a Nepali national, and injured two.
+    source: Times of Israel
   - section: World News
-    title: France announces nightly curfews in Paris and other cities
+    title: Israel frees dozens of Americans held after West Bank detention
     body: >-
-      Curfews will last "for as long as necessary" after weekend protests over rising prices turned into rioting and looting. Authorities estimated at least 3,000 businesses were damaged or looted. Macron criticized "unacceptable and stupid" comments from foreign leaders about the unrest without naming anyone.
+      Israel released dozens of Americans, including a U.S. Congress nominee, after they were detained in the West Bank, NPR reports.
     source: NPR
-    url: https://www.npr.org/nx-s1-6010344
+    url: https://www.npr.org/nx-s1-6010460
+  - section: World News
+    title: UAE nominates Lana Nusseibeh for UN secretary-general
+    body: >-
+      The nomination could end a deadlock after six failed Security Council votes. The U.S. reportedly opposed all seven earlier contenders. The successor would replace Antonio Guterres.
+    source: Times of Israel
   - section: World News
     title: Israel votes Oct. 27 with the race nearly tied
     body: >-
       Opposition leader Gadi Eisenkot says he will not serve under Netanyahu, even in a rotation deal. Polls show Likud and Eisenkot's Yashar party nearly tied, with neither bloc near a majority.
     source: Times of Israel
   - section: World News
-    title: Tanker hit by projectile off Oman as Saudi coalition downs drones
+    title: France announces nightly curfews in Paris and other cities
     body: >-
-      A fire broke out on a tanker struck by an unknown projectile in the Strait of Hormuz area; all crew are reported safe. Separately, the Saudi-led coalition says it intercepted five drones, including over the Medina region. The Houthis deny targeting the kingdom.
-    source: Times of Israel
+      Curfews will last "for as long as necessary" after weekend protests over rising prices turned into rioting and looting. Authorities estimated at least 3,000 businesses were damaged or looted.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6010344
   - section: AI News
     title: Claude finds 493 security issues across 25 open-source projects
     body: >-
@@ -272,14 +248,8 @@ stories:
       The unit booked $7.56 billion in third-quarter revenue, ahead of Starlink, according to Fortune.
     source: Fortune
     url: https://fortune.com/2026/10/20/spacex-q3-profit-ai-si-elon-musk/
-  - section: AI News
-    title: Alibaba reportedly more than triples DeepSeek V4 Flash output prices
-    body: >-
-      Alibaba's Model Studio raised output pricing from $0.40 to $1.32 per million tokens and more than doubled input pricing, according to a newsletter report.
-    source: Stork.ai
-    url: https://www.stork.ai/newsletter/2026-10-20-alibaba-quietly-tripled-deepseek-prices
   - section: On This Day
-    title: "1959 - Guggenheim Museum opens in New York"
+    title: "1966 - Coal tip slide buries Welsh village of Aberfan"
     body: >-
-      The Solomon R. Guggenheim Museum, designed by Frank Lloyd Wright, opened in New York City.
+      A collapsed coal spoil tip slid onto the village of Aberfan in Wales, killing 144 people, most of them schoolchildren.
     source: Wikipedia
