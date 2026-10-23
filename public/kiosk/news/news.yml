@@ -1,32 +1,34 @@
-generated: "2026-10-22T18:32:58-04:00"
+generated: "2026-10-23T06:32:34-04:00"
 stories:
   - section: Local Events
-    title: The Brook and The Bluff play live
+    title: Food Truck Friday at Switchyard Park
     body: >-
-      Live music, 21 and older. Doors at 7pm, show at 8pm.
-    when: Thu Oct 22, 8pm
+      Food trucks gather at the park. Two Fridays remain this season: Oct. 23 and Oct. 30.
+    when: Fri Oct 23, 11am-9pm
+    where: Switchyard Park
     source: Visit Bloomington
-  - section: Local Events
-    title: Safiya Noble gives the David Kaser lecture on AI and search bias
-    body: >-
-      Dr. Noble's lecture, "AI and Our Future," covers how AI and search algorithms can reinforce oppression, as part of the David Kaser Endowed Lecture Series.
-    when: Fri Oct 23
-    source: Visit Bloomington
-    image: img/safiya-noble.jpg
-    image_credit: Visit Bloomington
   - section: Local Events
     title: Downtown Trick or Treat marks its 12th year
     body: >-
-      A family trick-or-treat walk through downtown shops and businesses. Redbud Books adds an all-ages Halloween block party with live music, indoors and out, from 5 to 8pm.
+      A family trick-or-treat walk through downtown shops and businesses. Redbud Books adds an all-ages Halloween block party with live music, indoors and out.
     when: Fri Oct 23, 5-8pm
     where: Downtown Bloomington
     source: Visit Bloomington
     image: img/redbud-block-party.jpg
     image_credit: Redbud Books
   - section: Local Events
+    title: YMCA Trunk or Treat at Southeast Y
+    body: >-
+      Costumes and treat collection for families.
+    when: Fri Oct 23, 6-7:30pm
+    where: Southeast Y
+    source: Visit Bloomington
+    image: img/trunk-or-treat.jpg
+    image_credit: YMCA
+  - section: Local Events
     title: Festival of Ghost Stories in Bryan Park
     body: >-
-      The Bloomington Storytellers Guild tells spooky stories outdoors under the stars. Bring a blanket or chair.
+      The Bloomington Storytellers Guild tells spooky stories outdoors. Bring a blanket or chair.
     when: Fri Oct 23, evening
     where: Bryan Park
     source: Visit Bloomington
@@ -40,23 +42,25 @@ stories:
     where: Buskirk-Chumley Theater
     source: Buskirk-Chumley Theater
     url: https://buskirkchumley.org/events/the-robert-cray-band-october-23-2026
-  - section: Local Events
-    title: Food Truck Friday at Switchyard Park
-    body: >-
-      Food trucks gather at the park, with two Fridays left this season: Oct. 23 and Oct. 30.
-    when: Fri Oct 23, 11am-9pm
-    where: Switchyard Park
-    source: Visit Bloomington
-    image: img/food-truck-friday.jpg
+    image: img/robert-cray.jpg
     image_credit: Visit Bloomington
   - section: Local Events
-    title: Rocky Horror Picture Show, two shows
+    title: Friday Night Frights screens Don't Look Now
     body: >-
-      Early show doors at 6pm, late show doors at 9:30pm with the show at 10:30pm.
-    when: Sat Oct 24, 7pm and 10:30pm
-    where: Buskirk-Chumley Theater
-    source: Buskirk-Chumley Theater
-    url: https://buskirkchumley.org/events/rocky-horror-picture-show-2026-october-24-2026
+      The film adapted from a Daphne du Maurier story follows a grieving couple.
+    when: Fri Oct 23
+    source: Visit Bloomington
+    image: img/dont-look-now.jpg
+    image_credit: Visit Bloomington
+  - section: Local Events
+    title: Cider Fest at the Bloomington Community Orchard
+    body: >-
+      Cider pressing, apple tastings, orchard tours, face painting, games and a raffle. Free.
+    when: Sat Oct 24
+    where: Bloomington Community Orchard
+    source: Visit Bloomington
+    image: img/cider-fest.jpg
+    image_credit: Visit Bloomington
   - section: Local Events
     title: Harmony School fall festival and haunted attraction
     body: >-
@@ -65,6 +69,14 @@ stories:
     where: Harmony School, 909 E. Second St.
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/10/13/harmony-school-announces-oct-24-fall-festival-and-evening-haunted-attraction/
+  - section: Local Events
+    title: Rocky Horror Picture Show, two shows
+    body: >-
+      Early show doors at 6pm, late show doors at 9:30pm with the show at 10:30pm.
+    when: Sat Oct 24, 7pm and 10:30pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/rocky-horror-picture-show-2026-october-24-2026
   - section: Local Events
     title: Disability panel from the Council for Community Accessibility
     body: >-
@@ -88,55 +100,41 @@ stories:
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/19/6679
   - section: Local Events
-    title: Samuel Levi Jones exhibit now open
+    title: Halloween screenings at the Buskirk-Chumley
     body: >-
-      Abstract assemblages made from found printed matter such as encyclopedias and law books. On view through Feb. 14.
-    when: Through Sun Feb 14
-    source: Visit Bloomington
-    image: img/samuel-levi-jones.jpg
-    image_credit: Visit Bloomington
+      Jennifer's Body (2009) plays Fri Oct 30 and The Exorcist (1973) plays Sat Oct 31. Doors 6:30pm, show 7pm both nights.
+    when: Oct 30-31, 7pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/
+  - section: Local News
+    title: Monroe County health officer resigns; walk-in services suspended
+    body: >-
+      Dr. Sarah Ryterband resigned effective immediately Thursday during the Board of Health meeting; the county gave no reason. The Health Department closed walk-in services Friday. Until an interim health officer is appointed, it cannot issue permits or birth and death certificates or provide STI testing and treatment, and some interruptions will extend beyond Friday. No timeline was given. Residents needing other services can call 812-349-2543 for an appointment.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/22/monroe-county-health-officer-resigns-effective-immediately-health-department-suspends-walk-in-services-friday/
+  - section: Local News
+    title: Georgetown officer arrested over alleged misuse of Flock camera database
+    body: >-
+      Indiana State Police arrested Georgetown officer Justin Craig Thursday on one Level 6 felony count of official misconduct and two misdemeanor fraud counts. He is accused of making many unauthorized searches of the department's Flock license plate reader system in 2026, citing offenses for which investigators found no matching cases. Police have not said whose plates were searched. The article counts at least eight Indiana officers publicly identified in Flock misuse cases this year. He is presumed innocent.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/22/georgetown-police-officer-arrested-accused-of-improperly-searching-flock-surveillance-camera-database/
   - section: Local News
     title: Federal judge bars state investigator from threatening Bloomington man over "86" post
     body: >-
-      U.S. District Judge Sarah Evans Barker issued a preliminary injunction Oct. 20 in a suit by Bloomington resident Lee Lawmaster against Kurt Spivey, director of investigations for the Indiana Attorney General's office. Spivey may not coerce or threaten legal sanctions to suppress Lawmaster's past or future political posts, including those using the "86" phrase.
-
-      Lawmaster posted "86 Todd Rokita" on the attorney general's Facebook page April 29. Spivey visited his home May 1 and said the office "could easily indict" him. The judge denied a motion to dismiss, so the case continues. Because Spivey did not argue the posts were true threats, the court treated them as protected speech. The order does not stop the office from assessing reported threats.
+      U.S. District Judge Sarah Evans Barker issued a preliminary injunction Oct. 20 in a suit by Bloomington resident Lee Lawmaster against Kurt Spivey, director of investigations for the Indiana Attorney General's office. Spivey may not coerce or threaten legal sanctions to suppress Lawmaster's past or future political posts, including those using the "86" phrase. The case continues, and the order does not stop the office from assessing reported threats.
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/10/22/federal-judge-blocks-indiana-attorney-general-investigator-from-threatening-bloomington-man-over-political-posts/
   - section: Local News
-    title: Council votes 7-0 to ban city use of license plate readers
+    title: Early voting open downtown; extra Saturday hours Oct. 24 and 31
     body: >-
-      Bloomington's council passed an ordinance Oct. 14 barring the city from acquiring or operating automated license plate readers, or from requesting plate data collected by other agencies or private companies. Conventional security cameras stay legal, and permitted cameras cannot use facial recognition or automated tracking of people unless the council authorizes it.
-
-      An amendment passed 5-2 allows police body cameras and lets police receive surveillance recordings tied to a case number. If the mayor signs, the city has 60 days to post guidelines for permitted cameras.
+      The county's downtown voting location at the Government Center is open ahead of the Nov. 3 election, with extra Saturday hours Oct. 24 and Oct. 31.
     source: The B Square Bulletin
-    url: https://bsquarebulletin.com/bloomington-council-votes-7-0-to-ban-license-plate-readers-after-debate-over-some-exceptions/
-  - section: Local News
-    title: County inspector examines site of North Bryan Street deck collapse
-    body: >-
-      A deck collapsed at 135 N. Bryan St. at about 10:30pm Friday, Oct. 16. Firefighters helped with patient care and transport alongside IU Health Lifeline; the fire department did not say how many people were hurt. A Monroe County building inspector was scheduled to look at the site Wednesday, and the cause is not yet known. The fire department does not enforce building codes for single-family homes.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/19/county-inspector-to-examine-site-of-bloomington-deck-collapse/
-  - section: Local News
-    title: Convention center expansion on track; $660,000 demolition bid approved
-    body: >-
-      The Capital Improvements Board unanimously approved the bid from Denney Excavating on Oct. 21 to demolish five Seminary Pointe structures, a staging area for hotel construction. Demolition runs from November through December. The low bid of $478,800 was rejected.
-
-      The expansion is still due for completion Jan. 8, with a dedication Jan. 12 at 2pm. A 200-room hotel is expected around early 2029.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/bloomington-convention-center-update-660k-bid-okd-for-seminary-pointe-demolition/
-  - section: Local News
-    title: County council approves $147 million budget, keeps commissioner pay at 85%
-    body: >-
-      Monroe County councilors voted 5-0 for a $147,020,534 spending plan for 2027, up 12.3%. They rejected Commissioner Julie Thomas's request to raise commissioners' pay to the full $82,955 base, so each will receive $70,512. Councilor David Henry said the question should wait until January, when the board's makeup changes.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/monroe-county-council-sticks-with-proposed-2027-salaries-keeps-commissioners-at-85/
+    url: https://bsquarebulletin.com/demonstrators-gather-in-downtown-bloomington-for-no-kings-vote-early-rally/
   - section: Local News
     title: City proposes $6.87 million bond for aerial fire truck and street safety
     body: >-
-      The package includes $2.5 million to replace the city's only aerial platform truck, out of service for more than four months, and $4.23 million for transportation, including $1.7 million for 10th Street between College and Park and $1.5 million for 3rd Street safety.
-
-      Repayment would take a little over six years and cost about $33.70 a year per $100,000 of taxable assessed value, before credits. The council holds a public hearing and possible final vote Nov. 4.
+      The package includes $2.5 million to replace the city's only aerial platform truck, out of service for more than four months, and $4.23 million for transportation, including $1.7 million for 10th Street between College and Park and $1.5 million for 3rd Street safety. The council holds a public hearing and possible final vote Nov. 4.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/bloomington-proposes-6-87m-bond-issue-for-fire-truck-street-safety-plans-for-regular-borrowing/
   - section: Local News
@@ -146,28 +144,28 @@ stories:
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/14/6677
   - section: Local News
-    title: Early voting open downtown; extra Saturday hours Oct. 24 and 31
-    body: >-
-      The county's downtown voting location at the Government Center is open ahead of the Nov. 3 election, with extra Saturday hours Oct. 24 and Oct. 31.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/demonstrators-gather-in-downtown-bloomington-for-no-kings-vote-early-rally/
-  - section: Local News
     title: Plan Commission hearing on housing rules Oct. 28
     body: >-
       The city is seeking public input on housing and development rules at a special Plan Commission hearing.
     when: Wed Oct 28
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/06/6667
-  - section: Local News
-    title: "Slow down for deer: October and November are peak crash months"
+  - section: US News
+    title: Critical PHP flaws force some government sites offline; patch now
     body: >-
-      Fall is the peak season for deer collisions in Bloomington, and Monroe County deer crashes rose from 2024 to 2025. Drivers are urged to take extra care at dusk.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/slow-down-for-deer-on-the-move-fall-brings-bigger-crash-risk-to-bloomington-roads/
+      Two PHP flaws, each rated 9.2 of 10, could let attackers run code on servers without logging in. PHP released fixes Oct. 21 for versions 8.2 through 8.5. Palo Alto Networks counts more than 22.6 million potentially vulnerable internet-facing instances. Agencies in the U.S., U.K., EU, Canada, Australia and Japan urged patching, and the FBI and NSA advised taking systems offline if they cannot be updated. Sites in Finland, the Netherlands, Belgium and France went down or were partly unavailable. Cloudflare reports attack traffic but has not confirmed any success. Visiting an affected site does not infect your device.
+    source: ABC News
+    url: https://abcnews4.com/news/nation-world/critical-php-flaws-put-millions-of-websites-at-risk-as-governments-pull-sites-offline
+  - section: US News
+    title: Holiday airfares hit 10-year highs on jet fuel costs
+    body: >-
+      Hopper puts the average domestic round-trip fare at about $402 for Thanksgiving, up 31% from last year, and about $452 for Christmas, up 23%. High jet fuel prices and fewer low-cost options, after Spirit Airlines left the industry in May, are the main causes. Hopper advises booking before Halloween and staying flexible on dates.
+    source: CNN Newsource
+    url: https://www.wect.com/2026/09/29/airfares-thanksgiving-christmas-hit-10-year-highs/
   - section: US News
     title: US and Israel reportedly plan for possible Iran attack
     body: >-
-      NPR reports, citing a source, that the U.S. and Israel are planning for a possible attack on Iran. The New York Times, per Times of Israel, says the planning is for renewed strikes after the Nov. 3 midterms. Netanyahu denies a Financial Times report that he planned strikes earlier this month and was stopped by Trump.
+      NPR reports, citing a source, that the U.S. and Israel are planning for a possible attack on Iran. Times of Israel reports the planning is for renewed strikes after the Nov. 3 midterms. Trump said Iran is "making up fake hits" on ships to drive up oil prices before the election.
     source: NPR
     url: https://www.npr.org/nx-s1-6011514
   - section: US News
@@ -176,83 +174,51 @@ stories:
       NPR reports a federal judge has placed limits on Department of Homeland Security field operations aimed at finding noncitizens who vote, less than two weeks before the Nov. 3 midterms.
     source: NPR
     url: https://www.npr.org/nx-s1-6012682
-  - section: US News
-    title: Trump's redistricting gave Republicans a head start; now voters decide
-    body: >-
-      NPR looks at how the mid-decade redistricting fights shaped House maps, which now go to voters in the Nov. 3 midterms.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6004891
-  - section: US News
-    title: Supreme Court keeps pause on Trump's anti-trans prison policy
-    body: >-
-      The Supreme Court left in place a lower-court pause on the administration's policy on transgender inmates, NPR reports.
-    source: NPR
-    url: https://www.npr.org/nx-s1-5993878
-  - section: US News
-    title: Farm country has beef with Trump as midterms approach
-    body: >-
-      NPR reports on farm-state frustration with the administration ahead of the midterms, with beef imports and livestock policy among the sore points.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6011214
   - section: World News
-    title: Iran says it hit four ships as it threatens US bases
+    title: Two gunmen wound five Israelis at Hebron checkpoint; Israel moves to close West Bank
     body: >-
-      Iran says it struck four ships overnight, and the IRGC threatens US bases across the region if US escorts through the Strait of Hormuz continue. Talks are deadlocked and the US maintains a naval blockade of Iranian ports.
+      Two Palestinian gunmen from Hebron opened fire at a checkpoint on the city's outskirts, wounding five Israelis, two critically. Troops killed both attackers. Netanyahu ordered Hebron closed and preparations for a full West Bank lockdown. The IDF believes the pair first planned to target civilians on Route 35.
     source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-22-2026/
+    url: https://www.timesofisrael.com/liveblog-october-23-2026/
   - section: World News
-    title: Israeli military chief reportedly sees no need to strike Iran before the election
+    title: Israel's election is a dead heat five days out
     body: >-
-      Channel 13 reports IDF chief Eyal Zamir sees no operational need to hit Iran before the Oct. 27 Knesset election. Opposition leader Gadi Eisenkot said no immediate Iranian threat justifies a war before the vote. Separately, Secretary of State Marco Rubio thanked Qatar for its mediation and backed freedom of navigation in the Strait of Hormuz.
+      Israel votes Oct. 27. A final Times of Israel poll shows Netanyahu and challenger Gadi Eisenkot tied. Reports say IDF chief Eyal Zamir sees no operational need to strike Iran before the vote, and Tehran reported fresh tanker attacks in the Strait of Hormuz.
     source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-22-2026/
+    url: https://www.timesofisrael.com/liveblog-october-23-2026/
   - section: World News
-    title: Israel moves to deport 11 foreign activists after West Bank olive harvest
+    title: Louvre and other Paris museums close Saturday over protest fears
     body: >-
-      Police detained 11 foreign activists and one Palestinian after an uncoordinated olive harvest in a West Bank area police call a closed military zone. The activists were handed to the immigration authority for deportation hearings. Separate reports describe settlers stealing olives in Burin and attacking harvesters in Masafer Yatta.
+      The Louvre, Orsay and Picasso museums will close Saturday. France's culture ministry cited concerns about violence at planned protests, after riots last Saturday involving arson, looting and clashes with police.
     source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-22-2026/
-  - section: World News
-    title: Israel assesses Hamas is rebuilding to its pre-war strength
-    body: >-
-      Haaretz reports Israeli military officials told US counterparts that Hamas has no intention of disarming and has an estimated 30,000-40,000 operatives, roughly its level before Oct. 7. US-led efforts for a deal on Hamas disarmament and an Israeli withdrawal from Gaza have stalled.
-    source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-22-2026/
-  - section: World News
-    title: North Korea to resume propaganda broadcasts into South Korea
-    body: >-
-      North Korea says it will resume propaganda broadcasts across the border, NPR reports.
-    source: NPR
-    url: https://www.npr.org/g-s1-149306
+    url: https://www.timesofisrael.com/liveblog-october-23-2026/
   - section: AI News
-    title: AI-found PHP flaws prompt NSA warning
+    title: DeepSeek reportedly raises about $15 billion days after US restrictions
     body: >-
-      The NSA warned Wednesday of two critical PHP vulnerabilities that could expose a server's files or databases. OpenAI's "Patch the Planet" effort and Google's Wiz team used AI tools to find them. Patches are out, and OpenAI reports no known exploits.
-
-      The flaws reach back to PHP 5. Sites on PHP 8.1 or older, which are no longer supported, need to move to 8.5.12, and the NSA advises taking unpatchable sites offline.
+      The roughly 100 billion yuan round was led by Tencent and CATL, two days after the U.S. ordered federal agencies to remove DeepSeek technology. Separately, Bloomberg reports China has approved DeepSeek and MiniMax as the first AI exporters under Beijing's export rules, which began Oct. 16.
     source: TechCrunch
-    url: https://techcrunch.com/2026/10/21/php-armageddon-openai-googles-wiz-find-ancient-holes-panicking-the-internet/
+    url: https://techcrunch.com/2026/10/22/deepseek-reportedly-raises-15b-days-after-us-restrictions/
   - section: AI News
-    title: Recursive releases Flint, a free coding model that runs on a laptop
+    title: Microsoft AI diagnoses 83% of hard cases in Science paper
     body: >-
-      Flint is a mixture-of-experts model that activates 2.5 billion of its 40 billion parameters per task. It is free on Hugging Face under Apache 2.0. Recursive says it generated about 131 tokens per second on an M4 Pro MacBook Pro and beat other sub-50-billion-parameter models on SWE-Bench Verified. The company says it was developed largely with its automated research system.
+      Microsoft's MAI-DxO orchestrator diagnosed 83% of complex New England Journal of Medicine cases, versus 36% for primary-care physicians working alone, according to a paper published Oct. 22. Clinical testing at Beth Israel Deaconess is due to begin within two months.
     source: TechCrunch
-    url: https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/
+    url: https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/
   - section: AI News
-    title: Anthropic circulates draft bill letting regulators block risky AI releases
+    title: Claude writes 180 million lines of proofs to verify open-source libraries
     body: >-
-      Politico reports Anthropic's draft would let regulators halt a model's release if there is a foreseeable, imminent risk of more than 50 deaths or $1 billion in property damage. Evaluators registered with the Commerce Department would flag such risks within 72 hours, and Commerce would ask a federal judge to stop the release. Anthropic confirmed the draft reflects its Advanced AI Framework.
-    source: TechCrunch
-    url: https://techcrunch.com/2026/10/20/anthropic-pitches-ai-safety-bill-that-may-block-a-model-if-50-people-could-be-killed/
+      Anthropic's Frontier Red Team, working with Theorem, had Claude generate about 180 million lines of Rocq proofs covering 123 open-source libraries. The effort found hundreds of bugs, including some that survived trillions of automated test runs.
+    source: Anthropic
+    url: https://www.anthropic.com/research/formal-verification
   - section: AI News
-    title: Walmart opens its store to AI shopping agents as Amazon blocks them
+    title: OpenAI reportedly nears $30 billion round at lower valuation
     body: >-
-      Walmart's Agent Gateway lets approved agents search inventory and buy for shoppers. Agent Profiles, due next month, will track an agent's purchases separately, with per-purchase approval or spending limits. Noncompliant agents will be blocked.
-    source: TechCrunch
-    url: https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/
+      The bridge round, led by UAE investors and Coatue, would value OpenAI at $1.25 trillion before the money, below the $1.4 trillion it pitched earlier in the month. Reuters separately tallies 102,800 AI-linked layoffs across 31 companies.
+    source: CNBC
+    url: https://www.cnbc.com/2026/10/22/openai-funding-round-uae-investors.html
   - section: On This Day
-    title: "1966 - The Supremes top the Billboard 200"
+    title: "1956 - Hungarian Revolution begins in Budapest"
     body: >-
-      The Supremes A' Go-Go made them the first all-female group to reach No. 1 on the Billboard 200 album chart.
+      A peaceful student march in Budapest turned into a nationwide uprising against Soviet-backed rule.
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/October_22
+    url: https://en.wikipedia.org/wiki/October_23
