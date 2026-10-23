@@ -1,17 +1,10 @@
-generated: "2026-10-23T06:32:34-04:00"
+generated: "2026-10-23T18:32:38-04:00"
 stories:
-  - section: Local Events
-    title: Food Truck Friday at Switchyard Park
-    body: >-
-      Food trucks gather at the park. Two Fridays remain this season: Oct. 23 and Oct. 30.
-    when: Fri Oct 23, 11am-9pm
-    where: Switchyard Park
-    source: Visit Bloomington
   - section: Local Events
     title: Downtown Trick or Treat marks its 12th year
     body: >-
       A family trick-or-treat walk through downtown shops and businesses. Redbud Books adds an all-ages Halloween block party with live music, indoors and out.
-    when: Fri Oct 23, 5-8pm
+    when: Fri Oct 23, until 8pm
     where: Downtown Bloomington
     source: Visit Bloomington
     image: img/redbud-block-party.jpg
@@ -19,8 +12,8 @@ stories:
   - section: Local Events
     title: YMCA Trunk or Treat at Southeast Y
     body: >-
-      Costumes and treat collection for families.
-    when: Fri Oct 23, 6-7:30pm
+      Costumes and treat collection from decorated trunks for families.
+    when: Fri Oct 23, until 7:30pm
     where: Southeast Y
     source: Visit Bloomington
     image: img/trunk-or-treat.jpg
@@ -30,7 +23,7 @@ stories:
     body: >-
       The Bloomington Storytellers Guild tells spooky stories outdoors. Bring a blanket or chair.
     when: Fri Oct 23, evening
-    where: Bryan Park
+    where: Bryan Park stage
     source: Visit Bloomington
     image: img/ghost-stories.jpg
     image_credit: Bloomington Storytellers Guild
@@ -45,13 +38,11 @@ stories:
     image: img/robert-cray.jpg
     image_credit: Visit Bloomington
   - section: Local Events
-    title: Friday Night Frights screens Don't Look Now
+    title: Sterling Elza in concert
     body: >-
-      The film adapted from a Daphne du Maurier story follows a grieving couple.
-    when: Fri Oct 23
+      Ages 21 and up. Doors at 7pm.
+    when: Fri Oct 23, 8pm
     source: Visit Bloomington
-    image: img/dont-look-now.jpg
-    image_credit: Visit Bloomington
   - section: Local Events
     title: Cider Fest at the Bloomington Community Orchard
     body: >-
@@ -78,12 +69,28 @@ stories:
     source: Buskirk-Chumley Theater
     url: https://buskirkchumley.org/events/rocky-horror-picture-show-2026-october-24-2026
   - section: Local Events
+    title: Wright Thompson wins Bob Hammel Writing Award at Book Festival evening
+    body: >-
+      Thompson, author of The Barn about the 1955 murder of Emmett Till, is the keynote speaker. Bloomington native and novelist Michael Koryta presents the award and joins him in conversation. Both sign books afterward; proceeds support BloomREADS. Doors at 4:30pm. Listings differ on ticket price, from $19 to $39.
+    when: Sun Oct 25, 5pm
+    where: Buskirk-Chumley Theater
+    source: Indiana Humanities
+    url: https://indianahumanities.org/event/an-evening-with-wright-thompson-and-michael-koryta/
+  - section: Local Events
     title: Disability panel from the Council for Community Accessibility
     body: >-
       A panel on disability, adaptation, tools and resources.
     when: Mon Oct 26
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/13/6674
+  - section: Local Events
+    title: BEAT 15th anniversary fall show
+    body: >-
+      Bloomington Expressive Arts Training marks 15 years. Doors at 6:30pm.
+    when: Mon Oct 26, 7pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/
   - section: Local Events
     title: Hopewell update meeting set for Oct. 27
     body: >-
@@ -100,10 +107,26 @@ stories:
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/19/6679
   - section: Local Events
+    title: IU Homecoming parade closes Kirkwood Avenue
+    body: >-
+      The parade travels east on Kirkwood from Washington Street to the Sample Gates. Washington closes at 2:30pm for staging and Kirkwood closes at 5pm. Parking is banned all day on Kirkwood between Walnut and Indiana, and on nearby streets between Fourth and Sixth.
+    when: Fri Oct 30, 5:30pm
+    where: Kirkwood Avenue
+    source: City of Bloomington
+    url: https://bloomington.in.gov/news/2026/10/22/6680
+  - section: Local Events
     title: Halloween screenings at the Buskirk-Chumley
     body: >-
       Jennifer's Body (2009) plays Fri Oct 30 and The Exorcist (1973) plays Sat Oct 31. Doors 6:30pm, show 7pm both nights.
     when: Oct 30-31, 7pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/
+  - section: Local Events
+    title: Bloomington Symphony Orchestra presents We The People
+    body: >-
+      Doors at 4pm.
+    when: Sun Nov 1, 5pm
     where: Buskirk-Chumley Theater
     source: Buskirk-Chumley Theater
     url: https://buskirkchumley.org/events/
@@ -116,9 +139,15 @@ stories:
   - section: Local News
     title: Georgetown officer arrested over alleged misuse of Flock camera database
     body: >-
-      Indiana State Police arrested Georgetown officer Justin Craig Thursday on one Level 6 felony count of official misconduct and two misdemeanor fraud counts. He is accused of making many unauthorized searches of the department's Flock license plate reader system in 2026, citing offenses for which investigators found no matching cases. Police have not said whose plates were searched. The article counts at least eight Indiana officers publicly identified in Flock misuse cases this year. He is presumed innocent.
+      Indiana State Police arrested Georgetown officer Justin Craig Thursday on one Level 6 felony count of official misconduct and two misdemeanor fraud counts. He is accused of making many unauthorized searches of the department's Flock license plate reader system in 2026, citing offenses for which investigators found no matching cases. Police have not said whose plates were searched. He is presumed innocent.
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/10/22/georgetown-police-officer-arrested-accused-of-improperly-searching-flock-surveillance-camera-database/
+  - section: Local News
+    title: Object thrown at Monroe County Democratic headquarters window
+    body: >-
+      Someone threw an object at a window of the party's headquarters Thursday. Bloomington police are investigating.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/22/vandalism-object-thrown-at-window-of-monroe-county-democratic-headquarters-thursday-police-investigating/
   - section: Local News
     title: Federal judge bars state investigator from threatening Bloomington man over "86" post
     body: >-
@@ -153,19 +182,13 @@ stories:
   - section: US News
     title: Critical PHP flaws force some government sites offline; patch now
     body: >-
-      Two PHP flaws, each rated 9.2 of 10, could let attackers run code on servers without logging in. PHP released fixes Oct. 21 for versions 8.2 through 8.5. Palo Alto Networks counts more than 22.6 million potentially vulnerable internet-facing instances. Agencies in the U.S., U.K., EU, Canada, Australia and Japan urged patching, and the FBI and NSA advised taking systems offline if they cannot be updated. Sites in Finland, the Netherlands, Belgium and France went down or were partly unavailable. Cloudflare reports attack traffic but has not confirmed any success. Visiting an affected site does not infect your device.
+      Two PHP flaws, each rated 9.2 of 10, could let attackers run code on servers without logging in. PHP released fixes Oct. 21 for versions 8.2 through 8.5. Palo Alto Networks counts more than 22.6 million potentially vulnerable internet-facing instances. Agencies in the U.S., U.K., EU, Canada, Australia and Japan urged patching, and the FBI and NSA advised taking systems offline if they cannot be updated. Visiting an affected site does not infect your device.
     source: ABC News
     url: https://abcnews4.com/news/nation-world/critical-php-flaws-put-millions-of-websites-at-risk-as-governments-pull-sites-offline
   - section: US News
-    title: Holiday airfares hit 10-year highs on jet fuel costs
-    body: >-
-      Hopper puts the average domestic round-trip fare at about $402 for Thanksgiving, up 31% from last year, and about $452 for Christmas, up 23%. High jet fuel prices and fewer low-cost options, after Spirit Airlines left the industry in May, are the main causes. Hopper advises booking before Halloween and staying flexible on dates.
-    source: CNN Newsource
-    url: https://www.wect.com/2026/09/29/airfares-thanksgiving-christmas-hit-10-year-highs/
-  - section: US News
     title: US and Israel reportedly plan for possible Iran attack
     body: >-
-      NPR reports, citing a source, that the U.S. and Israel are planning for a possible attack on Iran. Times of Israel reports the planning is for renewed strikes after the Nov. 3 midterms. Trump said Iran is "making up fake hits" on ships to drive up oil prices before the election.
+      NPR reports, citing a source, that the U.S. and Israel are planning for a possible attack on Iran. Times of Israel reports the planning is for renewed strikes after the Nov. 3 midterms. Iranian officials say Tehran has detailed plans to hit Gulf undersea cables if war resumes, and Germany, France and the UK say they are ready to negotiate with Iran.
     source: NPR
     url: https://www.npr.org/nx-s1-6011514
   - section: US News
@@ -174,16 +197,22 @@ stories:
       NPR reports a federal judge has placed limits on Department of Homeland Security field operations aimed at finding noncitizens who vote, less than two weeks before the Nov. 3 midterms.
     source: NPR
     url: https://www.npr.org/nx-s1-6012682
-  - section: World News
-    title: Two gunmen wound five Israelis at Hebron checkpoint; Israel moves to close West Bank
+  - section: US News
+    title: Ex-FBI employees charged with lying to Congress over Hunter Biden inquiries
     body: >-
-      Two Palestinian gunmen from Hebron opened fire at a checkpoint on the city's outskirts, wounding five Israelis, two critically. Troops killed both attackers. Netanyahu ordered Hebron closed and preparations for a full West Bank lockdown. The IDF believes the pair first planned to target civilians on Route 35.
+      NPR reports that former FBI employees have been charged with lying to Congress in connection with inquiries about Hunter Biden.
+    source: NPR
+    url: https://www.npr.org/g-s1-149534
+  - section: World News
+    title: Hebron attack leaves five Israelis wounded; West Bank closure ordered
+    body: >-
+      Two 27-year-old Hebron men from the same family opened fire at a checkpoint, wounding five Israelis, two critically. Troops killed both attackers. Netanyahu ordered Hebron closed and preparations for a full West Bank lockdown, and troops raided the gunmen's family homes with plans to demolish them. IDF chief Eyal Zamir vowed to pursue everyone involved, and the IDF and Shin Bet are checking whether a wider network helped.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-october-23-2026/
   - section: World News
-    title: Israel's election is a dead heat five days out
+    title: Israel's election is a dead heat four days out
     body: >-
-      Israel votes Oct. 27. A final Times of Israel poll shows Netanyahu and challenger Gadi Eisenkot tied. Reports say IDF chief Eyal Zamir sees no operational need to strike Iran before the vote, and Tehran reported fresh tanker attacks in the Strait of Hormuz.
+      Israel votes Oct. 27. Final pre-election polls show neither bloc with a majority, with Netanyahu and challenger Gadi Eisenkot tied and some small parties falling short of the Knesset threshold.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-october-23-2026/
   - section: World News
@@ -192,6 +221,12 @@ stories:
       The Louvre, Orsay and Picasso museums will close Saturday. France's culture ministry cited concerns about violence at planned protests, after riots last Saturday involving arson, looting and clashes with police.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-october-23-2026/
+  - section: World News
+    title: Europe's heat claims 50,000 lives, with climate change blamed for two-thirds
+    body: >-
+      NPR reports that heat killed about 50,000 people in Europe, and that climate change is blamed for roughly two-thirds of the deaths.
+    source: NPR
+    url: https://www.npr.org/g-s1-149498
   - section: AI News
     title: DeepSeek reportedly raises about $15 billion days after US restrictions
     body: >-
@@ -216,9 +251,15 @@ stories:
       The bridge round, led by UAE investors and Coatue, would value OpenAI at $1.25 trillion before the money, below the $1.4 trillion it pitched earlier in the month. Reuters separately tallies 102,800 AI-linked layoffs across 31 companies.
     source: CNBC
     url: https://www.cnbc.com/2026/10/22/openai-funding-round-uae-investors.html
+  - section: AI News
+    title: "GAO finds Pentagon's responsible-AI office has 3 of 10 positions filled"
+    body: >-
+      A Government Accountability Office report found the office created in 2022 had filled three of its 10 authorized positions as of February, and 29 of 64 efforts in its responsible-AI plan were unfinished as of April. Its working council did not meet from late 2024 until August 2025. GAO recommended fixing staffing and issuing a formal charter for the council.
+    source: Military Times
+    url: https://www.militarytimes.com/news/pentagon-congress/2026/10/21/pentagon-ai-oversight-office-struggles-to-keep-pace-with-departments-ambitions-gao-finds/
   - section: On This Day
     title: "1956 - Hungarian Revolution begins in Budapest"
     body: >-
-      A peaceful student march in Budapest turned into a nationwide uprising against Soviet-backed rule.
+      A peaceful student march to the parliament building in Budapest turned into a nationwide uprising against Soviet-backed rule.
     source: Wikipedia
     url: https://en.wikipedia.org/wiki/October_23
