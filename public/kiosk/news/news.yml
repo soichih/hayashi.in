@@ -1,55 +1,23 @@
-generated: "2026-10-24T06:32:55-04:00"
+generated: "2026-10-24T18:33:04-04:00"
 stories:
   - section: Local Events
-    title: Cider Fest at the Bloomington Community Orchard
-    body: >-
-      Cider pressing, apple tastings, orchard tours, face painting, games and a raffle. Free.
-    when: Sat Oct 24
-    where: Bloomington Community Orchard
-    source: Visit Bloomington
-    image: img/cider-fest.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Howl-O-Ween at Oliver Winery
-    body: >-
-      Dog costume contests, rescue meet-and-greets and tasting trails. Free.
-    when: Sat Oct 24
-    where: Oliver Winery
-    source: Visit Bloomington
-    image: img/howl-o-ween.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Canopy Day movie in the park
-    body: >-
-      CanopyBloomington screens The Lorax to celebrate Canopy Day.
-    when: Sat Oct 24
-    where: Butler Park
-    source: Visit Bloomington
-    image: img/canopy-day.jpg
-    image_credit: CanopyBloomington
-  - section: Local Events
-    title: Harmony School fall festival and haunted attraction
-    body: >-
-      Hallowganza runs 3-7pm with carnival games, pumpkin painting and treats; $5 includes six activity tickets. Dr. Diablo's Carnival of Terrors haunted attraction runs 7-11pm Oct. 24 and 25 for a separate $5. Proceeds support the school's scholarship fund.
-    when: Sat Oct 24, 3-11pm
-    where: Harmony School, 909 E. Second St.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/13/harmony-school-announces-oct-24-fall-festival-and-evening-haunted-attraction/
-  - section: Local Events
-    title: Fall Family Fun Day at the Hawaiian Hoosier
-    body: >-
-      Third annual family event.
-    when: Sat Oct 24, 2-5pm
-    where: Hawaiian Hoosier
-    source: Visit Bloomington
-  - section: Local Events
-    title: Rocky Horror Picture Show, two shows
+    title: Rocky Horror Picture Show, two shows tonight
     body: >-
       Early show doors at 6pm, late show doors at 9:30pm with the show at 10:30pm.
     when: Sat Oct 24, 7pm and 10:30pm
     where: Buskirk-Chumley Theater
     source: Buskirk-Chumley Theater
     url: https://buskirkchumley.org/events/rocky-horror-picture-show-2026-october-24-2026
+  - section: Local Events
+    title: Haunted attraction runs tonight and Sunday at Harmony School
+    body: >-
+      Dr. Diablo's Carnival of Terrors runs 7-11pm Oct. 24 and 25 for $5. Proceeds support the school's scholarship fund.
+    when: Sat Oct 24 and Sun Oct 25, 7-11pm
+    where: Harmony School, 909 E. Second St.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/13/harmony-school-announces-oct-24-fall-festival-and-evening-haunted-attraction/
+    image: img/hallowganza.jpg
+    image_credit: Harmony School
   - section: Local Events
     title: My Hero Academia Live in Concert
     body: >-
@@ -58,14 +26,6 @@ stories:
     where: IU Auditorium
     source: Visit Bloomington
     image: img/my-hero-academia.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Fall Freilich celebrates Jewish songwriters
-    body: >-
-      Sylvia McNair, Jenn Cristy, Amy Jackson, Lara Weaver, Minka Wiltz and Quarryland perform songs by Jewish songwriters of our time.
-    when: October
-    source: Visit Bloomington
-    image: img/fall-freilich.jpg
     image_credit: Visit Bloomington
   - section: Local Events
     title: Wright Thompson wins Bob Hammel Writing Award at Book Festival evening
@@ -142,9 +102,15 @@ stories:
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/10/22/georgetown-police-officer-arrested-accused-of-improperly-searching-flock-surveillance-camera-database/
   - section: Local News
-    title: Early voting open downtown; extra Saturday hours today and Oct. 31
+    title: Object thrown at window of Monroe County Democratic headquarters
     body: >-
-      The county's downtown voting location at the Government Center is open ahead of the Nov. 3 election, with extra Saturday hours Oct. 24 and Oct. 31.
+      Police are investigating vandalism reported Thursday at the party's Bloomington headquarters.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/22/vandalism-object-thrown-at-window-of-monroe-county-democratic-headquarters-thursday-police-investigating/
+  - section: Local News
+    title: Early voting continues downtown; extra Saturday hours Oct. 31
+    body: >-
+      The county's downtown voting location at the Government Center is open ahead of the Nov. 3 election, with one more extra Saturday session on Oct. 31.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/demonstrators-gather-in-downtown-bloomington-for-no-kings-vote-early-rally/
   - section: Local News
@@ -167,17 +133,23 @@ stories:
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/06/6667
   - section: US News
+    title: Flooding in Four Corners displaces residents as storms move southeast
+    body: >-
+      NPR reports that flooding in the Four Corners region has displaced residents, and the storms are now moving southeast.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6014742
+  - section: US News
     title: Russia steps up election influence efforts in final stretch of midterms
     body: >-
       NPR reports that Russian influence efforts aimed at the Nov. 3 midterms have intensified in the closing days of the campaign.
     source: NPR
     url: https://www.npr.org/nx-s1-5995508
   - section: US News
-    title: Severe flooding hits Four Corners region, more expected through the weekend
+    title: Early voting surge has causes beyond voter enthusiasm, expert says
     body: >-
-      NPR reports severe flooding across the Four Corners region, with more rain expected through the weekend.
+      NPR looks at what is driving the surge in early voting ahead of the Nov. 3 midterms.
     source: NPR
-    url: https://www.npr.org/nx-s1-6014742
+    url: https://www.npr.org/nx-s1-6012308
   - section: US News
     title: Jet fuel prices hit a record and holiday airfares climb
     body: >-
@@ -200,20 +172,20 @@ stories:
     title: Gunmen kill seven at funeral in Jordan church
     body: >-
       Gunmen opened fire during a funeral at a church in Jordan's Karak governorate, killing seven and wounding 40, Jordanian authorities said. King Abdullah II called it a terrorist act. No group has claimed it, and the U.S. embassy in Amman said security was increased across Jordan.
-    source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-24-2026/
+    source: NPR
+    url: https://www.npr.org/nx-s1-6015414
+  - section: World News
+    title: Ukraine says Starlink is back to normal after disruptions
+    body: >-
+      NPR reports that Ukraine says its Starlink satellite internet service has returned to normal after disruptions.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6015482
   - section: World News
     title: Nigeria's first Ebola case raises questions about a Kenya link
     body: >-
       Nigeria confirmed its first Ebola case Oct. 20, in a woman in Abuja who arrived from Uganda; officials are tracing 44 contacts. Kenya has reported nine cases this month, all in one known cluster. The outbreak is the Bundibugyo strain, centered in the DRC, and is the world's second largest ever. Authorities are investigating whether the Kenya and Nigeria cases crossed paths.
     source: NPR
     url: https://www.npr.org/g-s1-149515
-  - section: World News
-    title: Europe's heat claims 50,000 lives, with climate change blamed for two-thirds
-    body: >-
-      NPR reports that heat killed about 50,000 people in Europe, and that climate change is blamed for roughly two-thirds of the deaths.
-    source: NPR
-    url: https://www.npr.org/g-s1-149498
   - section: AI News
     title: Fired OpenAI safety researchers give first interview
     body: >-
@@ -232,5 +204,3 @@ stories:
       The bridge linking Manhattan and Fort Lee, New Jersey, opened across the Hudson River.
     source: Wikipedia
     url: https://en.wikipedia.org/wiki/October_24
-    image: img/gw-bridge.jpg
-    image_credit: Wikimedia Commons
