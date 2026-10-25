@@ -1,51 +1,5 @@
-generated: "2026-10-25T06:31:52-04:00"
+generated: "2026-10-25T18:31:55-04:00"
 stories:
-  - section: Local Events
-    title: Bingo Brunch with a celebrity caller at Cardinal Spirits
-    body: >-
-      Free bingo every Sunday through Dec. 27, with a new celebrity caller each week.
-    when: Sun Oct 25, 12-2pm
-    where: Cardinal Spirits
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
-    image: img/bingo-brunch.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Treats with Greeks brings trick-or-treating to campus
-    body: >-
-      A family event with trick-or-treating and crafts. Parking is in the Green Lot or near IUPD.
-    when: Sun Oct 25, 3-5pm
-    where: N. David Baker Ave
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
-  - section: Local Events
-    title: Wright Thompson receives Bob Hammel Writing Award tonight
-    body: >-
-      Thompson, author of The Barn, is the keynote speaker at the Bloomington Book Festival's third annual award evening. Novelist Michael Koryta joins him in conversation. Doors at 4:30pm. Listings differ on ticket price, from $19 to $39.
-    when: Sun Oct 25, 5pm
-    where: Buskirk-Chumley Theater
-    source: Indiana Humanities
-    url: https://indianahumanities.org/event/an-evening-with-wright-thompson-and-michael-koryta/
-    image: img/wright-thompson.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Kagemusha screens as Michael McRobbie's choice
-    body: >-
-      Akira Kurosawa's feudal epic, picked by the former IU president.
-    when: Sun Oct 25
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
-    image: img/kagemusha.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Halloween Trivia Night benefits Cancer Support Community
-    body: >-
-      Trivia and fall cocktails, with prizes including a Cardinal Spirits gift card. Proceeds go to Cancer Support Community South Central Indiana.
-    when: Sun Oct 25
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
-    image: img/halloween-trivia.jpg
-    image_credit: Cancer Support Community South Central Indiana
   - section: Local Events
     title: BEAT 15th anniversary fall show
     body: >-
@@ -55,6 +9,15 @@ stories:
     source: Visit Bloomington
     url: https://buskirkchumley.org/events/
     image: img/beat-anniversary.jpg
+    image_credit: Visit Bloomington
+  - section: Local Events
+    title: Naza screens with filmmakers Yuval Abraham and Rachel Szor
+    body: >-
+      The documentary on modern warfare technology comes with additional films and guests, including its Oscar-winning filmmakers.
+    when: Mon Oct 26
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/rss/
+    image: img/naza.jpg
     image_credit: Visit Bloomington
   - section: Local Events
     title: Hopewell update meeting set for Oct. 27
@@ -102,6 +65,15 @@ stories:
     where: Buskirk-Chumley Theater
     source: Buskirk-Chumley Theater
     url: https://buskirkchumley.org/events/
+  - section: Local Events
+    title: Samuel Levi Jones exhibition opens at IU
+    body: >-
+      An Archaeology of Knowledge presents abstract assemblages made from found printed matter. On view through Feb. 14, 2027.
+    when: Oct 19, 2026 - Feb 14, 2027
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/rss/
+    image: img/samuel-levi-jones.jpg
+    image_credit: Visit Bloomington
   - section: Local News
     title: Mother jailed in Bloomington case of 14-year-old's death
     body: >-
@@ -139,6 +111,18 @@ stories:
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/14/6677
   - section: US News
+    title: Justice Department sues to block Alaska from certifying Senate result
+    body: >-
+      The suit asks a federal court to stop Alaska from automatically certifying its Senate race if Republican Sen. Dan Sullivan loses, until the government investigates whether votes for Daniel J. Sullivan, a retired teacher with a nearly identical name on the Nov. 3 ballot, were meant for the senator. Attorney General Todd Blanche defended the suit on CNN and denied it lays groundwork for challenging the midterms. Sen. Lisa Murkowski said the state had already distinguished the candidates. Sullivan faces Democrat Mary Peltola.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6016212
+  - section: US News
+    title: US measles cases top 4,580, more than double all of 2025
+    body: >-
+      The CDC counts more than 4,580 cases as of Oct. 22, and 96% are unvaccinated or of unknown status. Pennsylvania has at least 1,338 cases, over 250 hospitalizations and 5 deaths, with Amish communities in Lancaster and Mifflin counties hit hard. New York's governor declared a disaster emergency earlier this month. Two MMR doses are nearly 97% effective, per the CDC.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6016205
+  - section: US News
     title: Russia steps up election influence efforts in final stretch of midterms
     body: >-
       NPR reports that Russian influence efforts aimed at the Nov. 3 midterms have intensified in the closing days of the campaign.
@@ -147,15 +131,15 @@ stories:
   - section: US News
     title: Archdiocese of New York agrees to $800 million abuse settlement
     body: >-
-      NPR reports the archdiocese has agreed to an $800 million settlement over sexual abuse claims. The deal was first proposed in May to resolve about 1,300 lawsuits and avoid bankruptcy, with $615 million due first and $185 million within about 15 months.
+      The deal was first proposed in May to resolve about 1,300 lawsuits and avoid bankruptcy, with $615 million due first and $185 million within about 15 months.
     source: NPR
     url: https://www.npr.org/nx-s1-6015522
-  - section: US News
-    title: Democrats see an opening in Arkansas as the midterm map tightens
+  - section: World News
+    title: Venezuela's María Corina Machado returns after ten months in exile
     body: >-
-      NPR looks at Democratic hopes in Arkansas, at the edge of the competitive midterms map. Independent candidates in the West are also trying to capitalize on the moment.
+      The Nobel Peace Prize winner announced her arrival with "I'm here, with you all" and first appeared at a church in Lara State, where a crowd gathered. Her return challenges interim president Delcy Rodríguez, who took over after US forces captured Nicolás Maduro in January. Machado wants elections soon, while Washington says Venezuela must stabilize first. Trump said he knew nothing about her return.
     source: NPR
-    url: https://www.npr.org/nx-s1-6009402
+    url: https://www.npr.org/nx-s1-6016222
   - section: World News
     title: Israel's election is Tuesday as Hebron operation continues
     body: >-
@@ -175,9 +159,9 @@ stories:
     source: NPR
     url: https://www.npr.org/nx-s1-6016126
   - section: World News
-    title: Ukraine says Starlink is back to normal after disruptions
+    title: Musk says SpaceX did restrict Starlink as Ukraine says service is restored
     body: >-
-      Ukraine says its Starlink satellite internet service has returned to normal after disruptions.
+      Ukraine says its Starlink satellite internet service has returned to normal after disruptions, while Musk acknowledged SpaceX had restricted the service.
     source: NPR
     url: https://www.npr.org/nx-s1-6015482
   - section: AI News
