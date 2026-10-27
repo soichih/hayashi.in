@@ -1,22 +1,5 @@
-generated: "2026-10-27T06:33:45-04:00"
+generated: "2026-10-27T18:33:48-04:00"
 stories:
-  - section: Local Events
-    title: Release Your Inner Witch workshop at Oak
-    body: >-
-      A two-hour creative workshop with a Halloween theme.
-    when: Tue Oct 27, 6:30pm
-    where: Oak.Bloomington
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
-    image: img/inner-witch.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Hopewell update meeting
-    body: >-
-      The city hosts a public update on the Hopewell development.
-    when: Tue Oct 27
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/10/09/6671
   - section: Local Events
     title: Plan Commission special hearing on housing rules
     body: >-
@@ -30,7 +13,7 @@ stories:
       Free event connecting Bloomington's founders, employers, talent and partners, spread across five venues.
     when: Wed Oct 28 - Fri Oct 30
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
+    url: https://www.visitbloomington.com/event/amp-bloomington-2026/60022/
     image: img/amp-bloomington.jpg
     image_credit: Visit Bloomington
   - section: Local Events
@@ -44,12 +27,20 @@ stories:
   - section: Local Events
     title: Zodiac Killer Project screening with its filmmaker
     body: >-
-      Filmmaker Charlie Shackleton joins a screening and conversation about his documentary on the Zodiac Killer case.
+      Filmmaker Charlie Shackleton joins a screening and conversation about his documentary on a highway patrolman's effort to identify the Zodiac Killer.
     when: Thu Oct 29
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
+    url: https://www.visitbloomington.com/event/zodiac-killer-project-w-filmmaker-%7c-inspiring-conversations/59868/
     image: img/zodiac-killer-project.jpg
     image_credit: Visit Bloomington
+  - section: Local Events
+    title: Chasing Lilac plays the Bluebird
+    body: >-
+      Live music, 21 and over. Doors 8pm.
+    when: Thu Oct 29, 9pm
+    where: The Bluebird
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/chasing-lilac/60110/
   - section: Local Events
     title: IU Homecoming parade closes Kirkwood Avenue
     body: >-
@@ -64,7 +55,7 @@ stories:
       Halloween pottery and pizza night for all ages, with costumes encouraged.
     when: Fri Oct 30
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
+    url: https://www.visitbloomington.com/event/all-age-halloween-pizza-pottery-night/59980/
     image: img/pizza-pottery.jpg
     image_credit: Visit Bloomington
   - section: Local Events
@@ -74,7 +65,7 @@ stories:
     when: Fri Oct 30, 11am-9pm
     where: Switchyard Park
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
+    url: https://www.visitbloomington.com/event/bloomington-food-truck-friday/58058/
     image: img/food-truck-friday.jpg
     image_credit: Visit Bloomington
   - section: Local Events
@@ -100,7 +91,7 @@ stories:
     when: Through Sat Oct 31
     where: Grunwald Gallery of Art, IU
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
+    url: https://www.visitbloomington.com/event/future-tense-2026/59728/
     image: img/future-tense.jpg
     image_credit: Visit Bloomington
   - section: Local Events
@@ -110,7 +101,7 @@ stories:
     when: Through Dec 20
     where: Eskenazi Museum of Art
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
+    url: https://www.visitbloomington.com/event/the-photographic-reflex%3a-the-lee-marks-and-john-c-deprez-jr-collection/60101/
     image: img/photographic-reflex.jpg
     image_credit: Visit Bloomington
   - section: Local Events
@@ -119,21 +110,31 @@ stories:
       An Archaeology of Knowledge presents abstract assemblages made from found printed and bound matter. On view through Feb. 14, 2027.
     when: Oct 19, 2026 - Feb 14, 2027
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
+    url: https://www.visitbloomington.com/event/samuel-levi-jones%3a-an-archaeology-of-knowledge/60099/
     image: img/samuel-levi-jones.jpg
     image_credit: Visit Bloomington
   - section: Local News
+    title: Council defeats 911 dispatch tax increase after four members miss vote
+    body: >-
+      The Bloomington council voted 1-4 Monday on raising the countywide dispatch tax rate from 0.0631% to 0.1%, which would have brought in about $4.9 million a year. Four members were absent, and under state law absences count as no votes, so the measure failed even if every other member had backed it. Only Isabel Piedmont-Smith voted yes.
+
+      The county income tax rate will be 2.205% for 2027. The city expects to cover the gap against the $4.81 million 2027 dispatch budget from reserves. Any increase approved after Oct. 31 would not take effect until October 2027.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/bloomington-council-votes-down-dispatch-tax-increase-absences-seal-defeat/
+    image: img/dispatch-tax-vote.jpg
+    image_credit: The B Square Bulletin
+  - section: Local News
+    title: Judge hears Rokita-Marte ICE detainer arguments; no ruling before Nov. 12
+    body: >-
+      A judge heard arguments Tuesday in the fight between Attorney General Todd Rokita and Monroe County Sheriff Ruben Marte over whether county jailers can hold people based on a federal immigration officer's request. A decision is not expected before Nov. 12.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/judge-hears-arguments-in-rokita-marte-ice-detainer-fight-decision-not-expected-before-nov-12/
+  - section: Local News
     title: County Health Department reopens with a new interim officer
     body: >-
-      The Monroe County Board of Health appointed Dr. Paul Broderick, Morgan County's health officer since 2011, as interim health officer effective Monday. He keeps his Morgan County post while serving here. The department resumes regular hours Tuesday, including permits, birth and death certificates, and STI testing and treatment, after several days closed to walk-ins.
+      The Monroe County Board of Health appointed Dr. Paul Broderick, Morgan County's health officer since 2011, as interim health officer effective Monday. He keeps his Morgan County post while serving here. The department resumed regular hours Tuesday, including permits, birth and death certificates, and STI testing and treatment, after several days closed to walk-ins.
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/10/26/monroe-county-names-interim-health-officer-regular-services-resume-tuesday/
-  - section: Local News
-    title: Rokita backs federal election monitors, but Monroe County isn't named
-    body: >-
-      Attorney General Todd Rokita welcomed Justice Department monitors for the Nov. 3 election. Marion and Lake counties have been identified as monitoring locations; nothing reviewed shows monitors coming to Monroe County. The department says monitors will observe for possible federal violations, report concerns after Election Day and must not interfere with voting. Rep. Andre Carson criticized the locations as targeting counties with large Democratic, Black and Hispanic populations.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/26/rokita-backs-federal-election-monitors-in-indiana-announcement-does-not-name-monroe-county/
   - section: Local News
     title: Bloomington Transit warns of cuts if $3.8 million in tax support ends
     body: >-
@@ -147,12 +148,6 @@ stories:
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/bloomington-proposes-6-87m-bond-issue-for-fire-truck-street-safety-plans-for-regular-borrowing/
   - section: Local News
-    title: IU Health urges planning as Halloween and game day collide Saturday
-    body: >-
-      With Halloween and an IU home game on the same day, Oct. 31, IU Health's Dr. Robert Adams advises drivers to watch for people stepping into streets and pedestrians to use crosswalks. Groups should agree on a meeting spot, anyone drinking should arrange a designated driver, and trick-or-treaters should carry reflective tape or glow sticks and a contact card.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/26/iu-health-urges-safety-as-halloween-iu-football-festivities-coincide-saturday/
-  - section: Local News
     title: Second Street is one-way westbound until before Thanksgiving
     body: >-
       Eastbound Second Street closed Oct. 21, with eastbound drivers detoured to First Street. Crews are replacing asphalt, adding stormwater infrastructure and paving the south side. Two-way traffic is scheduled to return before Thanksgiving, weather permitting.
@@ -165,35 +160,37 @@ stories:
     source: NPR
     url: https://www.npr.org/nx-s1-6016212
   - section: US News
-    title: Trump administration moves to prosecute Comey again
-    body: >-
-      NPR reports the administration is attempting a new prosecution of former FBI Director James Comey. Separately, a judge ruled the Justice Department illegally fired Comey's daughter.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6018628
-  - section: US News
     title: US measles cases top 4,580, more than double all of 2025
     body: >-
       The CDC counts more than 4,580 cases as of Oct. 22, and 96% are unvaccinated or of unknown status. Pennsylvania has at least 1,338 cases and 5 deaths. Two MMR doses are nearly 97% effective, per the CDC.
     source: NPR
     url: https://www.npr.org/nx-s1-6016205
-  - section: World News
-    title: Israel votes with turnout at a record for the hour
+  - section: US News
+    title: Southwest flood damage reaches hundreds of millions in New Mexico alone
     body: >-
-      By 10am, 16.7% of eligible voters had cast ballots, the highest at that hour since 1981; soldier turnout was 30%. Several parties filed complaints over missing or defaced ballot slips, and police arrested three people over an alleged scheme to bribe voters. Likud is reportedly preparing to claim the election was stolen if Netanyahu loses.
-    source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-27-2026/
-  - section: World News
-    title: Brazil re-elects Lula, and Bolsonaro's party concedes
-    body: >-
-      Brazil's left-wing president, Luiz Inacio Lula da Silva, won Sunday's runoff against Flavio Bolsonaro for a fourth term. Bolsonaro's party has conceded. Trump had called the vote rigged.
+      NPR reports damage estimates from the flooding across the Southwest run to hundreds of millions of dollars in New Mexico alone.
     source: NPR
-    url: https://www.npr.org/nx-s1-6016299
+    url: https://www.npr.org/nx-s1-6019352
   - section: World News
-    title: Syria condemns Jordanian airstrikes aimed at Islamic State
+    title: Israel exit polls show no clear winner after record turnout
     body: >-
-      Syria called the strikes in its south an unacceptable violation of its airspace. Jordan said it targeted Islamic State in retaliation for a deadly church attack.
+      Exit polls on the main channels give the Eisenkot-led opposition bloc 52 seats and Netanyahu's coalition parties 50, with Arab-led parties at 18. Neither reaches the 61 needed. Turnout was 77.7% as of 10pm, the highest at that hour since 1999. Channel 14, which usually favors Netanyahu, gives his bloc 60.
+
+      Ra'am leader Mansour Abbas says both sides have approached him but "there aren't numbers for a government." Avigdor Liberman says soldiers' votes could lift his party above the 8 seats polled, and final results may not come until Friday.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-october-27-2026/
+  - section: World News
+    title: Bolsonaro's party accepts Brazil defeat, but he refuses to concede
+    body: >-
+      Luiz Inacio Lula da Silva won Sunday's runoff against Flavio Bolsonaro for a fourth term. Bolsonaro's party has accepted the result, but NPR reports he has not conceded.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6019217
+  - section: World News
+    title: Ebola outbreak breaks records and marks a grim milestone
+    body: >-
+      NPR reports the current Ebola outbreak is the largest on record and has just passed a new milestone.
+    source: NPR
+    url: https://www.npr.org/g-s1-150136
   - section: World News
     title: Local ceasefire brokered by Melania Trump starts in southern Ukraine
     body: >-
@@ -209,7 +206,7 @@ stories:
   - section: AI News
     title: OpenAI claims AI-made proofs, with none yet independently confirmed
     body: >-
-      From unreleased internal models, OpenAI claims a sub-exponential algorithm for counting k-CNF solutions that disproves the Exponential Time Hypothesis, plus proofs on wave-equation local smoothing and four-dimensional gauge theories. It does not touch P vs NP. Outside reviewers, including Ryan Williams of MIT, have only begun checking the first claim, and the Yang-Mills material is not public. Some mathematicians have criticized the announcement.
+      From unreleased internal models, OpenAI claims a sub-exponential algorithm for counting k-CNF solutions that disproves the Exponential Time Hypothesis, plus proofs on wave-equation local smoothing and four-dimensional gauge theories. It does not touch P vs NP. Outside reviewers, including Ryan Williams of MIT, have only begun checking the first claim, and the Yang-Mills material is not public.
     source: AI News Today
     url: https://pasqualepillitteri.it/en/news/27422/openai-eth-disproved-local-smoothing-kakeya
   - section: AI News
@@ -218,15 +215,9 @@ stories:
       NPR reports that Anthropic has filed for an initial public offering. Reports this week said the Nasdaq ticker would be ANT; share price and listing date have not been set.
     source: NPR
     url: https://www.npr.org/nx-s1-6014772
-  - section: AI News
-    title: Lenovo previews a 300-gram box to run large models locally
-    body: >-
-      Lenovo's AI Host P7 is claimed to run models up to 125 billion parameters. The specs are company claims, and no price or release date has been announced.
-    source: AI News Today
-    url: https://pasqualepillitteri.it/en/news/27516/lenovo-unveils-ai-host-p7-125b-local-models
   - section: On This Day
-    title: "1964 - Reagan's speech for Goldwater launches his political career"
+    title: "1999 - Gunmen attack Armenia's parliament"
     body: >-
-      Ronald Reagan gave a speech supporting Republican presidential candidate Barry Goldwater, which launched his own political career.
+      Gunmen led by Nairi Hunanyan stormed the Armenian parliament, killing Prime Minister Vazgen Sargsyan, Speaker Karen Demirchyan and six others.
     source: Wikipedia
     url: https://en.wikipedia.org/wiki/October_27
