@@ -1,5 +1,13 @@
-generated: "2026-10-28T06:34:09-04:00"
+generated: "2026-10-28T18:33:22-04:00"
 stories:
+  - section: Local Events
+    title: Wednesday pub quiz at Lennie's
+    body: >-
+      Seating at 8pm, trivia at 8:30pm. All ages, $10 off wine bottles, gift card prizes.
+    when: Wed Oct 28, 8pm
+    where: Lennie's
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/rss/
   - section: Local Events
     title: AMP Bloomington brings founders and employers together through Friday
     body: >-
@@ -9,13 +17,6 @@ stories:
     url: https://www.visitbloomington.com/event/amp-bloomington-2026/60022/
     image: img/amp-bloomington.jpg
     image_credit: Visit Bloomington
-  - section: Local Events
-    title: Plan Commission special hearing on housing rules today
-    body: >-
-      The city is gathering public input on housing and development rules.
-    when: Wed Oct 28
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/10/06/6667
   - section: Local Events
     title: Clear Creek Corridor project holds first public meeting
     body: >-
@@ -108,6 +109,24 @@ stories:
     image: img/silk-road.jpg
     image_credit: Visit Bloomington
   - section: Local News
+    title: MCCSC says free pre-K enrollment more than doubled since 2024
+    body: >-
+      More than 900 children have attended Monroe County Community School Corp. preschool and pre-K for free over the last two school years. Enrollment grew from 262 in spring 2024 to 542 this fall after voters approved a 2023 referendum. The district reports a 64% increase in kindergarten readiness among the last two pre-K classes, a figure it released itself. It spent about $6.26 million on early learning from January 2024 through March 2025, mostly on staffing.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/28/mccsc-says-more-than-900-families-used-free-preschool-and-pre-k/
+  - section: Local News
+    title: Monroe County names interim health officer; services resume
+    body: >-
+      The Board of Health named Dr. Paul Broderick interim county health officer, and the Health Department returned to normal operations Tuesday. Broderick has led Morgan County's health department since 2011 and keeps that job too. Permits, birth and death certificates, and sexually transmitted infection testing and treatment are available again.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/26/monroe-county-names-interim-health-officer-regular-services-resume-tuesday/
+  - section: Local News
+    title: IU partners with Belgian chip research center imec
+    body: >-
+      The first project, led by IU CREATE, will have imec supply electronic and photonic components for radiation and extreme-environment testing, including conditions found in space. Imec is a Leuven-based nonprofit semiconductor research center founded in 1984.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/28/iu-partners-with-belgian-semiconductor-research-center-imec/
+  - section: Local News
     title: South Liberty Drive gets overnight lane restrictions Thursday and Friday
     body: >-
       Crews resurface South Liberty Drive from West Third Street to the end of the city-maintained road, 7pm to 3am on Oct. 29 and 30, weather permitting. The road stays open with flagging and brief delays, and businesses keep access.
@@ -122,12 +141,6 @@ stories:
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/bloomington-council-votes-down-dispatch-tax-increase-absences-seal-defeat/
   - section: Local News
-    title: Judge hears Rokita-Marte ICE detainer arguments; no ruling before Nov. 12
-    body: >-
-      A judge heard arguments Tuesday in the fight between Attorney General Todd Rokita and Monroe County Sheriff Ruben Marte over whether county jailers can hold people based on a federal immigration officer's request. A decision is not expected before Nov. 12.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/judge-hears-arguments-in-rokita-marte-ice-detainer-fight-decision-not-expected-before-nov-12/
-  - section: Local News
     title: City proposes $6.87 million bond for aerial fire truck and street safety
     body: >-
       The package includes $2.5 million to replace the city's only aerial platform truck, out of service for more than four months, and $4.23 million for transportation, including $1.7 million for 10th Street between College and Park and $1.5 million for 3rd Street safety. The council holds a public hearing and possible final vote Nov. 4.
@@ -140,17 +153,29 @@ stories:
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/14/6677
   - section: US News
+    title: Fed holds interest rates steady as inflation stays stubborn
+    body: >-
+      The Federal Reserve left interest rates unchanged at its meeting Wednesday, with inflation still running hot, NPR reports.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6020425
+  - section: US News
+    title: Dolores Huerta, labor leader and civil rights icon, dies at 96
+    body: >-
+      NPR reports the labor leader, feminist and civil rights figure has died at 96.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6020543
+  - section: US News
+    title: Trump administration moves to remove rules on methane from oil drilling
+    body: >-
+      The administration is moving to drop federal limits on emissions of methane, a powerful climate-warming gas, from oil drilling, NPR reports.
+    source: NPR
+    url: https://www.npr.org/nx-s1-5995910
+  - section: US News
     title: Report finds partnerships between ICE and local police are surging
     body: >-
       NPR reports a new analysis shows agreements between Immigration and Customs Enforcement and local police departments have surged.
     source: NPR
     url: https://www.npr.org/g-s1-150296
-  - section: US News
-    title: Trump says he is ending restrictions on methane from oil drilling
-    body: >-
-      President Trump says he is ending federal limits on emissions of methane, a climate-warming gas, from oil drilling, NPR reports.
-    source: NPR
-    url: https://www.npr.org/g-s1-150299
   - section: US News
     title: Democrats in Congress prepare for election fraud claims ahead of Nov. 3
     body: >-
@@ -158,11 +183,9 @@ stories:
     source: NPR
     url: https://www.npr.org/g-s1-150095
   - section: World News
-    title: Israel's partial count shows no majority as soldiers' votes remain
+    title: Israel's partial election results show no clear winner
     body: >-
-      With about 77% of ballots counted, Netanyahu's bloc has 54 seats and Eisenkot's bloc 47, with Arab-led parties at a combined 19. Neither side reaches the 61 needed. Roughly 600,000 double-envelope votes, mostly soldiers', are still being tallied and could shift the result, with counting expected to run until Friday.
-
-      Joint List chair Yousef Jabareen says any party seeking to replace Netanyahu will have to engage his faction. Markets fell, with the Tel Aviv benchmark down about 1.7%.
+      With about 77% of ballots counted earlier today, Netanyahu's bloc had 54 seats and Eisenkot's bloc 47, with Arab-led parties at a combined 19. Neither side reaches the 61 needed. Roughly 600,000 double-envelope votes, mostly soldiers', are still being tallied, with counting expected to run until Friday.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-october-28-2026/
   - section: World News
@@ -172,9 +195,9 @@ stories:
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-october-28-2026/
   - section: World News
-    title: US to issue visas to Flavio Bolsonaro as his whereabouts stay unclear
+    title: Flavio Bolsonaro arrives in Florida after fleeing Brazil
     body: >-
-      After Lula's runoff win in Brazil, NPR reports the US plans to issue visas to Flavio Bolsonaro while his whereabouts remain unclear.
+      NPR reports Flavio Bolsonaro has arrived in Florida after leaving Brazil, following Lula's runoff win.
     source: NPR
     url: https://www.npr.org/nx-s1-6019678
   - section: AI News
@@ -183,26 +206,18 @@ stories:
       Genie 4 generates explorable 3D environments in real time, steered by keyboard and text prompts, and DeepMind says it is the first real-time world model with native audio, including ambient sound, music and speaking characters. Users can change weather and camera angle or add people and objects mid-session. It is a research preview for selected testers, with a waitlist for Google AI Ultra subscribers; no pricing has been announced. Long sessions show visual drift and loss of object permanence.
     source: AI News Today
     url: https://pasqualepillitteri.it/en/news/27630/genie-4-google-deepmind-world-model-native-audio
-    image: img/genie-4.jpg
-    image_credit: AI News Today
-  - section: AI News
-    title: Authors who opted out of Anthropic settlement press piracy suit
-    body: >-
-      Tobias Wolff and 27 other authors, including Dave Eggers, allege in Cruz v. Anthropic that the company copied books from LibGen and PiLiMi to train Claude. They seek statutory damages of up to $150,000 per work and an injunction against Claude. They opted out of the Bartz class settlement, approved July 20 at about $3,000 per work. These are allegations; no court has ruled.
-    source: AI News Today
-    url: https://pasqualepillitteri.it/en/news/27669/stanford-professors-sue-anthropic-pirated-books
-  - section: AI News
-    title: Claude Code subscribers report usage limits running out within hours
-    body: >-
-      Since Oct. 17, users have reported on GitHub that Claude Code limits run out within hours. No cause has been proven.
-    source: AI News Today
-    url: https://pasqualepillitteri.it/en/news/27751/claude-code-usage-limits-run-out-users-report-bug
   - section: AI News
     title: Anthropic files for an IPO that could break records
     body: >-
       NPR reports that Anthropic has filed for an initial public offering. Reports this week said the Nasdaq ticker would be ANT; share price and listing date have not been set.
     source: NPR
     url: https://www.npr.org/nx-s1-6014772
+  - section: AI News
+    title: Authors who opted out of Anthropic settlement press piracy suit
+    body: >-
+      Tobias Wolff and 27 other authors, including Dave Eggers, allege in Cruz v. Anthropic that the company copied books from LibGen and PiLiMi to train Claude. They seek statutory damages of up to $150,000 per work and an injunction against Claude. They opted out of the Bartz class settlement, approved July 20 at about $3,000 per work. These are allegations; no court has ruled.
+    source: AI News Today
+    url: https://pasqualepillitteri.it/en/news/27669/stanford-professors-sue-anthropic-pirated-books
   - section: On This Day
     title: "1886 - Statue of Liberty dedicated in New York Harbor"
     body: >-
