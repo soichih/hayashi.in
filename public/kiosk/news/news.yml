@@ -1,21 +1,21 @@
-generated: "2026-10-27T18:33:48-04:00"
+generated: "2026-10-28T06:34:09-04:00"
 stories:
   - section: Local Events
-    title: Plan Commission special hearing on housing rules
+    title: AMP Bloomington brings founders and employers together through Friday
     body: >-
-      The city is seeking public input on housing and development rules.
-    when: Wed Oct 28
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/10/06/6667
-  - section: Local Events
-    title: AMP Bloomington brings founders and employers together for three days
-    body: >-
-      Free event connecting Bloomington's founders, employers, talent and partners, spread across five venues.
+      Free, open to the public, and spread across five venues. The three days connect Bloomington's founders, capital, employers, talent and partners.
     when: Wed Oct 28 - Fri Oct 30
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/amp-bloomington-2026/60022/
     image: img/amp-bloomington.jpg
     image_credit: Visit Bloomington
+  - section: Local Events
+    title: Plan Commission special hearing on housing rules today
+    body: >-
+      The city is gathering public input on housing and development rules.
+    when: Wed Oct 28
+    source: City of Bloomington
+    url: https://bloomington.in.gov/news/2026/10/06/6667
   - section: Local Events
     title: Clear Creek Corridor project holds first public meeting
     body: >-
@@ -42,6 +42,16 @@ stories:
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/chasing-lilac/60110/
   - section: Local Events
+    title: Goosebumps The Musical opens Friday at Waldron Auditorium
+    body: >-
+      Constellation Stage & Screen stages Phantom of the Auditorium, running Oct 30 through Nov 15.
+    when: Opens Fri Oct 30
+    where: Waldron Auditorium
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/events/
+    image: img/goosebumps.jpg
+    image_credit: Visit Bloomington
+  - section: Local Events
     title: IU Homecoming parade closes Kirkwood Avenue
     body: >-
       The parade travels east on Kirkwood from Washington Street to the Sample Gates. Washington closes at 2:30pm for staging and Kirkwood closes at 5pm. Parking is banned all day on Kirkwood between Walnut and Indiana, and on nearby streets between Fourth and Sixth.
@@ -49,14 +59,7 @@ stories:
     where: Kirkwood Avenue
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/22/6680
-  - section: Local Events
-    title: All-ages Halloween pizza and pottery night
-    body: >-
-      Halloween pottery and pizza night for all ages, with costumes encouraged.
-    when: Fri Oct 30
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/all-age-halloween-pizza-pottery-night/59980/
-    image: img/pizza-pottery.jpg
+    image: img/homecoming.jpg
     image_credit: Visit Bloomington
   - section: Local Events
     title: Last Food Truck Friday of the season
@@ -85,16 +88,6 @@ stories:
     source: Buskirk-Chumley Theater
     url: https://buskirkchumley.org/events/
   - section: Local Events
-    title: Future Tense national student exhibition closes Saturday
-    body: >-
-      A national student exhibition with the Surface Design Association, juried by Jose Santiago Perez. Closes Oct 31.
-    when: Through Sat Oct 31
-    where: Grunwald Gallery of Art, IU
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/future-tense-2026/59728/
-    image: img/future-tense.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
     title: The Photographic Reflex shows 150 years of photography
     body: >-
       An exhibition of more than 150 years of photography, including a gift of 100-plus works by 80 artists from the Lee Marks and John C. DePrez Jr. Collection. Runs through Dec. 20.
@@ -105,14 +98,21 @@ stories:
     image: img/photographic-reflex.jpg
     image_credit: Visit Bloomington
   - section: Local Events
-    title: Samuel Levi Jones exhibition on view at IU
+    title: Treasures of the Silk Road exhibition runs through next September
     body: >-
-      An Archaeology of Knowledge presents abstract assemblages made from found printed and bound matter. On view through Feb. 14, 2027.
-    when: Oct 19, 2026 - Feb 14, 2027
+      The exhibition opened Sept. 25 and stays up through Sept. 30, 2027.
+    when: Through Sep 30, 2027
+    where: McCalla Center
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/samuel-levi-jones%3a-an-archaeology-of-knowledge/60099/
-    image: img/samuel-levi-jones.jpg
+    url: https://www.visitbloomington.com/events/
+    image: img/silk-road.jpg
     image_credit: Visit Bloomington
+  - section: Local News
+    title: South Liberty Drive gets overnight lane restrictions Thursday and Friday
+    body: >-
+      Crews resurface South Liberty Drive from West Third Street to the end of the city-maintained road, 7pm to 3am on Oct. 29 and 30, weather permitting. The road stays open with flagging and brief delays, and businesses keep access.
+    source: City of Bloomington
+    url: https://bloomington.in.gov/news/2026/10/26/6682
   - section: Local News
     title: Council defeats 911 dispatch tax increase after four members miss vote
     body: >-
@@ -121,26 +121,12 @@ stories:
       The county income tax rate will be 2.205% for 2027. The city expects to cover the gap against the $4.81 million 2027 dispatch budget from reserves. Any increase approved after Oct. 31 would not take effect until October 2027.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/bloomington-council-votes-down-dispatch-tax-increase-absences-seal-defeat/
-    image: img/dispatch-tax-vote.jpg
-    image_credit: The B Square Bulletin
   - section: Local News
     title: Judge hears Rokita-Marte ICE detainer arguments; no ruling before Nov. 12
     body: >-
       A judge heard arguments Tuesday in the fight between Attorney General Todd Rokita and Monroe County Sheriff Ruben Marte over whether county jailers can hold people based on a federal immigration officer's request. A decision is not expected before Nov. 12.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/judge-hears-arguments-in-rokita-marte-ice-detainer-fight-decision-not-expected-before-nov-12/
-  - section: Local News
-    title: County Health Department reopens with a new interim officer
-    body: >-
-      The Monroe County Board of Health appointed Dr. Paul Broderick, Morgan County's health officer since 2011, as interim health officer effective Monday. He keeps his Morgan County post while serving here. The department resumed regular hours Tuesday, including permits, birth and death certificates, and STI testing and treatment, after several days closed to walk-ins.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/26/monroe-county-names-interim-health-officer-regular-services-resume-tuesday/
-  - section: Local News
-    title: Bloomington Transit warns of cuts if $3.8 million in tax support ends
-    body: >-
-      The transit board says service and staffing could be reduced if the city's $3.8 million a year in local income tax support is not preserved under Indiana's revised tax system, which takes effect in 2029. About $1.1 million pays for operations, including Sunday service, microtransit and two staff positions; the rest goes to capital costs such as fleet upgrades. No specific cuts or replacement funding have been named.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/26/bloomington-transit-warns-of-possible-cuts-if-3-8-million-in-tax-support-is-not-preserved/
   - section: Local News
     title: City proposes $6.87 million bond for aerial fire truck and street safety
     body: >-
@@ -154,61 +140,63 @@ stories:
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/14/6677
   - section: US News
-    title: Justice Department sues to block Alaska from certifying Senate result
+    title: Report finds partnerships between ICE and local police are surging
     body: >-
-      The suit asks a federal court to stop Alaska from automatically certifying its Senate race if Republican Sen. Dan Sullivan loses, until the government investigates whether votes for Daniel J. Sullivan, a retired teacher with a nearly identical name on the Nov. 3 ballot, were meant for the senator. Attorney General Todd Blanche defended the suit and denied it lays groundwork for challenging the midterms. Sullivan faces Democrat Mary Peltola.
+      NPR reports a new analysis shows agreements between Immigration and Customs Enforcement and local police departments have surged.
     source: NPR
-    url: https://www.npr.org/nx-s1-6016212
+    url: https://www.npr.org/g-s1-150296
   - section: US News
-    title: US measles cases top 4,580, more than double all of 2025
+    title: Trump says he is ending restrictions on methane from oil drilling
     body: >-
-      The CDC counts more than 4,580 cases as of Oct. 22, and 96% are unvaccinated or of unknown status. Pennsylvania has at least 1,338 cases and 5 deaths. Two MMR doses are nearly 97% effective, per the CDC.
+      President Trump says he is ending federal limits on emissions of methane, a climate-warming gas, from oil drilling, NPR reports.
     source: NPR
-    url: https://www.npr.org/nx-s1-6016205
+    url: https://www.npr.org/g-s1-150299
   - section: US News
-    title: Southwest flood damage reaches hundreds of millions in New Mexico alone
+    title: Democrats in Congress prepare for election fraud claims ahead of Nov. 3
     body: >-
-      NPR reports damage estimates from the flooding across the Southwest run to hundreds of millions of dollars in New Mexico alone.
+      NPR reports on how congressional Democrats are preparing for claims of election fraud as the Nov. 3 midterms approach.
     source: NPR
-    url: https://www.npr.org/nx-s1-6019352
+    url: https://www.npr.org/g-s1-150095
   - section: World News
-    title: Israel exit polls show no clear winner after record turnout
+    title: Israel's partial count shows no majority as soldiers' votes remain
     body: >-
-      Exit polls on the main channels give the Eisenkot-led opposition bloc 52 seats and Netanyahu's coalition parties 50, with Arab-led parties at 18. Neither reaches the 61 needed. Turnout was 77.7% as of 10pm, the highest at that hour since 1999. Channel 14, which usually favors Netanyahu, gives his bloc 60.
+      With about 77% of ballots counted, Netanyahu's bloc has 54 seats and Eisenkot's bloc 47, with Arab-led parties at a combined 19. Neither side reaches the 61 needed. Roughly 600,000 double-envelope votes, mostly soldiers', are still being tallied and could shift the result, with counting expected to run until Friday.
 
-      Ra'am leader Mansour Abbas says both sides have approached him but "there aren't numbers for a government." Avigdor Liberman says soldiers' votes could lift his party above the 8 seats polled, and final results may not come until Friday.
+      Joint List chair Yousef Jabareen says any party seeking to replace Netanyahu will have to engage his faction. Markets fell, with the Tel Aviv benchmark down about 1.7%.
     source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-27-2026/
+    url: https://www.timesofisrael.com/liveblog-october-28-2026/
   - section: World News
-    title: Bolsonaro's party accepts Brazil defeat, but he refuses to concede
+    title: Qatar gives Iran a new draft deal to end the war
     body: >-
-      Luiz Inacio Lula da Silva won Sunday's runoff against Flavio Bolsonaro for a fourth term. Bolsonaro's party has accepted the result, but NPR reports he has not conceded.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6019217
+      Qatari mediators handed Tehran a new draft agreement, and a response is expected by the end of the week. The Wall Street Journal reported that the US has told some Gulf states to prepare for a short, intensive offensive after the Nov. 3 midterms.
+    source: Times of Israel
+    url: https://www.timesofisrael.com/liveblog-october-28-2026/
   - section: World News
-    title: Ebola outbreak breaks records and marks a grim milestone
+    title: US to issue visas to Flavio Bolsonaro as his whereabouts stay unclear
     body: >-
-      NPR reports the current Ebola outbreak is the largest on record and has just passed a new milestone.
+      After Lula's runoff win in Brazil, NPR reports the US plans to issue visas to Flavio Bolsonaro while his whereabouts remain unclear.
     source: NPR
-    url: https://www.npr.org/g-s1-150136
-  - section: World News
-    title: Local ceasefire brokered by Melania Trump starts in southern Ukraine
-    body: >-
-      NPR reports a local ceasefire has begun in southern Ukraine, brokered by Melania Trump.
-    source: NPR
-    url: https://www.npr.org/g-s1-150037
+    url: https://www.npr.org/nx-s1-6019678
   - section: AI News
-    title: Microsoft offers voluntary exit to about 60,000 employees
+    title: Google DeepMind unveils Genie 4, a world model with native audio
     body: >-
-      Microsoft confirmed a Voluntary Exit Offer to roughly a quarter of its workforce in the US, Canada, India and the UK, at vice president level or below, across selected teams including Xbox, Windows, Copilot and finance. Employees have until early December to accept, with departures at year end. Microsoft gave no figures and expects fewer takers than offers.
-    source: Bloomberg via AI News Today
-    url: https://pasqualepillitteri.it/en/news/27456/microsoft-confirms-buyout-60000-employees
-  - section: AI News
-    title: OpenAI claims AI-made proofs, with none yet independently confirmed
-    body: >-
-      From unreleased internal models, OpenAI claims a sub-exponential algorithm for counting k-CNF solutions that disproves the Exponential Time Hypothesis, plus proofs on wave-equation local smoothing and four-dimensional gauge theories. It does not touch P vs NP. Outside reviewers, including Ryan Williams of MIT, have only begun checking the first claim, and the Yang-Mills material is not public.
+      Genie 4 generates explorable 3D environments in real time, steered by keyboard and text prompts, and DeepMind says it is the first real-time world model with native audio, including ambient sound, music and speaking characters. Users can change weather and camera angle or add people and objects mid-session. It is a research preview for selected testers, with a waitlist for Google AI Ultra subscribers; no pricing has been announced. Long sessions show visual drift and loss of object permanence.
     source: AI News Today
-    url: https://pasqualepillitteri.it/en/news/27422/openai-eth-disproved-local-smoothing-kakeya
+    url: https://pasqualepillitteri.it/en/news/27630/genie-4-google-deepmind-world-model-native-audio
+    image: img/genie-4.jpg
+    image_credit: AI News Today
+  - section: AI News
+    title: Authors who opted out of Anthropic settlement press piracy suit
+    body: >-
+      Tobias Wolff and 27 other authors, including Dave Eggers, allege in Cruz v. Anthropic that the company copied books from LibGen and PiLiMi to train Claude. They seek statutory damages of up to $150,000 per work and an injunction against Claude. They opted out of the Bartz class settlement, approved July 20 at about $3,000 per work. These are allegations; no court has ruled.
+    source: AI News Today
+    url: https://pasqualepillitteri.it/en/news/27669/stanford-professors-sue-anthropic-pirated-books
+  - section: AI News
+    title: Claude Code subscribers report usage limits running out within hours
+    body: >-
+      Since Oct. 17, users have reported on GitHub that Claude Code limits run out within hours. No cause has been proven.
+    source: AI News Today
+    url: https://pasqualepillitteri.it/en/news/27751/claude-code-usage-limits-run-out-users-report-bug
   - section: AI News
     title: Anthropic files for an IPO that could break records
     body: >-
@@ -216,8 +204,8 @@ stories:
     source: NPR
     url: https://www.npr.org/nx-s1-6014772
   - section: On This Day
-    title: "1999 - Gunmen attack Armenia's parliament"
+    title: "1886 - Statue of Liberty dedicated in New York Harbor"
     body: >-
-      Gunmen led by Nairi Hunanyan stormed the Armenian parliament, killing Prime Minister Vazgen Sargsyan, Speaker Karen Demirchyan and six others.
+      President Grover Cleveland dedicated the Statue of Liberty, a gift from France.
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/October_27
+    url: https://en.wikipedia.org/wiki/October_28
