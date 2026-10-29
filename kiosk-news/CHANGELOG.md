@@ -95,3 +95,4 @@ One dated line per edit the agent makes to this skill: what changed and why.
 2026-10-02: sources.md - noted RSS range limit and working ipm.org/kpbs.org image sources.
 2026-10-06: sources.md - noted image script must run one per Bash call, plus wbiw.com and AI Weekly edition URLs as useful sources.
 - 2026-10-06: sources.md note on evening-run source reliability and empty image folder.
+- 2026-10-29: sources.md note on NPR article timeouts and the pasqualepillitteri.it AI list.
