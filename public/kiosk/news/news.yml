@@ -1,30 +1,22 @@
-generated: "2026-10-29T06:33:45-04:00"
+generated: "2026-10-29T18:33:07-04:00"
 stories:
   - section: Local Events
-    title: Clear Creek Corridor project holds first public meeting
-    body: >-
-      City Utilities opens public input on a feasibility study and preliminary design to replace aging stormwater infrastructure along the Clear Creek channel south of W. 1st Street. The project will explore turning the century-old limestone channel into a more natural stream corridor to cut flood risk and improve water quality.
-    when: Thu Oct 29, 5:30-7:30pm
-    where: Switchyard Park Pavilion, 1601 S. Rogers St.
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/10/19/6679
-  - section: Local Events
-    title: Zodiac Killer Project screening with its filmmaker
-    body: >-
-      Filmmaker Charlie Shackleton joins a screening and conversation about his documentary on a highway patrolman's effort to identify the Zodiac Killer.
-    when: Thu Oct 29
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/zodiac-killer-project-w-filmmaker-%7c-inspiring-conversations/59868/
-    image: img/zodiac-killer-project.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Chasing Lilac plays the Bluebird
+    title: Chasing Lilac plays the Bluebird tonight
     body: >-
       Live music, 21 and over. Doors 8pm.
     when: Thu Oct 29, 9pm
     where: The Bluebird
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/chasing-lilac/60110/
+  - section: Local Events
+    title: AMP Bloomington wraps up with a final free day
+    body: >-
+      The three-day gathering of the city's founders, investors, employers and talent runs across five venues and is free and open to the public.
+    when: Through Fri Oct 30
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/events/
+    image: img/amp-bloomington.jpg
+    image_credit: Visit Bloomington
   - section: Local Events
     title: Goosebumps The Musical opens Friday at Waldron Auditorium
     body: >-
@@ -36,9 +28,9 @@ stories:
     image: img/goosebumps.jpg
     image_credit: Visit Bloomington
   - section: Local Events
-    title: IU Homecoming parade closes Kirkwood Avenue
+    title: IU Homecoming parade closes Kirkwood Avenue Friday
     body: >-
-      The parade travels east on Kirkwood from Washington Street to the Sample Gates. Washington closes at 2:30pm for staging and Kirkwood closes at 5pm. Parking is banned all day on Kirkwood between Walnut and Indiana, and on nearby streets between Fourth and Sixth.
+      The parade travels east on Kirkwood from Washington Street to the Sample Gates. Washington closes at 2:30pm for staging and Kirkwood closes at 5pm. Parking is banned on Kirkwood between Walnut and Indiana, and on Washington, Lincoln, Grant, Dunn and Indiana between Fourth and Sixth.
     when: Fri Oct 30, 5:30pm
     where: Kirkwood Avenue
     source: City of Bloomington
@@ -56,22 +48,32 @@ stories:
     image: img/food-truck-friday.jpg
     image_credit: Visit Bloomington
   - section: Local Events
-    title: Halloween screenings at the Buskirk-Chumley
+    title: Jennifer's Body and The Exorcist play the Buskirk-Chumley
     body: >-
       Jennifer's Body (2009) plays Fri Oct 30 and The Exorcist (1973) plays Sat Oct 31. Doors 6:30pm, show 7pm both nights.
     when: Oct 30-31, 7pm
     where: Buskirk-Chumley Theater
     source: Buskirk-Chumley Theater
     url: https://buskirkchumley.org/events/
+    image: img/jennifers-body.jpg
+    image_credit: Visit Bloomington
   - section: Local Events
     title: Scream and Cabin in the Woods double feature
     body: >-
-      Friday Night Frights pairs the two meta-horror films as "Postmodern Panic."
+      Friday Night Frights pairs the two meta-horror films as "Postmodern Panic." Outside food and drink are allowed in enclosed containers; alcohol is not.
     when: Fri Oct 30
     source: Visit Bloomington
     url: https://www.visitbloomington.com/events/
     image: img/postmodern-panic.jpg
     image_credit: Visit Bloomington
+  - section: Local Events
+    title: Jukebox Luke plays the Bluebird with Welcome to the Neighborhood
+    body: >-
+      Live music, 21 and over. Doors 7pm.
+    when: Fri Oct 30, 8pm
+    where: The Bluebird
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/events/
   - section: Local Events
     title: Oktoberfest Polka Party with the People's Polka Party Band
     body: >-
@@ -89,67 +91,75 @@ stories:
     source: Buskirk-Chumley Theater
     url: https://buskirkchumley.org/events/
   - section: Local Events
+    title: IU Jazz Studies performs SML
+    body: >-
+      Doors 6:30pm.
+    when: Thu Nov 5, 7pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/
+  - section: Local Events
+    title: Habitat for Humanity hosts Stand Up for Habitat
+    body: >-
+      Benefit evening for Habitat for Humanity of Monroe County. Doors 7pm.
+    when: Sat Nov 7, 7:30pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/
+  - section: Local Events
+    title: Hotel California, an Eagles tribute, comes to town
+    body: >-
+      Hotel California - The Original Eagles Tribute. Doors 7pm.
+    when: Sun Nov 8, 7:30pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/
+  - section: Local Events
     title: The Photographic Reflex shows 150 years of photography
     body: >-
-      More than 100 works by 80 artists from the Lee Marks and John C. DePrez Jr. Collection, spanning over 150 years. Runs through Dec. 20.
+      More than 100 works by 80 artists from the Lee Marks and John C. DePrez Jr. Collection. Runs through Dec. 20.
     when: Through Dec 20
     where: Eskenazi Museum of Art
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/the-photographic-reflex%3a-the-lee-marks-and-john-c-deprez-jr-collection/60101/
     image: img/photographic-reflex.jpg
     image_credit: Visit Bloomington
-  - section: Local Events
-    title: Treasures of the Silk Road exhibition runs through next September
-    body: >-
-      The exhibition, developed with musician Shahyar Daneshgar, opened Sept. 25 and stays up through Sept. 30, 2027.
-    when: Through Sep 30, 2027
-    where: McCalla Center
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
-    image: img/silk-road.jpg
-    image_credit: Visit Bloomington
   - section: Local News
-    title: South Liberty Drive gets overnight lane restrictions tonight and Friday
+    title: Indiana measles cases reach 86 in 12 counties; none in Monroe
+    body: >-
+      The state health department's count rose from 66 cases on Oct. 27 to 86 on Oct. 29, with LaGrange (20), Wayne (15), Adams (13) and Miami (10) counties hardest hit. Figures are provisional. Of the earlier 66, 15 were hospitalized and 64 were unvaccinated or of unknown status. The department says two doses of MMR vaccine are the best protection, and anyone who suspects measles should call a provider before going in.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/29/indiana-reports-86-measles-cases-across-12-counties-in-2026-none-listed-in-monroe-county/
+  - section: Local News
+    title: MCCSC pre-K enrollment more than doubled since 2024
+    body: >-
+      Over 900 children have used the district's free preschool and pre-K, and enrollment grew from 262 in spring 2024 to 542 this fall. The expansion followed the 2023 referendum, with about $6.26 million going to early learning from January 2024 through March 2025. The district plans to extend it to more families with 3-year-olds. The school board also approved a 2027 budget about $3.07 million below 2026.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/28/mccsc-says-more-than-900-families-used-free-preschool-and-pre-k/
+  - section: Local News
+    title: IU partners with Belgian chip research center imec
+    body: >-
+      The first project, led by IU CREATE, will have imec supply electronic and photonic components that IU researchers test under radiation and in extreme environments, including space. Findings will be shared to support future proposals and papers. No financial terms were given.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/28/iu-partners-with-belgian-semiconductor-research-center-imec/
+  - section: Local News
+    title: Council holds Nov. 4 hearing on $6.87 million bond after dispatch tax failure
+    body: >-
+      The council's 1-4 vote on raising the dispatch tax failed Monday because four absences count as no votes. The proposed bond would put $2.5 million toward replacing the only aerial platform fire truck, out of service for more than four months, and $4.23 million toward transportation, including 10th Street and 3rd Street safety work. A public hearing and possible final vote are set for Nov. 4.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/bloomington-proposes-6-87m-bond-issue-for-fire-truck-street-safety-plans-for-regular-borrowing/
+  - section: Local News
+    title: South Liberty Drive overnight lane restrictions continue tonight
     body: >-
       Crews resurface South Liberty Drive from West Third Street to the end of the city-maintained road, 7pm to 3am on Oct. 29 and 30, weather permitting. The road stays open with flagging and brief delays, and businesses keep access.
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/26/6682
   - section: Local News
-    title: County council trims GO bonds to $3.1 million
-    body: >-
-      Monroe County councilors approved $3.1 million in general obligation bonds, down from a $6.5 million ceiling, but nearly $3.9 million in projects remain on the list. Commissioners are also eyeing $300,000 from food and beverage tax funds for the convention center host hotel.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/monroe-county-cuts-go-bonds-to-3-1m-but-leaves-project-list-intact/
-  - section: Local News
-    title: Judge hears Rokita-Marte ICE detainer arguments; ruling not before Nov. 12
-    body: >-
-      A judge heard arguments Tuesday in the ICE detainer dispute between Indiana Attorney General Todd Rokita and Marté. A decision is not expected before Nov. 12.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/judge-hears-arguments-in-rokita-marte-ice-detainer-fight-decision-not-expected-before-nov-12/
-  - section: Local News
-    title: Monroe County jail population dips below 200 for first time since July
-    body: >-
-      The B Square Bulletin's jail notebook reports the count fell under 200 this week.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/monroe-county-jail-notebook-population-dips-below-200-for-first-time-since-july/
-  - section: Local News
-    title: Dispatch tax increase failed; city proposes $6.87 million bond
-    body: >-
-      The council's 1-4 vote on raising the dispatch tax failed Monday because four absences count as no votes. Separately, the city proposes a $6.87 million bond: $2.5 million to replace the only aerial platform fire truck, out of service for more than four months, and $4.23 million for transportation, including 10th Street and 3rd Street safety work. The council holds a public hearing and possible final vote Nov. 4.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/bloomington-proposes-6-87m-bond-issue-for-fire-truck-street-safety-plans-for-regular-borrowing/
-  - section: Local News
     title: Second Street is one-way westbound until before Thanksgiving
     body: >-
-      Eastbound Second Street closed Oct. 21, with eastbound drivers detoured to First Street. Crews are replacing asphalt, adding stormwater infrastructure and paving the south side. Two-way traffic is scheduled to return before Thanksgiving, weather permitting.
+      Eastbound Second Street closed Oct. 21, with eastbound drivers detoured to First Street. Two-way traffic is scheduled to return before Thanksgiving, weather permitting.
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/14/6677
-  - section: Local News
-    title: IU Health urges safety as Halloween and homecoming coincide Saturday
-    body: >-
-      IU Health is advising caution for trick-or-treaters, drivers and revelers on Saturday, when Halloween overlaps with IU homecoming festivities.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/
   - section: US News
     title: House races to watch in the Nov. 3 midterms
     body: >-
@@ -163,27 +173,27 @@ stories:
     source: NPR
     url: https://www.npr.org/nx-s1-6021497
   - section: US News
-    title: Tariffs, diesel and chip costs push up automakers' expenses
+    title: US and Japan agree to joint missile production in Japan
     body: >-
-      NPR reports rising tariffs, diesel and computer chip prices are driving up costs for car companies.
+      The two countries agreed to establish a Japanese facility for joint missile production, NPR reports.
     source: NPR
-    url: https://www.npr.org/nx-s1-6008066
+    url: https://www.npr.org/g-s1-150666
   - section: US News
-    title: Forecasters predict a warmer, wetter winter as El Nino builds
+    title: Actor Patrick Stewart dies at 86
     body: >-
-      NPR looks at how El Nino is expected to affect weather by region this winter.
+      The Star Trek and X-Men actor died after a battle with Alzheimer's and Lewy body dementia, according to reports.
     source: NPR
-    url: https://www.npr.org/nx-s1-6009547
+    url: https://www.npr.org/1230906945
   - section: World News
-    title: "Israel's vote count leaves neither bloc near 61 seats; Shin Bet opens probe"
+    title: "Israel's vote count leaves neither bloc near 61 seats"
     body: >-
-      With 90% of ballots counted, Netanyahu's bloc has 53 seats, the opposition 48 and Arab parties a record 19. Double-envelope ballots are still being tallied. Elections Committee chair Noam Sohlberg ordered Shin Bet to investigate suspected foreign funding and vote bribery, and four Ra'am activists were arrested in an alleged bribery scheme, which Ra'am denies. Police said there was no supporting evidence for Likud's claim that Arab parties stole the election.
+      Counting continues: Netanyahu's bloc has about 53 seats, Eisenkot's opposition 48 and Arab parties a record 19. Certified results go to President Herzog on Nov. 4. The Shin Bet is probing alleged foreign interference, which sources say could not change the outcome.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-october-29-2026/
   - section: World News
-    title: Three tankers burn after hitting mines near Strait of Hormuz
+    title: US options for Iran reportedly presented to Trump
     body: >-
-      Iran's Revolutionary Guard says three oil tankers caught fire after hitting sea mines south of the strait. It is unclear who laid the mines or whether anyone was hurt. Separately, Vance reportedly contacted a senior Iranian security official to restart peace talks.
+      The Wall Street Journal reports CENTCOM chief Adm. Brad Cooper presented military options on Iran at the White House; Reuters could not verify it. Analysts counted more than 10 US military transport flights to Israeli airbases in the past week.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-october-29-2026/
   - section: World News
