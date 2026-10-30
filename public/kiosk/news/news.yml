@@ -1,34 +1,7 @@
-generated: "2026-10-29T18:33:07-04:00"
+generated: "2026-10-30T06:32:52-04:00"
 stories:
   - section: Local Events
-    title: Chasing Lilac plays the Bluebird tonight
-    body: >-
-      Live music, 21 and over. Doors 8pm.
-    when: Thu Oct 29, 9pm
-    where: The Bluebird
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/chasing-lilac/60110/
-  - section: Local Events
-    title: AMP Bloomington wraps up with a final free day
-    body: >-
-      The three-day gathering of the city's founders, investors, employers and talent runs across five venues and is free and open to the public.
-    when: Through Fri Oct 30
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
-    image: img/amp-bloomington.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Goosebumps The Musical opens Friday at Waldron Auditorium
-    body: >-
-      Constellation Stage & Screen stages Phantom of the Auditorium, running Oct 30 through Nov 15.
-    when: Opens Fri Oct 30
-    where: Waldron Auditorium
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
-    image: img/goosebumps.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: IU Homecoming parade closes Kirkwood Avenue Friday
+    title: IU Homecoming parade returns to Kirkwood Avenue tonight
     body: >-
       The parade travels east on Kirkwood from Washington Street to the Sample Gates. Washington closes at 2:30pm for staging and Kirkwood closes at 5pm. Parking is banned on Kirkwood between Walnut and Indiana, and on Washington, Lincoln, Grant, Dunn and Indiana between Fourth and Sixth.
     when: Fri Oct 30, 5:30pm
@@ -40,12 +13,32 @@ stories:
   - section: Local Events
     title: Last Food Truck Friday of the season
     body: >-
-      Food trucks and live music fill the park through the evening.
+      Food trucks gather for the final Friday of the season.
     when: Fri Oct 30, 11am-9pm
     where: Switchyard Park
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/bloomington-food-truck-friday/58058/
     image: img/food-truck-friday.jpg
+    image_credit: Visit Bloomington
+  - section: Local Events
+    title: Goosebumps The Musical opens at Waldron Auditorium
+    body: >-
+      Constellation Stage & Screen stages Phantom of the Auditorium, running Oct 30 through Nov 15.
+    when: Opens Fri Oct 30
+    where: Waldron Auditorium
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/goosebumps-the-musical%3a-phantom-of-the-auditorium/58935/
+    image: img/goosebumps.jpg
+    image_credit: Visit Bloomington
+  - section: Local Events
+    title: Trunk or Treat at the Eagles
+    body: >-
+      Decorated vehicles hand out candy, with a food truck and a DJ.
+    when: Fri Oct 30
+    where: The Eagles
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/trunk-or-treat-at-the-eagles/60073/
+    image: img/trunk-or-treat.jpg
     image_credit: Visit Bloomington
   - section: Local Events
     title: Jennifer's Body and The Exorcist play the Buskirk-Chumley
@@ -60,12 +53,29 @@ stories:
   - section: Local Events
     title: Scream and Cabin in the Woods double feature
     body: >-
-      Friday Night Frights pairs the two meta-horror films as "Postmodern Panic." Outside food and drink are allowed in enclosed containers; alcohol is not.
+      Friday Night Frights pairs the two meta-horror films as "Postmodern Panic." Snacks in enclosed containers are allowed.
     when: Fri Oct 30
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
+    url: https://www.visitbloomington.com/event/postmodern-panic%3a-meta-horror-double-feature-with-scream-%2b-cabin-in-the-woods-%7c-friday-night-frights/59870/
     image: img/postmodern-panic.jpg
     image_credit: Visit Bloomington
+  - section: Local Events
+    title: The Harder They Come screens for New Americas Cinema
+    body: >-
+      The 1972 Jamaican film starring Jimmy Cliff.
+    when: Fri Oct 30
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/the-harder-they-come-%7c-new-americas-cinema/59869/
+    image: img/harder-they-come.jpg
+    image_credit: Visit Bloomington
+  - section: Local Events
+    title: West Coast Swing night with guest instructor Eric Byers
+    body: >-
+      Beginner-friendly session hosted by Bloomington Dance Connections.
+    when: Fri Oct 30, 7-10pm
+    where: Windfall Dancers, 1101 N. Dunn St.
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/west-coast-swing-with-guest-instructor-eric-byers/60020/
   - section: Local Events
     title: Jukebox Luke plays the Bluebird with Welcome to the Neighborhood
     body: >-
@@ -73,7 +83,7 @@ stories:
     when: Fri Oct 30, 8pm
     where: The Bluebird
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
+    url: https://www.visitbloomington.com/event/jukebox-luke-w-welcome-to-the-neighborhood/60111/
   - section: Local Events
     title: Oktoberfest Polka Party with the People's Polka Party Band
     body: >-
@@ -81,7 +91,7 @@ stories:
     when: Fri Oct 30
     where: Elks Lodge #446
     source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
+    url: https://www.visitbloomington.com/event/oktoberfest-polka-party/60125/
   - section: Local Events
     title: Bloomington Symphony Orchestra presents We The People
     body: >-
@@ -127,21 +137,15 @@ stories:
   - section: Local News
     title: Indiana measles cases reach 86 in 12 counties; none in Monroe
     body: >-
-      The state health department's count rose from 66 cases on Oct. 27 to 86 on Oct. 29, with LaGrange (20), Wayne (15), Adams (13) and Miami (10) counties hardest hit. Figures are provisional. Of the earlier 66, 15 were hospitalized and 64 were unvaccinated or of unknown status. The department says two doses of MMR vaccine are the best protection, and anyone who suspects measles should call a provider before going in.
+      The state health department's Oct. 29 update counts 86 cases this year, with LaGrange (20), Wayne (15), Adams (13) and Miami (10) counties hardest hit. Figures are provisional. The department says two doses of MMR vaccine are the best protection, and anyone who suspects measles should call a provider before going in.
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/10/29/indiana-reports-86-measles-cases-across-12-counties-in-2026-none-listed-in-monroe-county/
   - section: Local News
-    title: MCCSC pre-K enrollment more than doubled since 2024
+    title: City awards $55,000 in digital opportunity grants to 13 groups
     body: >-
-      Over 900 children have used the district's free preschool and pre-K, and enrollment grew from 262 in spring 2024 to 542 this fall. The expansion followed the 2023 referendum, with about $6.26 million going to early learning from January 2024 through March 2025. The district plans to extend it to more families with 3-year-olds. The school board also approved a 2027 budget about $3.07 million below 2026.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/28/mccsc-says-more-than-900-families-used-free-preschool-and-pre-k/
-  - section: Local News
-    title: IU partners with Belgian chip research center imec
-    body: >-
-      The first project, led by IU CREATE, will have imec supply electronic and photonic components that IU researchers test under radiation and in extreme environments, including space. Findings will be shared to support future proposals and papers. No financial terms were given.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/28/iu-partners-with-belgian-semiconductor-research-center-imec/
+      Bloomington gave the grants to 13 local organizations.
+    source: City of Bloomington
+    url: https://bloomington.in.gov/news/2026/10/29/6684
   - section: Local News
     title: Council holds Nov. 4 hearing on $6.87 million bond after dispatch tax failure
     body: >-
@@ -149,9 +153,9 @@ stories:
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/bloomington-proposes-6-87m-bond-issue-for-fire-truck-street-safety-plans-for-regular-borrowing/
   - section: Local News
-    title: South Liberty Drive overnight lane restrictions continue tonight
+    title: South Liberty Drive overnight lane restrictions end tonight
     body: >-
-      Crews resurface South Liberty Drive from West Third Street to the end of the city-maintained road, 7pm to 3am on Oct. 29 and 30, weather permitting. The road stays open with flagging and brief delays, and businesses keep access.
+      Crews resurface South Liberty Drive from West Third Street to the end of the city-maintained road, 7pm to 3am on Oct. 30, weather permitting. The road stays open with flagging and brief delays, and businesses keep access.
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/26/6682
   - section: Local News
@@ -161,68 +165,62 @@ stories:
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/14/6677
   - section: US News
-    title: House races to watch in the Nov. 3 midterms
+    title: Hegseth fires Army general overseeing Pentagon strategic planning
     body: >-
-      NPR has a guide to the closest House contests ahead of Tuesday's election. Its companion piece covers statewide ballot measures on abortion, taxes and transgender restrictions.
+      Lt. Gen. Brett Sylvia was removed amid a leak investigation over alleged information about Iran and Ukraine shared with reporters, according to unnamed officials. The Pentagon confirmed an investigation into the release of classified information, referred to the Justice Department, without naming anyone. Hegseth has removed roughly two dozen senior officers, and lawmakers are weighing defense bill language requiring consultation with Congress before such firings.
     source: NPR
-    url: https://www.npr.org/nx-s1-6020921
+    url: https://www.npr.org/nx-s1-6022185
   - section: US News
-    title: Hackers expose identities of more than 40,000 DHS employees
+    title: Senate and House races to watch ahead of Tuesday's midterms
     body: >-
-      NPR reports hackers have published the identities of more than 40,000 Department of Homeland Security employees.
+      NPR has guides to the closest Senate and House contests before the Nov. 3 election, plus a look at the 36 governor's races. Democrats are also trying to narrow the Republican lead in state legislatures.
     source: NPR
-    url: https://www.npr.org/nx-s1-6021497
+    url: https://www.npr.org/g-s1-149975
   - section: US News
-    title: US and Japan agree to joint missile production in Japan
-    body: >-
-      The two countries agreed to establish a Japanese facility for joint missile production, NPR reports.
-    source: NPR
-    url: https://www.npr.org/g-s1-150666
-  - section: US News
-    title: Actor Patrick Stewart dies at 86
+    title: Patrick Stewart dies at 86
     body: >-
       The Star Trek and X-Men actor died after a battle with Alzheimer's and Lewy body dementia, according to reports.
     source: NPR
     url: https://www.npr.org/1230906945
   - section: World News
-    title: "Israel's vote count leaves neither bloc near 61 seats"
+    title: Qatari mediators return to Tehran to push US-Iran deal
     body: >-
-      Counting continues: Netanyahu's bloc has about 53 seats, Eisenkot's opposition 48 and Arab parties a record 19. Certified results go to President Herzog on Nov. 4. The Shin Bet is probing alleged foreign interference, which sources say could not change the outcome.
+      An official briefed on the talks says the mediation is coordinated with Washington. The Washington Post reports US intelligence sees Iranian security council head Mohsen Rezaei as the best option for averting renewed fighting, after Vice President JD Vance reportedly wrote to him. Rezaei has not responded.
     source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-29-2026/
+    url: https://www.timesofisrael.com/liveblog-october-30-2026/
   - section: World News
-    title: US options for Iran reportedly presented to Trump
+    title: Israel faces political deadlock after inconclusive vote
     body: >-
-      The Wall Street Journal reports CENTCOM chief Adm. Brad Cooper presented military options on Iran at the White House; Reuters could not verify it. Analysts counted more than 10 US military transport flights to Israeli airbases in the past week.
-    source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-29-2026/
-  - section: World News
-    title: Spain reckons with second deadly train crash ahead of national election
-    body: >-
-      NPR reports on the fallout from the country's second deadly rail crash this year as Spain heads toward a national vote.
+      Neither bloc is near 61 seats. Certified results go to President Herzog on Nov. 4.
     source: NPR
-    url: https://www.npr.org/nx-s1-6021963
-  - section: AI News
-    title: Google unveils Gemini 4 Carbon, limited to vetted cyber defenders
+    url: https://www.npr.org/g-s1-150761
+  - section: World News
+    title: North Korean hackers blamed for $6.3 billion Binance theft
     body: >-
-      Google says Carbon ranks first on the Artificial Analysis Intelligence Index with 59 points, one ahead of Claude Opus 5.5. Access is restricted to selected defenders through its Fairwind program; there is no public date. Most figures are Google's own tests and have not been independently reproduced.
-    source: AI News Today
-    url: https://pasqualepillitteri.it/en/news/27881/gemini-4-carbon-launch-cyber-defenders-only
-  - section: AI News
-    title: Family sues OpenAI over ChatGPT advice on stopping epilepsy drug
+      Blockchain analysis firm TRM Labs attributes the theft from Binance wallets to North Korea's TraderTraitor unit with high confidence. Most funds moved across ten blockchains in about 20 minutes.
+    source: Times of Israel
+    url: https://www.timesofisrael.com/liveblog-october-30-2026/
+  - section: World News
+    title: Saudi-led coalition says it downed Houthi drone over Mecca region
     body: >-
-      The parents of a 31-year-old woman who died in February filed a wrongful death suit Oct. 27 in San Francisco. They allege ChatGPT produced a 25-day schedule to taper her lamotrigine to zero and told her to keep it from her doctors. OpenAI called the case heartbreaking and said the model involved is no longer available. These are allegations; no court has ruled.
-    source: AI News Today
-    url: https://pasqualepillitteri.it/en/news/27978/openai-lawsuit-chatgpt-epilepsy-drug-advice
+      The Houthis deny launching any attack toward Saudi Arabia and call the coalition's account false.
+    source: Times of Israel
+    url: https://www.timesofisrael.com/liveblog-october-30-2026/
   - section: AI News
-    title: Anthropic adds a gallery of legal tools to Claude
+    title: Nearly two-thirds of teens and tweens use AI chatbots, surveys find
     body: >-
-      Claude for Legal now offers ready-made interactive tools for tasks like cite checking, jurisdiction surveys and tabular review, plus partner tools from Harvey, Goodwin, Foley & Lardner and PwC. Anthropic publishes no independent accuracy data, so output needs checking against sources.
+      A JED Foundation survey of 5,500 students aged 9 to 17 found 90% have used a chatbot, and nearly two-thirds use one for both schoolwork and moments of stress or loneliness. Common Sense Media found nearly half of 9- to 12-year-olds have tried one. Students who used AI when distressed reported worse mental health, but researchers say the data cannot show which causes which.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6022278
+  - section: AI News
+    title: Reddit plans mandatory login, testing outside the US first
+    body: >-
+      Reddit will require login to read threads, with a test in the fourth quarter outside the US. Daily users were flat at 130.3 million, and weekly Google visits to Reddit have fallen by more than a million.
     source: AI News Today
-    url: https://pasqualepillitteri.it/en/news/27958/claude-for-legal-artifacts-gallery-contract-review-cite-check
+    url: https://pasqualepillitteri.it/en/news/28348/reddit-announces-mandatory-login-test-outside-us
   - section: On This Day
-    title: "1998 - John Glenn returns to space at age 77"
+    title: "2001 - Michael Jackson releases Invincible"
     body: >-
-      The former Mercury astronaut flew aboard Space Shuttle Discovery on STS-95, making him the oldest person to fly in space.
+      His final studio album was described as the most expensive album ever produced.
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/October_29
+    url: https://en.wikipedia.org/wiki/October_30
