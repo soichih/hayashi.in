@@ -1,25 +1,7 @@
-generated: "2026-10-31T06:31:59-04:00"
+generated: "2026-10-31T18:32:11-04:00"
 stories:
   - section: Local Events
-    title: Farmers' Market holds its last outdoor Saturday
-    body: >-
-      The season's final outdoor market runs rain or shine. It moves indoors to the Switchyard Park Pavilion on Nov. 7, 14 and 21, then closes with a Holiday Market on Nov. 28.
-    when: Sat Oct 31
-    where: Showers Common, 401 N. Morton St.
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/bloomington-community-farmers-market/57685/
-    image: img/farmers-market.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Boo Bash is a family Halloween event at Dave & Buster's
-    body: >-
-      No age requirement.
-    when: Sat Oct 31, 10am-1pm
-    where: Dave & Buster's
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/boo-bash/60046/
-  - section: Local Events
-    title: City trick-or-treat hours are 5:30 to 8:30 tonight
+    title: City trick-or-treat hours run until 8:30 tonight
     body: >-
       Official citywide hours, rain or shine. The city's listing includes Halloween safety tips for families.
     when: Sat Oct 31, 5:30-8:30pm
@@ -43,6 +25,8 @@ stories:
     where: The Bluebird
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/jukebox-luke/59972/
+    image: img/bluebird.jpg
+    image_credit: Visit Bloomington
   - section: Local Events
     title: Bloomington Symphony Orchestra presents We The People
     body: >-
@@ -78,6 +62,14 @@ stories:
     source: Buskirk-Chumley Theater
     url: https://buskirkchumley.org/events/
   - section: Local Events
+    title: Farmers' Market moves indoors starting Nov. 7
+    body: >-
+      The outdoor season ended today. The market runs at the Switchyard Park Pavilion on Nov. 7, 14 and 21, then closes with a Holiday Market on Nov. 28.
+    when: Sat Nov 7
+    where: Switchyard Park Pavilion
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/bloomington-community-farmers-market/57685/
+  - section: Local Events
     title: Hotel California, an Eagles tribute, comes to town
     body: >-
       Hotel California - The Original Eagles Tribute. Doors at 7pm.
@@ -111,17 +103,30 @@ stories:
     image: img/samuel-levi-jones.jpg
     image_credit: Visit Bloomington
   - section: Local News
+    title: Jury convicts Bryce Leighton of murder in 2023 killing of Tara Langley
+    body: >-
+      The Monroe County Prosecutor's Office says the jury reached its verdict this week. Deputies were called to a home on East State Road 45 around 1:30am on Nov. 4, 2023, and found Langley dead in the attached garage. Leighton told investigators the shot came in a blur after she approached him with a stun gun. A sentencing date was not given.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/30/jury-finds-bryce-leighton-guilty-of-murder-in-2023-killing-of-tara-langley/
+  - section: Local News
+    title: Clocks fall back an hour tonight
+    body: >-
+      Daylight saving time ends at 2am Sunday, Nov. 1. Set clocks back one hour before bed.
+    when: Sun Nov 1, 2am
+    source: NPR
+    url: https://www.npr.org/705224359
+  - section: Local News
     title: Council holds Nov. 4 hearing on $6.87 million bond after dispatch tax failure
     body: >-
       The council's 1-4 vote on raising the dispatch tax failed Monday because four absences count as no votes. The proposed bond would put $2.5 million toward replacing the only aerial platform fire truck, out of service for more than four months, and $4.23 million toward transportation, including 10th Street and 3rd Street safety work. A public hearing and possible final vote are set for Nov. 4.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/bloomington-proposes-6-87m-bond-issue-for-fire-truck-street-safety-plans-for-regular-borrowing/
   - section: Local News
-    title: Indiana reports 86 measles cases in 12 counties; none in Monroe County
+    title: Indiana's drone test site opens in Terre Haute
     body: >-
-      The state has logged 86 cases so far in 2026.
+      The Midwest UAS Test Site of Indiana opened for flight testing Thursday with a ribbon-cutting at Terre Haute Regional Airport. Gov. Mike Braun attended. It is one of nine federally designated drone test sites, with focus areas of agriculture, shipping, transportation and public safety.
     source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/10/29/indiana-reports-86-measles-cases-across-12-counties-in-2026-none-listed-in-monroe-county/
+    url: https://bloomingtonian.com/2026/10/30/indiana-drone-test-site-launches-with-ceremony-in-terre-haute/
   - section: Local News
     title: Second Street is one-way westbound until before Thanksgiving
     body: >-
@@ -129,17 +134,17 @@ stories:
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/10/14/6677
   - section: Local News
-    title: MLK Birthday Celebration Commission seeks 2027 Legacy Award nominations
+    title: Indiana reports 86 measles cases in 12 counties; none in Monroe County
     body: >-
-      The commission is accepting nominations for the 2027 award.
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/10/29/6683
-  - section: Local News
-    title: City awards $55,000 in digital opportunity grants to 13 groups
+      The state has logged 86 cases so far in 2026.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/10/29/indiana-reports-86-measles-cases-across-12-counties-in-2026-none-listed-in-monroe-county/
+  - section: US News
+    title: Binance hack of $6.3 billion pinned on North Korea by FBI
     body: >-
-      Bloomington gave the grants to 13 local organizations.
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/10/29/6684
+      Hackers took over $6.3 billion in crypto from investor accounts at Binance in about 20 minutes Thursday afternoon, the largest cyber heist on record. Binance and partners have frozen about $3 billion. The FBI blames North Korea and says the funds are being laundered through ethereum. How the accounts were breached is still unclear.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6024426
   - section: US News
     title: Senate and House races to watch ahead of Tuesday's midterms
     body: >-
@@ -152,28 +157,16 @@ stories:
       NPR reports that immigration enforcement activity is rising in the run-up to Election Day, alongside higher voter turnout.
     source: NPR
     url: https://www.npr.org/nx-s1-6023331
-  - section: US News
-    title: Websites posing as local news are boosting Democratic candidates
-    body: >-
-      NPR reports on sites styled as local news outlets that favor Democratic candidates ahead of the midterms.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6014548
   - section: World News
-    title: US reportedly tells Gulf allies to prepare for Iran strikes as soon as Nov. 4
+    title: Rubio says Trump hasn't decided on new Iran strikes, as reports point to Nov. 4
     body: >-
-      Reports say Washington has warned Gulf allies of possible new strikes the day after the US midterms. Iran's army says any new US attack would spread the war across a much wider area. Egypt's foreign minister said he is extremely worried about renewed escalation.
+      The secretary of state says the president prefers a diplomatic solution. Iran's security chief says there can be no nuclear talks or reopening of Hormuz until Washington accepts Iran's demands, though indirect mediation through Qatar continues.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-october-31-2026/
   - section: World News
-    title: Qatar and Pakistan mediate as US-Iran talks in Doha are reported
+    title: Thousands rally in Tel Aviv for a Jewish-Arab government after Israeli election
     body: >-
-      Al-Araby Al-Jadeed reports a breakthrough in indirect talks, with a US delegation expected to join direct talks with Iran in Doha. Reported preliminary points cover Iran's nuclear program, Strait of Hormuz navigation and financial incentives. This is a single-outlet report.
-    source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-october-31-2026/
-  - section: World News
-    title: Syria weighs joining the Mecca defense pact
-    body: >-
-      Foreign Minister Asaad al-Shaibani says Damascus is evaluating entry into the NATO-style alliance linking Turkey, Saudi Arabia and Pakistan.
+      About 2,000 marched to Rabin Square, while about 200 Netanyahu supporters held a counterprotest claiming the election was stolen. Anti-Netanyahu parties won 67 of 120 seats, but most Jewish-led parties in that bloc refuse to govern with Arab parties.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-october-31-2026/
   - section: World News
@@ -183,29 +176,29 @@ stories:
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-october-31-2026/
   - section: World News
-    title: North Korea linked to $6.3 billion Binance hack
+    title: France seethes again as youth-led protests sweep Europe
     body: >-
-      Blockchain intelligence firms attribute the theft to North Korean hackers.
+      NPR reports on a fresh wave of youth-led protests across Europe, with France again a focus.
     source: NPR
-    url: https://www.npr.org/g-s1-150902
+    url: https://www.npr.org/g-s1-151121
   - section: AI News
-    title: Carnegie Mellon AI recognizes Rembrandt paintings with up to 96% accuracy
+    title: Google launches Android MCP in beta so apps can talk to AI agents
     body: >-
-      The system reaches 95.8% accuracy when it is highly confident. It scores 84.7% on a Maine attic portrait, which the report says is not an authentication.
+      AppFunctions is now in beta, letting Android apps expose functions to Gemini and other AI agents.
     source: AI News Today
-    url: https://pasqualepillitteri.it/en/news/28800/carnegie-mellon-ai-recognizes-rembrandt-paintings-96-percent
+    url: https://pasqualepillitteri.it/en/news/28959/android-mcp-appfunctions-beta-google-ai-agents
   - section: AI News
-    title: Claude Code reportedly blocks clones of existing games
+    title: Reddit shares fall about 30% after it confirms a Google Search traffic drop
     body: >-
-      The behavior has been reported by users; Anthropic has not confirmed it.
+      The company confirmed it is getting less traffic from Google Search.
     source: AI News Today
-    url: https://pasqualepillitteri.it/en/news/28784/claude-code-blocks-clones-existing-games
+    url: https://pasqualepillitteri.it/en/news/28924/reddit-stock-falls-30-google-search-traffic-drop
   - section: AI News
-    title: Japanese city blocks schoolchildren's posters over AI accusations
+    title: Microsoft releases a 4B-parameter computer-use agent scoring 66% on OSWorld
     body: >-
-      Kitakata stopped publication of posters made by schoolchildren after they were accused of being AI-generated.
+      Mage-VL-Cowork is a small model that operates a computer, and it reaches 66% on the OSWorld benchmark.
     source: AI News Today
-    url: https://pasqualepillitteri.it/en/news/28770/kitakata-soy-sauce-poster-children-accused-ai-japan
+    url: https://pasqualepillitteri.it/en/news/28914/mage-vl-cowork-microsoft-4b-computer-use-agent-osworld
   - section: AI News
     title: DOJ asks how Nvidia's $12.9 billion Hugging Face deal affects competition
     body: >-
