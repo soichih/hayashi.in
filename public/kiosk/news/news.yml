@@ -1,29 +1,22 @@
-generated: "2026-11-11T18:32:55-05:00"
+generated: "2026-11-12T06:33:19-05:00"
 stories:
-  - section: Weather Alert
-    title: Severe Thunderstorm Watch for Monroe County until 11pm tonight
-    body: >-
-      The National Weather Service in Indianapolis issued the watch at 6:02pm for 24 central and southern Indiana counties, including Monroe. It runs until 11pm tonight. The recommended action is to monitor conditions.
-    when: Until 11pm tonight
-    source: National Weather Service
-    url: https://api.weather.gov/alerts/active?point=39.1653,-86.5264
   - section: Local Events
-    title: Nate Powell, National Book Award-winning author, speaks Thursday
+    title: Bourke-White and Janah photography exhibit opens today
     body: >-
-      An evening with the graphic novelist, winner of a National Book Award.
-    when: Thu Nov 12, evening
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/author-event-with-nate-powell/60145/
-  - section: Local Events
-    title: Bourke-White and Janah photography exhibit opens Nov. 12
-    body: >-
-      Twenty-nine works by Margaret Bourke-White and Sunil Janah cover India's independence struggle, partition, famine and workers' lives. Opening reception is 4-6pm and free.
+      Twenty-nine works by Margaret Bourke-White and Sunil Janah cover India's independence struggle, partition, famine and workers' lives. The opening reception is 4-6pm and free.
     when: Opens Thu Nov 12
     where: Gallery 202, McCalla Center
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/10/30/bourke-white-janah-photography-exhibit-opens-nov-12-at-ius-mccalla-center/
     image: img/bourke-white.jpg
     image_credit: Visit Bloomington
+  - section: Local Events
+    title: Author Nate Powell, National Book Award winner, speaks tonight
+    body: >-
+      An evening with the graphic novelist, winner of a National Book Award.
+    when: Thu Nov 12
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/author-event-with-nate-powell/60145/
   - section: Local Events
     title: Benefit dinner and film raises final funds for blind veteran's North Pole trek
     body: >-
@@ -34,16 +27,7 @@ stories:
     image: img/go-beyond.jpg
     image_credit: Visit Bloomington
   - section: Local Events
-    title: Raise the Red Lantern screens Thursday in The Long Revolution series
-    body: >-
-      Film about a teenager who becomes the third concubine of a wealthy master and finds the darker side of her new life.
-    when: Thu Nov 12
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/raise-the-red-lantern-%7c-the-long-revolution/59999/
-    image: img/red-lantern.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: SIX, the pop-concert musical about Henry VIII's wives, plays four days
+    title: SIX, the pop-concert musical about Henry VIII's wives, plays through Sunday
     body: >-
       The six wives of Henry VIII retell their stories as pop-concert numbers.
     when: Thu Nov 12 - Sun Nov 15
@@ -51,6 +35,15 @@ stories:
     source: IU Auditorium
     url: https://www.iuauditorium.com/events/detail/six-2026
     image: img/six-musical.jpg
+    image_credit: Visit Bloomington
+  - section: Local Events
+    title: Sorcerer screens Friday with a special guest in the Re:Made series
+    body: >-
+      The thriller follows four men on the run who take a dangerous job for money and a new identity.
+    when: Fri Nov 13
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/events/
+    image: img/sorcerer.jpg
     image_credit: Visit Bloomington
   - section: Local Events
     title: Winter Farmers' Market continues Saturday at Switchyard Park Pavilion
@@ -102,18 +95,46 @@ stories:
     where: Buskirk-Chumley Theater
     source: Buskirk-Chumley Theater
     url: https://buskirkchumley.org/events/nurse-blake-but-did-you-die-comedy-tour-november-19-2026
-  - section: Local News
-    title: Bloomington opens new fire operations center on South Walnut
+  - section: Local Events
+    title: A Foreigner's Journey to Boston
     body: >-
-      The center at 3182 S. Walnut St. was dedicated Nov. 6. It will host training drills, supply coordination, gear storage and equipment repair, and can serve as a backup fire station in a disaster. It is the last public safety project funded by the 2022 city bond, which also paid for renovations at Fire Stations 1 and 3.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/11/06/bloomington-opens-new-fire-operations-center-on-south-walnut-street/
-  - section: Local News
-    title: Bloomington Transit proposes cutting four routes from Dec. 6
+      Doors at 6:30pm.
+    when: Fri Nov 20, 7:30pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/a-foreigner-s-journey-to-boston-november-20-2026
+  - section: Local Events
+    title: Planes, Trains and Automobiles screens at the Buskirk-Chumley
     body: >-
-      The board voted 5-0 on Nov. 4 to seek public comment on temporary cuts that would remove about 237 driver hours a week from Dec. 6 through May 2027. Routes 2 West and 2 South would merge into one hourly weekday route, Route 11 loses weekend service, and Route 16 drops from three buses to two. The cause is a driver shortage.
+      The 1987 comedy shows with doors at 6:30pm.
+    when: Sun Nov 22, 7pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/planes-trains-and-automobiles-1987-november-22-2026
+  - section: Local News
+    title: Bloomington bans distribution of artificial superintelligence within city limits
+    body: >-
+      The Common Council unanimously passed Ordinance 2026-29 on Nov. 4. Sponsor Dave Rollo called it an interim public safety response to risks from increasingly autonomous AI, citing state and federal inaction. It bars companies from distributing or deploying systems with broad abilities beyond human level, including ones that can rewrite their own algorithms or run without human oversight. Ordinary use by residents is excluded and it is not a general ban on AI tools.
 
-      Public hearing is Tue Nov. 17, 4:30-5:30pm at the downtown Transit Center, with a final vote expected that day. Comments are open through Dec. 5.
+      The city can seek civil penalties or court orders and refer cases to the county prosecutor. The council could lift the ban after finding broad scientific consensus that such systems can be developed safely, and the city rules would yield to a comprehensive state law.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/11/10/bloomington-city-council-approved-ordinance-restricting-ai-superintelligence-last-week-lack-of-federal-action-cited/
+  - section: Local News
+    title: Plan commission backs switching Hilltop Court from condos to rentals
+    body: >-
+      The commission voted 7-0 on Nov. 9 to recommend the change at 1237 W. Allen St. after an earlier 4-3 vote fell short of the five needed to require a second hearing. Developer Dwellings LLC would replace 10 planned three-bedroom condos with a 24-unit building of one-bedroom rentals, raising the total from 114 to 128 units. Three rentals would be set aside for residents earning 100-120% of area median income. The City Council makes the final decision.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/after-failed-vote-recess-plan-commission-backs-hilltop-court-switch-from-condos-to-rentals/
+    image: img/hilltop-court.jpg
+    image_credit: The B Square Bulletin
+  - section: Local News
+    title: Bloomington Transit hearing on four-route cuts is Tuesday, Nov. 17
+    body: >-
+      The proposal would remove about 237 driver hours a week from Dec. 6 through May 2027 because of a driver shortage. Routes 2 West and 2 South would merge into one hourly weekday route, Route 11 loses weekend service, and Route 16 drops from three buses to two.
+
+      The hearing is 4:30-5:30pm at the downtown Transit Center, with a final vote expected that day. Comments are open through Dec. 5.
+    when: Tue Nov 17, 4:30pm
+    where: Downtown Transit Center
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/possible-bus-service-cuts-bloomington-transit-board-sets-public-hearing/
   - section: Local News
@@ -129,12 +150,6 @@ stories:
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/monroe-county-council-again-rejects-raise-for-commissioners-citing-2-for-employees/
   - section: Local News
-    title: Housing Authority buys five apartment complexes, plans $10 million in repairs
-    body: >-
-      The Bloomington Housing Authority bought Summit Pointe, Basswood, Woodland Springs, Kingston Manor and Northcrest, about 924 units, from Hometown Property Group on Nov. 5. Repairs start inside apartments this winter and should take about two years. The purchase price was not disclosed.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/11/09/bloomington-housing-authority-buys-five-apartment-complexes-plans-10-million-in-repairs/
-  - section: Local News
     title: Griffy Lake closes for controlled deer hunts this weekend and next
     body: >-
       Hunts run Nov. 14-15 and Nov. 21-22. All trails, shoreline and the lake close from 11pm Friday, Nov. 13 to 5am Monday, Nov. 16, and again from 11pm Friday, Nov. 20 to 5am Monday, Nov. 23. No watercraft may launch either weekend.
@@ -147,110 +162,78 @@ stories:
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/11/06/6690
   - section: US News
-    title: House votes to effectively end Hegseth impeachment effort
+    title: Supreme Court lets Big Bend border wall construction resume
     body: >-
-      NPR reports the House acted this week to effectively end the effort to impeach Defense Secretary Pete Hegseth, which Rep. Thomas Massie began with articles of impeachment.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6036813
+      In an unsigned opinion on Nov. 9, the Court paused a federal judge's order that had halted wall construction in West Texas's Big Bend region while the case continues. The justices said the government is exceedingly likely to prevail on the argument that the judge could not weigh the challengers' major-questions claim. Justice Ketanji Brown Jackson would have denied the request.
+
+      Opponents include environmental groups and Republican Sen. John Cornyn, who call the project wasteful. The administration says the wall is needed to stop cartel activity, and says no steel walls are planned inside Big Bend National Park.
+    source: SCOTUSblog
+    url: https://www.scotusblog.com/2026/11/supreme-court-allows-trump-administration-to-continue-border-wall-construction/
+    image: img/big-bend-wall.jpg
+    image_credit: WSMV
   - section: US News
-    title: Democrat Scott Colom wins Mississippi Senate race
+    title: Actor Stacy Keach dies at 85
     body: >-
-      NPR reports Democrat Scott Colom has won the Mississippi Senate race.
+      NPR reports the actor, who played a private eye and many other roles, has died.
     source: NPR
-    url: https://www.npr.org/g-s1-151688
-  - section: US News
-    title: Gasoline falls under $4 a gallon
-    body: >-
-      NPR examines why gasoline prices have suddenly dropped below $4 a gallon.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6037588
+    url: https://www.npr.org/728054385
   - section: US News
     title: Kennedy relatives join fight against Trump's arch, alleging harm to JFK's grave
     body: >-
       NPR reports relatives of John F. Kennedy have joined opposition to the planned arch, alleging it would harm his gravesite.
     source: NPR
     url: https://www.npr.org/nx-s1-6037372
-  - section: US News
-    title: Jim Jordan elected House GOP leader after midterm losses
-    body: >-
-      NPR reports the party chose Jordan as it looks to rebuild from the midterms.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6030988
-  - section: US News
-    title: Republican-led committee says federal government failed to hold Epstein accountable
-    body: >-
-      NPR reports a Republican committee concluded the federal government failed to hold Jeffrey Epstein accountable.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6036135
-  - section: US News
-    title: Swatters use AI voices to deceive 911 dispatchers
-    body: >-
-      NPR reports AI-generated voice hoaxes are fooling emergency dispatchers and getting harder to detect.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6034449
   - section: World News
-    title: Russia and Ukraine agree to prisoner exchange as talks end without breakthrough
+    title: Israeli strike on a Gaza hospital kills 6, health authorities say
     body: >-
-      NPR reports the two sides agreed to swap prisoners but made no major progress toward ending the war.
+      NPR reports the strike killed six people, according to Gaza health authorities.
     source: NPR
-    url: https://www.npr.org/g-s1-152954
+    url: https://www.npr.org/nx-s1-6038339
   - section: World News
-    title: Spain's workers hold general strike over housing costs
+    title: Pope Leo in Peru through Nov. 17
     body: >-
-      The unions UGT and CCOO called a 24-hour nationwide strike for today over housing costs and wages, weeks before the Nov. 29 snap election.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6037314
-  - section: World News
-    title: Pope Leo begins Peru leg of South America tour
-    body: >-
-      The 12-day tour covers Argentina (Nov. 8-11) and Peru (Nov. 11-17), weeks after lung cancer surgery on Oct. 13. Peru includes a return to Chiclayo, the diocese he led before his election.
+      The Peru leg of his South America tour runs Nov. 11-17, weeks after lung cancer surgery on Oct. 13. It includes a return to Chiclayo, the diocese he led before his election.
     source: NPR
     url: https://www.npr.org/nx-s1-6033992
   - section: World News
-    title: UN climate talks continue in Antalya, Turkey, without the US
+    title: Eisenkot has 28 days to form an Israeli government
     body: >-
-      The COP31 talks run Nov. 9-20. Turkey hosts and its environment minister, Murat Kurum, is president, while Australia's Chris Bowen leads the negotiations. The US left the Paris Agreement at the start of the year and is not taking part.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6026787
-  - section: World News
-    title: Israel's president taps Eisenkot, not Netanyahu, to form a government
-    body: >-
-      President Isaac Herzog picked the opposition candidate after parties representing 67 of the 120 Knesset seats recommended Eisenkot and those with 46 backed Netanyahu. The nominee has 28 days to build a coalition, with a possible 14-day extension. Netanyahu stays on as caretaker prime minister.
+      President Isaac Herzog picked the opposition candidate after parties representing 67 of the 120 Knesset seats recommended Eisenkot and those with 46 backed Netanyahu. A 14-day extension is possible. Netanyahu stays on as caretaker prime minister.
     source: NPR
     url: https://www.npr.org/g-s1-152536
-  - section: AI News
-    title: Google launches Gemini Decisions API at $0.10 per million input tokens
+  - section: World News
+    title: UN climate talks run through Nov. 20 in Antalya, Turkey, without the US
     body: >-
-      The new endpoint in Google AI Studio runs a model, gemini-decision-1, that answers closed questions instead of writing text. A request takes text, images, audio, video or PDFs up to 256,000 tokens and up to 1,000 yes/no, multiple-choice or scoring questions, each answered with a probability and confidence score. Output tokens are free and there is a free tier for prototypes.
+      The COP31 talks began Nov. 9. Turkey hosts and Murat Kurum is president, while Australia's Chris Bowen leads the negotiations. The US left the Paris Agreement at the start of the year and is not taking part.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6026787
+  - section: AI News
+    title: Australia weighs first criminal offence for AI companies that fail to prevent harm
+    body: >-
+      The government said Nov. 10 it will consider a "failure to prevent" offence and criminal penalties for serious breaches of AI safety standards, alongside a watchdog that could levy large fines. It is a proposal only, with no bill text, penalties or date.
 
-      On Artificial Analysis's Decision Index it scores 66.0, ninth of 18, at a higher cost than several rivals. Google Cloud availability is listed as coming soon.
+      The move follows a June incident in which an OpenAI agent entered Australia's Medicare statistics portal. Prime Minister Anthony Albanese called it minor in terms of direct implications, and no police investigation has opened. Experts are split on whether criminal or civil routes work better.
     source: AI News Today
-    url: https://pasqualepillitteri.it/en/news/32267/google-launches-gemini-decisions-api-price
-    image: img/gemini-decisions.jpg
+    url: https://pasqualepillitteri.it/en/news/32185/australia-criminal-offence-ai-companies-fail-prevent-harm
+  - section: AI News
+    title: Anthropic rolls out Claude Sheets, Whiteboards and Claude Data
+    body: >-
+      The rollout began Nov. 10 and is gradual. Whiteboards, a shared canvas where Claude organizes notes into diagrams, and Sheets, a multi-tab spreadsheet with a 100,000-cell limit, are in beta. Claude Data, which connects to warehouses such as BigQuery and Snowflake, is generally available.
+
+      All three need a paid plan and draw from existing usage limits. On Enterprise, Claude Data turns on automatically Nov. 19 unless an owner has saved settings.
+    source: AI News Today
+    url: https://pasqualepillitteri.it/en/news/32205/anthropic-launches-claude-sheets-whiteboards-data
+    image: img/claude-sheets.jpg
     image_credit: AI News Today
   - section: AI News
-    title: DeepL unveils Aure, a voice translation model that keeps tone and emotion
+    title: SpaceX orders Singulus solar cell line for its Starmind satellites
     body: >-
-      Aure launches in eight languages: English, German, Spanish, French, Italian, Japanese, Portuguese and Korean. It is live in DeepL Voice for meetings and face-to-face conversations and in the DeepL API, and switches on automatically. Other language pairs stay on older models, with more languages promised and no dates given.
+      Germany's Singulus said Nov. 10 the first line is worth more than 60 million euros and due in the first half of 2027 at Bastrop, Texas. Elon Musk wrote that SpaceX ordered 100 GW per year of equipment, but Singulus says only "more than 100 GW" without saying whether that is annual. No third party has confirmed the order or the contract terms.
     source: AI News Today
-    url: https://pasqualepillitteri.it/en/news/32282/deepl-aure-voice-translation-tone-emotion
-    image: img/deepl-aure.jpg
-    image_credit: AI News Today
-  - section: AI News
-    title: OpenAI launches Businesses in ChatGPT, letting companies claim profiles
-    body: >-
-      The beta, launched Nov. 10, lets owners of a business with a website claim its profile in a Business Hub, correct what ChatGPT shows, and upload product feeds with prices and availability. Verified profiles get a blue check, which OpenAI says does not guarantee better ranking.
-    source: AI News Today
-    url: https://pasqualepillitteri.it/en/news/32005/openai-businesses-chatgpt-claim-business-profile
-  - section: AI News
-    title: ChatGPT retires Advanced and Standard voice modes on Dec. 11
-    body: >-
-      OpenAI is shutting down both voice modes on Dec. 11.
-    source: AI News Today
-    url: https://pasqualepillitteri.it/en/news/31993/chatgpt-retires-advanced-standard-voice-december-11
+    url: https://pasqualepillitteri.it/en/news/32414/spacex-orders-singulus-hjt-solar-line-starmind
   - section: On This Day
-    title: "1918 - Armistice ends fighting in World War I"
+    title: "2014 - Philae becomes the first spacecraft to land on a comet"
     body: >-
-      The Armistice was signed in a railway carriage in the Forest of Compiègne, ending fighting between the Entente and Germany. Nov. 11 is now Veterans Day in the U.S.
+      The European Space Agency's Philae lander touched down on comet 67P/Churyumov-Gerasimenko.
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/Armistice_of_11_November_1918
+    url: https://en.wikipedia.org/wiki/Philae_(spacecraft)
