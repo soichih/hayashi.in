@@ -1,14 +1,14 @@
-generated: "2026-11-13T06:33:27-05:00"
+generated: "2026-11-13T18:33:18-05:00"
 stories:
   - section: Local Events
-    title: Rod Tuffcurls & The Benchpress play Friday night
+    title: Rod Tuffcurls & The Benchpress play tonight
     body: >-
       Live music, 21 and over. Doors at 7pm, show at 8pm.
     when: Fri Nov 13, 8pm
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/rss/
   - section: Local Events
-    title: Sorcerer screens Friday with a special guest in the Re:Made series
+    title: Sorcerer screens tonight with a special guest in the Re:Made series
     body: >-
       The thriller follows four men on the run who take a dangerous, well-paid job in exchange for legal citizenship.
     when: Fri Nov 13
@@ -131,6 +131,14 @@ stories:
     image: img/bourke-white.jpg
     image_credit: Visit Bloomington
   - section: Local News
+    title: Downtown Bloomington adds police and parking limits for Saturday
+    body: >-
+      Bloomington police, IU police and Indiana State Police will put extra officers downtown Saturday, with stricter enforcement of curfew, disorderly conduct and public intoxication laws. Citations or arrests are possible.
+
+      After the game, temporary parking restrictions apply on Kirkwood Avenue between Indiana Avenue and Grant Street and in designated surface lots. Mayor Kerry Thomson said the steps expand event preparations after gun violence during earlier IU event weekends this year. The city says state law bars it from restricting lawfully carried firearms on public streets and sidewalks.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/2026/11/13/bloomington-to-increase-downtown-enforcement-restrict-parking-after-iu-usc-game/
+  - section: Local News
     title: Stinesville board ratifies ICE agreement as Monroe County sues to void it
     body: >-
       The Stinesville town board voted 2-1 on Nov. 10 to ratify a 287(g) agreement that lets trained local police officers perform some immigration enforcement under ICE supervision. The police chief signed it in January without a board vote. The board held off on spending $122,500 in federal funds, wanting written assurance the town would not have to repay it if it withdraws.
@@ -138,8 +146,12 @@ stories:
       The same day, the Monroe County commissioners sued to have the agreement declared invalid, arguing that ratification after the fact may not fix it. On Nov. 12 they voted 3-0 to hire outside counsel for the case. The suit also asks the court to block the Indiana attorney general from pursuing penalties against the commissioners over a resolution calling for public review.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/stinesville-town-board-votes-2-1-to-ratify-ice-agreement-but-holds-off-on-spending-122-500/
-    image: img/stinesville.jpg
-    image_credit: The B Square Bulletin
+  - section: Local News
+    title: Election board accepts 33 provisional ballots, reviews error affecting Stinesville
+    body: >-
+      The Monroe County election board accepted 33 provisional ballots on Nov. 13 and is reviewing an error that affected Stinesville.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/monroe-county-election-board-accepts-33-provisional-ballots-reviews-error-affecting-stinesville/
   - section: Local News
     title: Griffy Lake closes tonight for controlled deer hunts
     body: >-
@@ -171,12 +183,6 @@ stories:
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/ellettsville-richland-township-reorganization-passes-by-narrow-margin-outside-town-limits/
   - section: Local News
-    title: County council again rejects a raise for commissioners
-    body: >-
-      The Monroe County Council turned down another pay increase for the commissioners on Nov. 11, pointing to the 2% raise given to county employees.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/monroe-county-council-again-rejects-raise-for-commissioners-citing-2-for-employees/
-  - section: Local News
     title: Plan commission backs Hilltop Court switch from condos to rentals
     body: >-
       The commission endorsed converting the project from condominiums to rental units on Nov. 10, after an earlier vote failed and the body took a recess.
@@ -189,11 +195,19 @@ stories:
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/11/12/iu-credit-union-names-andy-allard-as-next-ceo/
   - section: US News
+    title: FAA orders nationwide ground stop at all U.S. airports
+    body: >-
+      The FAA halted flights at every U.S. airport on Friday afternoon, blaming a temporary telecommunications outage affecting all its air route traffic control centers. The agency said every flight in the air was accounted for, and international flights are being handled case by case.
+
+      Homeland Security Secretary Markwayne Mullin said there is no indication of a threat or attack. The cause is under investigation, and travelers are stranded at airports such as Dallas Fort Worth at the start of the holiday travel season.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6040403
+  - section: US News
     title: Jensen Huang resigns as Nvidia CEO; CFO Colette Kress takes over on an interim basis
     body: >-
       Nvidia said Nov. 12 that Huang resigned as president, CEO and board member, effective immediately, days after the board opened an investigation into his relationship with an executive at a Chinese AI company suspected by the Trump administration of passing information to China. The espionage claims are unverified.
 
-      Kress, the chief financial officer, will serve as interim CEO while the board searches inside and outside the company. Harvey Jones becomes the board's first chair. Nvidia says operations and its product roadmap will continue uninterrupted, and it still plans to report quarterly results on Tuesday, Nov. 17.
+      Kress will serve as interim CEO while the board searches inside and outside the company. Harvey Jones becomes the board's first chair. Nvidia still plans to report quarterly results on Tuesday, Nov. 17.
     source: Nvidia SEC filing
     url: https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvidiaannouncesceotransiti.htm
   - section: US News
@@ -205,17 +219,11 @@ stories:
     source: SCOTUSblog
     url: https://www.scotusblog.com/2026/11/supreme-court-allows-trump-administration-to-continue-border-wall-construction/
   - section: US News
-    title: Home sales fall to their lowest in 16 years
+    title: Chris Van Hollen says he will challenge Schumer for Senate Democratic leader
     body: >-
-      NPR reports existing home sales have dropped to the lowest level in 16 years.
+      The Maryland senator announced he will run against Chuck Schumer for the top Democratic post in the Senate, according to NPR.
     source: NPR
-    url: https://www.npr.org/nx-s1-6038940
-  - section: US News
-    title: Average price of a new vehicle tops $51,000, a record
-    body: >-
-      NPR reports the average cost of a new vehicle in the U.S. has reached a record high of more than $51,000.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6026659
+    url: https://www.npr.org/nx-s1-6039357
   - section: World News
     title: Pope Leo in Peru through Nov. 17
     body: >-
@@ -235,41 +243,51 @@ stories:
     source: NPR
     url: https://www.npr.org/nx-s1-6026787
   - section: AI News
-    title: DeepMind's AlphaGenome 2 doubles accuracy at finding causal DNA variants
+    title: Anthropic IPO expected to price Nov. 18 and trade Nov. 19 as ANT
     body: >-
-      The model was trained on more than 100 million single-cell profiles across 68 tissues. On the TenK10K immune-cell set it identifies causal variants 30% of the time, versus 16% for its predecessor, and gets the direction of a gene's effect right 43% of the time.
+      Trading is set to begin on Nasdaq. The prospectus shows a $21.9 billion non-cash charge tied to changes in the fair value of convertible notes, derivatives and SAFEs.
+
+      Separately, Riot Platforms named Anthropic as the tenant for its Corsicana, Texas site: a 15-year, 910MW powered-land lease worth about $28 billion over the initial term, or up to $54 billion with both five-year extensions.
     source: AI Weekly
-    url: https://aiweekly.co/ai-news-today/edition/2026-11-12
+    url: https://aiweekly.co/ai-news-today/edition/2026-11-13
   - section: AI News
-    title: OpenAI tests verified business profiles and agents inside ChatGPT
+    title: Google launches Gemini 4 Hydrogen at $1.50 per million input tokens
     body: >-
-      The beta lets companies claim verified profiles, track how often ChatGPT mentions them, and launch Business Agents. Eligible US firms can also sell the agent as an ad.
+      Output costs $7.50 per million tokens, and the context window is 1 million tokens. The model scored 51 on the Artificial Analysis Intelligence Index, ahead of Argon's 50, and 54 at its highest thinking setting.
     source: AI Weekly
-    url: https://aiweekly.co/ai-news-today/edition/2026-11-12
+    url: https://aiweekly.co/alerts/gemini-4-hydrogen-ships-at-150750-as-agent-daily-driver
   - section: AI News
-    title: TSMC board approves up to $1 billion in OpenAI and Anthropic stakes
+    title: Huang's exit casts doubt on Nvidia's $500 billion AI financing plan
     body: >-
-      The split is $500 million in OpenAI preferred stock and $500 million in Anthropic common shares at the planned IPO price. Analysts warn that this circular financing makes real demand harder to read.
+      CNBC reports the plan to turn AI chips into tradable debt is complicated by Huang's departure. The August pact with Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs and KKR has produced no deals so far.
     source: AI Weekly
-    url: https://aiweekly.co/ai-news-today/edition/2026-11-12
+    url: https://aiweekly.co/alerts/huangs-exit-blows-hole-in-500b-nvidia-backed-ai-financing-push-with-six-wall
   - section: AI News
-    title: Anthropic study finds one shared AI agent beats an agent per user
+    title: Four nonprofits sue to halt frontier AI training in California
     body: >-
-      Researchers tested models from Anthropic, OpenAI and Alibaba across four environments. Group outcomes were worse when each user had their own agent than when one agent served everyone. Three of the environments are released as MAMUBench.
+      The suit names Anthropic, Google, Meta, OpenAI and SpaceX's AI unit in San Francisco Superior Court and seeks an emergency injunction under California's Unfair Competition Law.
     source: AI Weekly
-    url: https://aiweekly.co/ai-news-today/edition/2026-11-12
+    url: https://aiweekly.co/alerts/four-nonprofits-sue-openai-anthropic-google-meta-and-spacex-in-california-to
   - section: AI News
-    title: ByteDance's founder says catching OpenAI and Anthropic is years away
+    title: OpenAI unveils Daybreak security agents; Anthropic opens self-hosted managed agents
     body: >-
-      Zhang Yiming said closing the gap at the frontier won't happen before 2029 or 2030, blaming training datasets "orders of magnitude smaller." ByteDance plans its own assistant within weeks.
+      OpenAI's Daybreak Red Team and Daybreak Defense Factory were shown at a keynote, where Greg Brockman argued that defense depends on the frontier models companies use.
+
+      Anthropic's Claude Managed Agents entered private beta on Nov. 12 in a self-hosted form, letting enterprises run the agent harness, Postgres database and worker sandboxes in their own cloud or on-premises.
     source: AI Weekly
-    url: https://aiweekly.co/ai-news-today/edition/2026-11-12
+    url: https://aiweekly.co/ai-news-today/edition/2026-11-13
   - section: AI News
-    title: Ukrainian defense-tech firm Uforce raises $700 million at a $6 billion valuation
+    title: Runway open-sources Praxis-1, a 27-billion-parameter robot-control model
     body: >-
-      Valor Equity Partners and the UK's National Wealth Fund co-led the round. The company has logged more than 300,000 combat flights in Ukraine.
+      The mixture-of-experts diffusion transformer is released under Apache 2.0, with commercial use permitted.
     source: AI Weekly
-    url: https://aiweekly.co/ai-news-today/edition/2026-11-12
+    url: https://aiweekly.co/alerts/runway-open-sources-praxis-1-a-27b-robot-model-apache-20
+  - section: AI News
+    title: Nscale posts $1.69 billion Q3 loss on $307.5 million revenue
+    body: >-
+      The neocloud's updated US IPO filing shows revenue up 1,344% year over year, while the quarterly loss widened from $1.02 billion in Q2.
+    source: AI Weekly
+    url: https://aiweekly.co/alerts/nscale-posts-169b-q3-loss-as-revenue-jumps-1344-in-ipo-update
   - section: On This Day
     title: "1940 - Disney's Fantasia premieres in New York"
     body: >-
