@@ -1,45 +1,5 @@
-generated: "2026-11-15T06:32:05-05:00"
+generated: "2026-11-15T18:31:51-05:00"
 stories:
-  - section: Local Events
-    title: Holiday Bazaar, art fair and bake sale at Congregation Beth Shalom
-    body: >-
-      The 19th annual bazaar combines a holiday market, an art fair and a bake sale.
-    when: Sun Nov 15, noon-5pm
-    where: Congregation Beth Shalom, 3750 E. 3rd St.
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
-    image: img/bazaar.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Bingo Brunch at Cardinal Spirits
-    body: >-
-      Free bingo with prizes every round and a different local celebrity caller each week. Runs Sundays through Dec. 27.
-    when: Sun Nov 15, noon-2pm
-    where: Cardinal Spirits
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/rss/
-    image: img/bingo.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Mozart's Idomeneo has its final performance today
-    body: >-
-      The IU opera follows a king whose bargain with Neptune forces a choice between love and duty. A pre-show talk by Peyson Weekley runs one hour before curtain in the North Lobby.
-    when: Sun Nov 15
-    where: Musical Arts Center, IU
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/idomeneo-by-wolfgang-amadeus-mozart/59736/
-    image: img/idomeneo.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Audrey Rose, 18, plays a hometown debut
-    body: >-
-      The singer-songwriter blends storytelling with pop. Doors at 6:30pm.
-    when: Sun Nov 15, 7pm
-    where: Buskirk-Chumley Theater
-    source: Buskirk-Chumley Theater
-    url: https://buskirkchumley.org/events/audrey-rose-hometown-debut-november-15-2026
-    image: img/audrey-rose.jpg
-    image_credit: Visit Bloomington
   - section: Local Events
     title: IU Latin Jazz Ensemble plays the Buskirk-Chumley
     body: >-
@@ -114,10 +74,28 @@ stories:
     url: https://www.visitbloomington.com/event/rss/
     image: img/photoreflex.jpg
     image_credit: Visit Bloomington
-  - section: Local News
-    title: Griffy Lake reopens Monday, closes again Friday night for deer hunt
+  - section: Local Events
+    title: Samuel Levi Jones turns old encyclopedias and law books into abstract art
     body: >-
-      Trails, shoreline and the lake stay closed until 5am Monday, Nov. 16. They close again from 11pm Friday, Nov. 20 to 5am Monday, Nov. 23. No watercraft may launch either weekend.
+      An Archaeology of Knowledge shows assemblages made from deconstructed printed and bound books. It runs through Feb. 14, 2027.
+    when: Through Feb 14, 2027
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/rss/
+    image: img/samuel-levi-jones.jpg
+    image_credit: Visit Bloomington
+  - section: Local News
+    title: Council to consider raising trash cart fees nearly 50% by 2029
+    body: >-
+      The City Council takes up the ordinance Wednesday, Nov. 18, for initial consideration only; passage that night would need unanimous support. The monthly fee for a 64-gallon cart would rise from $16.97 to $19.40 in 2027, $22.64 in 2028 and $25.13 in 2029. The 35-gallon cart goes from $9.28 to $13.89 and the 96-gallon cart from $25.46 to $37.70.
+
+      The increases would end a $1.6 million annual general-fund subsidy of curbside collection over three years. Fees for yard waste, large items and appliances would also go up.
+    when: Wed Nov 18
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/bloomington-garbage-headline-city-cart-fees-could-climb-nearly-50-by-2029/
+  - section: Local News
+    title: Griffy Lake closes again Friday night for deer hunt
+    body: >-
+      Trails, shoreline and the lake reopen at 5am Monday, Nov. 16. They close again from 11pm Friday, Nov. 20 to 5am Monday, Nov. 23. No watercraft may launch either weekend.
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/11/04/6687
   - section: Local News
@@ -145,18 +123,6 @@ stories:
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/ellettsville-richland-township-reorganization-passes-by-narrow-margin-outside-town-limits/
   - section: Local News
-    title: Monroe County jail population stays under ACLU threshold for 39th straight day
-    body: >-
-      North Park is still under consideration as a site for a new jail.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/monroe-county-jail-notebook-population-stays-below-aclu-threshold-for-39th-straight-day/
-  - section: Local News
-    title: Plan commission backs switching Hilltop Court from condos to rentals
-    body: >-
-      The commission approved the change on Nov. 10 after an initial vote failed and the members took a recess.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/after-failed-vote-recess-plan-commission-backs-hilltop-court-switch-from-condos-to-rentals/
-  - section: Local News
     title: Monroe County sues over Stinesville's ICE agreement; commissioners hire outside counsel
     body: >-
       The Stinesville town board voted 2-1 on Nov. 10 to ratify a 287(g) agreement that lets trained local police perform some immigration enforcement under ICE supervision. The police chief signed it in January without a board vote. The board held off on spending $122,500 in federal funds.
@@ -165,11 +131,11 @@ stories:
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/monroe-county-commissioners-hire-attorney-for-legal-action-over-stinesville-ice-agreement/
   - section: Local News
-    title: Election board accepts 33 provisional ballots, reviews error affecting Stinesville
+    title: County council again rejects raise for commissioners
     body: >-
-      The Monroe County election board accepted 33 provisional ballots on Nov. 13 and is reviewing a mistake that affected Stinesville voters.
+      The council cited the 2% increase given to county employees in turning down the pay raise a second time.
     source: The B Square Bulletin
-    url: https://bsquarebulletin.com/monroe-county-election-board-accepts-33-provisional-ballots-reviews-error-affecting-stinesville/
+    url: https://bsquarebulletin.com/monroe-county-council-again-rejects-raise-for-commissioners-citing-2-for-employees/
   - section: US News
     title: FAA says contractor's telecom upgrade set off Friday's nationwide ground stop
     body: >-
@@ -181,7 +147,7 @@ stories:
   - section: US News
     title: US loses measles elimination status
     body: >-
-      The Pan American Health Organization concluded that measles transmission is re-established in the US, ending a status reached about 25 years ago, researchers told KFF Health News. A public announcement had been planned for Nov. 17.
+      The Pan American Health Organization concluded that measles transmission is re-established in the US, ending a status reached about 25 years ago, researchers told KFF Health News.
 
       Outbreaks in the past two years sickened more than 8,000 people and hospitalized more than 830. States report 13 measles-associated deaths. Two doses of MMR vaccine prevent about 97% of infections.
     source: NPR
@@ -201,9 +167,9 @@ stories:
     source: NPR
     url: https://www.npr.org/nx-s1-6039175
   - section: US News
-    title: Judge temporarily blocks Trump's Washington public golf course redevelopment
+    title: Trump says he will appeal judge's halt of Washington golf course project
     body: >-
-      A federal judge paused the administration's plans to redevelop a public golf course in Washington, according to NPR.
+      A federal judge paused the administration's plan to redevelop a public golf course in Washington. Trump criticized the ruling and said he will appeal, according to NPR.
     source: NPR
     url: https://www.npr.org/nx-s1-6041152
   - section: World News
@@ -265,8 +231,8 @@ stories:
     source: AI Weekly
     url: https://aiweekly.co/alerts/openai-folds-robotics-team-into-main-research-and-applied-orgs
   - section: On This Day
-    title: "1889 - Brazil's emperor is overthrown and a republic proclaimed"
+    title: "1988 - The Soviet Buran space shuttle flies its only mission"
     body: >-
-      A coup led by Deodoro da Fonseca removed Emperor Pedro II and ended the Brazilian monarchy.
+      The reusable orbiter, modeled on NASA's Space Shuttle, flew uncrewed and was never flown again.
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/Proclamation_of_the_Republic_(Brazil)
+    url: https://en.wikipedia.org/wiki/Buran_(spacecraft)
