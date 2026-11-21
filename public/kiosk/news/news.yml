@@ -1,25 +1,5 @@
-generated: "2026-11-20T18:32:59-05:00"
+generated: "2026-11-21T06:31:48-05:00"
 stories:
-  - section: Local Events
-    title: A Foreigner's Journey to Boston tribute show tonight
-    body: >-
-      A tribute group fronted by Brandon Miller plays the music of Foreigner, Journey and Boston. Doors at 6:30pm.
-    when: Fri Nov 20, 7:30pm
-    where: Buskirk-Chumley Theater
-    source: Buskirk-Chumley Theater
-    url: https://buskirkchumley.org/events/a-foreigner-s-journey-to-boston-november-20-2026
-    image: img/foreigner-boston.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Winter Farmers' Market returns Saturday at Switchyard Park Pavilion
-    body: >-
-      Indiana's oldest winter market runs through March 27, 2027, with produce, meat and other local vendors. It is closed Nov. 28.
-    when: Sat Nov 21
-    where: Switchyard Park Pavilion
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/10/26/6681
-    image: img/farmers-market.jpg
-    image_credit: Visit Bloomington
   - section: Local Events
     title: Bloomington Handmade Market fills the Convention Center
     body: >-
@@ -33,11 +13,60 @@ stories:
   - section: Local Events
     title: Hoppy Holiday Market adds beer, s'mores and cookie decorating
     body: >-
-      Artisan shopping with beer and cider, s'mores, cookie decorating, a brewery tour, live entertainment and food trucks.
+      Artisan shopping with beer and cider, s'mores, cookie decorating, a brewery tour, live music and food trucks.
     when: Sat-Sun Nov 21-22
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/rss/
     image: img/hoppy-market.jpg
+    image_credit: Visit Bloomington
+  - section: Local Events
+    title: Winter Farmers' Market runs Saturdays through March, closed Nov. 28
+    body: >-
+      Indiana's oldest winter market sells produce, local meat and other goods through March 27, 2027.
+    when: Sat Nov 21
+    where: Switchyard Park Pavilion
+    source: City of Bloomington
+    url: https://bloomington.in.gov/news/2026/10/26/6681
+  - section: Local Events
+    title: Saturday Crafternoon at Wylie House preserves fall leaves in wax
+    body: >-
+      A family craft in which participants dip fall leaves in wax to preserve them. Final session of the series.
+    when: Sat Nov 21
+    where: Wylie House Museum
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/rss/
+  - section: Local Events
+    title: Ornament decorating sip-and-paint at Oliver Winery
+    body: >-
+      Board & Brush Creative Studio supplies an ornament DIY kit for the class.
+    when: Sun Nov 22
+    where: Oliver Winery
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/rss/
+  - section: Local Events
+    title: Planes, Trains and Automobiles screens at the Buskirk-Chumley
+    body: >-
+      The 1987 comedy with Steve Martin and John Candy. Doors at 6:30pm.
+    when: Sun Nov 22, 7pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/planes-trains-and-automobiles-1987-november-22-2026
+  - section: Local Events
+    title: Hank Ruff and Jake Dodds play a 21+ show
+    body: >-
+      Doors at 7pm, music at 8pm.
+    when: Wed Nov 25, 8pm
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/event/rss/
+  - section: Local Events
+    title: Bloomington Symphony plays Celebrate the Season twice on Nov. 27
+    body: >-
+      Two holiday concerts: 5pm (doors 4:30) and 8pm (doors 7:30).
+    when: Fri Nov 27, 5pm and 8pm
+    where: Buskirk-Chumley Theater
+    source: Buskirk-Chumley Theater
+    url: https://buskirkchumley.org/events/celebrate-the-season-november-27-2026
+    image: img/symphony.jpg
     image_credit: Visit Bloomington
   - section: Local Events
     title: Bloomington Short List opens a run of ten-minute acts
@@ -46,24 +75,6 @@ stories:
     when: Opens Sat Nov 21
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/rss/
-    image: img/short-list.jpg
-    image_credit: Visit Bloomington
-  - section: Local Events
-    title: Planes, Trains and Automobiles screens at the Buskirk-Chumley
-    body: >-
-      The 1987 comedy shows with doors at 6:30pm.
-    when: Sun Nov 22, 7pm
-    where: Buskirk-Chumley Theater
-    source: Buskirk-Chumley Theater
-    url: https://buskirkchumley.org/events/planes-trains-and-automobiles-1987-november-22-2026
-  - section: Local Events
-    title: Bloomington Symphony plays Celebrate the Season twice on Nov. 27
-    body: >-
-      Two shows: 5pm (doors 4:30) and 8pm (doors 7:30).
-    when: Fri Nov 27, 5pm and 8pm
-    where: Buskirk-Chumley Theater
-    source: Buskirk-Chumley Theater
-    url: https://buskirkchumley.org/events/celebrate-the-season-november-27-2026
   - section: Local Events
     title: The Photographic Reflex fills the Eskenazi Museum through Dec. 20
     body: >-
@@ -84,6 +95,18 @@ stories:
     image: img/samuel-levi-jones.jpg
     image_credit: Visit Bloomington
   - section: Local News
+    title: Monroe County health board picks James Laughlin as next health officer
+    body: >-
+      The board of health chose retired pediatrician James Laughlin. The county commissioners must still approve the pick.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/monroe-county-health-board-picks-laughlin-as-next-health-officer-pending-ok-from-commissioners/
+  - section: Local News
+    title: Bloomington Transit board chair's Florida vote raises residency questions
+    body: >-
+      The B Square Bulletin reports that the chair's vote in Florida has prompted questions about whether the chair is eligible to serve on the board. The board has postponed its vote on cutting four bus routes to Dec. 8.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/bloomington-transit-board-chairs-florida-vote-raises-new-questions-about-residency-eligibility-to-serve/
+  - section: Local News
     title: Mayor's refusal to sign superintelligence ban sets up Dec. 2 override vote
     body: >-
       Mayor Kerry Thomson said she will not sign Ordinance 2026-29, which the City Council passed 7-0 on Nov. 4, citing enforcement, the city's legal authority, privacy and the local innovation economy. Under Indiana law, an unsigned ordinance counts as vetoed.
@@ -92,150 +115,140 @@ stories:
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/bloomington-mayor-vetoes-ai-superintelligence-ban-citing-research-enforcement-and-surveillance-concerns/
   - section: Local News
-    title: Faculty Council backs restoring IU's Inclusive Excellence Award
+    title: Council approves 2.7% raise for elected officials and eases some housing rules
     body: >-
-      The Bloomington Faculty Council voted 53-0, with four abstentions, on Nov. 17 to recommend restoring the award for 2026-27. It was suspended after the university's DEI office closed in June 2025, and the 2025 recipients were chosen but never paid. The council urges Chancellor David Reingold and Provost John Ciorciari to find funding, though it does not make funding a condition.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/11/18/bloomington-faculty-council-backs-return-of-inclusive-excellence-award/
+      The Bloomington council gave elected officials a 2.7% raise and left the larger pay question for an election year. It also eased housing rules while keeping limits on duplexes.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/bloomington-council-oks-2-7-elected-official-raises-leaves-bigger-pay-issue-for-election-year/
   - section: Local News
-    title: Former IU provost Lauren Robel named interim legal director of ACLU of Indiana
+    title: Griffy Lake stays closed for deer hunt until Monday morning
     body: >-
-      Robel, IU provost from 2012 to 2021 and dean of the Maurer School of Law from 2003 to 2011, will oversee the ACLU of Indiana's legal team and litigation docket.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/11/18/former-iu-provost-lauren-robel-named-interim-legal-director-of-aclu-of-indiana/
+      The lake, trails and shoreline are closed until 5am Monday, Nov. 23. No watercraft may launch.
+    source: City of Bloomington
+    url: https://bloomington.in.gov/news/2026/11/04/6687
   - section: Local News
-    title: Tesla in self-driving mode hits I-70 work-zone signs; driver arrested for OWI
+    title: Homeowners can get up to $4,000 for stormwater projects
     body: >-
-      A 57-year-old Brazil, Indiana woman was arrested after her 2016 Tesla, reportedly in self-driving mode, struck two arrow boards on eastbound I-70 in Vigo County around 10:30pm Thursday. No one was hurt. Police say her blood alcohol concentration was 0.14%. She faces preliminary charges including intoxicated and reckless driving in a work zone; the charges are allegations.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/11/20/brazil-indiana-woman-arrested-after-tesla-in-self-driving-mode-hits-construction-equipment-on-i-70/
+      The city's residential grant program funds rain gardens, bioswales and similar projects, $1,000 to $4,000 each from a $20,000 total. Applicants must own and live in a single-family home in city limits served by City of Bloomington Utilities. Applications are due Jan. 31, 2027.
+    source: City of Bloomington
+    url: https://bloomington.in.gov/news/2026/11/18/6701
+  - section: Local News
+    title: City seeks Snow Buddies volunteers to shovel for neighbors
+    body: >-
+      The free program pairs volunteers with older adults and residents with disabilities who can't clear their sidewalks. Residents who need help should apply by Dec. 20 for priority. Details at bton.in/SnowHelp or 812-349-3478.
+    source: City of Bloomington
+    url: https://bloomington.in.gov/news/2026/11/16/6700
   - section: Local News
     title: Mayor Thomson to hold final traveling town hall of 2026 on Dec. 7
     body: >-
       The city announced the mayor's last traveling town hall of the year for Monday, Dec. 7.
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/11/18/6703
-  - section: Local News
-    title: Griffy Lake closes tonight for deer hunt
-    body: >-
-      The lake, trails and shoreline close from 11pm Friday, Nov. 20 to 5am Monday, Nov. 23. No watercraft may launch.
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/11/04/6687
-  - section: Local News
-    title: Bloomington Transit delays vote on cutting four bus routes to Dec. 8
-    body: >-
-      The board postponed its vote on cutting Routes 2, 7, 11 and 16 and approved a $90,500 study of the whole route system.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/bloomington-transit-delays-vote-on-bus-service-cuts-until-dec-8-approves-broader-system-study/
-  - section: Local News
-    title: Homeowners can get up to $4,000 for stormwater projects
-    body: >-
-      The city's residential grant program funds rain gardens, bioswales and similar projects, $1,000 to $4,000 each from a $20,000 total. Applicants must own and live in a single-family home in city limits served by City of Bloomington Utilities. Applications are due Jan. 31, 2027, with awards announced by Feb. 28.
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/11/18/6701
-  - section: Local News
-    title: City seeks Snow Buddies volunteers to shovel for neighbors
-    body: >-
-      The free program pairs volunteers with older adults and residents with disabilities who can't clear their sidewalks. Volunteers clear public sidewalks and a path to the main entrance within 24 hours after snow stops; driveways are not included.
-
-      Residents who need help should apply by Dec. 20 for priority. Details at bton.in/SnowHelp or 812-349-3478.
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/11/16/6700
   - section: US News
     title: Second judge blocks Trump's arch, saying it is unlikely to succeed in court
     body: >-
-      NPR reports a second judge has halted the arch project. Earlier orders put the arch and the golf course on hold, though that pause was expected to last only days.
+      NPR reports a second judge has halted the arch project. Earlier orders put the arch and the golf course on hold for what was expected to be only days.
     source: NPR
     url: https://www.npr.org/nx-s1-6048675
   - section: US News
     title: S&P 500 sinks 3.7% and Nasdaq turns negative for the year
     body: >-
-      NPR reports tech stocks ended the week lower even after Anthropic's record IPO.
+      Tech stocks ended the week lower even after Anthropic's record IPO.
     source: NPR
     url: https://www.npr.org/g-s1-154797
   - section: US News
-    title: Texas execution took over an hour as staff struggled to find a vein
+    title: Senate passes bipartisan energy bill amid environmental concerns
     body: >-
-      NPR reports that Reinaldo Dennes moaned in pain during the execution, which lasted more than an hour.
+      The bill aims to speed permitting for energy and infrastructure projects. Some environmental groups object to limits on judicial review and changes to environmental review rules, while others backed it. It now goes to the House.
     source: NPR
-    url: https://www.npr.org/nx-s1-6048461
-  - section: US News
-    title: Midterms were the largest win for either party in 50 years
-    body: >-
-      NPR reports on the scale of the midterm result. Separately, it reports Trump initially accepted the results but most Republican voters doubt they were fair, and incoming House majority leader Katherine Clark is stressing Democratic unity.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6045916
+    url: https://www.npr.org/g-s1-154579
   - section: US News
     title: Trump touts Xi-Putin meeting but offers little in results
     body: >-
-      NPR reports the president praised Thursday's three-way meeting in China without pointing to concrete outcomes. A top House Democrat is asking what he accomplished.
+      The president praised the three-way meeting in China without pointing to concrete outcomes.
     source: NPR
     url: https://www.npr.org/nx-s1-6047594
   - section: US News
-    title: Senate passes bipartisan energy bill amid environmental concerns
+    title: Most Republican voters doubt midterm results, though Trump initially accepted them
     body: >-
-      The bill aims to speed permitting for energy and infrastructure projects. Some environmental groups object to limits on judicial review and changes to environmental review rules, while others backed it.
+      NPR reports that Trump at first accepted the results, but most GOP voters doubt they were fair.
     source: NPR
-    url: https://www.npr.org/g-s1-154579
+    url: https://www.npr.org/nx-s1-6047605
   - section: World News
-    title: US-backed Board of Peace threatens to hand Gaza back to the UN
+    title: Russian strike on Kryvyi Rih kills two; missiles fall in Poland
     body: >-
-      Senior adviser Josh Gruenbaum told Ynet the board could return Gaza to the UN if Israel keeps blocking its plan. Israel has not signed a Status of Forces Agreement for the International Stabilization Force and is holding up police training in Egypt.
+      A strike on Zelensky's hometown killed two people, including a 7-year-old boy, and wounded about 60. Hours later two Russian missiles and a suspected drone fell in Poland, which its prime minister called a likely provocation.
     source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-november-20-2026/
+    url: https://www.timesofisrael.com/liveblog-november-21-2026/
   - section: World News
-    title: Trump says Iran's offer is unacceptable; Treasury sanctions four Iranians
+    title: Second tanker hit near Strait of Hormuz in two days
     body: >-
-      Trump said Iran wants a deal but its offer does not work. Iran's foreign minister said enriched uranium must not leave Iran but still expects a fair solution. Treasury sanctioned four Iranians it calls oil trustees. Reports say Netanyahu told aides renewed war is unavoidable; Trump said he is not rushing.
-
-      Congress faces a Dec. 11 funding deadline, and Trump has requested $350 billion for the Iran war, which Democrats oppose.
+      UK maritime authorities say an unidentified projectile struck a tanker near Oman's Khasab; no casualties were reported. A similar attack Friday caused a fire. Iran's foreign minister said China and Russia back Tehran's stance against nuclear weapons, while the US sanctioned Iranian oil "trustees."
     source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-november-20-2026/
+    url: https://www.timesofisrael.com/liveblog-november-21-2026/
   - section: World News
-    title: UK and EU leaders meet in Brussels for second summit
+    title: Saudi-led forces intercept three Houthi missiles aimed at Riyadh
     body: >-
-      The UK prime minister meets European Council President Antonio Costa and Commission President Ursula von der Leyen. Pre-summit reports pointed to deals on food-export red tape, linking emissions-trading schemes and a youth experience scheme, though the text was still being negotiated.
+      Explosions were heard in the capital before the coalition said it had shot down the missiles.
+    source: Times of Israel
+    url: https://www.timesofisrael.com/liveblog-november-21-2026/
+  - section: World News
+    title: Fire at Iraq's Hartha power station kills at least four
+    body: >-
+      About 30 people were injured at the plant north of Basra. The cause is not yet known.
+    source: Times of Israel
+    url: https://www.timesofisrael.com/liveblog-november-21-2026/
+  - section: World News
+    title: Security Council powers reportedly oppose UAE bid for UN secretary-general
+    body: >-
+      In an informal straw poll, three permanent members reportedly opposed Lana Nusseibeh. Costa Rica's Rebeca Grynspan remains the front-runner. Guterres's term ends Dec. 31.
+    source: Times of Israel
+    url: https://www.timesofisrael.com/liveblog-november-21-2026/
+  - section: AI News
+    title: Anthropic's record IPO reaches $93.5 billion after underwriters add $12.2 billion
+    body: >-
+      Underwriters exercised the greenshoe option, lifting the total raise above the $81.3 billion base deal and setting a record.
+    source: AI Weekly
+    url: https://aiweekly.co/ai-news-today
+  - section: AI News
+    title: Anthropic mathematician claims a proof of the Generalized Riemann Hypothesis
+    body: >-
+      Levent Alpöge says he and Claude found the proof, released as machine-checkable Lean code. No outside mathematicians have confirmed it. Separately, Alpöge and Tristan Buckmaster posted an unreviewed 79-page AI-aided paper claiming finite-time blowup for 3D Navier-Stokes equations.
+    source: AI Weekly
+    url: https://aiweekly.co/ai-news-today
+  - section: AI News
+    title: Thinking Machines releases open-weights Inkling 2 Mini
+    body: >-
+      The 26.4B-parameter model activates 3.4B parameters per token and reuses its middle layers to raise effective capacity.
+    source: AI Weekly
+    url: https://thinkingmachines.ai/news/inkling-2-mini/
+  - section: AI News
+    title: Trump threatens a tax on overseas AI data centers
+    body: >-
+      He said US companies will be barred from building data centers abroad and face a "tremendous tax," but gave no rate or timeline. The Senate also passed a grid and permitting bill 62-33 that would shift about $55 billion in transmission costs onto hyperscale data centers.
+    source: AI Weekly
+    url: https://aiweekly.co/ai-news-today
+  - section: AI News
+    title: Amazon says AI agents found a zero-day in 11 minutes
+    body: >-
+      Amazon Threat Intelligence says a suspected China-linked actor used the open-source Cairn agent framework to exploit a MONAI Label bug. A patch has shipped.
+    source: AI Weekly
+    url: https://aiweekly.co/ai-news-today
+  - section: AI News
+    title: UN talks on killer robots end with no ban
+    body: >-
+      States at the Geneva conference agreed only to elaborate a possible accord by 2028.
     source: NPR
-    url: https://www.npr.org/g-s1-154576
-  - section: AI News
-    title: Anthropic closes first day at $97.17 after opening 34% above IPO price
-    body: >-
-      Anthropic opened at $111.50 against its $83 IPO price and briefly hit about $2 trillion in market value before closing at $97.17. The $81.3 billion raise is the largest IPO on record.
-    source: AI Weekly
-    url: https://aiweekly.co/alerts/anthropic-opens-at-11150-in-nasdaq-debut-surging-34-to-2t-market-cap
-  - section: AI News
-    title: California attorney general subpoenas Nvidia over chip transfers
-    body: >-
-      AG Rob Bonta opened an investigation into whether advanced chips or confidential information reached China. He said the conduct raises securities-law concerns.
-    source: AI Weekly
-    url: https://aiweekly.co/alerts/california-ag-rob-bonta-subpoenas-nvidia-over-advanced-chip-transfers-tied-to
-  - section: AI News
-    title: University of California gives students and staff free ChatGPT and Codex
-    body: >-
-      The expanded OpenAI deal adds stronger data protections plus AI literacy and workforce training. Classroom use stays at faculty discretion.
-    source: AI Weekly
-    url: https://universityofcalifornia.edu/press-room/uc-expands-collaboration-openai-offering-free-access-students-faculty-and-staff-secure
-  - section: AI News
-    title: Study finds data centers 2.2 times likelier in majority-Black neighborhoods
-    body: >-
-      A George Washington University and American University analysis of 81,000 census tracts controlled for income, land costs and other factors and still found the gap.
-    source: AI Weekly
-    url: https://aiweekly.co/alerts/gwu-study-data-centers-22x-likelier-in-black-neighborhoods
-  - section: AI News
-    title: Google builds a mirror web to test browsing agents
-    body: >-
-      Chrome's team made a synthetic internet of hundreds of sites so Gemini-powered agents can be trained and attacked without touching the live web.
-    source: AI Weekly
-    url: https://aiweekly.co/alerts/googles-chrome-team-builds-a-mirror-web-for-ai-agents
+    url: https://www.npr.org/g-s1-154914
   - section: On This Day
-    title: "1985 - Windows 1.0 goes on sale"
+    title: "1964 - Verrazzano-Narrows Bridge opens"
     body: >-
-      Microsoft's first major Windows release became available to the public.
+      The New York bridge opened as the longest suspension bridge in the world at the time.
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/Windows_1.0
+    url: https://en.wikipedia.org/wiki/Verrazzano%E2%80%93Narrows_Bridge
   - section: On This Day
-    title: "1947 - Princess Elizabeth marries Philip Mountbatten"
+    title: "1980 - MGM Grand fire kills 85 in Las Vegas"
     body: >-
-      The future queen wed Lieutenant Philip Mountbatten, who was made Duke of Edinburgh.
+      The hotel fire killed 85 people.
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/Wedding_of_Princess_Elizabeth_and_Philip_Mountbatten
+    url: https://en.wikipedia.org/wiki/MGM_Grand_fire
