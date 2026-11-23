@@ -1,4 +1,4 @@
-generated: "2026-11-23T06:33:39-05:00"
+generated: "2026-11-23T18:32:07-05:00"
 stories:
   - section: Local Events
     title: Hank Ruff and Jake Dodds play a 21+ show
@@ -8,12 +8,14 @@ stories:
     source: Visit Bloomington
     url: https://www.visitbloomington.com/event/hank-ruff-%26-jake-dodds/60251/
   - section: Local Events
-    title: Wheeler Mission hosts a free Thanksgiving-week dinner
+    title: BTown Turkey Trot 5K on Thanksgiving morning
     body: >-
-      A free community dinner runs 2-5pm at Wheeler Mission's Bloomington location.
-    when: Thanksgiving week, 2-5pm
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/nov-23-2026-monroe-county-health-officer-transit-board-chair-residency-questions-ai-ban-veto-city-council-pay-raises/
+      A 5K run or walk for families, friends and neighbors.
+    when: Thu Nov 26, morning
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/events/
+    image: img/turkey-trot.jpg
+    image_credit: Visit Bloomington
   - section: Local Events
     title: Canopy of Lights downtown lighting ceremony brings Santa and live music
     body: >-
@@ -45,7 +47,7 @@ stories:
   - section: Local Events
     title: 23rd annual Holiday Market runs indoors and out
     body: >-
-      Local farm products, handcrafted gifts from regional artisans, live music and food. The Winter Farmers' Market takes this Saturday off and returns Dec. 5 at Switchyard Park Pavilion.
+      Local farm products, handcrafted gifts from regional artisans, live music and food, rain or shine. The Winter Farmers' Market takes this Saturday off and returns Dec. 5 at Switchyard Park Pavilion.
     when: Sat Nov 28
     source: Visit Bloomington
     url: https://www.visitbloomington.com/events/
@@ -91,6 +93,16 @@ stories:
     where: Eskenazi Museum of Art
     source: Visit Bloomington
     url: https://www.visitbloomington.com/events/
+    image: img/photographic-reflex.jpg
+    image_credit: Visit Bloomington
+  - section: Local News
+    title: Ellettsville merger would leave Monroe County with none of a new income tax
+    body: >-
+      Under the state formula, if the Ellettsville-Richland Township merger approved Nov. 3 takes effect, Monroe County government would get $0 from the proposed municipal-services income tax, down from a projected $3.93 million. At a 1.049% rate, Ellettsville's share would rise from about $3.68 million to $8.23 million, while Bloomington would fall about $611,000 short of its $43.74 million target. Restoring Bloomington's target would take a rate near 1.064%.
+
+      Collections begin in 2029 and the legislature could change the rules in its 2027 session, so the county task force declined on Oct. 23 to recommend rates.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/ellettsville-merger-would-erase-monroe-countys-share-of-municipal-income-tax/
   - section: Local News
     title: Transit board chair's Florida vote draws mayor's scrutiny of his eligibility
     body: >-
@@ -108,32 +120,11 @@ stories:
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/bloomington-mayor-vetoes-ai-superintelligence-ban-citing-research-enforcement-and-surveillance-concerns/
   - section: Local News
-    title: Council voted 6-3 for 2.7% raises; 8-1 to loosen housing rules
-    body: >-
-      The raises for the mayor, clerk and council members take effect in 2027; two alternatives failed, leaving the broader pay question unresolved before the 2027 election.
-
-      On housing, the council loosened rules for accessory dwelling units, cottage developments, triplexes and fourplexes, but kept the annual cap and spacing limits on duplexes in some neighborhoods.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/bloomington-council-eases-housing-rules-but-keeps-limits-on-duplexes/
-  - section: Local News
     title: Monroe County health board picks James Laughlin as next health officer
     body: >-
       The board of health unanimously chose retired pediatrician James Laughlin. The county commissioners must still approve the pick. Restrictions on the interim officer's authority currently block new hiring.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/monroe-county-health-board-picks-laughlin-as-next-health-officer-pending-ok-from-commissioners/
-  - section: Local News
-    title: Monroe County council meets Tuesday at 5pm
-    body: >-
-      The regular meeting is Nov. 24; no agenda had been posted as of Monday morning.
-    when: Tue Nov 24, 5pm
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/nov-23-2026-monroe-county-health-officer-transit-board-chair-residency-questions-ai-ban-veto-city-council-pay-raises/
-  - section: Local News
-    title: Brazil, Indiana woman arrested after Tesla in self-driving mode hits equipment on I-70
-    body: >-
-      The Tesla, operating in self-driving mode, struck construction equipment on I-70.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/11/20/brazil-indiana-woman-arrested-after-tesla-in-self-driving-mode-hits-construction-equipment-on-i-70/
   - section: Local News
     title: Mayor Thomson to hold final traveling town hall of 2026 on Dec. 7
     body: >-
@@ -153,12 +144,30 @@ stories:
       The free program pairs volunteers with older adults and residents with disabilities who can't clear their sidewalks. Residents who need help should apply by Dec. 20 for priority. Details at bton.in/SnowHelp or 812-349-3478.
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/11/16/6700
+  - section: Local News
+    title: City volunteers pass 80,700 hours, closing on a 100,000-hour goal
+    body: >-
+      Bloomington volunteers have logged more than 80,700 hours this year, against a year-end target of 100,000.
+    source: City of Bloomington
+    url: https://bloomington.in.gov/news/2026/11/16/6699
+  - section: US News
+    title: Nvidia reinstates Jensen Huang as CEO eleven days after he resigned
+    body: >-
+      The board voted unanimously to restore Huang as president, CEO and director after consulting senior US officials, saying his return poses no national security risk. NPR reports Trump claimed credit for the reversal. Separately, the New York Times reports a former executive at a Singapore-based Nvidia customer was in contact with a Chinese state-security officer from spring 2025 to fall 2026; US officials say they have not concluded she spied for China.
+    source: AI Weekly, Times of Israel, NPR
+    url: https://www.npr.org/nx-s1-6050910
   - section: US News
     title: Storms on both coasts threaten Thanksgiving travel
     body: >-
       NPR reports storms expected on the East and West coasts could disrupt holiday travel plans.
     source: NPR
     url: https://www.npr.org/nx-s1-6047508
+  - section: US News
+    title: California Rep. Gomez resigns after ethics report on misconduct allegations
+    body: >-
+      NPR reports the California Democrat has resigned following a House ethics report. The House Ethics Committee opened its investigation in August, over allegations including inappropriate sexual contact with a staffer; Gomez said his actions were consensual.
+    source: NPR
+    url: https://www.npr.org/g-s1-155142
   - section: US News
     title: Climate talks collapse in final hours over fossil fuels
     body: >-
@@ -177,40 +186,28 @@ stories:
       NPR reports that Democrats' midterm result was the biggest win for either party in half a century. Times of Israel separately notes Democrats won their largest House majority since 1992.
     source: NPR
     url: https://www.npr.org/nx-s1-6045916
-  - section: US News
-    title: AI boom has a bad week, and it is raising alarms
-    body: >-
-      NPR describes a rough week for the AI sector, following the S&P 500's 3.7% drop last week, its worst since 2020.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6048729
   - section: World News
     title: Iran vows to use all available tools against US blockade
     body: >-
-      Iran's Foreign Ministry made the pledge over the US naval blockade on Iran-related oil exports, reimposed July 14. Bahrain said an Iranian attack hit an industrial facility, and tankers in the Strait of Hormuz were reportedly hit as Qatari mediators visited Tehran. Trump said he would try diplomacy until year's end.
+      Iran's Foreign Ministry made the pledge over the US naval blockade on Iran-related oil exports, reimposed July 14. Bahrain said an Iranian attack hit an industrial facility, and tankers in the Strait of Hormuz were reportedly hit as Qatari mediators visited Tehran. Trump said he would try diplomacy until year's end, and claimed on Truth Social that Iran launched more drones and missiles this past week than in over a year, all intercepted.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-november-23-2026/
   - section: World News
     title: Settler violence during olive harvest up 74% in two years
     body: >-
-      Army Radio counted 181 nationalist-crime incidents this harvest season, versus 145 in 2025 and 104 in 2024. President Isaac Herzog called the attacks despicable. Defense Minister Israel Katz said police, not the IDF, should handle it, and opposition leaders condemned the weekend arson attacks.
+      Army Radio counted 181 nationalist-crime incidents this harvest season, versus 145 in 2025 and 104 in 2024. Settlers reportedly burned homes and vehicles in several West Bank villages over the weekend. President Isaac Herzog called the attacks despicable. Defense Minister Israel Katz said police, not the IDF, should handle it.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-november-23-2026/
   - section: World News
-    title: Ukraine says drones hit a Russian warship at a naval base in Libya
+    title: Israeli unity talks stall as Eisenkot and Likud meet twice without a deal
     body: >-
-      NPR reports the claim comes from President Zelenskyy.
-    source: NPR
-    url: https://www.npr.org/g-s1-155017
-  - section: World News
-    title: Lebanese villagers return to wrecked homes as Israeli army pulls back
-    body: >-
-      NPR reports residents are going back to heavily damaged villages after the Israeli withdrawal.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6048710
+      Yashar leader Gadi Eisenkot met Likud for about four hours in Herzliya, then two more hours at the Knesset, with no breakthrough reported. Kan reports Likud wanted Naftali Bennett's B'Yachad excluded, and that Eisenkot may announce a coalition suddenly and call a Knesset vote within a day or two.
+    source: Times of Israel
+    url: https://www.timesofisrael.com/liveblog-november-23-2026/
   - section: World News
     title: Taiwan bans short-selling below the prior close after 6% market drop
     body: >-
-      The TAIEX fell 6.23% to 36,033.29 on Friday. From today, Nov. 24 in Taiwan, the regulator bars short-selling below the previous close, and short-sale margin requirements rise from 130% to 150%.
+      The TAIEX fell 6.23% to 36,033.29 on Friday. From Nov. 24 in Taiwan, the regulator bars short-selling below the previous close, and short-sale margin requirements rise from 130% to 150%.
     source: Focus Taiwan
     url: https://focustaiwan.tw/business/202611210013
   - section: World News
@@ -220,32 +217,50 @@ stories:
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-november-23-2026/
   - section: AI News
+    title: CrowdStrike agrees to buy Zscaler in a $43.9 billion all-stock deal
+    body: >-
+      Zscaler holders get 1.135 CrowdStrike shares per share, a 34% premium. The combined company would start with over $10 billion in annual recurring revenue and targets $1 billion in synergies. One headline cited a far higher value, which conflicts with the $43.9 billion in the deal terms.
+    source: AI Weekly
+    url: https://aiweekly.co/alerts/crowdstrike-reported-in-talks-to-buy-zscaler-in-265b-combination
+  - section: AI News
+    title: OpenAI says GPT-6.2 Astra cuts reasoning-extraction attacks to 0.2%
+    body: >-
+      OpenAI says its anti-distillation safeguards dropped adaptive red-team extraction of protected reasoning from 54.0% on GPT-6 Astra to 0.2%. The company also released MedChemBench, 99 medicinal chemistry problems, where GPT-6.2 Astra scored 84.5% against 58.2% for GPT-5.6 Sol.
+    source: AI Weekly
+    url: https://aiweekly.co/alerts/openai-says-gpt-62-cuts-reasoning-extraction-attacks-to-02
+  - section: AI News
+    title: METR's updated benchmark finds AI coding ability still doubling every four months
+    body: >-
+      Time Horizon 1.1 grows from 170 to 228 tasks and for the first time scores judgment-heavy work, where progress lags coding.
+    source: AI Weekly
+    url: https://aiweekly.co/alerts/metr-update-ai-coding-doubles-fast-judgment-work-lags
+  - section: AI News
+    title: NHS trial puts AI in 700,000 breast screenings
+    body: >-
+      Women aged 50 to 71 at 30 sites will have mammograms read by one human expert plus AI, instead of two experts.
+    source: AI Weekly
+    url: https://aiweekly.co/alerts/nhs-edith-trial-puts-ai-into-700000-breast-screenings
+  - section: AI News
+    title: Virginia and Oregon sue SpaceX over Grok deepfakes
+    body: >-
+      The attorneys general allege Grok and X were marketed as safe while Grok's image generator produced non-consensual sexualized images, including of children.
+    source: AI Weekly
+    url: https://aiweekly.co/alerts/virginia-oregon-sue-spacex-over-grok-spicy-mode-deepfakes
+  - section: AI News
     title: Riemann Hypothesis proof, written with Claude's help, is certified in Lean
     body: >-
       The Lean and Mathlib communities endorsed Levent Alpöge's Claude-aided proof. Verification covered 175,187 modules, and the proof is about 17 million lines.
     source: Lean community
     url: https://leanprover-community.github.io/blog/posts/riemann-hypothesis/
-  - section: AI News
-    title: OpenRouter drops three inference providers after prompt-leak tests
+  - section: On This Day
+    title: "1924 - Hubble shows Andromeda is a separate galaxy"
     body: >-
-      On Nov. 22 it removed Novita, Phala and Together, and pulled 125 endpoints from Zero Data Retention eligibility.
-    source: OpenRouter
-    url: https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/
-  - section: AI News
-    title: Canary-token test finds AI hosting providers compromised
-    body: >-
-      Researcher HD Moore ran about 2 million canary-token prompts from July through November and found at least three AI hosting providers compromised. About 200 planted AWS credentials were exfiltrated in late-October attacks.
-    source: Crypto Briefing
-    url: https://cryptobriefing.com/hd-moore-ai-supply-chain-data-leaks/
+      The New York Times published Edwin Hubble's evidence that the Andromeda Nebula lies outside the Milky Way.
+    source: Wikipedia
+    url: https://en.wikipedia.org/wiki/Edwin_Hubble
   - section: On This Day
     title: "1963 - Doctor Who premieres on BBC television"
     body: >-
       The first episode aired with William Hartnell as the first Doctor.
     source: Wikipedia
     url: https://en.wikipedia.org/wiki/Doctor_Who
-  - section: On This Day
-    title: "2003 - Georgia's Rose Revolution forces Shevardnadze to resign"
-    body: >-
-      Weeks of protests over disputed election results ended with the president's resignation.
-    source: Wikipedia
-    url: https://en.wikipedia.org/wiki/Rose_Revolution
