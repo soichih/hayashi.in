@@ -1,4 +1,4 @@
-generated: "2026-11-24T06:32:21-05:00"
+generated: "2026-11-24T18:32:11-05:00"
 stories:
   - section: Local Events
     title: Hank Ruff and Jake Dodds play a 21+ show
@@ -68,8 +68,6 @@ stories:
     when: Nov 29 - Dec 6
     source: Visit Bloomington
     url: https://www.visitbloomington.com/events/
-    image: img/gingerbread.jpg
-    image_credit: Visit Bloomington
   - section: Local Events
     title: Sarah Jarosz marks 10 years of Undercurrent
     body: >-
@@ -98,17 +96,21 @@ stories:
     image: img/photographic-reflex.jpg
     image_credit: Visit Bloomington
   - section: Local News
+    title: City drops lawsuits over Crawford Apartments in settlement
+    body: >-
+      Bloomington dismissed its $685,000 breach-of-contract suit over federal HOME funds against the Crawford Apartments owners and the nonprofit Beacon, Inc., plus two rental-code enforcement cases filed in June 2025. The contract dismissal is with prejudice, so the city cannot refile.
+
+      The city issued temporary occupancy permits for the 61-unit complex. Management must keep round-the-clock staffing or surveillance, and Beacon must file regular resident-service reports. A non-disparagement clause limits public statements about the litigation.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/bloomington-drops-lawsuit-against-owners-of-crawford-apartments-local-nonprofit/
+    image: img/crawford-apartments.jpg
+    image_credit: The B Square Bulletin
+  - section: Local News
     title: Spinners and Weavers Guild told to leave College Mall by Dec. 20
     body: >-
       Simon Property Group invoked a 30-day termination clause on the guild's lease. Other nonprofits at the mall say their leases remain in place. The guild is looking for a new home.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/spinners-weavers-guild-looks-for-new-home-after-surprise-college-mall-lease-termination/
-  - section: Local News
-    title: MCCSC approves $3.65M sale of former Herald-Times building
-    body: >-
-      The school board approved the agreement with Highland Ventures. The sale is not final: a 240- to 300-day due diligence period, including environmental testing, comes next.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/mccsc-approves-3-65m-sale-agreement-for-former-herald-times-building/
   - section: Local News
     title: Ellettsville merger would leave Monroe County with none of a new income tax
     body: >-
@@ -134,23 +136,11 @@ stories:
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/bloomington-mayor-vetoes-ai-superintelligence-ban-citing-research-enforcement-and-surveillance-concerns/
   - section: Local News
-    title: Council approves 2.7% raises for elected city officials
-    body: >-
-      The City Council deferred the larger question of elected-official pay to the election year.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/bloomington-council-oks-2-7-elected-official-raises-leaves-bigger-pay-issue-for-election-year/
-  - section: Local News
     title: Monroe County health board picks James Laughlin as next health officer
     body: >-
       The board of health unanimously chose retired pediatrician James Laughlin. The county commissioners must still approve the pick.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/monroe-county-health-board-picks-laughlin-as-next-health-officer-pending-ok-from-commissioners/
-  - section: Local News
-    title: City street resurfacing runs two weeks from Nov. 16, with a Patterson Drive closure
-    body: >-
-      The project includes a three-day closure of Patterson Drive.
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/11/12/6696
   - section: Local News
     title: Homeowners can get up to $4,000 for stormwater projects
     body: >-
@@ -183,11 +173,11 @@ stories:
     source: NPR
     url: https://www.npr.org/nx-s1-6047508
   - section: US News
-    title: Democrats probe whether Trump Jr.-aligned businesses benefit from government access
+    title: US investigates Iranian ties to as many as 50 hacked commercial vessels
     body: >-
-      NPR reports on a Democratic investigation into the businesses.
+      NPR reports the US government is examining possible Iranian links to hacks of as many as 50 commercial ships.
     source: NPR
-    url: https://www.npr.org/nx-s1-6051028
+    url: https://www.npr.org/nx-s1-6052994
   - section: US News
     title: California Rep. Gomez resigns after ethics report on misconduct allegations
     body: >-
@@ -195,11 +185,23 @@ stories:
     source: NPR
     url: https://www.npr.org/g-s1-155142
   - section: US News
-    title: "'Medicare for all' is back on the drawing board"
+    title: Thanksgiving dinner is testing family budgets
     body: >-
-      NPR asks whether the idea stands a better chance this time. Separately, Medicare looks different in 2027, so open enrollment matters.
+      NPR looks at what families are cutting from the holiday meal as costs rise.
     source: NPR
-    url: https://www.npr.org/nx-s1-6047706
+    url: https://www.npr.org/nx-s1-6044207
+  - section: US News
+    title: Democrats probe whether Trump Jr.-aligned businesses benefit from government access
+    body: >-
+      NPR reports on a Democratic investigation into the businesses.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6051028
+  - section: World News
+    title: Yashar and Yisrael Beytenu sign a coalition deal as Democrats walk out of talks
+    body: >-
+      Yashar says it signed a coalition agreement with Yisrael Beytenu. Separately, Yair Golan's Democrats ended coalition talks with Yashar, citing a stalemate.
+    source: Times of Israel
+    url: https://www.timesofisrael.com/liveblog-november-24-2026/
   - section: World News
     title: US sanctions two dozen Iranian exchange houses; rial slides
     body: >-
@@ -213,9 +215,9 @@ stories:
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-november-24-2026/
   - section: World News
-    title: Israel's top judge, president and opposition leader condemn settler violence
+    title: Shin Bet reportedly faults Defense Minister over settler extremists
     body: >-
-      The Supreme Court president called it a desecration of God's name, President Herzog called it an assault on God himself, and Naftali Bennett condemned "Jewish terror." Army Radio counted a 74% rise in olive-harvest incidents over two years. Separately, the IDF is reportedly investigating 16 cases of troops using Palestinians as human shields.
+      The Shin Bet is reported to have criticized Defense Minister Katz for refusing to use administrative detention against settler extremists. Israel's top judge, President Herzog and Naftali Bennett have all condemned settler violence, and the IDF is reportedly investigating at least 16 cases of troops using Palestinians as human shields.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-november-24-2026/
   - section: World News
@@ -236,12 +238,6 @@ stories:
       Anthropic published a 70-page Claude-authored paper claiming to resolve Valiant's conjecture. OpenAI posted its own proof about five hours later. Neither has been reviewed by human mathematicians.
     source: AI Weekly
     url: https://fourweekmba.com/ai-openai-posts-its-own-vp-vnp-proof-5-hours-after-anthropic/
-  - section: AI News
-    title: SpaceX and Tesla directors reportedly negotiate a $3.5 trillion merger
-    body: >-
-      The Financial Times reports five directors are discussing an all-stock deal, though sources say no agreement is close.
-    source: Financial Times via Investing.com
-    url: https://www.investing.com/news/stock-market-news/spacex-tesla-directors-negotiate-potential-35-trillion-merger-ft-reports-5047091
   - section: AI News
     title: CrowdStrike agrees to buy Zscaler in a $43.9 billion all-stock deal
     body: >-
