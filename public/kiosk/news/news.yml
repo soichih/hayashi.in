@@ -1,16 +1,9 @@
-generated: "2026-11-24T18:32:11-05:00"
+generated: "2026-11-25T06:33:16-05:00"
 stories:
-  - section: Local Events
-    title: Hank Ruff and Jake Dodds play a 21+ show
-    body: >-
-      Doors at 7pm, music at 8pm.
-    when: Wed Nov 25, 8pm
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/event/hank-ruff-%26-jake-dodds/60251/
   - section: Local Events
     title: Canopy of Lights downtown lighting ceremony brings Santa and live music
     body: >-
-      Santa turns on the downtown holiday lights in a family-friendly ceremony.
+      Santa flips the switch on the downtown holiday lights in a family-friendly ceremony with live music.
     when: Fri Nov 27
     where: Courthouse lawn, south side, along Kirkwood Avenue
     source: Visit Bloomington
@@ -20,7 +13,7 @@ stories:
   - section: Local Events
     title: Bloomington Symphony plays Celebrate the Season twice on Nov. 27
     body: >-
-      A holiday program of music from the movies, in two concerts: 5pm (doors 4:30) and 8pm (doors 7:30).
+      A holiday program of music from the movies, in two concerts: 5pm (doors 4:30) and 8pm (doors 7:30). Popcorn and comfy seating are encouraged.
     when: Fri Nov 27, 5pm and 8pm
     where: Buskirk-Chumley Theater
     source: Buskirk-Chumley Theater
@@ -96,6 +89,18 @@ stories:
     image: img/photographic-reflex.jpg
     image_credit: Visit Bloomington
   - section: Local News
+    title: Police link three suspects to downtown attacks that injured three men
+    body: >-
+      Bloomington police used surveillance footage and a video an attacker recorded on a victim's phone to tie three suspects to the downtown assaults.
+    source: The Bloomingtonian
+    url: https://bloomingtonian.com/
+  - section: Local News
+    title: MCCSC approves $3.65 million sale of the former Herald-Times building
+    body: >-
+      The school board approved a sale agreement with Highland Ventures, a Tennessee-based firm. The sale is not final and includes a 240- to 300-day due diligence period.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/mccsc-approves-3-65m-sale-agreement-for-former-herald-times-building/
+  - section: Local News
     title: City drops lawsuits over Crawford Apartments in settlement
     body: >-
       Bloomington dismissed its $685,000 breach-of-contract suit over federal HOME funds against the Crawford Apartments owners and the nonprofit Beacon, Inc., plus two rental-code enforcement cases filed in June 2025. The contract dismissal is with prejudice, so the city cannot refile.
@@ -103,14 +108,6 @@ stories:
       The city issued temporary occupancy permits for the 61-unit complex. Management must keep round-the-clock staffing or surveillance, and Beacon must file regular resident-service reports. A non-disparagement clause limits public statements about the litigation.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/bloomington-drops-lawsuit-against-owners-of-crawford-apartments-local-nonprofit/
-    image: img/crawford-apartments.jpg
-    image_credit: The B Square Bulletin
-  - section: Local News
-    title: Spinners and Weavers Guild told to leave College Mall by Dec. 20
-    body: >-
-      Simon Property Group invoked a 30-day termination clause on the guild's lease. Other nonprofits at the mall say their leases remain in place. The guild is looking for a new home.
-    source: The B Square Bulletin
-    url: https://bsquarebulletin.com/spinners-weavers-guild-looks-for-new-home-after-surprise-college-mall-lease-termination/
   - section: Local News
     title: Ellettsville merger would leave Monroe County with none of a new income tax
     body: >-
@@ -142,6 +139,12 @@ stories:
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/monroe-county-health-board-picks-laughlin-as-next-health-officer-pending-ok-from-commissioners/
   - section: Local News
+    title: Spinners and Weavers Guild told to leave College Mall by Dec. 20
+    body: >-
+      Simon Property Group invoked a 30-day termination clause on the guild's lease. Other nonprofits at the mall say their leases remain in place. The guild is looking for a new home.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/spinners-weavers-guild-looks-for-new-home-after-surprise-college-mall-lease-termination/
+  - section: Local News
     title: Homeowners can get up to $4,000 for stormwater projects
     body: >-
       The city's residential grant program funds rain gardens, bioswales and similar projects, $1,000 to $4,000 each from a $20,000 total. Applicants must own and live in a single-family home in city limits served by City of Bloomington Utilities. Applications are due Jan. 31, 2027.
@@ -153,13 +156,12 @@ stories:
       The free program pairs volunteers with older adults and residents with disabilities who can't clear their sidewalks. Residents who need help should apply by Dec. 20 for priority. Details at bton.in/SnowHelp or 812-349-3478.
     source: City of Bloomington
     url: https://bloomington.in.gov/news/2026/11/16/6700
-  - section: Local News
-    title: Mayor Thomson to hold final traveling town hall of 2026 on Dec. 7
+  - section: US News
+    title: Kilmar Abrego Garcia leaves the US voluntarily for Spain
     body: >-
-      It is the last of the mayor's traveling town halls this year.
-    when: Mon Dec 7
-    source: City of Bloomington
-    url: https://bloomington.in.gov/news/2026/11/18/6703
+      NPR reports Abrego Garcia left the country voluntarily and went to Spain.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6053203
   - section: US News
     title: Nvidia reinstates Jensen Huang as CEO eleven days after he resigned
     body: >-
@@ -169,7 +171,7 @@ stories:
   - section: US News
     title: Storms on both coasts threaten Thanksgiving travel
     body: >-
-      NPR reports storms expected on the East and West coasts could disrupt holiday travel plans. NPR also reports that high fuel costs are affecting how people travel this Thanksgiving.
+      NPR reports storms expected on the East and West coasts could disrupt holiday travel plans. High fuel costs are also affecting how people travel this Thanksgiving.
     source: NPR
     url: https://www.npr.org/nx-s1-6047508
   - section: US News
@@ -179,45 +181,45 @@ stories:
     source: NPR
     url: https://www.npr.org/nx-s1-6052994
   - section: US News
-    title: California Rep. Gomez resigns after ethics report on misconduct allegations
-    body: >-
-      The California Democrat resigned following a House ethics report. The committee opened its investigation in August; Gomez said his actions were consensual.
-    source: NPR
-    url: https://www.npr.org/g-s1-155142
-  - section: US News
     title: Thanksgiving dinner is testing family budgets
     body: >-
-      NPR looks at what families are cutting from the holiday meal as costs rise.
+      NPR looks at what families are cutting from the holiday meal as costs rise. One exception it highlights: cannabis is cheaper this year.
     source: NPR
-    url: https://www.npr.org/nx-s1-6044207
-  - section: US News
-    title: Democrats probe whether Trump Jr.-aligned businesses benefit from government access
-    body: >-
-      NPR reports on a Democratic investigation into the businesses.
-    source: NPR
-    url: https://www.npr.org/nx-s1-6051028
+    url: https://www.npr.org/nx-s1-6046173
   - section: World News
-    title: Yashar and Yisrael Beytenu sign a coalition deal as Democrats walk out of talks
+    title: Court tells Israel's attorney general to drop the Netanyahu bribery case
     body: >-
-      Yashar says it signed a coalition agreement with Yisrael Beytenu. Separately, Yair Golan's Democrats ended coalition talks with Yashar, citing a stalemate.
+      Judge Rivka Friedman-Feldman said the court sees little chance of conviction in Case 4000 and suggested it be dropped. She also said Case 2000 should be reconsidered and that prosecutors should seek a deal in Case 1000. Attorney General Gali Baharav-Miara said the prosecution will consider the recommendations but the trial must end in a ruling or an appropriate arrangement. Netanyahu denies all charges.
     source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-november-24-2026/
+    url: https://www.timesofisrael.com/liveblog-november-25-2026/
+  - section: World News
+    title: Trump says the Iran war is funded through January
+    body: >-
+      Reuters reported Trump suggested a limited window for a new military operation. He said Washington's goals differ from Israel's, that he is focused on Iran's nuclear program, and that he is not committed to regime change.
+    source: Times of Israel
+    url: https://www.timesofisrael.com/liveblog-november-25-2026/
+  - section: World News
+    title: Saudi-led coalition strikes Yemen's Hodeida port
+    body: >-
+      The coalition said it targeted operational capabilities at the port, a key entry point for goods into Houthi-held territory. The Houthis threatened retaliation. No casualties were reported.
+    source: Times of Israel
+    url: https://www.timesofisrael.com/liveblog-november-25-2026/
+  - section: World News
+    title: France prepares Lebanon talks with Israel as UNIFIL mandate nears its end
+    body: >-
+      French defense and foreign ministry teams will travel to Israel in the coming days. France opposes a "UNIFIL 2.0" and has proposed deploying French forces after the mission ends at year's end. Both sides agree Hezbollah must not return to southern Lebanon but disagree on how to prevent it.
+    source: Times of Israel
+    url: https://www.timesofisrael.com/liveblog-november-25-2026/
+  - section: World News
+    title: China investigates Politburo member and Shanghai party chief Chen Jining
+    body: >-
+      NPR reports China has opened an investigation into Chen Jining.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6053801
   - section: World News
     title: US sanctions two dozen Iranian exchange houses; rial slides
     body: >-
-      The Treasury sanctioned more than two dozen Iranian exchange houses and related entities. The dollar traded near 2.82 million rials on the black market, about 5% higher; Iran's central bank governor dismissed the sanctions. US Ambassador Mike Huckabee said Trump is prepared to resume military action if diplomacy fails.
-    source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-november-24-2026/
-  - section: World News
-    title: Israel strike kills Hamas internal security chief in Gaza City
-    body: >-
-      Hamas confirmed that Naim Abu Nahal was killed. The IDF said it hit a senior Hamas commander. Huckabee blamed Hamas for the stalled Gaza peace plan, saying it has not begun disarming.
-    source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-november-24-2026/
-  - section: World News
-    title: Shin Bet reportedly faults Defense Minister over settler extremists
-    body: >-
-      The Shin Bet is reported to have criticized Defense Minister Katz for refusing to use administrative detention against settler extremists. Israel's top judge, President Herzog and Naftali Bennett have all condemned settler violence, and the IDF is reportedly investigating at least 16 cases of troops using Palestinians as human shields.
+      The Treasury sanctioned more than two dozen Iranian exchange houses and related entities. The dollar traded near 2.82 million rials on the black market, about 5% higher; Iran's central bank governor dismissed the sanctions.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-november-24-2026/
   - section: World News
@@ -226,12 +228,6 @@ stories:
       Prime Minister Pedro Sánchez is campaigning ahead of the Nov. 29 election.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-november-23-2026/
-  - section: World News
-    title: Singapore says it won't be a conduit around US chip curbs
-    body: >-
-      Prime Minister Lawrence Wong said Singapore will keep investigating Megaspeed, which was added to the US Entity List.
-    source: Bloomberg
-    url: https://www.bloomberg.com/news/articles/2026-11-24/singapore-won-t-be-conduit-to-skirt-us-chip-curbs-wong-says
   - section: AI News
     title: Anthropic and OpenAI each post a claimed proof that VP does not equal VNP
     body: >-
@@ -251,32 +247,20 @@ stories:
     source: 9to5Mac
     url: https://9to5mac.com/2026/11/23/chatgpt-expands-gpt-6-2-sol-as-openai-sets-retirement-date-for-two-models/
   - section: AI News
-    title: Meta's Muse agent launches in the UK and must ask before every purchase
-    body: >-
-      Meta says prompt injection remains an open problem for personal agents.
-    source: Meta
-    url: https://about.fb.com/news/2026/11/muse-now-available-in-the-uk-muse-does-the-work-you-stay-in-control/
-  - section: AI News
-    title: Study finds all eight major search APIs served malicious content to AI coding agents
-    body: >-
-      The WebSec benchmark found each API returned malicious content at least once.
-    source: The Hacker News
-    url: https://thehackernews.com/expert-insights/2026/11/ai-coding-agents-are-getting-malicious.html
-  - section: AI News
     title: Virginia and Oregon sue SpaceX over Grok deepfakes
     body: >-
       The attorneys general allege Grok and X were marketed as safe while Grok's image generator produced non-consensual sexualized images, including of children.
     source: CNBC
     url: https://www.cnbc.com/2026/11/23/oregon-virginia-spacex-grok-deepfake-lawsuits.html
   - section: On This Day
-    title: "1971 - D. B. Cooper parachutes from a hijacked plane"
+    title: "1984 - Band Aid records \"Do They Know It's Christmas?\""
     body: >-
-      Over the Pacific Northwest, with a $200,000 ransom, he vanished and was never publicly identified.
+      More than 30 British and Irish pop stars gathered to record the single to raise famine relief money for Ethiopia.
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/D._B._Cooper
+    url: https://en.wikipedia.org/wiki/Do_They_Know_It%27s_Christmas%3F
   - section: On This Day
-    title: "1963 - Jack Ruby shoots Lee Harvey Oswald on live television"
+    title: "1885 - Canada's first national park is established at Banff"
     body: >-
-      The shooting came two days after Oswald assassinated President Kennedy.
+      It was created as Rocky Mountains Park.
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/Jack_Ruby
+    url: https://en.wikipedia.org/wiki/Banff_National_Park
