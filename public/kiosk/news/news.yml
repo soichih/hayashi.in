@@ -1,19 +1,9 @@
-generated: "2026-11-27T18:31:53-05:00"
+generated: "2026-11-28T06:32:00-05:00"
 stories:
-  - section: Local Events
-    title: Holiday of Lights drive-through display is open
-    body: >-
-      A drive-through display of thousands of lights, running through Jan. 2, 2027.
-    when: Nov 27 - Jan 2
-    where: Monroe County Fairgrounds
-    source: Visit Bloomington
-    url: https://www.visitbloomington.com/events/
-    image: img/holiday-of-lights.jpg
-    image_credit: Visit Bloomington
   - section: Local Events
     title: 23rd annual Holiday Market runs indoors and out
     body: >-
-      Local farm products and handcrafted gifts, with food and live music, rain or shine. The Winter Farmers' Market is closed this Saturday.
+      Local farm products and handcrafted gifts from regional artisans, rain or shine. The Winter Farmers' Market is closed this Saturday.
     when: Sat Nov 28
     source: Visit Bloomington
     url: https://www.visitbloomington.com/events/
@@ -27,6 +17,16 @@ stories:
     where: City Hall
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/spinners-weavers-guild-looks-for-new-home-after-surprise-college-mall-lease-termination/
+  - section: Local Events
+    title: Holiday of Lights drive-through display is open
+    body: >-
+      A drive-through display of thousands of lights, running through Jan. 2, 2027.
+    when: Nov 27 - Jan 2
+    where: Monroe County Fairgrounds
+    source: Visit Bloomington
+    url: https://www.visitbloomington.com/events/
+    image: img/holiday-of-lights.jpg
+    image_credit: Visit Bloomington
   - section: Local Events
     title: Hairbangers Ball plays a 21+ show
     body: >-
@@ -54,7 +54,7 @@ stories:
   - section: Local Events
     title: Writers Guild poetry reading and open mic closes the month
     body: >-
-      Members of the Writers Guild read after the store closes at 7pm.
+      Members of the Writers Guild read after the store closes at 7pm, followed by an open mic.
     when: Sun Nov 29, after 7pm
     where: Morgenstern Books
     source: Visit Bloomington
@@ -67,6 +67,8 @@ stories:
     where: IU Auditorium
     source: IU Auditorium
     url: https://events.iu.edu/iu-auditorium/event/2362017-a-magical-cirque-christmas
+    image: img/magical-cirque.jpg
+    image_credit: Visit Bloomington
   - section: Local Events
     title: Sarah Jarosz marks 10 years of Undercurrent
     body: >-
@@ -119,6 +121,20 @@ stories:
     image: img/photographic-reflex.jpg
     image_credit: Visit Bloomington
   - section: Local News
+    title: City drops lawsuit over Crawford Apartments after settlement
+    body: >-
+      Bloomington dismissed its breach-of-contract suit against the owners of the 61-unit supportive housing complex and the nonprofit Beacon, Inc. on Nov. 23. The August 2025 suit sought $685,000 in federal HOME funds. Two related rental-code cases were dismissed Nov. 9, after the city issued temporary occupancy permits following July inspections that found 32 of 61 apartments vacant.
+
+      The settlement includes two memoranda of understanding and a clause restricting statements to the news media about the litigation.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/bloomington-drops-lawsuit-against-owners-of-crawford-apartments-local-nonprofit/
+  - section: Local News
+    title: Health board picks retired pediatrician James Laughlin as county health officer
+    body: >-
+      The Monroe County board of health voted unanimously Nov. 19. Commissioners must still approve, with an interview expected as soon as this week. The department has been unable to fill vacancies because the interim officer's contract bars hiring. The board held no open search; staff said Laughlin was identified through contacts of previous board members.
+    source: The B Square Bulletin
+    url: https://bsquarebulletin.com/monroe-county-health-board-picks-laughlin-as-next-health-officer-pending-ok-from-commissioners/
+  - section: Local News
     title: Incoming clerk hires former election supervisor Karen Wheeler as chief deputy
     body: >-
       Clerk-elect Tree Martin-Lucas, a Democrat who won the Nov. 3 election, named Republican Karen Wheeler to the post, starting in January. Wheeler ran Monroe County elections from 2017 to early 2023, overseeing eight of them, and now works as office manager for the county parks board.
@@ -147,23 +163,11 @@ stories:
     source: The Bloomingtonian
     url: https://bloomingtonian.com/2026/11/26/iu-receives-25-million-lilly-endowment-grant-for-ai-in-teaching-student-support/
   - section: Local News
-    title: Smithville maintenance error caused Monroe County outage, council told
-    body: >-
-      Officials told the county council that a maintenance mistake in Smithville led to a power outage across parts of Monroe County.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/11/26/smithville-maintenance-error-caused-monroe-county-outage-council-told/
-  - section: Local News
     title: Ellettsville will maintain about 82 miles of new roads from Jan. 1
     body: >-
       Under the merger with Richland Township, the town takes over roughly 82 miles of county roads and has mapped 11 snowplow routes. The town manager says Ellettsville intends to handle it.
     source: The B Square Bulletin
     url: https://bsquarebulletin.com/town-manager-on-82-miles-of-new-roads-to-maintain-we-dont-use-the-word-cant-in-ellettsville/
-  - section: Local News
-    title: Police link three suspects to downtown attacks that injured three men
-    body: >-
-      Bloomington police used surveillance footage and a video an attacker recorded on a victim's phone to tie three suspects to the downtown assaults.
-    source: The Bloomingtonian
-    url: https://bloomingtonian.com/2026/11/24/police-link-three-suspects-to-downtown-bloomington-attacks-that-injured-three-men/
   - section: Local News
     title: Mayor's final Traveling Town Hall of 2026 is Dec. 7
     body: >-
@@ -190,6 +194,12 @@ stories:
     source: NPR
     url: https://www.npr.org/nx-s1-6054884
   - section: US News
+    title: Supreme Court to weigh Trump's border asylum ban as denial rates hit 94%
+    body: >-
+      NPR reports the administration has effectively ended asylum at the border, and the Supreme Court is set to weigh the ban. Advocates are looking to the court to restore asylum.
+    source: NPR
+    url: https://www.npr.org/nx-s1-6037854
+  - section: US News
     title: Judge blocks FCC and administration from early reviews of ABC licenses
     body: >-
       US District Judge Loren AliKhan issued a preliminary injunction, finding the early license reviews of eight ABC-owned stations were retaliation for speech the administration disliked. She rejected the government's motion to dismiss the suit by ABC and Disney.
@@ -197,24 +207,18 @@ stories:
       She cited Trump's eleven calls over two years to strip ABC's licenses and said FCC Chair Brendan Carr acted on them. ABC called the ruling an important First Amendment victory; Carr did not comment.
     source: NPR
     url: https://www.npr.org/nx-s1-6000576
-  - section: US News
-    title: Advocates look to the Supreme Court to restore asylum
+  - section: World News
+    title: Gerard Depardieu ordered to stand trial for rape and sexual assault
     body: >-
-      NPR reports the Trump administration has effectively ended asylum at the border, and advocates are now turning to the Supreme Court to reverse it.
+      The French film star will be tried on rape and sexual assault charges, NPR reports.
     source: NPR
-    url: https://www.npr.org/nx-s1-6037854
+    url: https://www.npr.org/nx-s1-6055559
   - section: World News
     title: Ra'am leader reportedly set to call Hamas a terror group
     body: >-
       Mansour Abbas is expected to make the declaration Saturday night, which could open the way for Ra'am to join a government led by Gadi Eisenkot. Likud and Defense Minister Israel Katz called it an empty performance.
 
       Eisenkot's mandate to form a government expires in nine days unless President Herzog extends it.
-    source: Times of Israel
-    url: https://www.timesofisrael.com/liveblog-november-27-2026/
-  - section: World News
-    title: Judges in Netanyahu trial signal Case 4000 should be dropped
-    body: >-
-      Judges indicated a conviction in Case 4000 is unlikely and urged it be dropped, and suggested the parties seek a deal in the third case. Netanyahu called for the trial to end immediately.
     source: Times of Israel
     url: https://www.timesofisrael.com/liveblog-november-27-2026/
   - section: World News
@@ -236,14 +240,14 @@ stories:
     source: The New York Times
     url: https://www.nytimes.com/2026/11/26/us/politics/ai-regulation-congress-nvidia.html
   - section: On This Day
-    title: "1895 - Alfred Nobel signs the will that created the Nobel Prizes"
+    title: "1925 - The Grand Ole Opry begins as the WSM Barn Dance"
     body: >-
-      Nobel set aside most of his estate to fund the prizes.
+      The Nashville radio show that became the Grand Ole Opry went on the air for the first time.
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/Alfred_Nobel
+    url: https://en.wikipedia.org/wiki/Grand_Ole_Opry
   - section: On This Day
-    title: "1945 - Twenty-two US charities found CARE"
+    title: "1967 - Jocelyn Bell Burnell spots the first pulsar signal"
     body: >-
-      The group formed to send food aid to Europe after World War II.
+      An unusual signal in radio telescope data turned out to come from PSR B1919+21, the first pulsar ever discovered.
     source: Wikipedia
-    url: https://en.wikipedia.org/wiki/CARE_(relief_agency)
+    url: https://en.wikipedia.org/wiki/Jocelyn_Bell_Burnell
